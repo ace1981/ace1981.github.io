@@ -3,15 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>dockerstart | Hexo</title>
+  <title>Docker入门和初级命令 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="dockerstart">
+  <meta name="description" content="第一步 安装当前docker分两个安装版, EE为企业版付费的, CE为社区版,我选择的是ubuntu14.04的系统下安装CE版,不同环境和版本安装命令是不一样的,根据页面提示找到对应文档,安装方法如下:1. Set up the repositorySet up the Docker CE repository on Ubuntu. The lsb_release -cs sub-comman">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker入门和初级命令">
 <meta property="og:url" content="http://yoursite.com/2017/03/29/dockerstart/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2017-03-29T08:24:20.000Z">
+<meta property="og:description" content="第一步 安装当前docker分两个安装版, EE为企业版付费的, CE为社区版,我选择的是ubuntu14.04的系统下安装CE版,不同环境和版本安装命令是不一样的,根据页面提示找到对应文档,安装方法如下:1. Set up the repositorySet up the Docker CE repository on Ubuntu. The lsb_release -cs sub-comman">
+<meta property="og:updated_time" content="2017-03-29T10:24:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="dockerstart">
+<meta name="twitter:title" content="Docker入门和初级命令">
+<meta name="twitter:description" content="第一步 安装当前docker分两个安装版, EE为企业版付费的, CE为社区版,我选择的是ubuntu14.04的系统下安装CE版,不同环境和版本安装命令是不一样的,根据页面提示找到对应文档,安装方法如下:1. Set up the repositorySet up the Docker CE repository on Ubuntu. The lsb_release -cs sub-comman">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -53,7 +56,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      dockerstart
+      Docker入门和初级命令
     </h1>
   
 
@@ -61,7 +64,66 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        
+        <h4 id="第一步-安装"><a href="#第一步-安装" class="headerlink" title="第一步 安装"></a>第一步 安装</h4><h5 id="当前docker分两个安装版-EE为企业版付费的-CE为社区版-我选择的是ubuntu14-04的系统下安装CE版-不同环境和版本安装命令是不一样的-根据页面提示找到对应文档-安装方法如下"><a href="#当前docker分两个安装版-EE为企业版付费的-CE为社区版-我选择的是ubuntu14-04的系统下安装CE版-不同环境和版本安装命令是不一样的-根据页面提示找到对应文档-安装方法如下" class="headerlink" title="当前docker分两个安装版, EE为企业版付费的, CE为社区版,我选择的是ubuntu14.04的系统下安装CE版,不同环境和版本安装命令是不一样的,根据页面提示找到对应文档,安装方法如下:"></a>当前docker分两个安装版, EE为企业版付费的, CE为社区版,我选择的是ubuntu14.04的系统下安装CE版,不同环境和版本安装命令是不一样的,根据页面提示找到对应文档,安装方法如下:</h5><h5 id="1-Set-up-the-repository"><a href="#1-Set-up-the-repository" class="headerlink" title="1. Set up the repository"></a>1. Set up the repository</h5><p>Set up the Docker CE repository on Ubuntu. The <code>lsb_release -cs</code> sub-command prints the name of your Ubuntu version, like <code>xenial</code> or <code>trusty</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">sudo apt-get -y install \</div><div class="line">  apt-transport-https \</div><div class="line">  ca-certificates \</div><div class="line">  curl</div><div class="line"></div><div class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</div><div class="line"></div><div class="line">sudo add-apt-repository \</div><div class="line">       &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \</div><div class="line">       $(lsb_release -cs) \</div><div class="line">       stable&quot;</div><div class="line"></div><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
+<h5 id="2-Get-Docker-CE"><a href="#2-Get-Docker-CE" class="headerlink" title="2. Get Docker CE"></a>2. Get Docker CE</h5><p>Install the latest version of Docker CE on Ubuntu:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get -y install docker-ce</div></pre></td></tr></table></figure>
+<h5 id="3-Test-your-Docker-CE-installation"><a href="#3-Test-your-Docker-CE-installation" class="headerlink" title="3. Test your Docker CE installation"></a>3. Test your Docker CE installation</h5><p>Test your installation:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo docker run hello-world</div></pre></td></tr></table></figure>
+<h4 id="第二步-修改docker命令权限"><a href="#第二步-修改docker命令权限" class="headerlink" title="第二步 修改docker命令权限"></a>第二步 修改docker命令权限</h4><p>默认安装完 Docker 后，每次执行 docker 都需要运行 sudo 命令，非常浪费时间影响效率。如果不跟 sudo，直接执行 docker images 命令会有如下问题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Get http:///var/run/docker.sock/v1.15/containers/json: dial unix /var/run/docker.sock: permission denied</div></pre></td></tr></table></figure>
+<p>于是考虑如何免 sudo 使用 docker，经过查找资料，发现只要把用户加入 docker 用户组即可，具体用法如下。</p>
+<p>免 sudo 使用 docker</p>
+<p>如果还没有 docker group 就添加一个：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo groupadd docker</div></pre></td></tr></table></figure>
+<p>ubuntu下，通过一下命令来看有没有group</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /ect/group</div></pre></td></tr></table></figure>
+<p>将用户加入该 group 内。然后退出并重新登录就生效啦。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gpasswd <span class="_">-a</span> <span class="variable">$&#123;USER&#125;</span> docker</div></pre></td></tr></table></figure>
+<p>重启 docker 服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service docker restart</div></pre></td></tr></table></figure>
+<p>重启 group 或者重启 X 会话</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">newgrp - docker</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pkill X</div></pre></td></tr></table></figure>
+<p>注意，最后一步是必须的，否则因为 groups 命令获取到的是缓存的组信息，刚添加的组信息未能生效，所以 docker images 执行时同样有错。</p>
+<h4 id="第三步-使用阿里云的加速器-代理"><a href="#第三步-使用阿里云的加速器-代理" class="headerlink" title="第三步  使用阿里云的加速器 代理"></a>第三步  使用阿里云的加速器 代理</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"DOCKER_OPTS=\"<span class="variable">$DOCKER_OPTS</span> --registry-mirror=https://j958ia9e.mirror.aliyuncs.com\""</span> | sudo tee <span class="_">-a</span> /etc/default/docker</div><div class="line">sudo service docker restart</div></pre></td></tr></table></figure>
+<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><ul>
+<li>查看阿里云的镜像市场 拉取一个tomcat镜像</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker pull tomcat</div></pre></td></tr></table></figure>
+<ul>
+<li>显示本地的镜像</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker images</div></pre></td></tr></table></figure>
+<ul>
+<li>删除一个镜像</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi 镜像ID 镜像ID 多删空格分开</div></pre></td></tr></table></figure>
+<ul>
+<li>显示容器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker ps -a</div></pre></td></tr></table></figure>
+<ul>
+<li>删除容器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rm -f 容器ID</div></pre></td></tr></table></figure>
+<ul>
+<li>启动容器 8081为绑定的本地端口 8080为容器的端口</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --name mytomcat -d -p 8081:8080 tomcat</div></pre></td></tr></table></figure>
+<ul>
+<li>进入容器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker exec -it mytomcat /bin/bash</div></pre></td></tr></table></figure>
+<ul>
+<li>创建jenkins</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --name myjenkins2 -p 7070:8080 -p 50000:50000  -v /etc/timezone:/etc/timezone -v /etc/localtime:/etc/localtime jenkins</div></pre></td></tr></table></figure>
+<ul>
+<li>启动一个已有的容器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker start 容器ID</div></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
@@ -88,7 +150,7 @@
   
     <a href="/2017/03/29/hello-world/" id="article-nav-older" class="article-nav-link-wrap older">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">Hello Markdown</div>
     </a>
   
 </nav>
