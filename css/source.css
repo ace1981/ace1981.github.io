@@ -607,7 +607,7 @@ $highlight-purple: #8959a8;
   pre {
     @extend code-block;
     code {
-      background: none;
+      background: $code-background;
       text-shadow: none;
       padding: 0;
     }
