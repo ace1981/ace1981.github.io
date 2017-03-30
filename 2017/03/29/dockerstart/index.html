@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/29/dockerstart/index.html">
 <meta property="og:site_name" content="Ace'pages">
 <meta property="og:description" content="第一步 安装当前docker分两个安装版, EE为企业版付费的, CE为社区版,我选择的是ubuntu14.04的系统下安装CE版,不同环境和版本安装命令是不一样的,根据页面提示找到对应文档,安装方法如下:1. Set up the repositorySet up the Docker CE repository on Ubuntu. The lsb_release -cs sub-comman">
-<meta property="og:updated_time" content="2017-03-29T10:24:50.000Z">
+<meta property="og:updated_time" content="2017-03-29T13:53:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker入门和初级命令">
 <meta name="twitter:description" content="第一步 安装当前docker分两个安装版, EE为企业版付费的, CE为社区版,我选择的是ubuntu14.04的系统下安装CE版,不同环境和版本安装命令是不一样的,根据页面提示找到对应文档,安装方法如下:1. Set up the repositorySet up the Docker CE repository on Ubuntu. The lsb_release -cs sub-comman">
@@ -83,8 +83,7 @@
 <p>重启 docker 服务</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service docker restart</div></pre></td></tr></table></figure>
 <p>重启 group 或者重启 X 会话</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">newgrp - docker</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pkill X</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">newgrp - docker</div><div class="line">pkill X</div></pre></td></tr></table></figure>
 <p>注意，最后一步是必须的，否则因为 groups 命令获取到的是缓存的组信息，刚添加的组信息未能生效，所以 docker images 执行时同样有错。</p>
 <h4 id="第三步-使用阿里云的加速器-代理"><a href="#第三步-使用阿里云的加速器-代理" class="headerlink" title="第三步  使用阿里云的加速器 代理"></a>第三步  使用阿里云的加速器 代理</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"DOCKER_OPTS=\"<span class="variable">$DOCKER_OPTS</span> --registry-mirror=https://j958ia9e.mirror.aliyuncs.com\""</span> | sudo tee <span class="_">-a</span> /etc/default/docker</div><div class="line">sudo service docker restart</div></pre></td></tr></table></figure>
 <h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><ul>
@@ -145,7 +144,14 @@
     
 <nav id="article-nav" class="article-nav">
   
-    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+    <a href="/2017/03/30/pd23/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          23种设计模式
+        
+      </div>
+    </a>
   
   
     <a href="/2017/03/29/hello-world/" id="article-nav-older" class="article-nav-link-wrap older">
