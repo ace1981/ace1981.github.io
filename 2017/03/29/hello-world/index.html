@@ -27,7 +27,7 @@ java
 objective-c
 1UIButton *btn=[[UIButton alloc]init];
 关于hexo插件的基本命令创建文章:hexo new markdown文件名">
-<meta property="og:updated_time" content="2017-04-04T12:45:03.000Z">
+<meta property="og:updated_time" content="2017-04-04T12:54:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hello markdown and hexo">
 <meta name="twitter:description" content="C#
@@ -104,6 +104,20 @@ objective-c
 <h5 id="关于hero-d每次重复输入帐号密码"><a href="#关于hero-d每次重复输入帐号密码" class="headerlink" title="关于hero d每次重复输入帐号密码:"></a>关于hero d每次重复输入帐号密码:</h5><p>修改_config.yml如下:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: git@github.com:ace1981/ace1981.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 <p>这里要使用git@github.com:而不是<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></p>
+<h5 id="关于markdown编辑器"><a href="#关于markdown编辑器" class="headerlink" title="关于markdown编辑器"></a>关于markdown编辑器</h5><p>推荐使用Typora</p>
+<h5 id="修改-md打开方式"><a href="#修改-md打开方式" class="headerlink" title="修改.md打开方式"></a>修改.md打开方式</h5><p>右键.md文件&gt;显示简介&gt;打开方式 选择Typora并应用所有</p>
+<h5 id="关于配置git的ssh"><a href="#关于配置git的ssh" class="headerlink" title="关于配置git的ssh"></a>关于配置git的ssh</h5><p>1 设置Git的user name和email：(如果是第一次的话)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;ace1981&quot;</div><div class="line">$ git config --global user.email &quot;38688368@qq.com&quot;</div></pre></td></tr></table></figure>
+<p>2 生成密钥</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;38688368@qq.com&quot;</div></pre></td></tr></table></figure>
+<p>3 添加生成的 SSH key 到 ssh-agent。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-add ~/.ssh/id_rsa</div></pre></td></tr></table></figure>
+<p>4 登录github 在setting中添加ssh key</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd ~/.ssh</div><div class="line"></div><div class="line">cat id_rsa.pub</div></pre></td></tr></table></figure>
+<p>复制文件内容添加到key中</p>
+<p>5 测试 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure>
+<p>选择yes就可以了</p>
 
       
     </div>
