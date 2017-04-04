@@ -13,8 +13,7 @@ java
 1String str=&quot;test&quot;;
 objective-c
 1UIButton *btn=[[UIButton alloc]init];
-关于hexo插件创建文章:hexo new markdown文件名
-编译:h">
+关于hexo插件的基本命令创建文章:hexo new markdown文件名">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hello markdown and hexo">
 <meta property="og:url" content="http://yoursite.com/2017/03/29/hello-world/index.html">
@@ -27,9 +26,8 @@ java
 1String str=&quot;test&quot;;
 objective-c
 1UIButton *btn=[[UIButton alloc]init];
-关于hexo插件创建文章:hexo new markdown文件名
-编译:h">
-<meta property="og:updated_time" content="2017-04-04T12:06:00.000Z">
+关于hexo插件的基本命令创建文章:hexo new markdown文件名">
+<meta property="og:updated_time" content="2017-04-04T12:43:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hello markdown and hexo">
 <meta name="twitter:description" content="C#
@@ -40,8 +38,7 @@ java
 1String str=&quot;test&quot;;
 objective-c
 1UIButton *btn=[[UIButton alloc]init];
-关于hexo插件创建文章:hexo new markdown文件名
-编译:h">
+关于hexo插件的基本命令创建文章:hexo new markdown文件名">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
@@ -99,10 +96,13 @@ objective-c
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String str=<span class="string">"test"</span>;</div></pre></td></tr></table></figure>
 <p>objective-c</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UIButton *btn=[[UIButton alloc]init];</div></pre></td></tr></table></figure>
-<h5 id="关于hexo插件"><a href="#关于hexo插件" class="headerlink" title="关于hexo插件"></a>关于hexo插件</h5><p>创建文章:<code>hexo new markdown文件名</code></p>
+<h5 id="关于hexo插件的基本命令"><a href="#关于hexo插件的基本命令" class="headerlink" title="关于hexo插件的基本命令"></a>关于hexo插件的基本命令</h5><p>创建文章:<code>hexo new markdown文件名</code></p>
 <p>编译:<code>hexo g</code></p>
 <p>发布到git: <code>hexo d</code> </p>
-<p>语法检查(如tags: docker) tags冒号后必有空格,否则hexo g编译不过 </p>
+<h5 id="关于编译不出文章的语法检查"><a href="#关于编译不出文章的语法检查" class="headerlink" title="关于编译不出文章的语法检查"></a>关于编译不出文章的语法检查</h5><p>(如tags: docker) tags冒号后必有空格,否则hexo g编译不过 </p>
+<h5 id="关于hero-d每次重复输入帐号密码"><a href="#关于hero-d每次重复输入帐号密码" class="headerlink" title="关于hero d每次重复输入帐号密码:"></a>关于hero d每次重复输入帐号密码:</h5><p>修改_config.yml如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: git@github.com:ace1981/ace1981.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>这里要使用git@github.com:而不是<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></p>
 
       
     </div>
