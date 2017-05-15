@@ -40,7 +40,7 @@
 <meta property="og:image" content="http://yoursite.com/2017/04/04/jenkins/startbuild.png">
 <meta property="og:image" content="http://yoursite.com/2017/04/04/jenkins/buildjob.png">
 <meta property="og:image" content="http://yoursite.com/2017/04/04/jenkins/consoleoutput.png">
-<meta property="og:updated_time" content="2017-05-15T05:49:06.000Z">
+<meta property="og:updated_time" content="2017-05-15T05:50:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jenkins">
 <meta name="twitter:description" content="jenkins+maven+svn基本使用 1 docker中启动jenkins
@@ -98,7 +98,7 @@
       
         <h4 id="jenkins-maven-svn基本使用"><a href="#jenkins-maven-svn基本使用" class="headerlink" title="jenkins+maven+svn基本使用"></a>jenkins+maven+svn基本使用</h4><p> 1 docker中启动jenkins</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --name myjenkins --restart always -p 7070:8080 -p 50000:50000  -v /etc/timezone:/etc/timezone -v /etc/localtime:/etc/localtime jenkins</div></pre></td></tr></table></figure>
-<p>2 复制自动生成的密码密码,访问192.170.1.70:7070</p>
+<p>2 复制自动生成的密码密码,访问192.168.1.70:7070</p>
 <p><img src="/2017/04/04/jenkins/unlock.png" alt="unlock"></p>
 <p>3 自定义插件</p>
 <p><img src="/2017/04/04/jenkins/customize.png" alt="customize"></p>
