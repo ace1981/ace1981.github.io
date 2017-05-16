@@ -5,19 +5,31 @@
   
   <title>springboot构建ELK+log4j的日志收集最简方式 | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="修改pom.xml
-1234567891011121314&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-boot-starter&amp;lt;/artifactId&amp;gt;    &amp;lt;exclusions&amp;gt;        &amp;lt;">
+  <meta name="description" content="环境搭建参考前章
+docker搭建elasticsearch
+docker构建logstash
+docker构建kibana
+修改pom.xml
+1234567891011121314&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-bo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="springboot构建ELK+log4j的日志收集最简方式">
 <meta property="og:url" content="http://yoursite.com/2017/05/16/elk-springboot-log4j/index.html">
 <meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="修改pom.xml
-1234567891011121314&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-boot-starter&amp;lt;/artifactId&amp;gt;    &amp;lt;exclusions&amp;gt;        &amp;lt;">
-<meta property="og:updated_time" content="2017-05-16T07:45:44.000Z">
+<meta property="og:description" content="环境搭建参考前章
+docker搭建elasticsearch
+docker构建logstash
+docker构建kibana
+修改pom.xml
+1234567891011121314&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-bo">
+<meta property="og:updated_time" content="2017-05-16T07:57:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springboot构建ELK+log4j的日志收集最简方式">
-<meta name="twitter:description" content="修改pom.xml
-1234567891011121314&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-boot-starter&amp;lt;/artifactId&amp;gt;    &amp;lt;exclusions&amp;gt;        &amp;lt;">
+<meta name="twitter:description" content="环境搭建参考前章
+docker搭建elasticsearch
+docker构建logstash
+docker构建kibana
+修改pom.xml
+1234567891011121314&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-bo">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
@@ -67,7 +79,11 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <p>修改pom.xml</p>
+        <p>环境搭建参考前章</p>
+<p><a href="http://hujao.com/2017/04/23/docker-elasticsearch/" target="_blank" rel="external">docker搭建elasticsearch</a></p>
+<p><a href="http://hujao.com/2017/05/15/docker-logstash/" target="_blank" rel="external">docker构建logstash</a></p>
+<p><a href="http://hujao.com/2017/05/15/docker-kibana/" target="_blank" rel="external">docker构建kibana</a></p>
+<p>修改pom.xml</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>在resources目录添加log4j.properties</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">log4j.rootLogger = INFO,logstash,CONSOLE,APPLOG,ERRORLOG</div><div class="line"></div><div class="line">log4j.appender.logstash=org.apache.log4j.net.SocketAppender</div><div class="line">log4j.appender.logstash.Port=3456</div><div class="line">log4j.appender.logstash.RemoteHost=elasticsearch_IP</div><div class="line">log4j.appender.logstash.ReconnectionDelay=60000</div><div class="line">log4j.appender.logstash.LocationInfo=true</div><div class="line"></div><div class="line">log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender</div><div class="line">log4j.appender.CONSOLE.Target=System.out</div><div class="line">log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout</div><div class="line">log4j.appender.CONSOLE.layout.ConversionPattern=%d&#123;yyyy-MM-dd HH:mm:ss&#125; %-5p [%t] %c %x - %m%n</div><div class="line"></div><div class="line">log4j.appender.APPLOG=org.apache.log4j.DailyRollingFileAppender</div><div class="line">log4j.appender.APPLOG.Append=true</div><div class="line">log4j.appender.APPLOG.DatePattern=&apos;_&apos;yyyyMMdd&apos;.log&apos;</div><div class="line">log4j.appender.APPLOG.layout=org.apache.log4j.PatternLayout</div><div class="line">log4j.appender.APPLOG.layout.ConversionPattern=%d&#123;yyyy-MM-dd HH:mm:ss&#125; %-5p [%t] %c %x - %m%n</div><div class="line">log4j.appender.APPLOG.File=../logs/AppAccessLog</div><div class="line"></div><div class="line">log4j.appender.ERRORLOG=org.apache.log4j.DailyRollingFileAppender</div><div class="line">log4j.appender.ERRORLOG.Threshold=ERROR</div><div class="line">log4j.appender.ERRORLOG.Append=true</div><div class="line">log4j.appender.ERRORLOG.DatePattern=&apos;_&apos;yyyyMMdd&apos;.log&apos;</div><div class="line">log4j.appender.ERRORLOG.layout=org.apache.log4j.PatternLayout</div><div class="line">log4j.appender.ERRORLOG.layout.ConversionPattern=%d&#123;yyyy-MM-dd HH:mm:ss&#125; %-5p [%t] %c %x - %m%n</div><div class="line">log4j.appender.ERRORLOG.File=../logs/AppErrorLog</div></pre></td></tr></table></figure>
