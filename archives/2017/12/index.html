@@ -20,84 +20,106 @@
   <link rel="stylesheet" href="/css/typing.css">
 </head>
 
-  
-    
-      <body>
-    
-  
-      <div id="container" class="container">
-        <div class="archive-container">
-  <header id="header" class="header">
+      
+        
+          
+        
+
+        
+        
+      <body class="three">
+
+      
+        
+        <div id="container" class="container-absolute-top">
+        
+      
+
+        
+  <div class="archive-container">
+  <header id="header" class="header header-fixed">
   <nav id="main-nav" class="main-nav">
     
-      <a class="main-nav-link" href="/">Home</a>
+	  
+		<a class="main-nav-link" href="/">首页</a>
+	  
     
-      <a class="main-nav-link" href="/archives">Archives</a>
+	  
+		<a class="main-nav-link" href="/archives">归档</a>
+	  
     
-      <a class="main-nav-link" href="/tags">Tags</a>
-    
-      <a class="main-nav-link" href="/categories">Categories</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
+	  
+		
+
+
+
+
+	  
     
   </nav>
+  
   <nav id="sub-nav">
     
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 源"></a>
     
   </nav>
 </header>
 
   <hr/>
-  
-  
+  <script>
+var archive_data=[
   
     
-    
+    {'date':'12月 1 2017',
+    'title':{
       
+        'url':'/2017/12/01/metrics/',
       
-      <section class="archives-wrap">
-        <div class="archives">
+      'name':'学习metrics'
+    },
+    'tag': [
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/12/01/metrics/" class="archive-article-date">
-  <time datetime="2017-12-01T06:03:30.000Z" itemprop="datePublished">12月 1 2017</time>
-</a>
+    ]}
+  
+];
 
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/01/metrics/">学习metrics</a>
-    </h1>
-  
+var archive = {
+  data:archive_data,
+  archive: true,
+  tweenable:true,
+  maxtag:3,
+  default: 'table'
+};
 
-    </header>
+</script>
+
+
+
+
   </div>
-</article>
+
+
+          
+        
+
+
+
+
 
   
+    <footer id="footer" class="archive-footer footer archive-footer-fixed">
   
-    </div></section>
-  
 
-
-
-</div>
-
-      </div>
-      
-<footer id="footer" class="archive-footer footer">
   <hr/>
   <div id="footerContent" class="footer-content">
-    <p>闲步山雨后,静待晚林风 Archive</p>
+    <p>The quick you let go of old cheese, the sooner you find new cheese. <em>—— Mice Haw</em></p>
 
 
-      </div>
-    </footer>
 
-      
+  </div>
+</footer>
+
+        
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 
@@ -107,6 +129,23 @@
 
 
 <script src="/js/typing.js"></script>
+
+
+
+
+  
+    <script src = "https://cdn.bootcss.com/three.js/r83/three.js"></script>
+    <!--<script src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.min.js"></script>-->
+    <script src="/js/OrbitControls.js"></script>
+    <script src="/js/TrackballControls.js"></script>
+    <script src="/js/CSS3DRenderer.js"></script>
+    <script src="/js/archiveffect.js"></script>
+    <script src="/js/tween.min.js"></script>
+  
+
+
+
+
 <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
 
 
@@ -115,6 +154,8 @@
 
 
 
+
+      </div>
     </div>
   </body>
 </html>

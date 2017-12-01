@@ -1,3 +1,4 @@
+//处理文章里的图片
 (function ($) {
   // Caption
   $('.article-entry').each(function (i) {
