@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>linux-bash学习 | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. Basic Operationsa. export显示所有的环境变量，如果你想获取某个变量的详细信息，使用 echo $VARIABLE_NAME.
+1export
+Example:
+123456789$ exportSHELL=/bin/zshAWS_HOME=/Users/adnanadnan/.awsLANG=en_US.UTF-8LC_CTYPE=en_US.UTF-8LESS=-R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux-bash学习">
+<meta property="og:url" content="http://hujao.com/2017/12/12/linux-bash/index.html">
+<meta property="og:site_name" content="Ace'pages">
+<meta property="og:description" content="1. Basic Operationsa. export显示所有的环境变量，如果你想获取某个变量的详细信息，使用 echo $VARIABLE_NAME.
+1export
+Example:
+123456789$ exportSHELL=/bin/zshAWS_HOME=/Users/adnanadnan/.awsLANG=en_US.UTF-8LC_CTYPE=en_US.UTF-8LESS=-R">
+<meta property="og:updated_time" content="2017-12-12T04:21:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux-bash学习">
+<meta name="twitter:description" content="1. Basic Operationsa. export显示所有的环境变量，如果你想获取某个变量的详细信息，使用 echo $VARIABLE_NAME.
+1export
+Example:
+123456789$ exportSHELL=/bin/zshAWS_HOME=/Users/adnanadnan/.awsLANG=en_US.UTF-8LC_CTYPE=en_US.UTF-8LESS=-R">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-linux-bash" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux-bash学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h2 id="1-Basic-Operations"><a href="#1-Basic-Operations" class="headerlink" title="1. Basic Operations"></a>1. Basic Operations</h2><h4 id="a-export"><a href="#a-export" class="headerlink" title="a. export"></a>a. <code>export</code></h4><p>显示所有的环境变量，如果你想获取某个变量的详细信息，使用 <code>echo $VARIABLE_NAME</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export</div></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ export</div><div class="line">SHELL=/bin/zsh</div><div class="line">AWS_HOME=/Users/adnanadnan/.aws</div><div class="line">LANG=en_US.UTF-8</div><div class="line">LC_CTYPE=en_US.UTF-8</div><div class="line">LESS=-R</div><div class="line"></div><div class="line">$ echo $SHELL</div><div class="line">/usr/bin/zsh</div></pre></td></tr></table></figure>
+<h4 id="b-whereis"><a href="#b-whereis" class="headerlink" title="b. whereis"></a>b. <code>whereis</code></h4><p>whereis使用系统自动构建的数据库来搜索可执行文件，源文件和手册页面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">whereis name</div></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ whereis php</div><div class="line">/usr/bin/php</div></pre></td></tr></table></figure>
+<h4 id="c-which"><a href="#c-which" class="headerlink" title="c. which"></a>c. <code>which</code></h4><p>它在环境变量PATH指定的目录中搜索可执行文件。此命令将打印可执行文件的完整路径。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">which program_name</div></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ which php</div><div class="line">/c/xampp/php/php</div></pre></td></tr></table></figure>
+<h4 id="d-clear"><a href="#d-clear" class="headerlink" title="d. clear"></a>d. clear</h4><p>清除窗口上的内容。</p>
+<h3 id="1-1-File-Operations"><a href="#1-1-File-Operations" class="headerlink" title="1.1. File Operations"></a>1.1. File Operations</h3><table>
+<thead>
+<tr>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#a.-ls" target="_blank" rel="external">ls</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#b.-touch" target="_blank" rel="external">touch</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#c.-cat" target="_blank" rel="external">cat</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#d.-more" target="_blank" rel="external">more</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#e.-head" target="_blank" rel="external">head</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#f.-tail" target="_blank" rel="external">tail</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#g.-mv" target="_blank" rel="external">mv</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#h.-cp" target="_blank" rel="external">cp</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#i.-rm" target="_blank" rel="external">rm</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#j.-diff" target="_blank" rel="external">diff</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#k.-chmod" target="_blank" rel="external">chmod</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#l.-gzip" target="_blank" rel="external">gzip</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#m.-gunzip" target="_blank" rel="external">gunzip</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#n.-gzcat" target="_blank" rel="external">gzcat</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#o.-lpr" target="_blank" rel="external">lpr</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#p.-lpq" target="_blank" rel="external">lpq</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#q.-lprm" target="_blank" rel="external">lprm</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="a-ls"><a href="#a-ls" class="headerlink" title="a. ls"></a>a. <code>ls</code></h4><p>列出您的文件。<code>ls</code>有很多选项：<code>-l</code>列出“长格式”的文件，其中包含文件的确切大小，拥有该文件的人员，有权查看该文件，以及何时进行上次修改。<code>-a</code>列出所有文件，包括隐藏文件。有关此命令的更多信息，请检查此<a href="https://ss64.com/bash/ls.html" target="_blank" rel="external">链接</a>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls option</div></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ ls -al</div><div class="line">rwxr-xr-x   33 adnan  staff    1122 Mar 27 18:44 .</div><div class="line">drwxrwxrwx  60 adnan  staff    2040 Mar 21 15:06 ..</div><div class="line">-rw-r--r--@  1 adnan  staff   14340 Mar 23 15:05 .DS_Store</div><div class="line">-rw-r--r--   1 adnan  staff     157 Mar 25 18:08 .bumpversion.cfg</div><div class="line">-rw-r--r--   1 adnan  staff    6515 Mar 25 18:08 .config.ini</div><div class="line">-rw-r--r--   1 adnan  staff    5805 Mar 27 18:44 .config.override.ini</div><div class="line">drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git</div><div class="line">-rwxr-xr-x   1 adnan  staff    2702 Mar 25 18:08 .gitignore</div></pre></td></tr></table></figure>
+<h4 id="b-touch"><a href="#b-touch" class="headerlink" title="b. touch"></a>b. <code>touch</code></h4><p>创建或更新您的文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">touch filename</div></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ touch trick.md</div></pre></td></tr></table></figure>
+<h4 id="c-cat"><a href="#c-cat" class="headerlink" title="c. cat"></a>c. <code>cat</code></h4><p>它可以在UNIX或Linux下用于以下目的。</p>
+<ul>
+<li>在屏幕上显示文本文件</li>
+<li>复制文本文件</li>
+<li>合并文本文件</li>
+<li>创建新的文本文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cat filename</div><div class="line">cat file1 file2 </div><div class="line">cat file1 file2 &gt; newcombinedfile</div></pre></td></tr></table></figure>
+<h4 id="d-more"><a href="#d-more" class="headerlink" title="d. more"></a>d. <code>more</code></h4><p>显示文件的第一部分（用空格移动并键入q以退出）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">more filename</div></pre></td></tr></table></figure>
+<h4 id="e-head"><a href="#e-head" class="headerlink" title="e. head"></a>e. <code>head</code></h4><p>输出文件的前10行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">head filename</div></pre></td></tr></table></figure>
+<h4 id="f-tail"><a href="#f-tail" class="headerlink" title="f. tail"></a>f. <code>tail</code></h4><p>输出最后10行文件。用于-f在文件增长时输出附加数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tail filename</div></pre></td></tr></table></figure>
+<h4 id="g-mv"><a href="#g-mv" class="headerlink" title="g. mv"></a>g. <code>mv</code></h4><p>将文件从一个位置移动到另一个位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv filename1 filename2</div></pre></td></tr></table></figure>
+<p><code>filename1</code> 文件的源路径，<code>filename2</code> 是目标路径。</p>
+<h4 id="h-cp"><a href="#h-cp" class="headerlink" title="h. cp"></a>h. <code>cp</code></h4><p>将文件从一个位置复制到另一个位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp filename1 filename2</div></pre></td></tr></table></figure>
+<p><code>filename1</code> 文件的源路径，<code>filename2</code> 是目标路径。</p>
+<h4 id="i-rm"><a href="#i-rm" class="headerlink" title="i. rm"></a>i. <code>rm</code></h4><p>删除文件。在目录上使用此命令会给您显示一个错误： <code>rm: directory: is a directory</code>。 为了删除目录，你必须传递<code>-rf</code>去递归删除目录中的所有内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm filename</div></pre></td></tr></table></figure>
+<h4 id="j-diff"><a href="#j-diff" class="headerlink" title="j. diff"></a>j. <code>diff</code></h4><p>比较文件，并列出他们的差异。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diff filename1 filename2</div></pre></td></tr></table></figure>
+<h4 id="k-chmod"><a href="#k-chmod" class="headerlink" title="k. chmod"></a>k. <code>chmod</code></h4><p>让您更改文件的读取，写入和执行权限。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod -options filename</div></pre></td></tr></table></figure>
+<h4 id="l-gzip"><a href="#l-gzip" class="headerlink" title="l. gzip"></a>l. <code>gzip</code></h4><p>压缩文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gzip filename</div></pre></td></tr></table></figure>
+<h4 id="m-gunzip"><a href="#m-gunzip" class="headerlink" title="m. gunzip"></a>m. <code>gunzip</code></h4><p>解压缩gzip压缩的文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gunzip filename</div></pre></td></tr></table></figure>
+<h4 id="n-gzcat"><a href="#n-gzcat" class="headerlink" title="n. gzcat"></a>n. <code>gzcat</code></h4><p>让你查看gzip压缩文件，而不需要gunzip它。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gzcat filename</div></pre></td></tr></table></figure>
+<h4 id="o-lpr"><a href="#o-lpr" class="headerlink" title="o. lpr"></a>o. <code>lpr</code></h4><p>打印文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lpr filename</div></pre></td></tr></table></figure>
+<h4 id="p-lpq"><a href="#p-lpq" class="headerlink" title="p. lpq"></a>p. <code>lpq</code></h4><p>查看打印机队列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lpq</div></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ lpq</div><div class="line">Rank    Owner   Job     File(s)                         Total Size</div><div class="line">active  adnanad 59      demo                            399360 bytes</div><div class="line">1st     adnanad 60      (stdin)                         0 bytes</div></pre></td></tr></table></figure>
+<h4 id="q-lprm"><a href="#q-lprm" class="headerlink" title="q. lprm"></a>q. <code>lprm</code></h4><p>从打印队列移除某些内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lprm jobnumber</div></pre></td></tr></table></figure>
+<h3 id="1-2-Text-Operations"><a href="#1-2-Text-Operations" class="headerlink" title="1.2. Text Operations"></a>1.2. Text Operations</h3><table>
+<thead>
+<tr>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#a.-awk" target="_blank" rel="external">awk</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#b.-grep" target="_blank" rel="external">grep</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#c.-wc" target="_blank" rel="external">wc</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#d.-sed" target="_blank" rel="external">sed</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#e.-sort" target="_blank" rel="external">sort</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#f.-uniq" target="_blank" rel="external">uniq</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#g.-cut" target="_blank" rel="external">cut</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#h.-echo" target="_blank" rel="external">echo</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#i.-fmt" target="_blank" rel="external">fmt</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#j.-tr" target="_blank" rel="external">tr</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#k.-nl" target="_blank" rel="external">nl</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#l.-egrep" target="_blank" rel="external">egrep</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#m.-fgrep" target="_blank" rel="external">fgrep</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="a-awk"><a href="#a-awk" class="headerlink" title="a. awk"></a>a. <code>awk</code></h4><p>awk是处理文本文件最有用的命令。它一行一行地在整个文件上运行。默认情况下，它使用空格分隔字段。awk命令最常用的语法是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">awk &apos;/search_pattern/ &#123; action_to_take_if_pattern_matches; &#125;&apos; file_to_parse</div></pre></td></tr></table></figure>
+<p>让我们采取以下文件 <code>/etc/passwd</code>。以下是此文件包含的示例数据：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">root:x:0:0:root:/root:/usr/bin/zsh</div><div class="line">daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin</div><div class="line">bin:x:2:2:bin:/bin:/usr/sbin/nologin</div><div class="line">sys:x:3:3:sys:/dev:/usr/sbin/nologin</div><div class="line">sync:x:4:65534:sync:/bin:/bin/sync</div></pre></td></tr></table></figure>
+<p>所以现在让我们从这个文件只获取用户名。 <code>-F</code> 指定在我们要基于哪个分隔字段。在我们的例子中 <code>:</code> 。<code>{ print $1 }</code> 意味着打印出第一个匹配字段。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">awk -F&apos;:&apos; &apos;&#123; print $1 &#125;&apos; /etc/passwd</div></pre></td></tr></table></figure>
+<p>运行上述命令后，您将获得以下输出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">root</div><div class="line">daemon</div><div class="line">bin</div><div class="line">sys</div><div class="line">sync</div></pre></td></tr></table></figure>
+<p>有关如何使用<code>awk</code>的更多细节，请查看以下<a href="https://www.cyberciti.biz/faq/bash-scripting-using-awk" target="_blank" rel="external">链接</a>。</p>
+<h4 id="b-grep"><a href="#b-grep" class="headerlink" title="b. grep"></a>b. <code>grep</code></h4><p>查找文件内的文本。您可以使用grep搜索与一个或多个正则表达式匹配的文本行，并仅输出匹配的行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep pattern filename</div></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ grep admin /etc/passwd</div><div class="line">_kadmin_admin:*:218:-2:Kerberos Admin Service:/var/empty:/usr/bin/false</div><div class="line">_kadmin_changepw:*:219:-2:Kerberos Change Password Service:/var/empty:/usr/bin/false</div><div class="line">_krb_kadmin:*:231:-2:Open Directory Kerberos Admin Service:/var/empty:/usr/bin/false</div></pre></td></tr></table></figure>
+<p>您还可以通过使用<code>-i</code>选项强制grep忽略单词大小写。<code>-r</code>可用于搜索指定目录下的所有文件，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ grep -r admin /etc/</div></pre></td></tr></table></figure>
+<p><code>-w</code> 只搜索单词。有关<code>grep</code>详细信息，请查看以下<a href="https://www.cyberciti.biz/faq/grep-in-bash" target="_blank" rel="external">链接</a>。</p>
+<h4 id="c-wc"><a href="#c-wc" class="headerlink" title="c. wc"></a>c. <code>wc</code></h4><p>告诉你一个文件中有多少行，多少单词和多少字符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wc filename</div></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ wc demo.txt</div><div class="line">7459   15915  398400 demo.txt</div></pre></td></tr></table></figure>
+<p><code>7459</code> 是行数, <code>15915</code> 是单词数， <code>398400</code> 是字符数.</p>
+<h4 id="d-sed"><a href="#d-sed" class="headerlink" title="d. sed"></a>d. <code>sed</code></h4><p>用于过滤和转换文本的流编辑器。</p>
+<p><em>example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello This is a Test 1 2 3 4</div></pre></td></tr></table></figure>
+<p><em>用连字符替换所有空格</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sed &apos;s/ /-/g&apos; example.txt</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello-This-is-a-Test-1-2-3-4</div></pre></td></tr></table></figure>
+<p><em>使用”d”替换所有的数字</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sed &apos;s/[0-9]/d/g&apos; example.txt</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello This is a Test d d d d</div></pre></td></tr></table></figure>
+<h4 id="e-sort"><a href="#e-sort" class="headerlink" title="e. sort"></a>e. <code>sort</code></h4><p>排序文本文件的行</p>
+<p><em>example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">f</div><div class="line">b</div><div class="line">c</div><div class="line">g</div><div class="line">a</div><div class="line">e</div><div class="line">d</div></pre></td></tr></table></figure>
+<p><em>sort example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sort example.txt</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a</div><div class="line">b</div><div class="line">c</div><div class="line">d</div><div class="line">e</div><div class="line">f</div><div class="line">g</div></pre></td></tr></table></figure>
+<p><em>随机化一个排序的example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sort example.txt | sort -R</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">b</div><div class="line">f</div><div class="line">a</div><div class="line">c</div><div class="line">d</div><div class="line">g</div><div class="line">e</div></pre></td></tr></table></figure>
+<h4 id="f-uniq"><a href="#f-uniq" class="headerlink" title="f. uniq"></a>f. <code>uniq</code></h4><p>报告或省略重复的行</p>
+<p><em>example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">a</div><div class="line">a</div><div class="line">b</div><div class="line">a</div><div class="line">b</div><div class="line">c</div><div class="line">d</div><div class="line">c</div></pre></td></tr></table></figure>
+<p><em>只显示example.txt的唯一行（首先你需要排序，否则看不到重叠）</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sort example.txt | uniq</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a</div><div class="line">b</div><div class="line">c</div><div class="line">d</div></pre></td></tr></table></figure>
+<p><em>显示每行的唯一项，并告诉我找到了多少个实例</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sort example.txt | uniq -c</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">3 a</div><div class="line">2 b</div><div class="line">2 c</div><div class="line">1 d</div></pre></td></tr></table></figure>
+<h4 id="g-cut"><a href="#g-cut" class="headerlink" title="g. cut"></a>g. <code>cut</code></h4><p>从每行文件中删除部分。</p>
+<p><em>example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">red riding hood went to the park to play</div></pre></td></tr></table></figure>
+<p><em>显示第2,7和9栏的空格作为分隔符</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cut -d &quot; &quot; -f2,7,9 example.txt</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">riding park play</div></pre></td></tr></table></figure>
+<h4 id="h-echo"><a href="#h-echo" class="headerlink" title="h. echo"></a>h. <code>echo</code></h4><p>显示一行文字</p>
+<p><em>显示 “Hello World”</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo Hello World</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello World</div></pre></td></tr></table></figure>
+<p><em>用字母之间的换行显示 “Hello World”</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo -ne &quot;Hello\nWorld\n&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Hello</div><div class="line">World</div></pre></td></tr></table></figure>
+<h4 id="i-fmt"><a href="#i-fmt" class="headerlink" title="i. fmt"></a>i. <code>fmt</code></h4><p>简单的最佳文本格式化程序</p>
+<p><em>example: example.txt (1 line)</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div></pre></td></tr></table></figure>
+<p><em>将example.txt的行输出为20个字符的宽度</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat example.txt | fmt -w 20</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">Lorem ipsum</div><div class="line">dolor sit amet,</div><div class="line">consetetur</div><div class="line">sadipscing elitr,</div><div class="line">sed diam nonumy</div><div class="line">eirmod tempor</div><div class="line">invidunt ut labore</div><div class="line">et dolore magna</div><div class="line">aliquyam erat, sed</div><div class="line">diam voluptua. At</div><div class="line">vero eos et</div><div class="line">accusam et justo</div><div class="line">duo dolores et ea</div><div class="line">rebum. Stet clita</div><div class="line">kasd gubergren,</div><div class="line">no sea takimata</div><div class="line">sanctus est Lorem</div><div class="line">ipsum dolor sit</div><div class="line">amet.</div></pre></td></tr></table></figure>
+<h4 id="j-tr"><a href="#j-tr" class="headerlink" title="j. tr"></a>j. <code>tr</code></h4><p>翻译或删除字符</p>
+<p><em>example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello World Foo Bar Baz!</div></pre></td></tr></table></figure>
+<p><em>把所有小写字母变成为大写</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat example.txt | tr &apos;a-z&apos; &apos;A-Z&apos;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">HELLO WORLD FOO BAR BAZ!</div></pre></td></tr></table></figure>
+<p><em>把所有的空格变成换行符</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat example.txt | tr &apos; &apos; &apos;\n&apos;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Hello</div><div class="line">World</div><div class="line">Foo</div><div class="line">Bar</div><div class="line">Baz!</div></pre></td></tr></table></figure>
+<h4 id="k-nl"><a href="#k-nl" class="headerlink" title="k. nl"></a>k. <code>nl</code></h4><p>显示文件的行数</p>
+<p><em>example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">Lorem ipsum</div><div class="line">dolor sit amet,</div><div class="line">consetetur</div><div class="line">sadipscing elitr,</div><div class="line">sed diam nonumy</div><div class="line">eirmod tempor</div><div class="line">invidunt ut labore</div><div class="line">et dolore magna</div><div class="line">aliquyam erat, sed</div><div class="line">diam voluptua. At</div><div class="line">vero eos et</div><div class="line">accusam et justo</div><div class="line">duo dolores et ea</div><div class="line">rebum. Stet clita</div><div class="line">kasd gubergren,</div><div class="line">no sea takimata</div><div class="line">sanctus est Lorem</div><div class="line">ipsum dolor sit</div><div class="line">amet.</div></pre></td></tr></table></figure>
+<p><em>带行号显示 example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nl -s&quot;. &quot; example.txt</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"> 1. Lorem ipsum</div><div class="line"> 2. dolor sit amet,</div><div class="line"> 3. consetetur</div><div class="line"> 4. sadipscing elitr,</div><div class="line"> 5. sed diam nonumy</div><div class="line"> 6. eirmod tempor</div><div class="line"> 7. invidunt ut labore</div><div class="line"> 8. et dolore magna</div><div class="line"> 9. aliquyam erat, sed</div><div class="line">10. diam voluptua. At</div><div class="line">11. vero eos et</div><div class="line">12. accusam et justo</div><div class="line">13. duo dolores et ea</div><div class="line">14. rebum. Stet clita</div><div class="line">15. kasd gubergren,</div><div class="line">16. no sea takimata</div><div class="line">17. sanctus est Lorem</div><div class="line">18. ipsum dolor sit</div><div class="line">19. amet.</div></pre></td></tr></table></figure>
+<h4 id="l-egrep"><a href="#l-egrep" class="headerlink" title="l. egrep"></a>l. <code>egrep</code></h4><p>打印匹配模式的行 - 扩展表达式（别名为：’grep -E’）</p>
+<p><em>example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">Lorem ipsum</div><div class="line">dolor sit amet, </div><div class="line">consetetur</div><div class="line">sadipscing elitr,</div><div class="line">sed diam nonumy</div><div class="line">eirmod tempor</div><div class="line">invidunt ut labore</div><div class="line">et dolore magna</div><div class="line">aliquyam erat, sed</div><div class="line">diam voluptua. At</div><div class="line">vero eos et</div><div class="line">accusam et justo</div><div class="line">duo dolores et ea</div><div class="line">rebum. Stet clita</div><div class="line">kasd gubergren,</div><div class="line">no sea takimata</div><div class="line">sanctus est Lorem</div><div class="line">ipsum dolor sit</div><div class="line">amet.</div></pre></td></tr></table></figure>
+<p><em>在其中显示“Lorem”或“dolor”的行</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">egrep &apos;(Lorem|dolor)&apos; example.txt</div><div class="line">or</div><div class="line">grep -E &apos;(Lorem|dolor)&apos; example.txt</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Lorem ipsum</div><div class="line">dolor sit amet,</div><div class="line">et dolore magna</div><div class="line">duo dolores et ea</div><div class="line">sanctus est Lorem</div><div class="line">ipsum dolor sit</div></pre></td></tr></table></figure>
+<h4 id="m-fgrep"><a href="#m-fgrep" class="headerlink" title="m. fgrep"></a>m. <code>fgrep</code></h4><p>打印匹配模式到的行 - FIXED模式匹配（别名为：’grep -F’）<br><em>example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">Lorem ipsum</div><div class="line">dolor sit amet,</div><div class="line">consetetur</div><div class="line">sadipscing elitr,</div><div class="line">sed diam nonumy</div><div class="line">eirmod tempor</div><div class="line">foo (Lorem|dolor) </div><div class="line">invidunt ut labore</div><div class="line">et dolore magna</div><div class="line">aliquyam erat, sed</div><div class="line">diam voluptua. At</div><div class="line">vero eos et</div><div class="line">accusam et justo</div><div class="line">duo dolores et ea</div><div class="line">rebum. Stet clita</div><div class="line">kasd gubergren,</div><div class="line">no sea takimata</div><div class="line">sanctus est Lorem</div><div class="line">ipsum dolor sit</div><div class="line">amet.</div></pre></td></tr></table></figure>
+<p><em>在example.txt中找到具体的字符串’（Lorem | doloar）’</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fgrep &apos;(Lorem|dolor)&apos; example.txt</div><div class="line">or</div><div class="line">grep -F &apos;(Lorem|dolor)&apos; example.txt</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">foo (Lorem|dolor)</div></pre></td></tr></table></figure>
+<h3 id="1-3-Directory-Operations"><a href="#1-3-Directory-Operations" class="headerlink" title="1.3. Directory Operations"></a>1.3. Directory Operations</h3><table>
+<thead>
+<tr>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#a.-mkdir" target="_blank" rel="external">mkdir</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#b.-cd" target="_blank" rel="external">cd</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#c.-pwd" target="_blank" rel="external">pwd</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="a-mkdir"><a href="#a-mkdir" class="headerlink" title="a. mkdir"></a>a. <code>mkdir</code></h4><p>生成一个新的目录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir dirname</div></pre></td></tr></table></figure>
+<h4 id="b-cd"><a href="#b-cd" class="headerlink" title="b. cd"></a>b. <code>cd</code></h4><p>执行这个，从一个目录转移到另外一个目录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cd</div></pre></td></tr></table></figure>
+<p>将你移动到主目录。此命令接受可选的<code>dirname</code>，将你移动到该目录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd dirname</div></pre></td></tr></table></figure>
+<h4 id="c-pwd"><a href="#c-pwd" class="headerlink" title="c. pwd"></a>c. <code>pwd</code></h4><p>告诉你你目前所在的目录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pwd</div></pre></td></tr></table></figure>
+<h3 id="1-4-SSH-System-Info-amp-Network-Operations"><a href="#1-4-SSH-System-Info-amp-Network-Operations" class="headerlink" title="1.4. SSH, System Info &amp; Network Operations"></a>1.4. SSH, System Info &amp; Network Operations</h3><table>
+<thead>
+<tr>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#a.-ssh" target="_blank" rel="external">ssh</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#b.-whoami" target="_blank" rel="external">whoami</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#c.-passwd" target="_blank" rel="external">passwd</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#d.-quota" target="_blank" rel="external">quota</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#e.-date" target="_blank" rel="external">date</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#f.-cal" target="_blank" rel="external">cal</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#g.-uptime" target="_blank" rel="external">uptime</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#h.-w" target="_blank" rel="external">w</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#i.-finger" target="_blank" rel="external">finger</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#j.-uname" target="_blank" rel="external">uname</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#k.-man" target="_blank" rel="external">man</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#l.-df" target="_blank" rel="external">df</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#m.-du" target="_blank" rel="external">du</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#n.-last" target="_blank" rel="external">last</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#o.-ps" target="_blank" rel="external">ps</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#p.-kill" target="_blank" rel="external">kill</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#q.-killall" target="_blank" rel="external">killall</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#r.-top" target="_blank" rel="external">top</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#s.-bg" target="_blank" rel="external">bg</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#t.-fg" target="_blank" rel="external">fg</a></td>
+</tr>
+<tr>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#u.-ping" target="_blank" rel="external">ping</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#v.-whois" target="_blank" rel="external">whois</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#w.-dig" target="_blank" rel="external">dig</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#x.-wget" target="_blank" rel="external">wget</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#y.-scp" target="_blank" rel="external">scp</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="a-ssh"><a href="#a-ssh" class="headerlink" title="a. ssh"></a>a. <code>ssh</code></h4><p>ssh (SSH client) 是一个用来在登录到远程机器并执行的命令的程序。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh user@host</div></pre></td></tr></table></figure>
+<p>此命令还接受<code>-p</code>可用于连接到特定端口的选项。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -p port user@host</div></pre></td></tr></table></figure>
+<h4 id="b-whoami"><a href="#b-whoami" class="headerlink" title="b. whoami"></a>b. <code>whoami</code></h4><p>返回当前登录用户名。</p>
+<h4 id="c-passwd"><a href="#c-passwd" class="headerlink" title="c. passwd"></a>c. <code>passwd</code></h4><p>允许当前登录的用户更改其密码。</p>
+<h4 id="d-quota"><a href="#d-quota" class="headerlink" title="d. quota"></a>d. <code>quota</code></h4><p>显示您的磁盘配额。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">quota -v</div></pre></td></tr></table></figure>
+<h4 id="e-date"><a href="#e-date" class="headerlink" title="e. date"></a>e. <code>date</code></h4><p>显示当前日期和时间。</p>
+<h4 id="f-cal"><a href="#f-cal" class="headerlink" title="f. cal"></a>f. <code>cal</code></h4><p>显示月份的日历。</p>
+<h4 id="g-uptime"><a href="#g-uptime" class="headerlink" title="g. uptime"></a>g. <code>uptime</code></h4><p>显示当前的正常运行时间。</p>
+<h4 id="h-w"><a href="#h-w" class="headerlink" title="h. w"></a>h. <code>w</code></h4><p>显示谁在线</p>
+<h4 id="i-finger"><a href="#i-finger" class="headerlink" title="i. finger"></a>i. <code>finger</code></h4><p>Displays information about user.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">finger username</div></pre></td></tr></table></figure>
+<h4 id="j-uname"><a href="#j-uname" class="headerlink" title="j. uname"></a>j. <code>uname</code></h4><p>显示内核信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uname -a</div></pre></td></tr></table></figure>
+<h4 id="k-man"><a href="#k-man" class="headerlink" title="k. man"></a>k. <code>man</code></h4><p>显示指定命令的手册。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">man command</div></pre></td></tr></table></figure>
+<h4 id="l-df"><a href="#l-df" class="headerlink" title="l. df"></a>l. <code>df</code></h4><p>显示磁盘使用情况。</p>
+<h4 id="m-du"><a href="#m-du" class="headerlink" title="m. du"></a>m. <code>du</code></h4><p>显示文件名中文件和目录的磁盘使用情况（du -s只给出一个总数）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">du filename</div></pre></td></tr></table></figure>
+<h4 id="n-last"><a href="#n-last" class="headerlink" title="n. last"></a>n. <code>last</code></h4><p>列出您最后登录的指定用户。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">last yourUsername</div></pre></td></tr></table></figure>
+<h4 id="o-ps"><a href="#o-ps" class="headerlink" title="o. ps"></a>o. <code>ps</code></h4><p>列出您的进程。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps -u yourusername</div></pre></td></tr></table></figure>
+<h4 id="p-kill"><a href="#p-kill" class="headerlink" title="p. kill"></a>p. <code>kill</code></h4><p>使用您所提供的ID杀死（结束）进程。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kill PID</div></pre></td></tr></table></figure>
+<h4 id="q-killall"><a href="#q-killall" class="headerlink" title="q. killall"></a>q. <code>killall</code></h4><p>用名称杀死所有进程。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">killall processname</div></pre></td></tr></table></figure>
+<h4 id="r-top"><a href="#r-top" class="headerlink" title="r. top"></a>r. <code>top</code></h4><p>显示当前活动的进程。</p>
+<h4 id="s-bg"><a href="#s-bg" class="headerlink" title="s. bg"></a>s. <code>bg</code></h4><p>列出停止的或后台工作的Job; 恢复在后台停止的Job。</p>
+<h4 id="t-fg"><a href="#t-fg" class="headerlink" title="t. fg"></a>t. <code>fg</code></h4><p>前台化最近的Job。<br>Brings the most recent job in the foreground.</p>
+<h4 id="u-ping"><a href="#u-ping" class="headerlink" title="u. ping"></a>u. <code>ping</code></h4><p>Pings主机并输出结果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ping host</div></pre></td></tr></table></figure>
+<h4 id="v-whois"><a href="#v-whois" class="headerlink" title="v. whois"></a>v. <code>whois</code></h4><p>获取域的whois信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">whois domain</div></pre></td></tr></table></figure>
+<h4 id="w-dig"><a href="#w-dig" class="headerlink" title="w. dig"></a>w. <code>dig</code></h4><p>获取域的DNS信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dig domain</div></pre></td></tr></table></figure>
+<h4 id="x-wget"><a href="#x-wget" class="headerlink" title="x. wget"></a>x. <code>wget</code></h4><p>下载文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget file</div></pre></td></tr></table></figure>
+<h4 id="y-scp"><a href="#y-scp" class="headerlink" title="y. scp"></a>y. <code>scp</code></h4><p>在本地主机和远程主机之间或两台远程主机之间传输文件。</p>
+<p><em>从本地主机复制到远程主机</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp source_file user@host:directory/target_file</div></pre></td></tr></table></figure>
+<p><em>从远程主机复制到本地主机</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scp user@host:directory/source_file target_file</div><div class="line">scp -r user@host:directory/source_folder farget_folder</div></pre></td></tr></table></figure>
+<p>此命令还接受<code>-P</code>选项可用于连接到特定的端口。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -P port user@host:directory/source_file target_file</div></pre></td></tr></table></figure>
+<h2 id="2-Basic-Shell-Programming"><a href="#2-Basic-Shell-Programming" class="headerlink" title="2. Basic Shell Programming"></a>2. Basic Shell Programming</h2><p>在bash中你将编写第一行脚本文件，被叫做<code>shebang</code>。任何脚本中的这一行来确定脚本的执行能力，如独立的可执行文件，而不是在终端中预先键入sh，bash，python，php等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div></pre></td></tr></table></figure>
+<h3 id="2-1-Variables"><a href="#2-1-Variables" class="headerlink" title="2.1. Variables"></a>2.1. Variables</h3><p>在bash中创建变量与其他语言类似。没有数据类型。bash中的变量可以包含数字，字符，字符串等。您无需声明变量，只需为其引用分配一个值即可创建它。</p>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">str=&quot;hello world&quot;</div></pre></td></tr></table></figure>
+<p>上面的一行创建一个变量str并给它赋值“hello world”。通过<code>$</code>放在变量名的开头来检索变量的值。</p>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo $str   # hello world</div></pre></td></tr></table></figure>
+<p>像其他语言一样，bash也有数组。数组是包含多个值的变量。数组的大小没有最大限制。bash中的数组为零。第一个元素被索引为元素0.在bash中创建数组有几种方法。以下给出了哪些。</p>
+<p>Examples:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">array[0] = val</div><div class="line">array[1] = val</div><div class="line">array[2] = val</div><div class="line">array=([2]=val [0]=val [1]=val)</div><div class="line">array(val val val)</div></pre></td></tr></table></figure>
+<p>要在特定索引处显示值，请使用以下语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$&#123;array[i]&#125;     # where i is the index</div></pre></td></tr></table></figure>
+<p>如果没有提供索引，则假定为数组元素0。要了解数组中有多少值，请使用以下语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$&#123;#array[@]&#125;</div></pre></td></tr></table></figure>
+<p>Bash也支持三元条件。下面是一些例子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$&#123;varname:-word&#125;    # 如果varname存在且不为null，则返回其值; 否则返回word</div><div class="line">$&#123;varname:=word&#125;    # 如果varname存在且不为null，则返回其值;否则设置它，然后返回其值</div><div class="line">$&#123;varname:+word&#125;    # 如果varname存在并且不为null，返回word; 否则返回null </div><div class="line">$&#123;varname:offset:length&#125;    # 执行子字符串扩展。它返回$ varname的子字符串，从offset开始，最多为length的字符</div></pre></td></tr></table></figure>
+<h3 id="2-2-String-Substitution"><a href="#2-2-String-Substitution" class="headerlink" title="2.2 String Substitution"></a>2.2 String Substitution</h3><p>检查一些关于如何操作字符串的语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$&#123;variable#pattern&#125;         # if the pattern matches the beginning of the variable&apos;s value, delete the shortest part that matches and return the rest</div><div class="line">$&#123;variable##pattern&#125;        # if the pattern matches the beginning of the variable&apos;s value, delete the longest part that matches and return the rest</div><div class="line">$&#123;variable%pattern&#125;         # if the pattern matches the end of the variable&apos;s value, delete the shortest part that matches and return the rest</div><div class="line">$&#123;variable%%pattern&#125;        # if the pattern matches the end of the variable&apos;s value, delete the longest part that matches and return the rest</div><div class="line">$&#123;variable/pattern/string&#125;  # the longest match to pattern in variable is replaced by string. Only the first match is replaced</div><div class="line">$&#123;variable//pattern/string&#125; # the longest match to pattern in variable is replaced by string. All matches are replaced</div><div class="line">$&#123;#varname&#125;     # returns the length of the value of the variable as a character string</div></pre></td></tr></table></figure>
+<h3 id="2-3-Functions"><a href="#2-3-Functions" class="headerlink" title="2.3. Functions"></a>2.3. Functions</h3><p>几乎与任何编程语言一样，您可以使用函数以更逻辑的方式对代码段进行分组，或者实践递归的神圣艺术。声明函数只是编写函数my_func {my_code}的问题。调用一个函数就像调用另一个程序一样，你只需要写上它的名字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">functname() &#123;</div><div class="line">    shell commands</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">function hello &#123;</div><div class="line">   echo world!</div><div class="line">&#125;</div><div class="line">hello</div><div class="line"></div><div class="line">function say &#123;</div><div class="line">    echo $1</div><div class="line">&#125;</div><div class="line">say &quot;hello world!&quot;</div></pre></td></tr></table></figure>
+<p>当您运行上述示例时，该hello函数将输出“world！”。上述两个功能<code>hello</code>和<code>say</code>是相同的。主要区别是功能<code>say</code>。此功能打印其接收到的第一个参数。函数内的参数以与给脚本的参数相同的方式进行处理。</p>
+<h3 id="2-4-Conditionals"><a href="#2-4-Conditionals" class="headerlink" title="2.4. Conditionals"></a>2.4. Conditionals</h3><p>bash中的条件语句与其他编程语言相似。条件有许多形式，如最基本的形式是<code>if</code>表达式<code>then</code>语句，其中语句只有在表达式为真时执行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">if [expression]; then</div><div class="line">    will execute only if expression is true</div><div class="line">else</div><div class="line">    will execute if expression is false</div><div class="line">fi</div></pre></td></tr></table></figure>
+<p>有时，如果条件变得混乱，所以你可以使用相同的条件<code>case statements</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">case expression in</div><div class="line">    pattern1 )</div><div class="line">        statements ;;</div><div class="line">    pattern2 )</div><div class="line">        statements ;;</div><div class="line">    ...</div><div class="line">esac</div></pre></td></tr></table></figure>
+<p>Expression Examples:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">statement1 &amp;&amp; statement2  # 两边的条件都为true</div><div class="line">statement1 || statement2  # 其中一边为true</div><div class="line"></div><div class="line">str1=str2       # str1 匹配 str2</div><div class="line">str1!=str2      # str1 不匹配 str2</div><div class="line">str1&lt;str2       # str1 是否小于 str2</div><div class="line">str1&gt;str2       # str1 是否大于 str2</div><div class="line">-n str1         # str1 不为空(长度大于 0)</div><div class="line">-z str1         # str1 为空(长度为 0)</div><div class="line"></div><div class="line">-a file         # 文件存在 </div><div class="line">-d file         # 文件存在，是一个目录 </div><div class="line">-e file         # 文件存在; 相同的-a </div><div class="line">-f file         # 文件存在，是一个常规文件（即不是目录或其他特殊类型的文件） </div><div class="line">-r file         # 你有读权限 </div><div class="line">-r file         # 文件存在，不为空 </div><div class="line">-w file         # 你有写权限 </div><div class="line">-x file         # 你有文件的执行权限</div><div class="line"></div><div class="line">file1 -nt file2     # file1 is newer than file2</div><div class="line">file1 -ot file2     # file1 is older than file2</div><div class="line"></div><div class="line">-lt     # 小于 </div><div class="line">-le     # 小于或等于 </div><div class="line">-eq     # 等于</div><div class="line">-ge     # 大于或等于 </div><div class="line">-gt     # 大于</div><div class="line">-ne     # 不等于</div></pre></td></tr></table></figure>
+<h3 id="2-5-Loops"><a href="#2-5-Loops" class="headerlink" title="2.5. Loops"></a>2.5. Loops</h3><p>bash 中有三种不同类型的循环。 <code>for</code>, <code>while</code> 和 <code>until</code>.</p>
+<p><code>for</code> 语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">for x := 1 to 10 do</div><div class="line">begin</div><div class="line">  statements</div><div class="line">end</div><div class="line"></div><div class="line">for name [in list]</div><div class="line">do</div><div class="line">  statements that can use $name</div><div class="line">done</div><div class="line"></div><div class="line">for (( initialisation ; ending condition ; update ))</div><div class="line">do</div><div class="line">  statements...</div><div class="line">done</div></pre></td></tr></table></figure>
+<p><code>while</code> 语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">while condition; do</div><div class="line">  statements</div><div class="line">done</div></pre></td></tr></table></figure>
+<p><code>until</code> 语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">until condition; do</div><div class="line">  statements</div><div class="line">done</div></pre></td></tr></table></figure>
+<h2 id="3-Tricks"><a href="#3-Tricks" class="headerlink" title="3. Tricks"></a>3. Tricks</h2><h4 id="设置一个别名"><a href="#设置一个别名" class="headerlink" title="设置一个别名"></a>设置一个别名</h4><p><code>bash_profile</code> 可以通过运行后面的命令打开。 <code>nano ~/.bash_profile</code></p>
+<blockquote>
+<p>alias dockerlogin=’ssh <a href="mailto:www-data@adnan.local" target="_blank" rel="external">www-data@adnan.local</a> -p2222’ # add your alias in .bash_profile</p>
+</blockquote>
+<h4 id="快速去特定的目录"><a href="#快速去特定的目录" class="headerlink" title="快速去特定的目录"></a>快速去特定的目录</h4><p>nano ~/.bashrc</p>
+<blockquote>
+<p>export hotellogs=”/workspace/hotel-api/storage/logs”</p>
+</blockquote>
+<p>source ~/.bashrc<br>cd hotellogs</p>
+<h2 id="4-Debugging"><a href="#4-Debugging" class="headerlink" title="4. Debugging"></a>4. Debugging</h2><p>您可以通过传递不同的选项来轻松地调试bash脚本bash。例如-n，不会运行命令并仅检查语法错误。-vecho命令在运行它们之前。-x命令行处理后的echo命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">bash -n scriptname</div><div class="line">bash -v scriptname</div><div class="line">bash -x scriptname</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2017/12/12/linux-bash/" class="article-date">
+  <time datetime="2017-12-12T04:20:12.000Z" itemprop="datePublished">2017-12-12</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2017/12/07/influxdb/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">influxdb学习</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
