@@ -6,18 +6,54 @@
   <title>docker-registry私有库 | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="jenkins推送镜像到私有库
-docker官网私有库文档">
+docker官网私有库文档
+
+修改机器IP映射
+
+然后修改/ect/hosts文件
+vi /ect/hosts
+直接在后面加上IP 和域地址(主机和客户端都加)
+ 1192.168.1.111 registry.com
+
+创建证书
+
+由于私服需要使用https所以，需要创建证书。
+12openssl req -newkey rsa:4096 -nodes -sha2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker-registry私有库">
 <meta property="og:url" content="http://hujao.com/2017/12/13/docker-registry/index.html">
 <meta property="og:site_name" content="Ace'pages">
 <meta property="og:description" content="jenkins推送镜像到私有库
-docker官网私有库文档">
-<meta property="og:updated_time" content="2017-12-13T08:41:58.000Z">
+docker官网私有库文档
+
+修改机器IP映射
+
+然后修改/ect/hosts文件
+vi /ect/hosts
+直接在后面加上IP 和域地址(主机和客户端都加)
+ 1192.168.1.111 registry.com
+
+创建证书
+
+由于私服需要使用https所以，需要创建证书。
+12openssl req -newkey rsa:4096 -nodes -sha2">
+<meta property="og:updated_time" content="2017-12-15T04:34:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker-registry私有库">
 <meta name="twitter:description" content="jenkins推送镜像到私有库
-docker官网私有库文档">
+docker官网私有库文档
+
+修改机器IP映射
+
+然后修改/ect/hosts文件
+vi /ect/hosts
+直接在后面加上IP 和域地址(主机和客户端都加)
+ 1192.168.1.111 registry.com
+
+创建证书
+
+由于私服需要使用https所以，需要创建证书。
+12openssl req -newkey rsa:4096 -nodes -sha2">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
@@ -71,6 +107,28 @@ docker官网私有库文档">
       
         <p><a href="https://segmentfault.com/a/1190000008680930" target="_blank" rel="external">jenkins推送镜像到私有库</a></p>
 <p><a href="https://docs.docker.com/registry/" target="_blank" rel="external">docker官网私有库文档</a></p>
+<ol>
+<li>修改机器IP映射</li>
+</ol>
+<p>然后修改/ect/hosts文件</p>
+<p>vi /ect/hosts</p>
+<p>直接在后面加上IP 和域地址(主机和客户端都加)</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">192.168.1.111 registry.com</div></pre></td></tr></table></figure>
+<ol>
+<li>创建证书</li>
+</ol>
+<p>由于私服需要使用https所以，需要创建证书。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">openssl req -newkey rsa:4096 -nodes -sha256 -keyout registry.key -x509\</div><div class="line">-day 365 -out registy.crt</div></pre></td></tr></table></figure>
+<p> 将证书拷贝到docker环境中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir -p /etc/docker/certs.d/registry.com</div><div class="line">cp ./registry.crt /etc/docker/certs.d/registry.com/</div></pre></td></tr></table></figure>
+<ol>
+<li>启动私服容器实例：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">docker run -d \</div><div class="line">--restart=always \</div><div class="line">-p 443:443 \</div><div class="line">-v pwd/certs:/certs \</div><div class="line">--name registry \</div><div class="line">-v /opt/docker-registry/:/var/lib/registry \</div><div class="line">-e REGISTRY_HTTP_ADDR=0.0.0.0:443 \</div><div class="line">-e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/registry.crt \</div><div class="line">-e REGISTRY_HTTP_TLS_KEY=/certs/registry.private.key \</div><div class="line">registry:2</div></pre></td></tr></table></figure>
+<p>对于其他远程客户端，可以通过拷贝证书方式来访问</p>
+<p>远端客户端的IP映射同上一样</p>
+<p>将私服的证书拷贝到本地 /etc/docker/certs.d/registry.com目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp root@registry.com:/etc/docker/certs.d/registry.com/registry.crt /etc/docker/certs.d/registry.com/</div></pre></td></tr></table></figure>
 
       
     </div>
