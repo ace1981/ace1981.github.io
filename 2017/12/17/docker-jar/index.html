@@ -6,24 +6,33 @@
   <title>docker构建可执行jar包镜像 | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="scp复制到远程服务器
+
 1scp ~/docker/nettyserver.jar root@192.168.77.10:~/netty/
+
 vim创建Dockerfile
-123456FROM java:8COPY ./nettyserver.jar app.jarRUN bash -c &apos;touch /app.jar&apos;#容器运行时监听的端口EXPOSE  2066ENTRYPOINT [&quot;jav">
+
+123456FROM java:8COPY ./nettyserver.jar app.jarRUN bash -c &apos;touch /app.jar&apos;#容器运行时监听的端口EXPOSE  2066ENTRYPOINT [">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker构建可执行jar包镜像">
 <meta property="og:url" content="http://hujao.com/2017/12/17/docker-jar/index.html">
 <meta property="og:site_name" content="Ace'pages">
 <meta property="og:description" content="scp复制到远程服务器
+
 1scp ~/docker/nettyserver.jar root@192.168.77.10:~/netty/
+
 vim创建Dockerfile
-123456FROM java:8COPY ./nettyserver.jar app.jarRUN bash -c &apos;touch /app.jar&apos;#容器运行时监听的端口EXPOSE  2066ENTRYPOINT [&quot;jav">
-<meta property="og:updated_time" content="2017-12-17T10:07:57.000Z">
+
+123456FROM java:8COPY ./nettyserver.jar app.jarRUN bash -c &apos;touch /app.jar&apos;#容器运行时监听的端口EXPOSE  2066ENTRYPOINT [">
+<meta property="og:updated_time" content="2017-12-18T02:04:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker构建可执行jar包镜像">
 <meta name="twitter:description" content="scp复制到远程服务器
+
 1scp ~/docker/nettyserver.jar root@192.168.77.10:~/netty/
+
 vim创建Dockerfile
-123456FROM java:8COPY ./nettyserver.jar app.jarRUN bash -c &apos;touch /app.jar&apos;#容器运行时监听的端口EXPOSE  2066ENTRYPOINT [&quot;jav">
+
+123456FROM java:8COPY ./nettyserver.jar app.jarRUN bash -c &apos;touch /app.jar&apos;#容器运行时监听的端口EXPOSE  2066ENTRYPOINT [">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
@@ -75,13 +84,21 @@ vim创建Dockerfile
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <p>scp复制到远程服务器</p>
+        <ol>
+<li>scp复制到远程服务器</li>
+</ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp ~/docker/nettyserver.jar root@192.168.77.10:~/netty/</div></pre></td></tr></table></figure>
-<p>vim创建Dockerfile</p>
+<ol>
+<li>vim创建Dockerfile</li>
+</ol>
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">FROM</span> java:<span class="number">8</span></div><div class="line"><span class="keyword">COPY</span> ./nettyserver.jar app.jar</div><div class="line"><span class="keyword">RUN</span> bash -c 'touch /app.jar'</div><div class="line"><span class="comment">#容器运行时监听的端口</span></div><div class="line"><span class="keyword">EXPOSE</span>  <span class="number">2066</span></div><div class="line"><span class="keyword">ENTRYPOINT</span> ["java","-jar","/app.jar"]</div></pre></td></tr></table></figure>
-<p>构建镜像</p>
+<ol>
+<li>构建镜像</li>
+</ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker build -t nettyserver .</div></pre></td></tr></table></figure>
-<p>启动容器</p>
+<ol>
+<li>启动容器</li>
+</ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">docker run --name nettyserver -d --restart always \</div><div class="line">-p 2066:2066 \</div><div class="line">nettyserver</div></pre></td></tr></table></figure>
 
       
