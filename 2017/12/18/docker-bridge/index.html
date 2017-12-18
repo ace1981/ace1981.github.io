@@ -5,14 +5,16 @@
   
   <title>docker bridge网络模式 | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原文地址:http://blog.daocloud.io/docker-bridge/
-探索 Docker bridge 的正确姿势，亲测有效！上一回合，小白折腾了 Docker 架构，铁要趁热我开始学习 Docker 容器网络。此刻的心情，是激动的，也是不安的。激动是因为终于要面对 Docker 的第一座大山 ：网络，不安是因为网络问题一直以来都是小白的软肋，那些年我们一起学过的网络知识，如今…">
+  <meta name="description" content="引用原文地址:http://blog.daocloud.io/docker-bridge/
+探索 Docker bridge上一回合，小白折腾了 Docker 架构，铁要趁热我开始学习 Docker 容器网络。此刻的心情，是激动的，也是不安的。激动是因为终于要面对 Docker 的第一座大山 ：网络，不安是因为网络问题一直以来都是小白的软肋，那些年我们一起学过的网络知识，如今……
+硬着头皮翻开《D">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker bridge网络模式">
 <meta property="og:url" content="http://hujao.com/2017/12/18/docker-bridge/index.html">
 <meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="原文地址:http://blog.daocloud.io/docker-bridge/
-探索 Docker bridge 的正确姿势，亲测有效！上一回合，小白折腾了 Docker 架构，铁要趁热我开始学习 Docker 容器网络。此刻的心情，是激动的，也是不安的。激动是因为终于要面对 Docker 的第一座大山 ：网络，不安是因为网络问题一直以来都是小白的软肋，那些年我们一起学过的网络知识，如今…">
+<meta property="og:description" content="引用原文地址:http://blog.daocloud.io/docker-bridge/
+探索 Docker bridge上一回合，小白折腾了 Docker 架构，铁要趁热我开始学习 Docker 容器网络。此刻的心情，是激动的，也是不安的。激动是因为终于要面对 Docker 的第一座大山 ：网络，不安是因为网络问题一直以来都是小白的软肋，那些年我们一起学过的网络知识，如今……
+硬着头皮翻开《D">
 <meta property="og:image" content="http://hujao.com/2017/12/18/docker-bridge/e1.png">
 <meta property="og:image" content="http://hujao.com/2017/12/18/docker-bridge/e3.png">
 <meta property="og:image" content="http://hujao.com/2017/12/18/docker-bridge/e4.png">
@@ -21,11 +23,12 @@
 <meta property="og:image" content="http://hujao.com/2017/12/18/docker-bridge/e7.png">
 <meta property="og:image" content="http://hujao.com/2017/12/18/docker-bridge/e8.png">
 <meta property="og:image" content="http://hujao.com/2017/12/18/docker-bridge/e10.png">
-<meta property="og:updated_time" content="2017-12-18T01:41:13.000Z">
+<meta property="og:updated_time" content="2017-12-18T01:53:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker bridge网络模式">
-<meta name="twitter:description" content="原文地址:http://blog.daocloud.io/docker-bridge/
-探索 Docker bridge 的正确姿势，亲测有效！上一回合，小白折腾了 Docker 架构，铁要趁热我开始学习 Docker 容器网络。此刻的心情，是激动的，也是不安的。激动是因为终于要面对 Docker 的第一座大山 ：网络，不安是因为网络问题一直以来都是小白的软肋，那些年我们一起学过的网络知识，如今…">
+<meta name="twitter:description" content="引用原文地址:http://blog.daocloud.io/docker-bridge/
+探索 Docker bridge上一回合，小白折腾了 Docker 架构，铁要趁热我开始学习 Docker 容器网络。此刻的心情，是激动的，也是不安的。激动是因为终于要面对 Docker 的第一座大山 ：网络，不安是因为网络问题一直以来都是小白的软肋，那些年我们一起学过的网络知识，如今……
+硬着头皮翻开《D">
 <meta name="twitter:image" content="http://hujao.com/2017/12/18/docker-bridge/e1.png">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
@@ -78,8 +81,8 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <p>原文地址:<a href="http://blog.daocloud.io/docker-bridge/" target="_blank" rel="external">http://blog.daocloud.io/docker-bridge/</a></p>
-<h1 id="探索-Docker-bridge-的正确姿势，亲测有效！"><a href="#探索-Docker-bridge-的正确姿势，亲测有效！" class="headerlink" title="探索 Docker bridge 的正确姿势，亲测有效！"></a>探索 Docker bridge 的正确姿势，亲测有效！</h1><p>上一回合，小白折腾了 Docker 架构，铁要趁热我开始学习 Docker 容器网络。此刻的心情，是激动的，也是不安的。激动是因为终于要面对 Docker 的第一座大山 ：<strong>网络</strong>，不安是因为网络问题一直以来都是小白的软肋，那些年我们一起学过的网络知识，如今……</p>
+        <p>引用原文地址:<a href="http://blog.daocloud.io/docker-bridge/" target="_blank" rel="external">http://blog.daocloud.io/docker-bridge/</a></p>
+<h4 id="探索-Docker-bridge"><a href="#探索-Docker-bridge" class="headerlink" title="探索 Docker bridge"></a>探索 Docker bridge</h4><p>上一回合，小白折腾了 Docker 架构，铁要趁热我开始学习 Docker 容器网络。此刻的心情，是激动的，也是不安的。激动是因为终于要面对 Docker 的第一座大山 ：<strong>网络</strong>，不安是因为网络问题一直以来都是小白的软肋，那些年我们一起学过的网络知识，如今……</p>
 <p>硬着头皮翻开《<strong>Docker 进阶与实战</strong>》开始 Docker 网络初探，里面讲述了 Docker 容器网络的好几种模式。其中 “<strong>bridge” 模式</strong>成功的吸引了我的注意。bridge 模式俗称桥接模式，关于它的定义小白早就忘了，但不难理解的是 bridge 的作用，<strong>bridge 可以连接不同的东西。</strong></p>
 <p>早期的二层网络中，bridge 可以连接不同的 LAN 网，如下图所示。当主机 1 发出一个数据包时，LAN 1 的其他主机和网桥 br0 都会收到该数据包。网桥再将数据包从入口端复制到其他端口上（本例中就是另外一个端口）。因此，LAN 2 上的主机也会接收到主机 A 发出的数据包，从而实现不同 LAN 网上所有主机的通信。</p>
 <p><img src="/2017/12/18/docker-bridge/e1.png" alt="e1"></p>
@@ -88,13 +91,13 @@
 <p>依葫芦画瓢，Docker bridge 十有八九是用来连接不同容器，或是连接容器与宿主机的。</p>
 <p>带着疑问，我快速浏览了这个章节，结果是大惊从早到晚失色，书中的介绍比我预想的复杂很多，Docker bridge 模式不仅使用了 <strong>veth pair </strong>技术，还使用了<strong>网络命名空间技术</strong>，更令我吃惊的是，Docker bridge 模式下竟然采用了 <strong>NAT </strong>方式。Docker bridge 和 Linux bridge 二者，初看如出一辙，再看又相去甚远，还真是傻傻分不清楚。没想到我的容器网络学习计划，刚起步便遭遇了滑铁卢。</p>
 <p>没有搞清楚 Docker bridge 与 Linux bridge 的区别前，这书简直没法看了。依小白的经验，云里雾里的时候摸清楚基本概念最有效，先从 Linux bridge 模式的基本工作原理入手，再从 Docker bridge 模式下的 “黑科技” （veth pair、网络命名空间技术、NAT）入手 ，或许能找出点头绪。压抑住内心的愤懑，我翻开了《<strong>深入理解 LINUX 网络技术的内幕</strong>》，找寻这些关键字的足迹。</p>
-<h3 id="Linux-bridge-模式"><a href="#Linux-bridge-模式" class="headerlink" title="Linux bridge 模式"></a>Linux bridge 模式</h3><p>Linux bridge 模式下，Linux Kernel 会创建出一个<strong>虚拟网桥</strong> ，用以实现<strong>主机网络**</strong>接口<strong>与</strong>虚拟网络接口**间的通信。从功能上来看，Linux bridge 像一台虚拟交换机，所有桥接设置的虚拟机分别连接到这个交换机的一个接口上，接口之间可以相互访问且互不干扰，这种连接方式对物理主机而言也是如此。</p>
+<h4 id="Linux-bridge-模式"><a href="#Linux-bridge-模式" class="headerlink" title="Linux bridge 模式"></a>Linux bridge 模式</h4><p>Linux bridge 模式下，Linux Kernel 会创建出一个<strong>虚拟网桥</strong> ，用以实现<strong>主机网络**</strong>接口<strong>与</strong>虚拟网络接口**间的通信。从功能上来看，Linux bridge 像一台虚拟交换机，所有桥接设置的虚拟机分别连接到这个交换机的一个接口上，接口之间可以相互访问且互不干扰，这种连接方式对物理主机而言也是如此。</p>
 <p><img src="/2017/12/18/docker-bridge/e4.png" alt="e4"></p>
 <p>在桥接的作用下，虚拟网桥会把主机网络接口接收到的网络流量转发给虚拟网络接口，于是后者能够接收到路由器发出的 DHCP（动态主机设定协议，用于获取局域网 IP）信息及路由更新。这样的工作流程，同样适用于不同虚拟网络接口间的通信。具体的实现方式如下所示：</p>
 <p><strong>虚拟机与宿主机通信</strong>： 用户可以手动为虚拟机配置IP 地址、子网掩码，该 IP 需要和宿主机 IP 处于同一网段，这样虚拟机才能和宿主机进行通信。</p>
 <p><strong>虚拟机与外界通信</strong>： 如果虚拟机需要联网，还需为它手动配置网关，该网关也要和宿主机网关保持一致。</p>
 <p>除此之外，还有一种较为简单的方法，那就是虚拟机通过 DHCP 自动获取 IP，实现与宿主机或宿主机以外的世界通信，小白亲测有效。</p>
-<h3 id="Docker-bridge-模式"><a href="#Docker-bridge-模式" class="headerlink" title="Docker bridge 模式"></a>Docker bridge 模式</h3><p>大致清楚 Linux bridge 模式后，再来看 Docker bridge 模式，小白也有了信心。再次翻开《 Docker 进阶与实战》，仔细阅读后小白了解到在该 bridge 模式下，Docker Daemon 会创建出一个名为 docker0 的<strong>虚拟网桥</strong> ，用来连接<strong>宿主机</strong>与<strong>容器</strong>，或者连接<strong>不同的容器</strong>，书中的介绍与小白之前的假设也不谋而合。</p>
+<h4 id="Docker-bridge-模式"><a href="#Docker-bridge-模式" class="headerlink" title="Docker bridge 模式"></a>Docker bridge 模式</h4><p>大致清楚 Linux bridge 模式后，再来看 Docker bridge 模式，小白也有了信心。再次翻开《 Docker 进阶与实战》，仔细阅读后小白了解到在该 bridge 模式下，Docker Daemon 会创建出一个名为 docker0 的<strong>虚拟网桥</strong> ，用来连接<strong>宿主机</strong>与<strong>容器</strong>，或者连接<strong>不同的容器</strong>，书中的介绍与小白之前的假设也不谋而合。</p>
 <p>Docker 利用 veth pair [注释1]技术，在宿主机上创建了两个虚拟网络接口 veth0 和 veth1（veth pair 技术的特性可以保证无论哪一个 veth 接收到网络报文，都会无条件地传输给另一方）。</p>
 <p><img src="/2017/12/18/docker-bridge/e5.png" alt="e5"></p>
 <p><strong>容器与宿主机通信</strong> : 在桥接模式下，Docker Daemon 将 veth0 附加到 docker0 网桥上，保证宿主机的报文有能力发往 veth0。再将 veth1 添加到 Docker 容器所属的网络命名空间[注释2]，保证宿主机的网络报文若发往 veth0 可以立即被 veth1 收到。</p>
@@ -117,7 +120,7 @@
 <p>宿主机上的 docker0 网桥发现数据包的目的地址为外界的 IP 和端口，便会将数据包转发给 eth0 ，并从 eth0 发出去。由于存在 SNAT 规则，会将数据包的源地址转换为<strong>宿主机</strong>的 <strong>ip </strong>和<strong>端口</strong>，为 192.168.1.10:24 。</p>
 <p>由于路由器可以识别到宿主机的 ip 地址，所以再将数据包转发给外界，外界接受数据包并作出响应。这时候，在外界看来，这个数据包就是从 192.168.1.10:24 上发出来的，Docker 容器对外是不可见的。</p>
 <p><img src="/2017/12/18/docker-bridge/e10.png" alt="e10"></p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>小白的容器网络学习只是刚刚开了头，竟也能折腾出这么多玩儿意，有 veth pair，有网络命名空间， 还有 NAT 。虽说 docker bridge 模式仅仅是容器网络的冰山一角，后面的学习之路仍然且行且艰辛，但小白也掌握了一些学习经验，那就是面对错综复杂的网络模式，首先需要识其筋骨胜肉，抓住本质含义。小白就是凭着对 bridge 的理解，才展开了一系列大胆的假设，带着问题最终在书中得到求证。Disappointing, but not fatal。</p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>小白的容器网络学习只是刚刚开了头，竟也能折腾出这么多玩儿意，有 veth pair，有网络命名空间， 还有 NAT 。虽说 docker bridge 模式仅仅是容器网络的冰山一角，后面的学习之路仍然且行且艰辛，但小白也掌握了一些学习经验，那就是面对错综复杂的网络模式，首先需要识其筋骨胜肉，抓住本质含义。小白就是凭着对 bridge 的理解，才展开了一系列大胆的假设，带着问题最终在书中得到求证。Disappointing, but not fatal。</p>
 <p>[注释1] veth pair是用于不同network namespace间进行通信的方式，veth pair 将一个 network namespace 数据发往另一个 network namespace 的 veth。</p>
 <p>[注释2] 网络命名空间是用于隔离网络资源（/proc/net、IP 地址、网卡、路由等）。由于一个物理的网络设备最多存放在一个网络命名空间中，所以通过 veth pair 在不同的网络命名空间中创建通道，才能达到通信的目的。</p>
 <p>[注释3] NAT 为网络地址转换（Network Address Translation）的缩写，是一种在 ip 数据包通过路由器或防火墙时重写来源 ip 地址或目的 ip 地址的技术。</p>
