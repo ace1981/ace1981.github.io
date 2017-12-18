@@ -5,16 +5,32 @@
   
   <title>grafana学习 | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="官方文档:http://docs.grafana.org/">
+  <meta name="description" content="官方文档:http://docs.grafana.org/
+摘要: Docker监控之仪表盘数据展示工具Grafana的介绍和安装。Grafana是一个开源的数据展示平台，和Kibnan(ELK中的可视化平台)差不多，不过适配与时间序列数据库中。是由js开发的纯前端展示框架，可以很灵活的定制监控图标，并且支持多个数据源。
+Grafana研究和实践：介绍：
+Grafana 是 Graphite 和">
 <meta property="og:type" content="article">
 <meta property="og:title" content="grafana学习">
 <meta property="og:url" content="http://hujao.com/2017/12/07/grafana/index.html">
 <meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="官方文档:http://docs.grafana.org/">
-<meta property="og:updated_time" content="2017-12-06T19:35:17.000Z">
+<meta property="og:description" content="官方文档:http://docs.grafana.org/
+摘要: Docker监控之仪表盘数据展示工具Grafana的介绍和安装。Grafana是一个开源的数据展示平台，和Kibnan(ELK中的可视化平台)差不多，不过适配与时间序列数据库中。是由js开发的纯前端展示框架，可以很灵活的定制监控图标，并且支持多个数据源。
+Grafana研究和实践：介绍：
+Grafana 是 Graphite 和">
+<meta property="og:image" content="https://static.oschina.net/uploads/space/2016/0925/122046_jJ67_1026229.png">
+<meta property="og:image" content="https://static.oschina.net/uploads/space/2016/0925/122115_Dbne_1026229.png">
+<meta property="og:image" content="https://static.oschina.net/uploads/space/2016/0925/122139_WL2l_1026229.png">
+<meta property="og:image" content="https://static.oschina.net/uploads/space/2016/0925/122217_Nzca_1026229.png">
+<meta property="og:image" content="https://static.oschina.net/uploads/space/2016/0925/122231_zxfZ_1026229.png">
+<meta property="og:image" content="https://static.oschina.net/uploads/space/2016/0925/122251_Gs4f_1026229.png">
+<meta property="og:updated_time" content="2017-12-18T09:08:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="grafana学习">
-<meta name="twitter:description" content="官方文档:http://docs.grafana.org/">
+<meta name="twitter:description" content="官方文档:http://docs.grafana.org/
+摘要: Docker监控之仪表盘数据展示工具Grafana的介绍和安装。Grafana是一个开源的数据展示平台，和Kibnan(ELK中的可视化平台)差不多，不过适配与时间序列数据库中。是由js开发的纯前端展示框架，可以很灵活的定制监控图标，并且支持多个数据源。
+Grafana研究和实践：介绍：
+Grafana 是 Graphite 和">
+<meta name="twitter:image" content="https://static.oschina.net/uploads/space/2016/0925/122046_jJ67_1026229.png">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
@@ -67,6 +83,21 @@
     <div class="article-entry typo" itemprop="articleBody">
       
         <p>官方文档:<a href="http://docs.grafana.org/" target="_blank" rel="external">http://docs.grafana.org/</a></p>
+<p>摘要: Docker监控之仪表盘数据展示工具Grafana的介绍和安装。Grafana是一个开源的数据展示平台，和Kibnan(ELK中的可视化平台)差不多，不过适配与时间序列数据库中。是由js开发的纯前端展示框架，可以很灵活的定制监控图标，并且支持多个数据源。</p>
+<h4 id="Grafana研究和实践："><a href="#Grafana研究和实践：" class="headerlink" title="Grafana研究和实践："></a>Grafana研究和实践：</h4><p>介绍：</p>
+<p>Grafana 是 Graphite 和 InfluxDB 仪表盘和图形编辑器。Grafana 是开源的，功能齐全的度量仪表盘和图形编辑器，支持 Graphite，InfluxDB 和 OpenTSDB。是由javascript开发的纯前端的展示框架。<br>Grafana 主要特性：灵活丰富的图形化选项；可以混合多种风格；支持白天和夜间模式；多个数据源；Graphite 和 InfluxDB 查询编辑器等等。</p>
+<p>下载安装：</p>
+<p>wget <a href="https://grafanarel.s3.amazonaws.com/builds/grafana-3.1.1-1470047149.x86_64.rpm" target="_blank" rel="external">https://grafanarel.s3.amazonaws.com/builds/grafana-3.1.1-1470047149.x86_64.rpm</a> &amp;&amp; rpm -ivh grafana-3.1.1-1470047149.x86_64.rpm<br>grafana由于是一个纯前端的框架，因此不需要什么配置，直接启动后就可以访问了。</p>
+<p>启动：</p>
+<p>/etc/init.d/grafana-server restart<br>grafana默认会开启3000端口，成功启动之后就可以通过<a href="http://ip:3000/" target="_blank" rel="external">http://IP:3000</a> 来访问garfana的界面，之后进行相关的数据源配置以及所需的图标指标配置。</p>
+<p>简单使用：</p>
+<p>首次打开grafana会提示进行用户认证，默认是admin用户，密码也是admin，首先要做的就是先添加数据源： </p>
+<p><img src="https://static.oschina.net/uploads/space/2016/0925/122046_jJ67_1026229.png" alt="img"></p>
+<p><img src="https://static.oschina.net/uploads/space/2016/0925/122115_Dbne_1026229.png" alt="img"><br>进入dashborad并进行创建分组：</p>
+<p><img src="https://static.oschina.net/uploads/space/2016/0925/122139_WL2l_1026229.png" alt="img"><br>进入到一个分组中进行创建绘图：</p>
+<p><img src="https://static.oschina.net/uploads/space/2016/0925/122217_Nzca_1026229.png" alt="img"></p>
+<p><img src="https://static.oschina.net/uploads/space/2016/0925/122231_zxfZ_1026229.png" alt="img"><br>接下来就是按照influxdb的提供的sql语句进行查询你所期望的数据，图漂不漂亮，其实最终就取决你自身sql的水平了。<br>测试效果图如下：</p>
+<p><img src="https://static.oschina.net/uploads/space/2016/0925/122251_Gs4f_1026229.png" alt="img"></p>
 
       
     </div>
