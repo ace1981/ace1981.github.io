@@ -17,7 +17,7 @@ set12#赋值变量set JAVA_HOME=%JAVA_">
 rem12#注释文本rem this is a description
 if12#判断变量if &amp;quot;%srvname%&amp;quot;==&amp;quot;&amp;quot; goto invalidServiceName
 set12#赋值变量set JAVA_HOME=%JAVA_">
-<meta property="og:updated_time" content="2017-12-20T02:53:56.000Z">
+<meta property="og:updated_time" content="2017-12-20T03:18:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编写.bat文件">
 <meta name="twitter:description" content="echo123456#显示文字echo show me the money#显示空行echo.#关闭回显@echo off
@@ -81,7 +81,7 @@ set12#赋值变量set JAVA_HOME=%JAVA_">
 <h5 id="set"><a href="#set" class="headerlink" title="set"></a>set</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#赋值变量</div><div class="line">set JAVA_HOME=%JAVA_HOME%</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#从用户输入给变量赋值</div><div class="line">set /p name=Please input your name:</div><div class="line">echo &quot;%name%&quot;</div></pre></td></tr></table></figure>
 <h5 id="goto"><a href="#goto" class="headerlink" title="goto"></a>goto</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#开始</div><div class="line">:start</div><div class="line"># %1 指bat命令的第一个参数 类推%2 %3 第二 第三个参数</div><div class="line">if %1==&quot;Y&quot; goto end</div><div class="line"># goto跳转控制</div><div class="line">if %1==&quot;N&quot; goto start</div><div class="line">#结束</div><div class="line">:end</div></pre></td></tr></table></figure>
-<h5 id="pause"><a href="#pause" class="headerlink" title="pause"></a>pause</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#命令等待用户按任意键,一般为了不自动关闭窗口</div><div class="line">pause</div></pre></td></tr></table></figure>
+<h5 id="pause"><a href="#pause" class="headerlink" title="pause"></a>pause</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#命令等待用户按任意键,一般为了不自动关闭窗口</div><div class="line">pause</div><div class="line">#隐藏提示的文字,按任意键继续..</div><div class="line">pause&gt;nul</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -112,7 +112,14 @@ set12#赋值变量set JAVA_HOME=%JAVA_">
     
 <nav id="article-nav" class="article-nav">
   
-    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+    <a href="/2017/12/20/overlay-network/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          overlay network
+        
+      </div>
+    </a>
   
   
     <a href="/2017/12/18/telegraf/" id="article-nav-older" class="article-nav-link-wrap older">
