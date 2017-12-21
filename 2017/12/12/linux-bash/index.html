@@ -1,85 +1,83 @@
-
- <!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   
-    <title>linux-bash学习 | Ace&#39;pages</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
-    
-    <meta name="author" content="ace1981">
-    
-    <meta name="description" content="1. Basic Operationsa. export显示所有的环境变量，如果你想获取某个变量的详细信息，使用 echo $VARIABLE_NAME.
+  <title>linux-bash学习 | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. Basic Operationsa. export显示所有的环境变量，如果你想获取某个变量的详细信息，使用 echo $VARIABLE_NAME.
 1export
 Example:
-123456789$ exportSHELL=/bin/zshAWS_HOME=/Users/adnanadn">
-    
-    
-    
-    
-    
-    
-    <link rel="stylesheet" href="/css/style.css">
+123456789$ exportSHELL=/bin/zshAWS_HOME=/Users/adnanadnan/.awsLANG=en_US.UTF-8LC_CTYPE=en_US.UTF-8LESS=-R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux-bash学习">
+<meta property="og:url" content="http://hujao.com/2017/12/12/linux-bash/index.html">
+<meta property="og:site_name" content="Ace'pages">
+<meta property="og:description" content="1. Basic Operationsa. export显示所有的环境变量，如果你想获取某个变量的详细信息，使用 echo $VARIABLE_NAME.
+1export
+Example:
+123456789$ exportSHELL=/bin/zshAWS_HOME=/Users/adnanadnan/.awsLANG=en_US.UTF-8LC_CTYPE=en_US.UTF-8LESS=-R">
+<meta property="og:updated_time" content="2017-12-21T06:02:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux-bash学习">
+<meta name="twitter:description" content="1. Basic Operationsa. export显示所有的环境变量，如果你想获取某个变量的详细信息，使用 echo $VARIABLE_NAME.
+1export
+Example:
+123456789$ exportSHELL=/bin/zshAWS_HOME=/Users/adnanadnan/.awsLANG=en_US.UTF-8LC_CTYPE=en_US.UTF-8LESS=-R">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
 </head>
 
-  <body>
-    <header>
-      <div>
-		
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Ace&#39;pages">Ace&#39;pages</a></h1>
-				<h2 class="blog-motto"></h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/archives">Archives</a></li>
-					
-					<li>
-					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:hujao.com">
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
-</div>
-
-    </header>
-    <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
+  
     
-      <a href="/2017/12/12/linux-bash/" title="linux-bash学习" itemprop="url">linux-bash学习</a>
-  </h1>
-  <p class="article-author">By
+      <body>
     
-      <a href="http://hujao.com" title="ace1981">ace1981</a>
-    </p>
-  <p class="article-time">
-    <time datetime="2017-12-12T04:20:12.000Z" itemprop="datePublished">2017-12-12</time>
-    更新日期:<time datetime="2017-12-21T06:02:29.000Z" itemprop="dateModified">2017-12-21</time>
+  
+      <div id="container" class="container">
+        <article id="post-linux-bash" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
     
-  </p>
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/categories">Categories</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
 </header>
-	<div class="article-content">
-		
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Basic-Operations"><span class="toc-number">1.</span> <span class="toc-text">1. Basic Operations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#a-export"><span class="toc-number">1.0.1.</span> <span class="toc-text">a. export</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#b-whereis"><span class="toc-number">1.0.2.</span> <span class="toc-text">b. whereis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#c-which"><span class="toc-number">1.0.3.</span> <span class="toc-text">c. which</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#d-clear"><span class="toc-number">1.0.4.</span> <span class="toc-text">d. clear</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-File-Operations"><span class="toc-number">1.1.</span> <span class="toc-text">1.1. File Operations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#a-ls"><span class="toc-number">1.1.1.</span> <span class="toc-text">a. ls</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#b-touch"><span class="toc-number">1.1.2.</span> <span class="toc-text">b. touch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#c-cat"><span class="toc-number">1.1.3.</span> <span class="toc-text">c. cat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#d-more"><span class="toc-number">1.1.4.</span> <span class="toc-text">d. more</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#e-head"><span class="toc-number">1.1.5.</span> <span class="toc-text">e. head</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#f-tail"><span class="toc-number">1.1.6.</span> <span class="toc-text">f. tail</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#g-mv"><span class="toc-number">1.1.7.</span> <span class="toc-text">g. mv</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#h-cp"><span class="toc-number">1.1.8.</span> <span class="toc-text">h. cp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#i-rm"><span class="toc-number">1.1.9.</span> <span class="toc-text">i. rm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#j-diff"><span class="toc-number">1.1.10.</span> <span class="toc-text">j. diff</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#k-chmod"><span class="toc-number">1.1.11.</span> <span class="toc-text">k. chmod</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#l-gzip"><span class="toc-number">1.1.12.</span> <span class="toc-text">l. gzip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#m-gunzip"><span class="toc-number">1.1.13.</span> <span class="toc-text">m. gunzip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#n-gzcat"><span class="toc-number">1.1.14.</span> <span class="toc-text">n. gzcat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#o-lpr"><span class="toc-number">1.1.15.</span> <span class="toc-text">o. lpr</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#p-lpq"><span class="toc-number">1.1.16.</span> <span class="toc-text">p. lpq</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#q-lprm"><span class="toc-number">1.1.17.</span> <span class="toc-text">q. lprm</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Text-Operations"><span class="toc-number">1.2.</span> <span class="toc-text">1.2. Text Operations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#a-awk"><span class="toc-number">1.2.1.</span> <span class="toc-text">a. awk</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#b-grep"><span class="toc-number">1.2.2.</span> <span class="toc-text">b. grep</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#c-wc"><span class="toc-number">1.2.3.</span> <span class="toc-text">c. wc</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#d-sed"><span class="toc-number">1.2.4.</span> <span class="toc-text">d. sed</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#e-sort"><span class="toc-number">1.2.5.</span> <span class="toc-text">e. sort</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#f-uniq"><span class="toc-number">1.2.6.</span> <span class="toc-text">f. uniq</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#g-cut"><span class="toc-number">1.2.7.</span> <span class="toc-text">g. cut</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#h-echo"><span class="toc-number">1.2.8.</span> <span class="toc-text">h. echo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#i-fmt"><span class="toc-number">1.2.9.</span> <span class="toc-text">i. fmt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#j-tr"><span class="toc-number">1.2.10.</span> <span class="toc-text">j. tr</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#k-nl"><span class="toc-number">1.2.11.</span> <span class="toc-text">k. nl</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#l-egrep"><span class="toc-number">1.2.12.</span> <span class="toc-text">l. egrep</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#m-fgrep"><span class="toc-number">1.2.13.</span> <span class="toc-text">m. fgrep</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Directory-Operations"><span class="toc-number">1.3.</span> <span class="toc-text">1.3. Directory Operations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#a-mkdir"><span class="toc-number">1.3.1.</span> <span class="toc-text">a. mkdir</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#b-cd"><span class="toc-number">1.3.2.</span> <span class="toc-text">b. cd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#c-pwd"><span class="toc-number">1.3.3.</span> <span class="toc-text">c. pwd</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-SSH-System-Info-amp-Network-Operations"><span class="toc-number">1.4.</span> <span class="toc-text">1.4. SSH, System Info & Network Operations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#a-ssh"><span class="toc-number">1.4.1.</span> <span class="toc-text">a. ssh</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#b-whoami"><span class="toc-number">1.4.2.</span> <span class="toc-text">b. whoami</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#c-passwd"><span class="toc-number">1.4.3.</span> <span class="toc-text">c. passwd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#d-quota"><span class="toc-number">1.4.4.</span> <span class="toc-text">d. quota</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#e-date"><span class="toc-number">1.4.5.</span> <span class="toc-text">e. date</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#f-cal"><span class="toc-number">1.4.6.</span> <span class="toc-text">f. cal</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#g-uptime"><span class="toc-number">1.4.7.</span> <span class="toc-text">g. uptime</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#h-w"><span class="toc-number">1.4.8.</span> <span class="toc-text">h. w</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#i-finger"><span class="toc-number">1.4.9.</span> <span class="toc-text">i. finger</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#j-uname"><span class="toc-number">1.4.10.</span> <span class="toc-text">j. uname</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#k-man"><span class="toc-number">1.4.11.</span> <span class="toc-text">k. man</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#l-df"><span class="toc-number">1.4.12.</span> <span class="toc-text">l. df</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#m-du"><span class="toc-number">1.4.13.</span> <span class="toc-text">m. du</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#n-last"><span class="toc-number">1.4.14.</span> <span class="toc-text">n. last</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#o-ps"><span class="toc-number">1.4.15.</span> <span class="toc-text">o. ps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#p-kill"><span class="toc-number">1.4.16.</span> <span class="toc-text">p. kill</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#q-killall"><span class="toc-number">1.4.17.</span> <span class="toc-text">q. killall</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#r-top"><span class="toc-number">1.4.18.</span> <span class="toc-text">r. top</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#s-bg"><span class="toc-number">1.4.19.</span> <span class="toc-text">s. bg</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#t-fg"><span class="toc-number">1.4.20.</span> <span class="toc-text">t. fg</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u-ping"><span class="toc-number">1.4.21.</span> <span class="toc-text">u. ping</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#v-whois"><span class="toc-number">1.4.22.</span> <span class="toc-text">v. whois</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#w-dig"><span class="toc-number">1.4.23.</span> <span class="toc-text">w. dig</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#x-wget"><span class="toc-number">1.4.24.</span> <span class="toc-text">x. wget</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#y-scp"><span class="toc-number">1.4.25.</span> <span class="toc-text">y. scp</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Basic-Shell-Programming"><span class="toc-number">2.</span> <span class="toc-text">2. Basic Shell Programming</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Variables"><span class="toc-number">2.1.</span> <span class="toc-text">2.1. Variables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-String-Substitution"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 String Substitution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Functions"><span class="toc-number">2.3.</span> <span class="toc-text">2.3. Functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Conditionals"><span class="toc-number">2.4.</span> <span class="toc-text">2.4. Conditionals</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Loops"><span class="toc-number">2.5.</span> <span class="toc-text">2.5. Loops</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Tricks"><span class="toc-number">3.</span> <span class="toc-text">3. Tricks</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#设置一个别名"><span class="toc-number">3.0.1.</span> <span class="toc-text">设置一个别名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#快速去特定的目录"><span class="toc-number">3.0.2.</span> <span class="toc-text">快速去特定的目录</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Debugging"><span class="toc-number">4.</span> <span class="toc-text">4. Debugging</span></a></li></ol>
-		</div>
-		
-		<h2 id="1-Basic-Operations"><a href="#1-Basic-Operations" class="headerlink" title="1. Basic Operations"></a>1. Basic Operations</h2><h4 id="a-export"><a href="#a-export" class="headerlink" title="a. export"></a>a. <code>export</code></h4><p>显示所有的环境变量，如果你想获取某个变量的详细信息，使用 <code>echo $VARIABLE_NAME</code>.</p>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux-bash学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h2 id="1-Basic-Operations"><a href="#1-Basic-Operations" class="headerlink" title="1. Basic Operations"></a>1. Basic Operations</h2><h4 id="a-export"><a href="#a-export" class="headerlink" title="a. export"></a>a. <code>export</code></h4><p>显示所有的环境变量，如果你想获取某个变量的详细信息，使用 <code>echo $VARIABLE_NAME</code>.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export</div></pre></td></tr></table></figure>
 <p>Example:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ export</div><div class="line">SHELL=/bin/zsh</div><div class="line">AWS_HOME=/Users/adnanadnan/.aws</div><div class="line">LANG=en_US.UTF-8</div><div class="line">LC_CTYPE=en_US.UTF-8</div><div class="line">LESS=-R</div><div class="line"></div><div class="line">$ echo $SHELL</div><div class="line">/usr/bin/zsh</div></pre></td></tr></table></figure>
@@ -447,304 +445,91 @@ Example:
 </blockquote>
 <p>source ~/.bashrc<br>cd hotellogs</p>
 <h2 id="4-Debugging"><a href="#4-Debugging" class="headerlink" title="4. Debugging"></a>4. Debugging</h2><p>您可以通过传递不同的选项来轻松地调试bash脚本bash。例如-n，不会运行命令并仅检查语法错误。-vecho命令在运行它们之前。-x命令行处理后的echo命令。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">bash -n scriptname</div><div class="line">bash -v scriptname</div><div class="line">bash -x scriptname</div></pre></td></tr></table></figure>  
-	</div>
-		<footer class="article-footer clearfix">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">bash -n scriptname</div><div class="line">bash -v scriptname</div><div class="line">bash -x scriptname</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2017/12/12/linux-bash/" class="article-date">
+  <time datetime="2017-12-12T04:20:12.000Z" itemprop="datePublished">2017-12-12</time>
+</a>
 
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/shell/">shell</a>
-</div>
-
-
-
-<div class="article-share" id="share">
-
-  <div data-url="http://hujao.com/2017/12/12/linux-bash/" data-title="linux-bash学习 | Ace&#39;pages" data-tsina="null" class="share clearfix">
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/shell/">shell</a>
   </div>
 
-</div>
-</footer>   	       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
- <div class="prev" >
- <a href="/2017/12/13/docker-registry/" title="docker-registry私有库">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  docker-registry私有库</span>
-</a>
-</div>
 
-
-<div class="next">
-<a href="/2017/12/07/influxdb/"  title="influxdb学习">
- <strong>NEXT:</strong><br/> 
- <span>influxdb学习
-</span>
-</a>
-</div>
-
+          </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2017/12/13/docker-registry/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          docker-registry私有库
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/07/influxdb/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">influxdb学习</div>
+    </a>
+  
 </nav>
 
-	
-</div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
-
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Basic-Operations"><span class="toc-number">1.</span> <span class="toc-text">1. Basic Operations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#a-export"><span class="toc-number">1.0.1.</span> <span class="toc-text">a. export</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#b-whereis"><span class="toc-number">1.0.2.</span> <span class="toc-text">b. whereis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#c-which"><span class="toc-number">1.0.3.</span> <span class="toc-text">c. which</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#d-clear"><span class="toc-number">1.0.4.</span> <span class="toc-text">d. clear</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-File-Operations"><span class="toc-number">1.1.</span> <span class="toc-text">1.1. File Operations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#a-ls"><span class="toc-number">1.1.1.</span> <span class="toc-text">a. ls</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#b-touch"><span class="toc-number">1.1.2.</span> <span class="toc-text">b. touch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#c-cat"><span class="toc-number">1.1.3.</span> <span class="toc-text">c. cat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#d-more"><span class="toc-number">1.1.4.</span> <span class="toc-text">d. more</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#e-head"><span class="toc-number">1.1.5.</span> <span class="toc-text">e. head</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#f-tail"><span class="toc-number">1.1.6.</span> <span class="toc-text">f. tail</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#g-mv"><span class="toc-number">1.1.7.</span> <span class="toc-text">g. mv</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#h-cp"><span class="toc-number">1.1.8.</span> <span class="toc-text">h. cp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#i-rm"><span class="toc-number">1.1.9.</span> <span class="toc-text">i. rm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#j-diff"><span class="toc-number">1.1.10.</span> <span class="toc-text">j. diff</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#k-chmod"><span class="toc-number">1.1.11.</span> <span class="toc-text">k. chmod</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#l-gzip"><span class="toc-number">1.1.12.</span> <span class="toc-text">l. gzip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#m-gunzip"><span class="toc-number">1.1.13.</span> <span class="toc-text">m. gunzip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#n-gzcat"><span class="toc-number">1.1.14.</span> <span class="toc-text">n. gzcat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#o-lpr"><span class="toc-number">1.1.15.</span> <span class="toc-text">o. lpr</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#p-lpq"><span class="toc-number">1.1.16.</span> <span class="toc-text">p. lpq</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#q-lprm"><span class="toc-number">1.1.17.</span> <span class="toc-text">q. lprm</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Text-Operations"><span class="toc-number">1.2.</span> <span class="toc-text">1.2. Text Operations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#a-awk"><span class="toc-number">1.2.1.</span> <span class="toc-text">a. awk</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#b-grep"><span class="toc-number">1.2.2.</span> <span class="toc-text">b. grep</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#c-wc"><span class="toc-number">1.2.3.</span> <span class="toc-text">c. wc</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#d-sed"><span class="toc-number">1.2.4.</span> <span class="toc-text">d. sed</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#e-sort"><span class="toc-number">1.2.5.</span> <span class="toc-text">e. sort</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#f-uniq"><span class="toc-number">1.2.6.</span> <span class="toc-text">f. uniq</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#g-cut"><span class="toc-number">1.2.7.</span> <span class="toc-text">g. cut</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#h-echo"><span class="toc-number">1.2.8.</span> <span class="toc-text">h. echo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#i-fmt"><span class="toc-number">1.2.9.</span> <span class="toc-text">i. fmt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#j-tr"><span class="toc-number">1.2.10.</span> <span class="toc-text">j. tr</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#k-nl"><span class="toc-number">1.2.11.</span> <span class="toc-text">k. nl</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#l-egrep"><span class="toc-number">1.2.12.</span> <span class="toc-text">l. egrep</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#m-fgrep"><span class="toc-number">1.2.13.</span> <span class="toc-text">m. fgrep</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Directory-Operations"><span class="toc-number">1.3.</span> <span class="toc-text">1.3. Directory Operations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#a-mkdir"><span class="toc-number">1.3.1.</span> <span class="toc-text">a. mkdir</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#b-cd"><span class="toc-number">1.3.2.</span> <span class="toc-text">b. cd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#c-pwd"><span class="toc-number">1.3.3.</span> <span class="toc-text">c. pwd</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-SSH-System-Info-amp-Network-Operations"><span class="toc-number">1.4.</span> <span class="toc-text">1.4. SSH, System Info & Network Operations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#a-ssh"><span class="toc-number">1.4.1.</span> <span class="toc-text">a. ssh</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#b-whoami"><span class="toc-number">1.4.2.</span> <span class="toc-text">b. whoami</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#c-passwd"><span class="toc-number">1.4.3.</span> <span class="toc-text">c. passwd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#d-quota"><span class="toc-number">1.4.4.</span> <span class="toc-text">d. quota</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#e-date"><span class="toc-number">1.4.5.</span> <span class="toc-text">e. date</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#f-cal"><span class="toc-number">1.4.6.</span> <span class="toc-text">f. cal</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#g-uptime"><span class="toc-number">1.4.7.</span> <span class="toc-text">g. uptime</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#h-w"><span class="toc-number">1.4.8.</span> <span class="toc-text">h. w</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#i-finger"><span class="toc-number">1.4.9.</span> <span class="toc-text">i. finger</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#j-uname"><span class="toc-number">1.4.10.</span> <span class="toc-text">j. uname</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#k-man"><span class="toc-number">1.4.11.</span> <span class="toc-text">k. man</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#l-df"><span class="toc-number">1.4.12.</span> <span class="toc-text">l. df</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#m-du"><span class="toc-number">1.4.13.</span> <span class="toc-text">m. du</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#n-last"><span class="toc-number">1.4.14.</span> <span class="toc-text">n. last</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#o-ps"><span class="toc-number">1.4.15.</span> <span class="toc-text">o. ps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#p-kill"><span class="toc-number">1.4.16.</span> <span class="toc-text">p. kill</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#q-killall"><span class="toc-number">1.4.17.</span> <span class="toc-text">q. killall</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#r-top"><span class="toc-number">1.4.18.</span> <span class="toc-text">r. top</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#s-bg"><span class="toc-number">1.4.19.</span> <span class="toc-text">s. bg</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#t-fg"><span class="toc-number">1.4.20.</span> <span class="toc-text">t. fg</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u-ping"><span class="toc-number">1.4.21.</span> <span class="toc-text">u. ping</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#v-whois"><span class="toc-number">1.4.22.</span> <span class="toc-text">v. whois</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#w-dig"><span class="toc-number">1.4.23.</span> <span class="toc-text">w. dig</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#x-wget"><span class="toc-number">1.4.24.</span> <span class="toc-text">x. wget</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#y-scp"><span class="toc-number">1.4.25.</span> <span class="toc-text">y. scp</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Basic-Shell-Programming"><span class="toc-number">2.</span> <span class="toc-text">2. Basic Shell Programming</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Variables"><span class="toc-number">2.1.</span> <span class="toc-text">2.1. Variables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-String-Substitution"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 String Substitution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Functions"><span class="toc-number">2.3.</span> <span class="toc-text">2.3. Functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Conditionals"><span class="toc-number">2.4.</span> <span class="toc-text">2.4. Conditionals</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Loops"><span class="toc-number">2.5.</span> <span class="toc-text">2.5. Loops</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Tricks"><span class="toc-number">3.</span> <span class="toc-text">3. Tricks</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#设置一个别名"><span class="toc-number">3.0.1.</span> <span class="toc-text">设置一个别名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#快速去特定的目录"><span class="toc-number">3.0.2.</span> <span class="toc-text">快速去特定的目录</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Debugging"><span class="toc-number">4.</span> <span class="toc-text">4. Debugging</span></a></li></ol>
-  </div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
-<aside class="clearfix">
 
   
-<div class="categorieslist">
-	<p class="asidetitle">分类</p>
-		<ul>
-		
-			<li><a href="/categories/docker/" title="docker">docker<sup>15</sup></a></li>
-		
-			<li><a href="/categories/etl/" title="etl">etl<sup>1</sup></a></li>
-		
-			<li><a href="/categories/java/" title="java">java<sup>4</sup></a></li>
-		
-			<li><a href="/categories/linux/" title="linux">linux<sup>1</sup></a></li>
-		
-			<li><a href="/categories/shell/" title="shell">shell<sup>3</sup></a></li>
-		
-			<li><a href="/categories/springboot/" title="springboot">springboot<sup>9</sup></a></li>
-		
-			<li><a href="/categories/web前端/" title="web前端">web前端<sup>1</sup></a></li>
-		
-			<li><a href="/categories/代码管理/" title="代码管理">代码管理<sup>2</sup></a></li>
-		
-			<li><a href="/categories/分布式/" title="分布式">分布式<sup>1</sup></a></li>
-		
-			<li><a href="/categories/大数据/" title="大数据">大数据<sup>5</sup></a></li>
-		
-			<li><a href="/categories/容器编排/" title="容器编排">容器编排<sup>2</sup></a></li>
-		
-			<li><a href="/categories/开发工具/" title="开发工具">开发工具<sup>1</sup></a></li>
-		
-			<li><a href="/categories/性能优化/" title="性能优化">性能优化<sup>8</sup></a></li>
-		
-			<li><a href="/categories/持续集成/" title="持续集成">持续集成<sup>2</sup></a></li>
-		
-			<li><a href="/categories/搜索引擎/" title="搜索引擎">搜索引擎<sup>1</sup></a></li>
-		
-			<li><a href="/categories/数据安全/" title="数据安全">数据安全<sup>3</sup></a></li>
-		
-			<li><a href="/categories/数据库/" title="数据库">数据库<sup>1</sup></a></li>
-		
-			<li><a href="/categories/日志收集/" title="日志收集">日志收集<sup>2</sup></a></li>
-		
-			<li><a href="/categories/服务监控/" title="服务监控">服务监控<sup>6</sup></a></li>
-		
-			<li><a href="/categories/机器学习/" title="机器学习">机器学习<sup>2</sup></a></li>
-		
-			<li><a href="/categories/框架/" title="框架">框架<sup>3</sup></a></li>
-		
-			<li><a href="/categories/流计算/" title="流计算">流计算<sup>3</sup></a></li>
-		
-			<li><a href="/categories/消息队列/" title="消息队列">消息队列<sup>2</sup></a></li>
-		
-			<li><a href="/categories/第三方支付/" title="第三方支付">第三方支付<sup>1</sup></a></li>
-		
-			<li><a href="/categories/网络协议/" title="网络协议">网络协议<sup>2</sup></a></li>
-		
-			<li><a href="/categories/负载均衡/" title="负载均衡">负载均衡<sup>1</sup></a></li>
-		
-		</ul>
-</div>
+</article>
 
 
-  
-<div class="tagslist">
-	<p class="asidetitle">标签</p>
-		<ul class="clearfix">
-		
-			<li><a href="/tags/activemq/" title="activemq">activemq<sup>2</sup></a></li>
-		
-			<li><a href="/tags/aes/" title="aes">aes<sup>1</sup></a></li>
-		
-			<li><a href="/tags/base64/" title="base64">base64<sup>1</sup></a></li>
-		
-			<li><a href="/tags/bat/" title="bat">bat<sup>1</sup></a></li>
-		
-			<li><a href="/tags/cer/" title="cer">cer<sup>1</sup></a></li>
-		
-			<li><a href="/tags/crt/" title="crt">crt<sup>1</sup></a></li>
-		
-			<li><a href="/tags/der/" title="der">der<sup>1</sup></a></li>
-		
-			<li><a href="/tags/des/" title="des">des<sup>1</sup></a></li>
-		
-			<li><a href="/tags/design/" title="design">design<sup>1</sup></a></li>
-		
-			<li><a href="/tags/designpattern/" title="designpattern">designpattern<sup>1</sup></a></li>
-		
-			<li><a href="/tags/docker/" title="docker">docker<sup>16</sup></a></li>
-		
-			<li><a href="/tags/dubbo/" title="dubbo">dubbo<sup>1</sup></a></li>
-		
-			<li><a href="/tags/elasticsearch/" title="elasticsearch">elasticsearch<sup>1</sup></a></li>
-		
-			<li><a href="/tags/etl/" title="etl">etl<sup>1</sup></a></li>
-		
-			<li><a href="/tags/freemarker/" title="freemarker">freemarker<sup>1</sup></a></li>
-		
-			<li><a href="/tags/git/" title="git">git<sup>2</sup></a></li>
-		
-			<li><a href="/tags/grafana/" title="grafana">grafana<sup>4</sup></a></li>
-		
-			<li><a href="/tags/graphite/" title="graphite">graphite<sup>4</sup></a></li>
-		
-			<li><a href="/tags/influxdb/" title="influxdb">influxdb<sup>2</sup></a></li>
-		
-			<li><a href="/tags/java/" title="java">java<sup>4</sup></a></li>
-		
-		</ul>
-</div>
 
 
-</aside>
-</div>
-    </div>
-    <footer><div id="footer" >
-	
-	
-	<div class="social-font clearfix">
-		
-		
-		
-		
-		
-	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2017 
-		
-		<a href="http://hujao.com" target="_blank" title="ace1981">ace1981</a>
-		
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
+      </div>
       
-      $('#toc.toc-aside').css('display', 'none');
-        
-    }
-  });
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-});
-</script>
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      h  = $('article h2')
-      ah = $('article h2'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  if(ah.length==0){
-    t.css('display','none');
-  }else{
-    c.click(function(){
-      ta.css('display', 'block').addClass('fadeIn');
-    });
-    o.click(function(){
-      ta.css('display', 'none');
-    });
-    $(window).scroll(function(){
-      ta.css("top",Math.max(140,320-$(this).scrollTop()));
-    });
-  };
-});
-</script>
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
 
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var $this = $('.share'),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina');
-  var html = [
-  '<a href="#" class="overlay" id="qrcode"></a>',
-  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
-  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
-  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
-  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
-  '<span title="Share to"></span>'
-  ].join('');
-  $this.append(html);
-  $('.article-share-qrcode').click(function(){
-    var imgSrc = $('#qrcode-pic').attr('data-src');
-    $('#qrcode-pic').attr('src', imgSrc);
-    $('#qrcode-pic').load(function(){
-        $('.qrcode strong').text(' ');
-    });
-  });
-});     
-</script>
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
 
 
 
 
 
 
+
+    </div>
   </body>
 </html>
