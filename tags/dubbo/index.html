@@ -28,63 +28,9 @@
       <div id="container" class="container">
         
 <div class="category-container">
-  <header id="header" class="header">
-  <nav id="main-nav" class="main-nav">
-    
-      <a class="main-nav-link" href="/">Home</a>
-    
-      <a class="main-nav-link" href="/categories">Categories</a>
-    
-      <a class="main-nav-link" href="/archives">Archives</a>
-    
-      <a class="main-nav-link" href="/tags">Tags</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
-    
-  </nav>
-  <nav id="sub-nav">
-    
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-    
-  </nav>
-</header>
-
+   partial('_partial/header') 
   <hr/>
-  
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/10/dubbo123/" class="archive-article-date">
-  <time datetime="2017-04-10T02:58:13.000Z" itemprop="datePublished">4月 10 2017</time>
-</a>
-
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/10/dubbo123/">dubbo原理学习(转)</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-
-  
-  
-    </div></section>
-  
-
-
-
+  partial('_partial/archive', {pagination: config.tag, index: true}) 
 </div>
       </div>
       
