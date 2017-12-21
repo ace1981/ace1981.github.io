@@ -1,83 +1,40 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
+<html>
   
-  <title>关于mac系统配置git的ssh | Ace&#39;pages</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 设置Git的user name和email：(如果是第一次的话)
-12$ git config --global user.name &amp;quot;ace1981&amp;quot;$ git config --global user.email &amp;quot;38688368@qq.com&amp;quot;
-2 生成密钥
-1$ ssh-keygen -t rsa -C &amp;quot;38688368@qq.co">
-<meta property="og:type" content="article">
-<meta property="og:title" content="关于mac系统配置git的ssh">
-<meta property="og:url" content="http://hujao.com/2017/04/04/git-ssh/index.html">
-<meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="1 设置Git的user name和email：(如果是第一次的话)
-12$ git config --global user.name &amp;quot;ace1981&amp;quot;$ git config --global user.email &amp;quot;38688368@qq.com&amp;quot;
-2 生成密钥
-1$ ssh-keygen -t rsa -C &amp;quot;38688368@qq.co">
-<meta property="og:updated_time" content="2017-12-21T05:47:47.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于mac系统配置git的ssh">
-<meta name="twitter:description" content="1 设置Git的user name和email：(如果是第一次的话)
-12$ git config --global user.name &amp;quot;ace1981&amp;quot;$ git config --global user.email &amp;quot;38688368@qq.com&amp;quot;
-2 生成密钥
-1$ ssh-keygen -t rsa -C &amp;quot;38688368@qq.co">
-  
-    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
-</head>
-
-  
-    
-      <body>
-    
-  
-      <div id="container" class="container">
-        <article id="post-git-ssh" class="article article-type-post" itemscope itemprop="blogPost">
-  <header id="header" class="header">
-  <nav id="main-nav" class="main-nav">
-    
-      <a class="main-nav-link" href="/">Home</a>
-    
-      <a class="main-nav-link" href="/categories">Categories</a>
-    
-      <a class="main-nav-link" href="/archives">Archives</a>
-    
-      <a class="main-nav-link" href="/tags">Tags</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
-    
-  </nav>
-  <nav id="sub-nav">
-    
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-    
+  <body>
+    <div class="container">
+      <header class="header">
+  <div class="blog-title">
+    <a href="/" class="logo">Ace&#39;pages</a>
+    <div class="subtitle"></div>
+  </div>
+  <nav class="navbar">
+    <ul class="menu">
+      
+        <li class="menu-item">
+          <a href="/" class="menu-item-link">主页</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="/archives" class="menu-item-link">归档</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="/about" class="menu-item-link">关于</a>
+        </li>
+      
+    </ul>
   </nav>
 </header>
-
-  <hr/>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      关于mac系统配置git的ssh
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry typo" itemprop="articleBody">
-      
-        <p>1 设置Git的user name和email：(如果是第一次的话)</p>
+<article class="post">
+  <div class="post-title">
+    <h1 class="article-title">关于mac系统配置git的ssh</h1>
+  </div>
+   <div class="post-meta">
+    <span class="post-time">2017-04-04</span>
+  </div>
+  <div class="post-content">
+    <p>1 设置Git的user name和email：(如果是第一次的话)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;ace1981&quot;</div><div class="line">$ git config --global user.email &quot;38688368@qq.com&quot;</div></pre></td></tr></table></figure>
 <p>2 生成密钥</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;38688368@qq.com&quot;</div></pre></td></tr></table></figure>
@@ -90,98 +47,21 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure>
 <p>选择yes就可以了</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <ul class="article-meta">
-        <li>
-          <span class="label">Published Date:</span>
-          <a href="/2017/04/04/git-ssh/" class="article-date">
-  <time datetime="2017-04-04T12:58:28.000Z" itemprop="datePublished">2017-04-04</time>
-</a>
-
-        </li>
-        
-          <li>
-            <span class="label">Category:</span>
-            
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/代码管理/">代码管理</a>
   </div>
-
-
-          </li>
-        
-        
-          <li>
-            <span class="label">Tag:</span>
-            
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-
-
-          </li>
-        
-        <hr/>
-      </ul>
-    </footer>
-  </div>
-  
+  <div class="post-footer">
     
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2017/04/04/vm-ubuntu/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          在vm中安装ubuntu系统(未开始)
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/04/04/jenkins/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">jenkins配置详解</div>
-    </a>
-  
-</nav>
+      <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/git/">git</a></li></ul>
+    
 
-
-  
+    <a href="#top" class="top">返回顶部</a>
+  </div>
 </article>
-
-
-
-
-      </div>
-      
-    <footer id="footer" class="post-footer footer">
-      <hr/>
-      <div id="footerContent" class="footer-content">
-        <p>闲步山雨后,静待晚林风 Post</p>
-
-
-      </div>
-    </footer>
-
-      
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-
-
-
-
-
-
-
+<footer>
+  &copy; 2017
+  <span class="author">
+    ace1981
+  </span>
+</footer>
     </div>
   </body>
 </html>

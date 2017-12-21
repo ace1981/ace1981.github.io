@@ -1,89 +1,40 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
+<html>
   
-  <title>docker资源控制 | Ace&#39;pages</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="引用:
-硬件资源限制  网络资源限制
-在使用 docker 运行容器时，一台主机上可能会运行几百个容器，这些容器虽然互相隔离，但是底层却使用着相同的 CPU、内存和磁盘资源。如果不对容器使用的资源进行限制，那么容器之间会互相影响，小的来说会导致容器资源使用不公平；大的来说，可能会导致主机和集群资源耗尽，服务完全不可用。
-docker 作为容器的管理者，自然提供了控制容器资源的功能。正如使用内核的">
-<meta property="og:type" content="article">
-<meta property="og:title" content="docker资源控制">
-<meta property="og:url" content="http://hujao.com/2017/12/18/docker-resource/index.html">
-<meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="引用:
-硬件资源限制  网络资源限制
-在使用 docker 运行容器时，一台主机上可能会运行几百个容器，这些容器虽然互相隔离，但是底层却使用着相同的 CPU、内存和磁盘资源。如果不对容器使用的资源进行限制，那么容器之间会互相影响，小的来说会导致容器资源使用不公平；大的来说，可能会导致主机和集群资源耗尽，服务完全不可用。
-docker 作为容器的管理者，自然提供了控制容器资源的功能。正如使用内核的">
-<meta property="og:image" content="http://img.blog.csdn.net/20170930104504965">
-<meta property="og:image" content="http://img.blog.csdn.net/20170930104509386">
-<meta property="og:image" content="http://img.blog.csdn.net/20170930104513091">
-<meta property="og:image" content="http://img.blog.csdn.net/20170930104516254">
-<meta property="og:image" content="http://s3.51cto.com/wyfs02/M02/6C/51/wKioL1VGzcjxKeybAAFeP1FeJcw975.jpg">
-<meta property="og:updated_time" content="2017-12-21T06:08:35.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="docker资源控制">
-<meta name="twitter:description" content="引用:
-硬件资源限制  网络资源限制
-在使用 docker 运行容器时，一台主机上可能会运行几百个容器，这些容器虽然互相隔离，但是底层却使用着相同的 CPU、内存和磁盘资源。如果不对容器使用的资源进行限制，那么容器之间会互相影响，小的来说会导致容器资源使用不公平；大的来说，可能会导致主机和集群资源耗尽，服务完全不可用。
-docker 作为容器的管理者，自然提供了控制容器资源的功能。正如使用内核的">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170930104504965">
-  
-    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
-</head>
-
-  
-    
-      <body>
-    
-  
-      <div id="container" class="container">
-        <article id="post-docker-resource" class="article article-type-post" itemscope itemprop="blogPost">
-  <header id="header" class="header">
-  <nav id="main-nav" class="main-nav">
-    
-      <a class="main-nav-link" href="/">Home</a>
-    
-      <a class="main-nav-link" href="/categories">Categories</a>
-    
-      <a class="main-nav-link" href="/archives">Archives</a>
-    
-      <a class="main-nav-link" href="/tags">Tags</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
-    
-  </nav>
-  <nav id="sub-nav">
-    
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-    
+  <body>
+    <div class="container">
+      <header class="header">
+  <div class="blog-title">
+    <a href="/" class="logo">Ace&#39;pages</a>
+    <div class="subtitle"></div>
+  </div>
+  <nav class="navbar">
+    <ul class="menu">
+      
+        <li class="menu-item">
+          <a href="/" class="menu-item-link">主页</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="/archives" class="menu-item-link">归档</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="/about" class="menu-item-link">关于</a>
+        </li>
+      
+    </ul>
   </nav>
 </header>
-
-  <hr/>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      docker资源控制
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry typo" itemprop="articleBody">
-      
-        <p>引用:</p>
+<article class="post">
+  <div class="post-title">
+    <h1 class="article-title">docker资源控制</h1>
+  </div>
+   <div class="post-meta">
+    <span class="post-time">2017-12-18</span>
+  </div>
+  <div class="post-content">
+    <p>引用:</p>
 <p><a href="http://cizixs.com/2017/08/04/docker-resources-limit" target="_blank" rel="external">硬件资源限制</a>  <a href="http://blog.51cto.com/dl528888/1641569" target="_blank" rel="external">网络资源限制</a></p>
 <p>在使用 docker 运行容器时，一台主机上可能会运行几百个容器，这些容器虽然互相隔离，但是底层却使用着相同的 CPU、内存和磁盘资源。如果不对容器使用的资源进行限制，那么容器之间会互相影响，小的来说会导致容器资源使用不公平；大的来说，可能会导致主机和集群资源耗尽，服务完全不可用。</p>
 <p>docker 作为容器的管理者，自然提供了控制容器资源的功能。正如使用内核的 namespace 来做容器之间的隔离，docker 也是通过内核的 cgroups 来做容器的资源限制。这篇文章就介绍如何使用 docker 来限制 CPU、内存和 IO，以及对应的 cgroups 文件。</p>
@@ -254,90 +205,19 @@ docker 作为容器的管理者，自然提供了控制容器资源的功能。�
 <p>下载速度</p>
 <p>上传速度</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <ul class="article-meta">
-        <li>
-          <span class="label">Published Date:</span>
-          <a href="/2017/12/18/docker-resource/" class="article-date">
-  <time datetime="2017-12-18T04:35:32.000Z" itemprop="datePublished">2017-12-18</time>
-</a>
-
-        </li>
-        
-          <li>
-            <span class="label">Category:</span>
-            
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/docker/">docker</a>
   </div>
-
-
-          </li>
-        
-        
-        <hr/>
-      </ul>
-    </footer>
-  </div>
-  
+  <div class="post-footer">
     
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2017/12/18/telegraf/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          telegraf学习
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/12/18/docker-base/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">docker基础命令回顾</div>
-    </a>
-  
-</nav>
 
-
-  
+    <a href="#top" class="top">返回顶部</a>
+  </div>
 </article>
-
-
-
-
-      </div>
-      
-    <footer id="footer" class="post-footer footer">
-      <hr/>
-      <div id="footerContent" class="footer-content">
-        <p>闲步山雨后,静待晚林风 Post</p>
-
-
-      </div>
-    </footer>
-
-      
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-
-
-
-
-
-
-
+<footer>
+  &copy; 2017
+  <span class="author">
+    ace1981
+  </span>
+</footer>
     </div>
   </body>
 </html>
