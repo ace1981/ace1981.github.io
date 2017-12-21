@@ -367,7 +367,7 @@ body >header {
   width: 100%;
   -webkit-box-shadow: 2px 4px 5px rgba(3,3,3,0.2);
   box-shadow: 2px 4px 5px rgba(3,3,3,0.2);
-  background: #111;
+  background: #fff;
   color: #333;
   padding: 1em 0 0.8em;
 }
@@ -521,7 +521,7 @@ header nav ul li a {
   }
 }
 header nav ul li a:hover {
-  background: #0d0d0d;
+  background: #bfbfbf;
   color: #fff;
 }
 .shownav {
@@ -611,7 +611,7 @@ header nav ul li a:hover {
   }
 }
 #main section.post a:hover {
-  border-left: 0.5em solid #111;
+  border-left: 0.5em solid #fff;
 }
 #main section.post a h1 {
   color: #fff;
@@ -644,7 +644,7 @@ header nav ul li a:hover {
 }
 #page-nav a:hover {
   background: #fff;
-  color: #111;
+  color: #fff;
 }
 #page-nav .prev {
   float: left;
@@ -656,7 +656,7 @@ header nav ul li a:hover {
   transition: border-left 0.5s;
 }
 #page-nav .prev:hover {
-  border-left: 0.5em solid #111;
+  border-left: 0.5em solid #fff;
 }
 #page-nav .next {
   float: right;
@@ -731,7 +731,7 @@ header nav ul li a:hover {
   transition: color 0.5s;
 }
 .archive-title a:hover {
-  color: #111;
+  color: #fff;
   -webkit-transition: color 0.5s;
   -moz-transition: color 0.5s;
   -o-transition: color 0.5s;
@@ -739,7 +739,7 @@ header nav ul li a:hover {
   transition: color 0.5s;
 }
 .current {
-  color: #111 !important;
+  color: #fff !important;
 }
 @media only screen and (min-width: 768px) {
   .archive-part {
@@ -788,7 +788,7 @@ header nav ul li a:hover {
 }
 .post a:hover,
 .page a:hover {
-  color: #111;
+  color: #fff;
 }
 @media only screen and (min-width: 768px) {
   article header.article-info {
@@ -803,7 +803,7 @@ article header.article-info >h1 {
   word-break: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  border-left: 5px solid #111;
+  border-left: 5px solid #fff;
 }
 @media only screen and (min-width: 1024px) {
   article header.article-info >h1 {
@@ -904,7 +904,7 @@ article .article-content abbr {
   border-bottom: 1px dotted;
 }
 article .article-content blockquote {
-  border-left: 0.2em solid #111;
+  border-left: 0.2em solid #fff;
   margin: 0.65em 0 0.65em 4%;
   padding-left: 1%;
   line-height: 1.5;
@@ -1428,7 +1428,7 @@ section.comment {
   transition: color 1s ease-out;
 }
 #toc.toc-aside a:hover {
-  color: #111;
+  color: #fff;
   -webkit-transition: color 0.3s ease-out;
   -moz-transition: color 0.3s ease-out;
   -o-transition: color 0.3s ease-out;
@@ -1436,7 +1436,7 @@ section.comment {
   transition: color 0.3s ease-out;
 }
 .active {
-  color: #111 !important;
+  color: #fff !important;
 }
 .openaside {
   display: none;
@@ -1449,7 +1449,7 @@ section.comment {
   color: #333;
   border: 1px solid #333;
   border-radius: 5px;
-  background: #111;
+  background: #fff;
   padding: 0.2em 0.55em;
 }
 .openaside a::before {
@@ -1462,7 +1462,7 @@ section.comment {
   display: none;
 }
 .closeaside a {
-  color: #111;
+  color: #fff;
 }
 .closeaside a:hover {
   color: #fff;
@@ -1504,7 +1504,7 @@ section.comment {
   color: #fff;
 }
 .asidetitle a:hover {
-  color: #111;
+  color: #fff;
   -webkit-transition: color 0.5s;
   -moz-transition: color 0.5s;
   -o-transition: color 0.5s;
@@ -1533,7 +1533,7 @@ section.comment {
   padding: 0.5em 5%;
 }
 .categorieslist li a:hover {
-  color: #111;
+  color: #fff;
 }
 .tagslist {
   margin: 1em 0 0;
@@ -1565,11 +1565,11 @@ section.comment {
   background: #fff;
 }
 .tagslist ul li a:hover {
-  color: #111;
+  color: #fff;
   background: #fff;
 }
 .rsspart {
-  background: #111;
+  background: #fff;
   width: 100%;
 }
 @media only screen and (min-width: 768px) {
@@ -1593,7 +1593,7 @@ section.comment {
   text-align: center;
 }
 .rsspart a:hover {
-  color: #111;
+  color: #fff;
   background: #fafafa;
 }
 .rsspart a::before {
@@ -1625,7 +1625,7 @@ section.comment {
   padding: 0.5em;
 }
 .archiveslist li a:hover {
-  color: #111;
+  color: #fff;
   -webkit-transition: color 0.25s;
   -moz-transition: color 0.25s;
   -o-transition: color 0.25s;
@@ -1673,7 +1673,7 @@ section.comment {
   float: left;
 }
 .tagcloudlist .tagcloudlist a:hover {
-  color: #111;
+  color: #fff;
   -webkit-transition: color 0.25s;
   -moz-transition: color 0.25s;
   -o-transition: color 0.25s;
@@ -1707,7 +1707,7 @@ section.comment {
   padding: 0 3%;
 }
 .linkslist ul a:hover {
-  color: #111;
+  color: #fff;
   -webkit-transition: color 0.25s;
   -moz-transition: color 0.25s;
   -o-transition: color 0.25s;
