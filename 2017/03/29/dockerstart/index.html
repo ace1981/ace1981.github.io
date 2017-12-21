@@ -1,48 +1,64 @@
-extends base
-
-block title
-  title= page.title + ' | ' + config.title
-
-block content
-  .post
-    h1.post-title= page.title
-    .post-meta= page.date.format('ll')
-      if page.categories.length > 0
-        span= ' | '
-        span.category
-          for category in page.categories.toArray()
-            a(href=url_for(category.path))= category.name
-      if theme.busuanzi == true
-        script(src='https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js', async)
-        span#busuanzi_container_page_pv= ' | '
-          span#busuanzi_value_page_pv
-          span= ' ' + __('Hits')
-    if theme.disqus
-      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
-    if theme.changyan
-      a.ds-thread-count(href=url_for(page.path) + '#SOHUCS')
-        span#changyan_count_unit(style='font-size: 15px; color: #6E7173;') 0
-        span= ' ' + __('Comment')
-      script(src='https://assets.changyan.sohu.com/upload/plugins/plugins.count.js', async)
-    if theme.valine.enable
-      a.disqus-comment-count( href=url_for(page.path) + '#vcomment')
-        span.valine-comment-count(data-xid=url_for(page.path))
-        span 条评论
-    if page.toc
-      div(class='clear')
-        div(id='toc' class='toc-article')
-          div(class='toc-title')= __('contents')
-          != toc(page.content, {list_number: theme.toc_number})
-    .post-content
-      != page.content
-    if theme.donate.enable == true
-      iframe(src='/donate/?AliPayQR=' + theme.donate.alipay_qr + '&WeChatQR=' + theme.donate.wechat_qr + '&GitHub=' + theme.donate.github + '&BTCQR=' + theme.donate.btc_qr + '&BTCKEY='+ theme.donate.btc_key + '&PayPal=' + theme.donate.paypal_url, style='overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;', frameborder='0', scrolling='no')
-    if theme.shareto == true
-      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
-      a.article-share-link(data-url=page.permalink, data-id=page._id, data-qrcode=qrcode(page.permalink))= __('shareto')
-
-    include _partial/tag.pug
-    include _partial/post_nav.pug
-
-    if page.comments
-      include _partial/comments.pug
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>docker入门和初级命令 | Ace'pages</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">docker入门和初级命令</h1><a id="logo" href="/.">Ace'pages</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">docker入门和初级命令</h1><div class="post-meta">Mar 29, 2017<span> | </span><span class="category"><a href="/categories/docker/">docker</a></span></div><div class="post-content"><h4 id="第一步-安装"><a href="#第一步-安装" class="headerlink" title="第一步 安装"></a>第一步 安装</h4><h5 id="当前docker分两个安装版-EE为企业版付费的-CE为社区版-我选择的是ubuntu14-04的系统下安装CE版-不同环境和版本安装命令是不一样的-根据页面提示找到对应文档-安装方法如下"><a href="#当前docker分两个安装版-EE为企业版付费的-CE为社区版-我选择的是ubuntu14-04的系统下安装CE版-不同环境和版本安装命令是不一样的-根据页面提示找到对应文档-安装方法如下" class="headerlink" title="当前docker分两个安装版, EE为企业版付费的, CE为社区版,我选择的是ubuntu14.04的系统下安装CE版,不同环境和版本安装命令是不一样的,根据页面提示找到对应文档,安装方法如下:"></a>当前docker分两个安装版, EE为企业版付费的, CE为社区版,我选择的是ubuntu14.04的系统下安装CE版,不同环境和版本安装命令是不一样的,根据页面提示找到对应文档,安装方法如下:</h5><h5 id="1-Set-up-the-repository"><a href="#1-Set-up-the-repository" class="headerlink" title="1. Set up the repository"></a>1. Set up the repository</h5><p>Set up the Docker CE repository on Ubuntu. The <code>lsb_release -cs</code> sub-command prints the name of your Ubuntu version, like <code>xenial</code> or <code>trusty</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">sudo apt-get -y install \</div><div class="line">  apt-transport-https \</div><div class="line">  ca-certificates \</div><div class="line">  curl</div><div class="line"></div><div class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</div><div class="line"></div><div class="line">sudo add-apt-repository \</div><div class="line">       &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \</div><div class="line">       $(lsb_release -cs) \</div><div class="line">       stable&quot;</div><div class="line"></div><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
+<h5 id="2-Get-Docker-CE"><a href="#2-Get-Docker-CE" class="headerlink" title="2. Get Docker CE"></a>2. Get Docker CE</h5><p>Install the latest version of Docker CE on Ubuntu:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get -y install docker-ce</div></pre></td></tr></table></figure>
+<h5 id="3-Test-your-Docker-CE-installation"><a href="#3-Test-your-Docker-CE-installation" class="headerlink" title="3. Test your Docker CE installation"></a>3. Test your Docker CE installation</h5><p>Test your installation:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo docker run hello-world</div></pre></td></tr></table></figure>
+<h4 id="第二步-修改docker命令权限"><a href="#第二步-修改docker命令权限" class="headerlink" title="第二步 修改docker命令权限"></a>第二步 修改docker命令权限</h4><p>默认安装完 Docker 后，每次执行 docker 都需要运行 sudo 命令，非常浪费时间影响效率。如果不跟 sudo，直接执行 docker images 命令会有如下问题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Get http:///var/run/docker.sock/v1.15/containers/json: dial unix /var/run/docker.sock: permission denied</div></pre></td></tr></table></figure>
+<p>于是考虑如何免 sudo 使用 docker，经过查找资料，发现只要把用户加入 docker 用户组即可，具体用法如下。</p>
+<p>免 sudo 使用 docker</p>
+<p>如果还没有 docker group 就添加一个：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo groupadd docker</div></pre></td></tr></table></figure>
+<p>ubuntu下，通过一下命令来看有没有group</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /ect/group</div></pre></td></tr></table></figure>
+<p>将用户加入该 group 内。然后退出并重新登录就生效啦。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gpasswd <span class="_">-a</span> <span class="variable">$&#123;USER&#125;</span> docker</div></pre></td></tr></table></figure>
+<p>重启 docker 服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service docker restart</div></pre></td></tr></table></figure>
+<p>重启 group 或者重启 X 会话</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">newgrp - docker</div><div class="line">pkill X</div></pre></td></tr></table></figure>
+<p>注意，最后一步是必须的，否则因为 groups 命令获取到的是缓存的组信息，刚添加的组信息未能生效，所以 docker images 执行时同样有错。</p>
+<h4 id="第三步-使用阿里云的加速器-代理"><a href="#第三步-使用阿里云的加速器-代理" class="headerlink" title="第三步  使用阿里云的加速器 代理"></a>第三步  使用阿里云的加速器 代理</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"DOCKER_OPTS=\"<span class="variable">$DOCKER_OPTS</span> --registry-mirror=https://j958ia9e.mirror.aliyuncs.com\""</span> | sudo tee <span class="_">-a</span> /etc/default/docker</div><div class="line">sudo service docker restart</div></pre></td></tr></table></figure>
+<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><ul>
+<li>查看阿里云的镜像市场 拉取一个tomcat镜像</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker pull tomcat</div></pre></td></tr></table></figure>
+<ul>
+<li>显示本地的镜像</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker images</div></pre></td></tr></table></figure>
+<ul>
+<li>删除一个镜像</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi 镜像ID 镜像ID 多删空格分开</div></pre></td></tr></table></figure>
+<ul>
+<li>显示容器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker ps -a</div></pre></td></tr></table></figure>
+<ul>
+<li>删除容器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rm -f 容器ID</div></pre></td></tr></table></figure>
+<ul>
+<li>启动容器 8081为绑定的本地端口 8080为容器的端口</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --name mytomcat -d -p 8081:8080 tomcat</div></pre></td></tr></table></figure>
+<ul>
+<li>进入容器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker exec -it mytomcat /bin/bash</div></pre></td></tr></table></figure>
+<ul>
+<li>创建jenkins</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --name myjenkins2 -p 7070:8080 -p 50000:50000  -v /etc/timezone:/etc/timezone -v /etc/localtime:/etc/localtime jenkins</div></pre></td></tr></table></figure>
+<ul>
+<li>启动一个已有的容器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker start 容器ID</div></pre></td></tr></table></figure>
+<ul>
+<li>启动所有容器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker start $(docker ps -a | awk &apos;&#123; print $1&#125;&apos; | tail -n +2)</div></pre></td></tr></table></figure>
+<p>  ​</p>
+</div><div class="tags"><a href="/tags/docker/">docker</a></div><div class="post-nav"><a class="pre" href="/2017/03/30/pd23/">23种设计模式</a><a class="next" href="/2017/03/29/hello-world/">hello markdown and hexo</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://hujao.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/shell/">shell</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etl/">etl</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/shell/">shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/springboot/">springboot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web前端/">web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码管理/">代码管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/分布式/">分布式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/">大数据</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/容器编排/">容器编排</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/性能优化/">性能优化</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/持续集成/">持续集成</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索引擎/">搜索引擎</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据安全/">数据安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志收集/">日志收集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务监控/">服务监控</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/框架/">框架</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/流计算/">流计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/消息队列/">消息队列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/第三方支付/">第三方支付</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络协议/">网络协议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/负载均衡/">负载均衡</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/md5/" style="font-size: 15px;">md5</a> <a href="/tags/bat/" style="font-size: 15px;">bat</a> <a href="/tags/sercurity/" style="font-size: 15px;">sercurity</a> <a href="/tags/key/" style="font-size: 15px;">key</a> <a href="/tags/crt/" style="font-size: 15px;">crt</a> <a href="/tags/cer/" style="font-size: 15px;">cer</a> <a href="/tags/jks/" style="font-size: 15px;">jks</a> <a href="/tags/pfx/" style="font-size: 15px;">pfx</a> <a href="/tags/p12/" style="font-size: 15px;">p12</a> <a href="/tags/der/" style="font-size: 15px;">der</a> <a href="/tags/pem/" style="font-size: 15px;">pem</a> <a href="/tags/kdb/" style="font-size: 15px;">kdb</a> <a href="/tags/pub/" style="font-size: 15px;">pub</a> <a href="/tags/design/" style="font-size: 15px;">design</a> <a href="/tags/jms/" style="font-size: 15px;">jms</a> <a href="/tags/activemq/" style="font-size: 15px;">activemq</a> <a href="/tags/elasticsearch/" style="font-size: 15px;">elasticsearch</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/jenkins/" style="font-size: 15px;">jenkins</a> <a href="/tags/registry/" style="font-size: 15px;">registry</a> <a href="/tags/svn/" style="font-size: 15px;">svn</a> <a href="/tags/springboot-dubbo-dubbo-monitor/" style="font-size: 15px;">springboot dubbo dubbo-monitor</a> <a href="/tags/dubbo/" style="font-size: 15px;">dubbo</a> <a href="/tags/springboot/" style="font-size: 15px;">springboot</a> <a href="/tags/des/" style="font-size: 15px;">des</a> <a href="/tags/aes/" style="font-size: 15px;">aes</a> <a href="/tags/rsa/" style="font-size: 15px;">rsa</a> <a href="/tags/sha1/" style="font-size: 15px;">sha1</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/base64/" style="font-size: 15px;">base64</a> <a href="/tags/freemarker/" style="font-size: 15px;">freemarker</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/metrics/" style="font-size: 15px;">metrics</a> <a href="/tags/statsd/" style="font-size: 15px;">statsd</a> <a href="/tags/graphite/" style="font-size: 15px;">graphite</a> <a href="/tags/grafana/" style="font-size: 15px;">grafana</a> <a href="/tags/influxdb/" style="font-size: 15px;">influxdb</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/kafka/" style="font-size: 15px;">kafka</a> <a href="/tags/etl/" style="font-size: 15px;">etl</a> <a href="/tags/kubernetes/" style="font-size: 15px;">kubernetes</a> <a href="/tags/log/" style="font-size: 15px;">log</a> <a href="/tags/lombok/" style="font-size: 15px;">lombok</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/jpa/" style="font-size: 15px;">jpa</a> <a href="/tags/openssl/" style="font-size: 15px;">openssl</a> <a href="/tags/designpattern/" style="font-size: 15px;">designpattern</a> <a href="/tags/shiro/" style="font-size: 15px;">shiro</a> <a href="/tags/network/" style="font-size: 15px;">network</a> <a href="/tags/qos/" style="font-size: 15px;">qos</a> <a href="/tags/telegraf/" style="font-size: 15px;">telegraf</a> <a href="/tags/tomcat/" style="font-size: 15px;">tomcat</a> <a href="/tags/jdk8/" style="font-size: 15px;">jdk8</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/支付/" style="font-size: 15px;">支付</a> <a href="/tags/zookeeper/" style="font-size: 15px;">zookeeper</a> <a href="/tags/zkui/" style="font-size: 15px;">zkui</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/12/22/chart/">chart</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/21/binbash/">为docker编写bash启动脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/21/jenkins-for-docker/">jenkins+springboot+docker+git持续集成</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/qos/">qos基本原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/overlay-network/">overlay network</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/bat/">编写.bat文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/telegraf/">telegraf学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/docker-resource/">docker资源控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/docker-base/">docker基础命令回顾</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/encryption-algorithm/">encryption-algorithm</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">Ace'pages.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

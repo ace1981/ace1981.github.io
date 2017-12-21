@@ -1,48 +1,143 @@
-extends base
-
-block title
-  title= page.title + ' | ' + config.title
-
-block content
-  .post
-    h1.post-title= page.title
-    .post-meta= page.date.format('ll')
-      if page.categories.length > 0
-        span= ' | '
-        span.category
-          for category in page.categories.toArray()
-            a(href=url_for(category.path))= category.name
-      if theme.busuanzi == true
-        script(src='https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js', async)
-        span#busuanzi_container_page_pv= ' | '
-          span#busuanzi_value_page_pv
-          span= ' ' + __('Hits')
-    if theme.disqus
-      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
-    if theme.changyan
-      a.ds-thread-count(href=url_for(page.path) + '#SOHUCS')
-        span#changyan_count_unit(style='font-size: 15px; color: #6E7173;') 0
-        span= ' ' + __('Comment')
-      script(src='https://assets.changyan.sohu.com/upload/plugins/plugins.count.js', async)
-    if theme.valine.enable
-      a.disqus-comment-count( href=url_for(page.path) + '#vcomment')
-        span.valine-comment-count(data-xid=url_for(page.path))
-        span 条评论
-    if page.toc
-      div(class='clear')
-        div(id='toc' class='toc-article')
-          div(class='toc-title')= __('contents')
-          != toc(page.content, {list_number: theme.toc_number})
-    .post-content
-      != page.content
-    if theme.donate.enable == true
-      iframe(src='/donate/?AliPayQR=' + theme.donate.alipay_qr + '&WeChatQR=' + theme.donate.wechat_qr + '&GitHub=' + theme.donate.github + '&BTCQR=' + theme.donate.btc_qr + '&BTCKEY='+ theme.donate.btc_key + '&PayPal=' + theme.donate.paypal_url, style='overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;', frameborder='0', scrolling='no')
-    if theme.shareto == true
-      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
-      a.article-share-link(data-url=page.permalink, data-id=page._id, data-qrcode=qrcode(page.permalink))= __('shareto')
-
-    include _partial/tag.pug
-    include _partial/post_nav.pug
-
-    if page.comments
-      include _partial/comments.pug
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>docker基础命令回顾 | Ace'pages</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">docker基础命令回顾</h1><a id="logo" href="/.">Ace'pages</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">docker基础命令回顾</h1><div class="post-meta">Dec 18, 2017<span> | </span><span class="category"><a href="/categories/docker/">docker</a></span></div><div class="post-content"><h3 id="容器生命周期管理"><a href="#容器生命周期管理" class="headerlink" title="容器生命周期管理"></a>容器生命周期管理</h3><hr>
+<p><strong>docker run ：</strong>创建一个新的容器并运行一个命令</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</div></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-a stdin:</strong> 指定标准输入输出内容类型，可选 STDIN/STDOUT/STDERR 三项；</li>
+<li><strong>-d:</strong> 后台运行容器，并返回容器ID；</li>
+<li><strong>-i:</strong> 以交互模式运行容器，通常与 -t 同时使用；</li>
+<li><strong>-t:</strong> 为容器重新分配一个伪输入终端，通常与 -i 同时使用；</li>
+<li><strong>–name=”nginx-lb”:</strong> 为容器指定一个名称；</li>
+<li><strong>–dns 8.8.8.8:</strong> 指定容器使用的DNS服务器，默认和宿主一致；</li>
+<li><strong>–dns-search example.com:</strong> 指定容器DNS搜索域名，默认和宿主一致；</li>
+<li><strong>-h “mars”:</strong> 指定容器的hostname；</li>
+<li><strong>-e username=”ritchie”:</strong> 设置环境变量；</li>
+<li><strong>–env-file=[]:</strong> 从指定文件读入环境变量；</li>
+<li><strong>–cpuset=”0-2” or –cpuset=”0,1,2”:</strong> 绑定容器到指定CPU运行；</li>
+<li><strong>-m :</strong>设置容器使用内存最大值；</li>
+<li><strong>–net=”bridge”:</strong> 指定容器的网络连接类型，支持 bridge/host/none/container: 四种类型；</li>
+<li><strong>–link=[]:</strong> 添加链接到另一个容器；</li>
+<li><strong>–expose=[]:</strong> 开放一个端口或一组端口；</li>
+</ul>
+<hr>
+<p><strong>docker start</strong> :启动一个或多少已经被停止的容器</p>
+<p><strong>docker stop</strong> :停止一个运行中的容器</p>
+<p><strong>docker restart</strong> :重启容器</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker start [OPTIONS] CONTAINER [CONTAINER...]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker stop [OPTIONS] CONTAINER [CONTAINER...]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker restart [OPTIONS] CONTAINER [CONTAINER...]</div></pre></td></tr></table></figure>
+<p>实例</p>
+<p>启动已被停止的容器myrunoob</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker start myrunoob</div></pre></td></tr></table></figure>
+<p>停止运行中的容器myrunoob</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker stop myrunoob</div></pre></td></tr></table></figure>
+<p>重启容器myrunoob</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker restart myrunoob</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>docker kill</strong> :杀掉一个运行中的容器。</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker kill [OPTIONS] CONTAINER [CONTAINER...]</div></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-s :</strong>向容器发送一个信号</li>
+</ul>
+<p>实例</p>
+<p>杀掉运行中的容器mynginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">runoob@runoob:~$ docker kill -s KILL mynginx</div><div class="line">mynginx</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>docker rm ：</strong>删除一个或多少容器</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rm [OPTIONS] CONTAINER [CONTAINER...]</div></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-f :</strong>通过SIGKILL信号强制删除一个运行中的容器</li>
+<li><strong>-l :</strong>移除容器间的网络连接，而非容器本身</li>
+<li><strong>-v :</strong>-v 删除与容器关联的卷</li>
+</ul>
+<p>实例</p>
+<p>强制删除容器db01、db02</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rm -f db01、db02</div></pre></td></tr></table></figure>
+<p>移除容器nginx01对容器db01的连接，连接名db</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rm -l db</div></pre></td></tr></table></figure>
+<p>删除容器nginx01,并删除容器挂载的数据卷</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rm -v nginx01</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>docker pause</strong> :暂停容器中所有的进程。</p>
+<p><strong>docker unpause</strong> :恢复容器中所有的进程。</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker pause [OPTIONS] CONTAINER [CONTAINER...]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker unpause [OPTIONS] CONTAINER [CONTAINER...]</div></pre></td></tr></table></figure>
+<p>实例</p>
+<p>暂停数据库容器db01提供服务。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker pause db01</div></pre></td></tr></table></figure>
+<p>恢复数据库容器db01提供服务。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker unpause db01</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>docker create ：</strong>创建一个新的容器但不启动它</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker create [OPTIONS] IMAGE [COMMAND] [ARG...]</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>docker exec ：</strong>在运行的容器中执行命令</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker exec [OPTIONS] CONTAINER COMMAND [ARG...]</div></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-d :</strong>分离模式: 在后台运行</li>
+<li><strong>-i :</strong>即使没有附加也保持STDIN 打开</li>
+<li><strong>-t :</strong>分配一个伪终端</li>
+</ul>
+<p>实例</p>
+<p>在容器mynginx中以交互模式执行容器内/root/runoob.sh脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">runoob@runoob:~$ docker exec -it mynginx /bin/sh /root/runoob.sh</div><div class="line">http://www.runoob.com/</div></pre></td></tr></table></figure>
+<p>在容器mynginx中开启一个交互模式的终端</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">runoob@runoob:~$ docker exec -i -t  mynginx /bin/bash</div><div class="line">root@b1a0703e41e7:/#</div></pre></td></tr></table></figure>
+<h3 id="容器操作"><a href="#容器操作" class="headerlink" title="容器操作"></a>容器操作</h3><hr>
+<p><strong>docker ps : </strong>列出容器</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker ps [OPTIONS]</div></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-a :</strong>显示所有的容器，包括未运行的。</li>
+<li><strong>-f :</strong>根据条件过滤显示的内容。</li>
+<li><strong>–format :</strong>指定返回值的模板文件。</li>
+<li><strong>-l :</strong>显示最近创建的容器。</li>
+<li><strong>-n :</strong>列出最近创建的n个容器。</li>
+<li><strong>–no-trunc :</strong>不截断输出。</li>
+<li><strong>-q :</strong>静默模式，只显示容器编号。</li>
+<li><strong>-s :</strong>显示总的文件大小。</li>
+</ul>
+<hr>
+<p><strong>docker inspect :</strong> 获取容器/镜像的元数据。</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker inspect [OPTIONS] NAME|ID [NAME|ID...]</div></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-f :</strong>指定返回值的模板文件。</li>
+<li><strong>-s :</strong>显示总的文件大小。</li>
+<li><strong>–type :</strong>为指定类型返回JSON。</li>
+</ul>
+<hr>
+<p><strong>docker top :</strong>查看容器中运行的进程信息，支持 ps 命令参数。</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker top [OPTIONS] CONTAINER [ps OPTIONS]</div></pre></td></tr></table></figure>
+<p>容器运行时不一定有/bin/bash终端来交互执行top命令，而且容器还不一定有top命令，可以使用docker top来实现查看container中正在运行的进程。</p>
+<hr>
+<p><strong>docker attach :</strong>连接到正在运行中的容器。</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker attach [OPTIONS] CONTAINER</div></pre></td></tr></table></figure>
+<p>要attach上去的容器必须正在运行，可以同时连接上同一个container来共享屏幕（与screen命令的attach类似）。</p>
+<p>官方文档中说attach后可以通过CTRL-C来detach，但实际上经过我的测试，如果container当前在运行bash，CTRL-C自然是当前行的输入，没有退出；如果container当前正在前台运行进程，如输出nginx的access.log日志，CTRL-C不仅会导致退出容器，而且还stop了。这不是我们想要的，detach的意思按理应该是脱离容器终端，但容器依然运行。好在attach是可以带上–sig-proxy=false来确保CTRL-D或CTRL-C不会关闭容器。</p>
+<hr>
+<p><strong>docker events : </strong>从服务器获取实时事件</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker events [OPTIONS]</div></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-f ：</strong>根据条件过滤事件；</li>
+<li><strong>–since ：</strong>从指定的时间戳后显示所有事件;</li>
+<li><strong>–until ：</strong>流水时间显示到指定的时间为止；</li>
+</ul>
+<hr>
+</div><div class="tags"><a href="/tags/docker/">docker</a></div><div class="post-nav"><a class="pre" href="/2017/12/18/docker-resource/">docker资源控制</a><a class="next" href="/2017/12/18/encryption-algorithm/">encryption-algorithm</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://hujao.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/shell/">shell</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etl/">etl</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/shell/">shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/springboot/">springboot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web前端/">web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码管理/">代码管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/分布式/">分布式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/">大数据</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/容器编排/">容器编排</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/性能优化/">性能优化</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/持续集成/">持续集成</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索引擎/">搜索引擎</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据安全/">数据安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志收集/">日志收集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务监控/">服务监控</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/框架/">框架</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/流计算/">流计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/消息队列/">消息队列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/第三方支付/">第三方支付</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络协议/">网络协议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/负载均衡/">负载均衡</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/md5/" style="font-size: 15px;">md5</a> <a href="/tags/bat/" style="font-size: 15px;">bat</a> <a href="/tags/sercurity/" style="font-size: 15px;">sercurity</a> <a href="/tags/key/" style="font-size: 15px;">key</a> <a href="/tags/crt/" style="font-size: 15px;">crt</a> <a href="/tags/cer/" style="font-size: 15px;">cer</a> <a href="/tags/jks/" style="font-size: 15px;">jks</a> <a href="/tags/pfx/" style="font-size: 15px;">pfx</a> <a href="/tags/p12/" style="font-size: 15px;">p12</a> <a href="/tags/der/" style="font-size: 15px;">der</a> <a href="/tags/pem/" style="font-size: 15px;">pem</a> <a href="/tags/kdb/" style="font-size: 15px;">kdb</a> <a href="/tags/pub/" style="font-size: 15px;">pub</a> <a href="/tags/design/" style="font-size: 15px;">design</a> <a href="/tags/jms/" style="font-size: 15px;">jms</a> <a href="/tags/activemq/" style="font-size: 15px;">activemq</a> <a href="/tags/elasticsearch/" style="font-size: 15px;">elasticsearch</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/jenkins/" style="font-size: 15px;">jenkins</a> <a href="/tags/registry/" style="font-size: 15px;">registry</a> <a href="/tags/svn/" style="font-size: 15px;">svn</a> <a href="/tags/springboot-dubbo-dubbo-monitor/" style="font-size: 15px;">springboot dubbo dubbo-monitor</a> <a href="/tags/dubbo/" style="font-size: 15px;">dubbo</a> <a href="/tags/springboot/" style="font-size: 15px;">springboot</a> <a href="/tags/des/" style="font-size: 15px;">des</a> <a href="/tags/aes/" style="font-size: 15px;">aes</a> <a href="/tags/rsa/" style="font-size: 15px;">rsa</a> <a href="/tags/sha1/" style="font-size: 15px;">sha1</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/base64/" style="font-size: 15px;">base64</a> <a href="/tags/freemarker/" style="font-size: 15px;">freemarker</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/metrics/" style="font-size: 15px;">metrics</a> <a href="/tags/statsd/" style="font-size: 15px;">statsd</a> <a href="/tags/graphite/" style="font-size: 15px;">graphite</a> <a href="/tags/grafana/" style="font-size: 15px;">grafana</a> <a href="/tags/influxdb/" style="font-size: 15px;">influxdb</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/kafka/" style="font-size: 15px;">kafka</a> <a href="/tags/etl/" style="font-size: 15px;">etl</a> <a href="/tags/kubernetes/" style="font-size: 15px;">kubernetes</a> <a href="/tags/log/" style="font-size: 15px;">log</a> <a href="/tags/lombok/" style="font-size: 15px;">lombok</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/jpa/" style="font-size: 15px;">jpa</a> <a href="/tags/openssl/" style="font-size: 15px;">openssl</a> <a href="/tags/designpattern/" style="font-size: 15px;">designpattern</a> <a href="/tags/shiro/" style="font-size: 15px;">shiro</a> <a href="/tags/network/" style="font-size: 15px;">network</a> <a href="/tags/qos/" style="font-size: 15px;">qos</a> <a href="/tags/telegraf/" style="font-size: 15px;">telegraf</a> <a href="/tags/tomcat/" style="font-size: 15px;">tomcat</a> <a href="/tags/jdk8/" style="font-size: 15px;">jdk8</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/支付/" style="font-size: 15px;">支付</a> <a href="/tags/zookeeper/" style="font-size: 15px;">zookeeper</a> <a href="/tags/zkui/" style="font-size: 15px;">zkui</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/12/22/chart/">chart</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/21/binbash/">为docker编写bash启动脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/21/jenkins-for-docker/">jenkins+springboot+docker+git持续集成</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/qos/">qos基本原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/overlay-network/">overlay network</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/bat/">编写.bat文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/telegraf/">telegraf学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/docker-resource/">docker资源控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/docker-base/">docker基础命令回顾</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/encryption-algorithm/">encryption-algorithm</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">Ace'pages.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

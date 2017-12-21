@@ -1,48 +1,89 @@
-extends base
-
-block title
-  title= page.title + ' | ' + config.title
-
-block content
-  .post
-    h1.post-title= page.title
-    .post-meta= page.date.format('ll')
-      if page.categories.length > 0
-        span= ' | '
-        span.category
-          for category in page.categories.toArray()
-            a(href=url_for(category.path))= category.name
-      if theme.busuanzi == true
-        script(src='https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js', async)
-        span#busuanzi_container_page_pv= ' | '
-          span#busuanzi_value_page_pv
-          span= ' ' + __('Hits')
-    if theme.disqus
-      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
-    if theme.changyan
-      a.ds-thread-count(href=url_for(page.path) + '#SOHUCS')
-        span#changyan_count_unit(style='font-size: 15px; color: #6E7173;') 0
-        span= ' ' + __('Comment')
-      script(src='https://assets.changyan.sohu.com/upload/plugins/plugins.count.js', async)
-    if theme.valine.enable
-      a.disqus-comment-count( href=url_for(page.path) + '#vcomment')
-        span.valine-comment-count(data-xid=url_for(page.path))
-        span 条评论
-    if page.toc
-      div(class='clear')
-        div(id='toc' class='toc-article')
-          div(class='toc-title')= __('contents')
-          != toc(page.content, {list_number: theme.toc_number})
-    .post-content
-      != page.content
-    if theme.donate.enable == true
-      iframe(src='/donate/?AliPayQR=' + theme.donate.alipay_qr + '&WeChatQR=' + theme.donate.wechat_qr + '&GitHub=' + theme.donate.github + '&BTCQR=' + theme.donate.btc_qr + '&BTCKEY='+ theme.donate.btc_key + '&PayPal=' + theme.donate.paypal_url, style='overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;', frameborder='0', scrolling='no')
-    if theme.shareto == true
-      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
-      a.article-share-link(data-url=page.permalink, data-id=page._id, data-qrcode=qrcode(page.permalink))= __('shareto')
-
-    include _partial/tag.pug
-    include _partial/post_nav.pug
-
-    if page.comments
-      include _partial/comments.pug
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>java性能优化学习(四) | Ace'pages</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">java性能优化学习(四)</h1><a id="logo" href="/.">Ace'pages</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">java性能优化学习(四)</h1><div class="post-meta">May 4, 2017<span> | </span><span class="category"><a href="/categories/性能优化/">性能优化</a></span></div><div class="post-content"><p> ##程序设计优化建议</p>
+<p>常用算法逻辑</p>
+<ul>
+<li><p>FIFO算法 先进先出算法</p>
+</li>
+<li><p>LFU算法 Least Frequently Used 最近最多使用算法,淘汰数据基于数据使用次数</p>
+</li>
+<li><p>LRU算法 Least Recently Use 缓存一定量的数据,删除超过阀值的老数据,淘汰数据基于数据使用时间</p>
+<p>LFU效率高于LRU 但LFU存在”缓存污染”问题</p>
+</li>
+</ul>
+<p>多核算法优化原理</p>
+<ul>
+<li><p>锁机制:</p>
+<ul>
+<li><p>lock-free无锁设计</p>
+<ul>
+<li>Per-Cpu data 线程私有数据</li>
+<li>CAS based 全称Compare and swap 自旋锁(spinlock)</li>
+</ul>
+</li>
+<li><p>lock-less 减少锁的争用</p>
+<p> 双端队列,两个资源池,分配一个锁,释放一个锁,资源用完,交换两个资源池的指针</p>
+</li>
+</ul>
+</li>
+<li><p>多线程 多核CPU 线程越多使用内存会减少,性能更高</p>
+</li>
+<li><p>NUMA架构</p>
+<p> CPU附属内存  访问自身直接附属的 LocalAccess 访问其他CPU附属的内存为RemoteAccess 通过inter-connect</p>
+<p>主流企业服务器:</p>
+<p>SMP Symmetric Multi Processing对称多处理架构</p>
+<p>NUMA Non-Uniform Memory Access 非一致存储访问架构</p>
+<p>MPP Massive Parallel Processing 海量并行处理架构        </p>
+</li>
+</ul>
+<p>算法优化</p>
+<ul>
+<li>冒泡算法</li>
+<li>Array类中的二分法和归并排序</li>
+<li>DualPivotQuickSort类 (jdk7)</li>
+<li>线程池算法分析</li>
+</ul>
+<p>设计模式</p>
+<ul>
+<li>6大准则<ul>
+<li>开闭原则</li>
+<li>里氏代换原则</li>
+<li>依赖倒转原则</li>
+<li>接口隔离原则</li>
+<li>最少知道原则</li>
+<li>合成复用原则</li>
+</ul>
+</li>
+<li>单一对象控制</li>
+<li>并行程序设计模式<ul>
+<li>Future模式</li>
+<li>Master-Slave模式</li>
+<li>保护暂停模式</li>
+<li>不变模式</li>
+<li>生产者-消费者模式</li>
+</ul>
+</li>
+<li>接口适配 (NR)</li>
+<li>访问方式隔离</li>
+</ul>
+<p>I/O及网络优化</p>
+<ul>
+<li>I/O优化</li>
+<li>Socket编程</li>
+<li>NIO2.0文件系统</li>
+</ul>
+<p>数据应用优化</p>
+<ul>
+<li>关系型数据库优化</li>
+<li>HBase插入大量数据</li>
+<li>解决海量数据缓存(NR)</li>
+</ul>
+<p>其他</p>
+<ul>
+<li>web系统优化<ul>
+<li>Servlet和jsp优化</li>
+<li>内容缓存</li>
+</ul>
+</li>
+<li>死锁情况解决</li>
+<li>JavaBeans组件</li>
+</ul>
+</div><div class="tags"></div><div class="post-nav"><a class="pre" href="/2017/05/04/java-optimizing-5/">java性能优化学习(五)</a><a class="next" href="/2017/05/04/java-optimizing-3/">java性能优化学习(三)</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://hujao.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/shell/">shell</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etl/">etl</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/shell/">shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/springboot/">springboot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web前端/">web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码管理/">代码管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/分布式/">分布式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/">大数据</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/容器编排/">容器编排</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/性能优化/">性能优化</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/持续集成/">持续集成</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索引擎/">搜索引擎</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据安全/">数据安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志收集/">日志收集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务监控/">服务监控</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/框架/">框架</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/流计算/">流计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/消息队列/">消息队列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/第三方支付/">第三方支付</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络协议/">网络协议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/负载均衡/">负载均衡</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/md5/" style="font-size: 15px;">md5</a> <a href="/tags/bat/" style="font-size: 15px;">bat</a> <a href="/tags/sercurity/" style="font-size: 15px;">sercurity</a> <a href="/tags/key/" style="font-size: 15px;">key</a> <a href="/tags/crt/" style="font-size: 15px;">crt</a> <a href="/tags/cer/" style="font-size: 15px;">cer</a> <a href="/tags/jks/" style="font-size: 15px;">jks</a> <a href="/tags/pfx/" style="font-size: 15px;">pfx</a> <a href="/tags/p12/" style="font-size: 15px;">p12</a> <a href="/tags/der/" style="font-size: 15px;">der</a> <a href="/tags/pem/" style="font-size: 15px;">pem</a> <a href="/tags/kdb/" style="font-size: 15px;">kdb</a> <a href="/tags/pub/" style="font-size: 15px;">pub</a> <a href="/tags/design/" style="font-size: 15px;">design</a> <a href="/tags/jms/" style="font-size: 15px;">jms</a> <a href="/tags/activemq/" style="font-size: 15px;">activemq</a> <a href="/tags/elasticsearch/" style="font-size: 15px;">elasticsearch</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/jenkins/" style="font-size: 15px;">jenkins</a> <a href="/tags/registry/" style="font-size: 15px;">registry</a> <a href="/tags/svn/" style="font-size: 15px;">svn</a> <a href="/tags/springboot-dubbo-dubbo-monitor/" style="font-size: 15px;">springboot dubbo dubbo-monitor</a> <a href="/tags/dubbo/" style="font-size: 15px;">dubbo</a> <a href="/tags/springboot/" style="font-size: 15px;">springboot</a> <a href="/tags/des/" style="font-size: 15px;">des</a> <a href="/tags/aes/" style="font-size: 15px;">aes</a> <a href="/tags/rsa/" style="font-size: 15px;">rsa</a> <a href="/tags/sha1/" style="font-size: 15px;">sha1</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/base64/" style="font-size: 15px;">base64</a> <a href="/tags/freemarker/" style="font-size: 15px;">freemarker</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/metrics/" style="font-size: 15px;">metrics</a> <a href="/tags/statsd/" style="font-size: 15px;">statsd</a> <a href="/tags/graphite/" style="font-size: 15px;">graphite</a> <a href="/tags/grafana/" style="font-size: 15px;">grafana</a> <a href="/tags/influxdb/" style="font-size: 15px;">influxdb</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/kafka/" style="font-size: 15px;">kafka</a> <a href="/tags/etl/" style="font-size: 15px;">etl</a> <a href="/tags/kubernetes/" style="font-size: 15px;">kubernetes</a> <a href="/tags/log/" style="font-size: 15px;">log</a> <a href="/tags/lombok/" style="font-size: 15px;">lombok</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/jpa/" style="font-size: 15px;">jpa</a> <a href="/tags/openssl/" style="font-size: 15px;">openssl</a> <a href="/tags/designpattern/" style="font-size: 15px;">designpattern</a> <a href="/tags/shiro/" style="font-size: 15px;">shiro</a> <a href="/tags/network/" style="font-size: 15px;">network</a> <a href="/tags/qos/" style="font-size: 15px;">qos</a> <a href="/tags/telegraf/" style="font-size: 15px;">telegraf</a> <a href="/tags/tomcat/" style="font-size: 15px;">tomcat</a> <a href="/tags/jdk8/" style="font-size: 15px;">jdk8</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/支付/" style="font-size: 15px;">支付</a> <a href="/tags/zookeeper/" style="font-size: 15px;">zookeeper</a> <a href="/tags/zkui/" style="font-size: 15px;">zkui</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/12/22/chart/">chart</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/21/binbash/">为docker编写bash启动脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/21/jenkins-for-docker/">jenkins+springboot+docker+git持续集成</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/qos/">qos基本原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/overlay-network/">overlay network</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/bat/">编写.bat文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/telegraf/">telegraf学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/docker-resource/">docker资源控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/docker-base/">docker基础命令回顾</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/encryption-algorithm/">encryption-algorithm</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">Ace'pages.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

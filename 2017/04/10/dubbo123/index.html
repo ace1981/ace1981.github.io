@@ -1,48 +1,46 @@
-extends base
-
-block title
-  title= page.title + ' | ' + config.title
-
-block content
-  .post
-    h1.post-title= page.title
-    .post-meta= page.date.format('ll')
-      if page.categories.length > 0
-        span= ' | '
-        span.category
-          for category in page.categories.toArray()
-            a(href=url_for(category.path))= category.name
-      if theme.busuanzi == true
-        script(src='https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js', async)
-        span#busuanzi_container_page_pv= ' | '
-          span#busuanzi_value_page_pv
-          span= ' ' + __('Hits')
-    if theme.disqus
-      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
-    if theme.changyan
-      a.ds-thread-count(href=url_for(page.path) + '#SOHUCS')
-        span#changyan_count_unit(style='font-size: 15px; color: #6E7173;') 0
-        span= ' ' + __('Comment')
-      script(src='https://assets.changyan.sohu.com/upload/plugins/plugins.count.js', async)
-    if theme.valine.enable
-      a.disqus-comment-count( href=url_for(page.path) + '#vcomment')
-        span.valine-comment-count(data-xid=url_for(page.path))
-        span 条评论
-    if page.toc
-      div(class='clear')
-        div(id='toc' class='toc-article')
-          div(class='toc-title')= __('contents')
-          != toc(page.content, {list_number: theme.toc_number})
-    .post-content
-      != page.content
-    if theme.donate.enable == true
-      iframe(src='/donate/?AliPayQR=' + theme.donate.alipay_qr + '&WeChatQR=' + theme.donate.wechat_qr + '&GitHub=' + theme.donate.github + '&BTCQR=' + theme.donate.btc_qr + '&BTCKEY='+ theme.donate.btc_key + '&PayPal=' + theme.donate.paypal_url, style='overflow-x:hidden; overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;', frameborder='0', scrolling='no')
-    if theme.shareto == true
-      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
-      a.article-share-link(data-url=page.permalink, data-id=page._id, data-qrcode=qrcode(page.permalink))= __('shareto')
-
-    include _partial/tag.pug
-    include _partial/post_nav.pug
-
-    if page.comments
-      include _partial/comments.pug
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>dubbo原理学习(转) | Ace'pages</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">dubbo原理学习(转)</h1><a id="logo" href="/.">Ace'pages</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">dubbo原理学习(转)</h1><div class="post-meta">Apr 10, 2017<span> | </span><span class="category"><a href="/categories/框架/">框架</a></span></div><div class="post-content"><h5 id="什么是Dubbo"><a href="#什么是Dubbo" class="headerlink" title="什么是Dubbo?"></a>什么是Dubbo?</h5><p>Dubbo是阿里巴巴公司开源的一个高性能优秀的服务框架，使得应用可通过高性能的RPC实现服务的输出和输入功能，以及SOA服务治理方案，和spring框架无缝集成。</p>
+<h5 id="什么是服务框架？"><a href="#什么是服务框架？" class="headerlink" title="什么是服务框架？"></a>什么是服务框架？</h5><p>服务框架就是提供服务的，服务框架是基于业务对应SaaS分发模式的服务进行整合，以产生新的应用。服务框架中，与业务相关，但与业务功能的整合无关的组件以外部服务形式引入（也就是说把一些业务分离出来，变成一种服务，供其他人调用该服务）。</p>
+<h5 id="什么是RPC？"><a href="#什么是RPC？" class="headerlink" title="什么是RPC？"></a>什么是RPC？</h5><p>RPC全拼是（Remote Procedure CallProtocol）远程过程调用协议，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。（理解：远程调用协议，为Dubbo实现远程接口调用做支持）</p>
+<h5 id="Dubbo能做什么？"><a href="#Dubbo能做什么？" class="headerlink" title="Dubbo能做什么？"></a>Dubbo能做什么？</h5><ol>
+<li>透明化的远程方法调用，就像调用本地方昂发一样调用远程方法，只需要简单配置，没有任何API侵入。</li>
+</ol>
+<ol>
+<li>软负载均衡及容错机制，可以在内网替代<a href="http://baike.baidu.com/link?url=OSb2PhYmPIr3iFHeyeUuwisAl_LDp5jgFHtYlsMgak9iLxwdzeePzaVEGL0IZIr-0g5CDrs5IJxvGqeLRpsrmq" target="_blank" rel="external">F5</a>等硬件负载均衡器，降低成本，减少单点。</li>
+</ol>
+<ol>
+<li>服务自动注册与发现，不再需要写死服务提供方地址，注册中心基于接口名查询服务提供者的ip地址，并且能够平滑添加或删除服务提供者。 </li>
+</ol>
+<p>(理解:可以这样理解，在饭店中点菜需要消费者和服务人员，服务员使用点菜宝点菜的时候，饭店老板提前把自己的菜品相关信息注册到点菜宝中，这样服务员可以通过点菜宝给消费者点菜，当增加新的菜品的时候，会在点菜宝中注册新的菜品信息，当然顾客就可以选择这个菜品了。dubbo就是类似这样的原理，通过dubbo可以让公司内网之间的View层调用不同项目的service)</p>
+<h5 id="和非面向服务的项目比较"><a href="#和非面向服务的项目比较" class="headerlink" title="和非面向服务的项目比较"></a>和非面向服务的项目比较</h5><p> 之前为解决高并发问题的时候，我们可能会做针对应用级别的负载均衡，部署的时候做tomcat集群。而面向服务，在我看来是，细粒度的把项目逻辑层分割开来，把针对saas层公共的逻辑提取出来，供view层调用。我们可以根据业务逻辑方面，把不同的业务逻辑点分离出来，并部署到不同的服务器上，也就是把service层部署到不同的服务器上，可以供其他view层调用。</p>
+<h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><p>随着互联网的发展，网站应用的规模不断扩大，常规的垂直结构已经不能满足需求，分布式服务架构以及流动计算架构势在必行，而目前针对和spring容器相结合的分布式，就是dubbo了。</p>
+<h5 id="演变过程"><a href="#演变过程" class="headerlink" title="演变过程"></a>演变过程</h5><h5 id="单一应用架构"><a href="#单一应用架构" class="headerlink" title="单一应用架构"></a>单一应用架构</h5><p>当网站需要的流量很小时，只需要一个应用，我们可以把这个应用部署在一台机器上，以减少部署节点和成本。</p>
+<p>当流量较小的时候，业务逻辑不是很复杂的时候，我们可以使用ORM（对象关系映射）数据库框架，以减少开发成本。</p>
+<h5 id="垂直应用架构"><a href="#垂直应用架构" class="headerlink" title="垂直应用架构"></a>垂直应用架构</h5><p>当访问量逐渐增大，一个项目通过增加机器来负载均衡，而增加机器的加速度越来越小，我们可以将应用拆分成几个互不相关的应用，以提高效率，我们使用的是MVCweb框架。（根据业务拆分成多个web项目）</p>
+<h5 id="分布式服务架构"><a href="#分布式服务架构" class="headerlink" title="分布式服务架构"></a>分布式服务架构</h5><p>当垂直应用越来越多，应用之间的交互不可避免，将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心，使前端应用能快速响应适应多变的市场需求。</p>
+<p>此时，用于使用提高业务复用及整合的分布式服务框架（RPC）。（业务层抽象出来，view层采用RPC远程调用service）</p>
+<h5 id="流动计算机构"><a href="#流动计算机构" class="headerlink" title="流动计算机构"></a>流动计算机构</h5><p>当服务越来越多，容量的评估，小服务资源的浪费等问题逐渐明显，此时需要一个调度中心基于访问压力实时管理集群容量，提高集群利用率。</p>
+<p>   此时，用于提高机器利用率的资源调度和治理中心（SOA）是关键。（增加调度中心来控制）</p>
+<h5 id="dubbo服务治理"><a href="#dubbo服务治理" class="headerlink" title="dubbo服务治理"></a>dubbo服务治理</h5><p> 需求</p>
+<p>1.当服务越来越多时，服务URL配置管理比较困难，F5负载均衡的单点压力也越来越大。</p>
+<p>可是使用一个注册中心，动态的注册和发现服务，使服务的位置透明。并通过在消费方获取服务提供方地址列表，实现软负载均衡和Failover，降低对F5硬件负载均衡的依赖，减少部分成本。</p>
+<p>2.当服务间的依赖关系变得错综复杂，甚至分不清哪个应用在哪个应用之前启动，架构师也不能完整描述应用之间的架构关系。</p>
+<p>需要一个可以自动画出应用之间的依赖关系的图，以帮助架构师处理清理关系。</p>
+<p>3.当服务的调用量越来越大，服务的容量问题就暴露出来，这个服务要多少机器支撑？什么时候加机器呢？</p>
+<p>将服务现在每天的掉用量，响应时间，都统计出来，作为容量规划的参考指标。其次，动态调整权重，在线上，将某台机器的权重一直加大，并在加大过程中记录响应时间的变化，直到响应时间到达阀值，记录此时的访问量，再以此访问量乘以机器数反推总容量。</p>
+<h5 id="dubbo主要核心部件"><a href="#dubbo主要核心部件" class="headerlink" title="dubbo主要核心部件"></a>dubbo主要核心部件</h5><p>Remoting：网络通信框架，实现了sync-over-async和request-response消息机制。</p>
+<p>RPC：一个远程过程调用的抽象，支持负载均衡、容灾和集群功能。</p>
+<p>Registry：服务目录框架用于服务的注册和服务事件发布和订阅。（类似第一篇文章中的点菜宝）</p>
+<h5 id="dubbo架构"><a href="#dubbo架构" class="headerlink" title="dubbo架构"></a>dubbo架构</h5><p><img src="http://img.blog.csdn.net/20150906112216852" alt="img"></p>
+<p>Provider： 暴露服务的提供方。</p>
+<p>Consumer：调用远程服务的服务消费方。</p>
+<p>Registry： 服务注册中心和发现中心。</p>
+<p>Monitor： 统计服务和调用次数，调用时间监控中心。（dubbo的控制台页面中可以显示）</p>
+<p>Container：服务运行的容器。</p>
+<h5 id="调用关系："><a href="#调用关系：" class="headerlink" title="调用关系："></a>调用关系：</h5><p>0.服务器负责启动，加载，运行提供者（例如在tomcat容器中，启动dubbo服务端）。</p>
+<p>1.提供者在启动时，向注册中心注册自己提供的服务。</p>
+<p>2.消费者启动时，向注册中心订阅自己所需的服务。</p>
+<p>3.注册中心返回提供者地址列表给消费者，如果有变更，注册中心将基于长连接推送变更数据给消费者。</p>
+<p>4.消费者，从远程接口列表中，调用远程接口，dubbo会基于负载均衡算法，选一台提供者进行调用，如果调用失败则选择另一台。</p>
+<p>5.消费者和提供者，在内存中累计调用次数和调用时间，定时每分钟发送一次统计数据到监控中心。（可以在dubbo的可视化界面看到）</p>
+<p>综上，这个过程和生活中的很多过程类似，例如第一篇中点菜中顾客和饭店的例子。从中也警戒自己，一定不要把技术和生活分开，一定要把工作和生活分开，今天听罗胖的一句话，说有能力的人是能把一件大的目标，分成小的目标，并不断去实现，同时告诉自己再忙，头脑也要清醒，冷静的把大问题分解为小问题，然后一一解决之。</p>
+</div><div class="tags"><a href="/tags/dubbo/">dubbo</a></div><div class="post-nav"><a class="pre" href="/2017/04/10/docker-svn/">docker构建svn</a><a class="next" href="/2017/04/10/docker-compose/">docker-compose(未开始)</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://hujao.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/shell/">shell</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etl/">etl</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/shell/">shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/springboot/">springboot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web前端/">web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码管理/">代码管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/分布式/">分布式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/">大数据</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/容器编排/">容器编排</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/性能优化/">性能优化</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/持续集成/">持续集成</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索引擎/">搜索引擎</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据安全/">数据安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志收集/">日志收集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务监控/">服务监控</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/框架/">框架</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/流计算/">流计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/消息队列/">消息队列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/第三方支付/">第三方支付</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络协议/">网络协议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/负载均衡/">负载均衡</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/md5/" style="font-size: 15px;">md5</a> <a href="/tags/bat/" style="font-size: 15px;">bat</a> <a href="/tags/sercurity/" style="font-size: 15px;">sercurity</a> <a href="/tags/key/" style="font-size: 15px;">key</a> <a href="/tags/crt/" style="font-size: 15px;">crt</a> <a href="/tags/cer/" style="font-size: 15px;">cer</a> <a href="/tags/jks/" style="font-size: 15px;">jks</a> <a href="/tags/pfx/" style="font-size: 15px;">pfx</a> <a href="/tags/p12/" style="font-size: 15px;">p12</a> <a href="/tags/der/" style="font-size: 15px;">der</a> <a href="/tags/pem/" style="font-size: 15px;">pem</a> <a href="/tags/kdb/" style="font-size: 15px;">kdb</a> <a href="/tags/pub/" style="font-size: 15px;">pub</a> <a href="/tags/design/" style="font-size: 15px;">design</a> <a href="/tags/jms/" style="font-size: 15px;">jms</a> <a href="/tags/activemq/" style="font-size: 15px;">activemq</a> <a href="/tags/elasticsearch/" style="font-size: 15px;">elasticsearch</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/jenkins/" style="font-size: 15px;">jenkins</a> <a href="/tags/registry/" style="font-size: 15px;">registry</a> <a href="/tags/svn/" style="font-size: 15px;">svn</a> <a href="/tags/springboot-dubbo-dubbo-monitor/" style="font-size: 15px;">springboot dubbo dubbo-monitor</a> <a href="/tags/dubbo/" style="font-size: 15px;">dubbo</a> <a href="/tags/springboot/" style="font-size: 15px;">springboot</a> <a href="/tags/des/" style="font-size: 15px;">des</a> <a href="/tags/aes/" style="font-size: 15px;">aes</a> <a href="/tags/rsa/" style="font-size: 15px;">rsa</a> <a href="/tags/sha1/" style="font-size: 15px;">sha1</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/base64/" style="font-size: 15px;">base64</a> <a href="/tags/freemarker/" style="font-size: 15px;">freemarker</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/metrics/" style="font-size: 15px;">metrics</a> <a href="/tags/statsd/" style="font-size: 15px;">statsd</a> <a href="/tags/graphite/" style="font-size: 15px;">graphite</a> <a href="/tags/grafana/" style="font-size: 15px;">grafana</a> <a href="/tags/influxdb/" style="font-size: 15px;">influxdb</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/kafka/" style="font-size: 15px;">kafka</a> <a href="/tags/etl/" style="font-size: 15px;">etl</a> <a href="/tags/kubernetes/" style="font-size: 15px;">kubernetes</a> <a href="/tags/log/" style="font-size: 15px;">log</a> <a href="/tags/lombok/" style="font-size: 15px;">lombok</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/jpa/" style="font-size: 15px;">jpa</a> <a href="/tags/openssl/" style="font-size: 15px;">openssl</a> <a href="/tags/designpattern/" style="font-size: 15px;">designpattern</a> <a href="/tags/shiro/" style="font-size: 15px;">shiro</a> <a href="/tags/network/" style="font-size: 15px;">network</a> <a href="/tags/qos/" style="font-size: 15px;">qos</a> <a href="/tags/telegraf/" style="font-size: 15px;">telegraf</a> <a href="/tags/tomcat/" style="font-size: 15px;">tomcat</a> <a href="/tags/jdk8/" style="font-size: 15px;">jdk8</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/支付/" style="font-size: 15px;">支付</a> <a href="/tags/zookeeper/" style="font-size: 15px;">zookeeper</a> <a href="/tags/zkui/" style="font-size: 15px;">zkui</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/12/22/chart/">chart</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/21/binbash/">为docker编写bash启动脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/21/jenkins-for-docker/">jenkins+springboot+docker+git持续集成</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/qos/">qos基本原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/overlay-network/">overlay network</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/bat/">编写.bat文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/telegraf/">telegraf学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/docker-resource/">docker资源控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/docker-base/">docker基础命令回顾</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/encryption-algorithm/">encryption-algorithm</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">Ace'pages.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
