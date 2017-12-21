@@ -1,4 +1,83 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>docker构建tomcat镜像 | Ace'pages</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">docker构建tomcat镜像</h1><a id="logo" href="/.">Ace'pages</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">docker构建tomcat镜像</h1><div class="post-meta">Apr 7, 2017<span> | </span><span class="category"><a href="/categories/docker/">docker</a></span></div><div class="post-content"><h5 id="1-mac远程连接ssh"><a href="#1-mac远程连接ssh" class="headerlink" title="1.mac远程连接ssh"></a>1.mac远程连接ssh</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">~ &gt;ssh ace@192.168.1.70</div></pre></td></tr></table></figure>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>docker构建tomcat镜像 | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.mac远程连接ssh1~ &amp;gt;ssh ace@192.168.1.70
+输入密码,进入ubuntu虚拟机
+2.在~下创建一个工作目录12ace@server-docker:~$ mkdir tomcat8ace@server-docker:~$ cd tomcat8
+3.通过wget下载jdk8下载连接在官网下面查找http://www.oracle.com/technetwork/jav">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker构建tomcat镜像">
+<meta property="og:url" content="http://hujao.com/2017/04/07/tomcat-docker-steps/index.html">
+<meta property="og:site_name" content="Ace'pages">
+<meta property="og:description" content="1.mac远程连接ssh1~ &amp;gt;ssh ace@192.168.1.70
+输入密码,进入ubuntu虚拟机
+2.在~下创建一个工作目录12ace@server-docker:~$ mkdir tomcat8ace@server-docker:~$ cd tomcat8
+3.通过wget下载jdk8下载连接在官网下面查找http://www.oracle.com/technetwork/jav">
+<meta property="og:updated_time" content="2017-12-21T05:46:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="docker构建tomcat镜像">
+<meta name="twitter:description" content="1.mac远程连接ssh1~ &amp;gt;ssh ace@192.168.1.70
+输入密码,进入ubuntu虚拟机
+2.在~下创建一个工作目录12ace@server-docker:~$ mkdir tomcat8ace@server-docker:~$ cd tomcat8
+3.通过wget下载jdk8下载连接在官网下面查找http://www.oracle.com/technetwork/jav">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-tomcat-docker-steps" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/categories">Categories</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      docker构建tomcat镜像
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h5 id="1-mac远程连接ssh"><a href="#1-mac远程连接ssh" class="headerlink" title="1.mac远程连接ssh"></a>1.mac远程连接ssh</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">~ &gt;ssh ace@192.168.1.70</div></pre></td></tr></table></figure>
 <p>输入密码,进入ubuntu虚拟机</p>
 <h5 id="2-在-下创建一个工作目录"><a href="#2-在-下创建一个工作目录" class="headerlink" title="2.在~下创建一个工作目录"></a>2.在~下创建一个工作目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ace@server-docker:~$ mkdir tomcat8</div><div class="line">ace@server-docker:~$ cd tomcat8</div></pre></td></tr></table></figure>
 <h5 id="3-通过wget下载jdk8"><a href="#3-通过wget下载jdk8" class="headerlink" title="3.通过wget下载jdk8"></a>3.通过wget下载jdk8</h5><p>下载连接在官网下面查找<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a> ,选择版本如<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">Java SE 8u121</a> 勾选Accept 复制响应的下载地址(这个地址直接可能会失败,可以先在浏览器下载,查看下载连接复制出来)</p>
@@ -15,4 +94,99 @@
 <h5 id="8-查看并启动容器"><a href="#8-查看并启动容器" class="headerlink" title="8 查看并启动容器"></a>8 查看并启动容器</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ace@server-docker:~/tomcat8$ docker images</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ace@server-docker:~/tomcat8$ docker run -d --restart always --name mytomcat -p 8081:8080 ace/tomcat</div></pre></td></tr></table></figure>
 <h5 id="9-打开tomcat主页"><a href="#9-打开tomcat主页" class="headerlink" title="9 打开tomcat主页"></a>9 打开tomcat主页</h5><p>打开页面<a href="http://192.168.1.70:8081" target="_blank" rel="external">http://192.168.1.70:8081</a>就可以看到tomcat启动了 使用tomcat-users.xml设置的帐号密码即可以登录到管理后台</p>
-</div><div class="tags"><a href="/tags/docker/">docker</a><a href="/tags/tomcat/">tomcat</a><a href="/tags/jdk8/">jdk8</a><a href="/tags/ubuntu/">ubuntu</a></div><div class="post-nav"><a class="pre" href="/2017/04/10/zookeeper-in-docker/">docker搭建zookeeper伪集群及zkui管理</a><a class="next" href="/2017/04/05/weixin-sendpack/">微信红包对接</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://hujao.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/shell/">shell</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etl/">etl</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/shell/">shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/springboot/">springboot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web前端/">web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码管理/">代码管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/分布式/">分布式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/">大数据</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/容器编排/">容器编排</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/性能优化/">性能优化</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/持续集成/">持续集成</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索引擎/">搜索引擎</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据安全/">数据安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志收集/">日志收集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务监控/">服务监控</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/框架/">框架</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/流计算/">流计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/消息队列/">消息队列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/第三方支付/">第三方支付</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络协议/">网络协议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/负载均衡/">负载均衡</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/md5/" style="font-size: 15px;">md5</a> <a href="/tags/bat/" style="font-size: 15px;">bat</a> <a href="/tags/sercurity/" style="font-size: 15px;">sercurity</a> <a href="/tags/key/" style="font-size: 15px;">key</a> <a href="/tags/crt/" style="font-size: 15px;">crt</a> <a href="/tags/cer/" style="font-size: 15px;">cer</a> <a href="/tags/jks/" style="font-size: 15px;">jks</a> <a href="/tags/pfx/" style="font-size: 15px;">pfx</a> <a href="/tags/p12/" style="font-size: 15px;">p12</a> <a href="/tags/der/" style="font-size: 15px;">der</a> <a href="/tags/pem/" style="font-size: 15px;">pem</a> <a href="/tags/kdb/" style="font-size: 15px;">kdb</a> <a href="/tags/pub/" style="font-size: 15px;">pub</a> <a href="/tags/design/" style="font-size: 15px;">design</a> <a href="/tags/jms/" style="font-size: 15px;">jms</a> <a href="/tags/activemq/" style="font-size: 15px;">activemq</a> <a href="/tags/elasticsearch/" style="font-size: 15px;">elasticsearch</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/jenkins/" style="font-size: 15px;">jenkins</a> <a href="/tags/registry/" style="font-size: 15px;">registry</a> <a href="/tags/svn/" style="font-size: 15px;">svn</a> <a href="/tags/springboot-dubbo-dubbo-monitor/" style="font-size: 15px;">springboot dubbo dubbo-monitor</a> <a href="/tags/dubbo/" style="font-size: 15px;">dubbo</a> <a href="/tags/springboot/" style="font-size: 15px;">springboot</a> <a href="/tags/des/" style="font-size: 15px;">des</a> <a href="/tags/aes/" style="font-size: 15px;">aes</a> <a href="/tags/rsa/" style="font-size: 15px;">rsa</a> <a href="/tags/sha1/" style="font-size: 15px;">sha1</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/base64/" style="font-size: 15px;">base64</a> <a href="/tags/freemarker/" style="font-size: 15px;">freemarker</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/metrics/" style="font-size: 15px;">metrics</a> <a href="/tags/statsd/" style="font-size: 15px;">statsd</a> <a href="/tags/graphite/" style="font-size: 15px;">graphite</a> <a href="/tags/grafana/" style="font-size: 15px;">grafana</a> <a href="/tags/influxdb/" style="font-size: 15px;">influxdb</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/kafka/" style="font-size: 15px;">kafka</a> <a href="/tags/etl/" style="font-size: 15px;">etl</a> <a href="/tags/kubernetes/" style="font-size: 15px;">kubernetes</a> <a href="/tags/log/" style="font-size: 15px;">log</a> <a href="/tags/lombok/" style="font-size: 15px;">lombok</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/jpa/" style="font-size: 15px;">jpa</a> <a href="/tags/openssl/" style="font-size: 15px;">openssl</a> <a href="/tags/designpattern/" style="font-size: 15px;">designpattern</a> <a href="/tags/shiro/" style="font-size: 15px;">shiro</a> <a href="/tags/network/" style="font-size: 15px;">network</a> <a href="/tags/qos/" style="font-size: 15px;">qos</a> <a href="/tags/telegraf/" style="font-size: 15px;">telegraf</a> <a href="/tags/tomcat/" style="font-size: 15px;">tomcat</a> <a href="/tags/jdk8/" style="font-size: 15px;">jdk8</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/支付/" style="font-size: 15px;">支付</a> <a href="/tags/zookeeper/" style="font-size: 15px;">zookeeper</a> <a href="/tags/zkui/" style="font-size: 15px;">zkui</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/12/21/binbash/">为docker编写bash启动脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/21/jenkins-for-docker/">jenkins+springboot+docker+git持续集成</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/qos/">qos基本原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/overlay-network/">overlay network</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/bat/">编写.bat文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/telegraf/">telegraf学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/docker-resource/">docker资源控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/docker-base/">docker基础命令回顾</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/encryption-algorithm/">encryption-algorithm</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/openssl/">openssl常用命令</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">Ace'pages.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2017/04/07/tomcat-docker-steps/" class="article-date">
+  <time datetime="2017-04-07T03:11:51.000Z" itemprop="datePublished">2017-04-07</time>
+</a>
+
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/docker/">docker</a>
+  </div>
+
+
+          </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jdk8/">jdk8</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tomcat/">tomcat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2017/04/10/zookeeper-in-docker/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          docker搭建zookeeper伪集群及zkui管理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/05/weixin-sendpack/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">微信红包对接</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

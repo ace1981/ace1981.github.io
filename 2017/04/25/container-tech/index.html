@@ -1,4 +1,88 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>容器技术(转) | Ace'pages</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">容器技术(转)</h1><a id="logo" href="/.">Ace'pages</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">容器技术(转)</h1><div class="post-meta">Apr 25, 2017<span> | </span><span class="category"><a href="/categories/容器编排/">容器编排</a></span></div><div class="post-content"><p>这篇文章对比了三大主流调度框架：Docker Swarm、Google Kubernetes和Apache Mesos（基于Marathon框架）。在解释了调度和容器的基本概念后，文章探讨了每个框架的特点，并从以下两个用例来对比他们：一个只使用了两个容器的网站应用，和一个能具有可扩展性的投票应用。</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>容器技术(转) | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这篇文章对比了三大主流调度框架：Docker Swarm、Google Kubernetes和Apache Mesos（基于Marathon框架）。在解释了调度和容器的基本概念后，文章探讨了每个框架的特点，并从以下两个用例来对比他们：一个只使用了两个容器的网站应用，和一个能具有可扩展性的投票应用。
+什么是调度（scheduling）？什么是容器（container）？调度一个集群调度工具有多个目的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="容器技术(转)">
+<meta property="og:url" content="http://hujao.com/2017/04/25/container-tech/index.html">
+<meta property="og:site_name" content="Ace'pages">
+<meta property="og:description" content="这篇文章对比了三大主流调度框架：Docker Swarm、Google Kubernetes和Apache Mesos（基于Marathon框架）。在解释了调度和容器的基本概念后，文章探讨了每个框架的特点，并从以下两个用例来对比他们：一个只使用了两个容器的网站应用，和一个能具有可扩展性的投票应用。
+什么是调度（scheduling）？什么是容器（container）？调度一个集群调度工具有多个目的">
+<meta property="og:image" content="http://dockerone.com/uploads/article/20160320/5c3572deaa897e643f9cb55e3e2b4a1e.png">
+<meta property="og:image" content="http://dockerone.com/uploads/article/20160320/e91fe0f42ffee5a1b2d1b7c2fa6e4e39.png">
+<meta property="og:image" content="http://dockerone.com/uploads/article/20160320/c2d12aaca08bf2b3270089600f8b1c4d.png">
+<meta property="og:image" content="http://dockerone.com/uploads/article/20160320/bba30f8f454ec423e10e10d080c5d581.png">
+<meta property="og:image" content="http://dockerone.com/uploads/article/20160320/8c19dc9133692515d9c6fd99c54c9109.png">
+<meta property="og:image" content="http://dockerone.com/uploads/article/20160320/c45cb1acf3ca964280c479203304e4bd.jpeg">
+<meta property="og:image" content="http://dockerone.com/uploads/article/20160320/70ba89c8e82c4e4beba3e55caa370081.jpeg">
+<meta property="og:image" content="http://dockerone.com/uploads/article/20160320/656e0f1cdb250f269bb3d32ec747f17d.png">
+<meta property="og:image" content="http://dockerone.com/uploads/article/20160320/19d5aaf1364eb578de1aae9147164a02.png">
+<meta property="og:image" content="http://dockerone.com/uploads/article/20160320/ecb8db5f3f118186f2d1cd955ea37563.png">
+<meta property="og:updated_time" content="2017-12-21T05:49:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="容器技术(转)">
+<meta name="twitter:description" content="这篇文章对比了三大主流调度框架：Docker Swarm、Google Kubernetes和Apache Mesos（基于Marathon框架）。在解释了调度和容器的基本概念后，文章探讨了每个框架的特点，并从以下两个用例来对比他们：一个只使用了两个容器的网站应用，和一个能具有可扩展性的投票应用。
+什么是调度（scheduling）？什么是容器（container）？调度一个集群调度工具有多个目的">
+<meta name="twitter:image" content="http://dockerone.com/uploads/article/20160320/5c3572deaa897e643f9cb55e3e2b4a1e.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-container-tech" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/categories">Categories</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      容器技术(转)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p>这篇文章对比了三大主流调度框架：Docker Swarm、Google Kubernetes和Apache Mesos（基于Marathon框架）。在解释了调度和容器的基本概念后，文章探讨了每个框架的特点，并从以下两个用例来对比他们：一个只使用了两个容器的网站应用，和一个能具有可扩展性的投票应用。</p>
 <p>什么是调度（scheduling）？什么是容器（container）？<strong>调度</strong>一个集群调度工具有多个目的：使得集群的资源被高效利用，支持用户提供的配置约束（placement constraint），能够迅速调度应用以此保证它们不会处于待定状态（pending state），有一定程度的“公平”（fairness），具有一定的鲁棒性和可用性。为了达到这些目的，在一篇关于Omega（一个由Google开发的，针对大型计算集群的可扩展调度框架）的白皮书中，提到了三个主要的调度架构[48]：<br><a href="http://dockerone.com/uploads/article/20160320/5c3572deaa897e643f9cb55e3e2b4a1e.png" target="_blank" rel="external"><img src="http://dockerone.com/uploads/article/20160320/5c3572deaa897e643f9cb55e3e2b4a1e.png" alt="01.png"></a><br>Schematic overview of scheduling architectures, © Google, Inc. [48]<br>一体式调度（Monolithic scheduling）一体式调度框架由单一的调度代理（scheduling agent）组成，它负责处理所有的请求，这种框架通常应用于高性能计算。一体式框架通常实现了一个单一的算法来处理所有的作业（job），因此根据作业的类型来运行不同的调度逻辑是困难的。</p>
 <p>Apache Hadoop YARN[55]是一个非常流行的架构，尽管它将许多调度功能都分发到每一个应用模块中，但它依然是一体式的调度架构，因为，实际上，所有的资源请求都会被发送到一个单一的全局调度模块。<br>两级调度（Two-level scheduling）两级调度框架会利用一个中央协调器（central coordinator）来动态地决定各个调度模块可以调用多少资源。这项技术被应用于Mesos[50]和Hadoop-on-Demand（现在被YARN取代了）。</p>
 <p>在这类架构里，分配器会将给定的资源一次性分配个一个框架，因此避免了资源使用的冲突，并且通过控制资源分配的顺序和大小来实现一种相对的资源公平分配。然而，一个资源每次只能被一个框架使用，因此并发控制被称之为悲观的（pessimistic），这种控制策略是不易于出错的（less error-prone），但是相对于将一个资源同时分配个多个框架的乐观并发式控制来说，速度是更慢的。<br>共享状态调度（Shared-state scheduling）Omega 赋予了每一个调度器（scheduler）对整个集群的全部访问权限，也就是说调度器们可以自由地竞争。因为所有的资源分配都发生在各个调度器中，所以也就没有了中央资源分配器。也就是说，没有了中央策略引擎，每一个调度器能够自己做决定。</p>
@@ -66,4 +150,99 @@
 <p>D — Appendix — Mesos app definition (Flask)</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"></div><div class="line"><span class="attr">"id"</span>: <span class="string">"web"</span>,</div><div class="line"></div><div class="line"><span class="attr">"cmd"</span>: <span class="string">"python app.py"</span>,</div><div class="line"></div><div class="line"><span class="attr">"cpus"</span>: <span class="number">0.5</span>,</div><div class="line"></div><div class="line"><span class="attr">"mem"</span>: <span class="number">64.0</span>,</div><div class="line"></div><div class="line"><span class="attr">"instances"</span>: <span class="number">2</span>,</div><div class="line"></div><div class="line"><span class="attr">"container"</span>: &#123;</div><div class="line"></div><div class="line"><span class="attr">"type"</span>: <span class="string">"DOCKER"</span>,</div><div class="line"></div><div class="line"><span class="attr">"docker"</span>: &#123;</div><div class="line"></div><div class="line"><span class="attr">"image"</span>: <span class="string">"prakhar1989/foodtrucks-web"</span>,</div><div class="line"></div><div class="line"><span class="attr">"network"</span>: <span class="string">"BRIDGE"</span>,</div><div class="line"></div><div class="line"><span class="attr">"portMappings"</span>: [</div><div class="line"></div><div class="line">  &#123; <span class="attr">"containerPort"</span>: <span class="number">5000</span>, <span class="attr">"hostPort"</span>: <span class="number">0</span>, <span class="attr">"servicePort"</span>: <span class="number">5000</span>, <span class="attr">"protocol"</span>: <span class="string">"tcp"</span> &#125;</div><div class="line"></div><div class="line">]</div><div class="line"></div><div class="line">&#125;,</div><div class="line"></div><div class="line"><span class="attr">"volumes"</span>: [</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">  <span class="attr">"containerPath"</span>: <span class="string">"/etc/code"</span>,</div><div class="line"></div><div class="line">  <span class="attr">"hostPath"</span>: <span class="string">"/var/data/code"</span>,</div><div class="line"></div><div class="line">  <span class="attr">"mode"</span>: <span class="string">"RW"</span></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;,</div><div class="line"></div><div class="line"><span class="string">"healthChecks"</span>: [</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line"><span class="attr">"protocol"</span>: <span class="string">"HTTP"</span>,</div><div class="line"></div><div class="line"><span class="attr">"portIndex"</span>: <span class="number">0</span>,</div><div class="line"></div><div class="line"><span class="attr">"path"</span>: <span class="string">"/"</span>,</div><div class="line"></div><div class="line"><span class="attr">"gracePeriodSeconds"</span>: <span class="number">5</span>,</div><div class="line"></div><div class="line"><span class="attr">"intervalSeconds"</span>: <span class="number">20</span>,</div><div class="line"></div><div class="line"><span class="attr">"maxConsecutiveFailures"</span>: <span class="number">3</span></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">]</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>E — Kubernetes pod definition</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></div><div class="line"></div><div class="line"><span class="attr">kind:</span> <span class="string">ReplicationController</span></div><div class="line"></div><div class="line"><span class="attr">metadata:</span></div><div class="line"></div><div class="line"><span class="attr">name:</span> <span class="string">app</span></div><div class="line"></div><div class="line"><span class="attr">labels:</span></div><div class="line"></div><div class="line"><span class="attr">name:</span> <span class="string">app</span></div><div class="line"></div><div class="line"><span class="attr">spec:</span></div><div class="line"></div><div class="line"><span class="attr">replicas:</span> <span class="number">1</span></div><div class="line"></div><div class="line"><span class="attr">selector:</span></div><div class="line"></div><div class="line"><span class="attr">name:</span> <span class="string">app</span></div><div class="line"></div><div class="line"><span class="attr">template:</span></div><div class="line"></div><div class="line"><span class="attr">metadata:</span></div><div class="line"></div><div class="line"><span class="attr">labels:</span></div><div class="line"></div><div class="line"><span class="attr">  name:</span> <span class="string">app</span></div><div class="line"></div><div class="line"><span class="attr">spec:</span></div><div class="line"></div><div class="line"><span class="attr">containers:</span></div><div class="line"></div><div class="line"><span class="attr">- name:</span> <span class="string">es</span></div><div class="line"><span class="attr">  image:</span> <span class="string">elasticsearch</span></div><div class="line"><span class="attr">  ports:</span></div><div class="line"><span class="attr">  - containerPort:</span> <span class="number">6379</span></div><div class="line"><span class="attr">- name:</span> <span class="string">web</span></div><div class="line"><span class="attr">  image:</span> <span class="string">prakhar1989/foodtrucks-web</span></div><div class="line"><span class="attr">  command:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">python</span> <span class="string">app.py</span></div><div class="line"><span class="attr">    volumeMounts:</span></div><div class="line"><span class="attr">  - mountPath:</span> <span class="string">/code</span></div><div class="line"><span class="attr">    name:</span> <span class="string">code</span></div><div class="line"><span class="attr">    ports:</span></div><div class="line"><span class="attr">  - containerPort:</span> <span class="number">5000</span></div></pre></td></tr></table></figure></div><div class="tags"><a href="/tags/docker/">docker</a></div><div class="post-nav"><a class="pre" href="/2017/04/26/ubuntu-svn/">ubuntu架设svn</a><a class="next" href="/2017/04/23/docker-elasticsearch/">docker搭建elasticsearch</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://hujao.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/docker/shell/">shell</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/etl/">etl</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/shell/">shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/springboot/">springboot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web前端/">web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码管理/">代码管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/分布式/">分布式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bigdata/">大数据</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/容器编排/">容器编排</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/性能优化/">性能优化</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/持续集成/">持续集成</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索引擎/">搜索引擎</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据安全/">数据安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/日志收集/">日志收集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务监控/">服务监控</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/框架/">框架</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/流计算/">流计算</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/消息队列/">消息队列</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/第三方支付/">第三方支付</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络协议/">网络协议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/负载均衡/">负载均衡</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/md5/" style="font-size: 15px;">md5</a> <a href="/tags/bat/" style="font-size: 15px;">bat</a> <a href="/tags/sercurity/" style="font-size: 15px;">sercurity</a> <a href="/tags/key/" style="font-size: 15px;">key</a> <a href="/tags/crt/" style="font-size: 15px;">crt</a> <a href="/tags/cer/" style="font-size: 15px;">cer</a> <a href="/tags/jks/" style="font-size: 15px;">jks</a> <a href="/tags/pfx/" style="font-size: 15px;">pfx</a> <a href="/tags/p12/" style="font-size: 15px;">p12</a> <a href="/tags/der/" style="font-size: 15px;">der</a> <a href="/tags/pem/" style="font-size: 15px;">pem</a> <a href="/tags/kdb/" style="font-size: 15px;">kdb</a> <a href="/tags/pub/" style="font-size: 15px;">pub</a> <a href="/tags/design/" style="font-size: 15px;">design</a> <a href="/tags/jms/" style="font-size: 15px;">jms</a> <a href="/tags/activemq/" style="font-size: 15px;">activemq</a> <a href="/tags/elasticsearch/" style="font-size: 15px;">elasticsearch</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/jenkins/" style="font-size: 15px;">jenkins</a> <a href="/tags/registry/" style="font-size: 15px;">registry</a> <a href="/tags/svn/" style="font-size: 15px;">svn</a> <a href="/tags/springboot-dubbo-dubbo-monitor/" style="font-size: 15px;">springboot dubbo dubbo-monitor</a> <a href="/tags/dubbo/" style="font-size: 15px;">dubbo</a> <a href="/tags/springboot/" style="font-size: 15px;">springboot</a> <a href="/tags/des/" style="font-size: 15px;">des</a> <a href="/tags/aes/" style="font-size: 15px;">aes</a> <a href="/tags/rsa/" style="font-size: 15px;">rsa</a> <a href="/tags/sha1/" style="font-size: 15px;">sha1</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/base64/" style="font-size: 15px;">base64</a> <a href="/tags/freemarker/" style="font-size: 15px;">freemarker</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/metrics/" style="font-size: 15px;">metrics</a> <a href="/tags/statsd/" style="font-size: 15px;">statsd</a> <a href="/tags/graphite/" style="font-size: 15px;">graphite</a> <a href="/tags/grafana/" style="font-size: 15px;">grafana</a> <a href="/tags/influxdb/" style="font-size: 15px;">influxdb</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/kafka/" style="font-size: 15px;">kafka</a> <a href="/tags/etl/" style="font-size: 15px;">etl</a> <a href="/tags/kubernetes/" style="font-size: 15px;">kubernetes</a> <a href="/tags/log/" style="font-size: 15px;">log</a> <a href="/tags/lombok/" style="font-size: 15px;">lombok</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/jpa/" style="font-size: 15px;">jpa</a> <a href="/tags/openssl/" style="font-size: 15px;">openssl</a> <a href="/tags/designpattern/" style="font-size: 15px;">designpattern</a> <a href="/tags/shiro/" style="font-size: 15px;">shiro</a> <a href="/tags/network/" style="font-size: 15px;">network</a> <a href="/tags/qos/" style="font-size: 15px;">qos</a> <a href="/tags/telegraf/" style="font-size: 15px;">telegraf</a> <a href="/tags/tomcat/" style="font-size: 15px;">tomcat</a> <a href="/tags/jdk8/" style="font-size: 15px;">jdk8</a> <a href="/tags/ubuntu/" style="font-size: 15px;">ubuntu</a> <a href="/tags/支付/" style="font-size: 15px;">支付</a> <a href="/tags/zookeeper/" style="font-size: 15px;">zookeeper</a> <a href="/tags/zkui/" style="font-size: 15px;">zkui</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/12/21/binbash/">为docker编写bash启动脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/21/jenkins-for-docker/">jenkins+springboot+docker+git持续集成</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/qos/">qos基本原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/overlay-network/">overlay network</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/20/bat/">编写.bat文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/telegraf/">telegraf学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/docker-resource/">docker资源控制</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/docker-base/">docker基础命令回顾</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/encryption-algorithm/">encryption-algorithm</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/openssl/">openssl常用命令</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">Ace'pages.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></div><div class="line"></div><div class="line"><span class="attr">kind:</span> <span class="string">ReplicationController</span></div><div class="line"></div><div class="line"><span class="attr">metadata:</span></div><div class="line"></div><div class="line"><span class="attr">name:</span> <span class="string">app</span></div><div class="line"></div><div class="line"><span class="attr">labels:</span></div><div class="line"></div><div class="line"><span class="attr">name:</span> <span class="string">app</span></div><div class="line"></div><div class="line"><span class="attr">spec:</span></div><div class="line"></div><div class="line"><span class="attr">replicas:</span> <span class="number">1</span></div><div class="line"></div><div class="line"><span class="attr">selector:</span></div><div class="line"></div><div class="line"><span class="attr">name:</span> <span class="string">app</span></div><div class="line"></div><div class="line"><span class="attr">template:</span></div><div class="line"></div><div class="line"><span class="attr">metadata:</span></div><div class="line"></div><div class="line"><span class="attr">labels:</span></div><div class="line"></div><div class="line"><span class="attr">  name:</span> <span class="string">app</span></div><div class="line"></div><div class="line"><span class="attr">spec:</span></div><div class="line"></div><div class="line"><span class="attr">containers:</span></div><div class="line"></div><div class="line"><span class="attr">- name:</span> <span class="string">es</span></div><div class="line"><span class="attr">  image:</span> <span class="string">elasticsearch</span></div><div class="line"><span class="attr">  ports:</span></div><div class="line"><span class="attr">  - containerPort:</span> <span class="number">6379</span></div><div class="line"><span class="attr">- name:</span> <span class="string">web</span></div><div class="line"><span class="attr">  image:</span> <span class="string">prakhar1989/foodtrucks-web</span></div><div class="line"><span class="attr">  command:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">python</span> <span class="string">app.py</span></div><div class="line"><span class="attr">    volumeMounts:</span></div><div class="line"><span class="attr">  - mountPath:</span> <span class="string">/code</span></div><div class="line"><span class="attr">    name:</span> <span class="string">code</span></div><div class="line"><span class="attr">    ports:</span></div><div class="line"><span class="attr">  - containerPort:</span> <span class="number">5000</span></div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2017/04/25/container-tech/" class="article-date">
+  <time datetime="2017-04-24T19:28:04.000Z" itemprop="datePublished">2017-04-25</time>
+</a>
+
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/容器编排/">容器编排</a>
+  </div>
+
+
+          </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2017/04/26/ubuntu-svn/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ubuntu架设svn
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/23/docker-elasticsearch/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">docker搭建elasticsearch</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
