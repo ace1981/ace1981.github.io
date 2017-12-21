@@ -614,7 +614,7 @@ header nav ul li a:hover {
   border-left: 0.5em solid #111;
 }
 #main section.post a h1 {
-  color: #fff;
+  color: #111;
   line-height: 2;
 }
 #main section.post a p {
@@ -640,7 +640,7 @@ header nav ul li a:hover {
   padding: 0.5em 1em;
 }
 #page-nav a {
-  color: #fff;
+  color: #111;
 }
 #page-nav a:hover {
   background: #fff;
@@ -656,7 +656,7 @@ header nav ul li a:hover {
   transition: border-left 0.5s;
 }
 #page-nav .prev:hover {
-  border-left: 0.5em solid #eee;
+  border-left: 0.5em solid #111;
 }
 #page-nav .next {
   float: right;
@@ -1501,7 +1501,7 @@ section.comment {
   border-bottom: 0.1875em solid #fff;
 }
 .asidetitle a {
-  color: #fff;
+  color: #111;
 }
 .asidetitle a:hover {
   color: #111;
