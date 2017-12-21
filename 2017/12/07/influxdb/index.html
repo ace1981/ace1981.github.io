@@ -1,78 +1,93 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   
-  <title>influxdb学习 | Ace&#39;pages</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="InfluxDB is the Time Series Database in the TICK stack
+    <title>influxdb学习 | Ace&#39;pages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="ace1981">
+    
+    <meta name="description" content="InfluxDB is the Time Series Database in the TICK stack
 https://www.influxdata.com/time-series-platform/
- 摘要: Docker监控方案之数据存储工具Influxdb工具的介绍和安装。Influxdb也是和telegraf属于一家公司，用go开发的用来存储时间序列数据的数据库。可以将存储的数据进行">
-<meta property="og:type" content="article">
-<meta property="og:title" content="influxdb学习">
-<meta property="og:url" content="http://hujao.com/2017/12/07/influxdb/index.html">
-<meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="InfluxDB is the Time Series Database in the TICK stack
-https://www.influxdata.com/time-series-platform/
- 摘要: Docker监控方案之数据存储工具Influxdb工具的介绍和安装。Influxdb也是和telegraf属于一家公司，用go开发的用来存储时间序列数据的数据库。可以将存储的数据进行">
-<meta property="og:updated_time" content="2017-12-18T09:06:53.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="influxdb学习">
-<meta name="twitter:description" content="InfluxDB is the Time Series Database in the TICK stack
-https://www.influxdata.com/time-series-platform/
- 摘要: Docker监控方案之数据存储工具Influxdb工具的介绍和安装。Influxdb也是和telegraf属于一家公司，用go开发的用来存储时间序列数据的数据库。可以将存储的数据进行">
-  
-    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
+ 摘要: Docker监控方案之数据存储工具Influxdb工具的介绍和安装。Influxd">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-  
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Ace&#39;pages" title="Ace&#39;pages"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Ace&#39;pages">Ace&#39;pages</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:hujao.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-      <body>
+      <a href="/2017/12/07/influxdb/" title="influxdb学习" itemprop="url">influxdb学习</a>
+  </h1>
+  <p class="article-author">By
     
-  
-      <div id="container" class="container">
-        <article id="post-influxdb" class="article article-type-post" itemscope itemprop="blogPost">
-  <header id="header" class="header">
-  <nav id="main-nav" class="main-nav">
+      <a href="http://hujao.com" title="ace1981">ace1981</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2017-12-06T19:39:40.000Z" itemprop="datePublished">2017-12-07</time>
+    更新日期:<time datetime="2017-12-18T09:06:53.000Z" itemprop="dateModified">2017-12-18</time>
     
-      <a class="main-nav-link" href="/">Home</a>
-    
-      <a class="main-nav-link" href="/archives">Archives</a>
-    
-      <a class="main-nav-link" href="/tags">Tags</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
-    
-  </nav>
-  <nav id="sub-nav">
-    
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-    
-  </nav>
+  </p>
 </header>
-
-  <hr/>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      influxdb学习
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry typo" itemprop="articleBody">
-      
-        <p>InfluxDB is the Time Series Database in the TICK stack</p>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前言："><span class="toc-number">1.</span> <span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Influxdb研究与实践："><span class="toc-number">2.</span> <span class="toc-text">Influxdb研究与实践：</span></a></li></ol>
+		</div>
+		
+		<p>InfluxDB is the Time Series Database in the TICK stack</p>
 <p><a href="https://www.influxdata.com/time-series-platform/" target="_blank" rel="external">https://www.influxdata.com/time-series-platform/</a></p>
 <p> 摘要: Docker监控方案之数据存储工具Influxdb工具的介绍和安装。Influxdb也是和telegraf属于一家公司，用go开发的用来存储时间序列数据的数据库。可以将存储的数据进行时间序列化，是每个监控系统中最重要的一个环节。Docker监控方案(TIG)采用Influxdb来进行数据存储，当然可选的还有很多，比如Opentsdb，Graphite等。</p>
 <h4 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h4><p>Influxdb也是有influxdata公司(www.influxdata.com )开发的用于数据存储的时间序列数据库.可用于数据的时间排列。在整个TIG(Telegraf+influxdb+grafana)方案中，influxdb可算作一个中间件，主要负责原始数据的存储，并按照时间序列进行索引构建以提供时间序列查询接口。在整个TIG方案中，应该先构建的就是Influxdb。</p>
@@ -92,89 +107,245 @@ https://www.influxdata.com/time-series-platform/
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">创建数据库:</div><div class="line">curl -G &quot;http://localhost:8086/query&quot; --data-urlencode &quot;q=create database mydb&quot;</div><div class="line">插入数据：</div><div class="line">curl -XPOST &apos;http://localhost:8086/write?db=mydb&apos; -d &apos;biaoge,name=xxbandy,xingqu=coding age=2&apos;</div><div class="line">curl -i -XPOST &apos;http://localhost:8086/write?db=mydb&apos; --data-binary &apos;cpu_load_short,host=server01,region=us-west value=0.64 1434055562000000000&apos;</div><div class="line">curl -i -XPOST &apos;http://localhost:8086/write?db=mydb&apos; --data-binary &apos;cpu_load_short,host=server02 value=0.67</div><div class="line">cpu_load_short,host=server02,region=us-west value=0.55 1422568543702900257</div><div class="line">cpu_load_short,direction=in,host=server01,region=us-west value=2.0 1422568543702900257&apos;</div><div class="line">将sql语句写入文件，并通过api插入：</div><div class="line">#cat sql.txt</div><div class="line">cpu_load_short,host=server02 value=0.67</div><div class="line">cpu_load_short,host=server02,region=us-west value=0.55 1422568543702900257</div><div class="line">cpu_load_short,direction=in,host=server01,region=us-west value=2.0 1422568543702900257</div><div class="line">#curl -i -XPOST &apos;http://localhost:8086/write?db=mydb&apos; --data-binary @cpu_data.txt</div><div class="line"></div><div class="line">查询数据：（--data-urlencode &quot;epoch=s&quot; 指定时间序列 &quot;chunk_size=20000&quot; 指定查询块大小）</div><div class="line"># curl -G http://localhost:8086/query?pretty=true --data-urlencode &quot;db=ydb&quot; --data-urlencode &quot;q=select * from biaoge where xingqu=&apos;coding&apos;&quot;</div><div class="line">数据分析：</div><div class="line">#curl -G http://localhost:8086/query?pretty=true --data-urlencode &quot;db=mydb&quot; --data-urlencode &quot;q=select mean(load) from cpu&quot;</div><div class="line">#curl -G http://localhost:8086/query?pretty=true --data-urlencode &quot;db=mydb&quot; --data-urlencode &quot;q=select load from cpu&quot;</div><div class="line">可以看到load的值分别是42 78 15.4；用mean(load)求出来的值为45,13</div><div class="line">curl -G http://localhost:8086/query?pretty=true --data-urlencode &quot;db=ydb&quot; --data-urlencode &quot;q=select mean(load) from cpu where host=&apos;server01&apos;&quot;</div></pre></td></tr></table></figure>
 <p><strong>使用influxdb提供的web界面进行操作:</strong></p>
 <p>这里只是简单的介绍了influxdb的使用，后期如果想在grafana中汇聚并完美地展示数据，可能需要熟悉influxdb的各种查询语法。(其实就是sql语句的一些使用技巧，聚合函数的使用，子查询等等)</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
 
-      
-    </div>
-    <footer class="article-footer">
-      <ul class="article-meta">
-        <li>
-          <span class="label">Published Date:</span>
-          <a href="/2017/12/07/influxdb/" class="article-date">
-  <time datetime="2017-12-06T19:39:40.000Z" itemprop="datePublished">2017-12-07</time>
-</a>
-
-        </li>
-        
-        
-          <li>
-            <span class="label">Tag:</span>
-            
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/influxdb/">influxdb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/metrics/">metrics</a></li></ul>
-
-
-          </li>
-        
-        <hr/>
-      </ul>
-    </footer>
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/metrics/">metrics</a><a href="/tags/influxdb/">influxdb</a>
   </div>
-  
-    
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2017/12/12/linux-bash/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          linux-bash学习
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/12/07/graphite/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">graphite学习</div>
-    </a>
-  
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://hujao.com/2017/12/07/influxdb/" data-title="influxdb学习 | Ace&#39;pages" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/12/12/linux-bash/" title="linux-bash学习">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  linux-bash学习</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2017/12/07/graphite/"  title="graphite学习">
+ <strong>NEXT:</strong><br/> 
+ <span>graphite学习
+</span>
+</a>
+</div>
+
 </nav>
 
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前言："><span class="toc-number">1.</span> <span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Influxdb研究与实践："><span class="toc-number">2.</span> <span class="toc-text">Influxdb研究与实践：</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
 
   
-</article>
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/activemq/" title="activemq">activemq<sup>2</sup></a></li>
+		
+			<li><a href="/tags/aes/" title="aes">aes<sup>1</sup></a></li>
+		
+			<li><a href="/tags/base64/" title="base64">base64<sup>1</sup></a></li>
+		
+			<li><a href="/tags/bat/" title="bat">bat<sup>1</sup></a></li>
+		
+			<li><a href="/tags/cer/" title="cer">cer<sup>1</sup></a></li>
+		
+			<li><a href="/tags/crt/" title="crt">crt<sup>1</sup></a></li>
+		
+			<li><a href="/tags/der/" title="der">der<sup>1</sup></a></li>
+		
+			<li><a href="/tags/des/" title="des">des<sup>1</sup></a></li>
+		
+			<li><a href="/tags/design/" title="design">design<sup>1</sup></a></li>
+		
+			<li><a href="/tags/designpattern/" title="designpattern">designpattern<sup>1</sup></a></li>
+		
+			<li><a href="/tags/docker/" title="docker">docker<sup>16</sup></a></li>
+		
+			<li><a href="/tags/dubbo/" title="dubbo">dubbo<sup>1</sup></a></li>
+		
+			<li><a href="/tags/elasticsearch/" title="elasticsearch">elasticsearch<sup>1</sup></a></li>
+		
+			<li><a href="/tags/etl/" title="etl">etl<sup>1</sup></a></li>
+		
+			<li><a href="/tags/freemarker/" title="freemarker">freemarker<sup>1</sup></a></li>
+		
+			<li><a href="/tags/git/" title="git">git<sup>2</sup></a></li>
+		
+			<li><a href="/tags/grafana/" title="grafana">grafana<sup>4</sup></a></li>
+		
+			<li><a href="/tags/graphite/" title="graphite">graphite<sup>4</sup></a></li>
+		
+			<li><a href="/tags/influxdb/" title="influxdb">influxdb<sup>2</sup></a></li>
+		
+			<li><a href="/tags/java/" title="java">java<sup>2</sup></a></li>
+		
+		</ul>
+</div>
 
 
-
-
-      </div>
-      
-    <footer id="footer" class="post-footer footer">
-      <hr/>
-      <div id="footerContent" class="footer-content">
-        <p>闲步山雨后,静待晚林风 Post</p>
-
-
-      </div>
-    </footer>
-
-      
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-
-
-
-
-
-
-
+</aside>
+</div>
     </div>
+    <footer><div id="footer" >
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2017 
+		
+		<a href="http://hujao.com" target="_blank" title="ace1981">ace1981</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
   </body>
 </html>

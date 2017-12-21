@@ -1,11 +1,15 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   
-  <title>java性能优化学习(三) | Ace&#39;pages</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="面向对象及基础类型
+    <title>java性能优化学习(三) | Ace&#39;pages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="ace1981">
+    
+    <meta name="description" content="面向对象及基础类型
 
 采用Clone()方式创建对象
 避免对boolean判断
@@ -17,107 +21,83 @@
 建议多使用局部变量
 运算效率最高的方式-位运算
 用一维数组代替二维数组
-布尔运算代替位运算
-提取表达式优化
-不要总是使用取反操作符
-不要重复初始化变量
-变量初始化过程思考
-对象创建访问过程">
-<meta property="og:type" content="article">
-<meta property="og:title" content="java性能优化学习(三)">
-<meta property="og:url" content="http://hujao.com/2017/05/04/java-optimizing-3/index.html">
-<meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="面向对象及基础类型
-
-采用Clone()方式创建对象
-避免对boolean判断
-多用条件操作符
-静态方法替代实例方法
-有条件的使用final关键字
-避免不需要的instanceOf操作
-避免子类中存在父类转换
-建议多使用局部变量
-运算效率最高的方式-位运算
-用一维数组代替二维数组
-布尔运算代替位运算
-提取表达式优化
-不要总是使用取反操作符
-不要重复初始化变量
-变量初始化过程思考
-对象创建访问过程">
-<meta property="og:updated_time" content="2017-05-04T02:21:14.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java性能优化学习(三)">
-<meta name="twitter:description" content="面向对象及基础类型
-
-采用Clone()方式创建对象
-避免对boolean判断
-多用条件操作符
-静态方法替代实例方法
-有条件的使用final关键字
-避免不需要的instanceOf操作
-避免子类中存在父类转换
-建议多使用局部变量
-运算效率最高的方式-位运算
-用一维数组代替二维数组
-布尔运算代替位运算
-提取表达式优化
-不要总是使用取反操作符
-不要重复初始化变量
-变量初始化过程思考
-对象创建访问过程">
-  
-    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
+布尔运算代替位运算">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-  
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Ace&#39;pages" title="Ace&#39;pages"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Ace&#39;pages">Ace&#39;pages</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:hujao.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-      <body>
+      <a href="/2017/05/04/java-optimizing-3/" title="java性能优化学习(三)" itemprop="url">java性能优化学习(三)</a>
+  </h1>
+  <p class="article-author">By
     
-  
-      <div id="container" class="container">
-        <article id="post-java-optimizing-3" class="article article-type-post" itemscope itemprop="blogPost">
-  <header id="header" class="header">
-  <nav id="main-nav" class="main-nav">
+      <a href="http://hujao.com" title="ace1981">ace1981</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2017-05-03T16:04:07.000Z" itemprop="datePublished">2017-05-04</time>
+    更新日期:<time datetime="2017-05-04T02:21:14.000Z" itemprop="dateModified">2017-05-04</time>
     
-      <a class="main-nav-link" href="/">Home</a>
-    
-      <a class="main-nav-link" href="/archives">Archives</a>
-    
-      <a class="main-nav-link" href="/tags">Tags</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
-    
-  </nav>
-  <nav id="sub-nav">
-    
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-    
-  </nav>
+  </p>
 </header>
-
-  <hr/>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      java性能优化学习(三)
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry typo" itemprop="articleBody">
-      
-        <p>面向对象及基础类型</p>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+		</div>
+		
+		<p>面向对象及基础类型</p>
 <ul>
 <li>采用Clone()方式创建对象</li>
 <li>避免对boolean判断</li>
@@ -215,81 +195,240 @@
 <li>正则表达式</li>
 <li>压缩文件处理</li>
 </ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
 
-      
-    </div>
-    <footer class="article-footer">
-      <ul class="article-meta">
-        <li>
-          <span class="label">Published Date:</span>
-          <a href="/2017/05/04/java-optimizing-3/" class="article-date">
-  <time datetime="2017-05-03T16:04:07.000Z" itemprop="datePublished">2017-05-04</time>
-</a>
 
-        </li>
-        
-        
-        <hr/>
-      </ul>
-    </footer>
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://hujao.com/2017/05/04/java-optimizing-3/" data-title="java性能优化学习(三) | Ace&#39;pages" data-tsina="null" class="share clearfix">
   </div>
-  
-    
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2017/05/04/java-optimizing-4/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          java性能优化学习(四)
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/05/04/java-optimizing-2/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">java性能优化学习(二)</div>
-    </a>
-  
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/05/04/java-optimizing-4/" title="java性能优化学习(四)">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  java性能优化学习(四)</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2017/05/04/java-optimizing-2/"  title="java性能优化学习(二)">
+ <strong>NEXT:</strong><br/> 
+ <span>java性能优化学习(二)
+</span>
+</a>
+</div>
+
 </nav>
 
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
 
   
-</article>
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/activemq/" title="activemq">activemq<sup>2</sup></a></li>
+		
+			<li><a href="/tags/aes/" title="aes">aes<sup>1</sup></a></li>
+		
+			<li><a href="/tags/base64/" title="base64">base64<sup>1</sup></a></li>
+		
+			<li><a href="/tags/bat/" title="bat">bat<sup>1</sup></a></li>
+		
+			<li><a href="/tags/cer/" title="cer">cer<sup>1</sup></a></li>
+		
+			<li><a href="/tags/crt/" title="crt">crt<sup>1</sup></a></li>
+		
+			<li><a href="/tags/der/" title="der">der<sup>1</sup></a></li>
+		
+			<li><a href="/tags/des/" title="des">des<sup>1</sup></a></li>
+		
+			<li><a href="/tags/design/" title="design">design<sup>1</sup></a></li>
+		
+			<li><a href="/tags/designpattern/" title="designpattern">designpattern<sup>1</sup></a></li>
+		
+			<li><a href="/tags/docker/" title="docker">docker<sup>16</sup></a></li>
+		
+			<li><a href="/tags/dubbo/" title="dubbo">dubbo<sup>1</sup></a></li>
+		
+			<li><a href="/tags/elasticsearch/" title="elasticsearch">elasticsearch<sup>1</sup></a></li>
+		
+			<li><a href="/tags/etl/" title="etl">etl<sup>1</sup></a></li>
+		
+			<li><a href="/tags/freemarker/" title="freemarker">freemarker<sup>1</sup></a></li>
+		
+			<li><a href="/tags/git/" title="git">git<sup>2</sup></a></li>
+		
+			<li><a href="/tags/grafana/" title="grafana">grafana<sup>4</sup></a></li>
+		
+			<li><a href="/tags/graphite/" title="graphite">graphite<sup>4</sup></a></li>
+		
+			<li><a href="/tags/influxdb/" title="influxdb">influxdb<sup>2</sup></a></li>
+		
+			<li><a href="/tags/java/" title="java">java<sup>2</sup></a></li>
+		
+		</ul>
+</div>
 
 
-
-
-      </div>
-      
-    <footer id="footer" class="post-footer footer">
-      <hr/>
-      <div id="footerContent" class="footer-content">
-        <p>闲步山雨后,静待晚林风 Post</p>
-
-
-      </div>
-    </footer>
-
-      
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-
-
-
-
-
-
-
+</aside>
+</div>
     </div>
+    <footer><div id="footer" >
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2017 
+		
+		<a href="http://hujao.com" target="_blank" title="ace1981">ace1981</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
   </body>
 </html>
