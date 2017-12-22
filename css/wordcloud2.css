@@ -60,4 +60,8 @@ div.jqcloud {
     position: relative;
 }
 
+.home a{
+text-decoration: none;	
+}
+
 div.jqcloud span { padding: 0; }
