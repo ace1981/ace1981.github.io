@@ -9,7 +9,7 @@
          * Create an array of word objects, each representing a word in the cloud
          */
         var word_array = [
-            {text: &quot;docker&quot;,link:&quot;/categor">
+            {text: &quot;docker&quot;},">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ace'pages">
 <meta property="og:url" content="http://hujao.com/wordcloud/index.html">
@@ -18,15 +18,15 @@
          * Create an array of word objects, each representing a word in the cloud
          */
         var word_array = [
-            {text: &quot;docker&quot;,link:&quot;/categor">
-<meta property="og:updated_time" content="2017-12-22T20:48:48.000Z">
+            {text: &quot;docker&quot;},">
+<meta property="og:updated_time" content="2017-12-22T20:52:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ace'pages">
 <meta name="twitter:description" content="/*!
          * Create an array of word objects, each representing a word in the cloud
          */
         var word_array = [
-            {text: &quot;docker&quot;,link:&quot;/categor">
+            {text: &quot;docker&quot;},">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
@@ -81,13 +81,14 @@
          * Create an array of word objects, each representing a word in the cloud
          */
         var word_array = [
-            {text: "docker",link:"/categories/docker/"},
-            {text: "springboot",link:"/categories/springboot/"}, {text: "容器编排",link:"/categories/容器编排/"}, {text: "持续集成",link:"/categories/持续集成/"}, {text: "日志收集",link:"/categories/日志收集/"}, {text: "服务监控",link:"/categories/服务监控/"}, {text: "数据安全",link:"/categories/数据安全/"}, {text: "机器学习",link:"/categories/机器学习/"}, {text: "搜索引擎",link:"/categories/搜索引擎/"}, {text: "数据库",link:"/categories/数据库/"},{text: "web前端",link:"/categories/web前端/"}, {text: "代码管理",link:"/categories/代码管理/"},  {text: "分布式",link:"/categories/分布式/"},  {text: "大数据",link:"/categories/bigdata/"}, {text: "框架",link:"/categories/框架/"}, {text: "流计算",link:"/categories/流计算/"}, {text: "消息队列",link:"/categories/消息队列/"}, {text: "第三方支付",link:"/categories/第三方支付/"}, {text: "网络协议",link:"/categories/网络协议/"}, {text: "负载均衡",link:"/categories/负载均衡/"}, {text: "开发工具",link:"/categories/开发工具/"}, {text: "性能优化",link:"/categories/性能优化/"},  {text: "etl",link:"/categories/etl/"},{text: "java",link:"/categories/java/"},  {text: "linux",link:"/categories/linux/"}, {text: "shell",link:"/categories/shell/"}
+            {text: "docker"},
+            {text: "springboot"}, {text: "容器编排"}, {text: "持续集成"}, {text: "日志收集"}, {text: "服务监控"}, {text: "数据安全"}, {text: "机器学习"}, {text: "搜索引擎",link:"/categories/搜索引擎/"}, {text: "数据库",link:"/categories/数据库/"},{text: "web前端",link:"/categories/web前端/"}, {text: "代码管理",link:"/categories/代码管理/"},  {text: "分布式",link:"/categories/分布式/"},  {text: "大数据",link:"/categories/bigdata/"}, {text: "框架",link:"/categories/框架/"}, {text: "流计算",link:"/categories/流计算/"}, {text: "消息队列",link:"/categories/消息队列/"}, {text: "第三方支付",link:"/categories/第三方支付/"}, {text: "网络协议",link:"/categories/网络协议/"}, {text: "负载均衡",link:"/categories/负载均衡/"}, {text: "开发工具",link:"/categories/开发工具/"}, {text: "性能优化",link:"/categories/性能优化/"},  {text: "etl",link:"/categories/etl/"},{text: "java",link:"/categories/java/"},  {text: "linux",link:"/categories/linux/"}, {text: "shell",link:"/categories/shell/"}
             // ...as many words as you want
         ];
         $(document).ready(function () {
             for (var i = 0; i < word_array.length; i++) {
-                var w=((word_array.length+10)*3-i)/3//Math.round(Math.random()*10+10);
+                var w=((word_array.length+10)*3-i)/3;//Math.round(Math.random()*10+10);
+                word_array[i].link="/categories/"+word_array[i].text+"/";
                 word_array[i].weight=w;
             };
             jQuery("#example").jQCloud(word_array);
@@ -105,7 +106,7 @@
         <li>
           <span class="label">Published Date:</span>
           <a href="/wordcloud/index.html" class="article-date">
-  <time datetime="2017-12-22T20:48:48.000Z" itemprop="datePublished">2017-12-23</time>
+  <time datetime="2017-12-22T20:52:32.000Z" itemprop="datePublished">2017-12-23</time>
 </a>
 
         </li>
