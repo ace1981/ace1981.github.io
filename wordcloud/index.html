@@ -3,21 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>wordcloud | Ace&#39;pages</title>
+  <title>Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;https://code.jquery.com/jquery-1.4.4.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;wordcloud.js&amp;quot;&amp;gt">
+  <meta name="description" content="/*!
+         * Create an array of word objects, each representing a word in the cloud
+         */
+        var word_array = [
+            {text: &quot;Lorem&quot;, weight: 15},">
 <meta property="og:type" content="website">
-<meta property="og:title" content="wordcloud">
+<meta property="og:title" content="Ace'pages">
 <meta property="og:url" content="http://hujao.com/wordcloud/index.html">
 <meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;https://code.jquery.com/jquery-1.4.4.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;wordcloud.js&amp;quot;&amp;gt">
-<meta property="og:updated_time" content="2017-12-22T08:28:51.000Z">
+<meta property="og:description" content="/*!
+         * Create an array of word objects, each representing a word in the cloud
+         */
+        var word_array = [
+            {text: &quot;Lorem&quot;, weight: 15},">
+<meta property="og:updated_time" content="2017-12-22T19:48:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wordcloud">
-<meta name="twitter:description" content="&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;https://code.jquery.com/jquery-1.4.4.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;wordcloud.js&amp;quot;&amp;gt">
+<meta name="twitter:title" content="Ace'pages">
+<meta name="twitter:description" content="/*!
+         * Create an array of word objects, each representing a word in the cloud
+         */
+        var word_array = [
+            {text: &quot;Lorem&quot;, weight: 15},">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
@@ -59,23 +68,32 @@
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      wordcloud
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry typo" itemprop="articleBody">
       
-        <link rel="stylesheet" type="text/css" href="wordcloud.css">
+         
+    <link rel="stylesheet" type="text/css" href="../css/wordcloud.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../js/wordcloud.js"></script>
+    <script type="text/javascript">
+        /*!
+         * Create an array of word objects, each representing a word in the cloud
+         */
+        var word_array = [
+            {text: "Lorem", weight: 15},
+            {text: "Ipsum", weight: 9, link: "http://jquery.com/"},
+            {text: "Dolor", weight: 6, html: {title: "I can haz any html attribute"}},
+            {text: "Sit", weight: 7},
+            {text: "Amet", weight: 5}
+            // ...as many words as you want
+        ];
 
-<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;https://code.jquery.com/jquery-1.4.4.min.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;wordcloud.js&quot;&gt;&lt;/script&gt;
-</code></pre>
+        $(function() {
+            // When DOM is ready, select the container element and call the jQCloud method, passing the array of words as the first argument.
+            $("#example").jQCloud(word_array);
+        });
+    </script>
+    <div id="example" style="width: 550px; height: 350px;"></div>
+ 
       
     </div>
     <footer class="article-footer">
@@ -83,7 +101,7 @@
         <li>
           <span class="label">Published Date:</span>
           <a href="/wordcloud/index.html" class="article-date">
-  <time datetime="2017-12-22T08:28:19.000Z" itemprop="datePublished">2017-12-22</time>
+  <time datetime="2017-12-22T19:48:06.000Z" itemprop="datePublished">2017-12-23</time>
 </a>
 
         </li>
