@@ -9,7 +9,7 @@
          * Create an array of word objects, each representing a word in the cloud
          */
         var word_array = [
-            {text: &quot;Lorem&quot;, weight: 15},">
+            {text: &quot;docker&quot;,link:&quot;/categor">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ace'pages">
 <meta property="og:url" content="http://hujao.com/wordcloud/index.html">
@@ -18,15 +18,15 @@
          * Create an array of word objects, each representing a word in the cloud
          */
         var word_array = [
-            {text: &quot;Lorem&quot;, weight: 15},">
-<meta property="og:updated_time" content="2017-12-22T20:18:54.000Z">
+            {text: &quot;docker&quot;,link:&quot;/categor">
+<meta property="og:updated_time" content="2017-12-22T20:33:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ace'pages">
 <meta name="twitter:description" content="/*!
          * Create an array of word objects, each representing a word in the cloud
          */
         var word_array = [
-            {text: &quot;Lorem&quot;, weight: 15},">
+            {text: &quot;docker&quot;,link:&quot;/categor">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
@@ -81,19 +81,22 @@
          * Create an array of word objects, each representing a word in the cloud
          */
         var word_array = [
-            {text: "Lorem", weight: 15},
-            {text: "Ipsum", weight: 9, link: "http://jquery.com/"},
-            {text: "Dolor", weight: 6, html: {title: "I can haz any html attribute"}},
-            {text: "Sit", weight: 7},
-            {text: "Amet", weight: 5}
+            {text: "docker",link:"/categories/docker/"},
+            {text: "springboot",link:"/categories/springboot/"}, {text: "容器编排",link:"/categories/%E5%AE%B9%E5%99%A8%E7%BC%96%E6%8E%92/"}, {text: "持续集成",link:"/categories/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"}, {text: "日志收集",link:"/categories/%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86/"}, {text: "服务监控",link:"/categories/%E6%9C%8D%E5%8A%A1%E7%9B%91%E6%8E%A7/"}, {text: "数据安全",link:"/categories/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8/"}, {text: "机器学习",link:"/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"}, {text: "搜索引擎",link:"/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"}, {text: "数据库",link:"/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"},{text: "web前端",link:"/categories/web%E5%89%8D%E7%AB%AF/"}, {text: "代码管理",link:"/categories/%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86/"},  {text: "分布式",link:"/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"},  {text: "大数据",link:"/categories/bigdata/"}, {text: "框架",link:"/categories/%E6%A1%86%E6%9E%B6/"}, {text: "流计算",link:"/categories/%E6%B5%81%E8%AE%A1%E7%AE%97/"}, {text: "消息队列",link:"/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"}, {text: "第三方支付",link:"/categories/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%94%AF%E4%BB%98/"}, {text: "网络协议",link:"/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"}, {text: "负载均衡",link:"/categories/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/"}, {text: "开发工具",link:"/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"}, {text: "性能优化",link:"/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"},  {text: "etl",link:"/categories/etl/"},{text: "java",link:"/categories/java/"},  {text: "linux",link:"/categories/linux/"}, {text: "shell",link:"/categories/shell/"},
             // ...as many words as you want
         ];
         $(document).ready(function () {
+            for (var i = 0; i < word_array.length; i++) {
+                var w=Math.round(Math.random()*10+10);
+                word_array[i].weight=w;
+            };
             jQuery("#example").jQCloud(word_array);
         //$("#reply").val("添加回复：");
         });
     </script>
-    <div id="example" style="width: 550px; height: 350px;"></div>
+    <div id="example" style="width: 550px; height: 350px;">
+             
+    </div>
  
       
     </div>
@@ -102,7 +105,7 @@
         <li>
           <span class="label">Published Date:</span>
           <a href="/wordcloud/index.html" class="article-date">
-  <time datetime="2017-12-22T20:18:54.000Z" itemprop="datePublished">2017-12-23</time>
+  <time datetime="2017-12-22T20:33:37.000Z" itemprop="datePublished">2017-12-23</time>
 </a>
 
         </li>
