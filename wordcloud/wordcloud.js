@@ -230,4 +230,3 @@
         return $this;
     };
 })(jQuery);
-</a></span>
