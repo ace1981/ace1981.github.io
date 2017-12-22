@@ -34,6 +34,37 @@
         <p><p>程序员一枚,研究各种技术,生命不息,学习不止.</p>
 </p>
       </div>
+      
+       <link rel="stylesheet" type="text/css" href="/css/wordcloud.css" />
+    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+ 
+    <script type="text/javascript">
+        /*!
+         * Create an array of word objects, each representing a word in the cloud
+         */
+        var word_array = [
+            {text: "docker"},
+            {text: "springboot"}, {text: "容器编排"}, {text: "持续集成"}, {text: "日志收集"}, {text: "服务监控"}, {text: "数据安全"}, {text: "机器学习"}, {text: "搜索引擎"}, {text: "数据库"},{text: "web前端"}, {text: "代码管理"},  {text: "分布式"},  {text: "大数据"}, {text: "框架"}, {text: "流计算" }, {text: "消息队列" }, {text: "第三方支付"}, {text: "网络协议"}, {text: "负载均衡" }, {text: "开发工具" }, {text: "性能优化" },  {text: "etl" },{text: "java" },  {text: "linux"}, {text: "shell"}
+            // ...as many words as you want
+        ];
+        $(document).ready(function () {
+            for (var i = 0; i < word_array.length; i++) {
+                var w=((word_array.length+10)*3-i)/3;//Math.round(Math.random()*10+10);
+                word_array[i].link="/categories/"+word_array[i].text+"/";
+                word_array[i].weight=w;
+            };
+            jQuery("#example").jQCloud(word_array);
+        //$("#reply").val("添加回复：");
+        });
+    </script>
+    <div id="example" style="width: 550px; height: 350px;">
+             
+    </div>
+
+
+
+
+    
     </div>
     <hr/>
     <ul class="links">
