@@ -21,7 +21,7 @@
 打开conf/http.conf最下加入如下配置
 
 1234567ProxyRequests Off&amp;lt;Proxy balancer://cluster&amp;gt;	BalancerMember http://127.0.0.1:8180 loadfactor=1 route=">
-<meta property="og:updated_time" content="2017-12-29T07:49:17.000Z">
+<meta property="og:updated_time" content="2017-12-29T08:18:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="apache反向代理和负载均衡">
 <meta name="twitter:description" content="目标:apache实现多tomcat的反向代理和负载均衡,并实现session共享
@@ -97,7 +97,7 @@
 <li><p>下载mod_jk-1.2.26-httpd-2.2.4.so文件 并复制到/modules目录下,这里的文件名与配置路径一致,并且此文件与apache版本相关,要使用对应的版本才有效</p>
 </li>
 <li><p>创建conf/workers.properties 配置ajp协议端口, </p>
-<p>tip:</p>
+<p>Tip:</p>
 <p>worker.controller.sticky_session表示会话粘性 </p>
 <p>worker.controller.sticky_session=false，提交页面，将按照负载均衡的规则切换服务器，实现“完全的负载均衡”，代价是Tomcat不停交换session数据，慢；worker.controller.sticky_session=true，提交页面将仍使用同一服务器（session建立在哪就用哪台），不能保证完完全全的负载均衡，但相对能省频繁切换服务器的代价。可能会变上面的快一些。<br>worker.controller.sticky_session_force=true，始终转发到session创建的服务器上。<br><engine name="Catalina" defaulthost="localhost" jvmroute="tomcat2"><br>jvmRoute是tomcat路由标示，由此区分两台tomcat主机。一次会话，就有一个sessionID，这个sessionID后面会跟上jvmRoute设置的值，这样一次会话，就只会让一个tomcat处理</engine></p>
 </li>
