@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>apache反向代理和负载均衡 | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首先apache要放到磁盘根目录下
+打开conf/http.conf最下加入如下配置
+
+1234567ProxyRequests Off&amp;lt;Proxy balancer://cluster&amp;gt;	BalancerMember http://127.0.0.1:8180 loadfactor=1 route=jvm1	BalancerMember http://127.0.0.1:8280">
+<meta property="og:type" content="article">
+<meta property="og:title" content="apache反向代理和负载均衡">
+<meta property="og:url" content="http://hujao.com/2017/12/29/apache/index.html">
+<meta property="og:site_name" content="Ace'pages">
+<meta property="og:description" content="首先apache要放到磁盘根目录下
+打开conf/http.conf最下加入如下配置
+
+1234567ProxyRequests Off&amp;lt;Proxy balancer://cluster&amp;gt;	BalancerMember http://127.0.0.1:8180 loadfactor=1 route=jvm1	BalancerMember http://127.0.0.1:8280">
+<meta property="og:updated_time" content="2017-12-29T03:27:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="apache反向代理和负载均衡">
+<meta name="twitter:description" content="首先apache要放到磁盘根目录下
+打开conf/http.conf最下加入如下配置
+
+1234567ProxyRequests Off&amp;lt;Proxy balancer://cluster&amp;gt;	BalancerMember http://127.0.0.1:8180 loadfactor=1 route=jvm1	BalancerMember http://127.0.0.1:8280">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-apache" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/categories">Categories</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      apache反向代理和负载均衡
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <ol>
+<li>首先apache要放到磁盘根目录下</li>
+<li>打开conf/http.conf最下加入如下配置</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ProxyRequests Off</div><div class="line">&lt;Proxy balancer://cluster&gt;</div><div class="line">	BalancerMember http://127.0.0.1:8180 loadfactor=1 route=jvm1</div><div class="line">	BalancerMember http://127.0.0.1:8280 loadfactor=1 route=jvm2</div><div class="line">&lt;/Proxy&gt;</div><div class="line"></div><div class="line">Include conf/mod_jk.conf</div></pre></td></tr></table></figure>
+<ol>
+<li>创建conf/mod_jk.conf</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">LoadModule jk_module modules/mod_jk-1.2.26-httpd-2.2.4.so</div><div class="line">JkWorkersFile conf/workers.properties</div><div class="line">JkMount /* controller</div></pre></td></tr></table></figure>
+<ol>
+<li>下载mod_jk-1.2.26-httpd-2.2.4.so文件 并复制到/modules目录下,这里的文件名与配置路径一致,并且此文件与apache版本相关,要使用对应的版本才有效</li>
+<li>创建conf/workers.properties</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#server </div><div class="line">worker.list = controller </div><div class="line">#========tomcat1======== </div><div class="line">worker.tomcat1.port=8180</div><div class="line">worker.tomcat1.host=localhost </div><div class="line">worker.tomcat1.type=ajp13 </div><div class="line">worker.tomcat1.lbfactor = 1 </div><div class="line">#========tomcat2======== </div><div class="line">worker.tomcat2.port=8280</div><div class="line">worker.tomcat2.host=localhost </div><div class="line">worker.tomcat2.type=ajp13 </div><div class="line">worker.tomcat2.lbfactor = 1 </div><div class="line"></div><div class="line">#========controller,负载均衡控制器======== </div><div class="line">worker.controller.type=lb </div><div class="line">worker.controller.balanced_workers=tomcat1,tomcat2</div><div class="line">worker.controller.sticky_session=false</div><div class="line">worker.controller.sticky_session_force=1</div><div class="line">#worker.controller.sticky_session=1</div></pre></td></tr></table></figure>
+<ol>
+<li>修改 conf/extra/httpd-vhost.conf</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">NameVirtualHost *:80</div><div class="line"></div><div class="line">&lt;VirtualHost *:80&gt;</div><div class="line">ServerAdmin xxx@126.com</div><div class="line">ServerName localhost</div><div class="line">ServerAlias localhost</div><div class="line">ProxyPass / balancer://cluster/ stickysession=jsessionid nofailover=On</div><div class="line">ProxyPassReverse / balancer://cluster/</div><div class="line">ErrorLog &quot;logs/thc-error.log&quot;</div><div class="line">CustomLog &quot;logs/thc-access.log&quot; common</div><div class="line">&lt;/VirtualHost&gt;</div></pre></td></tr></table></figure>
+<ol>
+<li>配置tomcat 1的server.xml 修改对应端口</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">Server</span> <span class="attr">port</span>=<span class="string">"8105"</span> <span class="attr">shutdown</span>=<span class="string">"SHUTDOWN"</span>&gt;</span></div><div class="line">  ...</div><div class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8180"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span> </span></div><div class="line">               <span class="attr">connectionTimeout</span>=<span class="string">"20000"</span> </div><div class="line">               <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8109"</span> <span class="attr">protocol</span>=<span class="string">"AJP/1.3"</span> <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">Engine</span> <span class="attr">name</span>=<span class="string">"Catalina"</span> <span class="attr">defaultHost</span>=<span class="string">"localhost"</span> <span class="attr">jvmRoute</span>=<span class="string">"jvm1"</span>&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>配置tomcat 2的server.xml 修改对应端口</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">Server</span> <span class="attr">port</span>=<span class="string">"8205"</span> <span class="attr">shutdown</span>=<span class="string">"SHUTDOWN"</span>&gt;</span></div><div class="line">  ...</div><div class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8280"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span> </span></div><div class="line">               <span class="attr">connectionTimeout</span>=<span class="string">"20000"</span> </div><div class="line">               <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8209"</span> <span class="attr">protocol</span>=<span class="string">"AJP/1.3"</span> <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">Engine</span> <span class="attr">name</span>=<span class="string">"Catalina"</span> <span class="attr">defaultHost</span>=<span class="string">"localhost"</span> <span class="attr">jvmRoute</span>=<span class="string">"jvm2"</span>&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>修改相关web项目的web.xml 加入如下节点</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;distributable/&gt;</div></pre></td></tr></table></figure>
+<ol>
+<li><p>配置完成,启动tomcat1,tomcat2和apache的http.exe</p>
+<p>ps:测试是否成功,修改相同路径下的同名html文件,分别显示成不同的内容</p>
+<p>对应的在访问此路径时,能时而显示不同内容就代表配置成功了.</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2017/12/29/apache/" class="article-date">
+  <time datetime="2017-12-29T02:22:51.000Z" itemprop="datePublished">2017-12-29</time>
+</a>
+
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/负载均衡/">负载均衡</a>
+  </div>
+
+
+          </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/loadbalance/">loadbalance</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2017/12/29/nginx/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          nginx
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/26/activiti/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">学习activiti工作流</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
