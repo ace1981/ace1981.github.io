@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>Elasticsearch 相关开发 | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="开发Elasticsearch项目首先需要搭建Elasticsearch服务，具体搭建详见《Elasticsearch安装运行篇》
+安装kibana，目的是为了通过它创建索引和Mapping
+首先是查看当前elasticsearch的索引
+GET _all
+ 然后通过 PUT /timeline 来创建索引
+创建成功后，再创建类型（Mapping） 
+通过POST /timeline/record">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Elasticsearch 相关开发">
+<meta property="og:url" content="http://hujao.com/2018/01/31/elasticsearch-develop/index.html">
+<meta property="og:site_name" content="Ace'pages">
+<meta property="og:description" content="开发Elasticsearch项目首先需要搭建Elasticsearch服务，具体搭建详见《Elasticsearch安装运行篇》
+安装kibana，目的是为了通过它创建索引和Mapping
+首先是查看当前elasticsearch的索引
+GET _all
+ 然后通过 PUT /timeline 来创建索引
+创建成功后，再创建类型（Mapping） 
+通过POST /timeline/record">
+<meta property="og:image" content="http://hujao.com/2018/01/31/elasticsearch-develop/ab34c966-81c4-421a-affb-29024b8a4041.png">
+<meta property="og:image" content="http://hujao.com/2018/01/31/elasticsearch-develop/79cf5f34-ff75-4baf-a39a-2039b08fcb71.png">
+<meta property="og:image" content="http://hujao.com/2018/01/31/elasticsearch-develop/5bcf5a16-a394-4997-aa0d-ecc6dd19940b.png">
+<meta property="og:image" content="http://hujao.com/2018/01/31/elasticsearch-develop/7a8ac7a1-2352-4db3-8b69-97c0f3ba04fd.png">
+<meta property="og:image" content="http://hujao.com/2018/01/31/elasticsearch-develop/a6025996-2128-4e00-97c8-78c0aeb7622d.png">
+<meta property="og:updated_time" content="2018-01-30T19:43:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Elasticsearch 相关开发">
+<meta name="twitter:description" content="开发Elasticsearch项目首先需要搭建Elasticsearch服务，具体搭建详见《Elasticsearch安装运行篇》
+安装kibana，目的是为了通过它创建索引和Mapping
+首先是查看当前elasticsearch的索引
+GET _all
+ 然后通过 PUT /timeline 来创建索引
+创建成功后，再创建类型（Mapping） 
+通过POST /timeline/record">
+<meta name="twitter:image" content="http://hujao.com/2018/01/31/elasticsearch-develop/ab34c966-81c4-421a-affb-29024b8a4041.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-elasticsearch-develop" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/categories">Categories</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Elasticsearch 相关开发
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p>开发Elasticsearch项目首先需要搭建Elasticsearch服务，具体搭建详见《Elasticsearch安装运行篇》</p>
+<p>安装kibana，目的是为了通过它创建索引和Mapping</p>
+<p>首先是查看当前elasticsearch的索引</p>
+<p>GET _all</p>
+<p><img src="/2018/01/31/elasticsearch-develop/ab34c966-81c4-421a-affb-29024b8a4041.png" alt="img"> 然后通过 PUT /timeline 来创建索引</p>
+<p>创建成功后，再创建类型（Mapping） </p>
+<p>通过POST /timeline/record/_mapping</p>
+<p><img src="/2018/01/31/elasticsearch-develop/79cf5f34-ff75-4baf-a39a-2039b08fcb71.png" alt="img"> 同时设置不允许于类型不同的数据提交时修改类型</p>
+<p>如果需要修改类型，只能新增，但不能删除和修改已存在的属性。修改方式和创建类型方式一样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Post /timeline/record/_mapping</div><div class="line">&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div></pre></td><td class="code"><pre><div class="line">POST /timeline/record/_mapping</div><div class="line">&#123;</div><div class="line">    &quot;record&quot;: &#123;</div><div class="line">        &quot;dynamic&quot;: &quot;false&quot;,</div><div class="line">        &quot;properties&quot;: &#123;</div><div class="line">            &quot;lzbh&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;keyword&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;sjm&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;text&quot;,</div><div class="line">                &quot;analyzer&quot;: &quot;ik_max_word&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;sj&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;date&quot;,</div><div class="line">                &quot;format&quot;: &quot;yyyy-MM-dd HH:mm:ss&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;lylx&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;keyword&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;title&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;text&quot;,</div><div class="line">                &quot;analyzer&quot;: &quot;ik_max_word&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;content&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;text&quot;,</div><div class="line">                &quot;analyzer&quot;: &quot;ik_max_word&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;czrjh&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;keyword&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;czrxm&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;text&quot;,</div><div class="line">                &quot;analyzer&quot;: &quot;ik_max_word&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;lyh&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;keyword&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;bs&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;text&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;bscode&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;keyword&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;czcode&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;keyword&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;xqdz&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;text&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;xxczcode&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;keyword&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;fqdw&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;keyword&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;fqdwm&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;text&quot;,</div><div class="line">                &quot;analyzer&quot;: &quot;ik_max_word&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;fqdws&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;text&quot;,</div><div class="line">                &quot;analyzer&quot;: &quot;ik_max_word&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;fqdwms&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;text&quot;,</div><div class="line">                &quot;analyzer&quot;: &quot;ik_max_word&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;mddws&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;text&quot;,</div><div class="line">                &quot;analyzer&quot;: &quot;ik_max_word&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;mddwms&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;text&quot;,</div><div class="line">                &quot;analyzer&quot;: &quot;ik_max_word&quot;</div><div class="line">            &#125;,</div><div class="line">            &quot;dw&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;object&quot;,</div><div class="line">                &quot;properties&quot;: &#123;</div><div class="line">                    &quot;jd&quot;: &#123;</div><div class="line">                        &quot;type&quot;: &quot;double&quot;</div><div class="line">                    &#125;,</div><div class="line">                    &quot;wd&quot;: &#123;</div><div class="line">                        &quot;type&quot;: &quot;double&quot;</div><div class="line">                    &#125;,</div><div class="line">                    &quot;dwczcode&quot;: &#123;</div><div class="line">                        &quot;type&quot;: &quot;keyword&quot;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">            &quot;ypfj&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;object&quot;,</div><div class="line">                &quot;dynamic&quot;: &quot;false&quot;,</div><div class="line">                &quot;properties&quot;: &#123;</div><div class="line">                    &quot;extension&quot;: &#123;</div><div class="line">                        &quot;type&quot;: &quot;keyword&quot;</div><div class="line">                    &#125;,</div><div class="line">                    &quot;fileurl&quot;: &#123;</div><div class="line">                        &quot;type&quot;: &quot;text&quot;</div><div class="line">                    &#125;,</div><div class="line">                    &quot;filename&quot;: &#123;</div><div class="line">                        &quot;type&quot;: &quot;text&quot;,</div><div class="line">                        &quot;analyzer&quot;: &quot;ik_max_word&quot;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">            &quot;spfj&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;object&quot;,</div><div class="line">                &quot;dynamic&quot;: &quot;false&quot;,</div><div class="line">                &quot;properties&quot;: &#123;</div><div class="line">                    &quot;extension&quot;: &#123;</div><div class="line">                        &quot;type&quot;: &quot;keyword&quot;</div><div class="line">                    &#125;,</div><div class="line">                    &quot;fileurl&quot;: &#123;</div><div class="line">                        &quot;type&quot;: &quot;text&quot;</div><div class="line">                    &#125;,</div><div class="line">                    &quot;filename&quot;: &#123;</div><div class="line">                        &quot;type&quot;: &quot;text&quot;,</div><div class="line">                        &quot;analyzer&quot;: &quot;ik_max_word&quot;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">            &quot;tpfj&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;object&quot;,</div><div class="line">                &quot;dynamic&quot;: &quot;false&quot;,</div><div class="line">                &quot;properties&quot;: &#123;</div><div class="line">                    &quot;extension&quot;: &#123;</div><div class="line">                        &quot;type&quot;: &quot;keyword&quot;</div><div class="line">                    &#125;,</div><div class="line">                    &quot;fileurl&quot;: &#123;</div><div class="line">                        &quot;type&quot;: &quot;text&quot;</div><div class="line">                    &#125;,</div><div class="line">                    &quot;filename&quot;: &#123;</div><div class="line">                        &quot;type&quot;: &quot;text&quot;,</div><div class="line">                        &quot;analyzer&quot;: &quot;ik_max_word&quot;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">            &quot;wjfj&quot;: &#123;</div><div class="line">                &quot;type&quot;: &quot;object&quot;,</div><div class="line">                &quot;dynamic&quot;: &quot;false&quot;,</div><div class="line">                &quot;properties&quot;: &#123;</div><div class="line">                    &quot;extension&quot;: &#123;</div><div class="line">                        &quot;type&quot;: &quot;keyword&quot;</div><div class="line">                    &#125;,</div><div class="line">                    &quot;fileurl&quot;: &#123;</div><div class="line">                        &quot;type&quot;: &quot;text&quot;</div><div class="line">                    &#125;,</div><div class="line">                    &quot;filename&quot;: &#123;</div><div class="line">                        &quot;type&quot;: &quot;text&quot;,</div><div class="line">                        &quot;analyzer&quot;: &quot;ik_max_word&quot;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>搜索数据通过方法：</p>
+<p>先查加上size可以获得总记录数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">GET /relatedunits1/units/_search</div><div class="line">&#123;</div><div class="line">	&quot;size&quot;: &quot;0&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Java代码使用的组件接口可以选,具体如下，代码里使用的是spring.data里包含的elasticsearch客户端组件。下面是elastic官方提供的组件。如果需要最新版本的elasticsearch则需要使用官方组件，同时还需要注意分词器对应的版本是否支持。</p>
+<p><img src="/2018/01/31/elasticsearch-develop/5bcf5a16-a394-4997-aa0d-ecc6dd19940b.png" alt="img"></p>
+<p>可以通过maven来下载对应版本的组件</p>
+<p><img src="/2018/01/31/elasticsearch-develop/7a8ac7a1-2352-4db3-8b69-97c0f3ba04fd.png" alt="img"></p>
+<p>相关分词组件</p>
+<p>如IK中文分词器可以到<a href="https://github.com/medcl/elasticsearch-analysis-ik" target="_blank" rel="external">https://github.com/medcl/elasticsearch-analysis-ik</a>去下载</p>
+<p>进入release目录查看已经发布的版本</p>
+<p><img src="/2018/01/31/elasticsearch-develop/a6025996-2128-4e00-97c8-78c0aeb7622d.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/01/31/elasticsearch-develop/" class="article-date">
+  <time datetime="2018-01-30T19:31:29.000Z" itemprop="datePublished">2018-01-31</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2018/01/12/classpath/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">.classpath作用</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
