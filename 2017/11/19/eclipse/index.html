@@ -22,7 +22,7 @@ Errors occurred duri">
 <meta property="og:image" content="http://blog.csdn.net/a1063916463/article/details/53761028">
 <meta property="og:image" content="http://blog.csdn.net/a1063916463/article/details/53761028">
 <meta property="og:image" content="http://blog.csdn.net/a1063916463/article/details/53761028">
-<meta property="og:updated_time" content="2018-01-11T02:53:54.000Z">
+<meta property="og:updated_time" content="2018-01-30T03:32:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="eclipse 技巧">
 <meta name="twitter:description" content="关闭文件校验 如dtd,jsp,tag library,javascript,facelet html等菜单Window-&amp;gt;首选项Preferences-&amp;gt;校验Validation DisableAll
@@ -105,6 +105,9 @@ Errors occurred duri">
 <p>修改对应的名称</p>
 <p><img src="http://blog.csdn.net/a1063916463/article/details/53761028" alt="img"></p>
 <p>到此项目名完整修改成功。</p>
+<h5 id="Resource-is-out-of-sync-with-the-file-system……"><a href="#Resource-is-out-of-sync-with-the-file-system……" class="headerlink" title="Resource is out of sync with the file system……"></a>Resource is out of sync with the file system……</h5><p>分析：<br>有时候因为时间紧迫的原因，所以就没去管它，今天再次遇到它，实在看着不爽，所以想了办法解决此问题！</p>
+<p>这个问题是由于eclipse中文件不同步引起的。在eclipse中，工程文件是由eclipse自动扫描添加的，如果在外部修改了工程目录中的文件但又关闭了自动刷新功能，则会引起文件不同步，从而搜索时出现Resource is out of sync with the file system问题（其它功能可能也会如此）。此外，在外部没有修改eclipse工程中的文件也有可能引起该问题。</p>
+<p>解决方法：<br>有两种解决方法：<br>1）手动刷新。即在eclipse的工程目录中，右键refresh（或者按下F5）。<br>2）配置eclipse的选项：<br>​    a）eclipse启动时，刷新workspace，即勾选：window—&gt;preferences—&gt;general—&gt;startup and shutdown—&gt;refresh workspace on startup；<br>​    b）window—&gt;preferences—&gt;general—&gt;workspace中：勾选选项：refresh using native hooks or polling和refresh on access；</p>
 
       
     </div>
