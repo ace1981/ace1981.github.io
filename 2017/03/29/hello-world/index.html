@@ -27,7 +27,7 @@ java
 objective-c
 1UIButton *btn=[[UIButton alloc]init];
 关于hexo插件的基本命令创建文章:hexo new markdown文件名">
-<meta property="og:updated_time" content="2017-04-08T01:00:03.000Z">
+<meta property="og:updated_time" content="2018-05-16T13:04:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hello markdown and hexo">
 <meta name="twitter:description" content="C#
@@ -111,6 +111,8 @@ objective-c
 <p>这里要使用git@github.com:而不是<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></p>
 <h5 id="关于markdown编辑器"><a href="#关于markdown编辑器" class="headerlink" title="关于markdown编辑器"></a>关于markdown编辑器</h5><p>推荐使用Typora</p>
 <h5 id="修改-md打开方式"><a href="#修改-md打开方式" class="headerlink" title="修改.md打开方式"></a>修改.md打开方式</h5><p>右键.md文件&gt;显示简介&gt;打开方式 选择Typora并应用所有</p>
+<p>#####docker启动一个hexo</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker <span class="keyword">run</span><span class="bash"> <span class="_">-d</span> --name hexo -v /opt/docker-registry/dockerfiles/hexo/_posts:/app/<span class="built_in">source</span>/_posts --restart always -p 4000:4000 hexo/node:1.0</span></div></pre></td></tr></table></figure>
 
       
     </div>
