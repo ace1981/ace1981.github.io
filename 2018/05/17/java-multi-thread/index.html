@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>java-multi-thread | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="线程状态图
+
+线程共包括以下5种状态。
+
+新建状态(New)         : 线程对象被创建后，就进入了新建状态。例如，Thread thread = new Thread()。
+就绪状态(Runnable): 也被称为“可执行状态”。线程对象被创建后，其它线程调用了该对象的start()方法，从而来启动该线程。例如，thread.start()。处于就绪状态的线程，随时可能被CPU调度执行。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java-multi-thread">
+<meta property="og:url" content="http://hujao.com/2018/05/17/java-multi-thread/index.html">
+<meta property="og:site_name" content="Ace'pages">
+<meta property="og:description" content="线程状态图
+
+线程共包括以下5种状态。
+
+新建状态(New)         : 线程对象被创建后，就进入了新建状态。例如，Thread thread = new Thread()。
+就绪状态(Runnable): 也被称为“可执行状态”。线程对象被创建后，其它线程调用了该对象的start()方法，从而来启动该线程。例如，thread.start()。处于就绪状态的线程，随时可能被CPU调度执行。">
+<meta property="og:image" content="http://hujao.com/2018/05/17/java-multi-thread/18152411-a974ea82ebc04e72bd874c3921f8bfec.jpg">
+<meta property="og:image" content="http://common.cnblogs.com/images/copycode.gif">
+<meta property="og:updated_time" content="2018-05-17T05:39:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java-multi-thread">
+<meta name="twitter:description" content="线程状态图
+
+线程共包括以下5种状态。
+
+新建状态(New)         : 线程对象被创建后，就进入了新建状态。例如，Thread thread = new Thread()。
+就绪状态(Runnable): 也被称为“可执行状态”。线程对象被创建后，其它线程调用了该对象的start()方法，从而来启动该线程。例如，thread.start()。处于就绪状态的线程，随时可能被CPU调度执行。">
+<meta name="twitter:image" content="http://hujao.com/2018/05/17/java-multi-thread/18152411-a974ea82ebc04e72bd874c3921f8bfec.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-java-multi-thread" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/categories">Categories</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java-multi-thread
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p>线程状态图</p>
+<p><img src="/2018/05/17/java-multi-thread/18152411-a974ea82ebc04e72bd874c3921f8bfec.jpg" alt="18152411-a974ea82ebc04e72bd874c3921f8bfec"></p>
+<p>线程共包括以下5种状态。</p>
+<ol>
+<li><strong>新建状态(New)         </strong>: 线程对象被创建后，就进入了新建状态。例如，Thread thread = new Thread()。</li>
+<li><strong>就绪状态(Runnable)</strong>: 也被称为“可执行状态”。线程对象被创建后，其它线程调用了该对象的start()方法，从而来启动该线程。例如，thread.start()。处于就绪状态的线程，随时可能被CPU调度执行。</li>
+<li><strong>运行状态(Running)</strong> : 线程获取CPU权限进行执行。需要注意的是，线程只能从就绪状态进入到运行状态。</li>
+<li><strong>阻塞状态(Blocked) </strong> : 阻塞状态是线程因为某种原因放弃CPU使用权，暂时停止运行。直到线程进入就绪状态，才有机会转到运行状态。阻塞的情况分三种：<br>​    (01) 等待阻塞 – 通过调用线程的wait()方法，让线程等待某工作的完成。<br>​    (02) 同步阻塞 – 线程在获取synchronized同步锁失败(因为锁被其它线程所占用)，它会进入同步阻塞状态。<br>​    (03) 其他阻塞 – 通过调用线程的sleep()或join()或发出了I/O请求时，线程会进入到阻塞状态。当sleep()状态超时、join()等待线程终止或者超时、或者I/O处理完毕时，线程重新转入就绪状态。</li>
+<li><strong>死亡状态(Dead)</strong>    : 线程执行完了或者因异常退出了run()方法，该线程结束生命周期。</li>
+</ol>
+<p>这5种状态涉及到的内容包括Object类, Thread和synchronized关键字。这些内容我们会在后面的章节中逐个进行学习。<br><strong>Object类</strong>，定义了wait(), notify(), notifyAll()等休眠/唤醒函数。<br><strong>Thread类</strong>，定义了一些列的线程操作函数。例如，sleep()休眠函数, interrupt()中断函数, getName()获取线程名称等。<br><strong>synchronized</strong>，是关键字；它区分为synchronized代码块和synchronized方法。synchronized的作用是让线程获取对象的同步锁。<br>在后面详细介绍wait(),notify()等方法时，我们会分析为什么“wait(), notify()等方法要定义在Object类，而不是Thread类中”。</p>
+<h3 id="Thread和Runnable简介"><a href="#Thread和Runnable简介" class="headerlink" title="Thread和Runnable简介"></a><strong>Thread和Runnable简介</strong></h3><p><strong>Runnable</strong> 是一个接口，该接口中只包含了一个run()方法。它的定义如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public interface Runnable &#123;</div><div class="line">    public abstract void run();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Runnable的作用，实现多线程。我们可以定义一个类A实现Runnable接口；然后，通过new Thread(new A())等方式新建线程。</p>
+<p><strong>Thread</strong> 是一个类。Thread本身就实现了Runnable接口。它的声明如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">public class Thread implements Runnable &#123;&#125;</div></pre></td></tr></table></figure>
+<p>Thread的作用，实现多线程。</p>
+<h3 id="Thread和Runnable的异同点"><a href="#Thread和Runnable的异同点" class="headerlink" title="Thread和Runnable的异同点"></a><strong>Thread和Runnable的异同点</strong></h3><p><strong>Thread 和 Runnable 的相同点</strong>：都是“多线程的实现方式”。<br><strong>Thread 和 Runnable 的不同点</strong>：<br>Thread 是类，而Runnable是接口；Thread本身是实现了Runnable接口的类。我们知道“一个类只能有一个父类，但是却能实现多个接口”，因此Runnable具有更好的扩展性。<br>此外，Runnable还可以用于“资源的共享”。即，多个线程都是基于某一个Runnable对象建立的，它们会共享Runnable对象上的资源。<br>通常，建议通过“Runnable”实现多线程！</p>
+<h3 id="Thread和Runnable的多线程示例"><a href="#Thread和Runnable的多线程示例" class="headerlink" title="Thread和Runnable的多线程示例"></a><strong>Thread和Runnable的多线程示例</strong></h3><h1 id="1-Thread的多线程示例"><a href="#1-Thread的多线程示例" class="headerlink" title="1. Thread的多线程示例"></a>1. Thread的多线程示例</h1><p>下面通过示例更好的理解Thread和Runnable，借鉴网上一个例子比较具有说服性的例子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"> 1 // ThreadTest.java 源码</div><div class="line"> 2 class MyThread extends Thread&#123;  </div><div class="line"> 3     private int ticket=10;  </div><div class="line"> 4     public void run()&#123;</div><div class="line"> 5         for(int i=0;i&lt;20;i++)&#123; </div><div class="line"> 6             if(this.ticket&gt;0)&#123;</div><div class="line"> 7                 System.out.println(this.getName()+&quot; 卖票：ticket&quot;+this.ticket--);</div><div class="line"> 8             &#125;</div><div class="line"> 9         &#125;</div><div class="line">10     &#125; </div><div class="line">11 &#125;;</div><div class="line">12 </div><div class="line">13 public class ThreadTest &#123;  </div><div class="line">14     public static void main(String[] args) &#123;  </div><div class="line">15         // 启动3个线程t1,t2,t3；每个线程各卖10张票！</div><div class="line">16         MyThread t1=new MyThread();</div><div class="line">17         MyThread t2=new MyThread();</div><div class="line">18         MyThread t3=new MyThread();</div><div class="line">19         t1.start();</div><div class="line">20         t2.start();</div><div class="line">21         t3.start();</div><div class="line">22     &#125;  </div><div class="line">23 &#125;</div></pre></td></tr></table></figure>
+<p><strong>运行结果</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">Thread-0 卖票：ticket10</div><div class="line">Thread-1 卖票：ticket10</div><div class="line">Thread-2 卖票：ticket10</div><div class="line">Thread-1 卖票：ticket9</div><div class="line">Thread-0 卖票：ticket9</div><div class="line">Thread-1 卖票：ticket8</div><div class="line">Thread-2 卖票：ticket9</div><div class="line">Thread-1 卖票：ticket7</div><div class="line">Thread-0 卖票：ticket8</div><div class="line">Thread-1 卖票：ticket6</div><div class="line">Thread-2 卖票：ticket8</div><div class="line">Thread-1 卖票：ticket5</div><div class="line">Thread-0 卖票：ticket7</div><div class="line">Thread-1 卖票：ticket4</div><div class="line">Thread-2 卖票：ticket7</div><div class="line">Thread-1 卖票：ticket3</div><div class="line">Thread-0 卖票：ticket6</div><div class="line">Thread-1 卖票：ticket2</div><div class="line">Thread-2 卖票：ticket6</div><div class="line">Thread-2 卖票：ticket5</div><div class="line">Thread-2 卖票：ticket4</div><div class="line">Thread-1 卖票：ticket1</div><div class="line">Thread-0 卖票：ticket5</div><div class="line">Thread-2 卖票：ticket3</div><div class="line">Thread-0 卖票：ticket4</div><div class="line">Thread-2 卖票：ticket2</div><div class="line">Thread-0 卖票：ticket3</div><div class="line">Thread-2 卖票：ticket1</div><div class="line">Thread-0 卖票：ticket2</div><div class="line">Thread-0 卖票：ticket1</div></pre></td></tr></table></figure>
+<p><strong>结果说明</strong>：<br>(01) MyThread继承于Thread，它是自定义个线程。每个MyThread都会卖出10张票。<br>(02) 主线程main创建并启动3个MyThread子线程。每个子线程都各自卖出了10张票。</p>
+<h1 id="2-Runnable的多线程示例"><a href="#2-Runnable的多线程示例" class="headerlink" title="2. Runnable的多线程示例"></a>2. Runnable的多线程示例</h1><p>下面，我们对上面的程序进行修改。通过Runnable实现一个接口，从而实现多线程。</p>
+<p><a href="javascript:void(0" target="_blank" rel="external"><img src="http://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"> 1 // RunnableTest.java 源码</div><div class="line"> 2 class MyThread implements Runnable&#123;  </div><div class="line"> 3     private int ticket=10;  </div><div class="line"> 4     public void run()&#123;</div><div class="line"> 5         for(int i=0;i&lt;20;i++)&#123; </div><div class="line"> 6             if(this.ticket&gt;0)&#123;</div><div class="line"> 7                 System.out.println(Thread.currentThread().getName()+&quot; 卖票：ticket&quot;+this.ticket--);</div><div class="line"> 8             &#125;</div><div class="line"> 9         &#125;</div><div class="line">10     &#125; </div><div class="line">11 &#125;; </div><div class="line">12 </div><div class="line">13 public class RunnableTest &#123;  </div><div class="line">14     public static void main(String[] args) &#123;  </div><div class="line">15         MyThread mt=new MyThread();</div><div class="line">16 </div><div class="line">17         // 启动3个线程t1,t2,t3(它们共用一个Runnable对象)，这3个线程一共卖10张票！</div><div class="line">18         Thread t1=new Thread(mt);</div><div class="line">19         Thread t2=new Thread(mt);</div><div class="line">20         Thread t3=new Thread(mt);</div><div class="line">21         t1.start();</div><div class="line">22         t2.start();</div><div class="line">23         t3.start();</div><div class="line">24     &#125;  </div><div class="line">25 &#125;</div></pre></td></tr></table></figure>
+<p><strong>运行结果</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Thread-0 卖票：ticket10</div><div class="line">Thread-2 卖票：ticket8</div><div class="line">Thread-1 卖票：ticket9</div><div class="line">Thread-2 卖票：ticket6</div><div class="line">Thread-0 卖票：ticket7</div><div class="line">Thread-2 卖票：ticket4</div><div class="line">Thread-1 卖票：ticket5</div><div class="line">Thread-2 卖票：ticket2</div><div class="line">Thread-0 卖票：ticket3</div><div class="line">Thread-1 卖票：ticket1</div></pre></td></tr></table></figure>
+<p><strong>结果说明</strong>：<br>(01) 和上面“MyThread继承于Thread”不同；这里的MyThread实现了Thread接口。<br>(02) 主线程main创建并启动3个子线程，而且这3个子线程都是基于“mt这个Runnable对象”而创建的。运行结果是这3个子线程一共卖出了10张票。这说明它们是共享了MyThread接口的。</p>
+<h3 id="start-和-run-的区别说明"><a href="#start-和-run-的区别说明" class="headerlink" title="start() 和 run()的区别说明"></a><strong>start() 和 run()的区别说明</strong></h3><p><strong>start()</strong> : 它的作用是启动一个新线程，新线程会执行相应的run()方法。start()不能被重复调用。<br><strong>run()</strong>   : run()就和普通的成员方法一样，可以被重复调用。单独调用run()的话，会在当前线程中执行run()，而并不会启动新线程！</p>
+<p>下面以代码来进行说明。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class MyThread extends Thread&#123;  </div><div class="line">    public void run()&#123;</div><div class="line">        ...</div><div class="line">    &#125; </div><div class="line">&#125;;</div><div class="line">MyThread mythread = new MyThread();</div></pre></td></tr></table></figure>
+<p>mythread.start()会启动一个新线程，并在新线程中运行run()方法。<br>而mythread.run()则会直接在当前线程中运行run()方法，并不会启动一个新线程来运行run()。</p>
+<h3 id="start-和-run-的区别示例"><a href="#start-和-run-的区别示例" class="headerlink" title="start() 和 run()的区别示例"></a><strong>start() 和 run()的区别示例</strong></h3><p>下面，通过一个简单示例演示它们之间的区别。源码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"> 1 // Demo.java 的源码</div><div class="line"> 2 class MyThread extends Thread&#123;  </div><div class="line"> 3     public MyThread(String name) &#123;</div><div class="line"> 4         super(name);</div><div class="line"> 5     &#125;</div><div class="line"> 6 </div><div class="line"> 7     public void run()&#123;</div><div class="line"> 8         System.out.println(Thread.currentThread().getName()+&quot; is running&quot;);</div><div class="line"> 9     &#125; </div><div class="line">10 &#125;; </div><div class="line">11 </div><div class="line">12 public class Demo &#123;  </div><div class="line">13     public static void main(String[] args) &#123;  </div><div class="line">14         Thread mythread=new MyThread(&quot;mythread&quot;);</div><div class="line">15 </div><div class="line">16         System.out.println(Thread.currentThread().getName()+&quot; call mythread.run()&quot;);</div><div class="line">17         mythread.run();</div><div class="line">18 </div><div class="line">19         System.out.println(Thread.currentThread().getName()+&quot; call mythread.start()&quot;);</div><div class="line">20         mythread.start();</div><div class="line">21     &#125;  </div><div class="line">22 &#125;</div></pre></td></tr></table></figure>
+<p><strong>运行结果</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">main call mythread.run()</div><div class="line">main is running</div><div class="line">main call mythread.start()</div><div class="line">mythread is running</div></pre></td></tr></table></figure>
+<p><strong>结果说明</strong>：<br>(01) Thread.currentThread().getName()是用于获取“当前线程”的名字。当前线程是指正在cpu中调度执行的线程。<br>(02) mythread.run()是在“主线程main”中调用的，该run()方法直接运行在“主线程main”上。<br>(03) mythread.start()会启动“线程mythread”，“线程mythread”启动之后，会调用run()方法；此时的run()方法是运行在“线程mythread”上。</p>
+<h3 id="start-和-run-相关源码-基于JDK1-7-0-40"><a href="#start-和-run-相关源码-基于JDK1-7-0-40" class="headerlink" title="start() 和 run()相关源码(基于JDK1.7.0_40)"></a><strong>start() 和 run()相关源码(基于JDK1.7.0_40)</strong></h3><p>Thread.java中start()方法的源码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">public synchronized void start() &#123;</div><div class="line">    // 如果线程不是&quot;就绪状态&quot;，则抛出异常！</div><div class="line">    if (threadStatus != 0)</div><div class="line">        throw new IllegalThreadStateException();</div><div class="line"></div><div class="line">    // 将线程添加到ThreadGroup中</div><div class="line">    group.add(this);</div><div class="line"></div><div class="line">    boolean started = false;</div><div class="line">    try &#123;</div><div class="line">        // 通过start0()启动线程</div><div class="line">        start0();</div><div class="line">        // 设置started标记</div><div class="line">        started = true;</div><div class="line">    &#125; finally &#123;</div><div class="line">        try &#123;</div><div class="line">            if (!started) &#123;</div><div class="line">                group.threadStartFailed(this);</div><div class="line">            &#125;</div><div class="line">        &#125; catch (Throwable ignore) &#123;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>说明</strong>：start()实际上是通过本地方法start0()启动线程的。而start0()会新运行一个线程，新线程会调用run()方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">private native void start0();</div></pre></td></tr></table></figure>
+<p>Thread.java中run()的代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">public void run() &#123;</div><div class="line">    if (target != null) &#123;</div><div class="line">        target.run();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>说明</strong>：target是一个Runnable对象。run()就是直接调用Thread线程的Runnable成员的run()方法，并不会新建一个线程。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/05/17/java-multi-thread/" class="article-date">
+  <time datetime="2018-05-17T05:22:28.000Z" itemprop="datePublished">2018-05-17</time>
+</a>
+
+        </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2018/05/18/tomcat-outofmem/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          tomcat-outofmem
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/16/linux/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">linux起源</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>tomcat相关配置 | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="原因是因为在tomcat重启的时候，之前的tomcat的线程还没有完全关闭，最新启动tomcat就会报这个异常，只要把tomcat的server.xml 中的reloadable=”true” 改成false就OK
+大家看过这个帖子后说没有找到对应的配置，其实就存在于Context节点中，一下是我截取的Tomcat中文一个文档中的注释：Context(表示一个web应用程序，通常为WAR文件，关于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tomcat相关配置">
+<meta property="og:url" content="http://hujao.com/2018/05/18/tomcat-setting/index.html">
+<meta property="og:site_name" content="Ace'pages">
+<meta property="og:description" content="原因是因为在tomcat重启的时候，之前的tomcat的线程还没有完全关闭，最新启动tomcat就会报这个异常，只要把tomcat的server.xml 中的reloadable=”true” 改成false就OK
+大家看过这个帖子后说没有找到对应的配置，其实就存在于Context节点中，一下是我截取的Tomcat中文一个文档中的注释：Context(表示一个web应用程序，通常为WAR文件，关于">
+<meta property="og:updated_time" content="2018-05-18T06:28:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="tomcat相关配置">
+<meta name="twitter:description" content="原因是因为在tomcat重启的时候，之前的tomcat的线程还没有完全关闭，最新启动tomcat就会报这个异常，只要把tomcat的server.xml 中的reloadable=”true” 改成false就OK
+大家看过这个帖子后说没有找到对应的配置，其实就存在于Context节点中，一下是我截取的Tomcat中文一个文档中的注释：Context(表示一个web应用程序，通常为WAR文件，关于">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-tomcat-setting" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/categories">Categories</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      tomcat相关配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p>原因是因为在tomcat重启的时候，之前的tomcat的线程还没有完全关闭，最新启动tomcat就会报这个异常，只要把tomcat的server.xml 中的reloadable=”true” 改成false就OK</p>
+<p>大家看过这个帖子后说没有找到对应的配置，其实就存在于Context节点中，一下是我截取的Tomcat中文一个文档中的注释：<br>Context(表示一个web应用程序，通常为WAR文件，关于WAR的具体信息见servlet规范)    docBase    应用程序的路径或者是WAR文件存放的路径<br>path    表示此web应用程序的url的前缀，这样请求的url为<a href="http://localhost:8080/path/****" target="_blank" rel="external">http://localhost:8080/path/****</a><br>reloadable    这个属性非常重要，如果为true，则tomcat会自动检测应用程序的/WEB-INF/lib 和/WEB-INF/classes目录的变化，自动装载新的应用程序，我们可以在不重起tomcat的情况下改变应用程序</p>
+<p>Tomcat应用更新时，把新的WAR包放到webapps目录下，Tomcat就会自动把原来的同名webapp删除，并把WAR包解压，运行新的 webapp。<br>但是，有时候Tomcat并不能把旧的webapp完全删除，通常会留下WEB-INF/lib下的某个jar包，必须关闭Tomcat才能删除，这就导致自动部署失败。<br>解决方法是在<context>元素中增加一个属性antiResourceLocking=”true” antiJARLocking=”true”，默认是”false”。<br>这样就可以热部署了。<br>实际上，这两个参数就是配置Tomcat的资源锁定和Jar包锁定策略。<br>（1）antiJARLocking<br> 先来看看应用的antiJARLocking属性设置为true时，Tomcat是怎么处理的。<br>针对antiJARLocking属性的处理集中在WebappClassLoader的getResource和findResourceInternal方法里，主要原理是将包含在Jar包里的资源抽取放到应用的工作目录（work里应用对应的目录）下去。<br> 把这个属性设置为true之后，部署应用就可以在work\Catalina\localhost\struts2-blank\loader目录下看到被解压的Jar包内容。<br>antiJARLocking属性在有的时候并不会生效，从WebappClassLoader的getResource和findResource方法逻辑里可以看出一些端倪，在一些情况下（通过对Loader的delegate、searchExternalFirst等相关属性进行配置），资源的获取并不是WebappClassLoader去做的，而是其父加载器的getResource方法或父类的findResource方法去做的，WebappClassLoader的父类是URLClassLoader、父加载器是URLClassLoader实例。</context></p>
+<p>（2）antiResourceLocking<br> 当antiResourceLocking设置为true的时候，Tomcat不会锁定应用下的任何文件。那Tomcat是怎么做到这一点的呢？<br>在Tomcat的架构里，应用也是一个级别的容器，对应的接口是Context；各级容器本身都具备生命周期，而且配置了多个生命周期监听器来监听容器不同的生命周期过程。Tomcat在初始化的时候，给Context增加了一个生命周期监听器org.apache.catalina.startup.ContextConfig；然后在Context真正开始启动之前，会有一个BEFORE_START_EVENT状态，ContextConfig监听到这个状态的事件后，就会针对antiResourceLocking进行处理。<br>总结一下，就是如果应用的antiResourceLocking属性设置为true，就将应用的doc base移到临时目录下，让Tomca不会占用webapps下的文件。Tomcat里java.io.tmpdir默认指向Tomcat的temp目录。<br>副作用<br>从上面的分析来看，antiResourceLocking为true有几个副作用：<br>1) 会延长应用的启动时间，因为多了临时目录的清理和往临时目录拷贝应用内容的操作；a<br>2) 如果不知道这个属性的原理，修改webapps下应用的JSP，那就不会动态重加载到新的页面内容了，因为应用的doc base已经不再在webapps下了；<br>3) 停止Tomcat的时候，临时目录下实际的doc base会被删掉，<br>结合第二条和第三条，如果要修改应用的JSP，那必须将改动同时拷贝到两个目录下（原始doc base和临时目录下的doc base）。<br>所以Tomcat里这个属性缺省为false。在使用Tomcat 6.0.24之前的版本时，如果要用这个属性解决文件被锁的问题，三思而行。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/05/18/tomcat-setting/" class="article-date">
+  <time datetime="2018-05-18T01:24:25.000Z" itemprop="datePublished">2018-05-18</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2018/05/18/java-multi-thread2/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          java-multi-thread2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/18/tomcat-outofmem/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">tomcat-outofmem</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
