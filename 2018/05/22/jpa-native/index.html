@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>jpa原生sql | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253package com.cndatacom.jpa.entity;   import javax.persistence.Column; import javax.persistence.Entity; i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jpa原生sql">
+<meta property="og:url" content="http://hujao.com/2018/05/22/jpa-native/index.html">
+<meta property="og:site_name" content="Ace'pages">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253package com.cndatacom.jpa.entity;   import javax.persistence.Column; import javax.persistence.Entity; i">
+<meta property="og:updated_time" content="2018-05-22T08:11:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jpa原生sql">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253package com.cndatacom.jpa.entity;   import javax.persistence.Column; import javax.persistence.Entity; i">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-jpa-native" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/categories">Categories</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jpa原生sql
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.cndatacom.jpa.entity; </div><div class="line">  </div><div class="line"><span class="keyword">import</span> javax.persistence.Column; </div><div class="line"><span class="keyword">import</span> javax.persistence.Entity; </div><div class="line"><span class="keyword">import</span> javax.persistence.GeneratedValue; </div><div class="line"><span class="keyword">import</span> javax.persistence.Id; </div><div class="line"><span class="keyword">import</span> javax.persistence.Table; </div><div class="line">  </div><div class="line"><span class="meta">@Entity</span></div><div class="line"><span class="meta">@Table</span>(name=<span class="string">"t_user"</span>) </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123; </div><div class="line">      </div><div class="line">    <span class="comment">/** </span></div><div class="line">     * 主键 </div><div class="line">     */</div><div class="line">    <span class="meta">@Id</span></div><div class="line">    <span class="meta">@GeneratedValue</span></div><div class="line">    <span class="keyword">private</span> Long id; </div><div class="line">      </div><div class="line">    <span class="comment">/** </span></div><div class="line">     * 名字 </div><div class="line">     */</div><div class="line">    <span class="meta">@Column</span>(name=<span class="string">"name"</span>,length=<span class="number">50</span>) </div><div class="line">    <span class="keyword">private</span> String name; </div><div class="line">      </div><div class="line">    <span class="comment">/** </span></div><div class="line">     * 密码 </div><div class="line">     */</div><div class="line">    <span class="meta">@Column</span>(name=<span class="string">"password"</span>,length=<span class="number">20</span>) </div><div class="line">    <span class="keyword">private</span> String password; </div><div class="line">      </div><div class="line">    <span class="comment">/** </span></div><div class="line">     * 邮箱 </div><div class="line">     */</div><div class="line">    <span class="meta">@Column</span>(name=<span class="string">"email"</span>,length=<span class="number">50</span>) </div><div class="line">    <span class="keyword">private</span> String email; </div><div class="line">      </div><div class="line">    <span class="comment">/** </span></div><div class="line">     * 年龄 </div><div class="line">     */</div><div class="line">    <span class="meta">@Column</span>(name=<span class="string">"age"</span>,length=<span class="number">3</span>) </div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age; </div><div class="line">      </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">()</span> </span>&#123; </div><div class="line">          </div><div class="line">    &#125; </div><div class="line">      </div><div class="line">    <span class="comment">//以下省略getter/setter方法 </span></div><div class="line">    <span class="comment">//...... </span></div><div class="line">  </div><div class="line">  </div><div class="line">          </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div></pre></td><td class="code"><pre><div class="line">package com.cndatacom.jpa.test; </div><div class="line">  </div><div class="line">import java.util.List; </div><div class="line">  </div><div class="line">import javax.persistence.EntityManager; </div><div class="line">import javax.persistence.EntityManagerFactory; </div><div class="line">import javax.persistence.Persistence; </div><div class="line">import javax.persistence.Query; </div><div class="line">  </div><div class="line">import org.junit.After; </div><div class="line">import org.junit.Before; </div><div class="line">import org.junit.Test; </div><div class="line">  </div><div class="line">import com.cndatacom.jpa.entity.User; </div><div class="line">  </div><div class="line">  </div><div class="line">/** </div><div class="line"> * 测试JPA原生SQL查询 </div><div class="line"> * @author Luxh </div><div class="line"> */</div><div class="line">public class TestNativeQuery &#123; </div><div class="line">EntityManagerFactory emf = null; </div><div class="line">      </div><div class="line">    @Before</div><div class="line">    public void before() &#123; </div><div class="line">        //根据在persistence.xml中配置的persistence-unit name 创建EntityManagerFactory </div><div class="line">        emf = Persistence.createEntityManagerFactory("myJPA"); </div><div class="line">    &#125; </div><div class="line">      </div><div class="line">    @After</div><div class="line">    public void after() &#123; </div><div class="line">        //关闭EntityManagerFactory </div><div class="line">        if(null != emf) &#123; </div><div class="line">            emf.close(); </div><div class="line">        &#125; </div><div class="line">    &#125; </div><div class="line">      </div><div class="line">          </div><div class="line">    /** </div><div class="line">     * 查询的结果是对象数组的集合 </div><div class="line">     */</div><div class="line">    @Test</div><div class="line">    public void testNativeQuery1() &#123; </div><div class="line">        EntityManager em = emf.createEntityManager(); </div><div class="line">        //定义SQL </div><div class="line">        String sql = "SELECT * FROM t_user"; </div><div class="line">        //创建原生SQL查询QUERY实例 </div><div class="line">        &lt;span style="color:#ff0000;"&gt;Query query =  em.createNativeQuery(sql);&lt;/span&gt; </div><div class="line">        //执行查询，返回的是对象数组(Object[])列表, </div><div class="line">        //每一个对象数组存的是相应的实体属性 </div><div class="line">        List objecArraytList = query.getResultList(); </div><div class="line">        for(int i=0;i&lt;objecArraytList.size();i++) &#123; </div><div class="line">            Object[] obj = (Object[]) objecArraytList.get(i); </div><div class="line">           //使用obj[0],obj[1],obj[2]...取出属性　　　　       </div><div class="line">        &#125; </div><div class="line">        em.close(); </div><div class="line">    &#125; </div><div class="line">      </div><div class="line">      </div><div class="line">    /** </div><div class="line">     * 查询的结果是实体的集合 </div><div class="line">     */</div><div class="line">    @Test</div><div class="line">    public void testNativeQuery2() &#123; </div><div class="line">        EntityManager em = emf.createEntityManager(); </div><div class="line">        //定义SQL </div><div class="line">        String sql = "SELECT * FROM t_user"; </div><div class="line">        //创建原生SQL查询QUERY实例,指定了返回的实体类型 </div><div class="line">       &lt;span style="color:#ff0000;"&gt; Query query =  em.createNativeQuery(sql,User.class); </div><div class="line">&lt;/span&gt;        //执行查询，返回的是实体列表, </div><div class="line">        List&lt;User&gt; userList = query.getResultList(); </div><div class="line">          </div><div class="line">        em.close(); </div><div class="line">    &#125; </div><div class="line">      </div><div class="line">      </div><div class="line">    /** </div><div class="line">     * 查询单个属性 </div><div class="line">     * 返回的是这个属性值的集合 </div><div class="line">     */</div><div class="line">    @Test</div><div class="line">    public void testNativeQuery3() &#123; </div><div class="line">        EntityManager em = emf.createEntityManager(); </div><div class="line">        //定义SQL </div><div class="line">        String sql = "SELECT t.name FROM t_user t"; </div><div class="line">        //创建原生SQL查询QUERY实例 </div><div class="line">    &lt;span style="color:#ff0000;"&gt;    Query query =  em.createNativeQuery(sql);&lt;/span&gt; </div><div class="line">        //执行查询，返回的是String类型的集合，因为name这个属性是String类型 </div><div class="line">        List&lt;String&gt;  resultList = query.getResultList(); </div><div class="line">        em.close(); </div><div class="line">    &#125; </div><div class="line">      </div><div class="line">      </div><div class="line">    /**   </div><div class="line">　  　　  * 查询多个属性 </div><div class="line">　  　　  * 返回的是这些属性值的数组的集合 </div><div class="line">   　　　 */   </div><div class="line">    @Test   </div><div class="line">    public void testNativeQuery4() &#123;     </div><div class="line">        EntityManager em = emf.createEntityManager();    </div><div class="line">        //定义SQL          </div><div class="line">        String sql = "SELECT t.name,t.age,t.email FROM t_user t";        </div><div class="line">        //创建原生SQL查询QUERY实例       </div><div class="line">    &lt;span style="color:#ff0000;"&gt;    Query query =  em.createNativeQuery(sql); &lt;/span&gt;       </div><div class="line">        //执行查询，返回的是查询属性值数组的集合        </div><div class="line">        List objecArraytList = query.getResultList(); </div><div class="line">        for(int i=0;i&lt;objecArraytList.size();i++) &#123;       </div><div class="line">            Object[] obj = (Object[]) objecArraytList.get(i); </div><div class="line">             //使用obj[0],obj[1],obj[2]取出属性 </div><div class="line">        &#125;        </div><div class="line">        em.close();  </div><div class="line">          </div><div class="line">    &#125; </div><div class="line">      </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/05/22/jpa-native/" class="article-date">
+  <time datetime="2018-05-22T08:06:13.000Z" itemprop="datePublished">2018-05-22</time>
+</a>
+
+        </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2018/05/18/java-multi-thread2/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">java-multi-thread2</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
