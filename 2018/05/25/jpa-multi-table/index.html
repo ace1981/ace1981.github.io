@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>jpa多表查询 | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="栗子1：
+以一个实体类User中的几个属性进行筛选。
+
+名字
+ID
+手机号
+
+这是一个单表的多条件复杂查询，由于是在几个属性中进行筛选，其中的属性的个数不知道有多少个，所以只需要利用Specification 查询就可以很方便的实现这个需求。 下面请看代码：场景：页面上通过条件筛选，查询用户列表
+这里有3个条件 在页面上我设置的id分别为searchName，searchId，searchMobi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jpa多表查询">
+<meta property="og:url" content="http://hujao.com/2018/05/25/jpa-multi-table/index.html">
+<meta property="og:site_name" content="Ace'pages">
+<meta property="og:description" content="栗子1：
+以一个实体类User中的几个属性进行筛选。
+
+名字
+ID
+手机号
+
+这是一个单表的多条件复杂查询，由于是在几个属性中进行筛选，其中的属性的个数不知道有多少个，所以只需要利用Specification 查询就可以很方便的实现这个需求。 下面请看代码：场景：页面上通过条件筛选，查询用户列表
+这里有3个条件 在页面上我设置的id分别为searchName，searchId，searchMobi">
+<meta property="og:updated_time" content="2018-05-25T10:29:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jpa多表查询">
+<meta name="twitter:description" content="栗子1：
+以一个实体类User中的几个属性进行筛选。
+
+名字
+ID
+手机号
+
+这是一个单表的多条件复杂查询，由于是在几个属性中进行筛选，其中的属性的个数不知道有多少个，所以只需要利用Specification 查询就可以很方便的实现这个需求。 下面请看代码：场景：页面上通过条件筛选，查询用户列表
+这里有3个条件 在页面上我设置的id分别为searchName，searchId，searchMobi">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-jpa-multi-table" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/categories">Categories</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jpa多表查询
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p><strong>栗子1：</strong></p>
+<p>以一个实体类User中的几个属性进行筛选。</p>
+<ol>
+<li>名字</li>
+<li>ID</li>
+<li>手机号</li>
+</ol>
+<p>这是一个单表的多条件复杂查询，由于是在几个属性中进行筛选，其中的属性的个数不知道有多少个，所以只需要利用Specification 查询就可以很方便的实现这个需求。 下面请看代码：场景：页面上通过条件筛选，查询用户列表</p>
+<p>这里有3个条件 在页面上我设置的id分别为searchName，searchId，searchMobile。 由于这个是user表 所以userRepository 继承JpaSpecificationExecutor接口，随后我创建了一个封装条件的类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PageParam</span>&lt;<span class="title">T</span>&gt; </span>&#123;    </div><div class="line">	<span class="keyword">private</span> Integer pageSize = <span class="number">10</span>;   </div><div class="line">	<span class="keyword">private</span> Integer pageNumber = <span class="number">1</span>;    </div><div class="line">	<span class="keyword">private</span> String searchName;   </div><div class="line">	<span class="keyword">private</span> String searchMobile;    </div><div class="line">	<span class="keyword">private</span> String searchId;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>由于我这个方法是直接分页的 所以pageNumber 和pageSize 也可以直接写入到这个类中，用于方便接收参数，主要是对下面3个参数的封装</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Specification&lt;T&gt; specification = <span class="keyword">new</span> Specification&lt;T&gt;() &#123;  </div><div class="line">  	<span class="meta">@Override</span>   </div><div class="line">  	<span class="function"><span class="keyword">public</span> Predicate <span class="title">toPredicate</span><span class="params">(Root&lt;T&gt; root, CriteriaQuery&lt;?&gt; query, CriteriaBuilder cb)</span> </span>&#123;        		List&lt;Predicate&gt; list = <span class="keyword">new</span> ArrayList&lt;Predicate&gt;();   </div><div class="line">	<span class="keyword">if</span> (StringUtils.isNotBlank(searchName)) &#123;		   												list.add(cb.like(root.get(<span class="string">"name"</span>).as(String.class), <span class="string">"%"</span> + searchName + <span class="string">"%"</span>)); </div><div class="line">	&#125;        </div><div class="line">	<span class="keyword">if</span> (StringUtils.isNotBlank(searchId)) &#123;    </div><div class="line">    	 list.add(cb.equal(root.get(<span class="string">"id"</span>).as(Long.class), searchId));        &#125;    </div><div class="line">	<span class="keyword">if</span> (StringUtils.isNotBlank(searchMobile)) &#123;            		   						    		list.add(cb.like(root.get(<span class="string">"mobile"</span>).as(String.class), <span class="string">"%"</span> + searchMobile + <span class="string">"%"</span>));     </div><div class="line">	&#125;      </div><div class="line">	Predicate[] p = <span class="keyword">new</span> Predicate[list.size()];    </div><div class="line">	<span class="keyword">return</span> cb.and(list.toArray(p));    &#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>这里因为都是一个表，所以只要root.get(‘N ‘)这个N对应所要查的 属性的名字就好，属性名 属性名 重要的事情说三遍。</p>
+<p>再接下来看一组多表的查询</p>
+<p><strong>栗子2：</strong></p>
+<p>这里有4张表</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Living</span> </span></div><div class="line">&#123;</div><div class="line">	Long id;    </div><div class="line">	<span class="meta">@ManyToOne</span></div><div class="line">    <span class="meta">@JsonIgnore</span>    </div><div class="line">    <span class="meta">@JoinColumn</span>(name = <span class="string">"actorId"</span>, foreignKey = <span class="meta">@ForeignKey</span>(name = <span class="string">"none"</span>, value =ConstraintMode.NO_CONSTRAINT))    </div><div class="line">    <span class="keyword">public</span> Actor actor;   </div><div class="line">    <span class="meta">@ManyToOne</span>    </div><div class="line">    <span class="meta">@JsonIgnore</span>    </div><div class="line">    <span class="meta">@JoinColumn</span>(name = <span class="string">"regionId"</span>, foreignKey = <span class="meta">@ForeignKey</span>(name = <span class="string">"none"</span>, value =ConstraintMode.NO_CONSTRAINT))   </div><div class="line">    <span class="keyword">public</span> Region region;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Actor</span> </span>&#123;    </div><div class="line">	Long id;    </div><div class="line">	<span class="meta">@OneToMany</span>(cascade = &#123; CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH &#125;, fetch = FetchType.LAZY)    </div><div class="line">	<span class="meta">@JoinColumn</span>(name = <span class="string">"actorId"</span>)    </div><div class="line">	<span class="meta">@org</span>.hibernate.annotations.ForeignKey(name = <span class="string">"none"</span>)    </div><div class="line">	List&lt;Living&gt; livings = <span class="keyword">new</span> ArrayList&lt;&gt;();   </div><div class="line">	<span class="meta">@OneToOne</span>(cascade = &#123; CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH &#125;, fetch = FetchType.LAZY)    </div><div class="line">	<span class="meta">@org</span>.hibernate.annotations.ForeignKey(name = <span class="string">"none"</span>)    </div><div class="line">	<span class="meta">@JoinColumn</span>(name = <span class="string">"userDetailId"</span>, foreignKey = <span class="meta">@ForeignKey</span>(name = <span class="string">"none"</span>, value = ConstraintMode.NO_CONSTRAINT))    </div><div class="line">	UserDetail userDetail;   </div><div class="line">	<span class="meta">@Column</span>(nullable = <span class="keyword">false</span>)    </div><div class="line">	<span class="meta">@Enumerated</span>(value = EnumType.ORDINAL)    </div><div class="line">	ActorType actorType = ActorType.A;    </div><div class="line">	<span class="keyword">public</span> <span class="keyword">enum</span> ActorType&#123;        </div><div class="line">		A,B,C   </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserDetail</span> </span>&#123; </div><div class="line">	Long id;    </div><div class="line">	<span class="meta">@OneToOne</span>(cascade = &#123; CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH &#125;, fetch = FetchType.LAZY)   </div><div class="line">    <span class="meta">@org</span>.hibernate.annotations.ForeignKey(name = <span class="string">"none"</span>)  </div><div class="line">    <span class="meta">@JoinColumn</span>(name = <span class="string">"actorId"</span>, foreignKey = <span class="meta">@ForeignKey</span>(name = <span class="string">"none"</span>, value = ConstraintMode.NO_CONSTRAINT))   </div><div class="line">    Actor actor;</div><div class="line">    String truename;&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Region</span> </span>&#123;    </div><div class="line">	Long id;    </div><div class="line">	String name; </div><div class="line">	<span class="meta">@OneToMany</span>(cascade = &#123; CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH &#125;, fetch = FetchType.LAZY)   </div><div class="line">	<span class="meta">@JoinColumn</span>(name = <span class="string">"regionId"</span>)</div><div class="line">   	<span class="meta">@org</span>.hibernate.annotations.ForeignKey(name = <span class="string">"none"</span>)   </div><div class="line">    List&lt;Living&gt; Livings;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>现在要根据userdetai 种的 sex actor中的actortype 还有 region的id 为条件查询出满足条件的living。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PageParam</span>&lt;<span class="title">Living</span>&gt; </span>&#123;    </div><div class="line">	<span class="keyword">private</span> Integer pageSize = <span class="number">10</span>;  </div><div class="line">    <span class="keyword">private</span> Integer pageNumber = <span class="number">1</span>;  </div><div class="line">    <span class="keyword">private</span> Sex sex;   </div><div class="line">    <span class="keyword">private</span> ActorType actortype;    </div><div class="line">    <span class="keyword">private</span> Long cityid;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>首先我还是封装了这样一个类，但是这里的泛型 我是直接给到了想要的查询结果的泛型，接下来 因为这里涉及到了一个 多表的查询 所以上面的单表查询的例子 已经不适合这个查询了，但是Criteria 的join方法 给我们提供了一个模式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Specification&lt;Living&gt; specification = <span class="keyword">new</span> Specification&lt;Living&gt;() &#123;</div><div class="line">	<span class="meta">@Override</span>    </div><div class="line">	<span class="function"><span class="keyword">public</span> Predicate <span class="title">toPredicate</span><span class="params">(Root&lt;Living&gt; root, CriteriaQuery&lt;?&gt; query, CriteriaBuilder cb)</span> </span>&#123;        			List&lt;Predicate&gt; list = <span class="keyword">new</span> ArrayList&lt;Predicate&gt;();       </div><div class="line">    	 <span class="keyword">if</span> (<span class="keyword">null</span>!=sex) &#123;            Join&lt;UserDetail, Living&gt; join = root.join(<span class="string">"actor"</span>, JoinType.LEFT);            list.add(cb.equal(join.get(<span class="string">"userDetail"</span>).get(<span class="string">"sex"</span>),  sex ));        &#125;       </div><div class="line">    	 </div><div class="line">         <span class="keyword">if</span> (<span class="keyword">null</span>!=actortype) &#123;            Join&lt;Actor, Living&gt; join = root.join(<span class="string">"actor"</span>, JoinType.LEFT);           </div><div class="line">         list.add(cb.equal(join.get(<span class="string">"actorType"</span>),  actortype));        </div><div class="line">         &#125;     </div><div class="line">         <span class="keyword">if</span> (<span class="keyword">null</span>!=cityid) &#123;            Join&lt;Region, Living&gt; join = root.join(<span class="string">"region"</span>, JoinType.LEFT);            list.add(cb.equal(join.get(<span class="string">"id"</span>), cityid));        &#125;        </div><div class="line">                                                                                                 <span class="comment">//Join&lt;A, B&gt; join = root.join("bs", JoinType.LEFT);        //list.add(cb.equal(join.get("c").get("id"), id));        </span></div><div class="line">                                                                                                 Predicate[] p = <span class="keyword">new</span> Predicate[list.size()];     </div><div class="line">                                                                                                 <span class="keyword">return</span> cb.and(list.toArray(p));    </div><div class="line">                                                                                                &#125;;&#125;;</div></pre></td></tr></table></figure>
+<p>这里是我对条件进行的封装。jpa 的多条件查询 主要是根据Criteria 为我们提供的方法封装条件，然后根据 给条件定义的位置，再生成sql语句，之后完成查询。不得不说的地方，在这个多表的查询中以下面这句为例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Join&lt;UserDetail, Living&gt; join = root.join(<span class="string">"actor"</span>, JoinType.LEFT);list.add(cb.equal(join.get(<span class="string">"userDetail"</span>).get(<span class="string">"sex"</span>),  sex ));</div></pre></td></tr></table></figure>
+<p><code>jointype.LEFT</code>主要是说最终的这个属性 是在哪个表中， 而前面的 “actor” 则表示 从living表中 查询的 第一步的查询，比如我给出的例子 是要查询出 living 中的 actor 然后是actor 中的userdetail 之后才是 userdetail中的 sex属性 所以下面的join.get(“userDetail”).get(“sex”) ，这里就是get出相应的属性，一直到你得到想要的属性为止。 接下来的两个属性 也同理， 许多人多jpa 有很大的误解，认为jpa 的多表，多条件复杂查询，不如mybatis的查询，在之前我也是这么觉得，但自从通过jpa 实现了这个多表多条件的复杂查询之后，我觉得hibernate的复杂查询 不逊于mybatis ，尤其是对sql 语句不是很精通的码农，虽然hibernate的门槛较高可jpa 恰恰降低了hibernate 所需要的门槛，希望大家可以通过我的经验，更方便的与数据库进行交互。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/05/25/jpa-multi-table/" class="article-date">
+  <time datetime="2018-05-25T10:10:11.000Z" itemprop="datePublished">2018-05-25</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2018/05/24/linux-activemq/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">linux启动activemq</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
