@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>angularjs学习directive | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="controller与link区别
+
+（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api。
+（2）在link中主要操作DOM。
+
+模板部分
+
+123456789101112131415161718192021222324252627282930&amp;lt;div id=&quot;enum_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angularjs学习directive">
+<meta property="og:url" content="http://hujao.com/2018/06/07/angular-directive/index.html">
+<meta property="og:site_name" content="Ace'pages">
+<meta property="og:description" content="controller与link区别
+
+（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api。
+（2）在link中主要操作DOM。
+
+模板部分
+
+123456789101112131415161718192021222324252627282930&amp;lt;div id=&quot;enum_">
+<meta property="og:updated_time" content="2018-06-07T10:28:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angularjs学习directive">
+<meta name="twitter:description" content="controller与link区别
+
+（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api。
+（2）在link中主要操作DOM。
+
+模板部分
+
+123456789101112131415161718192021222324252627282930&amp;lt;div id=&quot;enum_">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-angular-directive" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/categories">Categories</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      angularjs学习directive
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <ol>
+<li>controller与link区别</li>
+</ol>
+<p>（1）在controller写业务逻辑（我们明白业务逻辑大部分是放在服务中），这里所说的业务逻辑乃是为呈现视图之前而准备的数据或者是与其他指令进行数据交互而暴露这个api。</p>
+<p>（2）在link中主要操作DOM。</p>
+<ol>
+<li>模板部分</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"enum_combo_select"</span> <span class="attr">style</span>=<span class="string">"height:30px;width:100%;"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">	.btnStyle &#123;</div><div class="line">		min-width: 58px;</div><div class="line">		text-align: center;</div><div class="line">		display: inline-block;</div><div class="line">		margin-left: 8px;	</div><div class="line">		margin-top: 8px;</div><div class="line">		cursor: pointer;</div><div class="line">		border-radius: 3px;</div><div class="line">	&#125;	</div><div class="line">	.oddStyle &#123;</div><div class="line">		background: #0d94ff !important;</div><div class="line">		color: #fff !important;</div><div class="line">		border: solid 1px #CCCCCC;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	.btnStyleNormal &#123;</div><div class="line">		border: solid 1px #CCCCCC;</div><div class="line">		color: #CCCCCC;</div><div class="line">	&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span>  <span class="attr">class</span>=<span class="string">"k-input k-textbox"</span> <span class="attr">style</span>=<span class="string">"width:100%;cursor:pointer;font-size: 14px; font-weight: normal; font-family: Microsoft YaHei UI;padding: 4px;border: none;"</span> <span class="attr">ng-click</span>=<span class="string">"showenumpopup()"</span> <span class="attr">value</span>=<span class="string">"&#123;&#123;displaytext?displaytext:'请选择'&#125;&#125;"</span>&gt;</span> <span class="tag">&lt;/<span class="name">input</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"enumpopup"</span> <span class="attr">style</span>=<span class="string">"height: *;width:*;min-width: 300px; position: absolute;background:#FFF;display: none;border:1px #ddd solid;z-index: 999;"</span> <span class="attr">ng-click</span>=<span class="string">"popupclick()"</span>&gt;</span></div><div class="line">		 </div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btnStyle btnStyleNormal"</span> <span class="attr">style</span>=<span class="string">"height: 25px;width:90px;position:relative;float: left; margin: 5px;"</span> <span class="attr">ng-repeat</span>=<span class="string">"item in datasource"</span> <span class="attr">ng-click</span>=<span class="string">"selectEquipment($index,$event)"</span> <span class="attr">ng-class</span>=<span class="string">"&#123;'oddStyle':item.selected == true&#125;"</span> <span class="attr">ng-model</span>=<span class="string">"item.value"</span>&gt;</span></div><div class="line">			&#123;&#123;item.text&#125;&#125;</div><div class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>脚本部分</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">"app"</span>, []);</div><div class="line"></div><div class="line">app.controller(<span class="string">"test"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, $http,</span></span></div><div class="line">	$rootScope) &#123;</div><div class="line">	$scope.dataStore = &#123;&#125;</div><div class="line">	$scope.dataStore.data = &#123;&#125;;</div><div class="line">	$scope.dataStore.data.vehicleEquipment = <span class="literal">null</span>;</div><div class="line">	$scope.dataStore.enums = &#123;</div><div class="line">		<span class="string">"SDMS_CLZBLX"</span>: &#123;</div><div class="line">			<span class="attr">key</span>: <span class="string">"SDMS_CLZBLX"</span>,</div><div class="line">			<span class="attr">enumItems</span>: [&#123;</div><div class="line">				<span class="string">"text"</span>: <span class="string">"AK47"</span>,</div><div class="line">				<span class="string">"value"</span>: <span class="string">"1"</span></div><div class="line">			&#125;, &#123;</div><div class="line">				<span class="string">"text"</span>: <span class="string">"M4A1"</span>,</div><div class="line">				<span class="string">"value"</span>: <span class="string">"2"</span></div><div class="line">			&#125;, &#123;</div><div class="line">				<span class="string">"text"</span>: <span class="string">"98Kar"</span>,</div><div class="line">				<span class="string">"value"</span>: <span class="string">"3"</span></div><div class="line">			&#125;,</div><div class="line">			&#123;</div><div class="line">				<span class="string">"text"</span>: <span class="string">"Awm"</span>,</div><div class="line">				<span class="string">"value"</span>: <span class="string">"4"</span></div><div class="line">			&#125;]</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">console</span>.log($scope.dataStore.enums.SDMS_CLZBLX.enumItems);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.directive(<span class="string">"enumComboSelect"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> &#123;</div><div class="line">		<span class="attr">templateUrl</span>: <span class="string">'../directive/enumcomboselect.html'</span>,</div><div class="line">		<span class="attr">restrict</span>: <span class="string">'E'</span>,</div><div class="line">		<span class="attr">scope</span>: &#123;</div><div class="line">			<span class="attr">datasource</span>: <span class="string">"=?"</span>,</div><div class="line">			<span class="attr">ngModel</span>: <span class="string">"=?"</span>,</div><div class="line">			<span class="attr">displaytext</span>: <span class="string">"=?"</span>,</div><div class="line">			<span class="attr">ngDisabled</span>: <span class="string">"=?"</span></div><div class="line">		&#125;,</div><div class="line">		<span class="attr">controller</span>: <span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>) </span>&#123;</div><div class="line">			$scope.$watch(<span class="string">'ngModel'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">				<span class="built_in">console</span>.log(<span class="string">"scope.$watch:"</span> + $scope.ngModel);</div><div class="line">				$scope.init();</div><div class="line"></div><div class="line">			&#125;);</div><div class="line">		&#125;,</div><div class="line">		<span class="attr">replace</span>: <span class="literal">true</span>,</div><div class="line">		<span class="attr">link</span>: <span class="function"><span class="keyword">function</span>(<span class="params">scope, ele, attr, controller</span>) </span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(scope.datasource);</div><div class="line">			scope.selectvalues = [];</div><div class="line">			scope.selecttexts = [];</div><div class="line">			<span class="keyword">var</span> popup = $(<span class="string">"#enumpopup"</span>);</div><div class="line">			ele.focusout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">				<span class="built_in">console</span>.log(<span class="string">"ele.focusout()"</span>);</div><div class="line">				<span class="keyword">if</span>(!$(<span class="keyword">this</span>).is(<span class="string">':hover'</span>)) &#123;</div><div class="line">					ele.children(<span class="string">"#enumpopup"</span>).hide();</div><div class="line">				&#125;</div><div class="line">			&#125;);</div><div class="line">			scope.init = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">				<span class="keyword">if</span>(scope.ngDisabled) &#123;</div><div class="line">					ele.children(<span class="string">"input"</span>).css(<span class="string">"color"</span>, <span class="string">"rgb(164, 167, 173)"</span>);</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					ele.children(<span class="string">"input"</span>).css(<span class="string">"color"</span>, <span class="string">"#525252"</span>);</div><div class="line">				&#125;</div><div class="line">				<span class="built_in">console</span>.log(<span class="string">"scope.init()"</span>);</div><div class="line"></div><div class="line">				scope.selectvalues = [];</div><div class="line">				scope.selecttexts = [];</div><div class="line">				<span class="keyword">if</span>(scope.ngModel) &#123;</div><div class="line">					<span class="keyword">var</span> ids = scope.ngModel.split(<span class="string">","</span>);</div><div class="line">					<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ids.length; i++) &#123;</div><div class="line">						<span class="keyword">if</span>(ids[i])</div><div class="line">							scope.selectvalues.push(ids[i]);</div><div class="line">						<span class="keyword">for</span>(<span class="keyword">var</span> k = <span class="number">0</span>; k &lt; scope.datasource.length; k++) &#123;</div><div class="line">							<span class="keyword">if</span>(scope.datasource[k].value == ids[i]) &#123;</div><div class="line">								scope.datasource[k].selected = <span class="literal">true</span>;</div><div class="line">								scope.selecttexts.push(scope.datasource[k].text);</div><div class="line">								<span class="keyword">break</span>;</div><div class="line">							&#125;</div><div class="line">						&#125;</div><div class="line">					&#125;</div><div class="line">					scope.displaytext = <span class="string">""</span>;</div><div class="line">					<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; scope.selectvalues.length; i++) &#123;</div><div class="line">						<span class="keyword">var</span> comma = (scope.selecttexts.length == (i + <span class="number">1</span>)) ? <span class="string">""</span> : <span class="string">","</span>;</div><div class="line">						scope.displaytext = scope.displaytext + scope.selecttexts[i] + comma;</div><div class="line">					&#125;</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					scope.displaytext = <span class="string">"请选择"</span>;</div><div class="line">					<span class="keyword">for</span>(<span class="keyword">var</span> index = <span class="number">0</span>; index &lt; scope.datasource.length; index++)</div><div class="line">						scope.datasource[index].selected = <span class="literal">false</span>;</div><div class="line">						<span class="comment">//test77</span></div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			scope.init();</div><div class="line">			scope.popupclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">				<span class="built_in">console</span>.log(<span class="string">"scope.popupclick()"</span>);</div><div class="line">				ele.children(<span class="string">"#enumpopup"</span>).hide();</div><div class="line">				ele.children(<span class="string">"input"</span>).focus();</div><div class="line">			&#125;;</div><div class="line">			scope.showenumpopup = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">				<span class="built_in">console</span>.log(<span class="string">"scope.showenumpopup()"</span>);</div><div class="line">				<span class="built_in">console</span>.log(scope.ngDisabled);</div><div class="line">				<span class="keyword">if</span>(!scope.ngDisabled) &#123;</div><div class="line">					<span class="keyword">if</span>(ele.children(<span class="string">"#enumpopup"</span>).is(<span class="string">":visible"</span>))</div><div class="line">						ele.children(<span class="string">"#enumpopup"</span>).hide();</div><div class="line">					<span class="keyword">else</span></div><div class="line">						ele.children(<span class="string">"#enumpopup"</span>).show();</div><div class="line">				&#125;</div><div class="line">			&#125;;</div><div class="line">			scope.selectEquipment = <span class="function"><span class="keyword">function</span>(<span class="params">index, event</span>) </span>&#123;</div><div class="line">				<span class="built_in">console</span>.log(<span class="string">"scope.selectEquipment()"</span>);</div><div class="line">				<span class="keyword">var</span> selectvalue = scope.datasource[index].value;</div><div class="line">				<span class="keyword">var</span> selecttext = scope.datasource[index].text;</div><div class="line">				<span class="built_in">console</span>.log(selectvalue);</div><div class="line">				<span class="keyword">if</span>(scope.selectvalues.indexOf(selectvalue) &lt; <span class="number">0</span>) &#123;</div><div class="line">					scope.selectvalues.push(selectvalue);</div><div class="line">					scope.selecttexts.push(selecttext);</div><div class="line">					scope.datasource[index].selected = <span class="literal">true</span>;</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					scope.selectvalues.splice(scope.selectvalues.indexOf(selectvalue), <span class="number">1</span>);</div><div class="line">					scope.selecttexts.splice(scope.selecttexts.indexOf(selecttext), <span class="number">1</span>);</div><div class="line">					scope.datasource[index].selected = <span class="literal">false</span>;</div><div class="line">				&#125;</div><div class="line">				scope.displaytext = <span class="string">""</span>;</div><div class="line">				scope.ngModel = <span class="string">""</span>;</div><div class="line">				<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; scope.selectvalues.length; i++) &#123;</div><div class="line">					<span class="keyword">var</span> comma = (scope.selecttexts.length == (i + <span class="number">1</span>)) ? <span class="string">""</span> : <span class="string">","</span>;</div><div class="line">					scope.displaytext = scope.displaytext + scope.selecttexts[i] + comma;</div><div class="line">					scope.ngModel = scope.ngModel + scope.selectvalues[i] + comma;</div><div class="line">				&#125;</div><div class="line">				scope.$parent.valChange(<span class="literal">true</span>);</div><div class="line">				ele.children(<span class="string">"input"</span>).focus();</div><div class="line">				event.stopPropagation();</div><div class="line">			&#125;;</div><div class="line"></div><div class="line">			scope.affirm = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">				<span class="built_in">console</span>.log(<span class="string">"scope.affirm()"</span>);</div><div class="line">				ele.children(<span class="string">"#enumpopup"</span>).hide();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ol>
+<li>使用部分</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"></div><div class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../../../resources/plugin/kendo/js/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../../../resources/plugin/bootstrap/dist/js/bootstrap.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../../../resources/plugin/kendo/js/angular.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../../../resources/plugin/angular/angular-ui-router.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>=<span class="string">"app"</span> <span class="attr">ng-controller</span>=<span class="string">"test"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 500px;"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 500px;"</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">enum_combo_select</span> <span class="attr">ng-model</span>=<span class="string">"dataStore.data.vehicleEquipment"</span> <span class="attr">ng-disabled</span>=<span class="string">"isDisabled"</span>  <span class="attr">displaytext</span>=<span class="string">""</span> <span class="attr">datasource</span>=<span class="string">"dataStore.enums.SDMS_CLZBLX.enumItems"</span>&gt;</span></div><div class="line">				<span class="tag">&lt;/<span class="name">enum_combo_select</span>&gt;</span></div><div class="line"></div><div class="line">				<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 200px;"</span>&gt;</span></div><div class="line">					aaa</div><div class="line">				<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"new_file.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/06/07/angular-directive/" class="article-date">
+  <time datetime="2018-06-07T10:18:24.000Z" itemprop="datePublished">2018-06-07</time>
+</a>
+
+        </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angularjs/">angularjs</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2018/06/07/eclipse-clean/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">eclipse区别clean refresh</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
