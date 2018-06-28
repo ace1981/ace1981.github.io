@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>npm-package | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="https://blog.csdn.net/u011240877/article/details/76582670
+npm 与 package.json 快速入门教程2017年08月02日 19:16:20阅读数：26770npm 是前端开发广泛使用的包管理工具，之前使用 Weex 时看了阮一峰前辈的文章了解了一些，这次结合官方文章总结一下，加深下理解吧！
+读完本文你将了解：
+什么是 npm？安装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="npm-package">
+<meta property="og:url" content="http://hujao.com/2018/06/14/npm-package/index.html">
+<meta property="og:site_name" content="Ace'pages">
+<meta property="og:description" content="https://blog.csdn.net/u011240877/article/details/76582670
+npm 与 package.json 快速入门教程2017年08月02日 19:16:20阅读数：26770npm 是前端开发广泛使用的包管理工具，之前使用 Weex 时看了阮一峰前辈的文章了解了一些，这次结合官方文章总结一下，加深下理解吧！
+读完本文你将了解：
+什么是 npm？安装">
+<meta property="og:updated_time" content="2018-06-14T02:50:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="npm-package">
+<meta name="twitter:description" content="https://blog.csdn.net/u011240877/article/details/76582670
+npm 与 package.json 快速入门教程2017年08月02日 19:16:20阅读数：26770npm 是前端开发广泛使用的包管理工具，之前使用 Weex 时看了阮一峰前辈的文章了解了一些，这次结合官方文章总结一下，加深下理解吧！
+读完本文你将了解：
+什么是 npm？安装">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-npm-package" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/categories">Categories</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      npm-package
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p><a href="https://blog.csdn.net/u011240877/article/details/76582670" target="_blank" rel="external">https://blog.csdn.net/u011240877/article/details/76582670</a></p>
+<p>npm 与 package.json 快速入门教程<br>2017年08月02日 19:16:20<br>阅读数：26770<br>npm 是前端开发广泛使用的包管理工具，之前使用 Weex 时看了阮一峰前辈的文章了解了一些，这次结合官方文章总结一下，加深下理解吧！</p>
+<p>读完本文你将了解：</p>
+<p>什么是 npm？<br>安装 npm<br>更新 npm<br>package.json 文件<br>package.json 如何创建<br>package.json 的内容<br>指定依赖的包<br>Semantic versioning（语义化版本规则）<br>安装 package<br>本地安装 package<br>安装参数 –save 和 –save -dev<br>使用下载好的包<br>更新本地 package<br>卸载本地 package<br>全局安装 package<br>全局安装的权限问题<br>更新全局的 package<br>卸载全局 package<br>其他命令<br>npm run<br>npm install from github<br>npm info<br>npm adduser<br>npm home/repo<br>npm prune<br>npm publish<br>国内镜像<br>总结<br>Thanks<br>什么是 npm？<br>这里写图片描述</p>
+<p>官方文档中对它的介绍是：</p>
+<p>npm makes it easy for JavaScript developers to share and reuse code, and it makes it easy to update the code that you’re sharing.</p>
+<p>即： npm 是一个包管理器，它让 JavaScript 开发者分享、复用代码更方便（有点 maven 的感觉哈）。</p>
+<p>在程序开发中我们常常需要依赖别人提供的框架，写 JS 也不例外。这些可以重复的框架代码被称作包（package）或者模块（module），一个包可以是一个文件夹里放着几个文件，同时有一个叫做 package.json 的文件。</p>
+<p>一个网站里通常有几十甚至上百个 package，分散在各处，通常会将这些包按照各自的功能进行划分（类似我们安卓开发中的划分子模块），但是如果重复造一些轮子，不如上传到一个公共平台，让更多的人一起使用、参与这个特定功能的模块。</p>
+<p>而 npm 的作用就是让我们发布、下载一些 JS 轮子更加方便。</p>
+<p>我们可以去官方网站 <a href="https://www.npmjs.com/" target="_blank" rel="external">https://www.npmjs.com/</a> 浏览、搜索想要的轮子，也可以直接在命令行中 search 一下意中轮。</p>
+<p>这里写图片描述</p>
+<p>使用 npm 后我们可以非常方便地查看依赖的轮子是否有更新、是否需要下载新版本。</p>
+<p>现在我们知道 npm 是干什么的了。当人们说起 “npm” 时，可能在说三个东西：</p>
+<p>一个网站，就是前面提到用于搜索 JS 模块的网站：<a href="https://www.npmjs.com/" target="_blank" rel="external">https://www.npmjs.com/</a><br>一个仓库，保存着人们分享的 JS 模块的大数据库<br>命令行里的客户端，开发者使用它来管理、安装、发布模块<br>只要开发者发布某个模块到仓库中，其他人就可以从 npm 网站或者命令行中下载、使用它了！</p>
+<p>安装 npm<br>npm 是依附于 node.js 的，我们可以去它的官网 <a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a> 下载安装 node.js。</p>
+<p>下载好 node.js, npm 也就有了，使用 npm -v 查看安装的 npm 版本：</p>
+<p>zhangshixin$ node -v<br>v6.10.0<br>1<br>2<br>更新 npm<br>npm 更新地可比 node 勤快多了，因此你下载的 node 附带的 npm 版本可能不是最新的，你可以使用如下命令下载最新 npm:</p>
+<p>npm install npm@latest -g<br>1<br>其中 install 不用介绍了，就是安装，后面的 npm@latest 就是 <packagename>@<version> 的格式，我们在下载其他模块时也是这个格式。-g 代表全局安装。</version></packagename></p>
+<p>package.json 文件<br>package.json 文件非常重要，因此需要单独一小节介绍。</p>
+<p>管理本地安装 npm 包的最好方式就是创建 package.json 文件。</p>
+<p>一个 package.json 文件可以有以下几点作用：</p>
+<p>作为一个描述文件，描述了你的项目依赖哪些包<br>允许我们使用 “语义化版本规则”（后面介绍）指明你项目依赖包的版本<br>让你的构建更好地与其他开发者分享，便于重复使用<br>package.json 如何创建<br>使用 npm init 即可在当前目录创建一个 package.json 文件：</p>
+<p>这里写图片描述</p>
+<p>如图所示，输入 npm init 后会弹出一堆问题，我们可以输入对应内容，也可以使用默认值。在回答一堆问题后输入 yes 就会生成图中所示内容的 package.json 文件。</p>
+<p>如果嫌回答这一大堆问题麻烦，可以直接输入 npm init –yes 跳过回答问题步骤，直接生成默认值的 package.json 文件：</p>
+<p>这里写图片描述</p>
+<p>package.json 的内容<br>package.json 文件至少要有两部分内容：</p>
+<p>“name”<br>全部小写，没有空格，可以使用下划线或者横线<br>“version”<br>x.x.x 的格式<br>符合“语义化版本规则”<br>比如：</p>
+<p>{<br>  “name”: “shixinzhang-demo-package”,<br>  “version”: “1.0.0”<br>}<br>1<br>2<br>3<br>4<br>其他内容：</p>
+<p>description：描述信息，有助于搜索<br>main: 入口文件，一般都是 index.js<br>scripts：支持的脚本，默认是一个空的 test<br>keywords：关键字，有助于在人们使用 npm search 搜索时发现你的项目<br>author：作者信息<br>license：默认是 MIT<br>bugs：当前项目的一些错误信息，如果有的话<br>我们可以为 init 命令设置一些默认值，比如：</p>
+<blockquote>
+<p>npm set init.author.email “shixinzhang2016@gmail.com”<br>npm set init.author.name “shixinzhang”<br>npm set init.license “MIT”<br>1<br>2<br>3<br>注意：<br>如果 package.json 中没有 description 信息，npm 使用项目中的 README.md 的第一行作为描述信息。这个描述信息有助于别人搜索你的项目，因此建议好好写 description 信息。</p>
+</blockquote>
+<p>指定依赖的包<br>我们需要在 package.json 文件中指定项目依赖的包，这样别人在拿到这个项目时才可以使用 npm install 下载。</p>
+<p>包有两种依赖方式：</p>
+<p>dependencies：在生产环境中需要用到的依赖<br>devDependencies：在开发、测试环境中用到的依赖<br>举个例子：</p>
+<p>{<br>    “name”: “my-weex-demo”,<br>    “version”: “1.0.0”,<br>    “description”: “a weex project”,<br>    “main”: “index.js”,<br>    “scripts”: {<br>        “build”: “weex-builder src dist”,<br>        “build_plugin”: “webpack –config ./tools/webpack.config.plugin.js –color”,<br>        “dev”: “weex-builder src dist -w”,<br>        “serve”: “serve -p 8080”<br>    },<br>    “keywords”: [<br>        “weex”<br>    ],<br>    “author”: “fkysly@gmail.com”,<br>    “license”: “MIT”,<br>    “devDependencies”: {<br>        “babel-core”: “^6.14.0”,<br>        “babel-loader”: “^6.2.5”,<br>        “babel-preset-es2015”: “^6.18.0”,<br>        “vue-loader”: “^10.0.2”,<br>        “eslint”: “^3.5.0”,<br>        “serve”: “^1.4.0”,<br>        “webpack”: “^1.13.2”,<br>        “weex-loader”: “^0.3.3”,<br>        “weex-builder”: “^0.2.6”<br>    },<br>    “dependencies”: {<br>        “weex-html5”: “^0.3.2”,<br>        “weex-components”: “*”<br>    }<br>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>Semantic versioning（语义化版本规则）<br><a href="https://docs.npmjs.com/getting-started/semantic-versioning" target="_blank" rel="external">https://docs.npmjs.com/getting-started/semantic-versioning</a></p>
+<p>dependencies 的内容，以 “weex-html5”: “^0.3.2” 为例，我们知道 key 是依赖的包名称，value 是这个包的版本。那版本前面的 ^ 或者版本直接是一个 * 是什么意思呢？</p>
+<p>这就是 npm 的 “Semantic versioning”，简称”Semver”，中文含义即“语义化版本规则”。</p>
+<p>在安卓开发中我们有过这样的经验：有时候依赖的包升级后大改版，之前提供的接口不见了，这对使用者的项目可能造成极大的影响。</p>
+<p>因此我们在声明对某个包的依赖时需要指明是否允许 update 到新版本，什么情况下允许更新。</p>
+<p>这就需要先了解 npm 包提供者应该注意的版本号规范。</p>
+<p>如果一个项目打算与别人分享，应该从 1.0.0 版本开始。以后要升级版本应该遵循以下标准：</p>
+<p>补丁版本：解决了 Bug 或者一些较小的更改，增加最后一位数字，比如 1.0.1<br>小版本：增加了新特性，同时不会影响之前的版本，增加中间一位数字，比如 1.1.0<br>大版本：大改版，无法兼容之前的，增加第一位数字，比如 2.0.0<br>了解了提供者的版本规范后， npm 包使用者就可以针对自己的需要填写依赖包的版本规则。</p>
+<p>作为使用者，我们可以在 package.json 文件中写明我们可以接受这个包的更新程度（假设当前依赖的是 1.0.4 版本）：</p>
+<p>如果只打算接受补丁版本的更新（也就是最后一位的改变），就可以这么写：<br>1.0<br>1.0.x<br>~1.0.4<br>如果接受小版本的更新（第二位的改变），就可以这么写：<br>1<br>1.x<br>^1.0.4<br>如果可以接受大版本的更新（自然接受小版本和补丁版本的改变），就可以这么写：<br>*<br>x<br>小结一下：总共三种版本变化类型，接受依赖包哪种类型的更新，就把版本号准确写到前一位。</p>
+<p>安装 package<br>使用 npm 安装 package 有两种方式：本地（当前项目路径）安装 或者 全局安装。</p>
+<p>你选择哪种安装方式取决于你将如何使用这个包：</p>
+<p>如果你只是想在当前项目里用 require() 加载使用，那你可以安装到本地<br>npm install 默认就是安装到本地的<br>如果你想要在命令行里直接使用，比如 grunt CLI，就需要安装到全局了<br>如果在你的项目里有 package.json 文件，运行 npm install 后它会查找文件中列出的依赖包，然后下载符合语义化版本规则的版本。</p>
+<p>npm install 默认会安装 package.json 中 dependencies 和 devDependencies 里的所有模块。</p>
+<p>如果想只安装 dependencies 中的内容，可以使用 –production 字段：</p>
+<p>npm install –production<br>1<br>本地安装 package<br>npm 使用下面的命令下载一个包：</p>
+<p>npm install <package_name><br>1<br>后面就是要安装包的名称。这个命令会在当前目录创建一个 node_modules 目录，然后下载我们指定的包到这个目录中。</package_name></p>
+<p>举个例子：</p>
+<p>zhangshixindeMacBook-Pro:publish-pkg zhangshixin$ npm install lodash<br>zhangshixindeMacBook-Pro:publish-pkg zhangshixin$ ls<br>index.js        package-lock.json<br>node_modules        package.json<br>zhangshixindeMacBook-Pro:publish-pkg zhangshixin$ ls node_modules/<br>lodash<br>1<br>2<br>3<br>4<br>5<br>6<br>下载后的项目文件夹：</p>
+<p>这里写图片描述</p>
+<p>安装指定版本：</p>
+<p>npm install 默认安装最新版本，如果想要安装指定版本，可以在库名称后加 @版本号：</p>
+<p>$ npm install sax@latest<br>$ npm install sax@0.1.1<br>$ npm install sax@”&gt;=0.1.0 &lt;0.2.0”<br>1<br>2<br>3<br>如果当前项目有 package.json 文件，下载包时会下载这个文件中指定的版本；<br>如果当前项目中没有 package.json 文件，就会下载指定包的最新版本。</p>
+<p>有时下载会报错：npm install error saveError ENOENT: no such file or directory, open ‘/Users/zhangshixin/package.json’</p>
+<p>解决办法： </p>
+<ul>
+<li>在目录下执行 npm init 创建 package.json，输入初始化信息 </li>
+<li>然后再执行下载命令</li>
+</ul>
+<p>安装参数 –save 和 –save -dev<br>添加依赖时我们可以手动修改 package.json 文件，添加或者修改 dependencies devDependencies 中的内容即可。</p>
+<p>另一种更酷的方式是用命令行，在使用 npm install 时增加 –save 或者 –save -dev 后缀：</p>
+<p>npm install <package_name> –save 表示将这个包名及对应的版本添加到 package.json的 dependencies<br>npm install <package_name> –save-dev 表示将这个包名及对应的版本添加到 package.json的 devDependencies<br>使用下载好的包<br>下载后 node_modules 文件夹中有要使用的包，我们就可以使用其中的代码了。</package_name></package_name></p>
+<p>比如在 Node.js 项目中，我们可以用 require(XXX) 引入它。</p>
+<p>举个例子：<br>创建一个 index.js 文件，写入如下代码：</p>
+<p>这里写图片描述</p>
+<p>在使用 require(‘lodash’) 后引入了 lodash 库，然后调用了它的 without() 方法，这个方法可以去除第一个数组参数中与第二个参数重复的数据。</p>
+<p>保存这个文件后，使用 node index.js 运行这个文件，成功的话就可以得到运行结果；如果之前安装失败，可能就会遇到这个错误：</p>
+<p>module.js:340<br>    throw err;<br>          ^<br>Error: Cannot find module ‘lodash’<br>1<br>2<br>3<br>4<br>这时你需要在这个目录下重新运行 npm install lodash 安装。</p>
+<p>更新本地 package<br>有时候我们想知道依赖的包是否有新版本，可以使用 npm outdated 查看，如果发现有的包有新版本，就可以使用 npm update <package-name> 更新它，或者直接 npm update 更新所有：</package-name></p>
+<p>这里写图片描述</p>
+<p>上图中，我们在输入 npm update 后发现本地的 lodash 模块还不是最新的，这是为什么呢？</p>
+<p>原来，npm update 的工作过程是这样的：</p>
+<p>先到远程仓库查询最新版本<br>然后对比本地版本，如果本地版本不存在，或者远程版本较新<br>查看 package.json 中对应的语义版本规则<br>如果当前新版本符合语义规则，就更新，否则不更新<br>一开始我本地的 package.json 的依赖是这样的：</p>
+<p>  “dependencies”: {<br>    “lodash”: “^3.1.0”<br>  }<br>1<br>2<br>3<br>根据前面的介绍我们可以知道，这表示只接受小版本或者补丁版本的更新，因此在执行了一次 npm update 后它变成了这样：</p>
+<p>  “dependencies”: {<br>    “lodash”: “^3.10.1”<br>  }<br>1<br>2<br>3<br>第二位升到了最高，但是无法更新第一位，因此无法更新到最新的 4.17.4。</p>
+<p>所以我需要把它修改成：</p>
+<p>  “dependencies”: {<br>    “lodash”: “*”<br>  }<br>1<br>2<br>3<br>这表示任何版本的更新都接受，然后再执行 npm update，就发现更新成功了：</p>
+<p>这里写图片描述</p>
+<p>小结一下：</p>
+<p>执行 npm outdated 后可以看到有三个版本号：</p>
+<p>这里写图片描述</p>
+<p>第一个是当前 node_modules 中该模块的版本，第二个是 package.json 文件中声明的版本，第三个是远程仓库最新的版本。</p>
+<p>只有当前模块版本低于远程，package.json 中的版本语义规则满足情况，才能更新成功。</p>
+<p>卸载本地 package<br>卸载一个本地 package 很简单，npm uninstall <package-name> 即可：</package-name></p>
+<p>这里写图片描述</p>
+<p>官方文档说输入 npm uninstall –save lodash 才能在删除项目的同时移除 package.json 中对它的依赖。但我没加 –save 也达到了一样的效果，一脸懵逼。</p>
+<p>卸载后再 ls node_modules/ 查看目录下，发现没有东西，删除成功。</p>
+<p>全局安装 package<br>如果你想要直接在命令行中使用某个包，比如 jshint ，你可以全局安装它。</p>
+<p>全局安装比本地安装多了个 -g:</p>
+<p>npm install -g <package-name><br>1<br>以 jshint 为例，全局安装命令是：</package-name></p>
+<p>npm install -g jshint<br>1<br>这里写图片描述</p>
+<p>安装后可以使用 npm ls -g –depth=0 查看安装在全局第一层的包。</p>
+<p>全局安装的权限问题<br>在全局安装时可能会遇到 EACCES 权限问题，解决办法办法有如下 3 种：</p>
+<p>1.sudo npm install -g jshint，使用 sudo 简单粗暴，但是治标不治本</p>
+<p>2.修改 npm 全局默认目录的权限</p>
+<p>先获取 npm 全局目录：npm config get prefix，一般都是 /usr/local；<br>然后修改这个目录权限为当前用户：</p>
+<p> sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}<br>1<br>3.使用其他包管理器帮你解决这个问题</p>
+<p>实在懒得弄可以直接卸载 node，然后使用 Homebrew 重装 node:</p>
+<p>brew install node<br>1<br>Homebrew 会帮我们处理好权限的问题。</p>
+<p>更新全局的 package<br>想知道哪些包需要更新，可以使用 npm outdated -g –depth=0，然后使用 npm update -g <package>更新指定的包：</package></p>
+<p>这里写图片描述</p>
+<p>要更新所有全局包，可以使用 npm update -g，可以发现对比本地的，只是多了个 -g。</p>
+<p>不过官方说在 2.6.1 以下的 npm ，直接使用 npm update -g 并不安全，因为它会递归地更新所有全局依赖。</p>
+<p>这种情况下可以使用 npm-check ，贴一张它的截图：</p>
+<p>这里写图片描述</p>
+<p>Github 地址：<a href="https://github.com/dylang/npm-check" target="_blank" rel="external">https://github.com/dylang/npm-check</a></p>
+<p>卸载全局 package<br>一句搞定：npm uninstall -g <package></package></p>
+<p>其他命令<br>npm run<br>部分摘自 阮一峰的 NPM 教程</p>
+<p>npm 还可以直接运行 package.json 中 scripts 指定的脚本：</p>
+<p>{<br>  “name”: “demo”,<br>  “scripts”: {<br>    “lint”: “jshint **.js”,<br>    “test”: “mocha test/“<br>  }<br>}<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>npm run 是 npm run-script 的缩写。</p>
+<p>命令行输入 npm run lint 或者 npm run-script lint 就会执行 jshint **.js 。</p>
+<p>npm run 会创建一个Shell，执行指定的命令，并临时将node_modules/.bin加入PATH 变量，这意味着本地模块可以直接运行。</p>
+<p>package.json 中的 scripts 执行的脚本是本地项目内 node_modules -&gt; .bin 内的脚本。</p>
+<pre><code>&quot;scripts&quot;: {
+    &quot;build&quot;: &quot;weex-builder src dist&quot;,
+    &quot;build_plugin&quot;: &quot;webpack --config ./tools/webpack.config.plugin.js --color&quot;,
+    &quot;dev&quot;: &quot;weex-builder src dist -w&quot;,
+    &quot;serve&quot;: &quot;serve -p 8080&quot;
+}
+</code></pre><p>1<br>2<br>3<br>4<br>5<br>6<br>这里写图片描述</p>
+<p>直接运行 npm run 会列出当前项目的 package.json 中 scripts 属性下的所有脚本命令。</p>
+<p>npm install from github<br>npm install 也可以直接从 github 下载:</p>
+<p>$ npm install git://github.com/package/path.git<br>$ npm install git://github.com/package/path.git#0.1.0<br>1<br>2<br>npm info<br>npm info <package-name> 可以查看指定包的信息：</package-name></p>
+<p>这里写图片描述</p>
+<p>npm adduser<br>npm adduser 用于在npmjs.com注册一个用户:</p>
+<p>$ npm adduser<br>Username: YOUR_USER_NAME<br>Password: YOUR_PASSWORD<br>Email: YOUR_EMAIL@domain.com<br>1<br>2<br>3<br>4<br>npm home/repo<br>npm home <package-name>命令可以打开指定模块的主页；<br>npm repo <package-name>命令则是打开指定模块的代码仓库。</package-name></package-name></p>
+<p>npm prune<br>prune 即“修剪”的意思。</p>
+<p>npm prune 可以检查出当前项目的 node_modules目录中，没有在 package.json里提到的模块。</p>
+<p>npm publish<br>现在水平还不够，等写出可以复用的 JS 代码后，我们就可以将它发布到 npm 仓库上，类似 Github 的提交。</p>
+<p>这部分主要摘自阮一峰的 NPM 教程</p>
+<p>要想发布，首先需要使用 npm adduser向 npmjs.com申请用户名（当然去官网也可以）。</p>
+<p>接着使用 npm login 在命令行中登录。</p>
+<p>登录以后，就可以使用 npm publish命令发布。</p>
+<p>$ npm publish<br>1<br>2<br>如果当前模块是一个beta版，比如1.3.1-beta.3，那么发布的时候需要使用tag参数，将其发布到指定标签，默认的发布标签是latest。</p>
+<p>$ npm publish –tag beta<br>1<br>2<br>如果发布私有模块，模块初始化的时候，需要加上scope参数。只有npm的付费用户才能发布私有模块。</p>
+<p>$ npm init –scope=<yourscope><br>1<br>2<br>如果你的模块是用ES6写的，那么发布的时候，最好转成ES5。首先，需要安装Babel。</yourscope></p>
+<p>$ npm install –save-dev babel-cli@6 babel-preset-es2015@6<br>1<br>2<br>然后，在package.json里面写入build脚本。</p>
+<p>“scripts”: {<br>  “build”: “babel source –presets babel-preset-es2015 –out-dir distribution”,<br>  “prepublish”: “npm run build”<br>}<br>1<br>2<br>3<br>4<br>5<br>运行上面的脚本，会将source目录里面的ES6源码文件，转为distribution目录里面的ES5源码文件。</p>
+<p>国内镜像<br>不翻的话有时候 npm 比较卡，可以使用国内的淘宝镜像 cnpm： <a href="https://npm.taobao.org。" target="_blank" rel="external">https://npm.taobao.org。</a></p>
+<p>cnpm 支持 npm 除了 publish 之外的所有命令。</p>
+<p>总结<br>这里写图片描述</p>
+<p>经过这么一番总结，总算可以说 npm 入门了。</p>
+<h2 id="接触前端后发现这个圈子太复杂了，各种工具各种框架，眼花缭乱啊。一步一步来吧！"><a href="#接触前端后发现这个圈子太复杂了，各种工具各种框架，眼花缭乱啊。一步一步来吧！" class="headerlink" title="接触前端后发现这个圈子太复杂了，各种工具各种框架，眼花缭乱啊。一步一步来吧！"></a>接触前端后发现这个圈子太复杂了，各种工具各种框架，眼花缭乱啊。一步一步来吧！</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/06/14/npm-package/" class="article-date">
+  <time datetime="2018-06-14T02:48:36.000Z" itemprop="datePublished">2018-06-14</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2018/06/19/ng2/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ng2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/14/bower/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">bower</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
