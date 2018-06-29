@@ -5,14 +5,14 @@
   
   <title>容器技术(转) | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这篇文章对比了三大主流调度框架：Docker Swarm、Google Kubernetes和Apache Mesos（基于Marathon框架）。在解释了调度和容器的基本概念后，文章探讨了每个框架的特点，并从以下两个用例来对比他们：一个只使用了两个容器的网站应用，和一个能具有可扩展性的投票应用。
-什么是调度（scheduling）？什么是容器（container）？调度一个集群调度工具有多个目的">
+  <meta name="description" content="这篇文章对比了三大主流调度框架：Docker Swarm、Google Kubernetes和Apache Mesos（基于Marathon框架）。在解释了调度和容器的基本概念后，文章探讨了每个框架的特点，并从以下两个用例来对比他们：一个只使用了两个容器的网站应用，和一个能具有可扩展性的投票应用。 什么是调度（scheduling）？什么是容器（container）？调度一个集群调度工具有多个目的">
+<meta name="keywords" content="docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="容器技术(转)">
 <meta property="og:url" content="http://hujao.com/2017/04/25/container-tech/index.html">
-<meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="这篇文章对比了三大主流调度框架：Docker Swarm、Google Kubernetes和Apache Mesos（基于Marathon框架）。在解释了调度和容器的基本概念后，文章探讨了每个框架的特点，并从以下两个用例来对比他们：一个只使用了两个容器的网站应用，和一个能具有可扩展性的投票应用。
-什么是调度（scheduling）？什么是容器（container）？调度一个集群调度工具有多个目的">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="这篇文章对比了三大主流调度框架：Docker Swarm、Google Kubernetes和Apache Mesos（基于Marathon框架）。在解释了调度和容器的基本概念后，文章探讨了每个框架的特点，并从以下两个用例来对比他们：一个只使用了两个容器的网站应用，和一个能具有可扩展性的投票应用。 什么是调度（scheduling）？什么是容器（container）？调度一个集群调度工具有多个目的">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://dockerone.com/uploads/article/20160320/5c3572deaa897e643f9cb55e3e2b4a1e.png">
 <meta property="og:image" content="http://dockerone.com/uploads/article/20160320/e91fe0f42ffee5a1b2d1b7c2fa6e4e39.png">
 <meta property="og:image" content="http://dockerone.com/uploads/article/20160320/c2d12aaca08bf2b3270089600f8b1c4d.png">
@@ -26,8 +26,7 @@
 <meta property="og:updated_time" content="2017-12-21T05:49:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="容器技术(转)">
-<meta name="twitter:description" content="这篇文章对比了三大主流调度框架：Docker Swarm、Google Kubernetes和Apache Mesos（基于Marathon框架）。在解释了调度和容器的基本概念后，文章探讨了每个框架的特点，并从以下两个用例来对比他们：一个只使用了两个容器的网站应用，和一个能具有可扩展性的投票应用。
-什么是调度（scheduling）？什么是容器（container）？调度一个集群调度工具有多个目的">
+<meta name="twitter:description" content="这篇文章对比了三大主流调度框架：Docker Swarm、Google Kubernetes和Apache Mesos（基于Marathon框架）。在解释了调度和容器的基本概念后，文章探讨了每个框架的特点，并从以下两个用例来对比他们：一个只使用了两个容器的网站应用，和一个能具有可扩展性的投票应用。 什么是调度（scheduling）？什么是容器（container）？调度一个集群调度工具有多个目的">
 <meta name="twitter:image" content="http://dockerone.com/uploads/article/20160320/5c3572deaa897e643f9cb55e3e2b4a1e.png">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">

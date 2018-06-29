@@ -5,40 +5,17 @@
   
   <title>java性能优化学习(二) | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="优化前的准备知识
-服务器知识
-
-内存  JVM内存管理
-
-程序计数器  记录当前线程所执行的字节码行号
-虚拟机栈  管理java函数调用  RAM中,通过使用栈指针,上下移动,快速分配和释放内存,速度仅次于寄存器,存放基本类型的变量  -XSS设置栈的大小
-本地方法栈 管理C语言实现的Native Method
-Java堆 存放所有的java对象 逃逸分析Escape Analysis 相关JVM">
+  <meta name="description" content="优化前的准备知识 服务器知识  内存  JVM内存管理  程序计数器  记录当前线程所执行的字节码行号 虚拟机栈  管理java函数调用  RAM中,通过使用栈指针,上下移动,快速分配和释放内存,速度仅次于寄存器,存放基本类型的变量  -XSS设置栈的大小 本地方法栈 管理C语言实现的Native Method Java堆 存放所有的java对象 逃逸分析Escape Analysis 相关JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java性能优化学习(二)">
 <meta property="og:url" content="http://hujao.com/2017/05/04/java-optimizing-2/index.html">
-<meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="优化前的准备知识
-服务器知识
-
-内存  JVM内存管理
-
-程序计数器  记录当前线程所执行的字节码行号
-虚拟机栈  管理java函数调用  RAM中,通过使用栈指针,上下移动,快速分配和释放内存,速度仅次于寄存器,存放基本类型的变量  -XSS设置栈的大小
-本地方法栈 管理C语言实现的Native Method
-Java堆 存放所有的java对象 逃逸分析Escape Analysis 相关JVM">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="优化前的准备知识 服务器知识  内存  JVM内存管理  程序计数器  记录当前线程所执行的字节码行号 虚拟机栈  管理java函数调用  RAM中,通过使用栈指针,上下移动,快速分配和释放内存,速度仅次于寄存器,存放基本类型的变量  -XSS设置栈的大小 本地方法栈 管理C语言实现的Native Method Java堆 存放所有的java对象 逃逸分析Escape Analysis 相关JVM">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-21T05:51:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java性能优化学习(二)">
-<meta name="twitter:description" content="优化前的准备知识
-服务器知识
-
-内存  JVM内存管理
-
-程序计数器  记录当前线程所执行的字节码行号
-虚拟机栈  管理java函数调用  RAM中,通过使用栈指针,上下移动,快速分配和释放内存,速度仅次于寄存器,存放基本类型的变量  -XSS设置栈的大小
-本地方法栈 管理C语言实现的Native Method
-Java堆 存放所有的java对象 逃逸分析Escape Analysis 相关JVM">
+<meta name="twitter:description" content="优化前的准备知识 服务器知识  内存  JVM内存管理  程序计数器  记录当前线程所执行的字节码行号 虚拟机栈  管理java函数调用  RAM中,通过使用栈指针,上下移动,快速分配和释放内存,速度仅次于寄存器,存放基本类型的变量  -XSS设置栈的大小 本地方法栈 管理C语言实现的Native Method Java堆 存放所有的java对象 逃逸分析Escape Analysis 相关JVM">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   

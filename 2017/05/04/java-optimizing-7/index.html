@@ -5,130 +5,17 @@
   
   <title>java性能优化学习(七) | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JVM性能调优建议JVM相关概念
-
-内存使用
-内存分配的意义
-线程共享内存区
-java堆区
-方法区
-运行时常量
-
-
-线程私有内存区
-PC寄存器
-Java栈
-本地方法栈
-
-
-
-
-字节码相关
-字节码组织结构
-javac编译器
-编译原理
-符号引用
-常量池
-字段表
-方法表
-属性表
-
-
-自动内存管理
-内存分配原理
-逃逸分析和栈上分配
-对象内存布局与OOP-Klass模型
-
-
-
-JVM系统架构
-
-JVM的基本">
+  <meta name="description" content="JVM性能调优建议JVM相关概念  内存使用 内存分配的意义 线程共享内存区 java堆区 方法区 运行时常量   线程私有内存区 PC寄存器 Java栈 本地方法栈     字节码相关 字节码组织结构 javac编译器 编译原理 符号引用 常量池 字段表 方法表 属性表   自动内存管理 内存分配原理 逃逸分析和栈上分配 对象内存布局与OOP-Klass模型    JVM系统架构  JVM的基本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java性能优化学习(七)">
 <meta property="og:url" content="http://hujao.com/2017/05/04/java-optimizing-7/index.html">
-<meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="JVM性能调优建议JVM相关概念
-
-内存使用
-内存分配的意义
-线程共享内存区
-java堆区
-方法区
-运行时常量
-
-
-线程私有内存区
-PC寄存器
-Java栈
-本地方法栈
-
-
-
-
-字节码相关
-字节码组织结构
-javac编译器
-编译原理
-符号引用
-常量池
-字段表
-方法表
-属性表
-
-
-自动内存管理
-内存分配原理
-逃逸分析和栈上分配
-对象内存布局与OOP-Klass模型
-
-
-
-JVM系统架构
-
-JVM的基本">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="JVM性能调优建议JVM相关概念  内存使用 内存分配的意义 线程共享内存区 java堆区 方法区 运行时常量   线程私有内存区 PC寄存器 Java栈 本地方法栈     字节码相关 字节码组织结构 javac编译器 编译原理 符号引用 常量池 字段表 方法表 属性表   自动内存管理 内存分配原理 逃逸分析和栈上分配 对象内存布局与OOP-Klass模型    JVM系统架构  JVM的基本">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-21T05:51:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java性能优化学习(七)">
-<meta name="twitter:description" content="JVM性能调优建议JVM相关概念
-
-内存使用
-内存分配的意义
-线程共享内存区
-java堆区
-方法区
-运行时常量
-
-
-线程私有内存区
-PC寄存器
-Java栈
-本地方法栈
-
-
-
-
-字节码相关
-字节码组织结构
-javac编译器
-编译原理
-符号引用
-常量池
-字段表
-方法表
-属性表
-
-
-自动内存管理
-内存分配原理
-逃逸分析和栈上分配
-对象内存布局与OOP-Klass模型
-
-
-
-JVM系统架构
-
-JVM的基本">
+<meta name="twitter:description" content="JVM性能调优建议JVM相关概念  内存使用 内存分配的意义 线程共享内存区 java堆区 方法区 运行时常量   线程私有内存区 PC寄存器 Java栈 本地方法栈     字节码相关 字节码组织结构 javac编译器 编译原理 符号引用 常量池 字段表 方法表 属性表   自动内存管理 内存分配原理 逃逸分析和栈上分配 对象内存布局与OOP-Klass模型    JVM系统架构  JVM的基本">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   

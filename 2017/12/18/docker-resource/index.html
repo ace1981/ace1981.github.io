@@ -5,18 +5,13 @@
   
   <title>docker资源控制 | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="引用:
-硬件资源限制  网络资源限制
-在使用 docker 运行容器时，一台主机上可能会运行几百个容器，这些容器虽然互相隔离，但是底层却使用着相同的 CPU、内存和磁盘资源。如果不对容器使用的资源进行限制，那么容器之间会互相影响，小的来说会导致容器资源使用不公平；大的来说，可能会导致主机和集群资源耗尽，服务完全不可用。
-docker 作为容器的管理者，自然提供了控制容器资源的功能。正如使用内核的">
+  <meta name="description" content="引用: 硬件资源限制  网络资源限制 在使用 docker 运行容器时，一台主机上可能会运行几百个容器，这些容器虽然互相隔离，但是底层却使用着相同的 CPU、内存和磁盘资源。如果不对容器使用的资源进行限制，那么容器之间会互相影响，小的来说会导致容器资源使用不公平；大的来说，可能会导致主机和集群资源耗尽，服务完全不可用。 docker 作为容器的管理者，自然提供了控制容器资源的功能。正如使用内核的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker资源控制">
 <meta property="og:url" content="http://hujao.com/2017/12/18/docker-resource/index.html">
-<meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="引用:
-硬件资源限制  网络资源限制
-在使用 docker 运行容器时，一台主机上可能会运行几百个容器，这些容器虽然互相隔离，但是底层却使用着相同的 CPU、内存和磁盘资源。如果不对容器使用的资源进行限制，那么容器之间会互相影响，小的来说会导致容器资源使用不公平；大的来说，可能会导致主机和集群资源耗尽，服务完全不可用。
-docker 作为容器的管理者，自然提供了控制容器资源的功能。正如使用内核的">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="引用: 硬件资源限制  网络资源限制 在使用 docker 运行容器时，一台主机上可能会运行几百个容器，这些容器虽然互相隔离，但是底层却使用着相同的 CPU、内存和磁盘资源。如果不对容器使用的资源进行限制，那么容器之间会互相影响，小的来说会导致容器资源使用不公平；大的来说，可能会导致主机和集群资源耗尽，服务完全不可用。 docker 作为容器的管理者，自然提供了控制容器资源的功能。正如使用内核的">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://img.blog.csdn.net/20170930104504965">
 <meta property="og:image" content="http://img.blog.csdn.net/20170930104509386">
 <meta property="og:image" content="http://img.blog.csdn.net/20170930104513091">
@@ -25,10 +20,7 @@ docker 作为容器的管理者，自然提供了控制容器资源的功能。�
 <meta property="og:updated_time" content="2017-12-21T06:08:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker资源控制">
-<meta name="twitter:description" content="引用:
-硬件资源限制  网络资源限制
-在使用 docker 运行容器时，一台主机上可能会运行几百个容器，这些容器虽然互相隔离，但是底层却使用着相同的 CPU、内存和磁盘资源。如果不对容器使用的资源进行限制，那么容器之间会互相影响，小的来说会导致容器资源使用不公平；大的来说，可能会导致主机和集群资源耗尽，服务完全不可用。
-docker 作为容器的管理者，自然提供了控制容器资源的功能。正如使用内核的">
+<meta name="twitter:description" content="引用: 硬件资源限制  网络资源限制 在使用 docker 运行容器时，一台主机上可能会运行几百个容器，这些容器虽然互相隔离，但是底层却使用着相同的 CPU、内存和磁盘资源。如果不对容器使用的资源进行限制，那么容器之间会互相影响，小的来说会导致容器资源使用不公平；大的来说，可能会导致主机和集群资源耗尽，服务完全不可用。 docker 作为容器的管理者，自然提供了控制容器资源的功能。正如使用内核的">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20170930104504965">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">

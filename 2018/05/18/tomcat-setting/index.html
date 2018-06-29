@@ -5,19 +5,17 @@
   
   <title>tomcat相关配置 | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原因是因为在tomcat重启的时候，之前的tomcat的线程还没有完全关闭，最新启动tomcat就会报这个异常，只要把tomcat的server.xml 中的reloadable=”true” 改成false就OK
-大家看过这个帖子后说没有找到对应的配置，其实就存在于Context节点中，一下是我截取的Tomcat中文一个文档中的注释：Context(表示一个web应用程序，通常为WAR文件，关于">
+  <meta name="description" content="原因是因为在tomcat重启的时候，之前的tomcat的线程还没有完全关闭，最新启动tomcat就会报这个异常，只要把tomcat的server.xml 中的reloadable=”true” 改成false就OK 大家看过这个帖子后说没有找到对应的配置，其实就存在于Context节点中，一下是我截取的Tomcat中文一个文档中的注释：Context(表示一个web应用程序，通常为WAR文件，关于">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tomcat相关配置">
 <meta property="og:url" content="http://hujao.com/2018/05/18/tomcat-setting/index.html">
-<meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="原因是因为在tomcat重启的时候，之前的tomcat的线程还没有完全关闭，最新启动tomcat就会报这个异常，只要把tomcat的server.xml 中的reloadable=”true” 改成false就OK
-大家看过这个帖子后说没有找到对应的配置，其实就存在于Context节点中，一下是我截取的Tomcat中文一个文档中的注释：Context(表示一个web应用程序，通常为WAR文件，关于">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="原因是因为在tomcat重启的时候，之前的tomcat的线程还没有完全关闭，最新启动tomcat就会报这个异常，只要把tomcat的server.xml 中的reloadable=”true” 改成false就OK 大家看过这个帖子后说没有找到对应的配置，其实就存在于Context节点中，一下是我截取的Tomcat中文一个文档中的注释：Context(表示一个web应用程序，通常为WAR文件，关于">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-05-18T06:28:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tomcat相关配置">
-<meta name="twitter:description" content="原因是因为在tomcat重启的时候，之前的tomcat的线程还没有完全关闭，最新启动tomcat就会报这个异常，只要把tomcat的server.xml 中的reloadable=”true” 改成false就OK
-大家看过这个帖子后说没有找到对应的配置，其实就存在于Context节点中，一下是我截取的Tomcat中文一个文档中的注释：Context(表示一个web应用程序，通常为WAR文件，关于">
+<meta name="twitter:description" content="原因是因为在tomcat重启的时候，之前的tomcat的线程还没有完全关闭，最新启动tomcat就会报这个异常，只要把tomcat的server.xml 中的reloadable=”true” 改成false就OK 大家看过这个帖子后说没有找到对应的配置，其实就存在于Context节点中，一下是我截取的Tomcat中文一个文档中的注释：Context(表示一个web应用程序，通常为WAR文件，关于">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   

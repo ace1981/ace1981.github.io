@@ -5,16 +5,14 @@
   
   <title>docker bridge网络模式 | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="引用原文地址:http://blog.daocloud.io/docker-bridge/
-探索 Docker bridge上一回合，小白折腾了 Docker 架构，铁要趁热我开始学习 Docker 容器网络。此刻的心情，是激动的，也是不安的。激动是因为终于要面对 Docker 的第一座大山 ：网络，不安是因为网络问题一直以来都是小白的软肋，那些年我们一起学过的网络知识，如今……
-硬着头皮翻开《D">
+  <meta name="description" content="引用原文地址:http://blog.daocloud.io/docker-bridge/ 探索 Docker bridge上一回合，小白折腾了 Docker 架构，铁要趁热我开始学习 Docker 容器网络。此刻的心情，是激动的，也是不安的。激动是因为终于要面对 Docker 的第一座大山 ：网络，不安是因为网络问题一直以来都是小白的软肋，那些年我们一起学过的网络知识，如今…… 硬着头皮翻开《D">
+<meta name="keywords" content="docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker bridge网络模式">
 <meta property="og:url" content="http://hujao.com/2017/12/18/docker-bridge/index.html">
-<meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="引用原文地址:http://blog.daocloud.io/docker-bridge/
-探索 Docker bridge上一回合，小白折腾了 Docker 架构，铁要趁热我开始学习 Docker 容器网络。此刻的心情，是激动的，也是不安的。激动是因为终于要面对 Docker 的第一座大山 ：网络，不安是因为网络问题一直以来都是小白的软肋，那些年我们一起学过的网络知识，如今……
-硬着头皮翻开《D">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="引用原文地址:http://blog.daocloud.io/docker-bridge/ 探索 Docker bridge上一回合，小白折腾了 Docker 架构，铁要趁热我开始学习 Docker 容器网络。此刻的心情，是激动的，也是不安的。激动是因为终于要面对 Docker 的第一座大山 ：网络，不安是因为网络问题一直以来都是小白的软肋，那些年我们一起学过的网络知识，如今…… 硬着头皮翻开《D">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://hujao.com/2017/12/18/docker-bridge/e1.png">
 <meta property="og:image" content="http://hujao.com/2017/12/18/docker-bridge/e3.png">
 <meta property="og:image" content="http://hujao.com/2017/12/18/docker-bridge/e4.png">
@@ -26,9 +24,7 @@
 <meta property="og:updated_time" content="2017-12-21T06:09:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker bridge网络模式">
-<meta name="twitter:description" content="引用原文地址:http://blog.daocloud.io/docker-bridge/
-探索 Docker bridge上一回合，小白折腾了 Docker 架构，铁要趁热我开始学习 Docker 容器网络。此刻的心情，是激动的，也是不安的。激动是因为终于要面对 Docker 的第一座大山 ：网络，不安是因为网络问题一直以来都是小白的软肋，那些年我们一起学过的网络知识，如今……
-硬着头皮翻开《D">
+<meta name="twitter:description" content="引用原文地址:http://blog.daocloud.io/docker-bridge/ 探索 Docker bridge上一回合，小白折腾了 Docker 架构，铁要趁热我开始学习 Docker 容器网络。此刻的心情，是激动的，也是不安的。激动是因为终于要面对 Docker 的第一座大山 ：网络，不安是因为网络问题一直以来都是小白的软肋，那些年我们一起学过的网络知识，如今…… 硬着头皮翻开《D">
 <meta name="twitter:image" content="http://hujao.com/2017/12/18/docker-bridge/e1.png">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">

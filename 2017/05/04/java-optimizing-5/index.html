@@ -5,97 +5,17 @@
   
   <title>java性能优化学习(五) | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="并行程序优化
-
-资源限制的挑战
-进程,线程,协程
-使用多线程的原因
-线程不安全范例
-重排序机制
-实例变量的数据共享
-生产消费者模式
-线程池的使用
-
-锁机制对比
-
-锁机制概述
-Synchronize使用技巧
-Volatile的使用技巧
-队列同步器
-可重入锁
-读写锁
-偏向锁和轻量级锁
-
-增加程序并行性
-
-并发计数器
-减少上下文切换次数
-针对Thread类的更新
-Fork/Join框架
-Executor">
+  <meta name="description" content="并行程序优化  资源限制的挑战 进程,线程,协程 使用多线程的原因 线程不安全范例 重排序机制 实例变量的数据共享 生产消费者模式 线程池的使用  锁机制对比  锁机制概述 Synchronize使用技巧 Volatile的使用技巧 队列同步器 可重入锁 读写锁 偏向锁和轻量级锁  增加程序并行性  并发计数器 减少上下文切换次数 针对Thread类的更新 Fork/Join框架 Executor">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java性能优化学习(五)">
 <meta property="og:url" content="http://hujao.com/2017/05/04/java-optimizing-5/index.html">
-<meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="并行程序优化
-
-资源限制的挑战
-进程,线程,协程
-使用多线程的原因
-线程不安全范例
-重排序机制
-实例变量的数据共享
-生产消费者模式
-线程池的使用
-
-锁机制对比
-
-锁机制概述
-Synchronize使用技巧
-Volatile的使用技巧
-队列同步器
-可重入锁
-读写锁
-偏向锁和轻量级锁
-
-增加程序并行性
-
-并发计数器
-减少上下文切换次数
-针对Thread类的更新
-Fork/Join框架
-Executor">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="并行程序优化  资源限制的挑战 进程,线程,协程 使用多线程的原因 线程不安全范例 重排序机制 实例变量的数据共享 生产消费者模式 线程池的使用  锁机制对比  锁机制概述 Synchronize使用技巧 Volatile的使用技巧 队列同步器 可重入锁 读写锁 偏向锁和轻量级锁  增加程序并行性  并发计数器 减少上下文切换次数 针对Thread类的更新 Fork/Join框架 Executor">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-21T05:51:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java性能优化学习(五)">
-<meta name="twitter:description" content="并行程序优化
-
-资源限制的挑战
-进程,线程,协程
-使用多线程的原因
-线程不安全范例
-重排序机制
-实例变量的数据共享
-生产消费者模式
-线程池的使用
-
-锁机制对比
-
-锁机制概述
-Synchronize使用技巧
-Volatile的使用技巧
-队列同步器
-可重入锁
-读写锁
-偏向锁和轻量级锁
-
-增加程序并行性
-
-并发计数器
-减少上下文切换次数
-针对Thread类的更新
-Fork/Join框架
-Executor">
+<meta name="twitter:description" content="并行程序优化  资源限制的挑战 进程,线程,协程 使用多线程的原因 线程不安全范例 重排序机制 实例变量的数据共享 生产消费者模式 线程池的使用  锁机制对比  锁机制概述 Synchronize使用技巧 Volatile的使用技巧 队列同步器 可重入锁 读写锁 偏向锁和轻量级锁  增加程序并行性  并发计数器 减少上下文切换次数 针对Thread类的更新 Fork/Join框架 Executor">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   

@@ -5,70 +5,17 @@
   
   <title>java性能优化学习(一) | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="导致系统瓶颈的计算资源
-
-CPU
-内存
-磁盘I/O
-网络传送
-数据库
-锁竞争  对高并发程序来说,增加线程上下文切换开销
-异常  java应用进行异常捕获和处理非常消耗资源
-
-程序性能衡量指标
-
-响应时间 尽量使用异步处理
-启动时间
-执行时间 业务逻辑切分多段连续的程序段,让用户感觉执行时间剪短了
-执行速度
-计算资源分配  CPU/内存/磁盘
-内存分配 是否过度消耗或泄露
-磁盘吞吐量 Input/">
+  <meta name="description" content="导致系统瓶颈的计算资源  CPU 内存 磁盘I/O 网络传送 数据库 锁竞争  对高并发程序来说,增加线程上下文切换开销 异常  java应用进行异常捕获和处理非常消耗资源  程序性能衡量指标  响应时间 尽量使用异步处理 启动时间 执行时间 业务逻辑切分多段连续的程序段,让用户感觉执行时间剪短了 执行速度 计算资源分配  CPU/内存/磁盘 内存分配 是否过度消耗或泄露 磁盘吞吐量 Input/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java性能优化学习(一)">
 <meta property="og:url" content="http://hujao.com/2017/05/04/java-optimizing-1/index.html">
-<meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="导致系统瓶颈的计算资源
-
-CPU
-内存
-磁盘I/O
-网络传送
-数据库
-锁竞争  对高并发程序来说,增加线程上下文切换开销
-异常  java应用进行异常捕获和处理非常消耗资源
-
-程序性能衡量指标
-
-响应时间 尽量使用异步处理
-启动时间
-执行时间 业务逻辑切分多段连续的程序段,让用户感觉执行时间剪短了
-执行速度
-计算资源分配  CPU/内存/磁盘
-内存分配 是否过度消耗或泄露
-磁盘吞吐量 Input/">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="导致系统瓶颈的计算资源  CPU 内存 磁盘I/O 网络传送 数据库 锁竞争  对高并发程序来说,增加线程上下文切换开销 异常  java应用进行异常捕获和处理非常消耗资源  程序性能衡量指标  响应时间 尽量使用异步处理 启动时间 执行时间 业务逻辑切分多段连续的程序段,让用户感觉执行时间剪短了 执行速度 计算资源分配  CPU/内存/磁盘 内存分配 是否过度消耗或泄露 磁盘吞吐量 Input/">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-21T05:51:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java性能优化学习(一)">
-<meta name="twitter:description" content="导致系统瓶颈的计算资源
-
-CPU
-内存
-磁盘I/O
-网络传送
-数据库
-锁竞争  对高并发程序来说,增加线程上下文切换开销
-异常  java应用进行异常捕获和处理非常消耗资源
-
-程序性能衡量指标
-
-响应时间 尽量使用异步处理
-启动时间
-执行时间 业务逻辑切分多段连续的程序段,让用户感觉执行时间剪短了
-执行速度
-计算资源分配  CPU/内存/磁盘
-内存分配 是否过度消耗或泄露
-磁盘吞吐量 Input/">
+<meta name="twitter:description" content="导致系统瓶颈的计算资源  CPU 内存 磁盘I/O 网络传送 数据库 锁竞争  对高并发程序来说,增加线程上下文切换开销 异常  java应用进行异常捕获和处理非常消耗资源  程序性能衡量指标  响应时间 尽量使用异步处理 启动时间 执行时间 业务逻辑切分多段连续的程序段,让用户感觉执行时间剪短了 执行速度 计算资源分配  CPU/内存/磁盘 内存分配 是否过度消耗或泄露 磁盘吞吐量 Input/">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   

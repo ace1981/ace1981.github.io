@@ -5,25 +5,18 @@
   
   <title>apache反向代理和负载均衡 | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目标:apache实现多tomcat的反向代理和负载均衡,并实现session共享
-1 首先apache要放到磁盘根目录下
-2 打开conf/http.conf最下加入如下配置
-1234567ProxyRequests Off&amp;lt;Proxy balancer://cluster&amp;gt;	BalancerMember http://127.0.0.1:8180 loadfactor=1 rout">
+  <meta name="description" content="目标:apache实现多tomcat的反向代理和负载均衡,并实现session共享 1 首先apache要放到磁盘根目录下 2 打开conf/http.conf最下加入如下配置 1234567ProxyRequests Off&amp;lt;Proxy balancer://cluster&amp;gt;	BalancerMember http://127.0.0.1:8180 loadfactor=1 rout">
+<meta name="keywords" content="loadbalance">
 <meta property="og:type" content="article">
 <meta property="og:title" content="apache反向代理和负载均衡">
 <meta property="og:url" content="http://hujao.com/2017/12/29/apache/index.html">
-<meta property="og:site_name" content="Ace'pages">
-<meta property="og:description" content="目标:apache实现多tomcat的反向代理和负载均衡,并实现session共享
-1 首先apache要放到磁盘根目录下
-2 打开conf/http.conf最下加入如下配置
-1234567ProxyRequests Off&amp;lt;Proxy balancer://cluster&amp;gt;	BalancerMember http://127.0.0.1:8180 loadfactor=1 rout">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="目标:apache实现多tomcat的反向代理和负载均衡,并实现session共享 1 首先apache要放到磁盘根目录下 2 打开conf/http.conf最下加入如下配置 1234567ProxyRequests Off&amp;lt;Proxy balancer://cluster&amp;gt;	BalancerMember http://127.0.0.1:8180 loadfactor=1 rout">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-29T08:24:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="apache反向代理和负载均衡">
-<meta name="twitter:description" content="目标:apache实现多tomcat的反向代理和负载均衡,并实现session共享
-1 首先apache要放到磁盘根目录下
-2 打开conf/http.conf最下加入如下配置
-1234567ProxyRequests Off&amp;lt;Proxy balancer://cluster&amp;gt;	BalancerMember http://127.0.0.1:8180 loadfactor=1 rout">
+<meta name="twitter:description" content="目标:apache实现多tomcat的反向代理和负载均衡,并实现session共享 1 首先apache要放到磁盘根目录下 2 打开conf/http.conf最下加入如下配置 1234567ProxyRequests Off&amp;lt;Proxy balancer://cluster&amp;gt;	BalancerMember http://127.0.0.1:8180 loadfactor=1 rout">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
