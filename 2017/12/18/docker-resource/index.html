@@ -1,11 +1,85 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
+
+
+
   
-  <title>docker资源控制 | Ace&#39;pages</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="引用: 硬件资源限制  网络资源限制 在使用 docker 运行容器时，一台主机上可能会运行几百个容器，这些容器虽然互相隔离，但是底层却使用着相同的 CPU、内存和磁盘资源。如果不对容器使用的资源进行限制，那么容器之间会互相影响，小的来说会导致容器资源使用不公平；大的来说，可能会导致主机和集群资源耗尽，服务完全不可用。 docker 作为容器的管理者，自然提供了控制容器资源的功能。正如使用内核的">
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="引用: 硬件资源限制  网络资源限制 在使用 docker 运行容器时，一台主机上可能会运行几百个容器，这些容器虽然互相隔离，但是底层却使用着相同的 CPU、内存和磁盘资源。如果不对容器使用的资源进行限制，那么容器之间会互相影响，小的来说会导致容器资源使用不公平；大的来说，可能会导致主机和集群资源耗尽，服务完全不可用。 docker 作为容器的管理者，自然提供了控制容器资源的功能。正如使用内核的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker资源控制">
 <meta property="og:url" content="http://hujao.com/2017/12/18/docker-resource/index.html">
@@ -22,105 +96,283 @@
 <meta name="twitter:title" content="docker资源控制">
 <meta name="twitter:description" content="引用: 硬件资源限制  网络资源限制 在使用 docker 运行容器时，一台主机上可能会运行几百个容器，这些容器虽然互相隔离，但是底层却使用着相同的 CPU、内存和磁盘资源。如果不对容器使用的资源进行限制，那么容器之间会互相影响，小的来说会导致容器资源使用不公平；大的来说，可能会导致主机和集群资源耗尽，服务完全不可用。 docker 作为容器的管理者，自然提供了控制容器资源的功能。正如使用内核的">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20170930104504965">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hujao.com/2017/12/18/docker-resource/"/>
+
+
+
+
+
+  <title>docker资源控制 | Ace'pages</title>
   
-    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
+
+
+
+
+
+
+
+
 </head>
 
-  
-    
-      <body>
-    
-  
-      <div id="container" class="container">
-        <article id="post-docker-resource" class="article article-type-post" itemscope itemprop="blogPost">
-  <header id="header" class="header">
-  <nav id="main-nav" class="main-nav">
-    
-      <a class="main-nav-link" href="/">Home</a>
-    
-      <a class="main-nav-link" href="/archives">Archives</a>
-    
-      <a class="main-nav-link" href="/categories">Categories</a>
-    
-      <a class="main-nav-link" href="/tags">Tags</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
-    
-  </nav>
-  <nav id="sub-nav">
-    
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-    
-  </nav>
-</header>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-  <hr/>
-  <div class="article-inner">
+  
+  
     
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
-      <header class="article-header">
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ace'pages</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
         
-  
-    <h1 class="article-title" itemprop="name">
-      docker资源控制
-    </h1>
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
   
 
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/18/docker-resource/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">docker资源控制</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-18T12:35:32+08:00">
+                2017-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry typo" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
       
         <p>引用:</p>
-<p><a href="http://cizixs.com/2017/08/04/docker-resources-limit" target="_blank" rel="external">硬件资源限制</a>  <a href="http://blog.51cto.com/dl528888/1641569" target="_blank" rel="external">网络资源限制</a></p>
+<p><a href="http://cizixs.com/2017/08/04/docker-resources-limit" target="_blank" rel="noopener">硬件资源限制</a>  <a href="http://blog.51cto.com/dl528888/1641569" target="_blank" rel="noopener">网络资源限制</a></p>
 <p>在使用 docker 运行容器时，一台主机上可能会运行几百个容器，这些容器虽然互相隔离，但是底层却使用着相同的 CPU、内存和磁盘资源。如果不对容器使用的资源进行限制，那么容器之间会互相影响，小的来说会导致容器资源使用不公平；大的来说，可能会导致主机和集群资源耗尽，服务完全不可用。</p>
 <p>docker 作为容器的管理者，自然提供了控制容器资源的功能。正如使用内核的 namespace 来做容器之间的隔离，docker 也是通过内核的 cgroups 来做容器的资源限制。这篇文章就介绍如何使用 docker 来限制 CPU、内存和 IO，以及对应的 cgroups 文件。</p>
-<p>NOTE：如果想要了解 cgroups 的更多信息，可以参考 <a href="https://www.kernel.org/doc/Documentation/cgroup-v1/" target="_blank" rel="external">kernel 文档</a> 或者其他资源。</p>
+<p>NOTE：如果想要了解 cgroups 的更多信息，可以参考 <a href="https://www.kernel.org/doc/Documentation/cgroup-v1/" target="_blank" rel="noopener">kernel 文档</a> 或者其他资源。</p>
 <p>我本地测试的 docker 版本是 <code>17.03.0</code> 社区版：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">➜  stress docker version</div><div class="line">Client:</div><div class="line"> Version:      17.03.0-ce</div><div class="line"> API version:  1.26</div><div class="line"> Go version:   go1.7.5</div><div class="line"> Git commit:   60ccb22</div><div class="line"> Built:        Thu Feb 23 11:02:43 2017</div><div class="line"> OS/Arch:      linux/amd64</div><div class="line"></div><div class="line">Server:</div><div class="line"> Version:      17.03.0-ce</div><div class="line"> API version:  1.26 (minimum version 1.12)</div><div class="line"> Go version:   go1.7.5</div><div class="line"> Git commit:   60ccb22</div><div class="line"> Built:        Thu Feb 23 11:02:43 2017</div><div class="line"> OS/Arch:      linux/amd64</div><div class="line"> Experimental: false</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">➜  stress docker version</span><br><span class="line">Client:</span><br><span class="line"> Version:      17.03.0-ce</span><br><span class="line"> API version:  1.26</span><br><span class="line"> Go version:   go1.7.5</span><br><span class="line"> Git commit:   60ccb22</span><br><span class="line"> Built:        Thu Feb 23 11:02:43 2017</span><br><span class="line"> OS/Arch:      linux/amd64</span><br><span class="line"></span><br><span class="line">Server:</span><br><span class="line"> Version:      17.03.0-ce</span><br><span class="line"> API version:  1.26 (minimum version 1.12)</span><br><span class="line"> Go version:   go1.7.5</span><br><span class="line"> Git commit:   60ccb22</span><br><span class="line"> Built:        Thu Feb 23 11:02:43 2017</span><br><span class="line"> OS/Arch:      linux/amd64</span><br><span class="line"> Experimental: false</span><br></pre></td></tr></table></figure>
 <p>使用的是 ubuntu 16.04 系统，内核版本是 <code>4.10.0</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">➜  ~ uname -a</div><div class="line">Linux cizixs-ThinkPad-T450 4.10.0-28-generic #32~16.04.2-Ubuntu SMP Thu Jul 20 10:19:48 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ uname -a</span><br><span class="line">Linux cizixs-ThinkPad-T450 4.10.0-28-generic #32~16.04.2-Ubuntu SMP Thu Jul 20 10:19:48 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux</span><br></pre></td></tr></table></figure>
 <p>NOTE: 不同版本和系统的功能会有差异，具体的使用方法和功能解释请以具体版本的 docker 官方文档为准。</p>
-<p>我们使用 <a href="https://github.com/progrium/docker-stress" target="_blank" rel="external">stress</a> 容器来产生 CPU、内存和 IO 的压力，具体的使用请参考它的帮助文档。</p>
+<p>我们使用 <a href="https://github.com/progrium/docker-stress" target="_blank" rel="noopener">stress</a> 容器来产生 CPU、内存和 IO 的压力，具体的使用请参考它的帮助文档。</p>
 <h2 id="1-CPU-资源"><a href="#1-CPU-资源" class="headerlink" title="1. CPU 资源"></a>1. CPU 资源</h2><p>主机上的进程会通过时间分片机制使用 CPU，CPU 的量化单位是频率，也就是每秒钟能执行的运算次数。为容器限制 CPU 资源并不能改变 CPU 的运行频率，而是改变每个容器能使用的 CPU 时间片。理想状态下，CPU 应该一直处于运算状态（并且进程需要的计算量不会超过 CPU 的处理能力）。</p>
 <h3 id="docker-限制-CPU-Share"><a href="#docker-限制-CPU-Share" class="headerlink" title="docker 限制 CPU Share"></a>docker 限制 CPU Share</h3><p>docker 允许用户为每个容器设置一个数字，代表容器的 CPU share，默认情况下每个容器的 share 是 1024。要注意，这个 share 是相对的，本身并不能代表任何确定的意义。当主机上有多个容器运行时，每个容器占用的 CPU 时间比例为它的 share 在总额中的比例。举个例子，如果主机上有两个一直使用 CPU 的容器（为了简化理解，不考虑主机上其他进程），其 CPU share 都是 1024，那么两个容器 CPU 使用率都是 50%；如果把其中一个容器的 share 设置为 512，那么两者 CPU 的使用率分别为 67% 和 33%；如果删除 share 为 1024 的容器，剩下来容器的 CPU 使用率将会是 100%。</p>
 <p>总结下来，这种情况下，docker 会根据主机上运行的容器和进程动态调整每个容器使用 CPU 的时间比例。这样的好处是能保证 CPU 尽可能处于运行状态，充分利用 CPU 资源，而且保证所有容器的相对公平；缺点是无法指定容器使用 CPU 的确定值。</p>
 <p>docker 为容器设置 CPU share 的参数是 <code>-c --cpu-shares</code>，它的值是一个整数。</p>
 <p>我的机器是 4 核 CPU，因此使用 <code>stress</code> 启动 4 个进程来产生计算压力：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">➜  stress docker run --rm -it stress --cpu 4</div><div class="line">stress: info: [1] dispatching hogs: 4 cpu, 0 io, 0 vm, 0 hdd</div><div class="line">stress: dbug: [1] using backoff sleep of 12000us</div><div class="line">stress: dbug: [1] --&gt; hogcpu worker 4 [7] forked</div><div class="line">stress: dbug: [1] using backoff sleep of 9000us</div><div class="line">stress: dbug: [1] --&gt; hogcpu worker 3 [8] forked</div><div class="line">stress: dbug: [1] using backoff sleep of 6000us</div><div class="line">stress: dbug: [1] --&gt; hogcpu worker 2 [9] forked</div><div class="line">stress: dbug: [1] using backoff sleep of 3000us</div><div class="line">stress: dbug: [1] --&gt; hogcpu worker 1 [10] forked</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">➜  stress docker run --rm -it stress --cpu 4</span><br><span class="line">stress: info: [1] dispatching hogs: 4 cpu, 0 io, 0 vm, 0 hdd</span><br><span class="line">stress: dbug: [1] using backoff sleep of 12000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 4 [7] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 9000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 3 [8] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 6000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 2 [9] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 3000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 1 [10] forked</span><br></pre></td></tr></table></figure>
 <p>在另外一个 terminal 使用 <code>htop</code> 查看资源的使用情况：</p>
 <p><img src="http://img.blog.csdn.net/20170930104504965" alt="img"></p>
 <p>从上图中可以看到，CPU 四个核资源都达到了 100%。四个 stress 进程 CPU 使用率没有达到 100% 是因为系统中还有其他机器在运行。</p>
 <p>为了比较，我另外启动一个 share 为 512 的容器：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">➜  stress docker run --rm -it -c 512 stress --cpu 4 </div><div class="line">stress: info: [1] dispatching hogs: 4 cpu, 0 io, 0 vm, 0 hdd</div><div class="line">stress: dbug: [1] using backoff sleep of 12000us</div><div class="line">stress: dbug: [1] --&gt; hogcpu worker 4 [6] forked</div><div class="line">stress: dbug: [1] using backoff sleep of 9000us</div><div class="line">stress: dbug: [1] --&gt; hogcpu worker 3 [7] forked</div><div class="line">stress: dbug: [1] using backoff sleep of 6000us</div><div class="line">stress: dbug: [1] --&gt; hogcpu worker 2 [8] forked</div><div class="line">stress: dbug: [1] using backoff sleep of 3000us</div><div class="line">stress: dbug: [1] --&gt; hogcpu worker 1 [9] forked</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">➜  stress docker run --rm -it -c 512 stress --cpu 4 </span><br><span class="line">stress: info: [1] dispatching hogs: 4 cpu, 0 io, 0 vm, 0 hdd</span><br><span class="line">stress: dbug: [1] using backoff sleep of 12000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 4 [6] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 9000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 3 [7] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 6000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 2 [8] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 3000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 1 [9] forked</span><br></pre></td></tr></table></figure>
 <p>因为默认情况下，容器的 CPU share 为 1024，所以这两个容器的 CPU 使用率应该大致为 2：1，下面是启动第二个容器之后的监控截图：</p>
 <p><img src="http://img.blog.csdn.net/20170930104509386" alt="img"></p>
 <p>两个容器分别启动了四个 <code>stress</code> 进程，第一个容器 <code>stress</code> 进程 CPU 使用率都在 54% 左右，第二个容器 <code>stress</code> 进程 CPU 使用率在 25% 左右，比例关系大致为 2：1，符合之前的预期。</p>
 <h3 id="限制容器能使用的-CPU-核数"><a href="#限制容器能使用的-CPU-核数" class="headerlink" title="限制容器能使用的 CPU 核数"></a>限制容器能使用的 CPU 核数</h3><p>上面讲述的 <code>-c --cpu-shares</code> 参数只能限制容器使用 CPU 的比例，或者说优先级，无法确定地限制容器使用 CPU 的具体核数；从 1.13 版本之后，docker 提供了 <code>--cpus</code> 参数可以限定容器能使用的 CPU 核数。这个功能可以让我们更精确地设置容器 CPU 使用量，是一种更容易理解也因此更常用的手段。</p>
 <p><code>--cpus</code> 后面跟着一个浮点数，代表容器最多使用的核数，可以精确到小数点二位，也就是说容器最小可以使用 <code>0.01</code> 核 CPU。比如，我们可以限制容器只能使用 <code>1.5</code> 核数 CPU：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">➜  ~ docker run --rm -it --cpus 1.5 stress --cpu 3</div><div class="line">stress: info: [1] dispatching hogs: 3 cpu, 0 io, 0 vm, 0 hdd</div><div class="line">stress: dbug: [1] using backoff sleep of 9000us</div><div class="line">stress: dbug: [1] --&gt; hogcpu worker 3 [7] forked</div><div class="line">stress: dbug: [1] using backoff sleep of 6000us</div><div class="line">stress: dbug: [1] --&gt; hogcpu worker 2 [8] forked</div><div class="line">stress: dbug: [1] using backoff sleep of 3000us</div><div class="line">stress: dbug: [1] --&gt; hogcpu worker 1 [9] forked</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker run --rm -it --cpus 1.5 stress --cpu 3</span><br><span class="line">stress: info: [1] dispatching hogs: 3 cpu, 0 io, 0 vm, 0 hdd</span><br><span class="line">stress: dbug: [1] using backoff sleep of 9000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 3 [7] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 6000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 2 [8] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 3000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 1 [9] forked</span><br></pre></td></tr></table></figure>
 <p>在容器里启动三个 stress 来跑 CPU 压力，如果不加限制，这个容器会导致 CPU 的使用率为 300% 左右（也就是说会占用三个核的计算能力）。实际的监控如下图：</p>
 <p><img src="http://img.blog.csdn.net/20170930104513091" alt="img"></p>
 <p>可以看到，每个 <code>stress</code> 进程 CPU 使用率大约在 50%，总共的使用率为 150%，符合 1.5 核的设置。</p>
 <p>如果设置的 <code>--cpus</code> 值大于主机的 CPU 核数，docker 会直接报错：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">➜  ~ docker run --rm -it --cpus 8 stress --cpu 3</div><div class="line">docker: Error response from daemon: Range of CPUs is from 0.01 to 4.00, as there are only 4 CPUs available.</div><div class="line">See &apos;docker run --help&apos;.</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker run --rm -it --cpus 8 stress --cpu 3</span><br><span class="line">docker: Error response from daemon: Range of CPUs is from 0.01 to 4.00, as there are only 4 CPUs available.</span><br><span class="line">See &apos;docker run --help&apos;.</span><br></pre></td></tr></table></figure>
 <p>如果多个容器都设置了 <code>--cpus</code> ，并且它们之和超过主机的 CPU 核数，并不会导致容器失败或者退出，这些容器之间会竞争使用 CPU，具体分配的 CPU 数量取决于主机运行情况和容器的 CPU share 值。也就是说 <code>--cpus</code> 只能保证在 CPU 资源充足的情况下容器最多能使用的 CPU 数，docker 并不能保证在任何情况下容器都能使用这么多的 CPU（因为这根本是不可能的）。</p>
 <h3 id="限制容器运行在某些-CPU-核"><a href="#限制容器运行在某些-CPU-核" class="headerlink" title="限制容器运行在某些 CPU 核"></a>限制容器运行在某些 CPU 核</h3><p>现在的笔记本和服务器都会有多个 CPU，docker 也允许调度的时候限定容器运行在哪个 CPU 上。比如，我的主机上有 4 个核，可以通过 <code>--cpuset</code> 参数让容器只运行在前两个核上：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">➜  ~ docker run --rm -it --cpuset-cpus=0,1 stress --cpu 2</div><div class="line">stress: info: [1] dispatching hogs: 2 cpu, 0 io, 0 vm, 0 hdd</div><div class="line">stress: dbug: [1] using backoff sleep of 6000us</div><div class="line">stress: dbug: [1] --&gt; hogcpu worker 2 [7] forked</div><div class="line">stress: dbug: [1] using backoff sleep of 3000us</div><div class="line">stress: dbug: [1] --&gt; hogcpu worker 1 [8] forked</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker run --rm -it --cpuset-cpus=0,1 stress --cpu 2</span><br><span class="line">stress: info: [1] dispatching hogs: 2 cpu, 0 io, 0 vm, 0 hdd</span><br><span class="line">stress: dbug: [1] using backoff sleep of 6000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 2 [7] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 3000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 1 [8] forked</span><br></pre></td></tr></table></figure>
 <p>这样，监控中可以看到只有前面两个核 CPU 达到了 100% 使用率。</p>
 <p><img src="http://img.blog.csdn.net/20170930104516254" alt="img"></p>
 <p><code>--cpuset-cpus</code> 参数可以和 <code>-c --cpu-shares</code> 一起使用，限制容器只能运行在某些 CPU 核上，并且配置了使用率。</p>
 <p>限制容器运行在哪些核上并不是一个很好的做法，因为它需要实现知道主机上有多少 CPU 核，而且非常不灵活。除非有特别的需求，一般并不推荐在生产中这样使用。</p>
 <h3 id="CPU-信息的-cgroup-文件"><a href="#CPU-信息的-cgroup-文件" class="headerlink" title="CPU 信息的 cgroup 文件"></a>CPU 信息的 cgroup 文件</h3><p>所有和容器 CPU share 有关的配置都在 <code>/sys/fs/cgroup/cpu/docker/&lt;docker_id&gt;/</code> 目录下面，其中 <code>cpu.shares</code> 保存了 CPU share 的值（其他文件的意义可以查看 cgroups 的官方文档）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">➜  ~ ls /sys/fs/cgroup/cpu/docker/d93c9a660f4a13789d995d56024f160e2267f2dc26ce676daa66ea6435473f6f/   </div><div class="line">cgroup.clone_children  cpuacct.stat   cpuacct.usage_all     cpuacct.usage_percpu_sys   cpuacct.usage_sys   cpu.cfs_period_us  cpu.shares  notify_on_release</div><div class="line">cgroup.procs           cpuacct.usage  cpuacct.usage_percpu  cpuacct.usage_percpu_user  cpuacct.usage_user  cpu.cfs_quota_us   cpu.stat    tasks</div><div class="line">➜  ~ cat /sys/fs/cgroup/cpu/docker/d93c9a660f4a13789d995d56024f160e2267f2dc26ce676daa66ea6435473f6f/cpu.shares </div><div class="line">1024</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ ls /sys/fs/cgroup/cpu/docker/d93c9a660f4a13789d995d56024f160e2267f2dc26ce676daa66ea6435473f6f/   </span><br><span class="line">cgroup.clone_children  cpuacct.stat   cpuacct.usage_all     cpuacct.usage_percpu_sys   cpuacct.usage_sys   cpu.cfs_period_us  cpu.shares  notify_on_release</span><br><span class="line">cgroup.procs           cpuacct.usage  cpuacct.usage_percpu  cpuacct.usage_percpu_user  cpuacct.usage_user  cpu.cfs_quota_us   cpu.stat    tasks</span><br><span class="line">➜  ~ cat /sys/fs/cgroup/cpu/docker/d93c9a660f4a13789d995d56024f160e2267f2dc26ce676daa66ea6435473f6f/cpu.shares </span><br><span class="line">1024</span><br></pre></td></tr></table></figure>
 <p>和 cpuset（限制 CPU 核）有关的文件在 <code>/sys/fs/cgroup/cpuset/docker/&lt;docker_id&gt;</code> 目录下，其中 <code>cpuset.cpus</code> 保存了当前容器能使用的 CPU 核：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">➜  ~ ls /sys/fs/cgroup/cpuset/docker/d93c9a660f4a13789d995d56024f160e2267f2dc26ce676daa66ea6435473f6f/</div><div class="line">cgroup.clone_children  cpuset.cpus            cpuset.mem_exclusive   cpuset.memory_pressure     cpuset.mems                      notify_on_release</div><div class="line">cgroup.procs           cpuset.effective_cpus  cpuset.mem_hardwall    cpuset.memory_spread_page  cpuset.sched_load_balance        tasks</div><div class="line">cpuset.cpu_exclusive   cpuset.effective_mems  cpuset.memory_migrate  cpuset.memory_spread_slab  cpuset.sched_relax_domain_level</div><div class="line"></div><div class="line">➜  ~ cat /sys/fs/cgroup/cpuset/docker/d93c9a660f4a13789d995d56024f160e2267f2dc26ce676daa66ea6435473f6f/cpuset.cpus</div><div class="line">0-1</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ ls /sys/fs/cgroup/cpuset/docker/d93c9a660f4a13789d995d56024f160e2267f2dc26ce676daa66ea6435473f6f/</span><br><span class="line">cgroup.clone_children  cpuset.cpus            cpuset.mem_exclusive   cpuset.memory_pressure     cpuset.mems                      notify_on_release</span><br><span class="line">cgroup.procs           cpuset.effective_cpus  cpuset.mem_hardwall    cpuset.memory_spread_page  cpuset.sched_load_balance        tasks</span><br><span class="line">cpuset.cpu_exclusive   cpuset.effective_mems  cpuset.memory_migrate  cpuset.memory_spread_slab  cpuset.sched_relax_domain_level</span><br><span class="line"></span><br><span class="line">➜  ~ cat /sys/fs/cgroup/cpuset/docker/d93c9a660f4a13789d995d56024f160e2267f2dc26ce676daa66ea6435473f6f/cpuset.cpus</span><br><span class="line">0-1</span><br></pre></td></tr></table></figure>
 <p><code>--cpus</code> 限制 CPU 核数并不像上面两个参数一样有对应的文件对应，它是由 <code>cpu.cfs_period_us</code> 和 <code>cpu.cfs_quota_us</code> 两个文件控制的。如果容器的 <code>--cpus</code> 设置为 3，其对应的这两个文件值为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">➜  ~ cat /sys/fs/cgroup/cpu/docker/233a38cc641f2e4a1bec3434d88744517a2214aff9d8297e908fa13b9aa12e02/cpu.cfs_period_us </div><div class="line">100000</div><div class="line">➜  ~ cat /sys/fs/cgroup/cpu/docker/233a38cc641f2e4a1bec3434d88744517a2214aff9d8297e908fa13b9aa12e02/cpu.cfs_quota_us </div><div class="line">300000</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ cat /sys/fs/cgroup/cpu/docker/233a38cc641f2e4a1bec3434d88744517a2214aff9d8297e908fa13b9aa12e02/cpu.cfs_period_us </span><br><span class="line">100000</span><br><span class="line">➜  ~ cat /sys/fs/cgroup/cpu/docker/233a38cc641f2e4a1bec3434d88744517a2214aff9d8297e908fa13b9aa12e02/cpu.cfs_quota_us </span><br><span class="line">300000</span><br></pre></td></tr></table></figure>
 <p>其实在 1.12 以及之前的版本，都是通过 <code>--cpu-period</code> 和 <code>--cpu-quota</code> 这两个参数控制容器能使用的 CPU 核数的。前者表示 CPU 的周期数，默认是 <code>100000</code>，单位是微秒，也就是 1s，一般不需要修改；后者表示容器的在上述 CPU 周期里能使用的 quota，真正能使用的 CPU 核数就是 <code>cpu-quota / cpu-period</code>，因此对于 3 核的容器，对应的 <code>cpu-quota</code> 值为 <code>300000</code>。</p>
 <h2 id="2-内存资源"><a href="#2-内存资源" class="headerlink" title="2. 内存资源"></a>2. 内存资源</h2><p>默认情况下，docker 并没有对容器内存进行限制，也就是说容器可以使用主机提供的所有内存。这当然是非常危险的事情，如果某个容器运行了恶意的内存消耗软件，或者代码有内存泄露，很可能会导致主机内存耗尽，因此导致服务不可用。对于这种情况，docker 会设置 docker daemon 的 OOM（out of memory） 值，使其在内存不足的时候被杀死的优先级降低。另外，就是你可以为每个容器设置内存使用的上限，一旦超过这个上限，容器会被杀死，而不是耗尽主机的内存。</p>
 <p>限制内存上限虽然能保护主机，但是也可能会伤害到容器里的服务。如果为服务设置的内存上限太小，会导致服务还在正常工作的时候就被 OOM 杀死；如果设置的过大，会因为调度器算法浪费内存。因此，合理的做法包括：</p>
@@ -146,18 +398,18 @@
 <li>如果 <code>--memory-swap</code> 的值为 -1，那么不限制 swap 的使用，也就是说主机有多少 swap，容器都可以使用</li>
 </ul>
 <p>如果限制容器的内存使用为 64M，在申请 64M 资源的情况下，容器运行正常（如果主机上内存非常紧张，并不一定能保证这一点）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">➜  docker run --rm -it -m 64m stress --vm 1 --vm-bytes 64M --vm-hang 0</div><div class="line">WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.</div><div class="line">stress: info: [1] dispatching hogs: 0 cpu, 0 io, 1 vm, 0 hdd</div><div class="line">stress: dbug: [1] using backoff sleep of 3000us</div><div class="line">stress: dbug: [1] --&gt; hogvm worker 1 [7] forked</div><div class="line">stress: dbug: [7] allocating 67108864 bytes ...</div><div class="line">stress: dbug: [7] touching bytes in strides of 4096 bytes ...</div><div class="line">stress: dbug: [7] sleeping forever with allocated memory</div><div class="line">.....</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">➜  docker run --rm -it -m 64m stress --vm 1 --vm-bytes 64M --vm-hang 0</span><br><span class="line">WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.</span><br><span class="line">stress: info: [1] dispatching hogs: 0 cpu, 0 io, 1 vm, 0 hdd</span><br><span class="line">stress: dbug: [1] using backoff sleep of 3000us</span><br><span class="line">stress: dbug: [1] --&gt; hogvm worker 1 [7] forked</span><br><span class="line">stress: dbug: [7] allocating 67108864 bytes ...</span><br><span class="line">stress: dbug: [7] touching bytes in strides of 4096 bytes ...</span><br><span class="line">stress: dbug: [7] sleeping forever with allocated memory</span><br><span class="line">.....</span><br></pre></td></tr></table></figure>
 <p>而如果申请 100M 内存，会发现容器里的进程被 kill 掉了（worker 7 got signal 9，signal 9 就是 kill 信号）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">➜  docker run --rm -it -m 64m stress --vm 1 --vm-bytes 100M --vm-hang 0</div><div class="line">WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.</div><div class="line">stress: info: [1] dispatching hogs: 0 cpu, 0 io, 1 vm, 0 hdd</div><div class="line">stress: dbug: [1] using backoff sleep of 3000us</div><div class="line">stress: dbug: [1] --&gt; hogvm worker 1 [7] forked</div><div class="line">stress: dbug: [7] allocating 104857600 bytes ...</div><div class="line">stress: dbug: [7] touching bytes in strides of 4096 bytes ...</div><div class="line">stress: FAIL: [1] (415) &lt;-- worker 7 got signal 9</div><div class="line">stress: WARN: [1] (417) now reaping child worker processes</div><div class="line">stress: FAIL: [1] (421) kill error: No such process</div><div class="line">stress: FAIL: [1] (451) failed run completed in 0s</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">➜  docker run --rm -it -m 64m stress --vm 1 --vm-bytes 100M --vm-hang 0</span><br><span class="line">WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.</span><br><span class="line">stress: info: [1] dispatching hogs: 0 cpu, 0 io, 1 vm, 0 hdd</span><br><span class="line">stress: dbug: [1] using backoff sleep of 3000us</span><br><span class="line">stress: dbug: [1] --&gt; hogvm worker 1 [7] forked</span><br><span class="line">stress: dbug: [7] allocating 104857600 bytes ...</span><br><span class="line">stress: dbug: [7] touching bytes in strides of 4096 bytes ...</span><br><span class="line">stress: FAIL: [1] (415) &lt;-- worker 7 got signal 9</span><br><span class="line">stress: WARN: [1] (417) now reaping child worker processes</span><br><span class="line">stress: FAIL: [1] (421) kill error: No such process</span><br><span class="line">stress: FAIL: [1] (451) failed run completed in 0s</span><br></pre></td></tr></table></figure>
 <p>关于 swap 和 kernel memory 的限制就不在这里过多解释了，感兴趣的可以查看官方的文档。</p>
 <h3 id="内存信息的-cgroups-文件"><a href="#内存信息的-cgroups-文件" class="headerlink" title="内存信息的 cgroups 文件"></a>内存信息的 cgroups 文件</h3><p>对于 docker 来说，它的内存限制也是存放在 cgroups 文件系统的。对于某个容器，你可以在 <code>sys/fs/cgroup/memory/docker/&lt;container_id&gt;</code> 目录下看到容器内存相关的文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">➜  ls /sys/fs/cgroup/memory/docker/b067fa0c58dcdd4fa856177fac0112655b605fcc9a0fe07e36950f0086f62f46 </div><div class="line">cgroup.clone_children  memory.kmem.failcnt             memory.kmem.tcp.limit_in_bytes      memory.max_usage_in_bytes        memory.soft_limit_in_bytes  notify_on_release</div><div class="line">cgroup.event_control   memory.kmem.limit_in_bytes      memory.kmem.tcp.max_usage_in_bytes  memory.move_charge_at_immigrate  memory.stat                 tasks</div><div class="line">cgroup.procs           memory.kmem.max_usage_in_bytes  memory.kmem.tcp.usage_in_bytes      memory.numa_stat                 memory.swappiness</div><div class="line">memory.failcnt         memory.kmem.slabinfo            memory.kmem.usage_in_bytes          memory.oom_control               memory.usage_in_bytes</div><div class="line">memory.force_empty     memory.kmem.tcp.failcnt         memory.limit_in_bytes               memory.pressure_level            memory.use_hierarchy</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  ls /sys/fs/cgroup/memory/docker/b067fa0c58dcdd4fa856177fac0112655b605fcc9a0fe07e36950f0086f62f46 </span><br><span class="line">cgroup.clone_children  memory.kmem.failcnt             memory.kmem.tcp.limit_in_bytes      memory.max_usage_in_bytes        memory.soft_limit_in_bytes  notify_on_release</span><br><span class="line">cgroup.event_control   memory.kmem.limit_in_bytes      memory.kmem.tcp.max_usage_in_bytes  memory.move_charge_at_immigrate  memory.stat                 tasks</span><br><span class="line">cgroup.procs           memory.kmem.max_usage_in_bytes  memory.kmem.tcp.usage_in_bytes      memory.numa_stat                 memory.swappiness</span><br><span class="line">memory.failcnt         memory.kmem.slabinfo            memory.kmem.usage_in_bytes          memory.oom_control               memory.usage_in_bytes</span><br><span class="line">memory.force_empty     memory.kmem.tcp.failcnt         memory.limit_in_bytes               memory.pressure_level            memory.use_hierarchy</span><br></pre></td></tr></table></figure>
 <p>而上面的内存限制对应的文件是 <code>memory.limit_in_bytes</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">➜  cat /sys/fs/cgroup/memory/docker/b067fa0c58dcdd4fa856177fac0112655b605fcc9a0fe07e36950f0086f62f46/memory.limit_in_bytes</div><div class="line">67108864</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  cat /sys/fs/cgroup/memory/docker/b067fa0c58dcdd4fa856177fac0112655b605fcc9a0fe07e36950f0086f62f46/memory.limit_in_bytes</span><br><span class="line">67108864</span><br></pre></td></tr></table></figure>
 <h2 id="3-IO-资源（磁盘）"><a href="#3-IO-资源（磁盘）" class="headerlink" title="3. IO 资源（磁盘）"></a>3. IO 资源（磁盘）</h2><p>对于磁盘来说，考量的参数是容量和读写速度，因此对容器的磁盘限制也应该从这两个维度出发。目前 docker 支持对磁盘的读写速度进行限制，但是并没有方法能限制容器能使用的磁盘容量（一旦磁盘 mount 到容器里，容器就能够使用磁盘的所有容量）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">➜  ~ docker run -it --rm ubuntu:16.04 bash</div><div class="line"></div><div class="line">root@5229f756523c:/# time $(dd if=/dev/zero of=/tmp/test.data bs=10M count=100 &amp;&amp; sync)</div><div class="line">100+0 records in</div><div class="line">100+0 records out</div><div class="line">1048576000 bytes (1.0 GB) copied, 3.82859 s, 274 MB/s</div><div class="line"></div><div class="line">real	0m4.124s</div><div class="line">user	0m0.000s</div><div class="line">sys	0m1.812s</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker run -it --rm ubuntu:16.04 bash</span><br><span class="line"></span><br><span class="line">root@5229f756523c:/# time $(dd if=/dev/zero of=/tmp/test.data bs=10M count=100 &amp;&amp; sync)</span><br><span class="line">100+0 records in</span><br><span class="line">100+0 records out</span><br><span class="line">1048576000 bytes (1.0 GB) copied, 3.82859 s, 274 MB/s</span><br><span class="line"></span><br><span class="line">real	0m4.124s</span><br><span class="line">user	0m0.000s</span><br><span class="line">sys	0m1.812s</span><br></pre></td></tr></table></figure>
 <h3 id="限制磁盘的权重"><a href="#限制磁盘的权重" class="headerlink" title="限制磁盘的权重"></a>限制磁盘的权重</h3><p>通过 <code>--blkio-weight</code> 参数可以设置 block 的权重，这个权重和 <code>--cpu-shares</code> 类似，它是一个相对值，取值范围是 10-1000，当多个 block 去屑磁盘的时候，其读写速度和权重成反比。</p>
-<p>不过在我的环境中，<code>--blkio-weight</code> 参数虽然设置了对应的 cgroups 值，但是并没有作用，不同 weight 容器的读写速度还是一样的。github 上有一个对应的 <a href="https://github.com/moby/moby/issues/16173" target="_blank" rel="external">issue</a>，但是没有详细的解答。</p>
+<p>不过在我的环境中，<code>--blkio-weight</code> 参数虽然设置了对应的 cgroups 值，但是并没有作用，不同 weight 容器的读写速度还是一样的。github 上有一个对应的 <a href="https://github.com/moby/moby/issues/16173" target="_blank" rel="noopener">issue</a>，但是没有详细的解答。</p>
 <p><code>--blkio-weight-device</code> 可以设置某个设备的权重值，测试下来虽然两个容器同时读的速度不同，但是并没有按照对应的比例来限制。</p>
 <h3 id="限制磁盘的读写速率"><a href="#限制磁盘的读写速率" class="headerlink" title="限制磁盘的读写速率"></a>限制磁盘的读写速率</h3><p>除了权重之外，docker 还允许你直接限制磁盘的读写速率，对应的参数有：</p>
 <ul>
@@ -166,7 +418,7 @@
 </ul>
 <p>上面两个参数的值都是磁盘以及对应的速率，格式为 <code>&lt;device-path&gt;:&lt;limit&gt;[unit]</code>，<code>device-path</code> 表示磁盘所在的位置，限制 <code>limit</code> 为正整数，单位可以是 <code>kb</code>、<code>mb</code> 和 <code>gb</code>。</p>
 <p>比如可以把设备的度速率限制在 1mb：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ docker run -it --device /dev/sda:/dev/sda --device-read-bps /dev/sda:1mb ubuntu:16.04 bash</div><div class="line">root@6c048edef769:/# cat /sys/fs/cgroup/blkio/blkio.throttle.read_bps_device </div><div class="line">8:0 1048576</div><div class="line">root@6c048edef769:/# dd iflag=direct,nonblock if=/dev/sda of=/dev/null bs=5M count=10</div><div class="line">10+0 records in</div><div class="line">10+0 records out</div><div class="line">52428800 bytes (52 MB) copied, 50.0154 s, 1.0 MB/s</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -it --device /dev/sda:/dev/sda --device-read-bps /dev/sda:1mb ubuntu:16.04 bash</span><br><span class="line">root@6c048edef769:/# cat /sys/fs/cgroup/blkio/blkio.throttle.read_bps_device </span><br><span class="line">8:0 1048576</span><br><span class="line">root@6c048edef769:/# dd iflag=direct,nonblock if=/dev/sda of=/dev/null bs=5M count=10</span><br><span class="line">10+0 records in</span><br><span class="line">10+0 records out</span><br><span class="line">52428800 bytes (52 MB) copied, 50.0154 s, 1.0 MB/s</span><br></pre></td></tr></table></figure>
 <p>从磁盘中读取 50m 花费了 50s 左右，说明磁盘速率限制起了作用。</p>
 <p>另外两个参数可以限制磁盘读写频率（每秒能执行多少次读写操作）：</p>
 <ul>
@@ -175,27 +427,27 @@
 </ul>
 <p>上面两个参数的值都是磁盘以及对应的 IO 上限，格式为 <code>&lt;device-path&gt;:&lt;limit&gt;</code>，limit 为正整数，表示磁盘 IO 上限数。</p>
 <p>比如，我们可以让磁盘每秒最多读 100 次：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">➜  ~ docker run -it --device /dev/sda:/dev/sda --device-read-iops /dev/sda:100 ubuntu:16.04 bash</div><div class="line">root@2e3026e9ccd2:/# dd iflag=direct,nonblock if=/dev/sda of=/dev/null bs=1k count=1000</div><div class="line">1000+0 records in</div><div class="line">1000+0 records out</div><div class="line">1024000 bytes (1.0 MB) copied, 9.9159 s, 103 kB/s</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker run -it --device /dev/sda:/dev/sda --device-read-iops /dev/sda:100 ubuntu:16.04 bash</span><br><span class="line">root@2e3026e9ccd2:/# dd iflag=direct,nonblock if=/dev/sda of=/dev/null bs=1k count=1000</span><br><span class="line">1000+0 records in</span><br><span class="line">1000+0 records out</span><br><span class="line">1024000 bytes (1.0 MB) copied, 9.9159 s, 103 kB/s</span><br></pre></td></tr></table></figure>
 <p>从测试中可以看出，容器设置了读操作的 iops 为 100，在容器内部从 block 中读取 1m 数据（每次 1k，一共要读 1000 次），共计耗时约 10s，换算起来就是 100 iops/s，符合预期结果。</p>
 <p>写操作 bps 和 iops 与读类似，这里就不再重复了，感兴趣的可以自己实验。</p>
 <h3 id="磁盘信息的-cgroups-文件"><a href="#磁盘信息的-cgroups-文件" class="headerlink" title="磁盘信息的 cgroups 文件"></a>磁盘信息的 cgroups 文件</h3><p>容器中磁盘限制的 cgroups 文件位于 <code>/sys/fs/cgroup/blkio/docker/&lt;docker_id&gt;</code> 目录：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">➜  ~ ls /sys/fs/cgroup/blkio/docker/1402c1682cba743b4d80f638da3d4272b2ebdb6dc6c2111acfe9c7f7aeb72917/                               </div><div class="line">blkio.io_merged                   blkio.io_serviced                blkio.leaf_weight                blkio.throttle.io_serviced        blkio.time_recursive   tasks</div><div class="line">blkio.io_merged_recursive         blkio.io_serviced_recursive      blkio.leaf_weight_device         blkio.throttle.read_bps_device    blkio.weight</div><div class="line">blkio.io_queued                   blkio.io_service_time            blkio.reset_stats                blkio.throttle.read_iops_device   blkio.weight_device</div><div class="line">blkio.io_queued_recursive         blkio.io_service_time_recursive  blkio.sectors                    blkio.throttle.write_bps_device   cgroup.clone_children</div><div class="line">blkio.io_service_bytes            blkio.io_wait_time               blkio.sectors_recursive          blkio.throttle.write_iops_device  cgroup.procs</div><div class="line">blkio.io_service_bytes_recursive  blkio.io_wait_time_recursive     blkio.throttle.io_service_bytes  blkio.time                        notify_on_release</div></pre></td></tr></table></figure>
-<p>其中 <code>blkio.throttle.read_iops_device</code> 对应了设备的读 IOPS，前面一列是<a href="http://www.makelinux.net/ldd3/chp-3-sect-2" target="_blank" rel="external">设备的编号</a>，可以通过 <code>cat /proc/partitions</code> 查看设备和分区的设备号；后面是 IOPS 上限值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">➜  ~ cat /sys/fs/cgroup/blkio/docker/1402c1682cba743b4d80f638da3d4272b2ebdb6dc6c2111acfe9c7f7aeb72917/blkio.throttle.read_iops_device </div><div class="line">8:0 100</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ ls /sys/fs/cgroup/blkio/docker/1402c1682cba743b4d80f638da3d4272b2ebdb6dc6c2111acfe9c7f7aeb72917/                               </span><br><span class="line">blkio.io_merged                   blkio.io_serviced                blkio.leaf_weight                blkio.throttle.io_serviced        blkio.time_recursive   tasks</span><br><span class="line">blkio.io_merged_recursive         blkio.io_serviced_recursive      blkio.leaf_weight_device         blkio.throttle.read_bps_device    blkio.weight</span><br><span class="line">blkio.io_queued                   blkio.io_service_time            blkio.reset_stats                blkio.throttle.read_iops_device   blkio.weight_device</span><br><span class="line">blkio.io_queued_recursive         blkio.io_service_time_recursive  blkio.sectors                    blkio.throttle.write_bps_device   cgroup.clone_children</span><br><span class="line">blkio.io_service_bytes            blkio.io_wait_time               blkio.sectors_recursive          blkio.throttle.write_iops_device  cgroup.procs</span><br><span class="line">blkio.io_service_bytes_recursive  blkio.io_wait_time_recursive     blkio.throttle.io_service_bytes  blkio.time                        notify_on_release</span><br></pre></td></tr></table></figure>
+<p>其中 <code>blkio.throttle.read_iops_device</code> 对应了设备的读 IOPS，前面一列是<a href="http://www.makelinux.net/ldd3/chp-3-sect-2" target="_blank" rel="noopener">设备的编号</a>，可以通过 <code>cat /proc/partitions</code> 查看设备和分区的设备号；后面是 IOPS 上限值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ cat /sys/fs/cgroup/blkio/docker/1402c1682cba743b4d80f638da3d4272b2ebdb6dc6c2111acfe9c7f7aeb72917/blkio.throttle.read_iops_device </span><br><span class="line">8:0 100</span><br></pre></td></tr></table></figure>
 <p><code>blkio.throttle.read_bps_device</code> 对应了设备的读速率，格式和 IOPS 类似，只是第二列的值为 bps：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">➜  ~ cat /sys/fs/cgroup/blkio/docker/9de94493f1ab4437d9c2c42fab818f12c7e82dddc576f356c555a2db7bc61e21/blkio.throttle.read_bps_device </div><div class="line">8:0 1048576</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ cat /sys/fs/cgroup/blkio/docker/9de94493f1ab4437d9c2c42fab818f12c7e82dddc576f356c555a2db7bc61e21/blkio.throttle.read_bps_device </span><br><span class="line">8:0 1048576</span><br></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>从上面的实验可以看出来，CPU 和内存的资源限制已经是比较成熟和易用，能够满足大部分用户的需求。磁盘限制也是不错的，虽然现在无法动态地限制容量，但是限制磁盘读写速度也能应对很多场景。</p>
-<p>至于网络，docker 现在并没有给出网络限制的方案，也不会在可见的未来做这件事情，因为目前网络是通过插件来实现的，和容器本身的功能相对独立，不是很容易实现，扩展性也很差。docker 社区已经有很多呼声，也有 issue 是关于网络流量限制的: <a href="https://github.com/moby/moby/issues/26767" target="_blank" rel="external">issue 26767</a>、<a href="https://github.com/moby/moby/issues/37" target="_blank" rel="external">issue 37</a>、<a href="https://github.com/moby/moby/issues/4763" target="_blank" rel="external">issue 4763</a>。</p>
+<p>至于网络，docker 现在并没有给出网络限制的方案，也不会在可见的未来做这件事情，因为目前网络是通过插件来实现的，和容器本身的功能相对独立，不是很容易实现，扩展性也很差。docker 社区已经有很多呼声，也有 issue 是关于网络流量限制的: <a href="https://github.com/moby/moby/issues/26767" target="_blank" rel="noopener">issue 26767</a>、<a href="https://github.com/moby/moby/issues/37" target="_blank" rel="noopener">issue 37</a>、<a href="https://github.com/moby/moby/issues/4763" target="_blank" rel="noopener">issue 4763</a>。</p>
 <p>资源限制一方面可以让我们为容器（应用）设置合理的 CPU、内存等资源，方便管理；另外一方面也能有效地预防恶意的攻击和异常，对容器来说是非常重要的功能。如果你需要在生产环境使用容器，请务必要花时间去做这件事情。</p>
 <p>最近我这里docker单机平台正式上线使用，使用中有很多问题都一样解决，在给一个游戏项目做测试的时候，此项目由于8080端口对公网全部开放，并且安全策略没有做好（默认的tomcat模板没有删除），导致被人进行webshell，跑了很多的流量，为了解决此问题我针对tc与openvswitch本身的qos做了深入研究，最后选择openvswitch的qos作为容器的网络资源限制方法。</p>
 <p>docker本身仅能对容器的cpu、内存做限制，而且必须是在容器运行前做，运行过程中未发现如何动态修改，并且不提供网络资源限制，所以只能使用其他软件做了。</p>
 <p>我的docker网络没有使用默认bridge，使用none，然后绑定openvswitch的bridge，并使用pipework提供网络，所以我可以根据容器对于openvswitch的port来进行基于port的网络资源限制，好处是可以动态的修改，坏处是容器一重启还得重新做，但也可以通过其他方法来解决。</p>
 <p>一、下面是我做测试的结果：</p>
-<p><a href="http://s3.51cto.com/wyfs02/M02/6C/51/wKioL1VGzcjxKeybAAFeP1FeJcw975.jpg" target="_blank" rel="external"><img src="http://s3.51cto.com/wyfs02/M02/6C/51/wKioL1VGzcjxKeybAAFeP1FeJcw975.jpg" alt="wKioL1VGzcjxKeybAAFeP1FeJcw975.jpg"></a></p>
+<p><a href="http://s3.51cto.com/wyfs02/M02/6C/51/wKioL1VGzcjxKeybAAFeP1FeJcw975.jpg" target="_blank" rel="noopener"><img src="http://s3.51cto.com/wyfs02/M02/6C/51/wKioL1VGzcjxKeybAAFeP1FeJcw975.jpg" alt="wKioL1VGzcjxKeybAAFeP1FeJcw975.jpg"></a></p>
 <p>对于限速100m以下，其实硬盘的类型与读写速度没什么影响，但如何限速150m以上，或者无限速，那么硬盘肯定是ssd&gt;sas&gt;sata，所以建议进来使用sas的磁盘作为docker的挂载分区。</p>
-<p>openvswitch默认官方文档提供的限速方法“rate limiting vm traffic using qos policing”，地址是<a href="http://openvswitch.org/support/config-cookbooks/qos-rate-limiting/，此限速仅能对上传做限速，下载没有办法，所以还得通过其他的qos来做限制。" target="_blank" rel="external">http://openvswitch.org/support/config-cookbooks/qos-rate-limiting/，此限速仅能对上传做限速，下载没有办法，所以还得通过其他的qos来做限制。</a></p>
+<p>openvswitch默认官方文档提供的限速方法“rate limiting vm traffic using qos policing”，地址是<a href="http://openvswitch.org/support/config-cookbooks/qos-rate-limiting/，此限速仅能对上传做限速，下载没有办法，所以还得通过其他的qos来做限制。" target="_blank" rel="noopener">http://openvswitch.org/support/config-cookbooks/qos-rate-limiting/，此限速仅能对上传做限速，下载没有办法，所以还得通过其他的qos来做限制。</a></p>
 <p>二、下面是具体限速脚本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">#filename:modify_docker_container_network_limit.sh</div><div class="line">#author:Deng Lei</div><div class="line">#email:dl528888@gmail.com</div><div class="line">op=$1</div><div class="line">container=$2</div><div class="line">limit=$3  # Mbits/s</div><div class="line">if [ -z $1 ] || [ -z $2 ]; then</div><div class="line">    echo &quot;Usage: operation container_name limit(default:5m)&quot;</div><div class="line">    echo &quot;Example1: I want limit 5m in the container:test&quot;</div><div class="line">    echo &quot;The command is: bash `basename $0` limit test 5&quot;</div><div class="line">    echo &quot;Example2: I want delete network limit in the container:test&quot;</div><div class="line">    echo &quot;The command is: bash `basename $0` ulimit test&quot;</div><div class="line">    exit 1</div><div class="line">fi</div><div class="line">if [ -z $3 ];then</div><div class="line">    limit=&apos;5m&apos;</div><div class="line">fi</div><div class="line">if [ `docker inspect --format &quot;``.`State`.`Pid`&quot; $container &amp;&gt;&gt;/dev/null &amp;&amp; echo 0 || echo 1` -eq 1 ];then</div><div class="line">echo &quot;no this container:$container&quot;</div><div class="line">exit 1</div><div class="line">fi</div><div class="line">ovs_prefix=&apos;veth1pl&apos;</div><div class="line">container_id=`docker inspect --format &quot;``.`State`.`Pid`&quot; $container`</div><div class="line">device_name=`echo $&#123;ovs_prefix&#125;$&#123;container_id&#125;`</div><div class="line">if [ $op == &apos;limit&apos; ];then</div><div class="line">for v in $device_name; do</div><div class="line">    ovs-vsctl set interface $v ingress_policing_rate=$((limit*1000))</div><div class="line">    ovs-vsctl set interface $v ingress_policing_burst=$((limit*100))</div><div class="line">    ovs-vsctl set port $v qos=@newqos -- --id=@newqos create qos type=linux-htb queues=0=@q0 other-config:max-rate=$((limit*1000000)) -- --id=@q0 create queue other-config:min-rate=$((limit*1000000)) other-config:max-rate=$((limit*1000000)) &amp;&gt;&gt;/dev/null &amp;&amp; echo &apos;modify success!&apos; || echo &apos;modify fail!&apos;</div><div class="line">done</div><div class="line">elif [ $op == &apos;ulimit&apos; ];then</div><div class="line">for v in $device_name; do</div><div class="line">    ovs-vsctl set interface $v ingress_policing_rate=0</div><div class="line">    ovs-vsctl set interface $v ingress_policing_burst=0</div><div class="line">    ovs-vsctl clear Port $v qos &amp;&gt;&gt;/dev/null &amp;&amp; echo &apos;modify success!&apos; || echo &apos;modify fail!&apos;</div><div class="line">done</div><div class="line">fi</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash">filename:modify_docker_container_network_limit.sh</span></span><br><span class="line"><span class="meta">#</span><span class="bash">author:Deng Lei</span></span><br><span class="line"><span class="meta">#</span><span class="bash">email:dl528888@gmail.com</span></span><br><span class="line">op=$1</span><br><span class="line">container=$2</span><br><span class="line">limit=$3  # Mbits/s</span><br><span class="line">if [ -z $1 ] || [ -z $2 ]; then</span><br><span class="line">    echo "Usage: operation container_name limit(default:5m)"</span><br><span class="line">    echo "Example1: I want limit 5m in the container:test"</span><br><span class="line">    echo "The command is: bash `basename $0` limit test 5"</span><br><span class="line">    echo "Example2: I want delete network limit in the container:test"</span><br><span class="line">    echo "The command is: bash `basename $0` ulimit test"</span><br><span class="line">    exit 1</span><br><span class="line">fi</span><br><span class="line">if [ -z $3 ];then</span><br><span class="line">    limit='5m'</span><br><span class="line">fi</span><br><span class="line">if [ `docker inspect --format "``.`State`.`Pid`" $container &amp;&gt;&gt;/dev/null &amp;&amp; echo 0 || echo 1` -eq 1 ];then</span><br><span class="line">echo "no this container:$container"</span><br><span class="line">exit 1</span><br><span class="line">fi</span><br><span class="line">ovs_prefix='veth1pl'</span><br><span class="line">container_id=`docker inspect --format "``.`State`.`Pid`" $container`</span><br><span class="line">device_name=`echo $&#123;ovs_prefix&#125;$&#123;container_id&#125;`</span><br><span class="line">if [ $op == 'limit' ];then</span><br><span class="line">for v in $device_name; do</span><br><span class="line">    ovs-vsctl set interface $v ingress_policing_rate=$((limit*1000))</span><br><span class="line">    ovs-vsctl set interface $v ingress_policing_burst=$((limit*100))</span><br><span class="line">    ovs-vsctl set port $v qos=@newqos -- --id=@newqos create qos type=linux-htb queues=0=@q0 other-config:max-rate=$((limit*1000000)) -- --id=@q0 create queue other-config:min-rate=$((limit*1000000)) other-config:max-rate=$((limit*1000000)) &amp;&gt;&gt;/dev/null &amp;&amp; echo 'modify success!' || echo 'modify fail!'</span><br><span class="line">done</span><br><span class="line">elif [ $op == 'ulimit' ];then</span><br><span class="line">for v in $device_name; do</span><br><span class="line">    ovs-vsctl set interface $v ingress_policing_rate=0</span><br><span class="line">    ovs-vsctl set interface $v ingress_policing_burst=0</span><br><span class="line">    ovs-vsctl clear Port $v qos &amp;&gt;&gt;/dev/null &amp;&amp; echo 'modify success!' || echo 'modify fail!'</span><br><span class="line">done</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 <p>此脚本使用的话，限速可以直接针对下载与上传，并且限制是统一生效的，比如我限制一个容器带宽为5m，那么下载与上传的限速都是5m，单位是bit不是byte。</p>
 <p>三、下面是使用方法：</p>
 <p>四、下面是测试过程：</p>
@@ -248,88 +500,377 @@
 
       
     </div>
-    <footer class="article-footer">
-      <ul class="article-meta">
-        <li>
-          <span class="label">Published Date:</span>
-          <a href="/2017/12/18/docker-resource/" class="article-date">
-  <time datetime="2017-12-18T04:35:32.000Z" itemprop="datePublished">2017-12-18</time>
-</a>
-
-        </li>
-        
-          <li>
-            <span class="label">Category:</span>
-            
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/docker/">docker</a>
-  </div>
-
-
-          </li>
-        
-        
-        <hr/>
-      </ul>
-    </footer>
-  </div>
-  
     
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2017/12/18/telegraf/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          telegraf学习
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/12/18/docker-base/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">docker基础命令回顾</div>
-    </a>
-  
-</nav>
+    
+    
 
+    
 
-  
-</article>
+    
 
+    
 
-
-
-      </div>
+    <footer class="post-footer">
       
-    <footer id="footer" class="post-footer footer">
-      <hr/>
-      <div id="footerContent" class="footer-content">
-        <p>闲步山雨后,静待晚林风 Post</p>
 
+      
+      
+      
 
-      </div>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/18/docker-base/" rel="next" title="docker基础命令回顾">
+                <i class="fa fa-chevron-left"></i> docker基础命令回顾
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/18/telegraf/" rel="prev" title="telegraf学习">
+                telegraf学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
     </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
 
       
 
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ace1981</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+          <nav class="site-state motion-element">
 
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
 
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
 
+          </nav>
 
+          
 
+          <div class="links-of-author motion-element">
+            
+          </div>
 
+          
+          
 
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-CPU-资源"><span class="nav-number">1.</span> <span class="nav-text">1. CPU 资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#docker-限制-CPU-Share"><span class="nav-number">1.1.</span> <span class="nav-text">docker 限制 CPU Share</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制容器能使用的-CPU-核数"><span class="nav-number">1.2.</span> <span class="nav-text">限制容器能使用的 CPU 核数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制容器运行在某些-CPU-核"><span class="nav-number">1.3.</span> <span class="nav-text">限制容器运行在某些 CPU 核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU-信息的-cgroup-文件"><span class="nav-number">1.4.</span> <span class="nav-text">CPU 信息的 cgroup 文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-内存资源"><span class="nav-number">2.</span> <span class="nav-text">2. 内存资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#docker-限制容器内存使用量"><span class="nav-number">2.1.</span> <span class="nav-text">docker 限制容器内存使用量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存信息的-cgroups-文件"><span class="nav-number">2.2.</span> <span class="nav-text">内存信息的 cgroups 文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-IO-资源（磁盘）"><span class="nav-number">3.</span> <span class="nav-text">3. IO 资源（磁盘）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#限制磁盘的权重"><span class="nav-number">3.1.</span> <span class="nav-text">限制磁盘的权重</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制磁盘的读写速率"><span class="nav-number">3.2.</span> <span class="nav-text">限制磁盘的读写速率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘信息的-cgroups-文件"><span class="nav-number">3.3.</span> <span class="nav-text">磁盘信息的 cgroups 文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
 
     </div>
-  </body>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ace1981</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>

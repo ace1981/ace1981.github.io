@@ -1,11 +1,85 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
+
+
+
   
-  <title>容器技术(转) | Ace&#39;pages</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这篇文章对比了三大主流调度框架：Docker Swarm、Google Kubernetes和Apache Mesos（基于Marathon框架）。在解释了调度和容器的基本概念后，文章探讨了每个框架的特点，并从以下两个用例来对比他们：一个只使用了两个容器的网站应用，和一个能具有可扩展性的投票应用。 什么是调度（scheduling）？什么是容器（container）？调度一个集群调度工具有多个目的">
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="docker," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="这篇文章对比了三大主流调度框架：Docker Swarm、Google Kubernetes和Apache Mesos（基于Marathon框架）。在解释了调度和容器的基本概念后，文章探讨了每个框架的特点，并从以下两个用例来对比他们：一个只使用了两个容器的网站应用，和一个能具有可扩展性的投票应用。 什么是调度（scheduling）？什么是容器（container）？调度一个集群调度工具有多个目的">
 <meta name="keywords" content="docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="容器技术(转)">
@@ -28,71 +102,249 @@
 <meta name="twitter:title" content="容器技术(转)">
 <meta name="twitter:description" content="这篇文章对比了三大主流调度框架：Docker Swarm、Google Kubernetes和Apache Mesos（基于Marathon框架）。在解释了调度和容器的基本概念后，文章探讨了每个框架的特点，并从以下两个用例来对比他们：一个只使用了两个容器的网站应用，和一个能具有可扩展性的投票应用。 什么是调度（scheduling）？什么是容器（container）？调度一个集群调度工具有多个目的">
 <meta name="twitter:image" content="http://dockerone.com/uploads/article/20160320/5c3572deaa897e643f9cb55e3e2b4a1e.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hujao.com/2017/04/25/container-tech/"/>
+
+
+
+
+
+  <title>容器技术(转) | Ace'pages</title>
   
-    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
+
+
+
+
+
+
+
+
 </head>
 
-  
-    
-      <body>
-    
-  
-      <div id="container" class="container">
-        <article id="post-container-tech" class="article article-type-post" itemscope itemprop="blogPost">
-  <header id="header" class="header">
-  <nav id="main-nav" class="main-nav">
-    
-      <a class="main-nav-link" href="/">Home</a>
-    
-      <a class="main-nav-link" href="/archives">Archives</a>
-    
-      <a class="main-nav-link" href="/categories">Categories</a>
-    
-      <a class="main-nav-link" href="/tags">Tags</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
-    
-  </nav>
-  <nav id="sub-nav">
-    
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-    
-  </nav>
-</header>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-  <hr/>
-  <div class="article-inner">
+  
+  
     
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
-      <header class="article-header">
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ace'pages</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
         
-  
-    <h1 class="article-title" itemprop="name">
-      容器技术(转)
-    </h1>
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
   
 
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/04/25/container-tech/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">容器技术(转)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-25T03:28:04+08:00">
+                2017-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/容器编排/" itemprop="url" rel="index">
+                    <span itemprop="name">容器编排</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry typo" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
       
         <p>这篇文章对比了三大主流调度框架：Docker Swarm、Google Kubernetes和Apache Mesos（基于Marathon框架）。在解释了调度和容器的基本概念后，文章探讨了每个框架的特点，并从以下两个用例来对比他们：一个只使用了两个容器的网站应用，和一个能具有可扩展性的投票应用。</p>
-<p>什么是调度（scheduling）？什么是容器（container）？<strong>调度</strong>一个集群调度工具有多个目的：使得集群的资源被高效利用，支持用户提供的配置约束（placement constraint），能够迅速调度应用以此保证它们不会处于待定状态（pending state），有一定程度的“公平”（fairness），具有一定的鲁棒性和可用性。为了达到这些目的，在一篇关于Omega（一个由Google开发的，针对大型计算集群的可扩展调度框架）的白皮书中，提到了三个主要的调度架构[48]：<br><a href="http://dockerone.com/uploads/article/20160320/5c3572deaa897e643f9cb55e3e2b4a1e.png" target="_blank" rel="external"><img src="http://dockerone.com/uploads/article/20160320/5c3572deaa897e643f9cb55e3e2b4a1e.png" alt="01.png"></a><br>Schematic overview of scheduling architectures, © Google, Inc. [48]<br>一体式调度（Monolithic scheduling）一体式调度框架由单一的调度代理（scheduling agent）组成，它负责处理所有的请求，这种框架通常应用于高性能计算。一体式框架通常实现了一个单一的算法来处理所有的作业（job），因此根据作业的类型来运行不同的调度逻辑是困难的。</p>
+<p>什么是调度（scheduling）？什么是容器（container）？<strong>调度</strong>一个集群调度工具有多个目的：使得集群的资源被高效利用，支持用户提供的配置约束（placement constraint），能够迅速调度应用以此保证它们不会处于待定状态（pending state），有一定程度的“公平”（fairness），具有一定的鲁棒性和可用性。为了达到这些目的，在一篇关于Omega（一个由Google开发的，针对大型计算集群的可扩展调度框架）的白皮书中，提到了三个主要的调度架构[48]：<br><a href="http://dockerone.com/uploads/article/20160320/5c3572deaa897e643f9cb55e3e2b4a1e.png" target="_blank" rel="noopener"><img src="http://dockerone.com/uploads/article/20160320/5c3572deaa897e643f9cb55e3e2b4a1e.png" alt="01.png"></a><br>Schematic overview of scheduling architectures, © Google, Inc. [48]<br>一体式调度（Monolithic scheduling）一体式调度框架由单一的调度代理（scheduling agent）组成，它负责处理所有的请求，这种框架通常应用于高性能计算。一体式框架通常实现了一个单一的算法来处理所有的作业（job），因此根据作业的类型来运行不同的调度逻辑是困难的。</p>
 <p>Apache Hadoop YARN[55]是一个非常流行的架构，尽管它将许多调度功能都分发到每一个应用模块中，但它依然是一体式的调度架构，因为，实际上，所有的资源请求都会被发送到一个单一的全局调度模块。<br>两级调度（Two-level scheduling）两级调度框架会利用一个中央协调器（central coordinator）来动态地决定各个调度模块可以调用多少资源。这项技术被应用于Mesos[50]和Hadoop-on-Demand（现在被YARN取代了）。</p>
 <p>在这类架构里，分配器会将给定的资源一次性分配个一个框架，因此避免了资源使用的冲突，并且通过控制资源分配的顺序和大小来实现一种相对的资源公平分配。然而，一个资源每次只能被一个框架使用，因此并发控制被称之为悲观的（pessimistic），这种控制策略是不易于出错的（less error-prone），但是相对于将一个资源同时分配个多个框架的乐观并发式控制来说，速度是更慢的。<br>共享状态调度（Shared-state scheduling）Omega 赋予了每一个调度器（scheduler）对整个集群的全部访问权限，也就是说调度器们可以自由地竞争。因为所有的资源分配都发生在各个调度器中，所以也就没有了中央资源分配器。也就是说，没有了中央策略引擎，每一个调度器能够自己做决定。</p>
 <p>通过支持独立的调度器实现和公布整个资源分配的状况，Omega不仅支持扩展多个调度器，还能够支持它们自己的调度策略[54]<br>哪一个才是最好的调度架构？世界上并不存在一个通用的唯一方案来解决集群计算的所有问题，因此不同的公司为了适应需求，各自开发了不同的产品。Google（Omege和Kubernetes的主要贡献者）假设开发者们会遵守关于作业优先级的规则，因此Google认为架构应该把控制权交给开发者；而Yahoo！（YARN的主要贡献者）更推崇强制容量、公平和截止时间的框架。<br>容器革命（The container revolution）容器是虚拟机的一种替代品，它能够帮助开发者构建、迁移、部署和实例化应用[3]。一个容器是进程的集合，这些进程独立于包含有进程依赖的机器。</p>
 <p>各个容器尽管共享了一个操作系统实例，但是它们独立运行，互不影响。容器并不需要一个完整的操作系统，这个特性使得它们比虚拟机更加轻量。</p>
 <p>因为容器能够在数秒内启动（比虚拟机快多了），因此容器仅分配了少量的资源（少于2GB的RAM）并且能通过扩展来满足应用的需求。容器经常被应用于微服务（microservices），每一容器代表一个服务，这些服务通过网络来进行互联。这种架构使得每一个模块都能够被独立地部署和扩展。</p>
-<p>资源的数量和所期望的容器生命周期是普通调度器和容器调度器的主要区别。传统集群设计，比如说Hadoop，更关注于运行大规模作业[55]，然而容器集群则会运行几十个小的实例来解决问题，这些实例需要被组织化和网络化，以此来优化共享数据和计算的能力。<br>DockerDocker是一个主流容器管理工具，它是第一个基于Linux容器（LXC）的[2]，但是现在被runC[46]所取代了（runC是是一个由Open Containers Initiative开发的CLI工具，它能够创建和运行容器[36]）。Docker容器支持分层的文件系统，因此它能够和宿主机共享系统内核。这个特性意味着即便一个Docker镜像基于一个1GB的操作系统，在同一个主机上运行10个容器实例并不需要消耗10GB的空间，相比之下，每一台虚拟机都需要一个完整的1GB操作系统。<br><a href="http://dockerone.com/uploads/article/20160320/e91fe0f42ffee5a1b2d1b7c2fa6e4e39.png" target="_blank" rel="external"><img src="http://dockerone.com/uploads/article/20160320/e91fe0f42ffee5a1b2d1b7c2fa6e4e39.png" alt="02.png"></a><br>Virtual machines architecture compared to containers, © Docker Inc. [23]</p>
+<p>资源的数量和所期望的容器生命周期是普通调度器和容器调度器的主要区别。传统集群设计，比如说Hadoop，更关注于运行大规模作业[55]，然而容器集群则会运行几十个小的实例来解决问题，这些实例需要被组织化和网络化，以此来优化共享数据和计算的能力。<br>DockerDocker是一个主流容器管理工具，它是第一个基于Linux容器（LXC）的[2]，但是现在被runC[46]所取代了（runC是是一个由Open Containers Initiative开发的CLI工具，它能够创建和运行容器[36]）。Docker容器支持分层的文件系统，因此它能够和宿主机共享系统内核。这个特性意味着即便一个Docker镜像基于一个1GB的操作系统，在同一个主机上运行10个容器实例并不需要消耗10GB的空间，相比之下，每一台虚拟机都需要一个完整的1GB操作系统。<br><a href="http://dockerone.com/uploads/article/20160320/e91fe0f42ffee5a1b2d1b7c2fa6e4e39.png" target="_blank" rel="noopener"><img src="http://dockerone.com/uploads/article/20160320/e91fe0f42ffee5a1b2d1b7c2fa6e4e39.png" alt="02.png"></a><br>Virtual machines architecture compared to containers, © Docker Inc. [23]</p>
 <p>Docker的镜像可以理解为一个操作系统的快照。如果你想要创建一个新的镜像，你需要启动一个基础镜像，然后做一些修改，最后提交修改，形成新的镜像。这些镜像能够发布在私有或者公有的库上[10]供其他开发者使用，开发者只需要将镜像pull下来即可。</p>
 <p>使用镜像可以非常方便的创建操作系统的快照，并且使用它们来创建新的容器，这些功能非常的轻量和易用，这些都是Docer CLI和商业模式的核心。[12]</p>
 <p>容器包含了所有运行所需要的东西（代码，运行时，系统工具，库），因此Docker给予开发者一个轻量的，稳定的环境来快速地进行创建和运行作业。<br>容器调度简介（Description of container schedulers）容器调度工具的主要任务就是负责在最合适的主机上启动容器，并且将它们关联起来。它必须能够通过自动的故障转移（fail-overs）来处理错误，并且当一个实例不足以处理/计算数据时，它能够扩展容器来解决问题。</p>
-<p>这篇文章比较了三个主流容器调度框架：Docker Swarm [13], Apache Mesos (running the Marathon framework) [50] and Google Kubernetes [31]。在这一节，将会讨论各个框架的设计和特点。<br><strong>Docker Swarm</strong>Docker Swarm是一个由Docker开发的调度框架。由Docker自身开发的好处之一就是标准Docker API的使用[17]。Swarm的架构由两部分组成：<br><a href="http://dockerone.com/uploads/article/20160320/c2d12aaca08bf2b3270089600f8b1c4d.png" target="_blank" rel="external"><img src="http://dockerone.com/uploads/article/20160320/c2d12aaca08bf2b3270089600f8b1c4d.png" alt="03.png"></a><br>Docker Swarm architecture, ©Alexandre Beslic (Docker Inc.) [14]<br>其中一个机器运行了一个Swarm的镜像（就像运行其他Docker镜像一样），它负责调度容器[4]，在图片上鲸鱼代表这个机器。Swarm使用了和Docker标准API一致的API，这意味着在Swarm上运行一个容器和在单一主机上运行容器使用相同的命令。尽管有新的flags可用，但是开发者在使用Swarm的同时并不需要改变他的工作流程。</p>
+<p>这篇文章比较了三个主流容器调度框架：Docker Swarm [13], Apache Mesos (running the Marathon framework) [50] and Google Kubernetes [31]。在这一节，将会讨论各个框架的设计和特点。<br><strong>Docker Swarm</strong>Docker Swarm是一个由Docker开发的调度框架。由Docker自身开发的好处之一就是标准Docker API的使用[17]。Swarm的架构由两部分组成：<br><a href="http://dockerone.com/uploads/article/20160320/c2d12aaca08bf2b3270089600f8b1c4d.png" target="_blank" rel="noopener"><img src="http://dockerone.com/uploads/article/20160320/c2d12aaca08bf2b3270089600f8b1c4d.png" alt="03.png"></a><br>Docker Swarm architecture, ©Alexandre Beslic (Docker Inc.) [14]<br>其中一个机器运行了一个Swarm的镜像（就像运行其他Docker镜像一样），它负责调度容器[4]，在图片上鲸鱼代表这个机器。Swarm使用了和Docker标准API一致的API，这意味着在Swarm上运行一个容器和在单一主机上运行容器使用相同的命令。尽管有新的flags可用，但是开发者在使用Swarm的同时并不需要改变他的工作流程。</p>
 <p>Swarm由多个代理（agent）组成，把这些代理称之为节点（node）。这些节点就是主机，这些主机在启动Docker daemon的时候就会打开相应的端口，以此支持Docker远程API[5]。其中三个节点显示在了图上。这些机器会根据Swarm调度器分配给它们的任务，拉取和运行不同的镜像。</p>
 <p>当启动Docker daemon时，每一个节点都能够被贴上一些标签（label），这些标签以键值对的形式存在，通过标签就能够给予每个节点对应的细节信息。当运行一个新的容器时，这些标签就能够被用来过滤集群，具体的细节在后面的部分详谈。<br>策略(Strategies)Swarm采用了三个策略（比如说，策略可以是如何选择一个节点来运行容器）[22]:</p>
 <p>策略名：节点选择<br>spread：最少的容器，并且忽视它们的状态binpack：最拥挤（比如说，拥有最少数量的CPU/RAM）random：随机选择<br>如果多个节点被选中，调度器会从中随机选择一个。在启动管理器（manager）时，策略需要被定义好，否则“spread”策略会被默认使用。</p>
@@ -104,18 +356,18 @@
 <p>吸引力和约束的语法接受否定和软强制（soft enforcement），即便容器不可能满足所有的需求。[18]<br>依赖过滤器（Dependency filter）依赖过滤器能够用来运行一个依赖于其他容器的容器。依赖意味着和其他容器共享磁盘卷，或者是链接到其他容器，亦或者和其他容器在同一个网络栈上。<br>端口过滤器（Port filter）如果你想要在具有特定开发端口的节点上运行容器，你就可以使用端口过滤器了。如果集群中没有任何一个节点该端口可用的话，系统就会给出一个错误的提示信息。<br>Apache Mesos &amp; Mesosphere MarathonMesos的目的就是建立一个高效可扩展的系统，并且这个系统能够支持很多各种各样的框架，不管是现在的还是未来的框架，它都能支持。这也是现今一个比较大的问题：类似Hadoop和MPI这些框架都是独立开的，这导致想要在框架之间做一些细粒度的分享是不可能的。[35]</p>
 <p>因此Mesos的提出就是为了在底部添加一个轻量的资源共享层（resource-sharing layer），这个层使得各个框架能够适用一个统一的接口来访问集群资源。Mesos并不负责调度而是负责委派授权，毕竟很多框架都已经实现了复杂的调度。</p>
 <p>取决于用户想要在集群上运行的作业类型，共有四种类型的框架可供使用[52]。其中有一些支持原生的Docker，比如说Marathon[39]。Docker容器的支持自从Mesos 0.20.0就已经被加入到Mesos中了[51]。</p>
-<p>我们接下来将会重点关注如何在让Mesos和Marathon一起工作，毕竟Marathon主要是由Mesosphere维护[41]，并且提供了很多关于调度的功能，比如说约束（constraints）[38]，健康检查（health checks）[40]，服务发现（service discovery）和负载均衡（load balancing）[42]。<br><a href="http://dockerone.com/uploads/article/20160320/bba30f8f454ec423e10e10d080c5d581.png" target="_blank" rel="external"><img src="http://dockerone.com/uploads/article/20160320/bba30f8f454ec423e10e10d080c5d581.png" alt="04.png"></a><br>Apache Mesos architecture using Marathon, © Adrian Mouat [49]</p>
+<p>我们接下来将会重点关注如何在让Mesos和Marathon一起工作，毕竟Marathon主要是由Mesosphere维护[41]，并且提供了很多关于调度的功能，比如说约束（constraints）[38]，健康检查（health checks）[40]，服务发现（service discovery）和负载均衡（load balancing）[42]。<br><a href="http://dockerone.com/uploads/article/20160320/bba30f8f454ec423e10e10d080c5d581.png" target="_blank" rel="noopener"><img src="http://dockerone.com/uploads/article/20160320/bba30f8f454ec423e10e10d080c5d581.png" alt="04.png"></a><br>Apache Mesos architecture using Marathon, © Adrian Mouat [49]</p>
 <p>我们可以从图上看到，集群中一共出现了4个模块。ZooKeeper帮助Marathon查找Mesos master的地址[53]，同时它具有多个实例可用，以此应付故障的发生。Marathon负责启动，监控，扩展容器。Mesos maser则给节点分配任务，同时如果某一个节点有空闲的CPU/RAM，它就会通知Marathon。Mesos slave运行容器，并且报告当前可用的资源。<br>约束（Constraints）约束使得操作人员能够操控应用在哪些节点上运行，它主要由三个部分组成：一个字段名（field name）（可以是slavve的hostname或者任何Mesos slave属性），一个操作符和一个可选的值。5个操作符如下：</p>
 <p>操作符：角色（role）<br>UNIQUE：使得属性唯一，比如说越苏[“hostname”,”UNIQUE”]使得每个host上只有一个应用在运行。CLUSTER：使得运行应用的slaves必须共享同一个特定属性。比如说约束 [“rack id”, “CLUSTER”, “rack-1”] 强制应用必须运行在rack-1上，或者处于挂起状态知道rack-1有了空余的CPU/RAM。GROUP_BY：根据某个特性的属性，将应用平均分配到节点上，比如说特定的host或者rack。LIKE：使得应用只运行在拥有特定属性的slaves上。尽管只有CLUSTER可用，但由于参数是一个正则表达式，因此很多的值都能够被匹配到。UNLIKE：和LIKE相反。<br>健康检查（Health checks）健康检查是应用依赖的，需要被手动实现。这是因为只有开发者知道他们自己的应用如何判断健康状态。（这是一个Swarm和Mesos之间的不同点）</p>
 <p>Mesos提供了很多选项来声明每个健康检查之间需要等待多少秒，或者多少次连续的健康检查失败后，这个不健康的任务需要被终结。<br>服务发现和负载均衡（Service discovery and load balancing）为了能够发送数据到正在运行的应用，我们需要服务发现。Apache Mesos提供了基于DNS的服务发现，称之为Mesos-DNS[44]，它能够在多个框架（不仅仅是Marathon）组成的集群中很好的工作。</p>
 <p>如果一个集群只由运行容器的节点组成，Marathon足以承当起管理的任务。在这种情况下，主机可以运行一个TCP的代理，将静态服务端口的连接转发到独立的应用实例上。Marathon确保所有动态分配的服务端口都是唯一的，这种方式比手动来做好的多，毕竟多个拥有同样镜像的容器需要同一个端口，而这些容器可以运行在同一个主机上。</p>
 <p>Marathon提供了两个TCP/HTTP代理。一个简单的shell脚本[37]还有一个更复杂的脚本，称之为marathon-ld，它拥有更多的功能[43]。<br>Google KubernetesKubernetes是一个Docker容器的编排系统，它使用label和pod的概念来将容器换分为逻辑单元。Pods是同地协作（co-located）容器的集合，这些容器被共同部署和调度，形成了一个服务[28]，这是Kubernetes和其他两个框架的主要区别。相比于基于相似度的容器调度方式（就像Swarm和Mesos），这个方法简化了对集群的管理.</p>
 <p>Kubernetes调度器的任务就是寻找那些PodSpec.NodeName为空的pods，然后通过对它们赋值来调度对应集群中的容器[32]。相比于Swarm和Mesos，Kubernetes允许开发者通过定义PodSpec.NodeName来绕过调度器[29]。调度器使用谓词（predicates）[29]和优先级（priorites）[30]来决定一个pod应该运行在哪一个节点上。通过使用一个新的调度策略配置可以覆盖掉这些参数的默认值[33]。</p>
-<p>命令行参数plicy-config-file可以指定一个JSON文件（见附录A）来描述哪些predicates和priorities在启动Kubernetes时会被使用，通过这个参数，调度就能够使用管理者定义的策略了。<br><a href="http://dockerone.com/uploads/article/20160320/8c19dc9133692515d9c6fd99c54c9109.png" target="_blank" rel="external"><img src="http://dockerone.com/uploads/article/20160320/8c19dc9133692515d9c6fd99c54c9109.png" alt="05.png"></a><br>Kubernetes architecture (containers in grey, pods in color), © Google Inc. [31]<br>谓词（Predicates）谓词是强制性的规则，它能够用来调度集群上一个新的pod。如果没有任何机器满足该谓词，则该pod会处于挂起状态，知道有机器能够满足条件。可用的谓词如下所示：<br>Predicate：节点的需求PodFitPorts：没有任何端口冲突PodFitsResurce：有足够的资源运行podNoDiskConflict：有足够的空间来满足pod和链接的数据卷MatchNodeSelector：能够匹配pod中的选择器查找参数。HostName：能够匹配pod中的host参数<br>优先级（Priorities）如果调度器发现有多个机器满足谓词的条件，那么优先级就可以用来判别哪一个才是最适合运行pod的机器。优先级是一个键值对，key表示优先级的名字，value就是该优先级的权重。可用的优先级如下：<br>Priority：寻找最佳节点LeastRequestdPriority：计算pods需要的CPU和内存在当前节点可用资源的百分比，具有最小百分比的节点就是最优的。BalanceResourceAllocation：拥有类似内存和CPU使用的节点。ServicesSpreadingPriority：优先选择拥有不同pods的节点。EqualPriority：给所有集群的节点同样的优先级，仅仅是为了做测试。<br>结论以上三种框架提供了不同的功能和归来来自定义调度器的逻辑。从这节来看，显而易见，由于Swarm的原生API，Swarm是三个中最容易使用的。</p>
+<p>命令行参数plicy-config-file可以指定一个JSON文件（见附录A）来描述哪些predicates和priorities在启动Kubernetes时会被使用，通过这个参数，调度就能够使用管理者定义的策略了。<br><a href="http://dockerone.com/uploads/article/20160320/8c19dc9133692515d9c6fd99c54c9109.png" target="_blank" rel="noopener"><img src="http://dockerone.com/uploads/article/20160320/8c19dc9133692515d9c6fd99c54c9109.png" alt="05.png"></a><br>Kubernetes architecture (containers in grey, pods in color), © Google Inc. [31]<br>谓词（Predicates）谓词是强制性的规则，它能够用来调度集群上一个新的pod。如果没有任何机器满足该谓词，则该pod会处于挂起状态，知道有机器能够满足条件。可用的谓词如下所示：<br>Predicate：节点的需求PodFitPorts：没有任何端口冲突PodFitsResurce：有足够的资源运行podNoDiskConflict：有足够的空间来满足pod和链接的数据卷MatchNodeSelector：能够匹配pod中的选择器查找参数。HostName：能够匹配pod中的host参数<br>优先级（Priorities）如果调度器发现有多个机器满足谓词的条件，那么优先级就可以用来判别哪一个才是最适合运行pod的机器。优先级是一个键值对，key表示优先级的名字，value就是该优先级的权重。可用的优先级如下：<br>Priority：寻找最佳节点LeastRequestdPriority：计算pods需要的CPU和内存在当前节点可用资源的百分比，具有最小百分比的节点就是最优的。BalanceResourceAllocation：拥有类似内存和CPU使用的节点。ServicesSpreadingPriority：优先选择拥有不同pods的节点。EqualPriority：给所有集群的节点同样的优先级，仅仅是为了做测试。<br>结论以上三种框架提供了不同的功能和归来来自定义调度器的逻辑。从这节来看，显而易见，由于Swarm的原生API，Swarm是三个中最容易使用的。</p>
 <p>以Docker的方式来运行容器[15]意味着一个容器是短暂存在的，并且每一个容器只运行一个进程。根据这条原则，多个容器提供一个服务或者代表一个应用是极度正常的。</p>
 <p>因此编排和调度容器成为了最应当解决的问题，这也解释了为什么，即便这项技术不是很成熟，但仍有那么多的调度器被开发出来，并且提供了不同的功能和选项。<br>调度器对比从上一节我们可以看到，为了让容器一起协调工作，成为一个真正的服务，在很多情况下，容器调度器都是有必要存在的。</p>
 <p>首先，我们会从一个简单的例子（只有两个容器运行）来对比每个调度器。为了方便，我们使用Docker提供的初学者教程中的案例项目，这个项目会运行一个快餐车的网站[47]，并且将它部署到集群上。</p>
-<p>然后，我们会从另外一个例子来对比不同调度器的扩展性：基于AWS的投票应用。这个例子基于Docker提供的“try Swarm at scale”教程[7]。应用中所有的模块都运行在容器中，而容器运行在不同的节点，并且这个应用被设计成可扩展的：<br><a href="http://dockerone.com/uploads/article/20160320/c45cb1acf3ca964280c479203304e4bd.jpeg" target="_blank" rel="external"><img src="http://dockerone.com/uploads/article/20160320/c45cb1acf3ca964280c479203304e4bd.jpeg" alt="06.jpeg"></a><br>Voting application architecture, © Docker Inc [7]</p>
+<p>然后，我们会从另外一个例子来对比不同调度器的扩展性：基于AWS的投票应用。这个例子基于Docker提供的“try Swarm at scale”教程[7]。应用中所有的模块都运行在容器中，而容器运行在不同的节点，并且这个应用被设计成可扩展的：<br><a href="http://dockerone.com/uploads/article/20160320/c45cb1acf3ca964280c479203304e4bd.jpeg" target="_blank" rel="noopener"><img src="http://dockerone.com/uploads/article/20160320/c45cb1acf3ca964280c479203304e4bd.jpeg" alt="06.jpeg"></a><br>Voting application architecture, © Docker Inc [7]</p>
 <p>负载均衡负责管理运行Flask应用[1]的web服务器和关联队列的数量。Worker层扫描Redis队列，将投票出列，并且将重复项提交到运行在其他节点的Postgres容器。<br>快餐车应用（Food Trucks Application）在这一节我们主要对比每个调度器的默认配置，比如说由于用户需求极速增长所带来的单容器瓶颈问题，还有如何处理一个需要重启的容器。</p>
 <p>我们想要运行的多容器环境是由一个运行拥有Flask进程的容器[1]，和其他运行有Elasticsearch进程的容器组成。<br>SwarmDocker公司提供了多个工具，我们已经看到了Docker引擎和Swarm，但Doccker Compose才是多容器环境的关键。有了这个工具，我们能够仅仅使用一个文件来定义和运行多个容器。</p>
 <p>对于我们现在的例子，我们可以使用一个docker-compose.yml文件来指定两个需要运行的镜像（一个定制的Flask镜像和一个Elasticsearch镜像）和Swarm之间的关联。</p>
@@ -124,117 +376,257 @@
 <p>如果一个容器宕机了，Swarm并不会跟踪一个服务应该有多少个实例在运行，因此它不会创建一个新的容器。其外，想要在某些容器上滚动更新也是不可能的，一个符合Docker思想的特性是非常有用的：能够快速启动和停止无状态的容器。<br>Mesos &amp; Marathon与直接使用docker-compose.yml文件不同，我们需要给Marathon一个具体的定义。第一个定义应用于Elasticsearch（附录C），我们使用所有的默认配置，并不使用调度器的特性；在这种情况下，定义非常的简单，并且类似于我们之间的docker-compose.yml文件。应用于Flask的定义（附录D）使用了更多Mesos的特性，包括指定CPU/RAM信息和健康检查。</p>
 <p>Mesos提供了一个更加强大的定义文件，因为容器和需求都可以被描述。相比于Swarm，这种方式并不简单，但是它能够很简单的扩展服务，比如说，通过修改应用定义中的容器实例来扩展。（在Flask定义中设置数量为2）<br>KubernetesKubernetes在YAML或者JSON（附录E）中使用了另外一种描述来表示pod。它包含了一个ReplicationController来保证应用至少有一个实例在运行。当我们在Kubernetes集群中创建了一个pod时，我们需要创建一个叫做负载均衡的Kubernetes服务，它负责转发流量到各个容器。如果只有一个实例，使用这种服务也是非常有用的，因为它能否将流量准确的转发到拥有动态IP的pod上。</p>
 <p>相比于Swarm，Kubernetes添加了pod和replica的逻辑。这个更加复杂的结构为调度器和编排工具提供了更加丰富的功能，比如说负载均衡，扩展或者收缩应用的能力。并且你还能够更新正在运行中的容器实例，这是一个非常有用的、符合Docker哲学的功能。<br>结论Docker Compose是调度多容器环境的标准方式，Docker Swarm直接使用这种方式。而对于Mesos和Kubernetes，它们提供了一个额外的描述文件，它整合了标准描述和额外的信息，因此它能够为用户提供更好的调度。</p>
-<p>我们可以看到，Mesos的调度器能够和Docker容器很好的工作，但是对于我们当前的用例来说，Kubernetes才是最适合运行这种微服务架构的框架。通过提供类似于Compose的描述，同时提供relication controller，Kubernetes能够为用户提供一个稳定的服务，并且具有可扩展性。<br>投票系统（Voting application）这个部署架构同样是来自Docker的教程[7]，为了构建集群，我们创建了一个Amazon Virtual Public Cloud（VPC）并且在VPC上部署节点。我们之所以使用Amazon的服务，是因为它能够支持这三个调度器，并且在Amazon上，Docker能通过一个部署文件来启动一个Docker式的集群。<br>Swarm创建集群的主要步骤有：连接集群中所有的节点，创建一个网络使得节点之间能够便捷地交流（类似于Kubernetes自动提供的），通过<a href="https://gist.github.com/ArmandGrillet/c928a1df55fccd17e36e" target="_blank" rel="external">在每个特定容器上运行镜像来完成最后部署</a>。<br><a href="http://dockerone.com/uploads/article/20160320/70ba89c8e82c4e4beba3e55caa370081.jpeg" target="_blank" rel="external"><img src="http://dockerone.com/uploads/article/20160320/70ba89c8e82c4e4beba3e55caa370081.jpeg" alt="07.jpeg"></a><br>Voting application organization, © Docker Inc [7]<br><a href="http://dockerone.com/uploads/article/20160320/656e0f1cdb250f269bb3d32ec747f17d.png" target="_blank" rel="external"><img src="http://dockerone.com/uploads/article/20160320/656e0f1cdb250f269bb3d32ec747f17d.png" alt="08.png"></a><br>EC2 machines to run the scalable application in a cluster.</p>
+<p>我们可以看到，Mesos的调度器能够和Docker容器很好的工作，但是对于我们当前的用例来说，Kubernetes才是最适合运行这种微服务架构的框架。通过提供类似于Compose的描述，同时提供relication controller，Kubernetes能够为用户提供一个稳定的服务，并且具有可扩展性。<br>投票系统（Voting application）这个部署架构同样是来自Docker的教程[7]，为了构建集群，我们创建了一个Amazon Virtual Public Cloud（VPC）并且在VPC上部署节点。我们之所以使用Amazon的服务，是因为它能够支持这三个调度器，并且在Amazon上，Docker能通过一个部署文件来启动一个Docker式的集群。<br>Swarm创建集群的主要步骤有：连接集群中所有的节点，创建一个网络使得节点之间能够便捷地交流（类似于Kubernetes自动提供的），通过<a href="https://gist.github.com/ArmandGrillet/c928a1df55fccd17e36e" target="_blank" rel="noopener">在每个特定容器上运行镜像来完成最后部署</a>。<br><a href="http://dockerone.com/uploads/article/20160320/70ba89c8e82c4e4beba3e55caa370081.jpeg" target="_blank" rel="noopener"><img src="http://dockerone.com/uploads/article/20160320/70ba89c8e82c4e4beba3e55caa370081.jpeg" alt="07.jpeg"></a><br>Voting application organization, © Docker Inc [7]<br><a href="http://dockerone.com/uploads/article/20160320/656e0f1cdb250f269bb3d32ec747f17d.png" target="_blank" rel="noopener"><img src="http://dockerone.com/uploads/article/20160320/656e0f1cdb250f269bb3d32ec747f17d.png" alt="08.png"></a><br>EC2 machines to run the scalable application in a cluster.</p>
 <p>我们使用命令行参数restart=unless-stopped来运行docker daemon能够在某一个容器意外停止时重启它。如果一整个节点崩了，那么节点上的容器并不会在其他节点上重新启动。</p>
 <p>这个集群拥有一个负载均衡器[25]，它能防止将请求转发到一个不再存在的节点上，因此如果frontend1崩了，所有的请求就会自动流向frontend2。因为负载均衡器本身就是一个容器，通过参数restart=unless-stopped能够确保它意外停止时能够重启。</p>
 <p>这个集群部署的主要问题就是，Postgres节点是单一的，如果这个节点崩了，那么整个应用程序就崩了。为了提高集群的故障容错率，我们需要添加另外一个Swarm的管理器，以防止前一个崩溃了。</p>
 <p>这个调度器的效率类似于直接在单个机器上运行容器。Swarm的调度策略非常的简单（我们从上一节可以看出），因此调度器选择节点时非常的迅速，仿佛集群中只有一台机器。如果想要看到进一步的性能测试，可以参考Docker在Swarm上运行3000个容器的扩展测试[16]。<br>Mesos &amp; MarathonMesos &amp; Marathon是商业产品，因此也提供了部署的服务。Mesosphere[45]提供了一个社区版本在几分钟内创建一个高可用性的集群。我们只需要给出master的数量，公开的代理节点，私有的代理节点，然后一个Mesos集群就诞生了。</p>
-<p>Mesos集群的配置相比于Swarm复杂的多，这是因为它有很多的模块（Mesos marathon，Mesos slaves，Marathon和Zookeeper实例等）。因此提前配置好的集群是一个不错的方法，并且能够直接运行一个高可用的集群（有三个master）对于建立高容错的集群来说很有帮助。<br><a href="http://dockerone.com/uploads/article/20160320/19d5aaf1364eb578de1aae9147164a02.png" target="_blank" rel="external"><img src="http://dockerone.com/uploads/article/20160320/19d5aaf1364eb578de1aae9147164a02.png" alt="09.png"></a><br>Deploying a cluster using Mesos &amp; Marathon can be done in 2 minutes.</p>
+<p>Mesos集群的配置相比于Swarm复杂的多，这是因为它有很多的模块（Mesos marathon，Mesos slaves，Marathon和Zookeeper实例等）。因此提前配置好的集群是一个不错的方法，并且能够直接运行一个高可用的集群（有三个master）对于建立高容错的集群来说很有帮助。<br><a href="http://dockerone.com/uploads/article/20160320/19d5aaf1364eb578de1aae9147164a02.png" target="_blank" rel="noopener"><img src="http://dockerone.com/uploads/article/20160320/19d5aaf1364eb578de1aae9147164a02.png" alt="09.png"></a><br>Deploying a cluster using Mesos &amp; Marathon can be done in 2 minutes.</p>
 <p>一但集群开始运行，Meoso master提供了一个Web的接口来显示所有的集群信息。在集群上运行容器的操作类似于Swarm和之间的例子。</p>
 <p>相比于Swarm，Mesos的容错性更强，这是因为Mesos能够在JSON文件中对某个应用使用监看检查。因为自动扩展功能是商业版独有的，因此这里集群并不能自动扩展，但是我们还是有其他的办法来实现它，比如说Amazon EC2 Auto Scaling Groups。<br>KubernetesKubernetes拥有一套命令行管理工具和一个集群启动脚本。Kubernetes也提供了一个用户接口（类似于Mesossphere提供的）[34]，但这个接口并没有拆分开来，而是属于调度器的一部分。</p>
 <p>我们需要创建一个replication controller来定义pod的容器和pod的最小运行数量。从第一个案例来看，我们可以在一个文件中描述所有集群关于replications的信息。</p>
-<p>集群可以通过调度器策略（policies）来扩展，并且Google声明Kubernetes能够支持100个节点，每个几点上有30个pod，每个pod拥有1-2个容器[27]。Kubernetes的性能要比Swarm差，是因为它拥有更加复杂的架构，性能比Mesos差，是因为它结构层次更深（less bare metal），但是<a href="https://coreos.com/blog/improving-kubernetes-scheduler-performance.html" target="_blank" rel="external">很多人在正在努力提升它的性能。</a><br>未来要做的由于我们比较的调度器都比较新颖，暂时还没有可用的基准工具来评价它们之间的扩展性如何。因此，未来还需要在这么一个环境中对比调度器：有多个集群，集群时常出现问题，但是集群间又有大量的连接。</p>
-<p>这里对比的调度器主要是用来创建可扩展的Web服务，这个用例要求调度器有高容错性，但是没有提到当处理成千上万容器时，调度器的速度如何。比如说，在关于Mesos&amp;Marathon的可扩展性测试上，并没有具体的数字来说明容器数量。<a href="https://mesosphere.com/blog/2015/11/30/arangodb-benchmark-dcos/" target="_blank" rel="external">唯一的用例</a>提到了拥有80个节点和640个虚拟CPU的集群。</p>
+<p>集群可以通过调度器策略（policies）来扩展，并且Google声明Kubernetes能够支持100个节点，每个几点上有30个pod，每个pod拥有1-2个容器[27]。Kubernetes的性能要比Swarm差，是因为它拥有更加复杂的架构，性能比Mesos差，是因为它结构层次更深（less bare metal），但是<a href="https://coreos.com/blog/improving-kubernetes-scheduler-performance.html" target="_blank" rel="noopener">很多人在正在努力提升它的性能。</a><br>未来要做的由于我们比较的调度器都比较新颖，暂时还没有可用的基准工具来评价它们之间的扩展性如何。因此，未来还需要在这么一个环境中对比调度器：有多个集群，集群时常出现问题，但是集群间又有大量的连接。</p>
+<p>这里对比的调度器主要是用来创建可扩展的Web服务，这个用例要求调度器有高容错性，但是没有提到当处理成千上万容器时，调度器的速度如何。比如说，在关于Mesos&amp;Marathon的可扩展性测试上，并没有具体的数字来说明容器数量。<a href="https://mesosphere.com/blog/2015/11/30/arangodb-benchmark-dcos/" target="_blank" rel="noopener">唯一的用例</a>提到了拥有80个节点和640个虚拟CPU的集群。</p>
 <p>在同样硬件上对比同样的案例，一个基准程序（benchmark）意味着同一时间段运行的大量节点和应用能够被较为公平的比较。这个新的基准程序能够告诉我们不同调取器在其他案例上的具体信息，比如说批处理。<br>结论Docker Swarm是最简单的调取器，它拥有易于理解的策略和过滤器，但是由于它不能处理节点的失败问题，所以在实际的生产环境中，不推荐使用。Swarm和Docker环境很好的结合在一起，它使用了Docker引擎一样的API，并且能够和Docker Compose很好的一起工作，因此它非常适合那些对其他调度器不太了解的开发者。</p>
 <p>Swarm非常轻量，并且提供了多个驱动，使得它它能够和未来所有的集群解决方式一起工作[11]。Swarm是一个调度解决方案，非常易于使用，比如它为开发者提供了高纬度的配置方式，让他们能够快速实现具体的工作流。Docker Swarm并没有绑定到某一个具体的云服务提供商，它是完全开源的，并且拥有一个非常强劲的社区。</p>
 <p>如果你已经拥有一个Mesos 集群，Mesos &amp; Marathon将会是一个完美的组合方案。它能够像其他Mesos框架一样调度行任务，同时拥有一个类似于Docker Compose的描述文件来制定任务，这些特性使得它成为在集群上运行容器的极佳方案。Mesosphere[45]提供的完整解决方案同样也是一个适合生产环节的、简单而强大的方式。</p>
-<p>尽管Kubernetes的逻辑和标准的Docker哲学不同，但是它关于pod和service的概念让开发者在使用容器的同时思考这些容器的组合是什么，真是非常有趣的。Google在它的集群解决方案上[26]提供了非常简单的方式来使用Kubernetes，这使得Kubernetes对于那些已经使用了Google生态环境的开发者来说，是一个合理的选择。<br><a href="http://dockerone.com/uploads/article/20160320/ecb8db5f3f118186f2d1cd955ea37563.png" target="_blank" rel="external"><img src="http://dockerone.com/uploads/article/20160320/ecb8db5f3f118186f2d1cd955ea37563.png" alt="10.png"></a><br>Swarm frontends, © Docker Inc. [6]</p>
+<p>尽管Kubernetes的逻辑和标准的Docker哲学不同，但是它关于pod和service的概念让开发者在使用容器的同时思考这些容器的组合是什么，真是非常有趣的。Google在它的集群解决方案上[26]提供了非常简单的方式来使用Kubernetes，这使得Kubernetes对于那些已经使用了Google生态环境的开发者来说，是一个合理的选择。<br><a href="http://dockerone.com/uploads/article/20160320/ecb8db5f3f118186f2d1cd955ea37563.png" target="_blank" rel="noopener"><img src="http://dockerone.com/uploads/article/20160320/ecb8db5f3f118186f2d1cd955ea37563.png" alt="10.png"></a><br>Swarm frontends, © Docker Inc. [6]</p>
 <p>容器的调度并不存在一个最佳的方案，从Swarm frontends可以看到[20]，这个项目使得Kubernetes和Mesos+Marathon能够部署在Swarm之上，并且它将会逐步支持Cloud Foundry，Nomad，和其他的容器器。具体选择哪个调取器，还是取决于你的需求和集群。</p>
 <p>从最后一张图片可以看到，Swarm集群能够被其它调取器管理，其中容器会分配到不同的集群中。这些组合使得容器能够按照你所想的被调度和编排。<br>AppendixA — policy-config-file.json</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"></div><div class="line"><span class="attr">"kind"</span>: <span class="string">"Policy"</span>,</div><div class="line"></div><div class="line"><span class="attr">"apiVersion"</span>: <span class="string">"v1"</span>,</div><div class="line"></div><div class="line"><span class="attr">"predicates"</span>: [</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line"><span class="attr">"name"</span>: <span class="string">"PodFitsPorts"</span></div><div class="line"></div><div class="line">&#125;,</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line"><span class="attr">"name"</span>: <span class="string">"PodFitsResources"</span></div><div class="line"></div><div class="line">&#125;,</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line"><span class="attr">"name"</span>: <span class="string">"NoDiskConflict"</span></div><div class="line"></div><div class="line">&#125;,</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line"><span class="attr">"name"</span>: <span class="string">"MatchNodeSelector"</span></div><div class="line"></div><div class="line">&#125;,</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line"><span class="attr">"name"</span>: <span class="string">"HostName"</span></div><div class="line"></div><div class="line">&#125;],</div><div class="line"></div><div class="line"><span class="attr">"priorities"</span>: [</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line"><span class="attr">"name"</span>: <span class="string">"LeastRequestedPriority"</span>,</div><div class="line"></div><div class="line"><span class="attr">"weight"</span>: <span class="number">1</span></div><div class="line"></div><div class="line">&#125;,</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line"><span class="attr">"name"</span>: <span class="string">"BalancedResourceAllocation"</span>,</div><div class="line"></div><div class="line"><span class="attr">"weight"</span>: <span class="number">1</span></div><div class="line"></div><div class="line">&#125;,</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line"><span class="attr">"name"</span>: <span class="string">"ServiceSpreadingPriority"</span>,</div><div class="line"></div><div class="line"><span class="attr">"weight"</span>: <span class="number">1</span></div><div class="line"></div><div class="line">&#125;,</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line"><span class="attr">"name"</span>: <span class="string">"EqualPriority"</span>,</div><div class="line"></div><div class="line"><span class="attr">"weight"</span>: <span class="number">1</span></div><div class="line"></div><div class="line">&#125;]</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="attr">"kind"</span>: <span class="string">"Policy"</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"apiVersion"</span>: <span class="string">"v1"</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"predicates"</span>: [</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="attr">"name"</span>: <span class="string">"PodFitsPorts"</span></span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="attr">"name"</span>: <span class="string">"PodFitsResources"</span></span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="attr">"name"</span>: <span class="string">"NoDiskConflict"</span></span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="attr">"name"</span>: <span class="string">"MatchNodeSelector"</span></span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="attr">"name"</span>: <span class="string">"HostName"</span></span><br><span class="line"></span><br><span class="line">&#125;],</span><br><span class="line"></span><br><span class="line"><span class="attr">"priorities"</span>: [</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="attr">"name"</span>: <span class="string">"LeastRequestedPriority"</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"weight"</span>: <span class="number">1</span></span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="attr">"name"</span>: <span class="string">"BalancedResourceAllocation"</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"weight"</span>: <span class="number">1</span></span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="attr">"name"</span>: <span class="string">"ServiceSpreadingPriority"</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"weight"</span>: <span class="number">1</span></span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="attr">"name"</span>: <span class="string">"EqualPriority"</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"weight"</span>: <span class="number">1</span></span><br><span class="line"></span><br><span class="line">&#125;]</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>B — docker-compose.yml</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="attr">es:</span></div><div class="line"></div><div class="line"><span class="attr">image:</span> <span class="string">elasticsearch</span></div><div class="line"></div><div class="line"><span class="attr">container_name:</span> <span class="string">"es"</span></div><div class="line"></div><div class="line"><span class="attr">web:</span></div><div class="line"></div><div class="line"><span class="attr">image:</span> <span class="string">prakhar1989/foodtrucks-web</span></div><div class="line"></div><div class="line"><span class="attr">command:</span> <span class="string">python</span> <span class="string">app.py</span></div><div class="line"></div><div class="line"><span class="attr">ports:</span></div><div class="line"></div><div class="line"><span class="bullet">-</span> <span class="string">"5000:5000"</span></div><div class="line"><span class="attr">  volumes:</span></div><div class="line"><span class="bullet">-</span> <span class="string">.:/code</span></div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">es:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">image:</span> <span class="string">elasticsearch</span></span><br><span class="line"></span><br><span class="line"><span class="attr">container_name:</span> <span class="string">"es"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">web:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">image:</span> <span class="string">prakhar1989/foodtrucks-web</span></span><br><span class="line"></span><br><span class="line"><span class="attr">command:</span> <span class="string">python</span> <span class="string">app.py</span></span><br><span class="line"></span><br><span class="line"><span class="attr">ports:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="string">"5000:5000"</span></span><br><span class="line"><span class="attr">  volumes:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">.:/code</span></span><br></pre></td></tr></table></figure>
 <p>C — Mesos app definition (Elasticsearch)</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"><span class="attr">"id"</span>: <span class="string">"es"</span>,</div><div class="line"><span class="attr">"container"</span>: &#123;</div><div class="line"><span class="attr">"type"</span>: <span class="string">"DOCKER"</span>,</div><div class="line"><span class="attr">"docker"</span>: &#123;</div><div class="line">  <span class="attr">"network"</span>: <span class="string">"HOST"</span>,</div><div class="line">  <span class="attr">"image"</span>: <span class="string">"elasticsearch"</span></div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"id"</span>: <span class="string">"es"</span>,</span><br><span class="line"><span class="attr">"container"</span>: &#123;</span><br><span class="line"><span class="attr">"type"</span>: <span class="string">"DOCKER"</span>,</span><br><span class="line"><span class="attr">"docker"</span>: &#123;</span><br><span class="line">  <span class="attr">"network"</span>: <span class="string">"HOST"</span>,</span><br><span class="line">  <span class="attr">"image"</span>: <span class="string">"elasticsearch"</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>D — Appendix — Mesos app definition (Flask)</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"></div><div class="line"><span class="attr">"id"</span>: <span class="string">"web"</span>,</div><div class="line"></div><div class="line"><span class="attr">"cmd"</span>: <span class="string">"python app.py"</span>,</div><div class="line"></div><div class="line"><span class="attr">"cpus"</span>: <span class="number">0.5</span>,</div><div class="line"></div><div class="line"><span class="attr">"mem"</span>: <span class="number">64.0</span>,</div><div class="line"></div><div class="line"><span class="attr">"instances"</span>: <span class="number">2</span>,</div><div class="line"></div><div class="line"><span class="attr">"container"</span>: &#123;</div><div class="line"></div><div class="line"><span class="attr">"type"</span>: <span class="string">"DOCKER"</span>,</div><div class="line"></div><div class="line"><span class="attr">"docker"</span>: &#123;</div><div class="line"></div><div class="line"><span class="attr">"image"</span>: <span class="string">"prakhar1989/foodtrucks-web"</span>,</div><div class="line"></div><div class="line"><span class="attr">"network"</span>: <span class="string">"BRIDGE"</span>,</div><div class="line"></div><div class="line"><span class="attr">"portMappings"</span>: [</div><div class="line"></div><div class="line">  &#123; <span class="attr">"containerPort"</span>: <span class="number">5000</span>, <span class="attr">"hostPort"</span>: <span class="number">0</span>, <span class="attr">"servicePort"</span>: <span class="number">5000</span>, <span class="attr">"protocol"</span>: <span class="string">"tcp"</span> &#125;</div><div class="line"></div><div class="line">]</div><div class="line"></div><div class="line">&#125;,</div><div class="line"></div><div class="line"><span class="attr">"volumes"</span>: [</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">  <span class="attr">"containerPath"</span>: <span class="string">"/etc/code"</span>,</div><div class="line"></div><div class="line">  <span class="attr">"hostPath"</span>: <span class="string">"/var/data/code"</span>,</div><div class="line"></div><div class="line">  <span class="attr">"mode"</span>: <span class="string">"RW"</span></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;,</div><div class="line"></div><div class="line"><span class="string">"healthChecks"</span>: [</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line"><span class="attr">"protocol"</span>: <span class="string">"HTTP"</span>,</div><div class="line"></div><div class="line"><span class="attr">"portIndex"</span>: <span class="number">0</span>,</div><div class="line"></div><div class="line"><span class="attr">"path"</span>: <span class="string">"/"</span>,</div><div class="line"></div><div class="line"><span class="attr">"gracePeriodSeconds"</span>: <span class="number">5</span>,</div><div class="line"></div><div class="line"><span class="attr">"intervalSeconds"</span>: <span class="number">20</span>,</div><div class="line"></div><div class="line"><span class="attr">"maxConsecutiveFailures"</span>: <span class="number">3</span></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">]</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="attr">"id"</span>: <span class="string">"web"</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"cmd"</span>: <span class="string">"python app.py"</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"cpus"</span>: <span class="number">0.5</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"mem"</span>: <span class="number">64.0</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"instances"</span>: <span class="number">2</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"container"</span>: &#123;</span><br><span class="line"></span><br><span class="line"><span class="attr">"type"</span>: <span class="string">"DOCKER"</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"docker"</span>: &#123;</span><br><span class="line"></span><br><span class="line"><span class="attr">"image"</span>: <span class="string">"prakhar1989/foodtrucks-web"</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"network"</span>: <span class="string">"BRIDGE"</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"portMappings"</span>: [</span><br><span class="line"></span><br><span class="line">  &#123; <span class="attr">"containerPort"</span>: <span class="number">5000</span>, <span class="attr">"hostPort"</span>: <span class="number">0</span>, <span class="attr">"servicePort"</span>: <span class="number">5000</span>, <span class="attr">"protocol"</span>: <span class="string">"tcp"</span> &#125;</span><br><span class="line"></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"><span class="attr">"volumes"</span>: [</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">  <span class="attr">"containerPath"</span>: <span class="string">"/etc/code"</span>,</span><br><span class="line"></span><br><span class="line">  <span class="attr">"hostPath"</span>: <span class="string">"/var/data/code"</span>,</span><br><span class="line"></span><br><span class="line">  <span class="attr">"mode"</span>: <span class="string">"RW"</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"><span class="string">"healthChecks"</span>: [</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="attr">"protocol"</span>: <span class="string">"HTTP"</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"portIndex"</span>: <span class="number">0</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"path"</span>: <span class="string">"/"</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"gracePeriodSeconds"</span>: <span class="number">5</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"intervalSeconds"</span>: <span class="number">20</span>,</span><br><span class="line"></span><br><span class="line"><span class="attr">"maxConsecutiveFailures"</span>: <span class="number">3</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>E — Kubernetes pod definition</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></div><div class="line"></div><div class="line"><span class="attr">kind:</span> <span class="string">ReplicationController</span></div><div class="line"></div><div class="line"><span class="attr">metadata:</span></div><div class="line"></div><div class="line"><span class="attr">name:</span> <span class="string">app</span></div><div class="line"></div><div class="line"><span class="attr">labels:</span></div><div class="line"></div><div class="line"><span class="attr">name:</span> <span class="string">app</span></div><div class="line"></div><div class="line"><span class="attr">spec:</span></div><div class="line"></div><div class="line"><span class="attr">replicas:</span> <span class="number">1</span></div><div class="line"></div><div class="line"><span class="attr">selector:</span></div><div class="line"></div><div class="line"><span class="attr">name:</span> <span class="string">app</span></div><div class="line"></div><div class="line"><span class="attr">template:</span></div><div class="line"></div><div class="line"><span class="attr">metadata:</span></div><div class="line"></div><div class="line"><span class="attr">labels:</span></div><div class="line"></div><div class="line"><span class="attr">  name:</span> <span class="string">app</span></div><div class="line"></div><div class="line"><span class="attr">spec:</span></div><div class="line"></div><div class="line"><span class="attr">containers:</span></div><div class="line"></div><div class="line"><span class="attr">- name:</span> <span class="string">es</span></div><div class="line"><span class="attr">  image:</span> <span class="string">elasticsearch</span></div><div class="line"><span class="attr">  ports:</span></div><div class="line"><span class="attr">  - containerPort:</span> <span class="number">6379</span></div><div class="line"><span class="attr">- name:</span> <span class="string">web</span></div><div class="line"><span class="attr">  image:</span> <span class="string">prakhar1989/foodtrucks-web</span></div><div class="line"><span class="attr">  command:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">python</span> <span class="string">app.py</span></div><div class="line"><span class="attr">    volumeMounts:</span></div><div class="line"><span class="attr">  - mountPath:</span> <span class="string">/code</span></div><div class="line"><span class="attr">    name:</span> <span class="string">code</span></div><div class="line"><span class="attr">    ports:</span></div><div class="line"><span class="attr">  - containerPort:</span> <span class="number">5000</span></div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ReplicationController</span></span><br><span class="line"></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">name:</span> <span class="string">app</span></span><br><span class="line"></span><br><span class="line"><span class="attr">labels:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">name:</span> <span class="string">app</span></span><br><span class="line"></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">replicas:</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="attr">selector:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">name:</span> <span class="string">app</span></span><br><span class="line"></span><br><span class="line"><span class="attr">template:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">labels:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  name:</span> <span class="string">app</span></span><br><span class="line"></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">containers:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">- name:</span> <span class="string">es</span></span><br><span class="line"><span class="attr">  image:</span> <span class="string">elasticsearch</span></span><br><span class="line"><span class="attr">  ports:</span></span><br><span class="line"><span class="attr">  - containerPort:</span> <span class="number">6379</span></span><br><span class="line"><span class="attr">- name:</span> <span class="string">web</span></span><br><span class="line"><span class="attr">  image:</span> <span class="string">prakhar1989/foodtrucks-web</span></span><br><span class="line"><span class="attr">  command:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">python</span> <span class="string">app.py</span></span><br><span class="line"><span class="attr">    volumeMounts:</span></span><br><span class="line"><span class="attr">  - mountPath:</span> <span class="string">/code</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">code</span></span><br><span class="line"><span class="attr">    ports:</span></span><br><span class="line"><span class="attr">  - containerPort:</span> <span class="number">5000</span></span><br></pre></td></tr></table></figure>
       
     </div>
-    <footer class="article-footer">
-      <ul class="article-meta">
-        <li>
-          <span class="label">Published Date:</span>
-          <a href="/2017/04/25/container-tech/" class="article-date">
-  <time datetime="2017-04-24T19:28:04.000Z" itemprop="datePublished">2017-04-25</time>
-</a>
-
-        </li>
-        
-          <li>
-            <span class="label">Category:</span>
-            
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/容器编排/">容器编排</a>
-  </div>
-
-
-          </li>
-        
-        
-          <li>
-            <span class="label">Tag:</span>
-            
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
-
-
-          </li>
-        
-        <hr/>
-      </ul>
-    </footer>
-  </div>
-  
     
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2017/04/26/ubuntu-svn/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          ubuntu架设svn
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/04/23/docker-elasticsearch/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">docker搭建elasticsearch</div>
-    </a>
-  
-</nav>
+    
+    
 
+    
 
-  
-</article>
+    
 
+    
 
-
-
-      </div>
+    <footer class="post-footer">
       
-    <footer id="footer" class="post-footer footer">
-      <hr/>
-      <div id="footerContent" class="footer-content">
-        <p>闲步山雨后,静待晚林风 Post</p>
+        <div class="post-tags">
+          
+            <a href="/tags/docker/" rel="tag"># docker</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/23/docker-elasticsearch/" rel="next" title="docker搭建elasticsearch">
+                <i class="fa fa-chevron-left"></i> docker搭建elasticsearch
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/26/ubuntu-svn/" rel="prev" title="ubuntu架设svn">
+                ubuntu架设svn <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ace1981</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ace1981</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
       </div>
     </footer>
 
-      
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
 
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
 
 
 
@@ -242,6 +634,128 @@
 
 
 
-    </div>
-  </body>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>

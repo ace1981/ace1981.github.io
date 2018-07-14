@@ -1,106 +1,2215 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
+
+
+
   
-  <title>Ace&#39;pages</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="Ace&#39;pages">
 <meta property="og:url" content="http://hujao.com/page/5/index.html">
 <meta property="og:site_name" content="Ace&#39;pages">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ace&#39;pages">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hujao.com/page/5/"/>
+
+
+
+
+
+  <title>Ace'pages</title>
   
-    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
+
+
+
+
+
+
+
+
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
   
     
-    <body class="home-body">
-    
   
-      <div id="container" class="container">
-        <div class="home">
-  <div class="content">
-    <div class="profile">
-      <h1 class="nickname">Ace</h1>
-      <div class="description">
-        <p><p>程序员一枚,研究各种技术,生命不息,学习不止.</p>
-</p>
-      </div>
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ace'pages</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <hr/>
-    <ul class="links">
       
-        <li>
-          <a href="/archives">Blog</a>
-        </li>
+        <p class="site-subtitle"></p>
       
-        <li>
-          <a href="https://github.com/ace1981">GitHub</a>
-        </li>
-      
-    </ul>
   </div>
 
- <link rel="stylesheet" type="text/css" href="/css/wordcloud2.css" />
-    <script src="/js/jquery.min.js"></script>
- 
-    <script type="text/javascript">
-        /*!
-         * Create an array of word objects, each representing a word in the cloud
-         */
-        var word_array = [
-            {text: "docker"},
-            {text: "springboot"}, {text: "容器编排"}, {text: "持续集成"}, {text: "日志收集"}, {text: "服务监控"}, {text: "数据安全"}, {text: "机器学习"}, {text: "搜索引擎"}, {text: "数据库"},{text: "web前端"}, {text: "代码管理"},  {text: "分布式"},  {text: "大数据"}, {text: "框架"}, {text: "流计算" }, {text: "消息队列" }, {text: "第三方支付"}, {text: "网络协议"}, {text: "负载均衡" }, {text: "开发工具" }, {text: "性能优化" },  {text: "etl" },{text: "java" },  {text: "linux"}, {text: "shell"}
-            // ...as many words as you want
-        ];
-        $(document).ready(function () {
-            for (var i = 0; i < word_array.length; i++) {
-                var w=Math.round(Math.random()*10);
-                word_array[i].link="/categories/"+word_array[i].text+"/";
-                word_array[i].weight=w;
-            };
-            jQuery("#example").jQCloud(word_array);
-        //$("#reply").val("添加回复：");
-        });
-    </script>
-    <div id="example" style="width: 500px; height: 120px;max-width: 500px;
-    position: relative;
-    margin: 0 auto;margin-top: 30px;
-    margin-bottom: -40px;">
-             
-    </div>
-
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-      </div>
-      
-  <footer id="footer" class="home-footer footer">
-    <div id="copyright" class="copyright">
-      &copy; hujao.com 2018   
+<nav class="site-nav">
+  
 
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/29/nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/29/nginx/" itemprop="url">nginx</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-29T10:22:57+08:00">
+                2017-12-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/29/apache/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/29/apache/" itemprop="url">apache反向代理和负载均衡</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-29T10:22:51+08:00">
+                2017-12-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/负载均衡/" itemprop="url" rel="index">
+                    <span itemprop="name">负载均衡</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>目标:apache实现多tomcat的反向代理和负载均衡,并实现session共享</p>
+<p>1 首先apache要放到磁盘根目录下</p>
+<p>2 打开conf/http.conf最下加入如下配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ProxyRequests Off</span><br><span class="line"><span class="tag">&lt;<span class="name">Proxy</span> <span class="attr">balancer:</span>//<span class="attr">cluster</span>&gt;</span></span><br><span class="line">	BalancerMember http://127.0.0.1:8180 loadfactor=1 route=jvm1</span><br><span class="line">	BalancerMember http://127.0.0.1:8280 loadfactor=1 route=jvm2</span><br><span class="line"><span class="tag">&lt;/<span class="name">Proxy</span>&gt;</span></span><br><span class="line"></span><br><span class="line">Include conf/mod_jk.conf</span><br></pre></td></tr></table></figure>
+<p>3 创建conf/mod_jk.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LoadModule jk_module modules/mod_jk-1.2.26-httpd-2.2.4.so</span><br><span class="line">JkWorkersFile conf/workers.properties</span><br><span class="line">JkMount /* controller</span><br></pre></td></tr></table></figure>
+<p>4 下载mod_jk-1.2.26-httpd-2.2.4.so文件 并复制到/modules目录下,这里的文件名与配置路径一致,并且此文件与apache版本相关,要使用对应的版本才有效</p>
+<p>5 创建conf/workers.properties 配置ajp协议端口, </p>
+<p>Tip:</p>
+<p>worker.controller.sticky_session表示会话粘性 </p>
+<p>worker.controller.sticky_session=false，提交页面，将按照负载均衡的规则切换服务器，实现“完全的负载均衡”，代价是Tomcat不停交换session数据，慢；worker.controller.sticky_session=true，提交页面将仍使用同一服务器（session建立在哪就用哪台），不能保证完完全全的负载均衡，但相对能省频繁切换服务器的代价。可能会变上面的快一些。<br>worker.controller.sticky_session_force=true，始终转发到session创建的服务器上。</p>
+<p><engine name="Catalina" defaulthost="localhost" jvmroute="tomcat2"><br>jvmRoute是tomcat路由标示，由此区分两台tomcat主机。一次会话，就有一个sessionID，这个sessionID后面会跟上jvmRoute设置的值，这样一次会话，就只会让一个tomcat处理</engine></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#server </span><br><span class="line">worker.list = controller </span><br><span class="line">#========tomcat1======== </span><br><span class="line">worker.tomcat1.port=8109</span><br><span class="line">worker.tomcat1.host=localhost </span><br><span class="line">worker.tomcat1.type=ajp13 </span><br><span class="line">worker.tomcat1.lbfactor = 1 </span><br><span class="line">#========tomcat2======== </span><br><span class="line">worker.tomcat2.port=8209</span><br><span class="line">worker.tomcat2.host=localhost </span><br><span class="line">worker.tomcat2.type=ajp13 </span><br><span class="line">worker.tomcat2.lbfactor = 1 </span><br><span class="line"></span><br><span class="line">#========controller,负载均衡控制器======== </span><br><span class="line">worker.controller.type=lb </span><br><span class="line">worker.controller.balanced_workers=tomcat1,tomcat2</span><br><span class="line">worker.controller.sticky_session=false</span><br><span class="line">worker.controller.sticky_session_force=1</span><br><span class="line">#worker.controller.sticky_session=1</span><br></pre></td></tr></table></figure>
+<p>6 修改 conf/extra/httpd-vhost.conf</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">NameVirtualHost *:80</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">VirtualHost</span> *<span class="attr">:80</span>&gt;</span></span><br><span class="line">ServerAdmin xxx@126.com</span><br><span class="line">ServerName localhost</span><br><span class="line">ServerAlias localhost</span><br><span class="line">ProxyPass / balancer://cluster/ stickysession=jsessionid nofailover=On</span><br><span class="line">ProxyPassReverse / balancer://cluster/</span><br><span class="line">ErrorLog "logs/thc-error.log"</span><br><span class="line">CustomLog "logs/thc-access.log" common</span><br><span class="line"><span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>7 配置tomcat 1的server.xml 修改对应端口 去掉cluster注释</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">Server</span> <span class="attr">port</span>=<span class="string">"8105"</span> <span class="attr">shutdown</span>=<span class="string">"SHUTDOWN"</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8180"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span> </span></span><br><span class="line"><span class="tag">               <span class="attr">connectionTimeout</span>=<span class="string">"20000"</span> </span></span><br><span class="line"><span class="tag">               <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8109"</span> <span class="attr">protocol</span>=<span class="string">"AJP/1.3"</span> <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Engine</span> <span class="attr">name</span>=<span class="string">"Catalina"</span> <span class="attr">defaultHost</span>=<span class="string">"localhost"</span> <span class="attr">jvmRoute</span>=<span class="string">"jvm1"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Cluster</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.ha.tcp.SimpleTcpCluster"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>8 配置tomcat 2的server.xml 修改对应端口 去掉cluster注释</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">Server</span> <span class="attr">port</span>=<span class="string">"8205"</span> <span class="attr">shutdown</span>=<span class="string">"SHUTDOWN"</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8280"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span> </span></span><br><span class="line"><span class="tag">               <span class="attr">connectionTimeout</span>=<span class="string">"20000"</span> </span></span><br><span class="line"><span class="tag">               <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8209"</span> <span class="attr">protocol</span>=<span class="string">"AJP/1.3"</span> <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Engine</span> <span class="attr">name</span>=<span class="string">"Catalina"</span> <span class="attr">defaultHost</span>=<span class="string">"localhost"</span> <span class="attr">jvmRoute</span>=<span class="string">"jvm2"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Cluster</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.ha.tcp.SimpleTcpCluster"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>9 修改相关web项目的web.xml 加入如下节点</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">distributable</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>10 配置完成,启动tomcat1,tomcat2和apache的http.exe</p>
+<p>ps:测试是否成功,修改相同路径下的同名html文件,分别显示成不同的内容</p>
+<p>对应的在访问此路径时,能时而显示不同内容就代表配置成功了.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/26/activiti/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/26/activiti/" itemprop="url">学习activiti工作流</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-26T03:42:27+08:00">
+                2017-12-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工作流/" itemprop="url" rel="index">
+                    <span itemprop="name">工作流</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><p>学习资料</p>
+<p><a href="http://blog.csdn.net/bluejoe2000/article/details/39521405" target="_blank" rel="noopener">Activiti初学者教程</a></p>
+<p><a href="http://www.mossle.com/docs/activiti/index.html" target="_blank" rel="noopener">用户手册</a></p>
+<p><a href="http://blog.csdn.net/anxpp/article/details/53912439" target="_blank" rel="noopener">工作流引擎Activiti系列（一）——初识</a></p>
+</li>
+<li><p>web版activiti流程设计器   activiti-explorer.war</p>
+<p><a href="http://localhost:8080/activiti-explorer" target="_blank" rel="noopener">http://localhost:8080/activiti-explorer</a> </p>
+<p>用户名和密码: kermit/kermit</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/21/binbash/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/21/binbash/" itemprop="url">为docker编写bash启动脚本</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-21T16:49:19+08:00">
+                2017-12-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/shell/" itemprop="url" rel="index">
+                    <span itemprop="name">shell</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>启动hexo的脚本run.sh, 首行的<code>#!/bin/bash</code>是必须写的</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">hexo -d -g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Dockerfile</li>
+</ol>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> google/nodejs</span><br><span class="line"><span class="keyword">RUN</span> npm install -g hexo</span><br><span class="line">RUN hexo init</span><br><span class="line">RUN mkdir /init</span><br><span class="line">#复制脚本 或者通过 echo命令写一个脚本 ps:echo也同样可以写配置文件</span><br><span class="line">COPY run.sh /init/run.sh</span><br><span class="line">#必须为bash脚本授权,否则开启容器时候不能调用</span><br><span class="line">RUN chmod +x "/init/run.sh"</span><br><span class="line">EXPOSE 4000</span><br><span class="line">CMD [/init/run.sh]</span><br></pre></td></tr></table></figure>
+<ol>
+<li>脚本的作用是当容器启动时,先编译和部署新的markdown文档成html,然后才启动服务</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/21/jenkins-for-docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/21/jenkins-for-docker/" itemprop="url">jenkins+springboot+docker+git持续集成</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-21T04:19:06+08:00">
+                2017-12-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/持续集成/" itemprop="url" rel="index">
+                    <span itemprop="name">持续集成</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>GitHub</li>
+</ol>
+<p><img src="/2017/12/21/jenkins-for-docker/git.png" alt="git"></p>
+<ol>
+<li>触发器</li>
+</ol>
+<p><img src="/2017/12/21/jenkins-for-docker/build.png" alt="build"></p>
+<ol>
+<li>post ssh插件</li>
+</ol>
+<p><img src="/2017/12/21/jenkins-for-docker/poststep.png" alt="git"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/20/qos/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/20/qos/" itemprop="url">qos基本原理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-20T16:42:11+08:00">
+                2017-12-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络协议/" itemprop="url" rel="index">
+                    <span itemprop="name">网络协议</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="QoS的基本原理"><a href="#QoS的基本原理" class="headerlink" title="QoS的基本原理"></a>QoS的基本原理</h3><p><a href="http://www.h3c.com.cn/MiniSite/Technology_Circle/Net_Reptile/The_Four/Home/Catalog/201104/713021_97665_0.htm" target="_blank" rel="noopener">原文地址</a></p>
+<h5 id="1-前言"><a href="#1-前言" class="headerlink" title="1 前言"></a>1 前言</h5><p>QoS（Quality of Service）是服务质量的简称。对于网络业务来说，服务质量包括哪些方面呢？从传统意义上来讲，无非就是传输的带宽、传送的时延、数据的丢包率等，而提高服务质量无非也就是保证传输的带宽，降低传送的时延，降低数据的丢包率以及时延抖动等。广义上讲，服务质量涉及网络应用的方方面面，只要是对网络应用有利的措施，其实都是在提高服务质量。因此，从这个意义上来说，防火墙、策略路由、快速转发等也都是提高网络业务服务质量的措施之一。</p>
+<p>服务质量相对网络业务而言，在保证某类业务服务质量的同时，可能就是在损害其它业务的服务质量。因为网络资源总是有限的，只要存在抢夺网络资源的情况，就会出现服务质量的要求。比如，网络总带宽为100Mbps，而BT下载占用了90Mbps，其他业务就只能占用剩下的10Mbps。而如果限制BT下载占用的最大带宽为50Mbps，也就提高了其他业务的服务质量，使其他业务能够占用最少50Mbps的带宽，但这是在损害BT业务的服务质量为前提的。</p>
+<h5 id="2-QoS模型"><a href="#2-QoS模型" class="headerlink" title="2 QoS模型"></a>2 QoS模型</h5><p>网络中的通信都是由各种应用流组成的，这些应用对网络服务和性能的要求各不相同，比如FTP下载业务希望能获取尽量多的带宽，而VoIP语音业务则希望能保证尽量少的延迟和抖动等。但是所有这些应用的特殊要求又取决于网络所能提供的QoS能力，根据网络对应用的控制能力的不同，可以把网络的QoS能力分为三种模型：</p>
+<h5 id="2-1-Best-Effort模型"><a href="#2-1-Best-Effort模型" class="headerlink" title="2.1 Best Effort模型"></a>2.1 Best Effort模型</h5><p>Best Effort（尽力而为）模型是最简单的服务模型，应用程序可以在任何时候，发出任意数量的报文，网络尽最大的可能性来发送报文，对带宽、时延、抖动和可靠性等不提供任何保证。</p>
+<p>Best Effort是Internet的缺省服务模型，通过FIFO（First In First Out，先进先出）队列来实现。</p>
+<p>尽力而为的服务实质上并不属于QoS的范畴，因为在转发尽力而为的通信时，并没有提供任何服务或转发保证。</p>
+<h5 id="2-2-DiffServ模型"><a href="#2-2-DiffServ模型" class="headerlink" title="2.2 DiffServ模型"></a>2.2 DiffServ模型</h5><p>DiffServ（Differentiated Service，区分服务）模型由RFC2475定义，在区分服务中，根据服务要求对不同业务的数据进行分类，对报文按类进行优先级标记，然后有差别地提供服务。</p>
+<p>区分服务一般用来为一些重要的应用提供端到端的QoS，它通过下列技术来实现：</p>
+<p>1）流量标记与控制技术：它根据报文的CoS（Class of Service，服务等级）域、ToS域（对于IP报文是指IP优先级或者DSCP）、IP报文的五元组（协议、源地址、目的地址、源端口号、目的端口号）等信息进行报文分类，完成报文的标记和流量监管。目前实现流量监管技术多采用令牌桶机制。</p>
+<p>2）拥塞管理与拥塞避免技术：WRED、PQ、CQ、WFQ、CBQ等队列技术对拥塞的报文进行缓存和调度，实现拥塞管理与拥塞避免。</p>
+<p>上述这些技术的主要实现原理将在下文的QoS基本原理中进行重点介绍。</p>
+<h5 id="2-3-IntServ模型"><a href="#2-3-IntServ模型" class="headerlink" title="2.3 IntServ模型"></a>2.3 IntServ模型</h5><p>IntServ（Integrated Service，综合服务）模型由RFC1633定义，在这种模型中，节点在发送报文前，需要向网络申请资源预留，确保网络能够满足数据流的特定服务要求。</p>
+<p>IntServ可以提供保证服务和负载控制服务两种服务，保证服务提供保证的延迟和带宽来满足应用程序的要求；负载控制服务保证即使在网络过载的情况下，也能对报文提供与网络未过载时类似的服务。</p>
+<p>在IntServ模型中，网络资源的申请是通过信令来完成的，应用程序首先通知网络它自己的流量参数和需要的特定服务质量请求，包括带宽、时延等，应用程序一般在收到网络的确认信息，即确认网络已经为这个应用程序的报文预留了资源后，才开始发送报文。同时应用程序发出的报文应该控制在流量参数描述的范围以内。负责完成保证服务的信令为RSVP（Resource Reservation Protocol，资源预留协议），它通知网络设备应用程序的QoS需求。RSVP是在应用程序开始发送报文之前来为该应用申请网络资源的，所以是带外信令。</p>
+<p>保证服务要求为单个流预先保留所有连接路径上的网络资源，而当前在Internet主干网络上有着成千上万条应用流，保证服务如果要为每一条流提供QoS服务就变得不可想象了。因此，IntServ模型很难独立应用于大规模的网络，目前主要与MPLS TE（Traffic Engineering，流量工程）结合使用。</p>
+<h5 id="3-QoS基本原理"><a href="#3-QoS基本原理" class="headerlink" title="3 QoS基本原理"></a>3 QoS基本原理</h5><h5 id="3-1-流量分类与标记"><a href="#3-1-流量分类与标记" class="headerlink" title="3.1 流量分类与标记"></a>3.1 流量分类与标记</h5><p>流量分类，就是将流量划分为多个优先级或多个服务类，如使用以太网帧中802.1Q头保留的User Priority(用户优先级)字段标记服务级别，可以将以太网帧最多分成23 = 8类；使用IP报文头的ToS（Type of service，服务类型）字段的前三位（即IP优先级）来标记报文，可以将报文最多分成23 = 8类；使用DSCP（Differentiated Services Codepoint，区分服务编码点，ToS域的前6位），则最多可分成26 = 64类。在报文分类后，就可以将其它的QoS特性应用到不同的分类，实现基于类的拥塞管理、流量整形等。</p>
+<p>对于MPLS网络报文，则一般是根据MPLS报文中的EXP域进行处理。EXP域包括3位，虽然RFC 3032把它叫做实验域，但它通常作为MPLS报文的CoS域，与IP网络的ToS或DSCP域等效。</p>
+<p>对于流量的分类，上面提到的关于以太网帧的Cos域、IP报文的ToS域等与MPLS报文的EXP域等仅是分类的一种情况，其实几乎可以对报文的任何信息段进行分类，比如也可以根据源IP地址、目的IP地址、源端口号、目的端口号、协议ID等进行流量的分类。</p>
+<p>虽然流量分类几乎可以根据报文的任何字段进行，但是流量分类标记则一般只对802.1Q 以太网帧的CoS域、IP报文的ToS域、MPLS报文的EXP域进行标记。流量的标记主要的目的就是让其他处理此报文的应用系统或设备知道该报文的类别，并根据这种类别对报文进行一些事先约定了的处理。</p>
+<p>例如，在网络的边界做如下分类和标记：</p>
+<p>1）所有VoIP数据报文聚合为EF业务类，将报文的IP优先级标记为5，或者将DSCP值标记为EF；</p>
+<p>2）所有VoIP控制报文聚合AF业务类，将报文的IP优先级标记为4，或者将DSCP值标记为AF31。</p>
+<p>当报文在网络边界被标记分类之后，在网络的中间节点，就可以根据标记，对不同类别的流量给予差别服务了。例如：对上述例子中的EF类业务保证时延和减少抖动，同时进行流量监管；对AF业务类在网络拥塞时仍然保证一定的带宽，等等。</p>
+<h5 id="3-2-拥塞管理技术原理"><a href="#3-2-拥塞管理技术原理" class="headerlink" title="3.2 拥塞管理技术原理"></a>3.2 拥塞管理技术原理</h5><h5 id="3-2-1-拥塞管理基本概念"><a href="#3-2-1-拥塞管理基本概念" class="headerlink" title="3.2.1 拥塞管理基本概念"></a>3.2.1 拥塞管理基本概念</h5><p>在计算机数据通信中，通信信道是被多个计算机共享的，并且，广域网的带宽通常要比局域网的带宽小，这样，当一个局域网的计算机向另一个局域网的计算机发送数据时，由于广域网的带宽小于局域网的带宽，数据将不可能按局域网发送的速度在广域网上传输。此时，处在局域网和广域网之间的路由器将不能发送一些报文，即网络发生了拥塞。</p>
+<p>如下图所示，当公司分支1向公司总部以100M的速度发送数据时，将会使Router2的串口S0/1发生拥塞。</p>
+<p><img src="/2017/12/20/qos/20110422_1184949_image001_713021_97665_0.png" alt="img"></p>
+<p>图1 实际应用中的拥塞实例</p>
+<p>拥塞管理是指网络在发生拥塞时，如何进行管理和控制。处理的方法是使用队列技术。将所有要从一个接口发出的报文进入多个队列，按照各个队列的优先级进行处理。不同的队列算法用来解决不同的问题，并产生不同的效果。常用的队列技术有FIFO、PQ、CQ、WFQ、CBWFQ等，下文逐一介绍这些常用队列技术的基本原理。</p>
+<h5 id="3-2-2-FIFO队列原理简述"><a href="#3-2-2-FIFO队列原理简述" class="headerlink" title="3.2.2 FIFO队列原理简述"></a>3.2.2 FIFO队列原理简述</h5><p>FIFO（First In First Out，先进先出）队列示意图如下所示：</p>
+<p><img src="/2017/12/20/qos/20110422_1184950_image002_713021_97665_0.png" alt="img"></p>
+<p>图2 FIFO队列示意图</p>
+<p>FIFO队列不对报文进行分类，当报文进入接口的速度大于接口能发送的速度时，FIFO按报文到达接口的先后顺序让报文进入队列，同时，FIFO在队列的出口让报文按进队的顺序出队，先进的报文将先出队，后进的报文将后出队。</p>
+<p>FIFO队列具有处理简单，开销小的优点。但FIFO不区分报文类型，采用尽力而为的转发模式，使对时间敏感的实时应用（如VOIP）的延迟得不到保证，关键业务的带宽也不能得到保证。</p>
+<h5 id="3-2-3-PQ原理简述"><a href="#3-2-3-PQ原理简述" class="headerlink" title="3.2.3 PQ原理简述"></a>3.2.3 PQ原理简述</h5><p>PQ（Priority Queuing，优先队列）示意图如下所示：</p>
+<p><img src="/2017/12/20/qos/20110422_1184951_image003_713021_97665_0.png" alt="img"></p>
+<p>图3 PQ队列示意图</p>
+<p>PQ队列是针对关键业务应用设计的。关键业务有一个重要特点，需要在拥塞发生时要求优先获得服务以减少响应的延迟。PQ可以根据网络协议（如IP、IPX）、数据流入接口、报文长短、IP报文的ToS、五元组（协议ID、源IP地址、目的IP地址、源端口号、目的端口号）等条件进行分类，对于MPLS网络，则根据MPLS报文EXP域值进行分类。最终将所有报文分成最多4类，分别属于PQ的4个队列中的一个，然后，按报文所属类别将报文送入相应的队列。</p>
+<p>PQ的4个队列分别为高优先队列、中优先队列、正常优先队列和低优先队列，它们的优先级依次降低。在报文出队的时候，PQ首先让高优先队列中的报文出队并发送，直到高优先队列中的报文发送完，然后发送中优先队列中的报文，同样，直到发送完，然后是正常优先队列和低优先队列。这样，分类时属于较高优先级队列的报文将会得到优先发送，而较低优先级的报文将会在发生拥塞时被较高优先级的报文抢占。这样会使得实时业务（如VoIP）的报文能够得到优先处理，非实时业务（如E-Mail）的报文在网络处理完关键业务后的空闲间隙得到处理，既保证了实时业务的优先，又充分利用了网络资源。</p>
+<p>PQ的缺点是，当较高优先级队列中总有报文存在时，则低优先级队列中的报文将一直得不到服务，出现队列“饿死”现象。</p>
+<h5 id="3-2-4-CQ原理简述"><a href="#3-2-4-CQ原理简述" class="headerlink" title="3.2.4 CQ原理简述"></a>3.2.4 CQ原理简述</h5><p>CQ（Custom Queuing，定制队列）示意图如下所示：</p>
+<p><img src="/2017/12/20/qos/20110422_1184952_image004_713021_97665_0.png" alt="img"></p>
+<p>图4 CQ队列示意图</p>
+<p>CQ的分类方法和PQ基本相同，不同的是它最终将所有报文分成最多至17类，每类报文对应CQ中的一个队列，接口拥塞时，报文按匹配规则被送入对应的队列；如果报文不匹配任何规则，则被送入缺省队列（缺省队列默认为1，可配置修改缺省队列）。</p>
+<p>CQ的17个队列中，0号队列是优先队列，路由器总是先把0号队列中的报文发送完，然后才处理1到16号队列中的报文，所以0号队列一般作为系统队列，把实时性要求高的交互式协议报文放到0号队列。1到16号队列调度采用轮询方式，按照用户预先配置的额度依次从1到16号用户队列中取出一定数量的报文发送。如果轮询到某队列时该队列恰好为空，则立即转而轮询下一个队列。</p>
+<p>CQ把报文分类，然后按类别将报文分配到CQ的一个队列中去，而对每个队列，又可以规定队列中的报文所占接口带宽的比例，这样，就可以让不同业务的报文获得合理的带宽，从而既保证关键业务能获得较多的带宽，又不至于使非关键业务得不到带宽。但由于采用轮询调度各个队列，CQ无法保证任何数据流的延迟。</p>
+<h5 id="3-2-5-WFQ原理简述"><a href="#3-2-5-WFQ原理简述" class="headerlink" title="3.2.5 WFQ原理简述"></a>3.2.5 WFQ原理简述</h5><p>WFQ（Weighted Fair Queuing，加权公平队列）示意图如下所示：</p>
+<p><img src="/2017/12/20/qos/20110422_1184953_image005_713021_97665_0.png" alt="img"></p>
+<p>图5 WFQ队列示意图</p>
+<p>WFQ对报文按流特征进行分类，对于IP网络，相同源IP地址、目的IP地址、源端口号、目的端口号、协议号、ToS的报文属于同一个流，而对于MPLS网络，具有相同的标签和EXP域值的报文属于同一个流。每一个流被分配到一个队列，该过程称为散列，采用HASH算法来自动完成，这种方式会尽量将不同特征的流分入不同的队列中。每个队列类别可以看作是一类流，其报文进入WFQ中的同一个队列。WFQ允许的队列数目是有限的，用户可以根据需要配置该值。</p>
+<p>在出队的时候，WFQ按流的优先级（precedence）来分配每个流应占有出口的带宽。优先级的数值越小，所得的带宽越少。优先级的数值越大，所得的带宽越多。这样就保证了相同优先级业务之间的公平，体现了不同优先级业务之间的权值。</p>
+<p>WFQ优点在于配置简单，有利于小包的转发，每条流都可以获得公平调度，同时照顾高优先级报文的利益。但由于流是自动分类，无法手工干预，故缺乏一定的灵活性，且受资源限制，当多个流进入同一个队列时无法提供精确服务，无法保证每个流获得的实际资源量。WFQ均衡各个流的延迟与抖动，同样也不适合延迟敏感的业务应用。</p>
+<h5 id="3-2-6-CBQ原理简述"><a href="#3-2-6-CBQ原理简述" class="headerlink" title="3.2.6 CBQ原理简述"></a>3.2.6 CBQ原理简述</h5><p>CBQ（Class Based Queuing，基于类的队列）示意图如下所示：</p>
+<p><img src="/2017/12/20/qos/20110422_1184954_image006_713021_97665_0.jpg" alt="img"></p>
+<p>图6 CBQ队列示意图</p>
+<p>CBQ首先根据IP优先级或者DSCP、输入接口、IP报文的五元组等规则来对报文进行分类；对于MPLS网络的LSR，主要是根据EXP域值进行分类。然后让不同类别的报文进入不同的队列。对于不匹配任何类别的报文，报文被送入系统定义的缺省类。</p>
+<p>CBQ包括一个低时延队列LLQ（Low Latency Queuing，低时延队列），用来支撑EF（Expedited Forwarding，快速转发）类业务，被绝对优先发送，保证时延。进入EF的报文在接口没有发生拥塞的时候（此时所有队列中都没有报文），所有属于EF的报文都可以被发送。在接口发生拥塞的时候（队列中有报文时），进入EF的报文被限速，超出规定流量的报文将被丢弃。</p>
+<p>另外有64个BQ队列（Bandwidth Queuing，带宽保证队列），用来支撑AF（Assured Forwarding，确保转发）类业务，可以保证每一个队列的带宽及可控的时延。系统调度报文出队列的时候，按用户为各类报文设定的带宽将报文出队发送。这种队列技术应用了先进的队列调度算法，可以实现各个类的队列的公平调度。当接口中某些类别的队列没有报文时，BQ队列的报文还可以公平地得到空闲的带宽，和时分复用系统相比，大大提高了线路的利用率。同时，在接口拥塞的时候，仍然能保证各类报文得到用户设定的最小带宽。</p>
+<p>最后还有一个WFQ队列，对应BE（Best Effort，尽力传送）业务，使用接口剩余带宽进行发送。</p>
+<p>CBQ可根据报文的输入接口、满足ACL情况、IP Precedence、DSCP、EXP、Label等规则对报文进行分类、进入相应队列。对于进入EF和AF的报文，要进行测量；考虑到链路层控制报文的发送、链路层封装开销及物理层开销（如ATM信元头），建议EF与AF占用接口的总带宽不要超过接口带宽的75%。</p>
+<p>CBQ可为不同的业务定义不同的调度策略（如带宽、时延等），由于涉及到复杂的流分类，对于高速接口（GE以上）启用CBQ特性系统资源存在一定的开销。</p>
+<h5 id="3-2-7-RTP原理简述"><a href="#3-2-7-RTP原理简述" class="headerlink" title="3.2.7 RTP原理简述"></a>3.2.7 RTP原理简述</h5><p>RTP优先队列(Real Time Protocol Priority Queuing) 示意图如下所示：</p>
+<p><img src="/2017/12/20/qos/20110422_1184955_image007_713021_97665_0.jpg" alt="img"></p>
+<p>图7 RTP队列示意图</p>
+<p>RTP优先队列是一种保证实时业务（包括语音与视频业务）服务质量的简单队列技术。其原理就是将承载语音或视频的RTP报文送入高优先级队列，使其得到优先发送，保证时延和抖动降低为最低限度，从而保证了语音或视频这种对时延敏感业务的服务质量。</p>
+<p>RTP优先队列将RTP报文送入一个具有较高优先级的队列，RTP报文是端口号在一定范围内为偶数的UDP报文，端口号的范围可以配置，一般为16384~32767。RTP优先队列可以同前面所述的任何一种队列（包括FIFO、PQ、CQ、WFQ与CBQ）结合使用，它的优先级是最高的。由于CBQ中的EF完全可以解决实时业务，所以不推荐将RTP优先队列与CBQ结合应用。</p>
+<p>由于对进入RTP优先队列的报文进行了限速，超出规定流量的报文将被丢弃，这样在接口拥塞的情况下，可以保证属于RTP优先队列的报文不会占用超出规定的带宽，保护了其他报文的应得带宽，解决了PQ的高优先级队列的流量可能“饿死”低优先级流量的问题。</p>
+<h5 id="3-3-拥塞避免原理"><a href="#3-3-拥塞避免原理" class="headerlink" title="3.3 拥塞避免原理"></a>3.3 拥塞避免原理</h5><p>受限于设备的内存资源，按照传统的处理方法，当队列的长度达到规定的最大长度时，所有到来的报文都被丢弃。对于TCP报文，如果大量的报文被丢弃，将造成TCP超时，从而引发TCP的慢启动和拥塞避免机制，使TCP减少报文的发送。当队列同时丢弃多个TCP连接的报文时，将造成多个TCP连接同时进入慢启动和拥塞避免，称之为：TCP全局同步。这样多个TCP连接发向队列的报文将同时减少，使得发向队列的报文的量不及线路发送的速度，减少了线路带宽的利用。并且，发向队列的报文的流量总是忽大忽小，使线路的上的流量总在极少和饱满之间波动。</p>
+<p>为了避免这种情况的发生，队列可以采用加权随机早期检测WRED（Weighted Random Early Detection）的报文丢弃策略（WRED与RED的区别在于前者引入IP优先权，DSCP值，和MPLS EXP来区别丢弃策略）。采用WRED时，用户可以设定队列的阈值（threshold）。当队列的长度小于低阈值时，不丢弃报文；当队列的长度在低阈值和高阈值之间时，WRED开始随机丢弃报文（队列的长度越长，丢弃的概率越高）；当队列的长度大于高阈值时，丢弃所有的报文。</p>
+<p>WRED和队列机制的关系如下图所示：</p>
+<p><img src="/2017/12/20/qos/20110422_1184956_image008_713021_97665_0.png" alt="img"></p>
+<p>图8 WRED处理方式示意图</p>
+<h5 id="3-4-流量监管原理"><a href="#3-4-流量监管原理" class="headerlink" title="3.4 流量监管原理"></a>3.4 流量监管原理</h5><p>流量监管（Commit Access Rate，简称CAR）的典型作用是限制进入某一网络的某一连接的流量与突发。在报文满足一定的条件时，如某个连接的报文流量过大，流量监管就可以对该报文采取不同的处理动作，例如丢弃报文，或重新设置报文的优先级等。通常的用法是使用CAR来限制某类报文的流量，例如限制HTTP报文不能占用超过50%的网络带宽。</p>
+<p>CAR利用令牌桶（Token Bucket，简称TB）进行流量控制。下图所示为利用CAR进行流量控制的基本处理过程：</p>
+<p><img src="/2017/12/20/qos/20110422_1184957_image009_713021_97665_0.png" alt="img"></p>
+<p>图9 CAR处理方式示意图</p>
+<p>首先，根据预先设置的匹配规则来对报文进行分类，如果是没有规定流量特性的报文，就直接继续发送，并不需要经过令牌桶的处理；如果是需要进行流量控制的报文，则会进入令牌桶中进行处理。如果令牌桶中有足够的令牌可以用来发送报文，则允许报文通过，报文可以被继续发送下去。如果令牌桶中的令牌不满足报文的发送条件，则报文被丢弃。这样，就可以对某类报文的流量进行控制。</p>
+<p>在实际应用中，CAR不仅可以用来进行流量控制，还可以进行报文的标记（mark）或重新标记（re-mark）。具体来讲就是CAR可以设置IP报文的优先级或修改IP报文的优先级，达到标记报文的目的。</p>
+<h5 id="3-5-流量整型原理"><a href="#3-5-流量整型原理" class="headerlink" title="3.5 流量整型原理"></a>3.5 流量整型原理</h5><p>通用流量整形（Generic Traffic Shaping，简称GTS）可以对不规则或不符合预定流量特性的流量进行整形，以利于网络上下游之间的带宽匹配。</p>
+<p>GTS与CAR一样，均采用了令牌桶技术来控制流量。GTS与CAR的主要区别在于：利用CAR在接口的出、入方向进行报文的流量控制，对不符合流量特性的报文进行丢弃；而GTS只在接口的出方向对于不符合流量特性的报文进行缓冲，减少了报文的丢弃，同时满足报文的流量特性，但增加了报文的延迟。</p>
+<p>GTS的基本处理过程如下图所示，其中用于缓存报文的队列称为GTS队列。</p>
+<p><img src="/2017/12/20/qos/20110422_1184958_image010_713021_97665_0.png" alt="img"></p>
+<p>图10 GTS处理过程示意图</p>
+<h5 id="3-6-物理接口总速率限制原理"><a href="#3-6-物理接口总速率限制原理" class="headerlink" title="3.6 物理接口总速率限制原理"></a>3.6 物理接口总速率限制原理</h5><p>利用物理接口总速率限制（Line Rate，简称LR）可以在一个物理接口上，限制接口发送报文（包括紧急报文）的总速率。</p>
+<p>LR的处理过程仍然采用令牌桶进行流量控制。如果用户在路由器的某个接口上配置了LR，规定了流量特性，则所有经由该接口发送的报文首先要经过LR的令牌桶进行处理。如果令牌桶中有足够的令牌可以用来发送报文，则报文可以发送。如果令牌桶中的令牌不满足报文的发送条件，则报文入QoS队列进行拥塞管理。这样，就可以对通过该物理接口的报文流量进行控制。</p>
+<p>LR的基本处理过程如下图所示：</p>
+<p><img src="/2017/12/20/qos/20110422_1184959_image011_713021_97665_0.png" alt="img"></p>
+<p>图11 LR处理过程示意图</p>
+<h5 id="4-其他提高QoS的技术"><a href="#4-其他提高QoS的技术" class="headerlink" title="4 其他提高QoS的技术"></a>4 其他提高QoS的技术</h5><h5 id="4-1-链路效率机制"><a href="#4-1-链路效率机制" class="headerlink" title="4.1 链路效率机制"></a>4.1 链路效率机制</h5><p>链路效率机制，用于改善链路的性能，间接提高网络的QoS，如降低链路发包的时延（针对特定业务）、调整有效带宽。链路效率机制有很多种，下面介绍两种比较典型的链路效率机制及其基本原理。</p>
+<h5 id="4-1-1-链路分片与交叉（Link-Fragment-amp-Interleave，LFI）"><a href="#4-1-1-链路分片与交叉（Link-Fragment-amp-Interleave，LFI）" class="headerlink" title="4.1.1 链路分片与交叉（Link Fragment &amp; Interleave，LFI）"></a>4.1.1 链路分片与交叉（Link Fragment &amp; Interleave，LFI）</h5><p>对于低速链路，即使为语音等实时业务报文配置了高优先级队列（如RTP优先队列或LLQ），也不能够保证其时延与抖动，原因在于接口在发送其他数据报文的瞬间，语音业务报文只能等待，而对于低速接口发送较大的数据报文要花费相当长的时间。采用LFI以后，数据报文（非RTP实时队列和LLQ中的报文）在发送前被分片、逐一发送，而此时如果有语音报文到达则被优先发送，从而保证了语音等实时业务的时延与抖动。LFI主要用于低速链路。</p>
+<p>链路效率机制的工作原理图如下所示：</p>
+<p><img src="/2017/12/20/qos/20110422_1184960_image012_713021_97665_0.png" alt="img"></p>
+<p>图12 LFI处理过程示意图</p>
+<p>如上图所示，应用LFI技术，在大报文出队的时候，可以将其分为定制长度的小片报文，这就使RTP优先队列或LLQ中的报文不必等到大片报文发完后再得到调度，它等候的时间只是其中小片报文的发送时间，这样就很大程度的降低了低速链路因为发送大片报文造成的时延。</p>
+<h5 id="4-1-2-RTP报文头压缩（RTP-Header-Compression，CRTP）"><a href="#4-1-2-RTP报文头压缩（RTP-Header-Compression，CRTP）" class="headerlink" title="4.1.2 RTP报文头压缩（RTP Header Compression，CRTP）"></a>4.1.2 RTP报文头压缩（RTP Header Compression，CRTP）</h5><p>CRTP用于RTP（Real-time Transport Protocol）协议，对IP头、UDP头和RTP头进行压缩，通常在低速链路上使用。可将40字节的IP/UDP/RTP头压缩到2~4个字节（不使用UDP校验和可到2字节），提高链路带宽的利用率。CRTP主要得益于同一会话的语音分组头和语音分组头之间的差别往往是不变的，因此只需传递增量。</p>
+<p>RTP协议用于在IP网络上承载语音、视频等实时多媒体业务。RTP报文包括头部分和数据部分，RTP的头部分包括：12字节的RTP头，加上20字节的IP头和8字节的UDP头，就是40字节的IP/UDP/RTP头；RTP数据部分典型载荷是20字节到160字节。为了避免不必要的带宽消耗，可以使用CRTP特性对报文头进行压缩。CRTP可以将IP/UDP/RTP头从40字节压缩到2～4字节，对于40字节的载荷，头压缩到4字节，压缩比为（40+40）/（40+4），约为1.82，可见效果是相当可观的，可以有效的减少链路带宽的消耗，尤其是低速链路。</p>
+<p>RTP报文头压缩的处理过程如下图所示：</p>
+<p><img src="/2017/12/20/qos/20110422_1184961_image013_713021_97665_0.png" alt="img"></p>
+<p>图13 CRTP处理过程示意图</p>
+<h5 id="4-2-链路层QoS技术"><a href="#4-2-链路层QoS技术" class="headerlink" title="4.2 链路层QoS技术"></a>4.2 链路层QoS技术</h5><p>链路层QoS技术主要针对ATM（Asynchronous Transfer Mode，异步传输模式）、帧中继等链路层协议支持QoS。ATM作为一种面向连接的技术，提供对QoS最强有力的支持，而且可以基于每个连接提供特定的QoS保证；帧中继网络确保连接的CIR（Committed Information Rate，承诺信息速率）最小，即在网络拥塞时，传输速度不能小于这个值。</p>
+<h5 id="4-2-1-ATM-QoS"><a href="#4-2-1-ATM-QoS" class="headerlink" title="4.2.1 ATM QoS"></a>4.2.1 ATM QoS</h5><p>ATM是异步传输模式（Asynchronous Transfer Mode）的简称，以信元为基本单位进行信息传输、复接和交换。ATM信元具有53字节的固定长度，其中5个字节构成信元头部，主要用来标识虚连接，另外也完成了一些功能有限的流量控制，拥塞控制，差错控制等功能，其余48个字节是有效载荷。ATM是面向连接的交换，其连接是逻辑连接，即虚电路。每条虚电路（Virtual Circuit，VC）用虚路径标识符（Virtual Path Identifier，VPI）和虚通道标识符（Virtual Channel Identifier，VCI）来标识。一个VPI/VCI值对只具有本地意义，不具有全局有效性。它在ATM节点上被翻译。当一个连接被释放时，与此相关的VPI/VCI值对也被释放，它被放回资源表，供其它连接使用。</p>
+<p>ATM中每一条VC都有一定的QoS保障，这是由ATM的连接管理来实现的。当用户与网络或网络与网络建立一个连接的时候，双方就确定了一份通信契约，契约中包括流量参数和QoS参数两部分。此通信契约为双方所共识，双方必须遵守。流量参数包括峰值信元速率（PCR，Peak Cell Rate）、持续信元速率（SCR，Sustained Cell Rate）、最小信元速率（MCR，Minimum Cell Rate）以及最大突发量（MBS，Maximum Burst Size），它们描述业务本身的流量特性，又称为源流量参数。QoS参数主要包括最大信元传递时延（MCTD，MeanCell Transfer Delay）、信元抖动容限（CDVT，CellDelayVariationTolerance）和信元丢失率（CLR，Cell Loss Ratio）， MCTD是信元从一个端点到另一个端点所需要的时间， CDVT是信元间隔的上限， CLR是可以接受的因网络拥塞而导致信元丢失比例。</p>
+<p>ATM端系统负责确保传输的流量符合QoS合同。ATM端系统通过缓冲数据来对流量进行整形，并按约定的QoS参数传输通信。ATM交换机控制每个用户的通信指标，并将其与QoS合同进行比较。对于超过了QoS合同的通信，ATM节点可以设置信元的CLP（Cell Loss Priority，信元丢弃优先级）位。在网络拥塞时，CLP置位的信元被丢弃的可能性更大。</p>
+<p>ATM网络拥塞管理的基本思想在于：引入预防性控制措施，不再是出现拥塞之后再采取措施来消除拥塞，而是通过精心管理网络资源来避免拥塞的出现。</p>
+<h5 id="4-2-2-FR-QoS"><a href="#4-2-2-FR-QoS" class="headerlink" title="4.2.2 FR QoS"></a>4.2.2 FR QoS</h5><p>FR（Frame Relay，帧中继）是一种统计复用的协议，它能够在单一物理传输线路上提供多条虚电路。每条虚电路用DLCI（Data Link Connection Identifier，数据链路连接标识）来标识。每条虚电路通过LMI（Local Management Interface，本地管理接口）协议检测和维护虚电路的状态。</p>
+<p>帧中继采用VC（Virtual Circuit）虚电路技术，即帧中继传送数据使用的传输链路是逻辑连接，而不是物理连接。虚电路是面向连接的，可以保证用户帧按顺序传送至目的地。根据虚电路建立方式的不同，将帧中继虚电路分为两种类型：永久虚电路（PVC，Permanent Virtual Circuit）和交换虚电路（SVC，Switched Virtual Circuit）。PVC是手工设置产生的虚电路，而SVC是通过协议协商自动创建和删除的虚电路。</p>
+<p>帧中继报头中的3个位提供了帧中继网络中的拥塞控制机制，这3个位分别叫做向前显式拥塞通知（FECN，Forward Explicit Congestion Notification）位、向后显式拥塞通知（BECN，Backward Explicit Congestion Notification）位和丢弃合格（DE，Discard Eligible）位。可以通过帧中继交换机将FECN位置1来告知诸如路由器等目标数据终端设备（DTE，Data Terminal Equipment），在帧从源传送到目的地的方向发生了拥塞。帧中继交换机将BECN位置1则告知目标路由器，在帧从源传送到目的地的反方向上发生了拥塞。DE位由路由器或其他DTE设备设置，指出被标记的帧没有传输的其他帧那么重要，它在帧中继网络中提供了一种基本的优先级机制，如果发生拥塞时，DE位置位的帧会被优先丢弃。</p>
+<p>帧中继流量整形（FRTS，Frame Relay Traffic Shaping）对从帧中继VC输出的通信进行整形，使之与配置速率一致，它将超出平均速率的分组放到缓冲区来使突发通信变得平滑。根据配置的排队机制，当有足够的可用资源时，这些缓冲的分组出队并等候被传输。排队算法是基于单个VC配置的，它只能针对接口的出站通信进行设置。FRTS可对每个VC的流量进行整形，将其峰值速率整形为承诺信息速率（CIR，Committed Information Rate）或其他定义的值，如超额信息速率（EIR，Excess Information Rate）。自适应模式的FRTS还能够根据收到的网络BECN拥塞指示符降低帧中继VC的输出量，将PVC的输出流量整形为与网络的可用带宽一致。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/20/overlay-network/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/20/overlay-network/" itemprop="url">overlay network</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-20T16:25:25+08:00">
+                2017-12-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络协议/" itemprop="url" rel="index">
+                    <span itemprop="name">网络协议</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>OVERLAY NETWORK最早受到关注始自P2P,在此之前，尽管类似隧道、vpn的技术已经具备了OVERLAY的特征，但是波澜不兴，中规中矩，到了P2P，天翻地覆，颠覆性技术横空出世，人们开始正视OVERLAY的威力。</p>
+<p>通常，OVERLAY NETWORK要比基础网络简单，至少从复杂性上来说，P2P、ALM这些网络现在还不能与互联网相提并论，以后也不大可能。原因比较简单，基础网络面向大多数应用，提供的是普遍服务，干的是众口难调的事，而OVERLAY NETWORK只服务于特定的业务，不必像春晚那样焦头烂额。</p>
+<p>OVERLAY NETWORK的兴起，说明互联网正在经历一场蜕变。人们不再把互联网看成万能之神，也不打算把它往神不神鬼不鬼的路子上推。越来越多的业务，开始不需要和IP层的地址结构和路由结构绑定，也不再需要看运营商和标准化组织的眼色，在OVERLAY上，电信网络中的很多障碍荡然无存，比如自治域之间的路由策略，可以轻易被OVERLAY ROUTING绕过去。</p>
+<p>OVERLAY NETWORK背后的智慧，是把特定的问题从痛苦无比的互联网无穷多目标优化问题中剥离出来，影射到一个独立的平面或空间，在无所羁绊的净室快刀斩乱麻而无需担心伤及无辜。在研究领域，QOS问题聒噪了几十年，从来没有出现过什么有分量的方案，最后，那个学究们认定死路一条的广域网视频传输质量问题，竟然就被OVERLAY NETWORK探囊取物般解决了，我每次抱着IPAD从PPLIVE上看高清大片的时候，都不能不感叹大道至简大智若愚。</p>
+<p>OVERLAY NETWORK的玄机，如同回旋镖，看起来绕了个大弯，其实万变不离其宗。IP层路由结构,是一个IP层的端到端FULL MESH结构,端到端的路径,是这个结构里最小粒度的边,这个结构的特点,是数据只能在两点之间的直连边上传输，不支持路径级的多跳转发。这种结构的优势，是能够从IP拓扑所蕴含的数量庞大的路径集合中，找出最优路径，而劣势，则是不能充分利用次优路径的多样性以应对故障和异常现象。从这个意义上说，路由结构强调唯一性和最优性，牺牲的是灵活性和多样性，因此适用于稳定的网络环境。这里所说的稳定，一方面是指网络结构稳定，另一方面，是指业务对路径优劣的评价标准稳定。唯一性必然带来片面性，一旦面对多样化的需求，以唯一性为特征的路由结构，就会陷入两难境地。尽管多拓扑、多路径技术可以缓解这一问题，但只要此类问题阈于路由器上解决，就难免会让路由设备在普遍转发服务和个案服务之间疲于奔命。并且，在同一个层面上维护多种路由结构和转发策略本身也不轻松。应用层路由，属于个案服务，属于IP层路由的补充。以IP层的端到端路径为边，根据路径和IP层链路的从属关系，应用层网络中边的粒度，可以小至与IP链路相当，也可以大至包含多条IP链路，就这一点而言，应用层拓扑和IP层路由结构没有本质区别。二者的差异，体现在应用层路由可以跨越多条IP层路径，也就是说，即便IP层端到端路径构成的FULL MESH结构被破坏，只要以路径为边形成的拓扑仍然连通，就有可能通过应用层路径解决路径中断问题。当然，应用层路由器和IP层路由器的重叠度越高，可恢复性就越好。当二者完全吻合的时候，也就意味着IP层的路径多样性可以完全被应用层路由挖掘出来，反之，则只能挖掘出那些包含了应用层路由器的冗余路径。 因此，应用层路由结构的优劣，可以用冗余覆盖率来表示：<br>冗余覆盖率 = 应用层路由结构中包含的路径数量/IP层路由结构中包含的路径数量<br>这个比例越高，则应用层路由的性能就越好，当然，投资和开销也就越大。其中最佳的平衡点，取决于业务的特性以及网络特性，也就是说，首先要确定应用层路径能够解决问题的程度，比如提供数据转发恢复的成功率；其次，影响这一指标的要素，比如故障模型。以此构造方程求解，可以分析出需要部署节点的数量和位置。比如，网络的故障率越高，则为了达到同样的路径恢复能力，需要部署的应用层路由器节点也就越多。<br>因为应用层路由提供的通常是个案服务，也就是面向那些IP层路由满足不了的需求，因此在成本核算上也和IP路由不同。IP路由的特点是薄利多销，虽然构造路由结构是一个高开销高复杂性的工作，但是因为用户的数据转发任务源源不断，因此平摊下来，每用户的开销其实微乎其微。而应用层路由属于三年不开张、开张吃三年类型，如果仍然沿用IP层路由模式，效费比太低，而且复杂性会超过IP层路由。这一点比较诡异，但也不难理解。假设把OSPF协议直接搬到应用层，首先面临的问题就是每个路由器的邻居数量过于庞大，等于节点总数减一，节点有可能被HELLO给噎死。而应用层链路的稳定性，是这条链路对应路径中所有IP链路稳定度百分比的乘积，这一乘，就把稳定度给搞下来了。而最为致命的，是一旦吸上了最X路径优先这口大麻，也就会像IP层路由一样，丧失对多样性的操控能力。有人可能会说，只要让应用层路由采用急速收敛，无论网络如何变化，都能马上找到最优路径，不行吗？答案是不行，因为计算的依据LSDB很难在HELLO噎死的条件下保证实时精确，而即便能保证，在一个稳定性不高的网络中，频繁的重计算也会把骆驼压死。这里有一个非常重要的概念，凡是最优的东西，一定是从众多侯选中挑出来的，只有一个可选项，是无从讨论最优的。而挑选的过程是不是靠谱，全赖两个条件，第一是能不能保证所有有资格的候选项都进入了挑选的范围，第二是挑选的过程是否合理高效。没有这两个条件作为铺垫，像王昭君这样的大美女黯然落榜只能下嫁蛮夷的悲剧就无法避免。<br>既然如此,当如何是好?</p>
+<p>方法不复杂，而且早已被AD HOC网络以及P2P网络屡试不爽，那就是概率不够、数量来凑。如果一次命中的可能性不高，多开几枪就行了。早期的加特林机关枪，精度很差，故障率也很高，曾经被嘲笑，但是嘲笑的人忘记了加特林的秘籍——射速。只要单位时间内射出的弹丸数量足够多，命中率和杀伤力就会大幅度提高。后来，性能更加优越的马克沁水冷式机关枪展示时，也被认为是愚蠢的设计，当时李鸿章也在场。只有德国人脑子好使，看出了射速的威力，大量装备陆军，在一次大战中成为与坦克齐名的大杀器。在AD HOC网络中，OSPF之类的路由协议被变幻莫测的网络结构折磨得焦头烂额，而AODV这样的按需发起路有协议却大行其道。AODV的秘诀，就在于以广播方式向外发送路径查询消息，网络结构再动荡，却奈何广播不得，虽然一次查询的开销相当可观，但和维持一个常备路由结构相比，仍然相当廉价。这就是个案服务的优势，虽然每次启动的开销和最终传输的数据量相比明显过大，但只要这些高开销行为在时间轴上稀疏，就不至于把网络压垮。在OVERLAY NETWORK中，通过一次查询消息的齐射，就能够把路径查找的成功率大幅度提升。</p>
+<p>其中的技巧，存在于两个方面：</p>
+<p>第一是一次齐射中问讯邻居的数量如何优化。当选取的数量小于最优值时，成功率随问讯邻居数量显著上升，而一旦越过最优值，成功率曲线就变得非常平滑，再增加问讯邻居的数量也是收益甚微。这一点，在很多讨论OVERLAY NETWORK的文章中都得到了实证。</p>
+<p>第二是问讯邻居的位置如何选择，显然，问讯挤成一坨的一组邻居和问讯其中的一个在效果上几乎没有区别，因为从源点到这些密集邻居之间的路径重合度很高，而从这些邻居到目的点路径的重合度也很高。被问讯的邻居之间越是分散则各条路径的交叉性也就越低，IP层路径的冗余性也就能够被越好地挖掘。</p>
+<p>这两点虽然看起来独立，其实有很大的关联性，当然在最极端的方案——问讯所有邻居中，邻居之间的位置可以忽略不计。</p>
+<p>问讯所有的邻居并非万无一失,如果从源点到目的点之间,不存在等于2跳的应用层路径,这种方式一样会失效。在RESILIENT OVERLAY NETWORK这篇文章中，作者虽然设计了一种能够支持多跳应用层路由的方案，但实验的结果证明只要经过一个中间结点就能够实现应用层的迂回路径。但这个结论只有在网络故障率很低的情况下才能成立。Resilient Overlay Networks以及Improving the Reliability of Internet Paths with One-hop Source Routing这两篇文章对于这种情况进行了更为细致的分析，实验数据表明，针对不同的故障类型，经由一跳转发方式的成功率也表现出差异性，并非总是所向披靡。其中比较重要的影响因素，是应用层节点所连接路由器的度数，度数越大，则应用层节点可用的路径数也就越多，应对故障的能力也就越强。</p>
+<p>在RESILIENT OVERLAY NETWORK这篇文章中，作者使用一种类似于OSPF的路由协议来计算和维护应用层转发表，为了避免频繁的路由震荡，作者设计了一种根据应用层链路历史状态累积计算权值的方法，并通过变速探测在探测效率和开销之间寻求平衡。Improving the Reliability of Internet Paths with One-hop Source Routing则代表了另外一种截然不同的设计思想，应用层节点完全不构造和维护路由表，只有在需要的时候才向几个随机选取的邻居发出讯问。Scalable Resilient Overlay Networks Using Destination-Guided Detouring把位置信息作为决策辅助，而位置信息来源于各个节点所计算出的到标志节点的RTT值，并不依赖于GPS或者IP层拓扑，基本的理念和Improving the Reliability of Internet Paths with One-hop Source Routing相同。后两篇文章都没有涉及多跳转发的问题，但他们对于一跳转发问题的分析非常值得借鉴。此外,RON的路由表只能覆盖RON节点，对于RON以外的目的地无能为力，而一跳源路由这种技术就不受此约束，这也是按需服务的好处。正如孙子所说，备前则寡后，备坐则寡右，无所不备则无所不寡。</p>
+<p>上述文章都将应用层路由节点部署在边缘网络，独立于运营商，倘若运营商希望借助此技术解决网络生存性等问题，则具备在核心网部署的优势。无论是解决控制平面的可靠性问题，还是为特定业务提供高可靠的转发服务，应用层网络都是一个富有前景的选项。而其中的秘诀，就在于能够将缠斗于一个层面的问题分离到不同的层次隔离解耦。针对此类需求，我们考虑高故障率环境下应用层路由需要考虑的问题可以归纳为以下几点：</p>
+<p>1、网络中存在度值较大的节点,应用层路径的丰富性和优化程度会高于仅在边缘部署的应用层路由技术;</p>
+<p>2、由于需要承载控制信息，因此对可靠度的要求很高，需要考虑多跳应用层转发问题，充分挖掘IP路径的多样性；</p>
+<p>3、对时效性要求较高，因此对应用层可用路径查找的效率有要求，需要通过测量保存一部分应用层链路信息，以便查找时先从优质节点入手，提高成功率；</p>
+<p>4、不依赖网络层拓扑信息，保持独立性。</p>
+<p>针对上述问题，可以考虑以下设计：</p>
+<p>1、设立地标节点，作为应用层节点定位坐标的基准，利用每个节点的坐标计算节点间相对位置，将避免冗余路径交叉问题映射为寻找相对位置偏离度较大的中间节点问题。举一个简单的例子，位于同一个接入网络中的一组应用层路由器，坐标会非常接近，这些节点到其他节点之间的路径也不会有什么差异性，而当这些节点中的某一个需要查询路由时，也完全没有必要问讯一个窝里的兄弟。在Scalable Resilient Overlay Networks Using Destination-Guided Detouring这篇文章中，作者利用坐标来选取距离目的地最远或最近的节点作为中转节点，这种方法存在明显的缺陷，因为距离并不代表路径重合度，距离目的地最远的节点到目的地的路径上，有可能恰好包含源点，而距离目的地最近的节点，可能就是和目的地位于同一个子网中的节点。但是，通过坐标，可以计算出源点、目的点以及中转节点构成三角形的内角度以及边长，也就很容易判断由“源节点-中转节点”以及“中转节点-目的节点”构成的边与“源节点-目的节点”这条边的偏离程度，偏离程度越大，则路径重叠的可能性也就越低。</p>
+<p>但单纯追求路径偏离度也存在隐患，与原始路径不相交叠的路径可能有多条，这些路径都不会受到原始路径中故障或拥塞的影响，因此，偏离度最大的路径反而有可能是这些路径中性能最差的。因此，路径偏离度可以作为筛选候选路径的条件，但不能作为优选的条件。我的想法，是首先筛选出符合数据流QOS特性的中间节点作为查询候选对象，获得应用层路径集合之后，首先按照QOS特性排序，之后利用坐标找出那些路径重叠度高的路径（重叠度如何计算、门限如何设定需要考虑）,保留其中负荷最轻者，余者退至备用路径序列的末尾。其中理念，乃是重叠度高的路径，往往是一根绳上的蚂蚱，俱损俱荣，相互之间的可替代性差，而备用路径最重要的属性就是相对于主用路径的可替代性。</p>
+<p>路径重叠度可以从三个方面判断：</p>
+<p>第一是两条路径中相同节点的数量；</p>
+<p>第二是相同链路的数量；</p>
+<p>第三是路径中位置接近的节点数量。</p>
+<p>其中前两条容易判别，但第三条标准很难做到精确判别，因为RTT值与网络拥塞程度等非地理因素密切相关，RTT小固然可以表明位置接近，但RTT大亦未必表明位置疏远，且RTT与网络层位置以及网络拓扑特性（比如随机网络和无标度网络）之间的准确关系还有待利用实测累计经验值，因此误判难以避免，而消弭这种不确定的方法，目前来看，莫过于增加问询节点的数量。</p>
+<p>坐标的计算需要定时进行，并结合历史信息计算最新的坐标均值。之所以不以最新的坐标值示人，是因为以RTT为计算依据的坐标本来就不存在精确值，只会围绕某个均值上下浮动，这个均值，从无限大时间尺度衡量，确实是存在的，我们不妨称之为绝对均值。但在有限的时间尺度上，不同时间段的均值会有差异，对于应用层路由而言，有价值的是均值而不是最新值。因为一方面最新值有可能和均值差异巨大却不能持久，反而带来不必要的动荡，另一方面坐标的作用是评价相对位置，在每个节点的坐标都随网络环境变化的情况下，以坐标均值计算出来的相对位置会与实际网络拓扑位置更加吻合。此外，更新后的坐标值，若相对于上一次发布坐标值的变化不超过一定的比例（此比例为可配置变量），则不发布更新，这也是为了避免频繁变化造成的不必要开销，因为每一次计算出来的最新均值倒底和无限大时间尺度上的绝对均值有多少偏离，永远是一个未知数，虽然从大的趋势上来说，越是后计算出的均值和绝对均值之间的差异越小，但不排除在某个时段出现背离的情况。地标节点，可以由连接路由器度值较大的节点充当。为了提高应用层路由的普适性以及扩展性，我不打算让应用层节点了解与其相连路由器的信息，尽管获得网络层拓扑、路由表等信息必会如虎添翼，但和多打几枪相比，成本过于高昂，而且信息的精确性和实时性也难以得到保证。因此，指定地标节点这个步骤就需要依赖人工来完成。</p>
+<p>2、以变速方式（测量周期也是可配置变量）探测节点间链路状态。变速体现在两个方面，第一是采用变速检测链路状态，无事则慢速检测，一旦发现异常则进入快速检测，也就是只在需要集中精力的地方集中。第二是在获得各条应用层链路的初步测量结果之后，对高质量链路进行较为快速的探测，对低质量链路进行慢速探测，并不断根据测量结果进行优胜劣汰，更新高质量链路（或高质量邻居节点）集合。维护高质量邻居集合（优质邻居的判别标准以及集合中邻居的数量也是可配置变量）的作用，就如同在地图上区分高速公路和乡间小路，为路由查询提供更好的依据。如果不加区分，每次随机选择邻居进行询问，有可能出现较差路径人品爆发反而胜出的情况，因为在网络中，路径质量好坏是一个统计意义上的指标，高速公路有可能恰好在查询那一刻出现了瞬间的拥堵而令乡间小路胜出，但这并不意味着乡间小路就能够在数据传输阶段仍然优越。</p>
+<p>也有人会说按需服务本来就只关心当时的情况，不需要考虑长期特性，因此维护优质邻居集合属于画蛇添足。这种想法的合理性，需要建立在无差别广播基础之上，只有在这种情况下，才能保证当时最优的路径一定会被发现。如果只是向部分邻居节点询问，就必然面临一个基本问题：如何提高查询成功的概率？这个问题又可以表述为：如何提高每一个邻居查询成功的概率？答案不言自明：问讯高质量邻居是也。</p>
+<p>让每个节点维护高质量邻居节点集合，并不意味着网络中的每个节点都要遵循统一的链路优劣判别标准，因为互联网中的链路和路径本来就良莠不齐，每个节点所处的环境千差万别，贫富不均，某些节点的所谓优质邻居甚至可能比其他节点的劣质邻居还差，按照统一标准有可能会让某些靠近边缘的节点根本找不到优质的应用层链路。因此，我认为使用相对标准更具有弹性，即每个应用层节点只将它所能探测到的N个最佳邻居放入优质邻居集合。</p>
+<p>这么做的隐患，是在一个没有统一评价标准、鱼龙混杂的世界中，有可能仍然无法避免查询齐射命中较差的目标。而解决的方法，可以考虑在每个查询反馈信息中附加应用层链路质量信息，由源节点择优录取，这样既可省去维护全网链路状态之苦，又能保证附加信息的实时性，链路状态检测的速度不必再受制于链路状态更新的速度，也是一种形式的隔离解耦。</p>
+<p>3、支持多跳路径查询，可以参照AODV、DSR实施广播控制以及路径缓存。但和AD HOC网络不同的是，OVERLAY NETWORK中节点的位置是固定的，链路的动态性也不像无线链路那么剧烈，应用层路由的稳定性还没有差到朝生暮死的地步，因此并不需要采用极端激进的广播方式，可以将查询扩散的范围限制在优质邻居集合，即源端只向优质邻居发送请求，而收到请求的节点也只向其优质邻居中转请求，避免无限扩散可能造成的劣质路径问题。借助于第二点中提到的附加信息方式，可以避免劣币驱逐良币现象发生。若依照此方法无法找到可用的应用层路径，则跳转至无差别广播方式，死马当成活马医，有盘菜总比没有菜强。至于防止循环广播之类的问题，直接参照AODV DSR现成的方法就行。</p>
+<p>4、以业务的QOS需求为依据，对扩散查找得到的多条路径进行筛选，并在数据转发期间维护备用和主用路径信息，以便主用路径故障时快速启动备用路径，备用路径的数量以网络破坏度上限（例如考虑30%破坏度情况，此参数可配置）、主备用路径同时失效概率等参数为计算基准，数据传输结束之后（以某一时间范围内没有监测到数据转发为标准），则不再维护路径信息。若备用路径皆失效，则重新进行路由查找。这一点也和AODV路由缓存的方法一致，只不过由于OVERLAY NETWORK应用的环境比AD HOC网络稳定，因此缓存的时间可以更长。对于应用层路由器来说，缓存路由条目还有一个特殊的意义。在AD HOC网络中，本来就不存在常备的IP层路径，广播路由查询消息的动机多半是因为有数据要发送（如果查询到的路径失效，也会重新发起查询），而不是因为IP层路径受损，因此源节点以外的节点缓存路由条目的作用多半是为了准备不时之需，并没有应对故障这一层的考虑。而本文所讨论的互联网应用层路由，是对于IP层路由结构的补充，触发的动机是IP路由出现了问题，由于应用层路由节点并不维护IP拓扑和路由信息，因此源节点以外的节点无法确知自己到目的点的路径是否也受到了同一个故障的影响，缓存路由条目就有了预防的意思。可以想象，在故障密集的情况下，</p>
+<p>5、为了避免优质节点过载，在路径查找阶段，节点负荷（节点转发流量大小）也作为一项依据加以考虑，在同等条件下，优选负荷较轻节点；<br>6、在选取路径时，不妨按照以下顺序进行筛选：首先选取QOS最优的路径，若有多条同等路径，则比较这些路径与原始路径的重叠度，优选重叠度最小者，其次比较各条路径包含的应用层跳数，优选跳数最小者，若仍有并列者，则比较各条路径中负荷最大节点承载的流量，优选负荷最小者，若仍有并列候选路径，则随机选择一个作为主用，其他作为备用。备用路径排序，可以参照第1点提到的方法进行。</p>
+<p>7、新的应用层节点加入时，如何获悉、维护地标节点信息，如何获得和维护其他节点信息以及其他节点到地标节点的距离信息，节点退出或失效时，如何让其他节点获悉，如何判断一个节点已经失效或退出，如果一个节点维护的其他节点信息无法保证实时精确性，会有什么负面的影响，这种影响是否可以忽略，或者有什么办法可以消除这种负面的影响？这些工程问题，留给开发人员解决。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/20/bat/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/20/bat/" itemprop="url">编写.bat文件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-20T10:22:20+08:00">
+                2017-12-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/shell/" itemprop="url" rel="index">
+                    <span itemprop="name">shell</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>显示文字</span><br><span class="line">echo show me the money</span><br><span class="line"><span class="meta">#</span>显示空行</span><br><span class="line">echo.</span><br><span class="line"><span class="meta">#</span>关闭回显</span><br><span class="line">@echo off</span><br></pre></td></tr></table></figure>
+<h5 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>注释文本</span><br><span class="line">rem this is a description</span><br></pre></td></tr></table></figure>
+<h5 id="if"><a href="#if" class="headerlink" title="if"></a>if</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>判断变量</span><br><span class="line">if "%srvname%"=="" goto invalidServiceName</span><br></pre></td></tr></table></figure>
+<h5 id="set"><a href="#set" class="headerlink" title="set"></a>set</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>赋值变量</span><br><span class="line">set JAVA_HOME=%JAVA_HOME%</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>从用户输入给变量赋值</span><br><span class="line">set /p name=Please input your name:</span><br><span class="line">echo "%name%"</span><br></pre></td></tr></table></figure>
+<h5 id="goto"><a href="#goto" class="headerlink" title="goto"></a>goto</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>开始</span><br><span class="line">:start</span><br><span class="line"><span class="meta">#</span> %1 指bat命令的第一个参数 类推%2 %3 第二 第三个参数</span><br><span class="line">if %1=="Y" goto end</span><br><span class="line"><span class="meta">#</span> goto跳转控制</span><br><span class="line">if %1=="N" goto start</span><br><span class="line"><span class="meta">#</span>结束</span><br><span class="line">:end</span><br></pre></td></tr></table></figure>
+<h5 id="pause"><a href="#pause" class="headerlink" title="pause"></a>pause</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>命令等待用户按任意键,一般为了不自动关闭窗口</span><br><span class="line">pause</span><br><span class="line"><span class="meta">#</span>隐藏提示的文字,按任意键继续..</span><br><span class="line"><span class="meta">pause&gt;</span>nul</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/18/telegraf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/18/telegraf/" itemprop="url">telegraf学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-18T16:55:49+08:00">
+                2017-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/服务监控/" itemprop="url" rel="index">
+                    <span itemprop="name">服务监控</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>学习资料:</p>
+<p><a href="http://www.cnblogs.com/Scissors/p/5977670.html" target="_blank" rel="noopener">grafana + influxdb + telegraf , 构建性能监控平台</a></p>
+<p><a href="https://my.oschina.net/xxbAndy/blog/751330" target="_blank" rel="noopener">Docker监控方案(TIG)的研究与实践之Telegraf</a></p>
+<p>摘要: Docker监控方案之容器内部指标采集工具Telegraf的介绍和安装。Telegraf用纯go编写，通过插件化方式进行采集各种服务(system，docker，redis，nginx，kafka等)监控指标并且上报给相应的中间件，比如influxdb，opentsdb(商城docker监控使用这个)。Telegraf也是整个TICK(telegraf+influxdb+chronograf+kapacitor)生态栈的第一块组件也是最重要的组件。</p>
+<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>Docker由于使用了基于namespace和cgroup的技术，因此监控docker容器和监控宿主机在某些性能指标和方式上有一些区别，而传统的监控方式可能无法满足docker容器内部的指标监控，本篇系列文章主要分享使用telegraf+influxdb+grafana去监控docker容器内部资源使用情况。目前主要关注的监控指标为：每个宿主机上的docker容器数量，每个docker容器的内存使用情况，CPU使用情况，网络使用情况以及磁盘使用情况。同时这套方案也能够监控到宿主机的一些基本资源使用情况。</p>
+<h4 id="Telegraf简介与实践"><a href="#Telegraf简介与实践" class="headerlink" title="Telegraf简介与实践"></a>Telegraf简介与实践</h4><p>简介：</p>
+<p>由influxdata公司开发的用于采集系统数据的服务，用纯go编写，通过插件化方式进行采集各种服务(system，docker，redis，nginx，kafka等)监控指标并且上报给相应的中间件，比如influxdb，opentsdb(商城docker监控使用这个)。Telegraf也是整个TICK(telegraf+influxdb+chronograf+kapacitor)生态栈的第一块组件也是最重要的组件。</p>
+<p>特点：</p>
+<p>纯go编写，不需要依赖其他组件；消耗相关系统资源比较小；plugins支持多种输入输出插件(采集和上报)；<br><code>相关连接：</code></p>
+<blockquote>
+<p>github：<a href="https://github.com/influxdata/telegraf" target="_blank" rel="noopener">https://github.com/influxdata/telegraf</a><br>官网文档：<a href="https://docs.influxdata.com/telegraf/v1.0/" target="_blank" rel="noopener">https://docs.influxdata.com/telegraf/v1.0/</a><br>TICK生态栈:<a href="https://www.influxdata.com/downloads/#telegraf" target="_blank" rel="noopener">https://www.influxdata.com/downloads/#telegraf</a></p>
+</blockquote>
+<p>安装：</p>
+<p><code>所有的安装以及部署都是在linux下的，所以不知道linux下安装基础软件包的，请自觉绕路！</code><br>Centos系列可以配置yum源或者直接下载包，并安装。个人建议直接下载包，由于不需要其他系统依赖，可以直接在集群环境进行共享。<br>wget<a href="https://dl.influxdata.com/telegraf/releases/telegraf-1.0.0.x86_64.rpm" target="_blank" rel="noopener">https://dl.influxdata.com/telegraf/releases/telegraf-1.0.0.x86_64.rpm</a> &amp;&amp; rpm -ivh telegraf-1.0.0.x86_64.rpm<br><code>其他环境安装指南:</code></p>
+<blockquote>
+<p>Ubuntu &amp;&amp; Debin：<br>ubuntu repo：<br>curl -sL<a href="https://repos.influxdata.com/influxdb.key" target="_blank" rel="noopener">https://repos.influxdata.com/influxdb.key</a> | sudo apt-key add -<br>source /etc/lsb-release<br>echo “deb <a href="https://repos.influxdata.com/%3Cspan%20class=&#39;mathjax-replacement&#39;%20rel=&#39;227521499c481b5de95e53b2237f2e80&#39;%3E$%7BDISTRIB_ID,,%7D%20$%3C/span%3E" target="_blank" rel="noopener">https://repos.influxdata.com/</a>{DISTRIB_CODENAME} stable” | sudo tee /etc/apt/sources.list.d/influxdb.list<br>Debin repo：<br>curl -sL<a href="https://repos.influxdata.com/influxdb.key" target="_blank" rel="noopener">https://repos.influxdata.com/influxdb.key</a> | sudo apt-key add -<br>source /etc/os-release<br>test $VERSION_ID = “7” &amp;&amp; echo “deb<a href="https://repos.influxdata.com/debian" target="_blank" rel="noopener">https://repos.influxdata.com/debian</a>wheezy stable” | sudo tee /etc/apt/sources.list.d/influxdb.list<br>test $VERSION_ID = “8” &amp;&amp; echo “deb<a href="https://repos.influxdata.com/debian" target="_blank" rel="noopener">https://repos.influxdata.com/debian</a> jessie stable” | sudo tee /etc/apt/sources.list.d/influxdb.list<br>配置完ubuntu系列的repo之后，就可以执行sudo apt-get update &amp;&amp; sudo apt-get install telegraf进行安装了<br>直接下载deb包方式：<br>wget<a href="https://dl.influxdata.com/telegraf/releases/telegraf_1.0.0_amd64.deb" target="_blank" rel="noopener">https://dl.influxdata.com/telegraf/releases/telegraf_1.0.0_amd64.deb</a>&amp;&amp; sudo dpkg -i telegraf_1.0.0_amd64.deb</p>
+</blockquote>
+<p>启动：</p>
+<p>telegraf可以支持多种服务管理方式，安装之后默认可用使用service和systemd进行管理，因此在centos6-7中都可以使用系统自带的服务管理进行维护(init.d和systemctl)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/telegraf start 或者systemctl restart telegraf</span><br></pre></td></tr></table></figure>
+<p>配置：</p>
+<p>配置可以说是telegraf运用中最核心的一个环节，因为配置的细节决定你采集数据的指标。telegraf的配置可以说是比较千变万化，因为可以支持多种输出、输入组件，并且每种组件的配置支持不通的过滤规则，能够让配置管理和维护者正确的采集自己需要的信息。<br>默认配置文件存放路径：/etc/telegraf/telegraf.conf ，额外配置路径/etc/telegraf/telegraf.d/。<br>在生产环境中建议自定生成配置并存放在/etc/telegraf/telegraf.d/中。<br>自定义生成配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#telegraf -sample-config &gt; telegraf.conf 这样生成的配置文件将包含每一个插件，但是大部分会被注释掉，可以根据实际的业务场景进行定义</span><br></pre></td></tr></table></figure>
+<p>配置文件示例以及详细讲解：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">#cat telegraf.conf</span><br><span class="line">########################################全局配置############################################################</span><br><span class="line">#全局tag配置，采用key = &quot;values&quot;方式，这样在本机采集到的所有数据将都有这个标签</span><br><span class="line">[global_tags]</span><br><span class="line">dc = &quot;docker-test&quot;</span><br><span class="line">#agent配置</span><br><span class="line">[agent]</span><br><span class="line">#默认的数据(input)采集间隔时间</span><br><span class="line">interval = &quot;10s&quot;</span><br><span class="line">#采用轮询时间间隔。默认是使用interval里面的值进行轮询，比如interval = &quot;10s&quot;,那采集时间将是:00, :10, :20, 等</span><br><span class="line">round_interval = true</span><br><span class="line">#每次发送到output的度量大小不能超过metric_batch_size的值</span><br><span class="line">metric_batch_size = 1000</span><br><span class="line">#telegraf会为每一个output去缓存一份度量值，metric_buffer_limit为缓存的限制，并且刷新buffer以确定成功写入。如果达到这个限制了，老的数据会被第一时间丢弃</span><br><span class="line">#当然了，增加这个值能够容忍更多的数据连接，但是这也将会增加telegraf潜在的内存占用。这个值可以大于metric_batch_size但是必须小于它的两倍</span><br><span class="line">metric_buffer_limit = 10000</span><br><span class="line">#通过随机度量来对采集时间进行抖动。每个插件在采集数据之前将会有一个随机时间的休眠，但是这个时间应小于collection_jitter</span><br><span class="line">#这个设置是为了防止多个采集源数据同一时间都在队列</span><br><span class="line">collection_jitter = &quot;0s&quot;</span><br><span class="line">#默认所有数据flush到outputs的时间(在数据被flush到output之前，最大能到flush_interval + flush_jitter)。不能低于interval</span><br><span class="line">flush_interval = &quot;10s&quot;</span><br><span class="line"># 通过随机数来对flush间隔进行抖动。这个主要是为了避免当运行一个大的telegraf实例的时候有比较大的写入。(jitter=5s,flush_interval=10s意味着每10-15s会发生一次flush操作)</span><br><span class="line">flush_jitter = &quot;0s&quot;</span><br><span class="line">#默认这个值被设置相同的时间戳通过采集间隔排序。最大值为1s。这个指标一般不会用在service input(比如logparser和statsd)。单位(ns,us,ms,s)</span><br><span class="line">precision = &quot;&quot;</span><br><span class="line">#以debug模式运行</span><br><span class="line">debug = false</span><br><span class="line">#以安静模式运行</span><br><span class="line">quiet = false</span><br><span class="line">#这个将会覆盖默认的hostname，如果为空的话，将会采用os.Hostname()</span><br><span class="line">hostname = &quot;&quot;</span><br><span class="line">#如果设置为true，就不允许在telegraf agent里面设置&quot;host&quot;标签了 </span><br><span class="line">omit_hostname = false</span><br><span class="line">##############################################度量值过滤#######################################################</span><br><span class="line">#过滤可以被配置在每一个输入和输出值</span><br><span class="line">namepass：一个数组字符串可以被用来过滤由当前input生成的度量值，在数组中的每一个字符串和全局匹配到的测量值名字进行对比，如果匹配了，值被采用</span><br><span class="line">namedrop:pass的反向含义，如果匹配，则不使用</span><br><span class="line">fieldpass：在namepass满足的条件下，output的fieldpass不可用</span><br><span class="line">fielddrop：pass的反向含义，如果field名字匹配，将不被采用。output的fielddrop不可用</span><br><span class="line">tagpass：tag names和数组中的字符串都被用来过滤当前input的值，数组中的每一个每一个字符串和tag name对比，匹配则则采用</span><br><span class="line">tagdrop:tagpass的反向含义，如果tag匹配，该度量值不被采用</span><br><span class="line">tagexclude:被用来从度量值(measurements)中执行一个tag。作为tagdrop的对立面，它将丢弃所有依赖于tag的相关度量值，tagexclude只是单纯的从度量值中给tag一个key</span><br><span class="line">这个可以被用作input和output中，但是强烈建议用在input中，他会在同一个采集时间点更加有效的过滤out tags</span><br><span class="line">taginclude:tagexclude的反向含义。在最终的度量值中，也将包含tag keys</span><br><span class="line">注意：tagpass和tagdrop参数必须等一在plugin函数的底部，不然对应的子plugin配置可能被tagpass/tagdrop映射中的内容截断</span><br><span class="line">#################################################(OUTPUT)输出配置##############################################</span><br><span class="line">#输出插件，我们使用的是influxdb，得先进行安装配置</span><br><span class="line">[[outputs.influxdb]]</span><br><span class="line">## The full HTTP or UDP endpoint URL for your InfluxDB instance.</span><br><span class="line">#如果有多个urls，可以指定为相同集群的一部分。意味着urls中的一个将被写到每一个间隔</span><br><span class="line"># urls = [&quot;udp://localhost:8089&quot;] # UDP endpoint example</span><br><span class="line">urls = [&quot;http://172.25.46.7:8086&quot;] # required</span><br><span class="line">#默认需要连接的telegraf库，没有则自己创建</span><br><span class="line">database = &quot;telegraf&quot; # required</span><br><span class="line">precision = &quot;s&quot;</span><br><span class="line">#修改保留策略</span><br><span class="line">retention_policy = &quot;&quot;</span><br><span class="line">#持续写入，仅支持集群模式, can be: &quot;any&quot;, &quot;one&quot;, &quot;quorum&quot;, &quot;all&quot;</span><br><span class="line">write_consistency = &quot;any&quot;</span><br><span class="line">#作为influxdb客户端，设置写超时时间，如果为空默认为5s超时，0s表示不设置超时时间(不建议)</span><br><span class="line">timeout = &quot;5s&quot;</span><br><span class="line">#设置telegraf的库的用户名和密码</span><br><span class="line"># username = &quot;telegraf&quot;</span><br><span class="line"># password = &quot;metricsmetricsmetricsmetrics&quot;</span><br><span class="line">###############################################(INPUT)输入配置###################################################</span><br><span class="line">inputs插件全局参数:</span><br><span class="line">#每一个input都可以配置的全局配置项</span><br><span class="line">#name_override:覆盖默认的度量值名字(默认是input的名字)</span><br><span class="line">#name_prefix:指定一个前缀并附加到度量值的名字(measuerments name)</span><br><span class="line">#name_suffix:指定后缀</span><br><span class="line">#tags：一个标签映射到指定的input度量值</span><br><span class="line">#interval：多久采集一次数据，默认可用使用全局配置中的参数</span><br><span class="line">配置示例：</span><br><span class="line">[[inputs.cpu]]</span><br><span class="line">#采集每个cpu的指标</span><br><span class="line">percpu = true</span><br><span class="line">#采集总的cpu指标</span><br><span class="line">totalcpu = true</span><br><span class="line">#会丢弃掉time开头的。如果想要采集原始的cpu相关指标，请注释</span><br><span class="line">fielddrop = [&quot;time_*&quot;]</span><br><span class="line">[[inputs.disk]]</span><br><span class="line">#默认的telegraf将手机所有挂载点的信息</span><br><span class="line">#下面这个参数可以指定挂载点</span><br><span class="line">mount_points = [&quot;/&quot;]</span><br><span class="line">#仅存储磁盘inode相关的度量值</span><br><span class="line">fieldpass = [&quot;inodes*&quot;]</span><br><span class="line">#通过文件系统类型来忽略一些挂载点，比如tmpfs</span><br><span class="line">ignore_fs = [&quot;tmpfs&quot;, &quot;devtmpfs&quot;]</span><br><span class="line">#仅存储tagpass相关的信息</span><br><span class="line">[inputs.disk.tagpass]</span><br><span class="line">fstype = [ &quot;ext4&quot;, &quot;xfs&quot; ]</span><br><span class="line">path = [ &quot;/export&quot;, &quot;/home*&quot; ]</span><br><span class="line">#默认telegraf将采集所有存储设备的信息，devices参数可以指定</span><br><span class="line"># devices = [&quot;sda&quot;, &quot;sdb&quot;]</span><br><span class="line">#如果需要磁盘的串行号可以将下面注释打开</span><br><span class="line"># skip_serial_number = false</span><br><span class="line">[[inputs.mem]]</span><br><span class="line">#采集docker和redis的插件</span><br><span class="line">[[inputs.docker]]</span><br><span class="line">#指定docker启动的api接口，并指定需要采集那些容器指标</span><br><span class="line">endpoint = &quot;tcp://10.0.0.2:5256&quot;</span><br><span class="line">container_names = []</span><br><span class="line">[[inputs.redis]]</span><br><span class="line">#指定redis的相关接口</span><br><span class="line">servers = [&quot;tcp://10.0.0.1:6379&quot;]</span><br></pre></td></tr></table></figure>
+<p>测试插件是否正常工作：</p>
+<p><code>使用以下命令会将telegraf采集的数据默认输出到终端，依次来检验配置的监控项是否是自己所期望的指标。</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#telegraf -config /etc/telegraf/telegraf.conf -input-filter docker -test           会输出docker相关的监控信息说明配置正确(当然也可以去测试其他inputs plugins)</span><br></pre></td></tr></table></figure>
+<p><strong>注意：上面的配置文件中使用的output plugins是influxdb，因此在没有成功配置influxdb的前提下，此配置文件是不能正常让telegraf正常启动的！下一节将会讲到influxdb的相关知识influxdb相关：</strong></p>
+<p>重启服务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">centos6.x:</span><br><span class="line">#/etc/init.d/telegraf restart （service telegraf restart ）</span><br><span class="line">centos7.x:</span><br><span class="line">#systemctl restart telegraf</span><br></pre></td></tr></table></figure>
+<p>此时，可以查看相关日志，确保telegraf正常启动，启动之后去influxdb就可以查询相关采集到的数据。</p>
+<p>附：</p>
+<p>telegraf常用的input plugins:</p>
+<p>收集docker相关的信息：<a href="https://github.com/influxdata/telegraf/tree/master/plugins/inputs/docker" target="_blank" rel="noopener">https://github.com/influxdata/telegraf/tree/master/plugins/inputs/docker</a>主要是通过docker API调用相关监控<br>收集相关redis的信息：<a href="https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis" target="_blank" rel="noopener">https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis</a><br>收集相关mesos的信息：<a href="https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mesos" target="_blank" rel="noopener">https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mesos</a><br>收集相关nginx的信息：<a href="https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx" target="_blank" rel="noopener">https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx</a><br>收集相关mysql的信息：<a href="https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql" target="_blank" rel="noopener">https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql</a><br>收集ping相关信息：<a href="https://github.com/influxdata/telegraf/tree/master/plugins/inputs/ping" target="_blank" rel="noopener">https://github.com/influxdata/telegraf/tree/master/plugins/inputs/ping</a><br>收集influxdb相关信息：<a href="https://github.com/influxdata/telegraf/tree/master/plugins/inputs/influxdb" target="_blank" rel="noopener">https://github.com/influxdata/telegraf/tree/master/plugins/inputs/influxdb</a><br>收集系统相关的信息：<a href="https://github.com/influxdata/telegraf/tree/master/plugins/inputs/system" target="_blank" rel="noopener">https://github.com/influxdata/telegraf/tree/master/plugins/inputs/system</a><br>收集haproxy相关信息：<a href="https://github.com/influxdata/telegraf/tree/master/plugins/inputs/haproxy" target="_blank" rel="noopener">https://github.com/influxdata/telegraf/tree/master/plugins/inputs/haproxy</a><br>收集cgroup相关信息：<a href="https://github.com/influxdata/telegraf/tree/master/plugins/inputs/cgroup" target="_blank" rel="noopener">https://github.com/influxdata/telegraf/tree/master/plugins/inputs/cgroup</a></p>
+<p>核心plugins 监控指标的采集原理(system，docker)</p>
+<ul>
+<li><p><strong>system plugin：</strong>主要监控项包含CPU,DISK,KERNEL,KERNEL_VMSTAT,NETSTAT,PROCESS,SYSTEM</p>
+<blockquote>
+<p>CPU中有两个参数，分别为totalcpu和percpu，如果为true经分别采集相关cpu的指标。主要指标有：user，nice，system，idle，iowait，cpu_usage等<br>DISK：主要指标有free，total；used(单位字节);uesd_percent;inode_free;inode_total;inode_used.需要注意的是，used_percent指标通过使用used/(used+free)计算得出。<br>MEM：主要指标total;available(/proc/meminfo原生值)；available_percent(available / total <em> 100)；used_percent(used / total </em> 100)<br>NET：通过lsof采集tcp连接状态和udp相关信息。指标：established syn_sent syn_recv fin_wait1 time_wait close listen closing<br>PROCESS：收集进程总数个状态组（zombie,sleeping,running),也是通过采集/proc中的数据<br>SYSTEM：系统负载,load1;load15;load5</p>
+</blockquote>
+</li>
+<li><p><strong>docker plugin:</strong>主要监控项包括ocker_container_mem,docker_container_cpu,docker_container_net,docker_container<em>nlkio,docker</em>,docker_data,docker_metadata。基本上是通过docker api进行采集docker容器相关的监控指标的（<a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.25/#/inspect-a-container" target="_blank" rel="noopener">https://docs.docker.com/engine/reference/api/docker_remote_api_v1.25/#/inspect-a-container</a>）<br>具体的监控项可以在源码中进行查看：(<a href="https://github.com/influxdata/telegraf/blob/master/plugins/inputs/docker/docker.go" target="_blank" rel="noopener">https://github.com/influxdata/telegraf/blob/master/plugins/inputs/docker/docker.go</a>)</p>
+</li>
+<li><p><strong>几个主要关心的指标:</strong></p>
+</li>
+</ul>
+<p>docker_memory:</p>
+<p><img src="https://static.oschina.net/uploads/space/2016/0925/122906_pb4D_1026229.png" alt="img"><br>docker_cpu:</p>
+<p><img src="https://static.oschina.net/uploads/space/2016/0925/122920_RJRx_1026229.png" alt="img"><br>docker_net:</p>
+<p><img src="https://static.oschina.net/uploads/space/2016/0925/122937_818H_1026229.png" alt="img"><br>docker相关:</p>
+<p><img src="https://static.oschina.net/uploads/space/2016/0925/122950_D88m_1026229.png" alt="img"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/18/docker-resource/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/18/docker-resource/" itemprop="url">docker资源控制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-18T12:35:32+08:00">
+                2017-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>引用:</p>
+<p><a href="http://cizixs.com/2017/08/04/docker-resources-limit" target="_blank" rel="noopener">硬件资源限制</a>  <a href="http://blog.51cto.com/dl528888/1641569" target="_blank" rel="noopener">网络资源限制</a></p>
+<p>在使用 docker 运行容器时，一台主机上可能会运行几百个容器，这些容器虽然互相隔离，但是底层却使用着相同的 CPU、内存和磁盘资源。如果不对容器使用的资源进行限制，那么容器之间会互相影响，小的来说会导致容器资源使用不公平；大的来说，可能会导致主机和集群资源耗尽，服务完全不可用。</p>
+<p>docker 作为容器的管理者，自然提供了控制容器资源的功能。正如使用内核的 namespace 来做容器之间的隔离，docker 也是通过内核的 cgroups 来做容器的资源限制。这篇文章就介绍如何使用 docker 来限制 CPU、内存和 IO，以及对应的 cgroups 文件。</p>
+<p>NOTE：如果想要了解 cgroups 的更多信息，可以参考 <a href="https://www.kernel.org/doc/Documentation/cgroup-v1/" target="_blank" rel="noopener">kernel 文档</a> 或者其他资源。</p>
+<p>我本地测试的 docker 版本是 <code>17.03.0</code> 社区版：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">➜  stress docker version</span><br><span class="line">Client:</span><br><span class="line"> Version:      17.03.0-ce</span><br><span class="line"> API version:  1.26</span><br><span class="line"> Go version:   go1.7.5</span><br><span class="line"> Git commit:   60ccb22</span><br><span class="line"> Built:        Thu Feb 23 11:02:43 2017</span><br><span class="line"> OS/Arch:      linux/amd64</span><br><span class="line"></span><br><span class="line">Server:</span><br><span class="line"> Version:      17.03.0-ce</span><br><span class="line"> API version:  1.26 (minimum version 1.12)</span><br><span class="line"> Go version:   go1.7.5</span><br><span class="line"> Git commit:   60ccb22</span><br><span class="line"> Built:        Thu Feb 23 11:02:43 2017</span><br><span class="line"> OS/Arch:      linux/amd64</span><br><span class="line"> Experimental: false</span><br></pre></td></tr></table></figure>
+<p>使用的是 ubuntu 16.04 系统，内核版本是 <code>4.10.0</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ uname -a</span><br><span class="line">Linux cizixs-ThinkPad-T450 4.10.0-28-generic #32~16.04.2-Ubuntu SMP Thu Jul 20 10:19:48 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux</span><br></pre></td></tr></table></figure>
+<p>NOTE: 不同版本和系统的功能会有差异，具体的使用方法和功能解释请以具体版本的 docker 官方文档为准。</p>
+<p>我们使用 <a href="https://github.com/progrium/docker-stress" target="_blank" rel="noopener">stress</a> 容器来产生 CPU、内存和 IO 的压力，具体的使用请参考它的帮助文档。</p>
+<h2 id="1-CPU-资源"><a href="#1-CPU-资源" class="headerlink" title="1. CPU 资源"></a>1. CPU 资源</h2><p>主机上的进程会通过时间分片机制使用 CPU，CPU 的量化单位是频率，也就是每秒钟能执行的运算次数。为容器限制 CPU 资源并不能改变 CPU 的运行频率，而是改变每个容器能使用的 CPU 时间片。理想状态下，CPU 应该一直处于运算状态（并且进程需要的计算量不会超过 CPU 的处理能力）。</p>
+<h3 id="docker-限制-CPU-Share"><a href="#docker-限制-CPU-Share" class="headerlink" title="docker 限制 CPU Share"></a>docker 限制 CPU Share</h3><p>docker 允许用户为每个容器设置一个数字，代表容器的 CPU share，默认情况下每个容器的 share 是 1024。要注意，这个 share 是相对的，本身并不能代表任何确定的意义。当主机上有多个容器运行时，每个容器占用的 CPU 时间比例为它的 share 在总额中的比例。举个例子，如果主机上有两个一直使用 CPU 的容器（为了简化理解，不考虑主机上其他进程），其 CPU share 都是 1024，那么两个容器 CPU 使用率都是 50%；如果把其中一个容器的 share 设置为 512，那么两者 CPU 的使用率分别为 67% 和 33%；如果删除 share 为 1024 的容器，剩下来容器的 CPU 使用率将会是 100%。</p>
+<p>总结下来，这种情况下，docker 会根据主机上运行的容器和进程动态调整每个容器使用 CPU 的时间比例。这样的好处是能保证 CPU 尽可能处于运行状态，充分利用 CPU 资源，而且保证所有容器的相对公平；缺点是无法指定容器使用 CPU 的确定值。</p>
+<p>docker 为容器设置 CPU share 的参数是 <code>-c --cpu-shares</code>，它的值是一个整数。</p>
+<p>我的机器是 4 核 CPU，因此使用 <code>stress</code> 启动 4 个进程来产生计算压力：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">➜  stress docker run --rm -it stress --cpu 4</span><br><span class="line">stress: info: [1] dispatching hogs: 4 cpu, 0 io, 0 vm, 0 hdd</span><br><span class="line">stress: dbug: [1] using backoff sleep of 12000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 4 [7] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 9000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 3 [8] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 6000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 2 [9] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 3000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 1 [10] forked</span><br></pre></td></tr></table></figure>
+<p>在另外一个 terminal 使用 <code>htop</code> 查看资源的使用情况：</p>
+<p><img src="http://img.blog.csdn.net/20170930104504965" alt="img"></p>
+<p>从上图中可以看到，CPU 四个核资源都达到了 100%。四个 stress 进程 CPU 使用率没有达到 100% 是因为系统中还有其他机器在运行。</p>
+<p>为了比较，我另外启动一个 share 为 512 的容器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">➜  stress docker run --rm -it -c 512 stress --cpu 4 </span><br><span class="line">stress: info: [1] dispatching hogs: 4 cpu, 0 io, 0 vm, 0 hdd</span><br><span class="line">stress: dbug: [1] using backoff sleep of 12000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 4 [6] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 9000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 3 [7] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 6000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 2 [8] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 3000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 1 [9] forked</span><br></pre></td></tr></table></figure>
+<p>因为默认情况下，容器的 CPU share 为 1024，所以这两个容器的 CPU 使用率应该大致为 2：1，下面是启动第二个容器之后的监控截图：</p>
+<p><img src="http://img.blog.csdn.net/20170930104509386" alt="img"></p>
+<p>两个容器分别启动了四个 <code>stress</code> 进程，第一个容器 <code>stress</code> 进程 CPU 使用率都在 54% 左右，第二个容器 <code>stress</code> 进程 CPU 使用率在 25% 左右，比例关系大致为 2：1，符合之前的预期。</p>
+<h3 id="限制容器能使用的-CPU-核数"><a href="#限制容器能使用的-CPU-核数" class="headerlink" title="限制容器能使用的 CPU 核数"></a>限制容器能使用的 CPU 核数</h3><p>上面讲述的 <code>-c --cpu-shares</code> 参数只能限制容器使用 CPU 的比例，或者说优先级，无法确定地限制容器使用 CPU 的具体核数；从 1.13 版本之后，docker 提供了 <code>--cpus</code> 参数可以限定容器能使用的 CPU 核数。这个功能可以让我们更精确地设置容器 CPU 使用量，是一种更容易理解也因此更常用的手段。</p>
+<p><code>--cpus</code> 后面跟着一个浮点数，代表容器最多使用的核数，可以精确到小数点二位，也就是说容器最小可以使用 <code>0.01</code> 核 CPU。比如，我们可以限制容器只能使用 <code>1.5</code> 核数 CPU：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker run --rm -it --cpus 1.5 stress --cpu 3</span><br><span class="line">stress: info: [1] dispatching hogs: 3 cpu, 0 io, 0 vm, 0 hdd</span><br><span class="line">stress: dbug: [1] using backoff sleep of 9000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 3 [7] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 6000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 2 [8] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 3000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 1 [9] forked</span><br></pre></td></tr></table></figure>
+<p>在容器里启动三个 stress 来跑 CPU 压力，如果不加限制，这个容器会导致 CPU 的使用率为 300% 左右（也就是说会占用三个核的计算能力）。实际的监控如下图：</p>
+<p><img src="http://img.blog.csdn.net/20170930104513091" alt="img"></p>
+<p>可以看到，每个 <code>stress</code> 进程 CPU 使用率大约在 50%，总共的使用率为 150%，符合 1.5 核的设置。</p>
+<p>如果设置的 <code>--cpus</code> 值大于主机的 CPU 核数，docker 会直接报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker run --rm -it --cpus 8 stress --cpu 3</span><br><span class="line">docker: Error response from daemon: Range of CPUs is from 0.01 to 4.00, as there are only 4 CPUs available.</span><br><span class="line">See &apos;docker run --help&apos;.</span><br></pre></td></tr></table></figure>
+<p>如果多个容器都设置了 <code>--cpus</code> ，并且它们之和超过主机的 CPU 核数，并不会导致容器失败或者退出，这些容器之间会竞争使用 CPU，具体分配的 CPU 数量取决于主机运行情况和容器的 CPU share 值。也就是说 <code>--cpus</code> 只能保证在 CPU 资源充足的情况下容器最多能使用的 CPU 数，docker 并不能保证在任何情况下容器都能使用这么多的 CPU（因为这根本是不可能的）。</p>
+<h3 id="限制容器运行在某些-CPU-核"><a href="#限制容器运行在某些-CPU-核" class="headerlink" title="限制容器运行在某些 CPU 核"></a>限制容器运行在某些 CPU 核</h3><p>现在的笔记本和服务器都会有多个 CPU，docker 也允许调度的时候限定容器运行在哪个 CPU 上。比如，我的主机上有 4 个核，可以通过 <code>--cpuset</code> 参数让容器只运行在前两个核上：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker run --rm -it --cpuset-cpus=0,1 stress --cpu 2</span><br><span class="line">stress: info: [1] dispatching hogs: 2 cpu, 0 io, 0 vm, 0 hdd</span><br><span class="line">stress: dbug: [1] using backoff sleep of 6000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 2 [7] forked</span><br><span class="line">stress: dbug: [1] using backoff sleep of 3000us</span><br><span class="line">stress: dbug: [1] --&gt; hogcpu worker 1 [8] forked</span><br></pre></td></tr></table></figure>
+<p>这样，监控中可以看到只有前面两个核 CPU 达到了 100% 使用率。</p>
+<p><img src="http://img.blog.csdn.net/20170930104516254" alt="img"></p>
+<p><code>--cpuset-cpus</code> 参数可以和 <code>-c --cpu-shares</code> 一起使用，限制容器只能运行在某些 CPU 核上，并且配置了使用率。</p>
+<p>限制容器运行在哪些核上并不是一个很好的做法，因为它需要实现知道主机上有多少 CPU 核，而且非常不灵活。除非有特别的需求，一般并不推荐在生产中这样使用。</p>
+<h3 id="CPU-信息的-cgroup-文件"><a href="#CPU-信息的-cgroup-文件" class="headerlink" title="CPU 信息的 cgroup 文件"></a>CPU 信息的 cgroup 文件</h3><p>所有和容器 CPU share 有关的配置都在 <code>/sys/fs/cgroup/cpu/docker/&lt;docker_id&gt;/</code> 目录下面，其中 <code>cpu.shares</code> 保存了 CPU share 的值（其他文件的意义可以查看 cgroups 的官方文档）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ ls /sys/fs/cgroup/cpu/docker/d93c9a660f4a13789d995d56024f160e2267f2dc26ce676daa66ea6435473f6f/   </span><br><span class="line">cgroup.clone_children  cpuacct.stat   cpuacct.usage_all     cpuacct.usage_percpu_sys   cpuacct.usage_sys   cpu.cfs_period_us  cpu.shares  notify_on_release</span><br><span class="line">cgroup.procs           cpuacct.usage  cpuacct.usage_percpu  cpuacct.usage_percpu_user  cpuacct.usage_user  cpu.cfs_quota_us   cpu.stat    tasks</span><br><span class="line">➜  ~ cat /sys/fs/cgroup/cpu/docker/d93c9a660f4a13789d995d56024f160e2267f2dc26ce676daa66ea6435473f6f/cpu.shares </span><br><span class="line">1024</span><br></pre></td></tr></table></figure>
+<p>和 cpuset（限制 CPU 核）有关的文件在 <code>/sys/fs/cgroup/cpuset/docker/&lt;docker_id&gt;</code> 目录下，其中 <code>cpuset.cpus</code> 保存了当前容器能使用的 CPU 核：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ ls /sys/fs/cgroup/cpuset/docker/d93c9a660f4a13789d995d56024f160e2267f2dc26ce676daa66ea6435473f6f/</span><br><span class="line">cgroup.clone_children  cpuset.cpus            cpuset.mem_exclusive   cpuset.memory_pressure     cpuset.mems                      notify_on_release</span><br><span class="line">cgroup.procs           cpuset.effective_cpus  cpuset.mem_hardwall    cpuset.memory_spread_page  cpuset.sched_load_balance        tasks</span><br><span class="line">cpuset.cpu_exclusive   cpuset.effective_mems  cpuset.memory_migrate  cpuset.memory_spread_slab  cpuset.sched_relax_domain_level</span><br><span class="line"></span><br><span class="line">➜  ~ cat /sys/fs/cgroup/cpuset/docker/d93c9a660f4a13789d995d56024f160e2267f2dc26ce676daa66ea6435473f6f/cpuset.cpus</span><br><span class="line">0-1</span><br></pre></td></tr></table></figure>
+<p><code>--cpus</code> 限制 CPU 核数并不像上面两个参数一样有对应的文件对应，它是由 <code>cpu.cfs_period_us</code> 和 <code>cpu.cfs_quota_us</code> 两个文件控制的。如果容器的 <code>--cpus</code> 设置为 3，其对应的这两个文件值为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ cat /sys/fs/cgroup/cpu/docker/233a38cc641f2e4a1bec3434d88744517a2214aff9d8297e908fa13b9aa12e02/cpu.cfs_period_us </span><br><span class="line">100000</span><br><span class="line">➜  ~ cat /sys/fs/cgroup/cpu/docker/233a38cc641f2e4a1bec3434d88744517a2214aff9d8297e908fa13b9aa12e02/cpu.cfs_quota_us </span><br><span class="line">300000</span><br></pre></td></tr></table></figure>
+<p>其实在 1.12 以及之前的版本，都是通过 <code>--cpu-period</code> 和 <code>--cpu-quota</code> 这两个参数控制容器能使用的 CPU 核数的。前者表示 CPU 的周期数，默认是 <code>100000</code>，单位是微秒，也就是 1s，一般不需要修改；后者表示容器的在上述 CPU 周期里能使用的 quota，真正能使用的 CPU 核数就是 <code>cpu-quota / cpu-period</code>，因此对于 3 核的容器，对应的 <code>cpu-quota</code> 值为 <code>300000</code>。</p>
+<h2 id="2-内存资源"><a href="#2-内存资源" class="headerlink" title="2. 内存资源"></a>2. 内存资源</h2><p>默认情况下，docker 并没有对容器内存进行限制，也就是说容器可以使用主机提供的所有内存。这当然是非常危险的事情，如果某个容器运行了恶意的内存消耗软件，或者代码有内存泄露，很可能会导致主机内存耗尽，因此导致服务不可用。对于这种情况，docker 会设置 docker daemon 的 OOM（out of memory） 值，使其在内存不足的时候被杀死的优先级降低。另外，就是你可以为每个容器设置内存使用的上限，一旦超过这个上限，容器会被杀死，而不是耗尽主机的内存。</p>
+<p>限制内存上限虽然能保护主机，但是也可能会伤害到容器里的服务。如果为服务设置的内存上限太小，会导致服务还在正常工作的时候就被 OOM 杀死；如果设置的过大，会因为调度器算法浪费内存。因此，合理的做法包括：</p>
+<ul>
+<li>为应用做内存压力测试，理解正常业务需求下使用的内存情况，然后才能进入生产环境使用</li>
+<li>一定要限制容器的内存使用上限</li>
+<li>尽量保证主机的资源充足，一旦通过监控发现资源不足，就进行扩容或者对容器进行迁移</li>
+<li>如果可以（内存资源充足的情况），尽量不要使用 swap，swap 的使用会导致内存计算复杂，对调度器非常不友好</li>
+</ul>
+<h3 id="docker-限制容器内存使用量"><a href="#docker-限制容器内存使用量" class="headerlink" title="docker 限制容器内存使用量"></a>docker 限制容器内存使用量</h3><p>在 docker 启动参数中，和内存限制有关的包括（参数的值一般是内存大小，也就是一个正数，后面跟着内存单位 <code>b</code>、<code>k</code>、<code>m</code>、<code>g</code>，分别对应 bytes、KB、MB、和 GB）：</p>
+<ul>
+<li><code>-m --memory</code>：容器能使用的最大内存大小，最小值为 4m</li>
+<li><code>--memory-swap</code>：容器能够使用的 swap 大小</li>
+<li><code>--memory-swappiness</code>：默认情况下，主机可以把容器使用的匿名页（anonymous page）swap 出来，你可以设置一个 0-100 之间的值，代表允许 swap 出来的比例</li>
+<li><code>--memory-reservation</code>：设置一个内存使用的 soft limit，如果 docker 发现主机内存不足，会执行 OOM 操作。这个值必须小于 <code>--memory</code> 设置的值</li>
+<li><code>--kernel-memory</code>：容器能够使用的 kernel memory 大小，最小值为 4m。</li>
+<li><code>--oom-kill-disable</code>：是否运行 OOM 的时候杀死容器。只有设置了 <code>-m</code>，才可以把这个选项设置为 false，否则容器会耗尽主机内存，而且导致主机应用被杀死</li>
+</ul>
+<p>关于 <code>--memory-swap</code> 的设置必须解释一下，<code>--memory-swap</code> 必须在 <code>--memory</code> 也配置的情况下才能有用。</p>
+<ul>
+<li>如果 <code>--memory-swap</code> 的值大于 <code>--memory</code>，那么容器能使用的总内存（内存 + swap）为 <code>--memory-swap</code> 的值，能使用的 swap 值为 <code>--memory-swap</code> 减去 <code>--memory</code> 的值</li>
+<li>如果 <code>--memory-swap</code> 为 0，或者和 <code>--memory</code> 的值相同，那么容器能使用两倍于内存的 swap 大小，如果 <code>--memory</code> 对应的值是 <code>200M</code>，那么容器可以使用 <code>400M</code> swap</li>
+<li>如果 <code>--memory-swap</code> 的值为 -1，那么不限制 swap 的使用，也就是说主机有多少 swap，容器都可以使用</li>
+</ul>
+<p>如果限制容器的内存使用为 64M，在申请 64M 资源的情况下，容器运行正常（如果主机上内存非常紧张，并不一定能保证这一点）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">➜  docker run --rm -it -m 64m stress --vm 1 --vm-bytes 64M --vm-hang 0</span><br><span class="line">WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.</span><br><span class="line">stress: info: [1] dispatching hogs: 0 cpu, 0 io, 1 vm, 0 hdd</span><br><span class="line">stress: dbug: [1] using backoff sleep of 3000us</span><br><span class="line">stress: dbug: [1] --&gt; hogvm worker 1 [7] forked</span><br><span class="line">stress: dbug: [7] allocating 67108864 bytes ...</span><br><span class="line">stress: dbug: [7] touching bytes in strides of 4096 bytes ...</span><br><span class="line">stress: dbug: [7] sleeping forever with allocated memory</span><br><span class="line">.....</span><br></pre></td></tr></table></figure>
+<p>而如果申请 100M 内存，会发现容器里的进程被 kill 掉了（worker 7 got signal 9，signal 9 就是 kill 信号）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">➜  docker run --rm -it -m 64m stress --vm 1 --vm-bytes 100M --vm-hang 0</span><br><span class="line">WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.</span><br><span class="line">stress: info: [1] dispatching hogs: 0 cpu, 0 io, 1 vm, 0 hdd</span><br><span class="line">stress: dbug: [1] using backoff sleep of 3000us</span><br><span class="line">stress: dbug: [1] --&gt; hogvm worker 1 [7] forked</span><br><span class="line">stress: dbug: [7] allocating 104857600 bytes ...</span><br><span class="line">stress: dbug: [7] touching bytes in strides of 4096 bytes ...</span><br><span class="line">stress: FAIL: [1] (415) &lt;-- worker 7 got signal 9</span><br><span class="line">stress: WARN: [1] (417) now reaping child worker processes</span><br><span class="line">stress: FAIL: [1] (421) kill error: No such process</span><br><span class="line">stress: FAIL: [1] (451) failed run completed in 0s</span><br></pre></td></tr></table></figure>
+<p>关于 swap 和 kernel memory 的限制就不在这里过多解释了，感兴趣的可以查看官方的文档。</p>
+<h3 id="内存信息的-cgroups-文件"><a href="#内存信息的-cgroups-文件" class="headerlink" title="内存信息的 cgroups 文件"></a>内存信息的 cgroups 文件</h3><p>对于 docker 来说，它的内存限制也是存放在 cgroups 文件系统的。对于某个容器，你可以在 <code>sys/fs/cgroup/memory/docker/&lt;container_id&gt;</code> 目录下看到容器内存相关的文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">➜  ls /sys/fs/cgroup/memory/docker/b067fa0c58dcdd4fa856177fac0112655b605fcc9a0fe07e36950f0086f62f46 </span><br><span class="line">cgroup.clone_children  memory.kmem.failcnt             memory.kmem.tcp.limit_in_bytes      memory.max_usage_in_bytes        memory.soft_limit_in_bytes  notify_on_release</span><br><span class="line">cgroup.event_control   memory.kmem.limit_in_bytes      memory.kmem.tcp.max_usage_in_bytes  memory.move_charge_at_immigrate  memory.stat                 tasks</span><br><span class="line">cgroup.procs           memory.kmem.max_usage_in_bytes  memory.kmem.tcp.usage_in_bytes      memory.numa_stat                 memory.swappiness</span><br><span class="line">memory.failcnt         memory.kmem.slabinfo            memory.kmem.usage_in_bytes          memory.oom_control               memory.usage_in_bytes</span><br><span class="line">memory.force_empty     memory.kmem.tcp.failcnt         memory.limit_in_bytes               memory.pressure_level            memory.use_hierarchy</span><br></pre></td></tr></table></figure>
+<p>而上面的内存限制对应的文件是 <code>memory.limit_in_bytes</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  cat /sys/fs/cgroup/memory/docker/b067fa0c58dcdd4fa856177fac0112655b605fcc9a0fe07e36950f0086f62f46/memory.limit_in_bytes</span><br><span class="line">67108864</span><br></pre></td></tr></table></figure>
+<h2 id="3-IO-资源（磁盘）"><a href="#3-IO-资源（磁盘）" class="headerlink" title="3. IO 资源（磁盘）"></a>3. IO 资源（磁盘）</h2><p>对于磁盘来说，考量的参数是容量和读写速度，因此对容器的磁盘限制也应该从这两个维度出发。目前 docker 支持对磁盘的读写速度进行限制，但是并没有方法能限制容器能使用的磁盘容量（一旦磁盘 mount 到容器里，容器就能够使用磁盘的所有容量）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker run -it --rm ubuntu:16.04 bash</span><br><span class="line"></span><br><span class="line">root@5229f756523c:/# time $(dd if=/dev/zero of=/tmp/test.data bs=10M count=100 &amp;&amp; sync)</span><br><span class="line">100+0 records in</span><br><span class="line">100+0 records out</span><br><span class="line">1048576000 bytes (1.0 GB) copied, 3.82859 s, 274 MB/s</span><br><span class="line"></span><br><span class="line">real	0m4.124s</span><br><span class="line">user	0m0.000s</span><br><span class="line">sys	0m1.812s</span><br></pre></td></tr></table></figure>
+<h3 id="限制磁盘的权重"><a href="#限制磁盘的权重" class="headerlink" title="限制磁盘的权重"></a>限制磁盘的权重</h3><p>通过 <code>--blkio-weight</code> 参数可以设置 block 的权重，这个权重和 <code>--cpu-shares</code> 类似，它是一个相对值，取值范围是 10-1000，当多个 block 去屑磁盘的时候，其读写速度和权重成反比。</p>
+<p>不过在我的环境中，<code>--blkio-weight</code> 参数虽然设置了对应的 cgroups 值，但是并没有作用，不同 weight 容器的读写速度还是一样的。github 上有一个对应的 <a href="https://github.com/moby/moby/issues/16173" target="_blank" rel="noopener">issue</a>，但是没有详细的解答。</p>
+<p><code>--blkio-weight-device</code> 可以设置某个设备的权重值，测试下来虽然两个容器同时读的速度不同，但是并没有按照对应的比例来限制。</p>
+<h3 id="限制磁盘的读写速率"><a href="#限制磁盘的读写速率" class="headerlink" title="限制磁盘的读写速率"></a>限制磁盘的读写速率</h3><p>除了权重之外，docker 还允许你直接限制磁盘的读写速率，对应的参数有：</p>
+<ul>
+<li><code>--device-read-bps</code>：磁盘每秒最多可以读多少比特（bytes）</li>
+<li><code>--device-write-bps</code>：磁盘每秒最多可以写多少比特（bytes）</li>
+</ul>
+<p>上面两个参数的值都是磁盘以及对应的速率，格式为 <code>&lt;device-path&gt;:&lt;limit&gt;[unit]</code>，<code>device-path</code> 表示磁盘所在的位置，限制 <code>limit</code> 为正整数，单位可以是 <code>kb</code>、<code>mb</code> 和 <code>gb</code>。</p>
+<p>比如可以把设备的度速率限制在 1mb：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -it --device /dev/sda:/dev/sda --device-read-bps /dev/sda:1mb ubuntu:16.04 bash</span><br><span class="line">root@6c048edef769:/# cat /sys/fs/cgroup/blkio/blkio.throttle.read_bps_device </span><br><span class="line">8:0 1048576</span><br><span class="line">root@6c048edef769:/# dd iflag=direct,nonblock if=/dev/sda of=/dev/null bs=5M count=10</span><br><span class="line">10+0 records in</span><br><span class="line">10+0 records out</span><br><span class="line">52428800 bytes (52 MB) copied, 50.0154 s, 1.0 MB/s</span><br></pre></td></tr></table></figure>
+<p>从磁盘中读取 50m 花费了 50s 左右，说明磁盘速率限制起了作用。</p>
+<p>另外两个参数可以限制磁盘读写频率（每秒能执行多少次读写操作）：</p>
+<ul>
+<li><code>--device-read-iops</code>：磁盘每秒最多可以执行多少 IO 读操作</li>
+<li><code>--device-write-iops</code>：磁盘每秒最多可以执行多少 IO 写操作</li>
+</ul>
+<p>上面两个参数的值都是磁盘以及对应的 IO 上限，格式为 <code>&lt;device-path&gt;:&lt;limit&gt;</code>，limit 为正整数，表示磁盘 IO 上限数。</p>
+<p>比如，我们可以让磁盘每秒最多读 100 次：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ docker run -it --device /dev/sda:/dev/sda --device-read-iops /dev/sda:100 ubuntu:16.04 bash</span><br><span class="line">root@2e3026e9ccd2:/# dd iflag=direct,nonblock if=/dev/sda of=/dev/null bs=1k count=1000</span><br><span class="line">1000+0 records in</span><br><span class="line">1000+0 records out</span><br><span class="line">1024000 bytes (1.0 MB) copied, 9.9159 s, 103 kB/s</span><br></pre></td></tr></table></figure>
+<p>从测试中可以看出，容器设置了读操作的 iops 为 100，在容器内部从 block 中读取 1m 数据（每次 1k，一共要读 1000 次），共计耗时约 10s，换算起来就是 100 iops/s，符合预期结果。</p>
+<p>写操作 bps 和 iops 与读类似，这里就不再重复了，感兴趣的可以自己实验。</p>
+<h3 id="磁盘信息的-cgroups-文件"><a href="#磁盘信息的-cgroups-文件" class="headerlink" title="磁盘信息的 cgroups 文件"></a>磁盘信息的 cgroups 文件</h3><p>容器中磁盘限制的 cgroups 文件位于 <code>/sys/fs/cgroup/blkio/docker/&lt;docker_id&gt;</code> 目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ ls /sys/fs/cgroup/blkio/docker/1402c1682cba743b4d80f638da3d4272b2ebdb6dc6c2111acfe9c7f7aeb72917/                               </span><br><span class="line">blkio.io_merged                   blkio.io_serviced                blkio.leaf_weight                blkio.throttle.io_serviced        blkio.time_recursive   tasks</span><br><span class="line">blkio.io_merged_recursive         blkio.io_serviced_recursive      blkio.leaf_weight_device         blkio.throttle.read_bps_device    blkio.weight</span><br><span class="line">blkio.io_queued                   blkio.io_service_time            blkio.reset_stats                blkio.throttle.read_iops_device   blkio.weight_device</span><br><span class="line">blkio.io_queued_recursive         blkio.io_service_time_recursive  blkio.sectors                    blkio.throttle.write_bps_device   cgroup.clone_children</span><br><span class="line">blkio.io_service_bytes            blkio.io_wait_time               blkio.sectors_recursive          blkio.throttle.write_iops_device  cgroup.procs</span><br><span class="line">blkio.io_service_bytes_recursive  blkio.io_wait_time_recursive     blkio.throttle.io_service_bytes  blkio.time                        notify_on_release</span><br></pre></td></tr></table></figure>
+<p>其中 <code>blkio.throttle.read_iops_device</code> 对应了设备的读 IOPS，前面一列是<a href="http://www.makelinux.net/ldd3/chp-3-sect-2" target="_blank" rel="noopener">设备的编号</a>，可以通过 <code>cat /proc/partitions</code> 查看设备和分区的设备号；后面是 IOPS 上限值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ cat /sys/fs/cgroup/blkio/docker/1402c1682cba743b4d80f638da3d4272b2ebdb6dc6c2111acfe9c7f7aeb72917/blkio.throttle.read_iops_device </span><br><span class="line">8:0 100</span><br></pre></td></tr></table></figure>
+<p><code>blkio.throttle.read_bps_device</code> 对应了设备的读速率，格式和 IOPS 类似，只是第二列的值为 bps：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ cat /sys/fs/cgroup/blkio/docker/9de94493f1ab4437d9c2c42fab818f12c7e82dddc576f356c555a2db7bc61e21/blkio.throttle.read_bps_device </span><br><span class="line">8:0 1048576</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>从上面的实验可以看出来，CPU 和内存的资源限制已经是比较成熟和易用，能够满足大部分用户的需求。磁盘限制也是不错的，虽然现在无法动态地限制容量，但是限制磁盘读写速度也能应对很多场景。</p>
+<p>至于网络，docker 现在并没有给出网络限制的方案，也不会在可见的未来做这件事情，因为目前网络是通过插件来实现的，和容器本身的功能相对独立，不是很容易实现，扩展性也很差。docker 社区已经有很多呼声，也有 issue 是关于网络流量限制的: <a href="https://github.com/moby/moby/issues/26767" target="_blank" rel="noopener">issue 26767</a>、<a href="https://github.com/moby/moby/issues/37" target="_blank" rel="noopener">issue 37</a>、<a href="https://github.com/moby/moby/issues/4763" target="_blank" rel="noopener">issue 4763</a>。</p>
+<p>资源限制一方面可以让我们为容器（应用）设置合理的 CPU、内存等资源，方便管理；另外一方面也能有效地预防恶意的攻击和异常，对容器来说是非常重要的功能。如果你需要在生产环境使用容器，请务必要花时间去做这件事情。</p>
+<p>最近我这里docker单机平台正式上线使用，使用中有很多问题都一样解决，在给一个游戏项目做测试的时候，此项目由于8080端口对公网全部开放，并且安全策略没有做好（默认的tomcat模板没有删除），导致被人进行webshell，跑了很多的流量，为了解决此问题我针对tc与openvswitch本身的qos做了深入研究，最后选择openvswitch的qos作为容器的网络资源限制方法。</p>
+<p>docker本身仅能对容器的cpu、内存做限制，而且必须是在容器运行前做，运行过程中未发现如何动态修改，并且不提供网络资源限制，所以只能使用其他软件做了。</p>
+<p>我的docker网络没有使用默认bridge，使用none，然后绑定openvswitch的bridge，并使用pipework提供网络，所以我可以根据容器对于openvswitch的port来进行基于port的网络资源限制，好处是可以动态的修改，坏处是容器一重启还得重新做，但也可以通过其他方法来解决。</p>
+<p>一、下面是我做测试的结果：</p>
+<p><a href="http://s3.51cto.com/wyfs02/M02/6C/51/wKioL1VGzcjxKeybAAFeP1FeJcw975.jpg" target="_blank" rel="noopener"><img src="http://s3.51cto.com/wyfs02/M02/6C/51/wKioL1VGzcjxKeybAAFeP1FeJcw975.jpg" alt="wKioL1VGzcjxKeybAAFeP1FeJcw975.jpg"></a></p>
+<p>对于限速100m以下，其实硬盘的类型与读写速度没什么影响，但如何限速150m以上，或者无限速，那么硬盘肯定是ssd&gt;sas&gt;sata，所以建议进来使用sas的磁盘作为docker的挂载分区。</p>
+<p>openvswitch默认官方文档提供的限速方法“rate limiting vm traffic using qos policing”，地址是<a href="http://openvswitch.org/support/config-cookbooks/qos-rate-limiting/，此限速仅能对上传做限速，下载没有办法，所以还得通过其他的qos来做限制。" target="_blank" rel="noopener">http://openvswitch.org/support/config-cookbooks/qos-rate-limiting/，此限速仅能对上传做限速，下载没有办法，所以还得通过其他的qos来做限制。</a></p>
+<p>二、下面是具体限速脚本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash">filename:modify_docker_container_network_limit.sh</span></span><br><span class="line"><span class="meta">#</span><span class="bash">author:Deng Lei</span></span><br><span class="line"><span class="meta">#</span><span class="bash">email:dl528888@gmail.com</span></span><br><span class="line">op=$1</span><br><span class="line">container=$2</span><br><span class="line">limit=$3  # Mbits/s</span><br><span class="line">if [ -z $1 ] || [ -z $2 ]; then</span><br><span class="line">    echo "Usage: operation container_name limit(default:5m)"</span><br><span class="line">    echo "Example1: I want limit 5m in the container:test"</span><br><span class="line">    echo "The command is: bash `basename $0` limit test 5"</span><br><span class="line">    echo "Example2: I want delete network limit in the container:test"</span><br><span class="line">    echo "The command is: bash `basename $0` ulimit test"</span><br><span class="line">    exit 1</span><br><span class="line">fi</span><br><span class="line">if [ -z $3 ];then</span><br><span class="line">    limit='5m'</span><br><span class="line">fi</span><br><span class="line">if [ `docker inspect --format "``.`State`.`Pid`" $container &amp;&gt;&gt;/dev/null &amp;&amp; echo 0 || echo 1` -eq 1 ];then</span><br><span class="line">echo "no this container:$container"</span><br><span class="line">exit 1</span><br><span class="line">fi</span><br><span class="line">ovs_prefix='veth1pl'</span><br><span class="line">container_id=`docker inspect --format "``.`State`.`Pid`" $container`</span><br><span class="line">device_name=`echo $&#123;ovs_prefix&#125;$&#123;container_id&#125;`</span><br><span class="line">if [ $op == 'limit' ];then</span><br><span class="line">for v in $device_name; do</span><br><span class="line">    ovs-vsctl set interface $v ingress_policing_rate=$((limit*1000))</span><br><span class="line">    ovs-vsctl set interface $v ingress_policing_burst=$((limit*100))</span><br><span class="line">    ovs-vsctl set port $v qos=@newqos -- --id=@newqos create qos type=linux-htb queues=0=@q0 other-config:max-rate=$((limit*1000000)) -- --id=@q0 create queue other-config:min-rate=$((limit*1000000)) other-config:max-rate=$((limit*1000000)) &amp;&gt;&gt;/dev/null &amp;&amp; echo 'modify success!' || echo 'modify fail!'</span><br><span class="line">done</span><br><span class="line">elif [ $op == 'ulimit' ];then</span><br><span class="line">for v in $device_name; do</span><br><span class="line">    ovs-vsctl set interface $v ingress_policing_rate=0</span><br><span class="line">    ovs-vsctl set interface $v ingress_policing_burst=0</span><br><span class="line">    ovs-vsctl clear Port $v qos &amp;&gt;&gt;/dev/null &amp;&amp; echo 'modify success!' || echo 'modify fail!'</span><br><span class="line">done</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<p>此脚本使用的话，限速可以直接针对下载与上传，并且限制是统一生效的，比如我限制一个容器带宽为5m，那么下载与上传的限速都是5m，单位是bit不是byte。</p>
+<p>三、下面是使用方法：</p>
+<p>四、下面是测试过程：</p>
+<p>测试的方法是：</p>
+<p>找另外一个主机172.16.1.126，然后dd生成个100m的文件/tmp/test_client.iso，在本机下载这个文件来测试下载速度，在本机dd生成100m的文件/tmp/test_server.iso把此文件上传到172.16.1.126里测试上传速度。</p>
+<p>sata 7.5k</p>
+<p>1、没有限制的情况</p>
+<p>下载速度</p>
+<p>上传速度</p>
+<p>2、限速5m的</p>
+<p>下载速度</p>
+<p>上传速度</p>
+<p>3、限速为10m</p>
+<p>下载速度</p>
+<p>上传速度</p>
+<p>4、限速为20m</p>
+<p>下载速度</p>
+<p>上传速度</p>
+<p>5、限速为50m</p>
+<p>下载速度</p>
+<p>上传速度</p>
+<p>6、限速100m</p>
+<p>下载速度</p>
+<p>上传速度</p>
+<p>7、限速150m</p>
+<p>下载速度</p>
+<p>上传速度</p>
+<p>下面是使用sas 7.5k硬盘的测试结果</p>
+<p>8、无限速的</p>
+<p>下载速度</p>
+<p>上传速度</p>
+<p>9、5m限速</p>
+<p>下载速度</p>
+<p>上传速度</p>
+<p>10、限速10m</p>
+<p>下载速度</p>
+<p>上传速度</p>
+<p>11、限速20m</p>
+<p>下载速度</p>
+<p>上传速度</p>
+<p>12、限速50m</p>
+<p>下载速度</p>
+<p>上传速度</p>
+<p>13、限速为100m</p>
+<p>下载速度</p>
+<p>上传速度</p>
+<p>14、限速150m</p>
+<p>下载速度</p>
+<p>上传速度</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ace1981</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ace1981</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
       </div>
     </footer>
 
-      
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
 
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
 
 
 
@@ -108,6 +2217,124 @@
 
 
 
-    </div>
-  </body>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>

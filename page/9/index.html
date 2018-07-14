@@ -1,106 +1,1913 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
+
+
+
   
-  <title>Ace&#39;pages</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="Ace&#39;pages">
 <meta property="og:url" content="http://hujao.com/page/9/index.html">
 <meta property="og:site_name" content="Ace&#39;pages">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ace&#39;pages">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hujao.com/page/9/"/>
+
+
+
+
+
+  <title>Ace'pages</title>
   
-    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
+
+
+
+
+
+
+
+
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
   
     
-    <body class="home-body">
-    
   
-      <div id="container" class="container">
-        <div class="home">
-  <div class="content">
-    <div class="profile">
-      <h1 class="nickname">Ace</h1>
-      <div class="description">
-        <p><p>程序员一枚,研究各种技术,生命不息,学习不止.</p>
-</p>
-      </div>
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ace'pages</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <hr/>
-    <ul class="links">
       
-        <li>
-          <a href="/archives">Blog</a>
-        </li>
+        <p class="site-subtitle"></p>
       
-        <li>
-          <a href="https://github.com/ace1981">GitHub</a>
-        </li>
-      
-    </ul>
   </div>
 
- <link rel="stylesheet" type="text/css" href="/css/wordcloud2.css" />
-    <script src="/js/jquery.min.js"></script>
- 
-    <script type="text/javascript">
-        /*!
-         * Create an array of word objects, each representing a word in the cloud
-         */
-        var word_array = [
-            {text: "docker"},
-            {text: "springboot"}, {text: "容器编排"}, {text: "持续集成"}, {text: "日志收集"}, {text: "服务监控"}, {text: "数据安全"}, {text: "机器学习"}, {text: "搜索引擎"}, {text: "数据库"},{text: "web前端"}, {text: "代码管理"},  {text: "分布式"},  {text: "大数据"}, {text: "框架"}, {text: "流计算" }, {text: "消息队列" }, {text: "第三方支付"}, {text: "网络协议"}, {text: "负载均衡" }, {text: "开发工具" }, {text: "性能优化" },  {text: "etl" },{text: "java" },  {text: "linux"}, {text: "shell"}
-            // ...as many words as you want
-        ];
-        $(document).ready(function () {
-            for (var i = 0; i < word_array.length; i++) {
-                var w=Math.round(Math.random()*10);
-                word_array[i].link="/categories/"+word_array[i].text+"/";
-                word_array[i].weight=w;
-            };
-            jQuery("#example").jQCloud(word_array);
-        //$("#reply").val("添加回复：");
-        });
-    </script>
-    <div id="example" style="width: 500px; height: 120px;max-width: 500px;
-    position: relative;
-    margin: 0 auto;margin-top: 30px;
-    margin-bottom: -40px;">
-             
-    </div>
-
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-      </div>
-      
-  <footer id="footer" class="home-footer footer">
-    <div id="copyright" class="copyright">
-      &copy; hujao.com 2018   
+<nav class="site-nav">
+  
 
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/11/19/storm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/19/storm/" itemprop="url">storm大数据的并行计算(未开始)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-19T13:23:18+08:00">
+                2017-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/流计算/" itemprop="url" rel="index">
+                    <span itemprop="name">流计算</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/11/19/spark/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/19/spark/" itemprop="url">spark流式计算(未开始)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-19T13:23:11+08:00">
+                2017-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/流计算/" itemprop="url" rel="index">
+                    <span itemprop="name">流计算</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/11/19/hdfs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/19/hdfs/" itemprop="url">hdfs分布式文件存储(未开始)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-19T13:23:04+08:00">
+                2017-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/11/19/swagger/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/19/swagger/" itemprop="url">用swagger做api文档(未开始)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-19T13:14:30+08:00">
+                2017-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/springboot/" itemprop="url" rel="index">
+                    <span itemprop="name">springboot</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/11/19/eclipse/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/19/eclipse/" itemprop="url">eclipse 技巧</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-19T13:14:13+08:00">
+                2017-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/开发工具/" itemprop="url" rel="index">
+                    <span itemprop="name">开发工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="大小写快捷方式"><a href="#大小写快捷方式" class="headerlink" title="大小写快捷方式"></a>大小写快捷方式</h5><p>大写转换小写 ctrl+shift+y    小写转换大写 ctrl+shift+x</p>
+<h5 id="关闭文件校验-如dtd-jsp-tag-library-javascript-facelet-html等"><a href="#关闭文件校验-如dtd-jsp-tag-library-javascript-facelet-html等" class="headerlink" title="关闭文件校验 如dtd,jsp,tag library,javascript,facelet html等"></a>关闭文件校验 如dtd,jsp,tag library,javascript,facelet html等</h5><p>菜单Window-&gt;首选项Preferences-&gt;校验Validation DisableAll</p>
+<h5 id="eclipse总是弹出-Errors-running-builder-‘JavaScript-Validator’解决方法"><a href="#eclipse总是弹出-Errors-running-builder-‘JavaScript-Validator’解决方法" class="headerlink" title="eclipse总是弹出 Errors running builder ‘JavaScript Validator’解决方法"></a>eclipse总是弹出 Errors running builder ‘JavaScript Validator’解决方法</h5><p>重新编译时，总会弹出</p>
+<p>Errors occurred during the build.<br>Errors running builder ‘JavaScript Validator’ on project ‘HelpDesk’.<br>java.lang.NullPointerException</p>
+<p>解决方法：</p>
+<p>鼠标右键，点击工程Properties-&gt;Builder-&gt;’JavaScript Validator’取消勾选即可，</p>
+<p>这样就不再验证js了，加快了编译速度</p>
+<h5 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h5><p>ANSI Escape Color 让eclipse console支持颜色</p>
+<p>Maven项目改名</p>
+<h5 id="MAVEN项目改名步骤注意-eclipse"><a href="#MAVEN项目改名步骤注意-eclipse" class="headerlink" title="MAVEN项目改名步骤注意-eclipse"></a>MAVEN项目改名步骤注意-eclipse</h5><p>1.选中项目名，按F2，更改项目名。</p>
+<p>2.修改项目的context root,右键项目,选择最后一项。打开：如果所示</p>
+<p><img src="http://blog.csdn.net/a1063916463/article/details/53761028" alt="img"></p>
+<p>3.修改或者增加maven编译配置，pom.xml文件。修改成对应的项目名：</p>
+<p><img src="http://blog.csdn.net/a1063916463/article/details/53761028" alt="img"></p>
+<p>4.修改项目的.project文件，打开workspace招到对应的项目，打开.project文件，修改成对应的项目名</p>
+<p><img src="http://blog.csdn.net/a1063916463/article/details/53761028" alt="img"></p>
+<p><img src="http://blog.csdn.net/a1063916463/article/details/53761028" alt="img"></p>
+<p>5.修改.Settings目录下的文件。</p>
+<p><img src="http://blog.csdn.net/a1063916463/article/details/53761028" alt="img"></p>
+<p>打开.settings目录找到如下文件:</p>
+<p><img src="http://blog.csdn.net/a1063916463/article/details/53761028" alt="img"></p>
+<p>修改对应的名称</p>
+<p><img src="http://blog.csdn.net/a1063916463/article/details/53761028" alt="img"></p>
+<p>到此项目名完整修改成功。</p>
+<h5 id="Resource-is-out-of-sync-with-the-file-system……"><a href="#Resource-is-out-of-sync-with-the-file-system……" class="headerlink" title="Resource is out of sync with the file system……"></a>Resource is out of sync with the file system……</h5><p>分析：<br>有时候因为时间紧迫的原因，所以就没去管它，今天再次遇到它，实在看着不爽，所以想了办法解决此问题！</p>
+<p>这个问题是由于eclipse中文件不同步引起的。在eclipse中，工程文件是由eclipse自动扫描添加的，如果在外部修改了工程目录中的文件但又关闭了自动刷新功能，则会引起文件不同步，从而搜索时出现Resource is out of sync with the file system问题（其它功能可能也会如此）。此外，在外部没有修改eclipse工程中的文件也有可能引起该问题。</p>
+<p>解决方法：<br>有两种解决方法：<br>1）手动刷新。即在eclipse的工程目录中，右键refresh（或者按下F5）。<br>2）配置eclipse的选项：<br>​    a）eclipse启动时，刷新workspace，即勾选：window—&gt;preferences—&gt;general—&gt;startup and shutdown—&gt;refresh workspace on startup；<br>​    b）window—&gt;preferences—&gt;general—&gt;workspace中：勾选选项：refresh using native hooks or polling和refresh on access；</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/11/18/lombok/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/18/lombok/" itemprop="url">使用lombok精简属性的set/get方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-18T21:36:24+08:00">
+                2017-11-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="lombok需要配置关联eclipse-然后才能自动生成代码"><a href="#lombok需要配置关联eclipse-然后才能自动生成代码" class="headerlink" title="lombok需要配置关联eclipse,然后才能自动生成代码"></a>lombok需要配置关联eclipse,然后才能自动生成代码</h4><p>1 首先maven引用lombok</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.16.14<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>2 然后在本地maven库找到下载的lombok,将lombok-1.16.14.jar复制到eclipse.ini同目录下,并重命名为lombok.jar</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#Mac</span><br><span class="line">/usr/local/Cellar/maven/<span class="number">3.3</span><span class="number">.3</span>/thirdparty/org/projectlombok/lombok/<span class="number">1.16</span><span class="number">.14</span>/lombok<span class="number">-1.16</span><span class="number">.14</span>.jar </span><br><span class="line">#Windows</span><br><span class="line">C:\Users\Ace\.m2\repository\org/projectlombok/lombok/<span class="number">1.16</span><span class="number">.14</span> &gt;lombok<span class="number">-1.16</span><span class="number">.14</span>.jar</span><br></pre></td></tr></table></figure>
+<p>3 定义dto类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> hujao.com.testlombok;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderDTO</span> </span>&#123;</span><br><span class="line">  <span class="meta">@Getter</span> <span class="meta">@Setter</span> String orderId;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4 使用dto</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> hujao.com.testlombok;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Hello lombok!</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">( String[] args )</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    	OrderDTO dto=<span class="keyword">new</span> OrderDTO();</span><br><span class="line">    	dto.setOrderId(<span class="string">"10001"</span>);</span><br><span class="line">        System.out.println(dto.getOrderId() );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5 maven build以后重启eclipse即可 </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/07/28/datascience-1-python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/28/datascience-1-python/" itemprop="url">数据科学一:python</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-28T00:13:09+08:00">
+                2017-07-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>基础内容</p>
+<p>1 获取</p>
+<p>2 import this 之禅</p>
+<p>3 空白形式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]:</span><br><span class="line">    <span class="keyword">print</span> i</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]:</span><br><span class="line">        <span class="keyword">print</span> j</span><br><span class="line">        <span class="keyword">print</span> i+j</span><br><span class="line">    <span class="keyword">print</span> i</span><br><span class="line"><span class="keyword">print</span> <span class="string">"done looping"</span></span><br></pre></td></tr></table></figure>
+<p>4 模块</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">my_regex=re.compile(<span class="string">"[0-9]+"</span>,re.I)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re <span class="keyword">as</span> regex</span><br><span class="line">my_regex=re.compile(<span class="string">"[0-9]+"</span>,re.I)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict,Counter</span><br><span class="line">lookup=defaultdict(int)</span><br><span class="line">my_counter=Counter()</span><br></pre></td></tr></table></figure>
+<p>5 算法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> division</span><br></pre></td></tr></table></figure>
+<p>6 函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">double</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="string">"""this is docstring</span></span><br><span class="line"><span class="string">    to explains what the function does"""</span></span><br><span class="line">    <span class="keyword">return</span> x*<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">apply_to_one</span><span class="params">(f)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> f(<span class="number">1</span>)</span><br><span class="line">my_double=double</span><br><span class="line">x=apply_to_one(my_double)  <span class="comment"># 等于2</span></span><br></pre></td></tr></table></figure>
+<p>匿名函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y=apply_to_one(<span class="keyword">lambda</span> x:x+<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<p>默认值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myprint</span><span class="params">(message=<span class="string">"my default message"</span>)</span></span></span><br><span class="line"><span class="function">    <span class="title">print</span> <span class="title">message</span></span></span><br><span class="line"><span class="function"><span class="title">myprint</span><span class="params">(<span class="string">"hello"</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">myprint</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p>参数指定赋值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">subtract</span><span class="params">(a=<span class="number">0</span>,b=<span class="number">0</span>)</span></span></span><br><span class="line"><span class="function">    <span class="title">return</span> <span class="title">a</span>-<span class="title">b</span></span></span><br><span class="line"><span class="function"><span class="title">subtract</span><span class="params">(<span class="number">10</span>,<span class="number">5</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">subtract</span><span class="params">(<span class="number">0</span>,<span class="number">5</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">subtract</span><span class="params">(b=<span class="number">5</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p>7 字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">single_quoted_string=<span class="string">'data science'</span></span><br><span class="line">double_quoted_string=<span class="string">"data science"</span></span><br></pre></td></tr></table></figure>
+<p>特殊字符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tab_string=<span class="string">"\t"</span>	</span><br><span class="line">len(ten_string)    <span class="comment"># 长度1</span></span><br></pre></td></tr></table></figure>
+<p>原生字符不转义</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">not_tab_string=<span class="string">r"\t"</span></span><br><span class="line">len(not_tab_string) <span class="comment"># 长度2</span></span><br></pre></td></tr></table></figure>
+<p>多行字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">multi_line_string=<span class="string">"""this is</span></span><br><span class="line"><span class="string">and this is</span></span><br><span class="line"><span class="string">and this"""</span></span><br></pre></td></tr></table></figure>
+<p>8 异常</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">print</span> <span class="number">0</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"cannot divide by zero"</span></span><br></pre></td></tr></table></figure>
+<p>9 列表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">integer_list=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">heterogeneous_list=[<span class="string">"stringi"</span>,<span class="number">0.1</span>,<span class="keyword">True</span>]</span><br><span class="line">list_of_lists=[integer_list,heterogeneous_list,[]]</span><br><span class="line">list_lenth=len(integer_list) <span class="comment"># =3</span></span><br><span class="line">list_sum=sum(integer_list) <span class="comment"># =6</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">x=range(<span class="number">10</span>) <span class="comment"># 是列表[1,2,3,....,9]</span></span><br><span class="line">zero=x[<span class="number">0</span>]   <span class="comment"># =0</span></span><br><span class="line">one=x[<span class="number">1</span>]</span><br><span class="line">nine=x[<span class="number">-1</span>]  <span class="comment"># =9</span></span><br><span class="line">eight=x[<span class="number">-2</span>] <span class="comment"># =8</span></span><br><span class="line">x[<span class="number">0</span>]=<span class="number">-1</span>     <span class="comment"># 列表为[-1,1,2,...,9] </span></span><br><span class="line"></span><br><span class="line">first_three=x[:<span class="number">3</span>]        <span class="comment">#[-1,1,2]</span></span><br><span class="line">three_end=x[<span class="number">3</span>:]			<span class="comment">#[3,4,...,9]</span></span><br><span class="line">one_four=x[<span class="number">1</span>:<span class="number">5</span>]			<span class="comment">#[1,2,3,4]	</span></span><br><span class="line">last_three=x[<span class="number">-3</span>:]	     <span class="comment">#[7,8,9]</span></span><br><span class="line">without_first_and_last=x[<span class="number">1</span>:<span class="number">-1</span>]  <span class="comment">#[1,2,3,...,8]</span></span><br><span class="line">copy_of_x=x[:]           <span class="comment"># [-1,1,2,3,...,9]</span></span><br></pre></td></tr></table></figure>
+<p>in 关键字</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]  <span class="comment">#True</span></span><br><span class="line"><span class="number">0</span> <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]  <span class="comment">#False</span></span><br></pre></td></tr></table></figure>
+<p>列表追加</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">x.extend([<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])  <span class="comment"># x为[1,2,3,4,5,6]</span></span><br></pre></td></tr></table></figure>
+<p>列表加和</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">y=x+[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>] <span class="comment"># y为[1,2,3,4,5,6] x为[1,2,3]</span></span><br></pre></td></tr></table></figure>
+<p>增加一项</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">x.append(<span class="number">0</span>)</span><br><span class="line">y=x[<span class="number">-1</span>]</span><br><span class="line">z=len(x)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x,y=[<span class="number">1</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_ y=[1,2]</span><br></pre></td></tr></table></figure>
+<p>10 元组</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">my_list=[<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">my_tuple=(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">other_tuple=<span class="number">3</span>,<span class="number">4</span></span><br><span class="line">mylist[<span class="number">1</span>]=<span class="number">3</span>  <span class="comment"># [1,3]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    my_tuple[<span class="number">1</span>]=<span class="number">3</span></span><br><span class="line"><span class="keyword">except</span> TypeError:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"cannot modify a tuple"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_and_product</span><span class="params">(x,y)</span></span></span><br><span class="line">    return (x+y),(x*y)</span><br><span class="line">sp=sum_and_product(<span class="number">2</span>,<span class="number">3</span>)  <span class="comment"># =(5,6)</span></span><br><span class="line">s,p=sum_and_product(<span class="number">5</span>,<span class="number">10</span>) <span class="comment">#  s为15,p为50</span></span><br></pre></td></tr></table></figure>
+<p>多重赋值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x,y=<span class="number">1</span>,<span class="number">2</span></span><br><span class="line">x,y=y,x  <span class="comment"># x=2 y=1</span></span><br></pre></td></tr></table></figure>
+<p>11 字典</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">empty_dict=&#123;&#125;</span><br><span class="line">empty_dict2=dict()</span><br><span class="line">grades=&#123;<span class="string">"Joel"</span>:<span class="number">80</span>,<span class="string">"Tim"</span>:<span class="number">95</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 索引方式取值</span></span><br><span class="line">joels_grade=grades[<span class="string">"Joel"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 索引方式取值 找不到异常</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    kates_grade=grades[<span class="string">"Kate"</span>]</span><br><span class="line"><span class="keyword">except</span> KeyError</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"no grade for Kate!"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否在字典中</span></span><br><span class="line">joels_has_grade= <span class="string">"Joel"</span> <span class="keyword">in</span> grades  <span class="comment">#正确</span></span><br><span class="line">kate_has_grade=<span class="string">"Kate"</span> <span class="keyword">in</span> grades    <span class="comment">#错误</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># get方式取值</span></span><br><span class="line">joels_grade=grades.get(<span class="string">"Joel"</span>,<span class="number">0</span>) <span class="comment"># 80</span></span><br><span class="line">kates_grade=grades.get(<span class="string">"Kate"</span>,<span class="number">0</span>) <span class="comment"># 0</span></span><br><span class="line">no_ones_grade=grades.get(<span class="string">"no one"</span>) <span class="comment">#  默认值None</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#赋值</span></span><br><span class="line">grades[<span class="string">"Time"</span>]=<span class="number">99</span>     <span class="comment"># 更新一条</span></span><br><span class="line">grades[<span class="string">"Kate"</span>]=<span class="number">100</span>    <span class="comment"># 新增一条</span></span><br><span class="line">num_students=len(grades) <span class="comment"># 一共3条</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#结构数据</span></span><br><span class="line">tweet=&#123;</span><br><span class="line">    <span class="string">"user"</span>:<span class="string">"joelgrous"</span>,</span><br><span class="line">    <span class="string">"text"</span>:<span class="string">"Data Science is Awesome"</span>,</span><br><span class="line">    <span class="string">"retweet_count"</span>:<span class="number">100</span>,</span><br><span class="line">    <span class="string">"hashtags"</span>:[<span class="string">"#data"</span>,<span class="string">"#science"</span>,<span class="string">"#datascience"</span>,<span class="string">"#awesome"</span>,<span class="string">"#yolo"</span>]</span><br><span class="line">&#125;</span><br><span class="line">tweet_keys=tweet.keys()</span><br><span class="line">tweet_values=tweet.values()</span><br><span class="line">tweet_items=tweet.items()</span><br><span class="line"></span><br><span class="line"><span class="string">"user"</span> <span class="keyword">in</span> tweet_keys		<span class="comment">#True</span></span><br><span class="line"><span class="string">"user"</span> <span class="keyword">in</span> tweet				<span class="comment">#更快速用法</span></span><br><span class="line"><span class="string">"joelgrus"</span> <span class="keyword">in</span> tweet_values  <span class="comment">#True</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">word_counts=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> document:</span><br><span class="line">    <span class="keyword">if</span> word <span class="keyword">in</span> word_counts:</span><br><span class="line">        word_counts[word]+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        word_counts[word]=<span class="number">1</span></span><br><span class="line">        </span><br><span class="line">word_counts=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> document:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        word_counts[word]+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">except</span> KeyError:</span><br><span class="line">        word_counts[word]=<span class="number">1</span></span><br><span class="line">        </span><br><span class="line">word_counts=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> document:</span><br><span class="line">    previous_count=word_count.get(word,<span class="number">0</span>)</span><br><span class="line">    word_counts[word]=previous_count+<span class="number">1</span></span><br><span class="line">    </span><br><span class="line"><span class="comment"># 最好的方式    </span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line">word_counts=defaultdict(int)  <span class="comment"># int()生成0</span></span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> document:</span><br><span class="line">    word_counts[word]+=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dd_list=defaultdict(list)</span><br><span class="line">dd_list[<span class="number">2</span>].append(<span class="number">1</span>)     <span class="comment"># dd_list 包含 &#123;2:[1]&#125;</span></span><br><span class="line"></span><br><span class="line">dd_dict=defaultdict(dict)</span><br><span class="line">dd_dict[<span class="string">"Joel"</span>][<span class="string">"City"</span>]=<span class="string">"Seattle"</span>   <span class="comment">#dddict为&#123;"Joel":&#123;"cit":"Settle"&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">dd_pair=defaultdict(<span class="keyword">lambda</span>:[<span class="number">0</span>,<span class="number">0</span>])</span><br><span class="line">dd_part[<span class="number">2</span>][<span class="number">1</span>]=<span class="number">1</span>                     <span class="comment"># ddpair为&#123;2:[0,1]&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from collections import Counter</span><br><span class="line">c=Counter([0,1,2,0])</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/07/26/common-scripts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/26/common-scripts/" itemprop="url">bat常用脚本存档</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-26T23:37:49+08:00">
+                2017-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/shell/" itemprop="url" rel="index">
+                    <span itemprop="name">shell</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1 windows结束指定端口进程  kill2066.bat</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">setlocal enabledelayedexpansion</span><br><span class="line">for /f "delims=  tokens=1" %%i in ('netstat -aon ^| findstr "2066"') do (</span><br><span class="line">set a=%%i</span><br><span class="line">goto js</span><br><span class="line">)</span><br><span class="line">:js</span><br><span class="line">taskkill /f /pid "!a:~71,5!"</span><br><span class="line"><span class="meta">pause&gt;</span>nul</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/07/25/sql-script/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/25/sql-script/" itemprop="url">sqlserver常用脚本与基础(待完善)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-25T14:35:30+08:00">
+                2017-07-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1 查表名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT NAME FROM SYSOBJECTS WHERE TYPE=&apos;U&apos; order by NAME</span><br></pre></td></tr></table></figure>
+<p>2 查所有表行数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.name, b.rows</span><br><span class="line"></span><br><span class="line"><span class="keyword">FROM</span> sysobjects <span class="keyword">AS</span> a <span class="keyword">INNER</span> <span class="keyword">JOIN</span> sysindexes <span class="keyword">AS</span> b <span class="keyword">ON</span> a.id = b.id</span><br><span class="line"></span><br><span class="line"><span class="keyword">WHERE</span> (a.type = <span class="string">'u'</span>) <span class="keyword">AND</span> (b.indid <span class="keyword">IN</span> (<span class="number">0</span>, <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> a.name,b.rows <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+<p>3 删除所有表数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="string">'delete from '</span>+<span class="keyword">NAME</span>+<span class="built_in">char</span>(<span class="number">13</span>)  <span class="keyword">FROM</span> SYSOBJECTS <span class="keyword">WHERE</span> <span class="keyword">TYPE</span>=<span class="string">'U'</span> <span class="keyword">order</span> <span class="keyword">by</span>  <span class="keyword">NAME</span></span><br></pre></td></tr></table></figure>
+<p>4 insert随机数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="string">'insert '</span>+a.NAME+<span class="string">' ('</span>+</span><br><span class="line"><span class="keyword">STUFF</span>(</span><br><span class="line">		(<span class="keyword">SELECT</span> <span class="string">','</span> + <span class="keyword">Cast</span>(<span class="keyword">col</span> <span class="keyword">as</span> <span class="built_in">varchar</span>)</span><br><span class="line">		 <span class="keyword">FROM</span></span><br><span class="line">		 (</span><br><span class="line">			<span class="keyword">SELECT</span> syscolumns.name <span class="keyword">col</span>,systypes.name ctype,syscolumns.isnullable, syscolumns.length  </span><br><span class="line">			<span class="keyword">FROM</span> syscolumns, systypes  </span><br><span class="line">			<span class="keyword">WHERE</span> syscolumns.xusertype = systypes.xusertype  <span class="keyword">AND</span> syscolumns.id = object_id(a.NAME)</span><br><span class="line">			<span class="keyword">and</span> COLUMNPROPERTY( OBJECT_ID(a.NAME),syscolumns.name,<span class="string">'IsIdentity'</span>)&lt;&gt;<span class="number">1</span></span><br><span class="line">		 ) <span class="keyword">test</span></span><br><span class="line">		  </span><br><span class="line">		 </span><br><span class="line">		   <span class="keyword">FOR</span> <span class="keyword">XML</span> <span class="keyword">PATH</span>(<span class="string">''</span>)</span><br><span class="line">		 )</span><br><span class="line">		 ,<span class="number">1</span>,<span class="number">1</span>,<span class="string">''</span></span><br><span class="line">      )+<span class="string">') values('</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	 + <span class="keyword">STUFF</span>(</span><br><span class="line">		(<span class="keyword">SELECT</span> <span class="string">','</span> + <span class="keyword">Cast</span>(cvalue <span class="keyword">as</span> <span class="built_in">varchar</span>)</span><br><span class="line">		 <span class="keyword">FROM</span></span><br><span class="line">		 (</span><br><span class="line">			<span class="keyword">SELECT</span> syscolumns.name <span class="keyword">col</span>,systypes.name ctype,syscolumns.isnullable, syscolumns.length ,</span><br><span class="line">			(<span class="keyword">case</span> systypes.name</span><br><span class="line">			 <span class="comment">--when 'varchar' then 'dbo.random_string('+convert(varchar,syscolumns.length)+')'</span></span><br><span class="line">			 <span class="keyword">when</span> <span class="string">'varchar'</span> <span class="keyword">then</span> <span class="string">'left(newid(),'</span>+<span class="keyword">convert</span>(<span class="built_in">varchar</span>,syscolumns.length)+<span class="string">')'</span></span><br><span class="line">			 <span class="keyword">when</span> <span class="string">'char'</span> <span class="keyword">then</span> <span class="string">'''a'''</span></span><br><span class="line">			 <span class="keyword">when</span>  <span class="string">'int'</span> <span class="keyword">then</span> <span class="string">'floor(rand()*100)'</span></span><br><span class="line">			 <span class="keyword">when</span> <span class="string">'datetime'</span> <span class="keyword">then</span> <span class="string">'getdate()'</span></span><br><span class="line">			 <span class="keyword">when</span>  <span class="string">'money'</span> <span class="keyword">then</span> <span class="string">'rand()*10'</span></span><br><span class="line">			 <span class="keyword">when</span>  <span class="string">'float'</span> <span class="keyword">then</span> <span class="string">'rand()*10'</span></span><br><span class="line">			 <span class="keyword">when</span>  <span class="string">'double'</span> <span class="keyword">then</span> <span class="string">'rand()*10'</span></span><br><span class="line">			 <span class="keyword">else</span> <span class="string">'floor(rand())'</span></span><br><span class="line">			 <span class="keyword">end</span></span><br><span class="line">			 ) cvalue</span><br><span class="line"></span><br><span class="line">			<span class="keyword">FROM</span> syscolumns, systypes  </span><br><span class="line">			<span class="keyword">WHERE</span> syscolumns.xusertype = systypes.xusertype  <span class="keyword">AND</span> syscolumns.id = object_id(a.NAME)</span><br><span class="line">			<span class="keyword">and</span> COLUMNPROPERTY( OBJECT_ID(a.NAME),syscolumns.name,<span class="string">'IsIdentity'</span>)&lt;&gt;<span class="number">1</span></span><br><span class="line">		 ) <span class="keyword">test</span>  <span class="keyword">FOR</span> <span class="keyword">XML</span> <span class="keyword">PATH</span>(<span class="string">''</span>)</span><br><span class="line">		 )</span><br><span class="line">		 ,<span class="number">1</span>,<span class="number">1</span>,<span class="string">''</span></span><br><span class="line">      )+<span class="string">')'</span></span><br><span class="line">	  +<span class="built_in">char</span>(<span class="number">10</span>)+<span class="string">'go'</span>+</span><br><span class="line">       +<span class="built_in">char</span>(<span class="number">10</span>)+<span class="string">'select * from '</span>+a.NAME</span><br><span class="line">	    +<span class="built_in">char</span>(<span class="number">10</span>)+<span class="string">'go'</span></span><br><span class="line"><span class="keyword">AS</span> InsertSTR  <span class="keyword">FROM</span> SYSOBJECTS a <span class="keyword">WHERE</span> <span class="keyword">TYPE</span>=<span class="string">'U'</span> <span class="keyword">order</span> <span class="keyword">by</span> a.NAME</span><br></pre></td></tr></table></figure>
+<p>powerdesigner导实体的excel数据字典脚本</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">'******************************************************************************</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'* File:     pdm2excel.txt</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'* Title:    pdm export to excel</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'* Purpose:  To export the tables and columns to Excel</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'* Model:    Physical Data Model</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'* Objects:  Table, Column, View</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'* Author:   ziyan</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'* Created:  2012-05-03</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'* Version:  1.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'******************************************************************************</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Option</span> <span class="keyword">Explicit</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">Dim</span> rowsNum</span><br><span class="line"></span><br><span class="line">   rowsNum = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'-----------------------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">' Main function</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'-----------------------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">' Get the current active model</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Dim</span> Model</span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> Model = ActiveModel</span><br><span class="line"></span><br><span class="line"><span class="keyword">If</span> (Model <span class="keyword">Is</span> <span class="literal">Nothing</span>) <span class="keyword">Or</span> (<span class="keyword">Not</span> Model.IsKindOf(PdPDM.cls_Model)) <span class="keyword">Then</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">MsgBox</span> <span class="string">"The current model is not an PDM model."</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Else</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">' Get the tables collection</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">'创建EXCEL APP</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">dim</span> beginrow</span><br><span class="line"></span><br><span class="line"> <span class="keyword">DIM</span> EXCEL, SHEET</span><br><span class="line"></span><br><span class="line"> <span class="keyword">set</span> EXCEL = <span class="built_in">CREATEOBJECT</span>(<span class="string">"Excel.Application"</span>)</span><br><span class="line"></span><br><span class="line"> EXCEL.workbooks.add(<span class="number">-4167</span>)<span class="comment">'添加工作表</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> EXCEL.workbooks(<span class="number">1</span>).sheets(<span class="number">1</span>).name =<span class="string">"数据字典"</span></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> <span class="keyword">set</span> sheet = EXCEL.workbooks(<span class="number">1</span>).sheets(<span class="string">"数据字典"</span>)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> ShowProperties Model, SHEET</span><br><span class="line"></span><br><span class="line"> EXCEL.visible = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">'设置列宽和自动换行</span></span><br><span class="line"></span><br><span class="line"> sheet.Columns(<span class="number">1</span>).ColumnWidth = <span class="number">10</span> </span><br><span class="line"></span><br><span class="line"> sheet.Columns(<span class="number">2</span>).ColumnWidth = <span class="number">20</span> </span><br><span class="line"></span><br><span class="line"> sheet.Columns(<span class="number">3</span>).ColumnWidth = <span class="number">20</span> </span><br><span class="line"></span><br><span class="line"> sheet.Columns(<span class="number">4</span>).ColumnWidth = <span class="number">20</span> </span><br><span class="line"></span><br><span class="line"> sheet.Columns(<span class="number">5</span>).ColumnWidth = <span class="number">40</span> </span><br><span class="line"></span><br><span class="line"> sheet.Columns(<span class="number">2</span>).WrapText =<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"> sheet.Columns(<span class="number">3</span>).WrapText =<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"> sheet.Columns(<span class="number">5</span>).WrapText =<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'-----------------------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">' Show properties of tables</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'-----------------------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Sub</span> ShowProperties(mdl, sheet)</span><br><span class="line"></span><br><span class="line">   <span class="comment">' Show tables of the current model/package</span></span><br><span class="line"></span><br><span class="line">   rowsNum=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">   beginrow = rowsNum+<span class="number">1</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">' For each table</span></span><br><span class="line"></span><br><span class="line">   output <span class="string">"begin"</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">Dim</span> tab</span><br><span class="line"></span><br><span class="line">   <span class="keyword">For</span> <span class="keyword">Each</span> tab <span class="keyword">In</span> mdl.tables</span><br><span class="line"></span><br><span class="line">      ShowTable tab,sheet</span><br><span class="line"></span><br><span class="line">   <span class="keyword">Next</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> mdl.tables.count &gt; <span class="number">0</span> <span class="keyword">then</span></span><br><span class="line"></span><br><span class="line">        sheet.Range(<span class="string">"A"</span> &amp; beginrow + <span class="number">1</span> &amp; <span class="string">":A"</span> &amp; rowsNum).Rows.Group</span><br><span class="line"></span><br><span class="line">   <span class="keyword">end</span> <span class="keyword">if</span></span><br><span class="line"></span><br><span class="line">   output <span class="string">"end"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'-----------------------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">' Show table properties</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'-----------------------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Sub</span> ShowTable(tab, sheet)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">If</span> <span class="built_in">IsObject</span>(tab) <span class="keyword">Then</span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">Dim</span> rangFlag</span><br><span class="line"></span><br><span class="line">     rowsNum = rowsNum + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">' Show properties</span></span><br><span class="line"></span><br><span class="line">      Output <span class="string">"================================"</span></span><br><span class="line"></span><br><span class="line">      sheet.cells(rowsNum, <span class="number">1</span>) = <span class="string">""</span></span><br><span class="line"></span><br><span class="line">      sheet.cells(rowsNum, <span class="number">2</span>) = <span class="string">"表名"</span></span><br><span class="line"></span><br><span class="line">      sheet.cells(rowsNum, <span class="number">3</span>) = tab.code</span><br><span class="line"></span><br><span class="line">      sheet.cells(rowsNum, <span class="number">5</span>) = tab.name</span><br><span class="line"></span><br><span class="line">      sheet.Range(sheet.cells(rowsNum, <span class="number">3</span>),sheet.cells(rowsNum, <span class="number">4</span>)).Merge</span><br><span class="line"></span><br><span class="line">      rowsNum = rowsNum + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      sheet.cells(rowsNum, <span class="number">5</span>) = <span class="string">"说明"</span></span><br><span class="line"></span><br><span class="line">      sheet.cells(rowsNum, <span class="number">1</span>) = <span class="string">""</span></span><br><span class="line"></span><br><span class="line">      sheet.cells(rowsNum, <span class="number">2</span>) = <span class="string">"字段中文名"</span></span><br><span class="line"></span><br><span class="line">      sheet.cells(rowsNum, <span class="number">3</span>) = <span class="string">"字段名"</span></span><br><span class="line"></span><br><span class="line">      sheet.cells(rowsNum, <span class="number">4</span>) = <span class="string">"字段类型"</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">'设置边框</span></span><br><span class="line"></span><br><span class="line">      sheet.Range(sheet.cells(rowsNum<span class="number">-1</span>, <span class="number">2</span>),sheet.cells(rowsNum, <span class="number">5</span>)).Borders.LineStyle = <span class="string">"1"</span></span><br><span class="line">      sheet.Range(sheet.cells(rowsNum<span class="number">-1</span>, <span class="number">2</span>),sheet.cells(rowsNum, <span class="number">5</span>)).Interior.Color = <span class="built_in">RGB</span>(<span class="number">100</span>,<span class="number">200</span>,<span class="number">200</span>)</span><br><span class="line">       </span><br><span class="line"></span><br><span class="line"><span class="keyword">Dim</span> col <span class="comment">' running column</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Dim</span> colsNum</span><br><span class="line"></span><br><span class="line">colsNum = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> <span class="keyword">each</span> col <span class="keyword">in</span> tab.columns</span><br><span class="line"></span><br><span class="line">        rowsNum = rowsNum + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        colsNum = colsNum + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">      sheet.cells(rowsNum, <span class="number">5</span>) = col.comment</span><br><span class="line"></span><br><span class="line">        sheet.cells(rowsNum, <span class="number">1</span>) = <span class="string">""</span></span><br><span class="line"></span><br><span class="line">      sheet.cells(rowsNum, <span class="number">2</span>) = col.name</span><br><span class="line"></span><br><span class="line">      sheet.cells(rowsNum, <span class="number">3</span>) = col.code</span><br><span class="line"></span><br><span class="line">      sheet.cells(rowsNum, <span class="number">4</span>) = col.datatype</span><br><span class="line"></span><br><span class="line">      <span class="keyword">next</span></span><br><span class="line"></span><br><span class="line">      sheet.Range(sheet.cells(rowsNum-colsNum+<span class="number">1</span>,<span class="number">2</span>),sheet.cells(rowsNum,<span class="number">5</span>)).Borders.LineStyle = <span class="string">"1"</span>       </span><br><span class="line"></span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">      rowsNum = rowsNum + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">      Output <span class="string">"FullDescription: "</span>       + tab.Name</span><br><span class="line"></span><br><span class="line">   <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/07/21/tensorflow-start/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/21/tensorflow-start/" itemprop="url">tensorflow安装</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-21T20:43:09+08:00">
+                2017-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1 安装pip</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo easy_install pip</span><br><span class="line">sudo easy_install --upgrade six</span><br></pre></td></tr></table></figure>
+<p>2 关闭mac系统SIP,解决安装权限问题</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 点击Mac电脑的苹果图标</span><br><span class="line">2. 选择 重新启动</span><br><span class="line">3. 按住 command＋R，直到进入还原模式</span><br><span class="line">4. 选择实用工具，然后点击 终端</span><br><span class="line">5. 输入 csrutil disable 按下回车</span><br><span class="line">6. 重启电脑</span><br></pre></td></tr></table></figure>
+<p>3 安装tensorflow   参数—index 加地址 解决不翻墙timeout问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install --index https://pypi.mirrors.ustc.edu.cn/simple/ tensorflow</span><br></pre></td></tr></table></figure>
+<p>4 解决import tensorflow报错问题:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RuntimeError: module compiled against API version 0xa but this version of numpy is 0x9</span><br></pre></td></tr></table></figure>
+<p>删除旧的numpy</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">~ &gt;python</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import numpy</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span> numpy.__path__</span></span><br><span class="line">['/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/numpy']</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span> numpy.__version__</span></span><br><span class="line">1.8.0rc1</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; numpy</span></span><br><span class="line">&lt;module 'numpy' from '/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/numpy/__init__.py'&gt;</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; ^D</span></span><br><span class="line">~ &gt;sudo rm -rf /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/numpy</span><br><span class="line">Password:</span><br><span class="line">~ &gt;pip install numpy --upgrade</span><br></pre></td></tr></table></figure>
+<p>重新安装后:</p>
+<figure class="highlight plain"><figcaption><span>print numpy.__version__</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; print numpy.__version__</span><br><span class="line">1.13.1</span><br></pre></td></tr></table></figure>
+<p>5 打开mac系统SIP,还原到原先系统安全方案</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 点击Mac电脑的苹果图标</span><br><span class="line">2. 选择 重新启动</span><br><span class="line">3. 按住 command＋R，直到进入还原模式</span><br><span class="line">4. 选择实用工具，然后点击 终端</span><br><span class="line">5. 输入 csrutil enable 按下回车</span><br><span class="line">6. 重启电脑</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ace1981</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ace1981</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
       </div>
     </footer>
 
-      
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
 
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
 
 
 
@@ -108,6 +1915,124 @@
 
 
 
-    </div>
-  </body>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>

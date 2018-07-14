@@ -1,11 +1,85 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
+
+
+
   
-  <title>数据科学一:python | Ace&#39;pages</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基础内容 1 获取 2 import this 之禅 3 空白形式 1234567for i in [1,2,3,4,5]:    print i    for j in [1,2,3,4,5]:        print j        print i+j    print iprint &quot;done looping&quot; 4 模块 12import remy_regex=re.compile(&quot;[">
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="基础内容 1 获取 2 import this 之禅 3 空白形式 1234567for i in [1,2,3,4,5]:    print i    for j in [1,2,3,4,5]:        print j        print i+j    print iprint &quot;done looping&quot; 4 模块 12import remy_regex=re.compile(&quot;[">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据科学一:python">
 <meta property="og:url" content="http://hujao.com/2017/07/28/datascience-1-python/index.html">
@@ -16,191 +90,511 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据科学一:python">
 <meta name="twitter:description" content="基础内容 1 获取 2 import this 之禅 3 空白形式 1234567for i in [1,2,3,4,5]:    print i    for j in [1,2,3,4,5]:        print j        print i+j    print iprint &quot;done looping&quot; 4 模块 12import remy_regex=re.compile(&quot;[">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hujao.com/2017/07/28/datascience-1-python/"/>
+
+
+
+
+
+  <title>数据科学一:python | Ace'pages</title>
   
-    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
+
+
+
+
+
+
+
+
 </head>
 
-  
-    
-      <body>
-    
-  
-      <div id="container" class="container">
-        <article id="post-datascience-1-python" class="article article-type-post" itemscope itemprop="blogPost">
-  <header id="header" class="header">
-  <nav id="main-nav" class="main-nav">
-    
-      <a class="main-nav-link" href="/">Home</a>
-    
-      <a class="main-nav-link" href="/archives">Archives</a>
-    
-      <a class="main-nav-link" href="/categories">Categories</a>
-    
-      <a class="main-nav-link" href="/tags">Tags</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
-    
-  </nav>
-  <nav id="sub-nav">
-    
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-    
-  </nav>
-</header>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-  <hr/>
-  <div class="article-inner">
+  
+  
     
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
-      <header class="article-header">
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ace'pages</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
         
-  
-    <h1 class="article-title" itemprop="name">
-      数据科学一:python
-    </h1>
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
   
 
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/07/28/datascience-1-python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据科学一:python</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-28T00:13:09+08:00">
+                2017-07-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry typo" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
       
         <p>基础内容</p>
 <p>1 获取</p>
 <p>2 import this 之禅</p>
 <p>3 空白形式</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]:</div><div class="line">    <span class="keyword">print</span> i</div><div class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]:</div><div class="line">        <span class="keyword">print</span> j</div><div class="line">        <span class="keyword">print</span> i+j</div><div class="line">    <span class="keyword">print</span> i</div><div class="line"><span class="keyword">print</span> <span class="string">"done looping"</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]:</span><br><span class="line">    <span class="keyword">print</span> i</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]:</span><br><span class="line">        <span class="keyword">print</span> j</span><br><span class="line">        <span class="keyword">print</span> i+j</span><br><span class="line">    <span class="keyword">print</span> i</span><br><span class="line"><span class="keyword">print</span> <span class="string">"done looping"</span></span><br></pre></td></tr></table></figure>
 <p>4 模块</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line">my_regex=re.compile(<span class="string">"[0-9]+"</span>,re.I)</div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re <span class="keyword">as</span> regex</div><div class="line">my_regex=re.compile(<span class="string">"[0-9]+"</span>,re.I)</div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict,Counter</div><div class="line">lookup=defaultdict(int)</div><div class="line">my_counter=Counter()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">my_regex=re.compile(<span class="string">"[0-9]+"</span>,re.I)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re <span class="keyword">as</span> regex</span><br><span class="line">my_regex=re.compile(<span class="string">"[0-9]+"</span>,re.I)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict,Counter</span><br><span class="line">lookup=defaultdict(int)</span><br><span class="line">my_counter=Counter()</span><br></pre></td></tr></table></figure>
 <p>5 算法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> division</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> division</span><br></pre></td></tr></table></figure>
 <p>6 函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">double</span><span class="params">(x)</span>:</span></div><div class="line">    <span class="string">"""this is docstring</span></div><div class="line">    to explains what the function does"""</div><div class="line">    <span class="keyword">return</span> x*<span class="number">2</span></div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">apply_to_one</span><span class="params">(f)</span>:</span></div><div class="line">	<span class="keyword">return</span> f(<span class="number">1</span>)</div><div class="line">my_double=double</div><div class="line">x=apply_to_one(my_double)  <span class="comment"># 等于2</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">double</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="string">"""this is docstring</span></span><br><span class="line"><span class="string">    to explains what the function does"""</span></span><br><span class="line">    <span class="keyword">return</span> x*<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">apply_to_one</span><span class="params">(f)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> f(<span class="number">1</span>)</span><br><span class="line">my_double=double</span><br><span class="line">x=apply_to_one(my_double)  <span class="comment"># 等于2</span></span><br></pre></td></tr></table></figure>
 <p>匿名函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">y=apply_to_one(<span class="keyword">lambda</span> x:x+<span class="number">4</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y=apply_to_one(<span class="keyword">lambda</span> x:x+<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
 <p>默认值</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">def myprint(message="my default message")</div><div class="line">    print message</div><div class="line">myprint("hello")</div><div class="line">myprint()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myprint</span><span class="params">(message=<span class="string">"my default message"</span>)</span></span></span><br><span class="line"><span class="function">    <span class="title">print</span> <span class="title">message</span></span></span><br><span class="line"><span class="function"><span class="title">myprint</span><span class="params">(<span class="string">"hello"</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">myprint</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <p>参数指定赋值</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">def subtract(a=0,b=0)</div><div class="line">    return a-b</div><div class="line">subtract(10,5)</div><div class="line">subtract(0,5)</div><div class="line">subtract(b=5)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">subtract</span><span class="params">(a=<span class="number">0</span>,b=<span class="number">0</span>)</span></span></span><br><span class="line"><span class="function">    <span class="title">return</span> <span class="title">a</span>-<span class="title">b</span></span></span><br><span class="line"><span class="function"><span class="title">subtract</span><span class="params">(<span class="number">10</span>,<span class="number">5</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">subtract</span><span class="params">(<span class="number">0</span>,<span class="number">5</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">subtract</span><span class="params">(b=<span class="number">5</span>)</span></span></span><br></pre></td></tr></table></figure>
 <p>7 字符串</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">single_quoted_string=<span class="string">'data science'</span></div><div class="line">double_quoted_string=<span class="string">"data science"</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">single_quoted_string=<span class="string">'data science'</span></span><br><span class="line">double_quoted_string=<span class="string">"data science"</span></span><br></pre></td></tr></table></figure>
 <p>特殊字符</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tab_string=<span class="string">"\t"</span>	</div><div class="line">len(ten_string)    <span class="comment"># 长度1</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tab_string=<span class="string">"\t"</span>	</span><br><span class="line">len(ten_string)    <span class="comment"># 长度1</span></span><br></pre></td></tr></table></figure>
 <p>原生字符不转义</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">not_tab_string=<span class="string">r"\t"</span></div><div class="line">len(not_tab_string) <span class="comment"># 长度2</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">not_tab_string=<span class="string">r"\t"</span></span><br><span class="line">len(not_tab_string) <span class="comment"># 长度2</span></span><br></pre></td></tr></table></figure>
 <p>多行字符串</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">multi_line_string=<span class="string">"""this is</span></div><div class="line">and this is</div><div class="line">and this"""</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">multi_line_string=<span class="string">"""this is</span></span><br><span class="line"><span class="string">and this is</span></span><br><span class="line"><span class="string">and this"""</span></span><br></pre></td></tr></table></figure>
 <p>8 异常</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">print</span> <span class="number">0</span>/<span class="number">0</span></div><div class="line"><span class="keyword">except</span> ZeroDivisionError:</div><div class="line">    <span class="keyword">print</span> <span class="string">"cannot divide by zero"</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">print</span> <span class="number">0</span>/<span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"cannot divide by zero"</span></span><br></pre></td></tr></table></figure>
 <p>9 列表</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">integer_list=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">heterogeneous_list=[<span class="string">"stringi"</span>,<span class="number">0.1</span>,<span class="keyword">True</span>]</div><div class="line">list_of_lists=[integer_list,heterogeneous_list,[]]</div><div class="line">list_lenth=len(integer_list) <span class="comment"># =3</span></div><div class="line">list_sum=sum(integer_list) <span class="comment"># =6</span></div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">x=range(<span class="number">10</span>) <span class="comment"># 是列表[1,2,3,....,9]</span></div><div class="line">zero=x[<span class="number">0</span>]   <span class="comment"># =0</span></div><div class="line">one=x[<span class="number">1</span>]</div><div class="line">nine=x[<span class="number">-1</span>]  <span class="comment"># =9</span></div><div class="line">eight=x[<span class="number">-2</span>] <span class="comment"># =8</span></div><div class="line">x[<span class="number">0</span>]=<span class="number">-1</span>     <span class="comment"># 列表为[-1,1,2,...,9] </span></div><div class="line"></div><div class="line">first_three=x[:<span class="number">3</span>]        <span class="comment">#[-1,1,2]</span></div><div class="line">three_end=x[<span class="number">3</span>:]			<span class="comment">#[3,4,...,9]</span></div><div class="line">one_four=x[<span class="number">1</span>:<span class="number">5</span>]			<span class="comment">#[1,2,3,4]	</span></div><div class="line">last_three=x[<span class="number">-3</span>:]	     <span class="comment">#[7,8,9]</span></div><div class="line">without_first_and_last=x[<span class="number">1</span>:<span class="number">-1</span>]  <span class="comment">#[1,2,3,...,8]</span></div><div class="line">copy_of_x=x[:]           <span class="comment"># [-1,1,2,3,...,9]</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">integer_list=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">heterogeneous_list=[<span class="string">"stringi"</span>,<span class="number">0.1</span>,<span class="keyword">True</span>]</span><br><span class="line">list_of_lists=[integer_list,heterogeneous_list,[]]</span><br><span class="line">list_lenth=len(integer_list) <span class="comment"># =3</span></span><br><span class="line">list_sum=sum(integer_list) <span class="comment"># =6</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">x=range(<span class="number">10</span>) <span class="comment"># 是列表[1,2,3,....,9]</span></span><br><span class="line">zero=x[<span class="number">0</span>]   <span class="comment"># =0</span></span><br><span class="line">one=x[<span class="number">1</span>]</span><br><span class="line">nine=x[<span class="number">-1</span>]  <span class="comment"># =9</span></span><br><span class="line">eight=x[<span class="number">-2</span>] <span class="comment"># =8</span></span><br><span class="line">x[<span class="number">0</span>]=<span class="number">-1</span>     <span class="comment"># 列表为[-1,1,2,...,9] </span></span><br><span class="line"></span><br><span class="line">first_three=x[:<span class="number">3</span>]        <span class="comment">#[-1,1,2]</span></span><br><span class="line">three_end=x[<span class="number">3</span>:]			<span class="comment">#[3,4,...,9]</span></span><br><span class="line">one_four=x[<span class="number">1</span>:<span class="number">5</span>]			<span class="comment">#[1,2,3,4]	</span></span><br><span class="line">last_three=x[<span class="number">-3</span>:]	     <span class="comment">#[7,8,9]</span></span><br><span class="line">without_first_and_last=x[<span class="number">1</span>:<span class="number">-1</span>]  <span class="comment">#[1,2,3,...,8]</span></span><br><span class="line">copy_of_x=x[:]           <span class="comment"># [-1,1,2,3,...,9]</span></span><br></pre></td></tr></table></figure>
 <p>in 关键字</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span> <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]  <span class="comment">#True</span></div><div class="line"><span class="number">0</span> <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]  <span class="comment">#False</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]  <span class="comment">#True</span></span><br><span class="line"><span class="number">0</span> <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]  <span class="comment">#False</span></span><br></pre></td></tr></table></figure>
 <p>列表追加</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">x=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">x.extend([<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])  <span class="comment"># x为[1,2,3,4,5,6]</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">x.extend([<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])  <span class="comment"># x为[1,2,3,4,5,6]</span></span><br></pre></td></tr></table></figure>
 <p>列表加和</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">x=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">y=x+[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>] <span class="comment"># y为[1,2,3,4,5,6] x为[1,2,3]</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">y=x+[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>] <span class="comment"># y为[1,2,3,4,5,6] x为[1,2,3]</span></span><br></pre></td></tr></table></figure>
 <p>增加一项</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">x=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">x.append(<span class="number">0</span>)</div><div class="line">y=x[<span class="number">-1</span>]</div><div class="line">z=len(x)</div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x,y=[<span class="number">1</span>,<span class="number">2</span>]</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">_ y=[1,2]</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">x.append(<span class="number">0</span>)</span><br><span class="line">y=x[<span class="number">-1</span>]</span><br><span class="line">z=len(x)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x,y=[<span class="number">1</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_ y=[1,2]</span><br></pre></td></tr></table></figure>
 <p>10 元组</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">my_list=[<span class="number">1</span>,<span class="number">2</span>]</div><div class="line">my_tuple=(<span class="number">1</span>,<span class="number">2</span>)</div><div class="line">other_tuple=<span class="number">3</span>,<span class="number">4</span></div><div class="line">mylist[<span class="number">1</span>]=<span class="number">3</span>  <span class="comment"># [1,3]</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    my_tuple[<span class="number">1</span>]=<span class="number">3</span></div><div class="line"><span class="keyword">except</span> TypeError:</div><div class="line">    <span class="keyword">print</span> <span class="string">"cannot modify a tuple"</span></div></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">def sum_and_product(x,y)</div><div class="line">    return (x+y),(x*y)</div><div class="line">sp=sum_and_product(2,3)  # =(5,6)</div><div class="line">s,p=sum_and_product(5,10) #  s为15,p为50</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">my_list=[<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">my_tuple=(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">other_tuple=<span class="number">3</span>,<span class="number">4</span></span><br><span class="line">mylist[<span class="number">1</span>]=<span class="number">3</span>  <span class="comment"># [1,3]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    my_tuple[<span class="number">1</span>]=<span class="number">3</span></span><br><span class="line"><span class="keyword">except</span> TypeError:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"cannot modify a tuple"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_and_product</span><span class="params">(x,y)</span></span></span><br><span class="line">    return (x+y),(x*y)</span><br><span class="line">sp=sum_and_product(<span class="number">2</span>,<span class="number">3</span>)  <span class="comment"># =(5,6)</span></span><br><span class="line">s,p=sum_and_product(<span class="number">5</span>,<span class="number">10</span>) <span class="comment">#  s为15,p为50</span></span><br></pre></td></tr></table></figure>
 <p>多重赋值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">x,y=<span class="number">1</span>,<span class="number">2</span></div><div class="line">x,y=y,x  <span class="comment"># x=2 y=1</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x,y=<span class="number">1</span>,<span class="number">2</span></span><br><span class="line">x,y=y,x  <span class="comment"># x=2 y=1</span></span><br></pre></td></tr></table></figure>
 <p>11 字典</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">empty_dict=&#123;&#125;</div><div class="line">empty_dict2=dict()</div><div class="line">grades=&#123;<span class="string">"Joel"</span>:<span class="number">80</span>,<span class="string">"Tim"</span>:<span class="number">95</span>&#125;</div><div class="line"></div><div class="line"><span class="comment"># 索引方式取值</span></div><div class="line">joels_grade=grades[<span class="string">"Joel"</span>]</div><div class="line"></div><div class="line"><span class="comment"># 索引方式取值 找不到异常</span></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    kates_grade=grades[<span class="string">"Kate"</span>]</div><div class="line"><span class="keyword">except</span> KeyError</div><div class="line">    <span class="keyword">print</span> <span class="string">"no grade for Kate!"</span></div><div class="line"></div><div class="line"><span class="comment"># 是否在字典中</span></div><div class="line">joels_has_grade= <span class="string">"Joel"</span> <span class="keyword">in</span> grades  <span class="comment">#正确</span></div><div class="line">kate_has_grade=<span class="string">"Kate"</span> <span class="keyword">in</span> grades    <span class="comment">#错误</span></div><div class="line"></div><div class="line"><span class="comment"># get方式取值</span></div><div class="line">joels_grade=grades.get(<span class="string">"Joel"</span>,<span class="number">0</span>) <span class="comment"># 80</span></div><div class="line">kates_grade=grades.get(<span class="string">"Kate"</span>,<span class="number">0</span>) <span class="comment"># 0</span></div><div class="line">no_ones_grade=grades.get(<span class="string">"no one"</span>) <span class="comment">#  默认值None</span></div><div class="line"></div><div class="line"><span class="comment">#赋值</span></div><div class="line">grades[<span class="string">"Time"</span>]=<span class="number">99</span>     <span class="comment"># 更新一条</span></div><div class="line">grades[<span class="string">"Kate"</span>]=<span class="number">100</span>    <span class="comment"># 新增一条</span></div><div class="line">num_students=len(grades) <span class="comment"># 一共3条</span></div><div class="line"></div><div class="line"><span class="comment">#结构数据</span></div><div class="line">tweet=&#123;</div><div class="line">    <span class="string">"user"</span>:<span class="string">"joelgrous"</span>,</div><div class="line">    <span class="string">"text"</span>:<span class="string">"Data Science is Awesome"</span>,</div><div class="line">    <span class="string">"retweet_count"</span>:<span class="number">100</span>,</div><div class="line">    <span class="string">"hashtags"</span>:[<span class="string">"#data"</span>,<span class="string">"#science"</span>,<span class="string">"#datascience"</span>,<span class="string">"#awesome"</span>,<span class="string">"#yolo"</span>]</div><div class="line">&#125;</div><div class="line">tweet_keys=tweet.keys()</div><div class="line">tweet_values=tweet.values()</div><div class="line">tweet_items=tweet.items()</div><div class="line"></div><div class="line"><span class="string">"user"</span> <span class="keyword">in</span> tweet_keys		<span class="comment">#True</span></div><div class="line"><span class="string">"user"</span> <span class="keyword">in</span> tweet				<span class="comment">#更快速用法</span></div><div class="line"><span class="string">"joelgrus"</span> <span class="keyword">in</span> tweet_values  <span class="comment">#True</span></div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">word_counts=&#123;&#125;</div><div class="line"><span class="keyword">for</span> word <span class="keyword">in</span> document:</div><div class="line">    <span class="keyword">if</span> word <span class="keyword">in</span> word_counts:</div><div class="line">        word_counts[word]+=<span class="number">1</span></div><div class="line">    <span class="keyword">else</span></div><div class="line">        word_counts[word]=<span class="number">1</span></div><div class="line">        </div><div class="line">word_counts=&#123;&#125;</div><div class="line"><span class="keyword">for</span> word <span class="keyword">in</span> document:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        word_counts[word]+=<span class="number">1</span></div><div class="line">    <span class="keyword">except</span> KeyError:</div><div class="line">        word_counts[word]=<span class="number">1</span></div><div class="line">        </div><div class="line">word_counts=&#123;&#125;</div><div class="line"><span class="keyword">for</span> word <span class="keyword">in</span> document:</div><div class="line">    previous_count=word_count.get(word,<span class="number">0</span>)</div><div class="line">    word_counts[word]=previous_count+<span class="number">1</span></div><div class="line">    </div><div class="line"><span class="comment"># 最好的方式    </span></div><div class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</div><div class="line">word_counts=defaultdict(int)  <span class="comment"># int()生成0</span></div><div class="line"><span class="keyword">for</span> word <span class="keyword">in</span> document:</div><div class="line">    word_counts[word]+=<span class="number">1</span></div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">dd_list=defaultdict(list)</div><div class="line">dd_list[<span class="number">2</span>].append(<span class="number">1</span>)     <span class="comment"># dd_list 包含 &#123;2:[1]&#125;</span></div><div class="line"></div><div class="line">dd_dict=defaultdict(dict)</div><div class="line">dd_dict[<span class="string">"Joel"</span>][<span class="string">"City"</span>]=<span class="string">"Seattle"</span>   <span class="comment">#dddict为&#123;"Joel":&#123;"cit":"Settle"&#125;&#125;</span></div><div class="line"></div><div class="line">dd_pair=defaultdict(<span class="keyword">lambda</span>:[<span class="number">0</span>,<span class="number">0</span>])</div><div class="line">dd_part[<span class="number">2</span>][<span class="number">1</span>]=<span class="number">1</span>                     <span class="comment"># ddpair为&#123;2:[0,1]&#125;</span></div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">from collections import Counter</div><div class="line">c=Counter([0,1,2,0])</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">empty_dict=&#123;&#125;</span><br><span class="line">empty_dict2=dict()</span><br><span class="line">grades=&#123;<span class="string">"Joel"</span>:<span class="number">80</span>,<span class="string">"Tim"</span>:<span class="number">95</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 索引方式取值</span></span><br><span class="line">joels_grade=grades[<span class="string">"Joel"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 索引方式取值 找不到异常</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    kates_grade=grades[<span class="string">"Kate"</span>]</span><br><span class="line"><span class="keyword">except</span> KeyError</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"no grade for Kate!"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否在字典中</span></span><br><span class="line">joels_has_grade= <span class="string">"Joel"</span> <span class="keyword">in</span> grades  <span class="comment">#正确</span></span><br><span class="line">kate_has_grade=<span class="string">"Kate"</span> <span class="keyword">in</span> grades    <span class="comment">#错误</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># get方式取值</span></span><br><span class="line">joels_grade=grades.get(<span class="string">"Joel"</span>,<span class="number">0</span>) <span class="comment"># 80</span></span><br><span class="line">kates_grade=grades.get(<span class="string">"Kate"</span>,<span class="number">0</span>) <span class="comment"># 0</span></span><br><span class="line">no_ones_grade=grades.get(<span class="string">"no one"</span>) <span class="comment">#  默认值None</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#赋值</span></span><br><span class="line">grades[<span class="string">"Time"</span>]=<span class="number">99</span>     <span class="comment"># 更新一条</span></span><br><span class="line">grades[<span class="string">"Kate"</span>]=<span class="number">100</span>    <span class="comment"># 新增一条</span></span><br><span class="line">num_students=len(grades) <span class="comment"># 一共3条</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#结构数据</span></span><br><span class="line">tweet=&#123;</span><br><span class="line">    <span class="string">"user"</span>:<span class="string">"joelgrous"</span>,</span><br><span class="line">    <span class="string">"text"</span>:<span class="string">"Data Science is Awesome"</span>,</span><br><span class="line">    <span class="string">"retweet_count"</span>:<span class="number">100</span>,</span><br><span class="line">    <span class="string">"hashtags"</span>:[<span class="string">"#data"</span>,<span class="string">"#science"</span>,<span class="string">"#datascience"</span>,<span class="string">"#awesome"</span>,<span class="string">"#yolo"</span>]</span><br><span class="line">&#125;</span><br><span class="line">tweet_keys=tweet.keys()</span><br><span class="line">tweet_values=tweet.values()</span><br><span class="line">tweet_items=tweet.items()</span><br><span class="line"></span><br><span class="line"><span class="string">"user"</span> <span class="keyword">in</span> tweet_keys		<span class="comment">#True</span></span><br><span class="line"><span class="string">"user"</span> <span class="keyword">in</span> tweet				<span class="comment">#更快速用法</span></span><br><span class="line"><span class="string">"joelgrus"</span> <span class="keyword">in</span> tweet_values  <span class="comment">#True</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">word_counts=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> document:</span><br><span class="line">    <span class="keyword">if</span> word <span class="keyword">in</span> word_counts:</span><br><span class="line">        word_counts[word]+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        word_counts[word]=<span class="number">1</span></span><br><span class="line">        </span><br><span class="line">word_counts=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> document:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        word_counts[word]+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">except</span> KeyError:</span><br><span class="line">        word_counts[word]=<span class="number">1</span></span><br><span class="line">        </span><br><span class="line">word_counts=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> document:</span><br><span class="line">    previous_count=word_count.get(word,<span class="number">0</span>)</span><br><span class="line">    word_counts[word]=previous_count+<span class="number">1</span></span><br><span class="line">    </span><br><span class="line"><span class="comment"># 最好的方式    </span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line">word_counts=defaultdict(int)  <span class="comment"># int()生成0</span></span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> document:</span><br><span class="line">    word_counts[word]+=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dd_list=defaultdict(list)</span><br><span class="line">dd_list[<span class="number">2</span>].append(<span class="number">1</span>)     <span class="comment"># dd_list 包含 &#123;2:[1]&#125;</span></span><br><span class="line"></span><br><span class="line">dd_dict=defaultdict(dict)</span><br><span class="line">dd_dict[<span class="string">"Joel"</span>][<span class="string">"City"</span>]=<span class="string">"Seattle"</span>   <span class="comment">#dddict为&#123;"Joel":&#123;"cit":"Settle"&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">dd_pair=defaultdict(<span class="keyword">lambda</span>:[<span class="number">0</span>,<span class="number">0</span>])</span><br><span class="line">dd_part[<span class="number">2</span>][<span class="number">1</span>]=<span class="number">1</span>                     <span class="comment"># ddpair为&#123;2:[0,1]&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from collections import Counter</span><br><span class="line">c=Counter([0,1,2,0])</span><br></pre></td></tr></table></figure>
 
       
     </div>
-    <footer class="article-footer">
-      <ul class="article-meta">
-        <li>
-          <span class="label">Published Date:</span>
-          <a href="/2017/07/28/datascience-1-python/" class="article-date">
-  <time datetime="2017-07-27T16:13:09.000Z" itemprop="datePublished">2017-07-28</time>
-</a>
-
-        </li>
-        
-          <li>
-            <span class="label">Category:</span>
-            
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/机器学习/">机器学习</a>
-  </div>
-
-
-          </li>
-        
-        
-        <hr/>
-      </ul>
-    </footer>
-  </div>
-  
     
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2017/11/18/lombok/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          使用lombok精简属性的set/get方法
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/07/26/common-scripts/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">bat常用脚本存档</div>
-    </a>
-  
-</nav>
+    
+    
 
+    
 
-  
-</article>
+    
 
+    
 
-
-
-      </div>
+    <footer class="post-footer">
       
-    <footer id="footer" class="post-footer footer">
-      <hr/>
-      <div id="footerContent" class="footer-content">
-        <p>闲步山雨后,静待晚林风 Post</p>
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/26/common-scripts/" rel="next" title="bat常用脚本存档">
+                <i class="fa fa-chevron-left"></i> bat常用脚本存档
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/18/lombok/" rel="prev" title="使用lombok精简属性的set/get方法">
+                使用lombok精简属性的set/get方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ace1981</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ace1981</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
       </div>
     </footer>
 
-      
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
 
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
 
 
 
@@ -208,6 +602,128 @@
 
 
 
-    </div>
-  </body>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>

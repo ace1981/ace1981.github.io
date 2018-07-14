@@ -1,106 +1,1766 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
+
+
+
   
-  <title>Ace&#39;pages</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="Ace&#39;pages">
 <meta property="og:url" content="http://hujao.com/page/3/index.html">
 <meta property="og:site_name" content="Ace&#39;pages">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ace&#39;pages">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hujao.com/page/3/"/>
+
+
+
+
+
+  <title>Ace'pages</title>
   
-    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
+
+
+
+
+
+
+
+
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
   
     
-    <body class="home-body">
-    
   
-      <div id="container" class="container">
-        <div class="home">
-  <div class="content">
-    <div class="profile">
-      <h1 class="nickname">Ace</h1>
-      <div class="description">
-        <p><p>程序员一枚,研究各种技术,生命不息,学习不止.</p>
-</p>
-      </div>
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ace'pages</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <hr/>
-    <ul class="links">
       
-        <li>
-          <a href="/archives">Blog</a>
-        </li>
+        <p class="site-subtitle"></p>
       
-        <li>
-          <a href="https://github.com/ace1981">GitHub</a>
-        </li>
-      
-    </ul>
   </div>
 
- <link rel="stylesheet" type="text/css" href="/css/wordcloud2.css" />
-    <script src="/js/jquery.min.js"></script>
- 
-    <script type="text/javascript">
-        /*!
-         * Create an array of word objects, each representing a word in the cloud
-         */
-        var word_array = [
-            {text: "docker"},
-            {text: "springboot"}, {text: "容器编排"}, {text: "持续集成"}, {text: "日志收集"}, {text: "服务监控"}, {text: "数据安全"}, {text: "机器学习"}, {text: "搜索引擎"}, {text: "数据库"},{text: "web前端"}, {text: "代码管理"},  {text: "分布式"},  {text: "大数据"}, {text: "框架"}, {text: "流计算" }, {text: "消息队列" }, {text: "第三方支付"}, {text: "网络协议"}, {text: "负载均衡" }, {text: "开发工具" }, {text: "性能优化" },  {text: "etl" },{text: "java" },  {text: "linux"}, {text: "shell"}
-            // ...as many words as you want
-        ];
-        $(document).ready(function () {
-            for (var i = 0; i < word_array.length; i++) {
-                var w=Math.round(Math.random()*10);
-                word_array[i].link="/categories/"+word_array[i].text+"/";
-                word_array[i].weight=w;
-            };
-            jQuery("#example").jQCloud(word_array);
-        //$("#reply").val("添加回复：");
-        });
-    </script>
-    <div id="example" style="width: 500px; height: 120px;max-width: 500px;
-    position: relative;
-    margin: 0 auto;margin-top: 30px;
-    margin-bottom: -40px;">
-             
-    </div>
-
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-      </div>
-      
-  <footer id="footer" class="home-footer footer">
-    <div id="copyright" class="copyright">
-      &copy; hujao.com 2018   
+<nav class="site-nav">
+  
 
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2018/05/28/need-read/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/28/need-read/" itemprop="url">need-read</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-28T00:29:04+08:00">
+                2018-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="文学必读"><a href="#文学必读" class="headerlink" title="文学必读"></a>文学必读</h3><p>　　《百年孤独》《活着》《悲惨世界》<code>《老人与海》</code>《挪威的森林》《人间词话》<code>《唐诗三百首》</code>《呐喊》《撒哈拉的故事》《不能承受的生命之轻》《海子诗全集》《三体》《四大名著》《围城》《1984》<code>《傲慢与偏见》</code>《茶馆》《魔戒》《白鹿原》<code>《射雕英雄传》</code>《我们仨》《月亮和六便士》《倾城之恋》《白夜行》《飘》<code>《尘埃落定》</code>《福尔摩斯探案全集》《诗经》《目送》《基督山伯爵》《边城》《如何阅读一本书》<code>《苏菲的世界》</code>《红高粱》《文学回忆录》《麦田里的守望者》《平凡的世界》《我与地坛》</p>
+<h3 id="社科必读"><a href="#社科必读" class="headerlink" title="社科必读"></a>社科必读</h3><p>　　《论语》《光荣与梦想》《全球通史》《自私的基因》《南渡北归》《中国哲学简史》《万历十五年》《社会契约论》《菊与刀》《失控》《文化苦旅》《乌合之众》《孙子兵法》《枪炮、病菌与钢铁》《宽容》《传家》《明朝那些事儿》《历史深处的忧虑》《剑桥中国史》《西方哲学史》《大问题:简明哲学导论》《中国历代政治得失》</p>
+<h3 id="经管励志必读"><a href="#经管励志必读" class="headerlink" title="经管励志必读"></a>经管励志必读</h3><p>　　《高效能人士的七个习惯》《经济学原理》《金字塔原理》《少有人走的路》《向前一步》《洛克菲勒给儿子的38封信》《基业长青》《影响力》《伟大的博弈》《与神对话》《资本论》《激荡三十年》《心理学与生活》《卓有成效的管理者》《从0到1》</p>
+<h3 id="科技必读"><a href="#科技必读" class="headerlink" title="科技必读"></a>科技必读</h3><p>　　《时间简史》《科学百科》《万物运转的秘密》《从一到无穷大》《浪潮之巅》《上帝与新物理学》《硅谷百年史》《昆虫记》《万物简史》</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2018/05/25/jpa-multi-table/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/25/jpa-multi-table/" itemprop="url">jpa多表查询</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-25T18:10:11+08:00">
+                2018-05-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>栗子1：</strong></p>
+<p>以一个实体类User中的几个属性进行筛选。</p>
+<ol>
+<li>名字</li>
+<li>ID</li>
+<li>手机号</li>
+</ol>
+<p>这是一个单表的多条件复杂查询，由于是在几个属性中进行筛选，其中的属性的个数不知道有多少个，所以只需要利用Specification 查询就可以很方便的实现这个需求。 下面请看代码：场景：页面上通过条件筛选，查询用户列表</p>
+<p>这里有3个条件 在页面上我设置的id分别为searchName，searchId，searchMobile。 由于这个是user表 所以userRepository 继承JpaSpecificationExecutor接口，随后我创建了一个封装条件的类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PageParam</span>&lt;<span class="title">T</span>&gt; </span>&#123;    </span><br><span class="line">	<span class="keyword">private</span> Integer pageSize = <span class="number">10</span>;   </span><br><span class="line">	<span class="keyword">private</span> Integer pageNumber = <span class="number">1</span>;    </span><br><span class="line">	<span class="keyword">private</span> String searchName;   </span><br><span class="line">	<span class="keyword">private</span> String searchMobile;    </span><br><span class="line">	<span class="keyword">private</span> String searchId;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于我这个方法是直接分页的 所以pageNumber 和pageSize 也可以直接写入到这个类中，用于方便接收参数，主要是对下面3个参数的封装</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Specification&lt;T&gt; specification = <span class="keyword">new</span> Specification&lt;T&gt;() &#123;  </span><br><span class="line">  	<span class="meta">@Override</span>   </span><br><span class="line">  	<span class="function"><span class="keyword">public</span> Predicate <span class="title">toPredicate</span><span class="params">(Root&lt;T&gt; root, CriteriaQuery&lt;?&gt; query, CriteriaBuilder cb)</span> </span>&#123;        		List&lt;Predicate&gt; list = <span class="keyword">new</span> ArrayList&lt;Predicate&gt;();   </span><br><span class="line">	<span class="keyword">if</span> (StringUtils.isNotBlank(searchName)) &#123;		   												list.add(cb.like(root.get(<span class="string">"name"</span>).as(String.class), <span class="string">"%"</span> + searchName + <span class="string">"%"</span>)); </span><br><span class="line">	&#125;        </span><br><span class="line">	<span class="keyword">if</span> (StringUtils.isNotBlank(searchId)) &#123;    </span><br><span class="line">    	 list.add(cb.equal(root.get(<span class="string">"id"</span>).as(Long.class), searchId));        &#125;    </span><br><span class="line">	<span class="keyword">if</span> (StringUtils.isNotBlank(searchMobile)) &#123;            		   						    		list.add(cb.like(root.get(<span class="string">"mobile"</span>).as(String.class), <span class="string">"%"</span> + searchMobile + <span class="string">"%"</span>));     </span><br><span class="line">	&#125;      </span><br><span class="line">	Predicate[] p = <span class="keyword">new</span> Predicate[list.size()];    </span><br><span class="line">	<span class="keyword">return</span> cb.and(list.toArray(p));    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这里因为都是一个表，所以只要root.get(‘N ‘)这个N对应所要查的 属性的名字就好，属性名 属性名 重要的事情说三遍。</p>
+<p>再接下来看一组多表的查询</p>
+<p><strong>栗子2：</strong></p>
+<p>这里有4张表</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Living</span> </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	Long id;    </span><br><span class="line">	<span class="meta">@ManyToOne</span></span><br><span class="line">    <span class="meta">@JsonIgnore</span>    </span><br><span class="line">    <span class="meta">@JoinColumn</span>(name = <span class="string">"actorId"</span>, foreignKey = <span class="meta">@ForeignKey</span>(name = <span class="string">"none"</span>, value =ConstraintMode.NO_CONSTRAINT))    </span><br><span class="line">    <span class="keyword">public</span> Actor actor;   </span><br><span class="line">    <span class="meta">@ManyToOne</span>    </span><br><span class="line">    <span class="meta">@JsonIgnore</span>    </span><br><span class="line">    <span class="meta">@JoinColumn</span>(name = <span class="string">"regionId"</span>, foreignKey = <span class="meta">@ForeignKey</span>(name = <span class="string">"none"</span>, value =ConstraintMode.NO_CONSTRAINT))   </span><br><span class="line">    <span class="keyword">public</span> Region region;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Actor</span> </span>&#123;    </span><br><span class="line">	Long id;    </span><br><span class="line">	<span class="meta">@OneToMany</span>(cascade = &#123; CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH &#125;, fetch = FetchType.LAZY)    </span><br><span class="line">	<span class="meta">@JoinColumn</span>(name = <span class="string">"actorId"</span>)    </span><br><span class="line">	<span class="meta">@org</span>.hibernate.annotations.ForeignKey(name = <span class="string">"none"</span>)    </span><br><span class="line">	List&lt;Living&gt; livings = <span class="keyword">new</span> ArrayList&lt;&gt;();   </span><br><span class="line">	<span class="meta">@OneToOne</span>(cascade = &#123; CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH &#125;, fetch = FetchType.LAZY)    </span><br><span class="line">	<span class="meta">@org</span>.hibernate.annotations.ForeignKey(name = <span class="string">"none"</span>)    </span><br><span class="line">	<span class="meta">@JoinColumn</span>(name = <span class="string">"userDetailId"</span>, foreignKey = <span class="meta">@ForeignKey</span>(name = <span class="string">"none"</span>, value = ConstraintMode.NO_CONSTRAINT))    </span><br><span class="line">	UserDetail userDetail;   </span><br><span class="line">	<span class="meta">@Column</span>(nullable = <span class="keyword">false</span>)    </span><br><span class="line">	<span class="meta">@Enumerated</span>(value = EnumType.ORDINAL)    </span><br><span class="line">	ActorType actorType = ActorType.A;    </span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">enum</span> ActorType&#123;        </span><br><span class="line">		A,B,C   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserDetail</span> </span>&#123; </span><br><span class="line">	Long id;    </span><br><span class="line">	<span class="meta">@OneToOne</span>(cascade = &#123; CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH &#125;, fetch = FetchType.LAZY)   </span><br><span class="line">    <span class="meta">@org</span>.hibernate.annotations.ForeignKey(name = <span class="string">"none"</span>)  </span><br><span class="line">    <span class="meta">@JoinColumn</span>(name = <span class="string">"actorId"</span>, foreignKey = <span class="meta">@ForeignKey</span>(name = <span class="string">"none"</span>, value = ConstraintMode.NO_CONSTRAINT))   </span><br><span class="line">    Actor actor;</span><br><span class="line">    String truename;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Region</span> </span>&#123;    </span><br><span class="line">	Long id;    </span><br><span class="line">	String name; </span><br><span class="line">	<span class="meta">@OneToMany</span>(cascade = &#123; CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH &#125;, fetch = FetchType.LAZY)   </span><br><span class="line">	<span class="meta">@JoinColumn</span>(name = <span class="string">"regionId"</span>)</span><br><span class="line">   	<span class="meta">@org</span>.hibernate.annotations.ForeignKey(name = <span class="string">"none"</span>)   </span><br><span class="line">    List&lt;Living&gt; Livings;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现在要根据userdetai 种的 sex actor中的actortype 还有 region的id 为条件查询出满足条件的living。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PageParam</span>&lt;<span class="title">Living</span>&gt; </span>&#123;    </span><br><span class="line">	<span class="keyword">private</span> Integer pageSize = <span class="number">10</span>;  </span><br><span class="line">    <span class="keyword">private</span> Integer pageNumber = <span class="number">1</span>;  </span><br><span class="line">    <span class="keyword">private</span> Sex sex;   </span><br><span class="line">    <span class="keyword">private</span> ActorType actortype;    </span><br><span class="line">    <span class="keyword">private</span> Long cityid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先我还是封装了这样一个类，但是这里的泛型 我是直接给到了想要的查询结果的泛型，接下来 因为这里涉及到了一个 多表的查询 所以上面的单表查询的例子 已经不适合这个查询了，但是Criteria 的join方法 给我们提供了一个模式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Specification&lt;Living&gt; specification = <span class="keyword">new</span> Specification&lt;Living&gt;() &#123;</span><br><span class="line">	<span class="meta">@Override</span>    </span><br><span class="line">	<span class="function"><span class="keyword">public</span> Predicate <span class="title">toPredicate</span><span class="params">(Root&lt;Living&gt; root, CriteriaQuery&lt;?&gt; query, CriteriaBuilder cb)</span> </span>&#123;        			List&lt;Predicate&gt; list = <span class="keyword">new</span> ArrayList&lt;Predicate&gt;();       </span><br><span class="line">    	 <span class="keyword">if</span> (<span class="keyword">null</span>!=sex) &#123;            Join&lt;UserDetail, Living&gt; join = root.join(<span class="string">"actor"</span>, JoinType.LEFT);            list.add(cb.equal(join.get(<span class="string">"userDetail"</span>).get(<span class="string">"sex"</span>),  sex ));        &#125;       </span><br><span class="line">    	 </span><br><span class="line">         <span class="keyword">if</span> (<span class="keyword">null</span>!=actortype) &#123;            Join&lt;Actor, Living&gt; join = root.join(<span class="string">"actor"</span>, JoinType.LEFT);           </span><br><span class="line">         list.add(cb.equal(join.get(<span class="string">"actorType"</span>),  actortype));        </span><br><span class="line">         &#125;     </span><br><span class="line">         <span class="keyword">if</span> (<span class="keyword">null</span>!=cityid) &#123;            Join&lt;Region, Living&gt; join = root.join(<span class="string">"region"</span>, JoinType.LEFT);            list.add(cb.equal(join.get(<span class="string">"id"</span>), cityid));        &#125;        </span><br><span class="line">                                                                                                 <span class="comment">//Join&lt;A, B&gt; join = root.join("bs", JoinType.LEFT);        //list.add(cb.equal(join.get("c").get("id"), id));        </span></span><br><span class="line">                                                                                                 Predicate[] p = <span class="keyword">new</span> Predicate[list.size()];     </span><br><span class="line">                                                                                                 <span class="keyword">return</span> cb.and(list.toArray(p));    </span><br><span class="line">                                                                                                &#125;;&#125;;</span><br></pre></td></tr></table></figure>
+<p>这里是我对条件进行的封装。jpa 的多条件查询 主要是根据Criteria 为我们提供的方法封装条件，然后根据 给条件定义的位置，再生成sql语句，之后完成查询。不得不说的地方，在这个多表的查询中以下面这句为例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Join&lt;UserDetail, Living&gt; join = root.join(<span class="string">"actor"</span>, JoinType.LEFT);list.add(cb.equal(join.get(<span class="string">"userDetail"</span>).get(<span class="string">"sex"</span>),  sex ));</span><br></pre></td></tr></table></figure>
+<p><code>jointype.LEFT</code>主要是说最终的这个属性 是在哪个表中， 而前面的 “actor” 则表示 从living表中 查询的 第一步的查询，比如我给出的例子 是要查询出 living 中的 actor 然后是actor 中的userdetail 之后才是 userdetail中的 sex属性 所以下面的join.get(“userDetail”).get(“sex”) ，这里就是get出相应的属性，一直到你得到想要的属性为止。 接下来的两个属性 也同理， 许多人多jpa 有很大的误解，认为jpa 的多表，多条件复杂查询，不如mybatis的查询，在之前我也是这么觉得，但自从通过jpa 实现了这个多表多条件的复杂查询之后，我觉得hibernate的复杂查询 不逊于mybatis ，尤其是对sql 语句不是很精通的码农，虽然hibernate的门槛较高可jpa 恰恰降低了hibernate 所需要的门槛，希望大家可以通过我的经验，更方便的与数据库进行交互。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2018/05/23/linux-date/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/23/linux-date/" itemprop="url">Linux系统查看当前时间的命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-23T15:45:44+08:00">
+                2018-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>一、查看和修改Linux的时区</strong></p>
+<p>　　1. 查看当前时区</p>
+<p>　　命令 ： “date -R”</p>
+<p>　　2. 修改设置Linux服务器时区</p>
+<p>　　方法 A</p>
+<p>　　命令 ： “tzselect”</p>
+<p>　　方法 B 仅限于RedHat Linux 和 CentOS</p>
+<p>　　命令 ： “timeconfig”</p>
+<p>　　方法 C 适用于Debian</p>
+<p>　　命令 ： “dpkg-reconfigure tzdata”</p>
+<p>　　3. 复制相应的时区文件，替换系统时区文件;或者创建链接文件</p>
+<p>　　cp /usr/share/zoneinfo/$主时区/$次时区 /etc/localtime</p>
+<p>　　例如：在设置中国时区使用亚洲/上海(+8)</p>
+<p>　　cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</p>
+<p><strong>二、查看和修改Linux的时间</strong></p>
+<p>　　1. 查看时间和日期</p>
+<p>　　命令 ： “date”</p>
+<p>　　2.设置时间和日期</p>
+<p>　　例如：将系统日期设定成2009年11月3日的命令</p>
+<p>　　命令 ： “date -s 11/03/2009”</p>
+<p>　　将系统时间设定成下午5点55分55秒的命令</p>
+<p>　　命令 ： “date -s 17:55:55”</p>
+<p>　　3. 将当前时间和日期写入BIOS，避免重启后失效</p>
+<p>　　命令 ： “hwclock -w”</p>
+<p>　　注：</p>
+<p>　　date</p>
+<p>　　不加参数可以直接看到当前日期时间</p>
+<p>　　cal</p>
+<p>　　不加参数可以直接看到本月月历</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2018/05/22/jpa-native/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/22/jpa-native/" itemprop="url">jpa原生sql</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-22T16:06:13+08:00">
+                2018-05-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.cndatacom.jpa.entity; </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> javax.persistence.Column; </span><br><span class="line"><span class="keyword">import</span> javax.persistence.Entity; </span><br><span class="line"><span class="keyword">import</span> javax.persistence.GeneratedValue; </span><br><span class="line"><span class="keyword">import</span> javax.persistence.Id; </span><br><span class="line"><span class="keyword">import</span> javax.persistence.Table; </span><br><span class="line">  </span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Table</span>(name=<span class="string">"t_user"</span>) </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123; </span><br><span class="line">      </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 主键 </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span></span><br><span class="line">    <span class="keyword">private</span> Long id; </span><br><span class="line">      </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 名字 </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Column</span>(name=<span class="string">"name"</span>,length=<span class="number">50</span>) </span><br><span class="line">    <span class="keyword">private</span> String name; </span><br><span class="line">      </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 密码 </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Column</span>(name=<span class="string">"password"</span>,length=<span class="number">20</span>) </span><br><span class="line">    <span class="keyword">private</span> String password; </span><br><span class="line">      </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 邮箱 </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Column</span>(name=<span class="string">"email"</span>,length=<span class="number">50</span>) </span><br><span class="line">    <span class="keyword">private</span> String email; </span><br><span class="line">      </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 年龄 </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Column</span>(name=<span class="string">"age"</span>,length=<span class="number">3</span>) </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age; </span><br><span class="line">      </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">()</span> </span>&#123; </span><br><span class="line">          </span><br><span class="line">    &#125; </span><br><span class="line">      </span><br><span class="line">    <span class="comment">//以下省略getter/setter方法 </span></span><br><span class="line">    <span class="comment">//...... </span></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">          </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.cndatacom.jpa.test; </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> java.util.List; </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> javax.persistence.EntityManager; </span><br><span class="line"><span class="keyword">import</span> javax.persistence.EntityManagerFactory; </span><br><span class="line"><span class="keyword">import</span> javax.persistence.Persistence; </span><br><span class="line"><span class="keyword">import</span> javax.persistence.Query; </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> org.junit.After; </span><br><span class="line"><span class="keyword">import</span> org.junit.Before; </span><br><span class="line"><span class="keyword">import</span> org.junit.Test; </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> com.cndatacom.jpa.entity.User; </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * 测试JPA原生SQL查询 </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Luxh </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestNativeQuery</span> </span>&#123; </span><br><span class="line">EntityManagerFactory emf = <span class="keyword">null</span>; </span><br><span class="line">      </span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">before</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        <span class="comment">//根据在persistence.xml中配置的persistence-unit name 创建EntityManagerFactory </span></span><br><span class="line">        emf = Persistence.createEntityManagerFactory(<span class="string">"myJPA"</span>); </span><br><span class="line">    &#125; </span><br><span class="line">      </span><br><span class="line">    <span class="meta">@After</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">after</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        <span class="comment">//关闭EntityManagerFactory </span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> != emf) &#123; </span><br><span class="line">            emf.close(); </span><br><span class="line">        &#125; </span><br><span class="line">    &#125; </span><br><span class="line">      </span><br><span class="line">          </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 查询的结果是对象数组的集合 </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testNativeQuery1</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        EntityManager em = emf.createEntityManager(); </span><br><span class="line">        <span class="comment">//定义SQL </span></span><br><span class="line">        String sql = <span class="string">"SELECT * FROM t_user"</span>; </span><br><span class="line">        <span class="comment">//创建原生SQL查询QUERY实例 </span></span><br><span class="line">        &lt;span style="color:#ff0000;"&gt;Query query =  em.createNativeQuery(sql);&lt;/span&gt; </span><br><span class="line">        <span class="comment">//执行查询，返回的是对象数组(Object[])列表, </span></span><br><span class="line">        <span class="comment">//每一个对象数组存的是相应的实体属性 </span></span><br><span class="line">        List objecArraytList = query.getResultList(); </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;objecArraytList.size();i++) &#123; </span><br><span class="line">            Object[] obj = (Object[]) objecArraytList.get(i); </span><br><span class="line">           <span class="comment">//使用obj[0],obj[1],obj[2]...取出属性　　　　       </span></span><br><span class="line">        &#125; </span><br><span class="line">        em.close(); </span><br><span class="line">    &#125; </span><br><span class="line">      </span><br><span class="line">      </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 查询的结果是实体的集合 </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testNativeQuery2</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        EntityManager em = emf.createEntityManager(); </span><br><span class="line">        <span class="comment">//定义SQL </span></span><br><span class="line">        String sql = <span class="string">"SELECT * FROM t_user"</span>; </span><br><span class="line">        <span class="comment">//创建原生SQL查询QUERY实例,指定了返回的实体类型 </span></span><br><span class="line">       &lt;span style=<span class="string">"color:#ff0000;"</span>&gt; Query query =  em.createNativeQuery(sql,User.class); </span><br><span class="line">&lt;/span&gt;        //执行查询，返回的是实体列表, </span><br><span class="line">        List&lt;User&gt; userList = query.getResultList(); </span><br><span class="line">          </span><br><span class="line">        em.close(); </span><br><span class="line">    &#125; </span><br><span class="line">      </span><br><span class="line">      </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 查询单个属性 </span></span><br><span class="line"><span class="comment">     * 返回的是这个属性值的集合 </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testNativeQuery3</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        EntityManager em = emf.createEntityManager(); </span><br><span class="line">        <span class="comment">//定义SQL </span></span><br><span class="line">        String sql = <span class="string">"SELECT t.name FROM t_user t"</span>; </span><br><span class="line">        <span class="comment">//创建原生SQL查询QUERY实例 </span></span><br><span class="line">    &lt;span style="color:#ff0000;"&gt;    Query query =  em.createNativeQuery(sql);&lt;/span&gt; </span><br><span class="line">        <span class="comment">//执行查询，返回的是String类型的集合，因为name这个属性是String类型 </span></span><br><span class="line">        List&lt;String&gt;  resultList = query.getResultList(); </span><br><span class="line">        em.close(); </span><br><span class="line">    &#125; </span><br><span class="line">      </span><br><span class="line">      </span><br><span class="line">    <span class="comment">/**   </span></span><br><span class="line"><span class="comment">　  　　  * 查询多个属性 </span></span><br><span class="line"><span class="comment">　  　　  * 返回的是这些属性值的数组的集合 </span></span><br><span class="line"><span class="comment">   　　　 */</span>   </span><br><span class="line">    <span class="meta">@Test</span>   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testNativeQuery4</span><span class="params">()</span> </span>&#123;     </span><br><span class="line">        EntityManager em = emf.createEntityManager();    </span><br><span class="line">        <span class="comment">//定义SQL          </span></span><br><span class="line">        String sql = <span class="string">"SELECT t.name,t.age,t.email FROM t_user t"</span>;        </span><br><span class="line">        <span class="comment">//创建原生SQL查询QUERY实例       </span></span><br><span class="line">    &lt;span style="color:#ff0000;"&gt;    Query query =  em.createNativeQuery(sql); &lt;/span&gt;       </span><br><span class="line">        <span class="comment">//执行查询，返回的是查询属性值数组的集合        </span></span><br><span class="line">        List objecArraytList = query.getResultList(); </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;objecArraytList.size();i++) &#123;       </span><br><span class="line">            Object[] obj = (Object[]) objecArraytList.get(i); </span><br><span class="line">             <span class="comment">//使用obj[0],obj[1],obj[2]取出属性 </span></span><br><span class="line">        &#125;        </span><br><span class="line">        em.close();  </span><br><span class="line">          </span><br><span class="line">    &#125; </span><br><span class="line">      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2018/05/18/java-multi-thread2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/18/java-multi-thread2/" itemprop="url">java-multi-thread2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-18T18:36:04+08:00">
+                2018-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://www.cnblogs.com/skywang12345/p/java_threads_category.html" target="_blank" rel="noopener">http://www.cnblogs.com/skywang12345/p/java_threads_category.html</a></p>
+<h3 id="1-synchronized原理"><a href="#1-synchronized原理" class="headerlink" title="1. synchronized原理**"></a>1. synchronized原理**</h3><p><strong>在java中，每一个对象有且仅有一个同步锁。这也意味着，同步锁是依赖于对象而存在。</strong><br><strong>当我们调用某对象的synchronized方法时，就获取了该对象的同步锁。</strong>例如，synchronized(obj)就获取了“obj这个对象”的同步锁。<br><strong>不同线程对同步锁的访问是互斥的。</strong>也就是说，某时间点，对象的同步锁只能被一个线程获取到！通过同步锁，我们就能在多线程中，实现对“对象/方法”的互斥访问。 例如，现在有两个线程A和线程B，它们都会访问“对象obj的同步锁”。假设，在某一时刻，线程A获取到“obj的同步锁”并在执行一些操作；而此时，线程B也企图获取“obj的同步锁” —— 线程B会获取失败，它必须等待，直到线程A释放了“该对象的同步锁”之后线程B才能获取到“obj的同步锁”从而才可以运行。</p>
+<h3 id="2-synchronized基本规则"><a href="#2-synchronized基本规则" class="headerlink" title="2. synchronized基本规则"></a><strong>2. synchronized基本规则</strong></h3><p>我们将synchronized的基本规则总结为下面3条，并通过实例对它们进行说明。<br><strong>第一条</strong>: 当一个线程访问“某对象”的“synchronized方法”或者“synchronized代码块”时，其他线程对<strong>“该对象”的该“synchronized方法”或者“synchronized代码块”的访问</strong>将被阻塞。<br>第二条: 当一个线程访问“某对象”的“synchronized方法”或者“synchronized代码块”时，其他线程仍然<strong>可以访问“该对象”的非同步代码块</strong>。<br>第三条: 当一个线程访问“某对象”的“synchronized方法”或者“synchronized代码块”时，其他线程对<strong>“该对象”的其他的“synchronized方法”或者“synchronized代码块”的访问</strong>将被阻塞。</p>
+<h5 id="第一条"><a href="#第一条" class="headerlink" title="第一条"></a>第一条</h5><p>当一个线程访问“某对象”的“synchronized方法”或者“synchronized代码块”时，其他线程对“该对象”的该“synchronized方法”或者“synchronized代码块”的访问将被阻塞。<br>下面是“synchronized代码块”对应的演示程序。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> 1 class MyRunable implements Runnable &#123;</span><br><span class="line"> 2     </span><br><span class="line"> 3     @Override</span><br><span class="line"> 4     public void run() &#123;</span><br><span class="line"> 5         synchronized(this) &#123;</span><br><span class="line"> 6             try &#123;  </span><br><span class="line"> 7                 for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line"> 8                     Thread.sleep(100); // 休眠100ms</span><br><span class="line"> 9                     System.out.println(Thread.currentThread().getName() + &quot; loop &quot; + i);  </span><br><span class="line">10                 &#125;</span><br><span class="line">11             &#125; catch (InterruptedException ie) &#123;  </span><br><span class="line">12             &#125;</span><br><span class="line">13         &#125;  </span><br><span class="line">14     &#125;</span><br><span class="line">15 &#125;</span><br><span class="line">16 </span><br><span class="line">17 public class Demo1_1 &#123;</span><br><span class="line">18 </span><br><span class="line">19     public static void main(String[] args) &#123;  </span><br><span class="line">20         Runnable demo = new MyRunable();     // 新建“Runnable对象”</span><br><span class="line">21 </span><br><span class="line">22         Thread t1 = new Thread(demo, &quot;t1&quot;);  // 新建“线程t1”, t1是基于demo这个Runnable对象</span><br><span class="line">23         Thread t2 = new Thread(demo, &quot;t2&quot;);  // 新建“线程t2”, t2是基于demo这个Runnable对象</span><br><span class="line">24         t1.start();                          // 启动“线程t1”</span><br><span class="line">25         t2.start();                          // 启动“线程t2” </span><br><span class="line">26     &#125; </span><br><span class="line">27 &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">t1 loop 0</span><br><span class="line">t1 loop 1</span><br><span class="line">t1 loop 2</span><br><span class="line">t1 loop 3</span><br><span class="line">t1 loop 4</span><br><span class="line">t2 loop 0</span><br><span class="line">t2 loop 1</span><br><span class="line">t2 loop 2</span><br><span class="line">t2 loop 3</span><br><span class="line">t2 loop 4</span><br></pre></td></tr></table></figure>
+<p><strong>结果说明</strong>：<br>run()方法中存在“synchronized(this)代码块”，而且t1和t2都是基于”demo这个Runnable对象”创建的线程。这就意味着，我们可以将synchronized(this)中的this看作是“demo这个Runnable对象”；因此，线程t1和t2共享“demo对象的同步锁”。所以，当一个线程运行的时候，另外一个线程必须等待“运行线程”释放“demo的同步锁”之后才能运行。</p>
+<p>如果你确认，你搞清楚这个问题了。那我们将上面的代码进行修改，然后再运行看看结果怎么样，看看你是否会迷糊。修改后的源码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> 1 class MyThread extends Thread &#123;</span><br><span class="line"> 2     </span><br><span class="line"> 3     public MyThread(String name) &#123;</span><br><span class="line"> 4         super(name);</span><br><span class="line"> 5     &#125;</span><br><span class="line"> 6 </span><br><span class="line"> 7     @Override</span><br><span class="line"> 8     public void run() &#123;</span><br><span class="line"> 9         synchronized(this) &#123;</span><br><span class="line">10             try &#123;  </span><br><span class="line">11                 for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">12                     Thread.sleep(100); // 休眠100ms</span><br><span class="line">13                     System.out.println(Thread.currentThread().getName() + &quot; loop &quot; + i);  </span><br><span class="line">14                 &#125;</span><br><span class="line">15             &#125; catch (InterruptedException ie) &#123;  </span><br><span class="line">16             &#125;</span><br><span class="line">17         &#125;  </span><br><span class="line">18     &#125;</span><br><span class="line">19 &#125;</span><br><span class="line">20 </span><br><span class="line">21 public class Demo1_2 &#123;</span><br><span class="line">22 </span><br><span class="line">23     public static void main(String[] args) &#123;  </span><br><span class="line">24         Thread t1 = new MyThread(&quot;t1&quot;);  // 新建“线程t1”</span><br><span class="line">25         Thread t2 = new MyThread(&quot;t2&quot;);  // 新建“线程t2”</span><br><span class="line">26         t1.start();                          // 启动“线程t1”</span><br><span class="line">27         t2.start();                          // 启动“线程t2” </span><br><span class="line">28     &#125; </span><br><span class="line">29 &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>代码说明</strong>：<br>比较Demo1_2 和 Demo1_1，我们发现，Demo1_2中的MyThread类是直接继承于Thread，而且t1和t2都是MyThread子线程。<br>幸运的是，在“Demo1_2的run()方法”也调用了synchronized(this)，正如“Demo1_1的run()方法”也调用了synchronized(this)一样！<br>那么，Demo1_2的执行流程是不是和Demo1_1一样呢？<br>运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">t1 loop 0</span><br><span class="line">t2 loop 0</span><br><span class="line">t1 loop 1</span><br><span class="line">t2 loop 1</span><br><span class="line">t1 loop 2</span><br><span class="line">t2 loop 2</span><br><span class="line">t1 loop 3</span><br><span class="line">t2 loop 3</span><br><span class="line">t1 loop 4</span><br><span class="line">t2 loop 4</span><br></pre></td></tr></table></figure>
+<p><strong>结果说明</strong>：<br>如果这个结果一点也不令你感到惊讶，那么我相信你对synchronized和this的认识已经比较深刻了。否则的话，请继续阅读这里的分析。<br>synchronized(this)中的this是指“当前的类对象”，即synchronized(this)所在的类对应的当前对象。它的作用是获取“当前对象的同步锁”。<br>对于Demo1_2中，synchronized(this)中的this代表的是MyThread对象，而t1和t2是两个不同的MyThread对象，因此t1和t2在执行synchronized(this)时，获取的是不同对象的同步锁。对于Demo1_1对而言，synchronized(this)中的this代表的是MyRunable对象；t1和t2共同一个MyRunable对象，因此，一个线程获取了对象的同步锁，会造成另外一个线程等待。</p>
+<h1 id="第二条"><a href="#第二条" class="headerlink" title="第二条"></a>第二条</h1><p>当一个线程访问“某对象”的“synchronized方法”或者“synchronized代码块”时，其他线程仍然可以访问“该对象”的非同步代码块。<br>下面是“synchronized代码块”对应的演示程序。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"> 1 class Count &#123;</span><br><span class="line"> 2 </span><br><span class="line"> 3     // 含有synchronized同步块的方法</span><br><span class="line"> 4     public void synMethod() &#123;</span><br><span class="line"> 5         synchronized(this) &#123;</span><br><span class="line"> 6             try &#123;  </span><br><span class="line"> 7                 for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line"> 8                     Thread.sleep(100); // 休眠100ms</span><br><span class="line"> 9                     System.out.println(Thread.currentThread().getName() + &quot; synMethod loop &quot; + i);  </span><br><span class="line">10                 &#125;</span><br><span class="line">11             &#125; catch (InterruptedException ie) &#123;  </span><br><span class="line">12             &#125;</span><br><span class="line">13         &#125;  </span><br><span class="line">14     &#125;</span><br><span class="line">15 </span><br><span class="line">16     // 非同步的方法</span><br><span class="line">17     public void nonSynMethod() &#123;</span><br><span class="line">18         try &#123;  </span><br><span class="line">19             for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">20                 Thread.sleep(100);</span><br><span class="line">21                 System.out.println(Thread.currentThread().getName() + &quot; nonSynMethod loop &quot; + i);  </span><br><span class="line">22             &#125;</span><br><span class="line">23         &#125; catch (InterruptedException ie) &#123;  </span><br><span class="line">24         &#125;</span><br><span class="line">25     &#125;</span><br><span class="line">26 &#125;</span><br><span class="line">27 </span><br><span class="line">28 public class Demo2 &#123;</span><br><span class="line">29 </span><br><span class="line">30     public static void main(String[] args) &#123;  </span><br><span class="line">31         final Count count = new Count();</span><br><span class="line">32         // 新建t1, t1会调用“count对象”的synMethod()方法</span><br><span class="line">33         Thread t1 = new Thread(</span><br><span class="line">34                 new Runnable() &#123;</span><br><span class="line">35                     @Override</span><br><span class="line">36                     public void run() &#123;</span><br><span class="line">37                         count.synMethod();</span><br><span class="line">38                     &#125;</span><br><span class="line">39                 &#125;, &quot;t1&quot;);</span><br><span class="line">40 </span><br><span class="line">41         // 新建t2, t2会调用“count对象”的nonSynMethod()方法</span><br><span class="line">42         Thread t2 = new Thread(</span><br><span class="line">43                 new Runnable() &#123;</span><br><span class="line">44                     @Override</span><br><span class="line">45                     public void run() &#123;</span><br><span class="line">46                         count.nonSynMethod();</span><br><span class="line">47                     &#125;</span><br><span class="line">48                 &#125;, &quot;t2&quot;);  </span><br><span class="line">49 </span><br><span class="line">50 </span><br><span class="line">51         t1.start();  // 启动t1</span><br><span class="line">52         t2.start();  // 启动t2</span><br><span class="line">53     &#125; </span><br><span class="line">54 &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">t1 synMethod loop 0</span><br><span class="line">t2 nonSynMethod loop 0</span><br><span class="line">t1 synMethod loop 1</span><br><span class="line">t2 nonSynMethod loop 1</span><br><span class="line">t1 synMethod loop 2</span><br><span class="line">t2 nonSynMethod loop 2</span><br><span class="line">t1 synMethod loop 3</span><br><span class="line">t2 nonSynMethod loop 3</span><br><span class="line">t1 synMethod loop 4</span><br><span class="line">t2 nonSynMethod loop 4</span><br></pre></td></tr></table></figure>
+<p><strong>结果说明</strong>：<br>主线程中新建了两个子线程t1和t2。t1会调用count对象的synMethod()方法，该方法内含有同步块；而t2则会调用count对象的nonSynMethod()方法，该方法不是同步方法。t1运行时，虽然调用synchronized(this)获取“count的同步锁”；但是并没有造成t2的阻塞，因为t2没有用到“count”同步锁。</p>
+<h1 id="第三条"><a href="#第三条" class="headerlink" title="第三条"></a>第三条</h1><p>当一个线程访问“某对象”的“synchronized方法”或者“synchronized代码块”时，其他线程对“该对象”的其他的“synchronized方法”或者“synchronized代码块”的访问将被阻塞。<br>我们将上面的例子中的nonSynMethod()方法体的也用synchronized(this)修饰。修改后的源码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"> 1 class Count &#123;</span><br><span class="line"> 2 </span><br><span class="line"> 3     // 含有synchronized同步块的方法</span><br><span class="line"> 4     public void synMethod() &#123;</span><br><span class="line"> 5         synchronized(this) &#123;</span><br><span class="line"> 6             try &#123;  </span><br><span class="line"> 7                 for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line"> 8                     Thread.sleep(100); // 休眠100ms</span><br><span class="line"> 9                     System.out.println(Thread.currentThread().getName() + &quot; synMethod loop &quot; + i);  </span><br><span class="line">10                 &#125;</span><br><span class="line">11             &#125; catch (InterruptedException ie) &#123;  </span><br><span class="line">12             &#125;</span><br><span class="line">13         &#125;  </span><br><span class="line">14     &#125;</span><br><span class="line">15 </span><br><span class="line">16     // 也包含synchronized同步块的方法</span><br><span class="line">17     public void nonSynMethod() &#123;</span><br><span class="line">18         synchronized(this) &#123;</span><br><span class="line">19             try &#123;  </span><br><span class="line">20                 for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">21                     Thread.sleep(100);</span><br><span class="line">22                     System.out.println(Thread.currentThread().getName() + &quot; nonSynMethod loop &quot; + i);  </span><br><span class="line">23                 &#125;</span><br><span class="line">24             &#125; catch (InterruptedException ie) &#123;  </span><br><span class="line">25             &#125;</span><br><span class="line">26         &#125;</span><br><span class="line">27     &#125;</span><br><span class="line">28 &#125;</span><br><span class="line">29 </span><br><span class="line">30 public class Demo3 &#123;</span><br><span class="line">31 </span><br><span class="line">32     public static void main(String[] args) &#123;  </span><br><span class="line">33         final Count count = new Count();</span><br><span class="line">34         // 新建t1, t1会调用“count对象”的synMethod()方法</span><br><span class="line">35         Thread t1 = new Thread(</span><br><span class="line">36                 new Runnable() &#123;</span><br><span class="line">37                     @Override</span><br><span class="line">38                     public void run() &#123;</span><br><span class="line">39                         count.synMethod();</span><br><span class="line">40                     &#125;</span><br><span class="line">41                 &#125;, &quot;t1&quot;);</span><br><span class="line">42 </span><br><span class="line">43         // 新建t2, t2会调用“count对象”的nonSynMethod()方法</span><br><span class="line">44         Thread t2 = new Thread(</span><br><span class="line">45                 new Runnable() &#123;</span><br><span class="line">46                     @Override</span><br><span class="line">47                     public void run() &#123;</span><br><span class="line">48                         count.nonSynMethod();</span><br><span class="line">49                     &#125;</span><br><span class="line">50                 &#125;, &quot;t2&quot;);  </span><br><span class="line">51 </span><br><span class="line">52 </span><br><span class="line">53         t1.start();  // 启动t1</span><br><span class="line">54         t2.start();  // 启动t2</span><br><span class="line">55     &#125; </span><br><span class="line">56 &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">t1 synMethod loop 0</span><br><span class="line">t1 synMethod loop 1</span><br><span class="line">t1 synMethod loop 2</span><br><span class="line">t1 synMethod loop 3</span><br><span class="line">t1 synMethod loop 4</span><br><span class="line">t2 nonSynMethod loop 0</span><br><span class="line">t2 nonSynMethod loop 1</span><br><span class="line">t2 nonSynMethod loop 2</span><br><span class="line">t2 nonSynMethod loop 3</span><br><span class="line">t2 nonSynMethod loop 4</span><br></pre></td></tr></table></figure>
+<p><strong>结果说明</strong>：<br>主线程中新建了两个子线程t1和t2。t1和t2运行时都调用synchronized(this)，这个this是Count对象(count)，而t1和t2共用count。因此，在t1运行时，t2会被阻塞，等待t1运行释放“count对象的同步锁”，t2才能运行。</p>
+<h3 id="3-synchronized方法-和-synchronized代码块"><a href="#3-synchronized方法-和-synchronized代码块" class="headerlink" title="3. synchronized方法 和 synchronized代码块"></a>3. synchronized方法 和 synchronized代码块</h3><p>“synchronized方法”是用synchronized修饰方法，而 “synchronized代码块”则是用synchronized修饰代码块。</p>
+<p><strong>synchronized方法示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public synchronized void foo1() &#123;</span><br><span class="line">    System.out.println(&quot;synchronized methoed&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>synchronized代码块</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public void foo2() &#123;</span><br><span class="line">    synchronized (this) &#123;</span><br><span class="line">        System.out.println(&quot;synchronized methoed&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>synchronized代码块中的this是指当前对象。也可以将this替换成其他对象，例如将this替换成obj，则foo2()在执行synchronized(obj)时就获取的是obj的同步锁。</p>
+<p>synchronized代码块可以更精确的控制冲突限制访问区域，有时候表现更高效率。下面通过一个示例来演示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"> 1 // Demo4.java的源码</span><br><span class="line"> 2 public class Demo4 &#123;</span><br><span class="line"> 3 </span><br><span class="line"> 4     public synchronized void synMethod() &#123;</span><br><span class="line"> 5         for(int i=0; i&lt;1000000; i++)</span><br><span class="line"> 6             ;</span><br><span class="line"> 7     &#125;</span><br><span class="line"> 8 </span><br><span class="line"> 9     public void synBlock() &#123;</span><br><span class="line">10         synchronized( this ) &#123;</span><br><span class="line">11             for(int i=0; i&lt;1000000; i++)</span><br><span class="line">12                 ;</span><br><span class="line">13         &#125;</span><br><span class="line">14     &#125;</span><br><span class="line">15 </span><br><span class="line">16     public static void main(String[] args) &#123;</span><br><span class="line">17         Demo4 demo = new Demo4();</span><br><span class="line">18 </span><br><span class="line">19         long start, diff;</span><br><span class="line">20         start = System.currentTimeMillis();                // 获取当前时间(millis)</span><br><span class="line">21         demo.synMethod();                                // 调用“synchronized方法”</span><br><span class="line">22         diff = System.currentTimeMillis() - start;        // 获取“时间差值”</span><br><span class="line">23         System.out.println(&quot;synMethod() : &quot;+ diff);</span><br><span class="line">24         </span><br><span class="line">25         start = System.currentTimeMillis();                // 获取当前时间(millis)</span><br><span class="line">26         demo.synBlock();                                // 调用“synchronized方法块”</span><br><span class="line">27         diff = System.currentTimeMillis() - start;        // 获取“时间差值”</span><br><span class="line">28         System.out.println(&quot;synBlock()  : &quot;+ diff);</span><br><span class="line">29     &#125;</span><br><span class="line">30 &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>(某一次)执行结果</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">synMethod() : 11</span><br><span class="line">synBlock() : 3</span><br></pre></td></tr></table></figure>
+<h3 id="4-实例锁-和-全局锁"><a href="#4-实例锁-和-全局锁" class="headerlink" title="4. 实例锁 和 全局锁"></a><strong>4. 实例锁 和 全局锁</strong></h3><p><strong>实例锁 </strong>– 锁在某一个实例对象上。如果该类是单例，那么该锁也具有全局锁的概念。<br>​               实例锁对应的就是synchronized关键字。<br><strong>全局锁</strong> – 该锁针对的是类，无论实例多少个对象，那么线程都共享该锁。<br>​               全局锁对应的就是static synchronized（或者是锁在该类的class或者classloader对象上）。</p>
+<p>关于“实例锁”和“全局锁”有一个很形象的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pulbic class Something &#123;</span><br><span class="line">    public synchronized void isSyncA()&#123;&#125;</span><br><span class="line">    public synchronized void isSyncB()&#123;&#125;</span><br><span class="line">    public static synchronized void cSyncA()&#123;&#125;</span><br><span class="line">    public static synchronized void cSyncB()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>假设，Something有两个实例x和y。分析下面4组表达式获取的锁的情况。<br>(01) <a href="http://www.cnblogs.com/skywang12345/p/3479202.html#a41" target="_blank" rel="noopener">x.isSyncA()与x.isSyncB() </a><br>(02) <a href="http://www.cnblogs.com/skywang12345/p/3479202.html#a42" target="_blank" rel="noopener">x.isSyncA()与y.isSyncA()</a><br>(03) <a href="http://www.cnblogs.com/skywang12345/p/3479202.html#a43" target="_blank" rel="noopener">x.cSyncA()与y.cSyncB()</a><br>(04) <a href="http://www.cnblogs.com/skywang12345/p/3479202.html#a44" target="_blank" rel="noopener">x.isSyncA()与Something.cSyncA()</a></p>
+<p><strong>(01) 不能被同时访问。</strong>因为isSyncA()和isSyncB()都是访问同一个对象(对象x)的同步锁！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"> 1 // LockTest1.java的源码</span><br><span class="line"> 2 class Something &#123;</span><br><span class="line"> 3     public synchronized void isSyncA()&#123;</span><br><span class="line"> 4         try &#123;  </span><br><span class="line"> 5             for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line"> 6                 Thread.sleep(100); // 休眠100ms</span><br><span class="line"> 7                 System.out.println(Thread.currentThread().getName()+&quot; : isSyncA&quot;);</span><br><span class="line"> 8             &#125;</span><br><span class="line"> 9         &#125;catch (InterruptedException ie) &#123;  </span><br><span class="line">10         &#125;  </span><br><span class="line">11     &#125;</span><br><span class="line">12     public synchronized void isSyncB()&#123;</span><br><span class="line">13         try &#123;  </span><br><span class="line">14             for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">15                 Thread.sleep(100); // 休眠100ms</span><br><span class="line">16                 System.out.println(Thread.currentThread().getName()+&quot; : isSyncB&quot;);</span><br><span class="line">17             &#125;</span><br><span class="line">18         &#125;catch (InterruptedException ie) &#123;  </span><br><span class="line">19         &#125;  </span><br><span class="line">20     &#125;</span><br><span class="line">21 &#125;</span><br><span class="line">22 </span><br><span class="line">23 public class LockTest1 &#123;</span><br><span class="line">24 </span><br><span class="line">25     Something x = new Something();</span><br><span class="line">26     Something y = new Something();</span><br><span class="line">27 </span><br><span class="line">28     // 比较(01) x.isSyncA()与x.isSyncB() </span><br><span class="line">29     private void test1() &#123;</span><br><span class="line">30         // 新建t11, t11会调用 x.isSyncA()</span><br><span class="line">31         Thread t11 = new Thread(</span><br><span class="line">32                 new Runnable() &#123;</span><br><span class="line">33                     @Override</span><br><span class="line">34                     public void run() &#123;</span><br><span class="line">35                         x.isSyncA();</span><br><span class="line">36                     &#125;</span><br><span class="line">37                 &#125;, &quot;t11&quot;);</span><br><span class="line">38 </span><br><span class="line">39         // 新建t12, t12会调用 x.isSyncB()</span><br><span class="line">40         Thread t12 = new Thread(</span><br><span class="line">41                 new Runnable() &#123;</span><br><span class="line">42                     @Override</span><br><span class="line">43                     public void run() &#123;</span><br><span class="line">44                         x.isSyncB();</span><br><span class="line">45                     &#125;</span><br><span class="line">46                 &#125;, &quot;t12&quot;);  </span><br><span class="line">47 </span><br><span class="line">48 </span><br><span class="line">49         t11.start();  // 启动t11</span><br><span class="line">50         t12.start();  // 启动t12</span><br><span class="line">51     &#125;</span><br><span class="line">52 </span><br><span class="line">53     public static void main(String[] args) &#123;</span><br><span class="line">54         LockTest1 demo = new LockTest1();</span><br><span class="line">55         demo.test1();</span><br><span class="line">56     &#125;</span><br><span class="line">57 &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">t11 : isSyncA</span><br><span class="line">t11 : isSyncA</span><br><span class="line">t11 : isSyncA</span><br><span class="line">t11 : isSyncA</span><br><span class="line">t11 : isSyncA</span><br><span class="line">t12 : isSyncB</span><br><span class="line">t12 : isSyncB</span><br><span class="line">t12 : isSyncB</span><br><span class="line">t12 : isSyncB</span><br><span class="line">t12 : isSyncB</span><br></pre></td></tr></table></figure>
+<p><strong>(02) 可以同时被访问。</strong>因为访问的不是同一个对象的同步锁，x.isSyncA()访问的是x的同步锁，而y.isSyncA()访问的是y的同步锁。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"> 1 // LockTest2.java的源码</span><br><span class="line"> 2 class Something &#123;</span><br><span class="line"> 3     public synchronized void isSyncA()&#123;</span><br><span class="line"> 4         try &#123;  </span><br><span class="line"> 5             for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line"> 6                 Thread.sleep(100); // 休眠100ms</span><br><span class="line"> 7                 System.out.println(Thread.currentThread().getName()+&quot; : isSyncA&quot;);</span><br><span class="line"> 8             &#125;</span><br><span class="line"> 9         &#125;catch (InterruptedException ie) &#123;  </span><br><span class="line">10         &#125;  </span><br><span class="line">11     &#125;</span><br><span class="line">12     public synchronized void isSyncB()&#123;</span><br><span class="line">13         try &#123;  </span><br><span class="line">14             for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">15                 Thread.sleep(100); // 休眠100ms</span><br><span class="line">16                 System.out.println(Thread.currentThread().getName()+&quot; : isSyncB&quot;);</span><br><span class="line">17             &#125;</span><br><span class="line">18         &#125;catch (InterruptedException ie) &#123;  </span><br><span class="line">19         &#125;  </span><br><span class="line">20     &#125;</span><br><span class="line">21     public static synchronized void cSyncA()&#123;</span><br><span class="line">22         try &#123;  </span><br><span class="line">23             for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">24                 Thread.sleep(100); // 休眠100ms</span><br><span class="line">25                 System.out.println(Thread.currentThread().getName()+&quot; : cSyncA&quot;);</span><br><span class="line">26             &#125; </span><br><span class="line">27         &#125;catch (InterruptedException ie) &#123;  </span><br><span class="line">28         &#125;  </span><br><span class="line">29     &#125;</span><br><span class="line">30     public static synchronized void cSyncB()&#123;</span><br><span class="line">31         try &#123;  </span><br><span class="line">32             for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">33                 Thread.sleep(100); // 休眠100ms</span><br><span class="line">34                 System.out.println(Thread.currentThread().getName()+&quot; : cSyncB&quot;);</span><br><span class="line">35             &#125; </span><br><span class="line">36         &#125;catch (InterruptedException ie) &#123;  </span><br><span class="line">37         &#125;  </span><br><span class="line">38     &#125;</span><br><span class="line">39 &#125;</span><br><span class="line">40 </span><br><span class="line">41 public class LockTest2 &#123;</span><br><span class="line">42 </span><br><span class="line">43     Something x = new Something();</span><br><span class="line">44     Something y = new Something();</span><br><span class="line">45 </span><br><span class="line">46     // 比较(02) x.isSyncA()与y.isSyncA()</span><br><span class="line">47     private void test2() &#123;</span><br><span class="line">48         // 新建t21, t21会调用 x.isSyncA()</span><br><span class="line">49         Thread t21 = new Thread(</span><br><span class="line">50                 new Runnable() &#123;</span><br><span class="line">51                     @Override</span><br><span class="line">52                     public void run() &#123;</span><br><span class="line">53                         x.isSyncA();</span><br><span class="line">54                     &#125;</span><br><span class="line">55                 &#125;, &quot;t21&quot;);</span><br><span class="line">56 </span><br><span class="line">57         // 新建t22, t22会调用 x.isSyncB()</span><br><span class="line">58         Thread t22 = new Thread(</span><br><span class="line">59                 new Runnable() &#123;</span><br><span class="line">60                     @Override</span><br><span class="line">61                     public void run() &#123;</span><br><span class="line">62                         y.isSyncA();</span><br><span class="line">63                     &#125;</span><br><span class="line">64                 &#125;, &quot;t22&quot;);  </span><br><span class="line">65 </span><br><span class="line">66 </span><br><span class="line">67         t21.start();  // 启动t21</span><br><span class="line">68         t22.start();  // 启动t22</span><br><span class="line">69     &#125;</span><br><span class="line">70 </span><br><span class="line">71     public static void main(String[] args) &#123;</span><br><span class="line">72         LockTest2 demo = new LockTest2();</span><br><span class="line">73 </span><br><span class="line">74         demo.test2();</span><br><span class="line">75     &#125;</span><br><span class="line">76 &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">t21 : isSyncA</span><br><span class="line">t22 : isSyncA</span><br><span class="line">t21 : isSyncA</span><br><span class="line">t22 : isSyncA</span><br><span class="line">t21 : isSyncA</span><br><span class="line">t22 : isSyncA</span><br><span class="line">t21 : isSyncA</span><br><span class="line">t22 : isSyncA</span><br><span class="line">t21 : isSyncA</span><br><span class="line">t22 : isSyncA</span><br></pre></td></tr></table></figure>
+<p><strong>(03) 不能被同时访问。</strong>因为cSyncA()和cSyncB()都是static类型，x.cSyncA()相当于Something.isSyncA()，y.cSyncB()相当于Something.isSyncB()，因此它们共用一个同步锁，不能被同时反问。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"> 1 // LockTest3.java的源码</span><br><span class="line"> 2 class Something &#123;</span><br><span class="line"> 3     public synchronized void isSyncA()&#123;</span><br><span class="line"> 4         try &#123;  </span><br><span class="line"> 5             for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line"> 6                 Thread.sleep(100); // 休眠100ms</span><br><span class="line"> 7                 System.out.println(Thread.currentThread().getName()+&quot; : isSyncA&quot;);</span><br><span class="line"> 8             &#125;</span><br><span class="line"> 9         &#125;catch (InterruptedException ie) &#123;  </span><br><span class="line">10         &#125;  </span><br><span class="line">11     &#125;</span><br><span class="line">12     public synchronized void isSyncB()&#123;</span><br><span class="line">13         try &#123;  </span><br><span class="line">14             for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">15                 Thread.sleep(100); // 休眠100ms</span><br><span class="line">16                 System.out.println(Thread.currentThread().getName()+&quot; : isSyncB&quot;);</span><br><span class="line">17             &#125;</span><br><span class="line">18         &#125;catch (InterruptedException ie) &#123;  </span><br><span class="line">19         &#125;  </span><br><span class="line">20     &#125;</span><br><span class="line">21     public static synchronized void cSyncA()&#123;</span><br><span class="line">22         try &#123;  </span><br><span class="line">23             for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">24                 Thread.sleep(100); // 休眠100ms</span><br><span class="line">25                 System.out.println(Thread.currentThread().getName()+&quot; : cSyncA&quot;);</span><br><span class="line">26             &#125; </span><br><span class="line">27         &#125;catch (InterruptedException ie) &#123;  </span><br><span class="line">28         &#125;  </span><br><span class="line">29     &#125;</span><br><span class="line">30     public static synchronized void cSyncB()&#123;</span><br><span class="line">31         try &#123;  </span><br><span class="line">32             for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">33                 Thread.sleep(100); // 休眠100ms</span><br><span class="line">34                 System.out.println(Thread.currentThread().getName()+&quot; : cSyncB&quot;);</span><br><span class="line">35             &#125; </span><br><span class="line">36         &#125;catch (InterruptedException ie) &#123;  </span><br><span class="line">37         &#125;  </span><br><span class="line">38     &#125;</span><br><span class="line">39 &#125;</span><br><span class="line">40 </span><br><span class="line">41 public class LockTest3 &#123;</span><br><span class="line">42 </span><br><span class="line">43     Something x = new Something();</span><br><span class="line">44     Something y = new Something();</span><br><span class="line">45 </span><br><span class="line">46     // 比较(03) x.cSyncA()与y.cSyncB()</span><br><span class="line">47     private void test3() &#123;</span><br><span class="line">48         // 新建t31, t31会调用 x.isSyncA()</span><br><span class="line">49         Thread t31 = new Thread(</span><br><span class="line">50                 new Runnable() &#123;</span><br><span class="line">51                     @Override</span><br><span class="line">52                     public void run() &#123;</span><br><span class="line">53                         x.cSyncA();</span><br><span class="line">54                     &#125;</span><br><span class="line">55                 &#125;, &quot;t31&quot;);</span><br><span class="line">56 </span><br><span class="line">57         // 新建t32, t32会调用 x.isSyncB()</span><br><span class="line">58         Thread t32 = new Thread(</span><br><span class="line">59                 new Runnable() &#123;</span><br><span class="line">60                     @Override</span><br><span class="line">61                     public void run() &#123;</span><br><span class="line">62                         y.cSyncB();</span><br><span class="line">63                     &#125;</span><br><span class="line">64                 &#125;, &quot;t32&quot;);  </span><br><span class="line">65 </span><br><span class="line">66 </span><br><span class="line">67         t31.start();  // 启动t31</span><br><span class="line">68         t32.start();  // 启动t32</span><br><span class="line">69     &#125;</span><br><span class="line">70 </span><br><span class="line">71     public static void main(String[] args) &#123;</span><br><span class="line">72         LockTest3 demo = new LockTest3();</span><br><span class="line">73 </span><br><span class="line">74         demo.test3();</span><br><span class="line">75     &#125;</span><br><span class="line">76 &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">t31 : cSyncA</span><br><span class="line">t31 : cSyncA</span><br><span class="line">t31 : cSyncA</span><br><span class="line">t31 : cSyncA</span><br><span class="line">t31 : cSyncA</span><br><span class="line">t32 : cSyncB</span><br><span class="line">t32 : cSyncB</span><br><span class="line">t32 : cSyncB</span><br><span class="line">t32 : cSyncB</span><br><span class="line">t32 : cSyncB</span><br></pre></td></tr></table></figure>
+<p><strong>(04) 可以被同时访问。</strong>因为isSyncA()是实例方法，x.isSyncA()使用的是对象x的锁；而cSyncA()是静态方法，Something.cSyncA()可以理解对使用的是“类的锁”。因此，它们是可以被同时访问的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"> 1 // LockTest4.java的源码</span><br><span class="line"> 2 class Something &#123;</span><br><span class="line"> 3     public synchronized void isSyncA()&#123;</span><br><span class="line"> 4         try &#123;  </span><br><span class="line"> 5             for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line"> 6                 Thread.sleep(100); // 休眠100ms</span><br><span class="line"> 7                 System.out.println(Thread.currentThread().getName()+&quot; : isSyncA&quot;);</span><br><span class="line"> 8             &#125;</span><br><span class="line"> 9         &#125;catch (InterruptedException ie) &#123;  </span><br><span class="line">10         &#125;  </span><br><span class="line">11     &#125;</span><br><span class="line">12     public synchronized void isSyncB()&#123;</span><br><span class="line">13         try &#123;  </span><br><span class="line">14             for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">15                 Thread.sleep(100); // 休眠100ms</span><br><span class="line">16                 System.out.println(Thread.currentThread().getName()+&quot; : isSyncB&quot;);</span><br><span class="line">17             &#125;</span><br><span class="line">18         &#125;catch (InterruptedException ie) &#123;  </span><br><span class="line">19         &#125;  </span><br><span class="line">20     &#125;</span><br><span class="line">21     public static synchronized void cSyncA()&#123;</span><br><span class="line">22         try &#123;  </span><br><span class="line">23             for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">24                 Thread.sleep(100); // 休眠100ms</span><br><span class="line">25                 System.out.println(Thread.currentThread().getName()+&quot; : cSyncA&quot;);</span><br><span class="line">26             &#125; </span><br><span class="line">27         &#125;catch (InterruptedException ie) &#123;  </span><br><span class="line">28         &#125;  </span><br><span class="line">29     &#125;</span><br><span class="line">30     public static synchronized void cSyncB()&#123;</span><br><span class="line">31         try &#123;  </span><br><span class="line">32             for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">33                 Thread.sleep(100); // 休眠100ms</span><br><span class="line">34                 System.out.println(Thread.currentThread().getName()+&quot; : cSyncB&quot;);</span><br><span class="line">35             &#125; </span><br><span class="line">36         &#125;catch (InterruptedException ie) &#123;  </span><br><span class="line">37         &#125;  </span><br><span class="line">38     &#125;</span><br><span class="line">39 &#125;</span><br><span class="line">40 </span><br><span class="line">41 public class LockTest4 &#123;</span><br><span class="line">42 </span><br><span class="line">43     Something x = new Something();</span><br><span class="line">44     Something y = new Something();</span><br><span class="line">45 </span><br><span class="line">46     // 比较(04) x.isSyncA()与Something.cSyncA()</span><br><span class="line">47     private void test4() &#123;</span><br><span class="line">48         // 新建t41, t41会调用 x.isSyncA()</span><br><span class="line">49         Thread t41 = new Thread(</span><br><span class="line">50                 new Runnable() &#123;</span><br><span class="line">51                     @Override</span><br><span class="line">52                     public void run() &#123;</span><br><span class="line">53                         x.isSyncA();</span><br><span class="line">54                     &#125;</span><br><span class="line">55                 &#125;, &quot;t41&quot;);</span><br><span class="line">56 </span><br><span class="line">57         // 新建t42, t42会调用 x.isSyncB()</span><br><span class="line">58         Thread t42 = new Thread(</span><br><span class="line">59                 new Runnable() &#123;</span><br><span class="line">60                     @Override</span><br><span class="line">61                     public void run() &#123;</span><br><span class="line">62                         Something.cSyncA();</span><br><span class="line">63                     &#125;</span><br><span class="line">64                 &#125;, &quot;t42&quot;);  </span><br><span class="line">65 </span><br><span class="line">66 </span><br><span class="line">67         t41.start();  // 启动t41</span><br><span class="line">68         t42.start();  // 启动t42</span><br><span class="line">69     &#125;</span><br><span class="line">70 </span><br><span class="line">71     public static void main(String[] args) &#123;</span><br><span class="line">72         LockTest4 demo = new LockTest4();</span><br><span class="line">73 </span><br><span class="line">74         demo.test4();</span><br><span class="line">75     &#125;</span><br><span class="line">76 &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">t41 : isSyncA</span><br><span class="line">t42 : cSyncA</span><br><span class="line">t41 : isSyncA</span><br><span class="line">t42 : cSyncA</span><br><span class="line">t41 : isSyncA</span><br><span class="line">t42 : cSyncA</span><br><span class="line">t41 : isSyncA</span><br><span class="line">t42 : cSyncA</span><br><span class="line">t41 : isSyncA</span><br><span class="line">t42 : cSyncA</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2018/05/18/tomcat-setting/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/18/tomcat-setting/" itemprop="url">tomcat相关配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-18T09:24:25+08:00">
+                2018-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>原因是因为在tomcat重启的时候，之前的tomcat的线程还没有完全关闭，最新启动tomcat就会报这个异常，只要把tomcat的server.xml 中的reloadable=”true” 改成false就OK</p>
+<p>大家看过这个帖子后说没有找到对应的配置，其实就存在于Context节点中，一下是我截取的Tomcat中文一个文档中的注释：<br>Context(表示一个web应用程序，通常为WAR文件，关于WAR的具体信息见servlet规范)    docBase    应用程序的路径或者是WAR文件存放的路径<br>path    表示此web应用程序的url的前缀，这样请求的url为<a href="http://localhost:8080/path/****" target="_blank" rel="noopener">http://localhost:8080/path/****</a><br>reloadable    这个属性非常重要，如果为true，则tomcat会自动检测应用程序的/WEB-INF/lib 和/WEB-INF/classes目录的变化，自动装载新的应用程序，我们可以在不重起tomcat的情况下改变应用程序</p>
+<p>Tomcat应用更新时，把新的WAR包放到webapps目录下，Tomcat就会自动把原来的同名webapp删除，并把WAR包解压，运行新的 webapp。<br>但是，有时候Tomcat并不能把旧的webapp完全删除，通常会留下WEB-INF/lib下的某个jar包，必须关闭Tomcat才能删除，这就导致自动部署失败。<br>解决方法是在<context>元素中增加一个属性antiResourceLocking=”true” antiJARLocking=”true”，默认是”false”。<br>这样就可以热部署了。<br>实际上，这两个参数就是配置Tomcat的资源锁定和Jar包锁定策略。<br>（1）antiJARLocking<br> 先来看看应用的antiJARLocking属性设置为true时，Tomcat是怎么处理的。<br>针对antiJARLocking属性的处理集中在WebappClassLoader的getResource和findResourceInternal方法里，主要原理是将包含在Jar包里的资源抽取放到应用的工作目录（work里应用对应的目录）下去。<br> 把这个属性设置为true之后，部署应用就可以在work\Catalina\localhost\struts2-blank\loader目录下看到被解压的Jar包内容。<br>antiJARLocking属性在有的时候并不会生效，从WebappClassLoader的getResource和findResource方法逻辑里可以看出一些端倪，在一些情况下（通过对Loader的delegate、searchExternalFirst等相关属性进行配置），资源的获取并不是WebappClassLoader去做的，而是其父加载器的getResource方法或父类的findResource方法去做的，WebappClassLoader的父类是URLClassLoader、父加载器是URLClassLoader实例。</context></p>
+<p>（2）antiResourceLocking<br> 当antiResourceLocking设置为true的时候，Tomcat不会锁定应用下的任何文件。那Tomcat是怎么做到这一点的呢？<br>在Tomcat的架构里，应用也是一个级别的容器，对应的接口是Context；各级容器本身都具备生命周期，而且配置了多个生命周期监听器来监听容器不同的生命周期过程。Tomcat在初始化的时候，给Context增加了一个生命周期监听器org.apache.catalina.startup.ContextConfig；然后在Context真正开始启动之前，会有一个BEFORE_START_EVENT状态，ContextConfig监听到这个状态的事件后，就会针对antiResourceLocking进行处理。<br>总结一下，就是如果应用的antiResourceLocking属性设置为true，就将应用的doc base移到临时目录下，让Tomca不会占用webapps下的文件。Tomcat里java.io.tmpdir默认指向Tomcat的temp目录。<br>副作用<br>从上面的分析来看，antiResourceLocking为true有几个副作用：<br>1) 会延长应用的启动时间，因为多了临时目录的清理和往临时目录拷贝应用内容的操作；a<br>2) 如果不知道这个属性的原理，修改webapps下应用的JSP，那就不会动态重加载到新的页面内容了，因为应用的doc base已经不再在webapps下了；<br>3) 停止Tomcat的时候，临时目录下实际的doc base会被删掉，<br>结合第二条和第三条，如果要修改应用的JSP，那必须将改动同时拷贝到两个目录下（原始doc base和临时目录下的doc base）。<br>所以Tomcat里这个属性缺省为false。在使用Tomcat 6.0.24之前的版本时，如果要用这个属性解决文件被锁的问题，三思而行。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2018/05/18/tomcat-outofmem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/18/tomcat-outofmem/" itemprop="url">tomcat-outofmem</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-18T09:06:01+08:00">
+                2018-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Tomcat内存溢出的原因　</p>
+<p>　在生产环境中tomcat内存设置不好很容易出现内存溢出。造成内存溢出是不一样的，当然处理方式也不一样。　　这里根据平时遇到的情况和相关资料进行一个总结。常见的一般会有下面三种情况：　</p>
+<ol>
+<li><p>OutOfMemoryError： Java heap space　　</p>
+</li>
+<li><p>OutOfMemoryError： PermGen space　　</p>
+</li>
+<li><p>OutOfMemoryError： unable to create new native thread.　　</p>
+</li>
+</ol>
+<p>Tomcat内存溢出解决方案　　对于前两种情况，在应用本身没有内存泄露的情况下可以用设置tomcat jvm参数来解决。（-Xms -Xmx-XX：PermSize -XX：MaxPermSize）　　最后一种可能需要调整操作系统和tomcat jvm参数同时调整才能达到目的。　　<br>第一种：是堆溢出。　　<br>原因分析：JVM堆的设置是指java程序运行过程中JVM可以调配使用的内存空间的设置.JVM在启动的时候会自动设置Heapsize的值，其初始空间(即-Xms)是物理内存的1/64，最大空间(-Xmx)是物理内存的1/4。可以利用JVM提供的-Xmn-Xms -Xmx等选项可进行设置。Heap size 的大小是Young Generation 和Tenured Generaion之和。在JVM中如果98％的时间是用于GC且可用的Heap size 不足2％的时候将抛出此异常信息。Heap Size最大不要超过可用物理内存的80％，一般的要将-Xms和-Xmx选项设置为相同，而-Xmn为1/4的-Xmx值。　　没有内存泄露的情况下，调整-Xms -Xmx参数可以解决。　　-Xms：初始堆大小　　-Xmx：最大堆大小　　但堆的大小受下面三方面影响：　　1.相关操作系统的数据模型（32-bt还是64-bit）限制；（32位系统下，一般限制在1.5G~2G；我在2003 server系统下（物理内存：4G和6G，jdk：1.6）测试 1612M，64位操作系统对内存无限制。）　　2.系统的可用虚拟内存限制；　　3.系统的可用物理内存限制。　　堆的大小可以使用 java -Xmx<strong>*M version 命令来测试。支持的话会出现jdk的版本号，不支持会报错。　　-Xms -Xmx一般配置成一样比较好比如set JAVA_OPTS= -Xms1024m-Xmx1024m<br>其初始空间(即-Xms)是物理内存的1/64，最大空间(-Xmx)是物理内存的1/4。可以利用JVM提供的-Xmn -Xms-Xmx等选项可进行设置实例，以下给出1G内存环境下java jvm 的参数设置参考：JAVA_OPTS=”-server -Xms800m -Xmx800m -XX:PermSize=64M -XX:</strong>MaxNewSize<strong>=256m-XX:MaxPermSize=128m -Djava.awt.headless=true “JAVA_OPTS=”-server -Xms768m -Xmx768m -XX:PermSize=128m-XX:MaxPermSize=256m -XX:NewSize=192m -XX:</strong>MaxNewSize<strong>=384m”CATALINA_OPTS=”-server -Xms768m -Xmx768m -XX:PermSize=128m-XX:MaxPermSize=256m-XX:NewSize=192m -XX:</strong>MaxNewSize**=384m”</p>
+<p>服务器为1G内存：JAVA_OPTS=”-server -Xms800m -Xmx800m-XX:PermSize=64M -XX:<strong>MaxNewSize</strong>=256m-XX:MaxPermSize=128m -Djava.awt.headless=true “服务器为64位、2G内存: JAVA_OPTS=’-server -Xms1024m -Xmx1536m-XX:PermSize=128M -XX:<strong>MaxNewSize</strong>=256m-XX:MaxPermSize=256m’</p>
+<p>——————-解决方案1：—————————–前提：是执行startup.bat启动tomcat的方式Linux服务器：在/usr/local/apache-tomcat-5.5.23/bin 目录下的catalina.sh添加：JAVA_OPTS=’-Xms512m -Xmx1024m’ 或者 JAVA_OPTS=”-server -Xms800m-Xmx800m   -XX:<strong>MaxNewSize</strong>=256m”或者 CATALINA_OPTS=”-server -Xms256m -Xmx300m”Windows服务器：在catalina.bat最前面加入set JAVA_OPTS=-Xms128m -Xmx350m或者set CATALINA_OPTS=-Xmx300M -Xms256M（区别是一个直接设置jvm内存，另一个设置tomcat内存，CATALINA_OPTS似乎可以与JAVA_OPTS不加区别的使用）基本参数说明-client，-server这两个参数用于设置虚拟机使用何种运行模式，一定要作为第一个参数，client模式启动比较快，但运行时性能和内存管理效率不如server模式，通常用于客户端应用程序。相反，server模式启动比client慢，但可获得更高的运行性能。在windows上，缺省的虚拟机类型为client模式，如果要使用server模式，就需要在启动虚拟机时加-server参数，以获得更高性能，对服务器端应用，推荐采用server模式，尤其是多个CPU的系统。在Linux，Solaris上缺省采用server模式。 此外，在多cup下，建议用server模式</p>
+<p>-Xms<size>设置虚拟机可用内存堆的初始大小，缺省单位为字节，该大小为1024的整数倍并且要大于1MB，可用k(K)或m(M)为单位来设置较大的内存数。初始堆大小为2MB。加“m”说明是MB，否则就是KB了。例如：-Xms6400K，-Xms256M-Xmx<size>设置虚拟机的最大可用大小，缺省单位为字节。该值必须为1024整数倍，并且要大于2MB。可用k(K)或m(M)为单位来设置较大的内存数。缺省堆最大值为64MB。例如：-Xmx81920K，-Xmx80M当应用程序申请了大内存运行时虚拟机抛出java.lang.OutOfMemoryError: Java heapspace错误，就需要使用-Xmx设置较大的可用内存堆。PermSize/MaxPermSize：定义Perm段的尺寸，即永久保存区域的大小，PermSize为JVM启动时初始化Perm的内存大小；MaxPermSize为最大可占用的Perm内存大小。在用户生产环境上一般将这两个值设为相同，以减少运行期间系统在内存申请上所花的开销。</size></size></p>
+<p>如果用startup.bat启动tomcat,OK设置生效.够成功的分配200M内存.——————-解决方案2：————————前提：是执行startup.bat启动tomcat的方式手动设置Heap sizeWindows服务器：修改TOMCAT_HOME/bin/catalina.bat，在“echo “Using CATALINA_BASE:$CATALINA_BASE””上面加入以下行：Java代码set JAVA_OPTS=%JAVA_OPTS% -server -Xms800m -Xmx800m -XX:<strong>MaxNewSize</strong>=256m        注：JAVA_OPTS是保留先前设置。Linux服务器：修改TOMCAT_HOME/bin/catalina.sh在“echo “Using CATALINA_BASE: $CATALINA_BASE””上面加入以下行：JAVA_OPTS=”$JAVA_OPTS -server -Xms800m -Xmx800m -XX:<strong>MaxNewSize</strong>=256m”</p>
+<p>注：$JAVA_OPTS是保留先前设置。——————-解决方案3：—————————–前提：是执行windows的系统服务启动tomcat的方式但是如果不是执行startup.bat启动tomcat而是利用windows的系统服务启动tomcat服务,上面的设置就不生效了,就是说set JAVA_OPTS=-Xms128m -Xmx350m 没起作用.上面分配200M内存就OOM了..windows服务执行的是bin\tomcat.exe.他读取注册表中的值,而不是catalina.bat的设置.</p>
+<p>解决办法:修改注册表HKEY_LOCAL_MACHINE\SOFTWARE\Apache Software Foundation\TomcatService Manager\Tomcat5\Parameters\JavaOptions原值为-Dcatalina.home=”C:\ApacheGroup\Tomcat 5.0”-Djava.endorsed.dirs=”C:\ApacheGroup\Tomcat5.0\common\endorsed”-Xrs加入 -Xms300m -Xmx350m 重起tomcat服务,设置生效——————-解决方案4：—————————–前提：是执行windows的系统服务启动tomcat的方式在安装tomcat时若有勾选”NT Service(NT/2000/XP only)”则安装完成后在安装目录的”bin”目录里会有一个tomcat.exe的档案先把tomcat的服务停掉在命令列模式下（运行里输入CMD）将目录切换到tomcat的bin目录用下面的命令把服务移除 tomcat -uninstall “Apache Tomcat 4.1” 接下来，写个批处理。内容如下set SERVICENAME=Apache Tomcat 4.1set CATALINA_HOME=E:\Tomcat 4.1.24set CLASSPATH=D:\j2sdk1.4.1_01\libset JAVACLASSPATH=%CLASSPATH%setJAVACLASSPATH=%JAVACLASSPATH%;�TALINA_HOME%\bin\bootstrap.jarsetJAVACLASSPATH=%JAVACLASSPATH%;�TALINA_HOME%\common\lib\servlet.jarset JAVACLASSPATH=%JAVACLASSPATH%;%JAVA_HOME%\lib\tools.jartomcat.exe -install “%SERVICENAME%””%JAVA_HOME%\jre\bin\server\jvm.dll”-Djava.class.path=”%JAVACLASSPATH%” -Dcatalina.home=”�TALINA_HOME%”-Xms512m -Xmx768m -start org.apache.catalina.startup.Bootstrap-params start -stop org.apache.catalina.startup.Bootstrap -paramsstop -out “�TALINA_HOME%\logs\stdout.log” -err”�TALINA_HOME%\logs\stderr.log” 注意，从 tomcat.exe-install开始的是最后一行！不要手工回车换行把这一行分成了好几段。保存后在命令行下执行这个bat文件，注意执行的时候将“服务”窗口关闭。</p>
+<p>第二种：永久保存区域溢出　原因分析：PermGen space的全称是Permanent Generationspace,是指内存的永久保存区域，这块内存主要是被JVM存放Class和Meta信息的,Class在被Loader时就会被放到PermGenspace中，它和存放类实例(Instance)的Heap区域不同,GC(GarbageCollection)不会在主程序运行期对PermGenspace进行清理，所以如果你的应用中有很CLASS的话,就很可能出现PermGenspace错误，这种错误常见在web服务器对JSP进行pre compile的时候。如果你的WEB APP下都用了大量的第三方jar,其大小超过了jvm默认的大小(4M)那么就会产生此错误信息了。但目前的hibernate和spring项目中也很容易出现这样的问题。可能是由于这些框架会动态class，而且jvm的gc是不会清理PemGenspace的，超过了jvm默认的大小(4M)，导致内存溢出。　　建议：将相同的第三方jar文件移置到tomcat/shared/lib目录下，这样可以达到减少jar文档重复占用内存的目的。这一个一般是加大-XX：PermSize -XX：MaxPermSize 来解决问题。　　-XX：PermSize 永久保存区域初始大小　　-XX：PermSize 永久保存区域初始最大值　　这一般结合第一条使用，比如 set JAVA_OPTS= -Xms1024m -Xmx1024m-XX：PermSize=128M -XX：PermSize=256M　　有一点需要注意：java -Xmx<strong>*M version 命令来测试的最大堆内存是 -Xmx与 -XX：PermSize的和比如系统支持最大的jvm堆大小事1.5G，那 -Xmx1024m -XX：PermSize=768M 是无法运行的。—————–解决方案1：————————-Linux服务器：在catalina.sh的第一行增加：JAVA_OPTS=-Xms64m-Xmx256m-XX:PermSize=128M-XX:</strong>MaxNewSize<strong>=256m-XX:MaxPermSize=256m或者在“echo “Using CATALINA_BASE:  $CATALINA_BASE””上面加入以下行：JAVA_OPTS=”-server -XX:PermSize=64M -XX:MaxPermSize=128mWindows服务器：在catalina.bat的第一行增加：set JAVA_OPTS=-Xms64m -Xmx256m -XX:PermSize=128M -XX:</strong>MaxNewSize**=256m-XX:MaxPermSize=256m —————–解决方案2：————————修改TOMCAT_HOME/bin/catalina.bat（Linux下为catalina.sh），在Java代码“echo “Using CATALINA_BASE:$CATALINA_BASE””上面加入以下行：   set JAVA_OPTS=%JAVA_OPTS% -server -XX:PermSize=128M-XX:MaxPermSize=512m  </p>
+<p>“echo “Using CATALINA_BASE:$CATALINA_BASE””上面加入以下行：set JAVA_OPTS=%JAVA_OPTS% -server -XX:PermSize=128M-XX:MaxPermSize=512m</p>
+<h1 id="catalina-sh下为：Java代码JAVA-OPTS-”-JAVA-OPTS-server-XX-PermSize-128M-XX-MaxPermSize-512m”"><a href="#catalina-sh下为：Java代码JAVA-OPTS-”-JAVA-OPTS-server-XX-PermSize-128M-XX-MaxPermSize-512m”" class="headerlink" title="catalina.sh下为：Java代码JAVA_OPTS=”$JAVA_OPTS -server -XX:PermSize=128M-XX:MaxPermSize=512m”"></a>catalina.sh下为：Java代码JAVA_OPTS=”$JAVA_OPTS -server -XX:PermSize=128M-XX:MaxPermSize=512m”</h1><h1 id="JAVA-OPTS-”-JAVA-OPTS-server-XX-PermSize-128M-XX-MaxPermSize-512m”"><a href="#JAVA-OPTS-”-JAVA-OPTS-server-XX-PermSize-128M-XX-MaxPermSize-512m”" class="headerlink" title="JAVA_OPTS=”$JAVA_OPTS -server -XX:PermSize=128M-XX:MaxPermSize=512m”"></a>JAVA_OPTS=”$JAVA_OPTS -server -XX:PermSize=128M-XX:MaxPermSize=512m”</h1><h1 id="第三种：无法创建新的线程。-这种现象比较少见，也比较奇怪，主要是和jvm与系统内存的比例有关。-这种怪事是因为JVM已经被系统分配了大量的内存（比如1-5G），并且它至少要占用可用内存的一半。有人发现，在线程个数很多的情况下，你分配给JVM的内存越多，那么，上述错误发生的可能性就越大。-原因分析（从这个blog中了解到原因：http-hi-baidu-com-hexiong-blog-item-16dc9e518fb10c2542a75b3c-html）：-每一个32位的进程最多可以使用2G的可用内存，因为另外2G被操作系统保留。这里假设使用1-5G给JVM，那么还余下500M可用内存。这500M内存中的一部分必须用于系统dll的加载，那么真正剩下的也许只有400M，现在关键的地方出现了：当你使用Java创建一个线程，在JVM的内存里也会创建一个Thread对象，但是同时也会在操作系统里创建一个真正的物理线程（参考JVM规范），操作系统会在余下的400兆内存里创建这个物理线程，而不是在JVM的1500M的内存堆里创建。在jdk1-4里头，默认的栈大小是256KB，但是在jdk1-5里头，默认的栈大小为1M每线程，因此，在余下400M的可用内存里边我们最多也只能创建400个可用线程。-这样结论就出来了，要想创建更多的线程，你必须减少分配给JVM的最大内存。还有一种做法是让JVM宿主在你的JNI代码里边。-给出一个有关能够创建线程的最大个数的估算公式：-（MaxProcessMemory-JVMMemory-ReservedOsMemory）-（ThreadStackSize）-Number-of-threads-对于jdk1-5而言，假设操作系统保留120M内存：-1-5GB-JVM：-（2GB-1-5Gb-120MB）-（1MB）-380-threads-1-0GB-JVM：-（2GB-1-0Gb-120MB）-（1MB）-880-threads-在2000-XP-2003的boot-ini里头有一个启动选项，好像是：-PAE-3G，可以让用户进程最大内存扩充至3G，这时操作系统只能占用最多1G的虚存。那样应该可以让JVM创建更多的线程。-因此这种情况需要结合操作系统进行相关调整。-因此：我们需要结合不同情况对tomcat内存分配进行不同的诊断才能从根本上解决问题。-检测当前JVM内存使用情况：System-out-println-“JVM-MAX-MEMORY-“-Runtime-getRuntime-maxMemory-1024-1024-”M”-System-out-println-“JVM-IS-USING-MEMORY-”-Runtime-getRuntime-totalMemory-1024-1024-”M”-System-out-println-“JVM-IS-FREE-MEMORY-”-Runtime-getRuntime-freeMemory-1024-1024-”M”"><a href="#第三种：无法创建新的线程。-这种现象比较少见，也比较奇怪，主要是和jvm与系统内存的比例有关。-这种怪事是因为JVM已经被系统分配了大量的内存（比如1-5G），并且它至少要占用可用内存的一半。有人发现，在线程个数很多的情况下，你分配给JVM的内存越多，那么，上述错误发生的可能性就越大。-原因分析（从这个blog中了解到原因：http-hi-baidu-com-hexiong-blog-item-16dc9e518fb10c2542a75b3c-html）：-每一个32位的进程最多可以使用2G的可用内存，因为另外2G被操作系统保留。这里假设使用1-5G给JVM，那么还余下500M可用内存。这500M内存中的一部分必须用于系统dll的加载，那么真正剩下的也许只有400M，现在关键的地方出现了：当你使用Java创建一个线程，在JVM的内存里也会创建一个Thread对象，但是同时也会在操作系统里创建一个真正的物理线程（参考JVM规范），操作系统会在余下的400兆内存里创建这个物理线程，而不是在JVM的1500M的内存堆里创建。在jdk1-4里头，默认的栈大小是256KB，但是在jdk1-5里头，默认的栈大小为1M每线程，因此，在余下400M的可用内存里边我们最多也只能创建400个可用线程。-这样结论就出来了，要想创建更多的线程，你必须减少分配给JVM的最大内存。还有一种做法是让JVM宿主在你的JNI代码里边。-给出一个有关能够创建线程的最大个数的估算公式：-（MaxProcessMemory-JVMMemory-ReservedOsMemory）-（ThreadStackSize）-Number-of-threads-对于jdk1-5而言，假设操作系统保留120M内存：-1-5GB-JVM：-（2GB-1-5Gb-120MB）-（1MB）-380-threads-1-0GB-JVM：-（2GB-1-0Gb-120MB）-（1MB）-880-threads-在2000-XP-2003的boot-ini里头有一个启动选项，好像是：-PAE-3G，可以让用户进程最大内存扩充至3G，这时操作系统只能占用最多1G的虚存。那样应该可以让JVM创建更多的线程。-因此这种情况需要结合操作系统进行相关调整。-因此：我们需要结合不同情况对tomcat内存分配进行不同的诊断才能从根本上解决问题。-检测当前JVM内存使用情况：System-out-println-“JVM-MAX-MEMORY-“-Runtime-getRuntime-maxMemory-1024-1024-”M”-System-out-println-“JVM-IS-USING-MEMORY-”-Runtime-getRuntime-totalMemory-1024-1024-”M”-System-out-println-“JVM-IS-FREE-MEMORY-”-Runtime-getRuntime-freeMemory-1024-1024-”M”" class="headerlink" title="　　第三种：无法创建新的线程。　　这种现象比较少见，也比较奇怪，主要是和jvm与系统内存的比例有关。　　这种怪事是因为JVM已经被系统分配了大量的内存（比如1.5G），并且它至少要占用可用内存的一半。有人发现，在线程个数很多的情况下，你分配给JVM的内存越多，那么，上述错误发生的可能性就越大。　　原因分析（从这个blog中了解到原因：http://hi.baidu.com/hexiong/blog/item/16dc9e518fb10c2542a75b3c.html）：　　每一个32位的进程最多可以使用2G的可用内存，因为另外2G被操作系统保留。这里假设使用1.5G给JVM，那么还余下500M可用内存。这500M内存中的一部分必须用于系统dll的加载，那么真正剩下的也许只有400M，现在关键的地方出现了：当你使用Java创建一个线程，在JVM的内存里也会创建一个Thread对象，但是同时也会在操作系统里创建一个真正的物理线程（参考JVM规范），操作系统会在余下的400兆内存里创建这个物理线程，而不是在JVM的1500M的内存堆里创建。在jdk1.4里头，默认的栈大小是256KB，但是在jdk1.5里头，默认的栈大小为1M每线程，因此，在余下400M的可用内存里边我们最多也只能创建400个可用线程。　　这样结论就出来了，要想创建更多的线程，你必须减少分配给JVM的最大内存。还有一种做法是让JVM宿主在你的JNI代码里边。　　给出一个有关能够创建线程的最大个数的估算公式：　　（MaxProcessMemory - JVMMemory - ReservedOsMemory） /（ThreadStackSize） = Number of threads　　对于jdk1.5而言，假设操作系统保留120M内存：　　1.5GB JVM： （2GB-1.5Gb-120MB）/（1MB） = ~380 threads　　1.0GB JVM： （2GB-1.0Gb-120MB）/（1MB） = ~880 threads　　在2000/XP/2003的boot.ini里头有一个启动选项，好像是：/PAE /3G，可以让用户进程最大内存扩充至3G，这时操作系统只能占用最多1G的虚存。那样应该可以让JVM创建更多的线程。　　因此这种情况需要结合操作系统进行相关调整。　　因此：我们需要结合不同情况对tomcat内存分配进行不同的诊断才能从根本上解决问题。 检测当前JVM内存使用情况：System.out.println(“JVM MAX MEMORY: “ +Runtime.getRuntime().maxMemory()/1024/1024+”M”);System.out.println(“JVM IS USING MEMORY:” +Runtime.getRuntime().totalMemory()/1024/1024+”M”);System.out.println(“JVM IS FREE MEMORY:” +Runtime.getRuntime().freeMemory()/1024/1024+”M”);"></a>　　第三种：无法创建新的线程。　　这种现象比较少见，也比较奇怪，主要是和jvm与系统内存的比例有关。　　这种怪事是因为JVM已经被系统分配了大量的内存（比如1.5G），并且它至少要占用可用内存的一半。有人发现，在线程个数很多的情况下，你分配给JVM的内存越多，那么，上述错误发生的可能性就越大。　　原因分析（从这个blog中了解到原因：<a href="http://hi.baidu.com/hexiong/blog/item/16dc9e518fb10c2542a75b3c.html" target="_blank" rel="noopener">http://hi.baidu.com/hexiong/blog/item/16dc9e518fb10c2542a75b3c.html</a>）：　　每一个32位的进程最多可以使用2G的可用内存，因为另外2G被操作系统保留。这里假设使用1.5G给JVM，那么还余下500M可用内存。这500M内存中的一部分必须用于系统dll的加载，那么真正剩下的也许只有400M，现在关键的地方出现了：当你使用Java创建一个线程，在JVM的内存里也会创建一个Thread对象，但是同时也会在操作系统里创建一个真正的物理线程（参考JVM规范），操作系统会在余下的400兆内存里创建这个物理线程，而不是在JVM的1500M的内存堆里创建。在jdk1.4里头，默认的栈大小是256KB，但是在jdk1.5里头，默认的栈大小为1M每线程，因此，在余下400M的可用内存里边我们最多也只能创建400个可用线程。　　这样结论就出来了，要想创建更多的线程，你必须减少分配给JVM的最大内存。还有一种做法是让JVM宿主在你的JNI代码里边。　　给出一个有关能够创建线程的最大个数的估算公式：　　（MaxProcessMemory - JVMMemory - ReservedOsMemory） /（ThreadStackSize） = Number of threads　　对于jdk1.5而言，假设操作系统保留120M内存：　　1.5GB JVM： （2GB-1.5Gb-120MB）/（1MB） = ~380 threads　　1.0GB JVM： （2GB-1.0Gb-120MB）/（1MB） = ~880 threads　　在2000/XP/2003的boot.ini里头有一个启动选项，好像是：/PAE /3G，可以让用户进程最大内存扩充至3G，这时操作系统只能占用最多1G的虚存。那样应该可以让JVM创建更多的线程。　　因此这种情况需要结合操作系统进行相关调整。　　因此：我们需要结合不同情况对tomcat内存分配进行不同的诊断才能从根本上解决问题。 检测当前JVM内存使用情况：System.out.println(“JVM MAX MEMORY: “ +Runtime.getRuntime().maxMemory()/1024/1024+”M”);System.out.println(“JVM IS USING MEMORY:” +Runtime.getRuntime().totalMemory()/1024/1024+”M”);System.out.println(“JVM IS FREE MEMORY:” +Runtime.getRuntime().freeMemory()/1024/1024+”M”);</h1><h1 id="这三个方法都是说JVM的内存使用情况而不是操作系统的内存；-maxMemory-这个方法返回的是java虚拟机（这个进程）能构从操作系统那里挖到的最大的内存，以字节为单位，如果在运行java程序的时候，没有添加-Xmx参数，那么就是64兆，也就是说maxMemory-返回的大约是6410241024字节，这是java虚拟机默认情况下能从操作系统那里挖到的最大的内存。如果添加了-Xmx参数，将以这个参数后面的值为准，例如java-cp-ClassPath-Xmx512m-ClassName，那么最大内存就是51210240124字节。-totalMemory-这个方法返回的是java虚拟机现在已经从操作系统那里挖过来的内存大小，也就是java虚拟机这个进程当时所占用的所有内存。如果在运行java的时候没有添加-Xms参数，那么，在java程序运行的过程的，内存总是慢慢的从操作系统那里挖的，基本上是用多少挖多少，直挖到maxMemory-为止，所以totalMemory-是慢慢增大的。如果用了-Xms参数，程序在启动的时候就会无条件的从操作系统中挖-Xms后面定义的内存数，然后在这些内存用的差不多的时候，再去挖。-freeMemory-是什么呢，刚才讲到如果在运行java的时候没有添加-Xms参数，那么，在java程序运行的过程的，内存总是慢慢的从操作系统那里挖的，基本上是用多少挖多少，但是java虚拟机100％的情况下是会稍微多挖一点的，这些挖过来而又没有用上的内存，实际上就是freeMemory-，所以freeMemory-的值一般情况下都是很小的，但是如果你在运行java程序的时候使用了-Xms，这个时候因为程序在启动的时候就会无条件的从操作系统中挖-Xms后面定义的内存数，这个时候，挖过来的内存可能大部分没用上，所以这个时候freeMemory-可能会有些——————–解决方案————————–JVM堆大小的调整-Sun-HotSpot1-4-1使用分代收集器，它把堆分为三个主要的域：新域、旧域以及永久域。Jvm生成的所有新对象放在新域中。一旦对象经历了一定数量的垃圾收集循环后，便获得使用期并进入旧域。在永久域中jvm则存储class和method对象。就配置而言，永久域是一个独立域并且不认为是堆的一部分。-下面介绍如何控制这些域的大小。可使用-Xms和-Xmx-控制整个堆的原始大小或最大值。-下面的命令是把初始大小设置为128M：-java-–Xms128m-–Xmx256m为控制新域的大小，可使用-XX-NewRatio设置新域在堆中所占的比例。-下面的命令把整个堆设置成128m，新域比率设置成3，即新域与旧域比例为1：3，新域为堆的1-4或32M：java-–Xms128m-–Xmx128m–XX-NewRatio-3可使用-XX-NewSize和-XX-MaxNewsize设置新域的初始值和最大值。-下面的命令把新域的初始值和最大值设置成64m-java-–Xms256m-–Xmx256m-–Xmn64m-永久域默认大小为4m。运行程序时，jvm会调整永久域的大小以满足需要。每次调整时，jvm会对堆进行一次完全的垃圾收集。-使用-XX-MaxPerSize标志来增加永久域搭大小。在WebLogicServer应用程序加载较多类时，经常需要增加永久域的最大值。当jvm加载类时，永久域中的对象急剧增加，从而使jvm不断调整永久域大小。为了避免调整，可使用-XX-PerSize标志设置初始值。-下面把永久域初始值设置成32m，最大值设置成64m。java-Xms512m-Xmx512m-Xmn128m-XX-PermSize-32m-XX-MaxPermSize-64m-默认状态下，HotSpot在新域中使用复制收集器。该域一般分为三个部分。第一部分为Eden，用于生成新的对象。另两部分称为救助空间，当Eden充满时，收集器停止应用程序，把所有可到达对象复制到当前的from救助空间，一旦当前的from救助空间充满，收集器则把可到达对象复制到当前的to救助空间。From和to救助空间互换角色。维持活动的对象将在救助空间不断复制，直到它们获得使用期并转入旧域。使用-XX-SurvivorRatio可控制新域子空间的大小。-同NewRation一样，SurvivorRation规定某救助域与Eden空间的比值。比如，以下命令把新域设置成64m，Eden占32m，每个救助域各占16m：java-Xms256m-Xmx256m-Xmn64m-XX-SurvivorRation-2-如前所述，默认状态下HotSpot对新域使用复制收集器，对旧域使用标记－清除－压缩收集器。在新域中使用复制收集器有很多意义，因为应用程序生成的大部分对象是短寿命的。理想状态下，所有过渡对象在移出Eden空间时将被收集。如果能够这样的话，并且移出Eden空间的对象是长寿命的，那么理论上可以立即把它们移进旧域，避免在救助空间反复复制。但是，应用程序不能适合这种理想状态，因为它们有一小部分中长寿命的对象。最好是保持这些中长寿命的对象并放在新域中，因为复制小部分的对象总比压缩旧域廉价。为控制新域中对象的复制，可用-XX-TargetSurvivorRatio控制救助空间的比例（该值是设置救助空间的使用比例。如救助空间位1M，该值50表示可用500K）。该值是一个百分比，默认值是50。当较大的堆栈使用较低的sruvivorratio时，应增加该值到80至90，以更好利用救助空间。用-XX-maxtenuringthreshold可控制上限。-为放置所有的复制全部发生以及希望对象从eden扩展到旧域，可以把MaxTenuringThreshold设置成0。设置完成后，实际上就不再使用救助空间了，因此应把SurvivorRatio设成最大值以最大化Eden空间，设置如下：java-…-XX-MaxTenuringThreshold-0-–XX-SurvivorRatio＝50000-…垃圾回收描述：垃圾回收分多级，0级为全部-Full-的垃圾回收，会回收OLD段中的垃圾；1级或以上为部分垃圾回收，只会回收Young中的垃圾，内存溢出通常发生于OLD段或Perm段垃圾回收后，仍然无内存空间容纳新的Java对象的情况。当一个URL被访问时，内存申请过程如下：A-JVM会试图为相关Java对象在Eden中初始化一块内存区域B-当Eden空间足够时，内存申请结束。否则到下一步C-JVM试图释放在Eden中所有不活跃的对象（这属于1或更高级的垃圾回收）；释放后若Eden空间仍然不足以放入新对象，则试图将部分Eden中活跃对象放入Survivor区-OLD区D-Survivor区被用来作为Eden及OLD的中间交换区域，当OLD区空间足够时，Survivor区的对象会被移到Old区，否则会被保留在Survivor区E-当OLD区空间不够时，JVM会在OLD区进行完全的垃圾收集（0级）F-完全垃圾收集后，若Survivor及OLD区仍然无法存放从Eden复制过来的部分对象，导致JVM无法在Eden区为新对象创建内存区域，则出现”outof-memory错误”Java堆相关参数：ms-mx：定义YOUNG-OLD段的总尺寸，ms为JVM启动时YOUNG-OLD的内存大小；mx为最大可占用的YOUNG-OLD内存大小。在用户生产环境上一般将这两个值设为相同，以减少运行期间系统在内存申请上所花的开销。NewSize-MaxNewSize：定义YOUNG段的尺寸，NewSize为JVM启动时YOUNG的内存大小；MaxNewSize为最大可占用的YOUNG内存大小。在用户生产环境上一般将这两个值设为相同，以减少运行期间系统在内存申请上所花的开销。PermSize-MaxPermSize：定义Perm段的尺寸，PermSize为JVM启动时Perm的内存大小；MaxPermSize为最大可占用的Perm内存大小。在用户生产环境上一般将这两个值设为相同，以减少运行期间系统在内存申请上所花的开销。SurvivorRatio：设置Survivor空间和Eden空间的比例例：MEM-ARGS-”-Xms512m-Xmx512m-XX-NewSize-256m-XX-MaxNewSize-256m-XX-PermSize-128m-XX-MaxPermSize-128m-XX-SurvivorRatio-6”在上面的例子中：YOUNG-OLD-512MYOUNG-256MPerm-128MEden-YOUNG-6-6-1-1-192MSurvivor-YOUNG-6-1-1-32MJava堆的总尺寸-YOUNG-OLD-Perm-640M"><a href="#这三个方法都是说JVM的内存使用情况而不是操作系统的内存；-maxMemory-这个方法返回的是java虚拟机（这个进程）能构从操作系统那里挖到的最大的内存，以字节为单位，如果在运行java程序的时候，没有添加-Xmx参数，那么就是64兆，也就是说maxMemory-返回的大约是6410241024字节，这是java虚拟机默认情况下能从操作系统那里挖到的最大的内存。如果添加了-Xmx参数，将以这个参数后面的值为准，例如java-cp-ClassPath-Xmx512m-ClassName，那么最大内存就是51210240124字节。-totalMemory-这个方法返回的是java虚拟机现在已经从操作系统那里挖过来的内存大小，也就是java虚拟机这个进程当时所占用的所有内存。如果在运行java的时候没有添加-Xms参数，那么，在java程序运行的过程的，内存总是慢慢的从操作系统那里挖的，基本上是用多少挖多少，直挖到maxMemory-为止，所以totalMemory-是慢慢增大的。如果用了-Xms参数，程序在启动的时候就会无条件的从操作系统中挖-Xms后面定义的内存数，然后在这些内存用的差不多的时候，再去挖。-freeMemory-是什么呢，刚才讲到如果在运行java的时候没有添加-Xms参数，那么，在java程序运行的过程的，内存总是慢慢的从操作系统那里挖的，基本上是用多少挖多少，但是java虚拟机100％的情况下是会稍微多挖一点的，这些挖过来而又没有用上的内存，实际上就是freeMemory-，所以freeMemory-的值一般情况下都是很小的，但是如果你在运行java程序的时候使用了-Xms，这个时候因为程序在启动的时候就会无条件的从操作系统中挖-Xms后面定义的内存数，这个时候，挖过来的内存可能大部分没用上，所以这个时候freeMemory-可能会有些——————–解决方案————————–JVM堆大小的调整-Sun-HotSpot1-4-1使用分代收集器，它把堆分为三个主要的域：新域、旧域以及永久域。Jvm生成的所有新对象放在新域中。一旦对象经历了一定数量的垃圾收集循环后，便获得使用期并进入旧域。在永久域中jvm则存储class和method对象。就配置而言，永久域是一个独立域并且不认为是堆的一部分。-下面介绍如何控制这些域的大小。可使用-Xms和-Xmx-控制整个堆的原始大小或最大值。-下面的命令是把初始大小设置为128M：-java-–Xms128m-–Xmx256m为控制新域的大小，可使用-XX-NewRatio设置新域在堆中所占的比例。-下面的命令把整个堆设置成128m，新域比率设置成3，即新域与旧域比例为1：3，新域为堆的1-4或32M：java-–Xms128m-–Xmx128m–XX-NewRatio-3可使用-XX-NewSize和-XX-MaxNewsize设置新域的初始值和最大值。-下面的命令把新域的初始值和最大值设置成64m-java-–Xms256m-–Xmx256m-–Xmn64m-永久域默认大小为4m。运行程序时，jvm会调整永久域的大小以满足需要。每次调整时，jvm会对堆进行一次完全的垃圾收集。-使用-XX-MaxPerSize标志来增加永久域搭大小。在WebLogicServer应用程序加载较多类时，经常需要增加永久域的最大值。当jvm加载类时，永久域中的对象急剧增加，从而使jvm不断调整永久域大小。为了避免调整，可使用-XX-PerSize标志设置初始值。-下面把永久域初始值设置成32m，最大值设置成64m。java-Xms512m-Xmx512m-Xmn128m-XX-PermSize-32m-XX-MaxPermSize-64m-默认状态下，HotSpot在新域中使用复制收集器。该域一般分为三个部分。第一部分为Eden，用于生成新的对象。另两部分称为救助空间，当Eden充满时，收集器停止应用程序，把所有可到达对象复制到当前的from救助空间，一旦当前的from救助空间充满，收集器则把可到达对象复制到当前的to救助空间。From和to救助空间互换角色。维持活动的对象将在救助空间不断复制，直到它们获得使用期并转入旧域。使用-XX-SurvivorRatio可控制新域子空间的大小。-同NewRation一样，SurvivorRation规定某救助域与Eden空间的比值。比如，以下命令把新域设置成64m，Eden占32m，每个救助域各占16m：java-Xms256m-Xmx256m-Xmn64m-XX-SurvivorRation-2-如前所述，默认状态下HotSpot对新域使用复制收集器，对旧域使用标记－清除－压缩收集器。在新域中使用复制收集器有很多意义，因为应用程序生成的大部分对象是短寿命的。理想状态下，所有过渡对象在移出Eden空间时将被收集。如果能够这样的话，并且移出Eden空间的对象是长寿命的，那么理论上可以立即把它们移进旧域，避免在救助空间反复复制。但是，应用程序不能适合这种理想状态，因为它们有一小部分中长寿命的对象。最好是保持这些中长寿命的对象并放在新域中，因为复制小部分的对象总比压缩旧域廉价。为控制新域中对象的复制，可用-XX-TargetSurvivorRatio控制救助空间的比例（该值是设置救助空间的使用比例。如救助空间位1M，该值50表示可用500K）。该值是一个百分比，默认值是50。当较大的堆栈使用较低的sruvivorratio时，应增加该值到80至90，以更好利用救助空间。用-XX-maxtenuringthreshold可控制上限。-为放置所有的复制全部发生以及希望对象从eden扩展到旧域，可以把MaxTenuringThreshold设置成0。设置完成后，实际上就不再使用救助空间了，因此应把SurvivorRatio设成最大值以最大化Eden空间，设置如下：java-…-XX-MaxTenuringThreshold-0-–XX-SurvivorRatio＝50000-…垃圾回收描述：垃圾回收分多级，0级为全部-Full-的垃圾回收，会回收OLD段中的垃圾；1级或以上为部分垃圾回收，只会回收Young中的垃圾，内存溢出通常发生于OLD段或Perm段垃圾回收后，仍然无内存空间容纳新的Java对象的情况。当一个URL被访问时，内存申请过程如下：A-JVM会试图为相关Java对象在Eden中初始化一块内存区域B-当Eden空间足够时，内存申请结束。否则到下一步C-JVM试图释放在Eden中所有不活跃的对象（这属于1或更高级的垃圾回收）；释放后若Eden空间仍然不足以放入新对象，则试图将部分Eden中活跃对象放入Survivor区-OLD区D-Survivor区被用来作为Eden及OLD的中间交换区域，当OLD区空间足够时，Survivor区的对象会被移到Old区，否则会被保留在Survivor区E-当OLD区空间不够时，JVM会在OLD区进行完全的垃圾收集（0级）F-完全垃圾收集后，若Survivor及OLD区仍然无法存放从Eden复制过来的部分对象，导致JVM无法在Eden区为新对象创建内存区域，则出现”outof-memory错误”Java堆相关参数：ms-mx：定义YOUNG-OLD段的总尺寸，ms为JVM启动时YOUNG-OLD的内存大小；mx为最大可占用的YOUNG-OLD内存大小。在用户生产环境上一般将这两个值设为相同，以减少运行期间系统在内存申请上所花的开销。NewSize-MaxNewSize：定义YOUNG段的尺寸，NewSize为JVM启动时YOUNG的内存大小；MaxNewSize为最大可占用的YOUNG内存大小。在用户生产环境上一般将这两个值设为相同，以减少运行期间系统在内存申请上所花的开销。PermSize-MaxPermSize：定义Perm段的尺寸，PermSize为JVM启动时Perm的内存大小；MaxPermSize为最大可占用的Perm内存大小。在用户生产环境上一般将这两个值设为相同，以减少运行期间系统在内存申请上所花的开销。SurvivorRatio：设置Survivor空间和Eden空间的比例例：MEM-ARGS-”-Xms512m-Xmx512m-XX-NewSize-256m-XX-MaxNewSize-256m-XX-PermSize-128m-XX-MaxPermSize-128m-XX-SurvivorRatio-6”在上面的例子中：YOUNG-OLD-512MYOUNG-256MPerm-128MEden-YOUNG-6-6-1-1-192MSurvivor-YOUNG-6-1-1-32MJava堆的总尺寸-YOUNG-OLD-Perm-640M" class="headerlink" title="这三个方法都是说JVM的内存使用情况而不是操作系统的内存；　　maxMemory()这个方法返回的是java虚拟机（这个进程）能构从操作系统那里挖到的最大的内存，以字节为单位，如果在运行java程序的时候，没有添加-Xmx参数，那么就是64兆，也就是说maxMemory()返回的大约是6410241024字节，这是java虚拟机默认情况下能从操作系统那里挖到的最大的内存。如果添加了-Xmx参数，将以这个参数后面的值为准，例如java-cp ClassPath -Xmx512m ClassName，那么最大内存就是51210240124字节。 　　totalMemory()这个方法返回的是java虚拟机现在已经从操作系统那里挖过来的内存大小，也就是java虚拟机这个进程当时所占用的所有内存。如果在运行java的时候没有添加-Xms参数，那么，在java程序运行的过程的，内存总是慢慢的从操作系统那里挖的，基本上是用多少挖多少，直挖到maxMemory()为止，所以totalMemory()是慢慢增大的。如果用了-Xms参数，程序在启动的时候就会无条件的从操作系统中挖-Xms后面定义的内存数，然后在这些内存用的差不多的时候，再去挖。 　　freeMemory()是什么呢，刚才讲到如果在运行java的时候没有添加-Xms参数，那么，在java程序运行的过程的，内存总是慢慢的从操作系统那里挖的，基本上是用多少挖多少，但是java虚拟机100％的情况下是会稍微多挖一点的，这些挖过来而又没有用上的内存，实际上就是freeMemory()，所以freeMemory()的值一般情况下都是很小的，但是如果你在运行java程序的时候使用了-Xms，这个时候因为程序在启动的时候就会无条件的从操作系统中挖-Xms后面定义的内存数，这个时候，挖过来的内存可能大部分没用上，所以这个时候freeMemory()可能会有些——————–解决方案————————–JVM堆大小的调整　　Sun HotSpot1.4.1使用分代收集器，它把堆分为三个主要的域：新域、旧域以及永久域。Jvm生成的所有新对象放在新域中。一旦对象经历了一定数量的垃圾收集循环后，便获得使用期并进入旧域。在永久域中jvm则存储class和method对象。就配置而言，永久域是一个独立域并且不认为是堆的一部分。　　下面介绍如何控制这些域的大小。可使用-Xms和-Xmx 控制整个堆的原始大小或最大值。　　下面的命令是把初始大小设置为128M：　　java –Xms128m　　–Xmx256m为控制新域的大小，可使用-XX:NewRatio设置新域在堆中所占的比例。　　下面的命令把整个堆设置成128m，新域比率设置成3，即新域与旧域比例为1：3，新域为堆的1/4或32M：java –Xms128m –Xmx128m–XX:NewRatio =3可使用-XX:NewSize和-XX:MaxNewsize设置新域的初始值和最大值。　　下面的命令把新域的初始值和最大值设置成64m:java –Xms256m –Xmx256m –Xmn64m　　永久域默认大小为4m。运行程序时，jvm会调整永久域的大小以满足需要。每次调整时，jvm会对堆进行一次完全的垃圾收集。　　使用-XX:MaxPerSize标志来增加永久域搭大小。在WebLogicServer应用程序加载较多类时，经常需要增加永久域的最大值。当jvm加载类时，永久域中的对象急剧增加，从而使jvm不断调整永久域大小。为了避免调整，可使用-XX:PerSize标志设置初始值。　　下面把永久域初始值设置成32m，最大值设置成64m。java -Xms512m -Xmx512m -Xmn128m -XX:PermSize=32m-XX:MaxPermSize=64m　　默认状态下，HotSpot在新域中使用复制收集器。该域一般分为三个部分。第一部分为Eden，用于生成新的对象。另两部分称为救助空间，当Eden充满时，收集器停止应用程序，把所有可到达对象复制到当前的from救助空间，一旦当前的from救助空间充满，收集器则把可到达对象复制到当前的to救助空间。From和to救助空间互换角色。维持活动的对象将在救助空间不断复制，直到它们获得使用期并转入旧域。使用-XX:SurvivorRatio可控制新域子空间的大小。　　同NewRation一样，SurvivorRation规定某救助域与Eden空间的比值。比如，以下命令把新域设置成64m，Eden占32m，每个救助域各占16m：java -Xms256m -Xmx256m -Xmn64m -XX:SurvivorRation =2　　如前所述，默认状态下HotSpot对新域使用复制收集器，对旧域使用标记－清除－压缩收集器。在新域中使用复制收集器有很多意义，因为应用程序生成的大部分对象是短寿命的。理想状态下，所有过渡对象在移出Eden空间时将被收集。如果能够这样的话，并且移出Eden空间的对象是长寿命的，那么理论上可以立即把它们移进旧域，避免在救助空间反复复制。但是，应用程序不能适合这种理想状态，因为它们有一小部分中长寿命的对象。最好是保持这些中长寿命的对象并放在新域中，因为复制小部分的对象总比压缩旧域廉价。为控制新域中对象的复制，可用-XX:TargetSurvivorRatio控制救助空间的比例（该值是设置救助空间的使用比例。如救助空间位1M，该值50表示可用500K）。该值是一个百分比，默认值是50。当较大的堆栈使用较低的sruvivorratio时，应增加该值到80至90，以更好利用救助空间。用-XX:maxtenuringthreshold可控制上限。　　为放置所有的复制全部发生以及希望对象从eden扩展到旧域，可以把MaxTenuringThreshold设置成0。设置完成后，实际上就不再使用救助空间了，因此应把SurvivorRatio设成最大值以最大化Eden空间，设置如下：java … -XX:MaxTenuringThreshold=0 –XX:SurvivorRatio＝50000 …垃圾回收描述：垃圾回收分多级，0级为全部(Full)的垃圾回收，会回收OLD段中的垃圾；1级或以上为部分垃圾回收，只会回收Young中的垃圾，内存溢出通常发生于OLD段或Perm段垃圾回收后，仍然无内存空间容纳新的Java对象的情况。当一个URL被访问时，内存申请过程如下：A. JVM会试图为相关Java对象在Eden中初始化一块内存区域B. 当Eden空间足够时，内存申请结束。否则到下一步C.JVM试图释放在Eden中所有不活跃的对象（这属于1或更高级的垃圾回收）；释放后若Eden空间仍然不足以放入新对象，则试图将部分Eden中活跃对象放入Survivor区/OLD区D.Survivor区被用来作为Eden及OLD的中间交换区域，当OLD区空间足够时，Survivor区的对象会被移到Old区，否则会被保留在Survivor区E. 当OLD区空间不够时，JVM会在OLD区进行完全的垃圾收集（0级）F.完全垃圾收集后，若Survivor及OLD区仍然无法存放从Eden复制过来的部分对象，导致JVM无法在Eden区为新对象创建内存区域，则出现”outof memory错误”Java堆相关参数：ms/mx：定义YOUNG+OLD段的总尺寸，ms为JVM启动时YOUNG+OLD的内存大小；mx为最大可占用的YOUNG+OLD内存大小。在用户生产环境上一般将这两个值设为相同，以减少运行期间系统在内存申请上所花的开销。NewSize/MaxNewSize：定义YOUNG段的尺寸，NewSize为JVM启动时YOUNG的内存大小；MaxNewSize为最大可占用的YOUNG内存大小。在用户生产环境上一般将这两个值设为相同，以减少运行期间系统在内存申请上所花的开销。PermSize/MaxPermSize：定义Perm段的尺寸，PermSize为JVM启动时Perm的内存大小；MaxPermSize为最大可占用的Perm内存大小。在用户生产环境上一般将这两个值设为相同，以减少运行期间系统在内存申请上所花的开销。SurvivorRatio：设置Survivor空间和Eden空间的比例例：MEM_ARGS=”-Xms512m -Xmx512m -XX:NewSize=256m -XX:MaxNewSize=256m-XX:PermSize=128m -XX:MaxPermSize=128m -XX:SurvivorRatio=6”在上面的例子中：YOUNG+OLD: 512MYOUNG: 256MPerm: 128MEden: YOUNG*6/(6+1+1)=192MSurvivor: YOUNG/(6+1+1)=32MJava堆的总尺寸=YOUNG+OLD+Perm=640M"></a>这三个方法都是说JVM的内存使用情况而不是操作系统的内存；　　maxMemory()这个方法返回的是java虚拟机（这个进程）能构从操作系统那里挖到的最大的内存，以字节为单位，如果在运行java程序的时候，没有添加-Xmx参数，那么就是64兆，也就是说maxMemory()返回的大约是64<em>1024</em>1024字节，这是java虚拟机默认情况下能从操作系统那里挖到的最大的内存。如果添加了-Xmx参数，将以这个参数后面的值为准，例如java-cp ClassPath -Xmx512m ClassName，那么最大内存就是512<em>1024</em>0124字节。 　　totalMemory()这个方法返回的是java虚拟机现在已经从操作系统那里挖过来的内存大小，也就是java虚拟机这个进程当时所占用的所有内存。如果在运行java的时候没有添加-Xms参数，那么，在java程序运行的过程的，内存总是慢慢的从操作系统那里挖的，基本上是用多少挖多少，直挖到maxMemory()为止，所以totalMemory()是慢慢增大的。如果用了-Xms参数，程序在启动的时候就会无条件的从操作系统中挖-Xms后面定义的内存数，然后在这些内存用的差不多的时候，再去挖。 　　freeMemory()是什么呢，刚才讲到如果在运行java的时候没有添加-Xms参数，那么，在java程序运行的过程的，内存总是慢慢的从操作系统那里挖的，基本上是用多少挖多少，但是java虚拟机100％的情况下是会稍微多挖一点的，这些挖过来而又没有用上的内存，实际上就是freeMemory()，所以freeMemory()的值一般情况下都是很小的，但是如果你在运行java程序的时候使用了-Xms，这个时候因为程序在启动的时候就会无条件的从操作系统中挖-Xms后面定义的内存数，这个时候，挖过来的内存可能大部分没用上，所以这个时候freeMemory()可能会有些——————–解决方案————————–JVM堆大小的调整　　Sun HotSpot1.4.1使用分代收集器，它把堆分为三个主要的域：新域、旧域以及永久域。Jvm生成的所有新对象放在新域中。一旦对象经历了一定数量的垃圾收集循环后，便获得使用期并进入旧域。在永久域中jvm则存储class和method对象。就配置而言，永久域是一个独立域并且不认为是堆的一部分。　　下面介绍如何控制这些域的大小。可使用-Xms和-Xmx 控制整个堆的原始大小或最大值。　　下面的命令是把初始大小设置为128M：　　java –Xms128m　　–Xmx256m为控制新域的大小，可使用-XX:NewRatio设置新域在堆中所占的比例。　　下面的命令把整个堆设置成128m，新域比率设置成3，即新域与旧域比例为1：3，新域为堆的1/4或32M：java –Xms128m –Xmx128m–XX:NewRatio =3可使用-XX:NewSize和-XX:<strong>MaxNewsize</strong>设置新域的初始值和最大值。　　下面的命令把新域的初始值和最大值设置成64m:java –Xms256m –Xmx256m –Xmn64m　　永久域默认大小为4m。运行程序时，jvm会调整永久域的大小以满足需要。每次调整时，jvm会对堆进行一次完全的垃圾收集。　　使用-XX:MaxPerSize标志来增加永久域搭大小。在WebLogicServer应用程序加载较多类时，经常需要增加永久域的最大值。当jvm加载类时，永久域中的对象急剧增加，从而使jvm不断调整永久域大小。为了避免调整，可使用-XX:PerSize标志设置初始值。　　下面把永久域初始值设置成32m，最大值设置成64m。java -Xms512m -Xmx512m -Xmn128m -XX:PermSize=32m-XX:MaxPermSize=64m　　默认状态下，HotSpot在新域中使用复制收集器。该域一般分为三个部分。第一部分为Eden，用于生成新的对象。另两部分称为救助空间，当Eden充满时，收集器停止应用程序，把所有可到达对象复制到当前的from救助空间，一旦当前的from救助空间充满，收集器则把可到达对象复制到当前的to救助空间。From和to救助空间互换角色。维持活动的对象将在救助空间不断复制，直到它们获得使用期并转入旧域。使用-XX:SurvivorRatio可控制新域子空间的大小。　　同NewRation一样，SurvivorRation规定某救助域与Eden空间的比值。比如，以下命令把新域设置成64m，Eden占32m，每个救助域各占16m：java -Xms256m -Xmx256m -Xmn64m -XX:SurvivorRation =2　　如前所述，默认状态下HotSpot对新域使用复制收集器，对旧域使用标记－清除－压缩收集器。在新域中使用复制收集器有很多意义，因为应用程序生成的大部分对象是短寿命的。理想状态下，所有过渡对象在移出Eden空间时将被收集。如果能够这样的话，并且移出Eden空间的对象是长寿命的，那么理论上可以立即把它们移进旧域，避免在救助空间反复复制。但是，应用程序不能适合这种理想状态，因为它们有一小部分中长寿命的对象。最好是保持这些中长寿命的对象并放在新域中，因为复制小部分的对象总比压缩旧域廉价。为控制新域中对象的复制，可用-XX:TargetSurvivorRatio控制救助空间的比例（该值是设置救助空间的使用比例。如救助空间位1M，该值50表示可用500K）。该值是一个百分比，默认值是50。当较大的堆栈使用较低的sruvivorratio时，应增加该值到80至90，以更好利用救助空间。用-XX:maxtenuringthreshold可控制上限。　　为放置所有的复制全部发生以及希望对象从eden扩展到旧域，可以把MaxTenuringThreshold设置成0。设置完成后，实际上就不再使用救助空间了，因此应把SurvivorRatio设成最大值以最大化Eden空间，设置如下：java … -XX:MaxTenuringThreshold=0 –XX:SurvivorRatio＝50000 …垃圾回收描述：垃圾回收分多级，0级为全部(Full)的垃圾回收，会回收OLD段中的垃圾；1级或以上为部分垃圾回收，只会回收Young中的垃圾，内存溢出通常发生于OLD段或Perm段垃圾回收后，仍然无内存空间容纳新的Java对象的情况。当一个URL被访问时，内存申请过程如下：A. JVM会试图为相关Java对象在Eden中初始化一块内存区域B. 当Eden空间足够时，内存申请结束。否则到下一步C.JVM试图释放在Eden中所有不活跃的对象（这属于1或更高级的垃圾回收）；释放后若Eden空间仍然不足以放入新对象，则试图将部分Eden中活跃对象放入Survivor区/OLD区D.Survivor区被用来作为Eden及OLD的中间交换区域，当OLD区空间足够时，Survivor区的对象会被移到Old区，否则会被保留在Survivor区E. 当OLD区空间不够时，JVM会在OLD区进行完全的垃圾收集（0级）F.完全垃圾收集后，若Survivor及OLD区仍然无法存放从Eden复制过来的部分对象，导致JVM无法在Eden区为新对象创建内存区域，则出现”outof memory错误”Java堆相关参数：ms/mx：定义YOUNG+OLD段的总尺寸，ms为JVM启动时YOUNG+OLD的内存大小；mx为最大可占用的YOUNG+OLD内存大小。在用户生产环境上一般将这两个值设为相同，以减少运行期间系统在内存申请上所花的开销。NewSize/<strong>MaxNewSize</strong>：定义YOUNG段的尺寸，NewSize为JVM启动时YOUNG的内存大小；<strong>MaxNewSize</strong>为最大可占用的YOUNG内存大小。在用户生产环境上一般将这两个值设为相同，以减少运行期间系统在内存申请上所花的开销。PermSize/MaxPermSize：定义Perm段的尺寸，PermSize为JVM启动时Perm的内存大小；MaxPermSize为最大可占用的Perm内存大小。在用户生产环境上一般将这两个值设为相同，以减少运行期间系统在内存申请上所花的开销。SurvivorRatio：设置Survivor空间和Eden空间的比例例：MEM_ARGS=”-Xms512m -Xmx512m -XX:NewSize=256m -XX:<strong>MaxNewSize</strong>=256m-XX:PermSize=128m -XX:MaxPermSize=128m -XX:SurvivorRatio=6”在上面的例子中：YOUNG+OLD: 512MYOUNG: 256MPerm: 128MEden: YOUNG*6/(6+1+1)=192MSurvivor: YOUNG/(6+1+1)=32MJava堆的总尺寸=YOUNG+OLD+Perm=640M</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2018/05/17/java-multi-thread/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/17/java-multi-thread/" itemprop="url">java-multi-thread</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-17T13:22:28+08:00">
+                2018-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>java多线程系列</p>
+<p><a href="http://www.cnblogs.com/skywang12345/p/java_threads_category.html" target="_blank" rel="noopener">http://www.cnblogs.com/skywang12345/p/java_threads_category.html</a></p>
+<p>线程状态图</p>
+<p><img src="/2018/05/17/java-multi-thread/18152411-a974ea82ebc04e72bd874c3921f8bfec.jpg" alt="18152411-a974ea82ebc04e72bd874c3921f8bfec"></p>
+<p>线程共包括以下5种状态。</p>
+<ol>
+<li><strong>新建状态(New)         </strong>: 线程对象被创建后，就进入了新建状态。例如，Thread thread = new Thread()。</li>
+<li><strong>就绪状态(Runnable)</strong>: 也被称为“可执行状态”。线程对象被创建后，其它线程调用了该对象的start()方法，从而来启动该线程。例如，thread.start()。处于就绪状态的线程，随时可能被CPU调度执行。</li>
+<li><strong>运行状态(Running)</strong> : 线程获取CPU权限进行执行。需要注意的是，线程只能从就绪状态进入到运行状态。</li>
+<li><strong>阻塞状态(Blocked) </strong> : 阻塞状态是线程因为某种原因放弃CPU使用权，暂时停止运行。直到线程进入就绪状态，才有机会转到运行状态。阻塞的情况分三种：<br>​    (01) 等待阻塞 – 通过调用线程的wait()方法，让线程等待某工作的完成。<br>​    (02) 同步阻塞 – 线程在获取synchronized同步锁失败(因为锁被其它线程所占用)，它会进入同步阻塞状态。<br>​    (03) 其他阻塞 – 通过调用线程的sleep()或join()或发出了I/O请求时，线程会进入到阻塞状态。当sleep()状态超时、join()等待线程终止或者超时、或者I/O处理完毕时，线程重新转入就绪状态。</li>
+<li><strong>死亡状态(Dead)</strong>    : 线程执行完了或者因异常退出了run()方法，该线程结束生命周期。</li>
+</ol>
+<p>这5种状态涉及到的内容包括Object类, Thread和synchronized关键字。这些内容我们会在后面的章节中逐个进行学习。<br><strong>Object类</strong>，定义了wait(), notify(), notifyAll()等休眠/唤醒函数。<br><strong>Thread类</strong>，定义了一些列的线程操作函数。例如，sleep()休眠函数, interrupt()中断函数, getName()获取线程名称等。<br><strong>synchronized</strong>，是关键字；它区分为synchronized代码块和synchronized方法。synchronized的作用是让线程获取对象的同步锁。<br>在后面详细介绍wait(),notify()等方法时，我们会分析为什么“wait(), notify()等方法要定义在Object类，而不是Thread类中”。</p>
+<h3 id="Thread和Runnable简介"><a href="#Thread和Runnable简介" class="headerlink" title="Thread和Runnable简介"></a><strong>Thread和Runnable简介</strong></h3><p><strong>Runnable</strong> 是一个接口，该接口中只包含了一个run()方法。它的定义如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface Runnable &#123;</span><br><span class="line">    public abstract void run();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Runnable的作用，实现多线程。我们可以定义一个类A实现Runnable接口；然后，通过new Thread(new A())等方式新建线程。</p>
+<p><strong>Thread</strong> 是一个类。Thread本身就实现了Runnable接口。它的声明如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class Thread implements Runnable &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>Thread的作用，实现多线程。</p>
+<h3 id="Thread和Runnable的异同点"><a href="#Thread和Runnable的异同点" class="headerlink" title="Thread和Runnable的异同点"></a><strong>Thread和Runnable的异同点</strong></h3><p><strong>Thread 和 Runnable 的相同点</strong>：都是“多线程的实现方式”。<br><strong>Thread 和 Runnable 的不同点</strong>：<br>Thread 是类，而Runnable是接口；Thread本身是实现了Runnable接口的类。我们知道“一个类只能有一个父类，但是却能实现多个接口”，因此Runnable具有更好的扩展性。<br>此外，Runnable还可以用于“资源的共享”。即，多个线程都是基于某一个Runnable对象建立的，它们会共享Runnable对象上的资源。<br>通常，建议通过“Runnable”实现多线程！</p>
+<h3 id="Thread和Runnable的多线程示例"><a href="#Thread和Runnable的多线程示例" class="headerlink" title="Thread和Runnable的多线程示例"></a><strong>Thread和Runnable的多线程示例</strong></h3><h1 id="1-Thread的多线程示例"><a href="#1-Thread的多线程示例" class="headerlink" title="1. Thread的多线程示例"></a>1. Thread的多线程示例</h1><p>下面通过示例更好的理解Thread和Runnable，借鉴网上一个例子比较具有说服性的例子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"> 1 // ThreadTest.java 源码</span><br><span class="line"> 2 class MyThread extends Thread&#123;  </span><br><span class="line"> 3     private int ticket=10;  </span><br><span class="line"> 4     public void run()&#123;</span><br><span class="line"> 5         for(int i=0;i&lt;20;i++)&#123; </span><br><span class="line"> 6             if(this.ticket&gt;0)&#123;</span><br><span class="line"> 7                 System.out.println(this.getName()+&quot; 卖票：ticket&quot;+this.ticket--);</span><br><span class="line"> 8             &#125;</span><br><span class="line"> 9         &#125;</span><br><span class="line">10     &#125; </span><br><span class="line">11 &#125;;</span><br><span class="line">12 </span><br><span class="line">13 public class ThreadTest &#123;  </span><br><span class="line">14     public static void main(String[] args) &#123;  </span><br><span class="line">15         // 启动3个线程t1,t2,t3；每个线程各卖10张票！</span><br><span class="line">16         MyThread t1=new MyThread();</span><br><span class="line">17         MyThread t2=new MyThread();</span><br><span class="line">18         MyThread t3=new MyThread();</span><br><span class="line">19         t1.start();</span><br><span class="line">20         t2.start();</span><br><span class="line">21         t3.start();</span><br><span class="line">22     &#125;  </span><br><span class="line">23 &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Thread-0 卖票：ticket10</span><br><span class="line">Thread-1 卖票：ticket10</span><br><span class="line">Thread-2 卖票：ticket10</span><br><span class="line">Thread-1 卖票：ticket9</span><br><span class="line">Thread-0 卖票：ticket9</span><br><span class="line">Thread-1 卖票：ticket8</span><br><span class="line">Thread-2 卖票：ticket9</span><br><span class="line">Thread-1 卖票：ticket7</span><br><span class="line">Thread-0 卖票：ticket8</span><br><span class="line">Thread-1 卖票：ticket6</span><br><span class="line">Thread-2 卖票：ticket8</span><br><span class="line">Thread-1 卖票：ticket5</span><br><span class="line">Thread-0 卖票：ticket7</span><br><span class="line">Thread-1 卖票：ticket4</span><br><span class="line">Thread-2 卖票：ticket7</span><br><span class="line">Thread-1 卖票：ticket3</span><br><span class="line">Thread-0 卖票：ticket6</span><br><span class="line">Thread-1 卖票：ticket2</span><br><span class="line">Thread-2 卖票：ticket6</span><br><span class="line">Thread-2 卖票：ticket5</span><br><span class="line">Thread-2 卖票：ticket4</span><br><span class="line">Thread-1 卖票：ticket1</span><br><span class="line">Thread-0 卖票：ticket5</span><br><span class="line">Thread-2 卖票：ticket3</span><br><span class="line">Thread-0 卖票：ticket4</span><br><span class="line">Thread-2 卖票：ticket2</span><br><span class="line">Thread-0 卖票：ticket3</span><br><span class="line">Thread-2 卖票：ticket1</span><br><span class="line">Thread-0 卖票：ticket2</span><br><span class="line">Thread-0 卖票：ticket1</span><br></pre></td></tr></table></figure>
+<p><strong>结果说明</strong>：<br>(01) MyThread继承于Thread，它是自定义个线程。每个MyThread都会卖出10张票。<br>(02) 主线程main创建并启动3个MyThread子线程。每个子线程都各自卖出了10张票。</p>
+<h1 id="2-Runnable的多线程示例"><a href="#2-Runnable的多线程示例" class="headerlink" title="2. Runnable的多线程示例"></a>2. Runnable的多线程示例</h1><p>下面，我们对上面的程序进行修改。通过Runnable实现一个接口，从而实现多线程。</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="http://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"> 1 // RunnableTest.java 源码</span><br><span class="line"> 2 class MyThread implements Runnable&#123;  </span><br><span class="line"> 3     private int ticket=10;  </span><br><span class="line"> 4     public void run()&#123;</span><br><span class="line"> 5         for(int i=0;i&lt;20;i++)&#123; </span><br><span class="line"> 6             if(this.ticket&gt;0)&#123;</span><br><span class="line"> 7                 System.out.println(Thread.currentThread().getName()+&quot; 卖票：ticket&quot;+this.ticket--);</span><br><span class="line"> 8             &#125;</span><br><span class="line"> 9         &#125;</span><br><span class="line">10     &#125; </span><br><span class="line">11 &#125;; </span><br><span class="line">12 </span><br><span class="line">13 public class RunnableTest &#123;  </span><br><span class="line">14     public static void main(String[] args) &#123;  </span><br><span class="line">15         MyThread mt=new MyThread();</span><br><span class="line">16 </span><br><span class="line">17         // 启动3个线程t1,t2,t3(它们共用一个Runnable对象)，这3个线程一共卖10张票！</span><br><span class="line">18         Thread t1=new Thread(mt);</span><br><span class="line">19         Thread t2=new Thread(mt);</span><br><span class="line">20         Thread t3=new Thread(mt);</span><br><span class="line">21         t1.start();</span><br><span class="line">22         t2.start();</span><br><span class="line">23         t3.start();</span><br><span class="line">24     &#125;  </span><br><span class="line">25 &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Thread-0 卖票：ticket10</span><br><span class="line">Thread-2 卖票：ticket8</span><br><span class="line">Thread-1 卖票：ticket9</span><br><span class="line">Thread-2 卖票：ticket6</span><br><span class="line">Thread-0 卖票：ticket7</span><br><span class="line">Thread-2 卖票：ticket4</span><br><span class="line">Thread-1 卖票：ticket5</span><br><span class="line">Thread-2 卖票：ticket2</span><br><span class="line">Thread-0 卖票：ticket3</span><br><span class="line">Thread-1 卖票：ticket1</span><br></pre></td></tr></table></figure>
+<p><strong>结果说明</strong>：<br>(01) 和上面“MyThread继承于Thread”不同；这里的MyThread实现了Thread接口。<br>(02) 主线程main创建并启动3个子线程，而且这3个子线程都是基于“mt这个Runnable对象”而创建的。运行结果是这3个子线程一共卖出了10张票。这说明它们是共享了MyThread接口的。</p>
+<h3 id="start-和-run-的区别说明"><a href="#start-和-run-的区别说明" class="headerlink" title="start() 和 run()的区别说明"></a><strong>start() 和 run()的区别说明</strong></h3><p><strong>start()</strong> : 它的作用是启动一个新线程，新线程会执行相应的run()方法。start()不能被重复调用。<br><strong>run()</strong>   : run()就和普通的成员方法一样，可以被重复调用。单独调用run()的话，会在当前线程中执行run()，而并不会启动新线程！</p>
+<p>下面以代码来进行说明。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class MyThread extends Thread&#123;  </span><br><span class="line">    public void run()&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125; </span><br><span class="line">&#125;;</span><br><span class="line">MyThread mythread = new MyThread();</span><br></pre></td></tr></table></figure>
+<p>mythread.start()会启动一个新线程，并在新线程中运行run()方法。<br>而mythread.run()则会直接在当前线程中运行run()方法，并不会启动一个新线程来运行run()。</p>
+<h3 id="start-和-run-的区别示例"><a href="#start-和-run-的区别示例" class="headerlink" title="start() 和 run()的区别示例"></a><strong>start() 和 run()的区别示例</strong></h3><p>下面，通过一个简单示例演示它们之间的区别。源码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> 1 // Demo.java 的源码</span><br><span class="line"> 2 class MyThread extends Thread&#123;  </span><br><span class="line"> 3     public MyThread(String name) &#123;</span><br><span class="line"> 4         super(name);</span><br><span class="line"> 5     &#125;</span><br><span class="line"> 6 </span><br><span class="line"> 7     public void run()&#123;</span><br><span class="line"> 8         System.out.println(Thread.currentThread().getName()+&quot; is running&quot;);</span><br><span class="line"> 9     &#125; </span><br><span class="line">10 &#125;; </span><br><span class="line">11 </span><br><span class="line">12 public class Demo &#123;  </span><br><span class="line">13     public static void main(String[] args) &#123;  </span><br><span class="line">14         Thread mythread=new MyThread(&quot;mythread&quot;);</span><br><span class="line">15 </span><br><span class="line">16         System.out.println(Thread.currentThread().getName()+&quot; call mythread.run()&quot;);</span><br><span class="line">17         mythread.run();</span><br><span class="line">18 </span><br><span class="line">19         System.out.println(Thread.currentThread().getName()+&quot; call mythread.start()&quot;);</span><br><span class="line">20         mythread.start();</span><br><span class="line">21     &#125;  </span><br><span class="line">22 &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">main call mythread.run()</span><br><span class="line">main is running</span><br><span class="line">main call mythread.start()</span><br><span class="line">mythread is running</span><br></pre></td></tr></table></figure>
+<p><strong>结果说明</strong>：<br>(01) Thread.currentThread().getName()是用于获取“当前线程”的名字。当前线程是指正在cpu中调度执行的线程。<br>(02) mythread.run()是在“主线程main”中调用的，该run()方法直接运行在“主线程main”上。<br>(03) mythread.start()会启动“线程mythread”，“线程mythread”启动之后，会调用run()方法；此时的run()方法是运行在“线程mythread”上。</p>
+<h3 id="start-和-run-相关源码-基于JDK1-7-0-40"><a href="#start-和-run-相关源码-基于JDK1-7-0-40" class="headerlink" title="start() 和 run()相关源码(基于JDK1.7.0_40)"></a><strong>start() 和 run()相关源码(基于JDK1.7.0_40)</strong></h3><p>Thread.java中start()方法的源码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public synchronized void start() &#123;</span><br><span class="line">    // 如果线程不是&quot;就绪状态&quot;，则抛出异常！</span><br><span class="line">    if (threadStatus != 0)</span><br><span class="line">        throw new IllegalThreadStateException();</span><br><span class="line"></span><br><span class="line">    // 将线程添加到ThreadGroup中</span><br><span class="line">    group.add(this);</span><br><span class="line"></span><br><span class="line">    boolean started = false;</span><br><span class="line">    try &#123;</span><br><span class="line">        // 通过start0()启动线程</span><br><span class="line">        start0();</span><br><span class="line">        // 设置started标记</span><br><span class="line">        started = true;</span><br><span class="line">    &#125; finally &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            if (!started) &#123;</span><br><span class="line">                group.threadStartFailed(this);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (Throwable ignore) &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>说明</strong>：start()实际上是通过本地方法start0()启动线程的。而start0()会新运行一个线程，新线程会调用run()方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private native void start0();</span><br></pre></td></tr></table></figure>
+<p>Thread.java中run()的代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public void run() &#123;</span><br><span class="line">    if (target != null) &#123;</span><br><span class="line">        target.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>说明</strong>：target是一个Runnable对象。run()就是直接调用Thread线程的Runnable成员的run()方法，并不会新建一个线程。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2018/05/16/linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/16/linux/" itemprop="url">linux起源</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-16T21:06:16+08:00">
+                2018-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h5><p>其名称来自非洲南部祖鲁语或豪萨语的“ubuntu”一词[2]  ，类似儒家“仁爱”的思想，意思是“人性”、“我的存在是因为大家的存在”，是非洲传统的一种价值观。</p>
+<h5 id="Debian"><a href="#Debian" class="headerlink" title="Debian"></a>Debian</h5><p>The official pronunciation of Debian is ‘deb ee n’. The name comes from the names of the creator of Debian, Ian Murdock, and his wife, Debra.</p>
+<h5 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h5><p>CentOS（Community Enterprise Operating System，中文意思是：社区企业操作系统）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2018/05/11/scheduledthreadexcuter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/11/scheduledthreadexcuter/" itemprop="url">scheduledthreadexcuter</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-11T09:08:39+08:00">
+                2018-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://www.jianshu.com/p/cc66c5201032" target="_blank" rel="noopener">https://www.jianshu.com/p/cc66c5201032</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> thread;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by Torres on 17/3/16.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyThread</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(getName() + <span class="string">"true start:"</span> + nowTime());</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(getName() + <span class="string">"true end:"</span> + nowTime());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">nowTime</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        SimpleDateFormat dataFormate = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line">        <span class="keyword">return</span> dataFormate.format(<span class="keyword">new</span> Date());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> thread;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.Executors;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.ScheduledExecutorService;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.Test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by Torres on 17/3/16.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScheduledThreadPoolTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testScheduleThread</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"main开始时间"</span> + MyThread.nowTime());</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">            MyThread myThread = <span class="keyword">new</span> MyThread(<span class="string">"thread"</span> + i);</span><br><span class="line">            System.out.println(<span class="string">"thread"</span> + i + <span class="string">"开始时间"</span> + MyThread.nowTime());</span><br><span class="line">            scheduledExecutorService.schedule(myThread, <span class="number">5</span>, TimeUnit.SECONDS);<span class="comment">//延时5s 执行</span></span><br><span class="line">            <span class="comment">//scheduledExecutorService.scheduleWithFixedDelay(myThread, 5, 2, TimeUnit.SECONDS);</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">70000</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        scheduledExecutorService.shutdown();<span class="comment">//7s 后关闭不再接受执行线程</span></span><br><span class="line">        <span class="keyword">while</span> (!scheduledExecutorService.isTerminated()) &#123;<span class="comment">//all thread等待结束</span></span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"main结束时间"</span> + MyThread.nowTime());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ace1981</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ace1981</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
       </div>
     </footer>
 
-      
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
 
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
 
 
 
@@ -108,6 +1768,124 @@
 
 
 
-    </div>
-  </body>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>

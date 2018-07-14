@@ -1,11 +1,85 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
+
+
+
   
-  <title>influxdb学习 | Ace&#39;pages</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="InfluxDB is the Time Series Database in the TICK stack https://www.influxdata.com/time-series-platform/  摘要: Docker监控方案之数据存储工具Influxdb工具的介绍和安装。Influxdb也是和telegraf属于一家公司，用go开发的用来存储时间序列数据的数据库。可以将存储的数据进行">
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="metrics,influxdb," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="InfluxDB is the Time Series Database in the TICK stack https://www.influxdata.com/time-series-platform/  摘要: Docker监控方案之数据存储工具Influxdb工具的介绍和安装。Influxdb也是和telegraf属于一家公司，用go开发的用来存储时间序列数据的数据库。可以将存储的数据进行">
 <meta name="keywords" content="metrics,influxdb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="influxdb学习">
@@ -17,172 +91,639 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="influxdb学习">
 <meta name="twitter:description" content="InfluxDB is the Time Series Database in the TICK stack https://www.influxdata.com/time-series-platform/  摘要: Docker监控方案之数据存储工具Influxdb工具的介绍和安装。Influxdb也是和telegraf属于一家公司，用go开发的用来存储时间序列数据的数据库。可以将存储的数据进行">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hujao.com/2017/12/07/influxdb/"/>
+
+
+
+
+
+  <title>influxdb学习 | Ace'pages</title>
   
-    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
+
+
+
+
+
+
+
+
 </head>
 
-  
-    
-      <body>
-    
-  
-      <div id="container" class="container">
-        <article id="post-influxdb" class="article article-type-post" itemscope itemprop="blogPost">
-  <header id="header" class="header">
-  <nav id="main-nav" class="main-nav">
-    
-      <a class="main-nav-link" href="/">Home</a>
-    
-      <a class="main-nav-link" href="/archives">Archives</a>
-    
-      <a class="main-nav-link" href="/categories">Categories</a>
-    
-      <a class="main-nav-link" href="/tags">Tags</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
-    
-  </nav>
-  <nav id="sub-nav">
-    
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-    
-  </nav>
-</header>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-  <hr/>
-  <div class="article-inner">
+  
+  
     
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
-      <header class="article-header">
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ace'pages</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
         
-  
-    <h1 class="article-title" itemprop="name">
-      influxdb学习
-    </h1>
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
   
 
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/07/influxdb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">influxdb学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-07T03:39:40+08:00">
+                2017-12-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/服务监控/" itemprop="url" rel="index">
+                    <span itemprop="name">服务监控</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry typo" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
       
         <p>InfluxDB is the Time Series Database in the TICK stack</p>
-<p><a href="https://www.influxdata.com/time-series-platform/" target="_blank" rel="external">https://www.influxdata.com/time-series-platform/</a></p>
+<p><a href="https://www.influxdata.com/time-series-platform/" target="_blank" rel="noopener">https://www.influxdata.com/time-series-platform/</a></p>
 <p> 摘要: Docker监控方案之数据存储工具Influxdb工具的介绍和安装。Influxdb也是和telegraf属于一家公司，用go开发的用来存储时间序列数据的数据库。可以将存储的数据进行时间序列化，是每个监控系统中最重要的一个环节。Docker监控方案(TIG)采用Influxdb来进行数据存储，当然可选的还有很多，比如Opentsdb，Graphite等。</p>
 <h4 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h4><p>Influxdb也是有influxdata公司(www.influxdata.com )开发的用于数据存储的时间序列数据库.可用于数据的时间排列。在整个TIG(Telegraf+influxdb+grafana)方案中，influxdb可算作一个中间件，主要负责原始数据的存储，并按照时间序列进行索引构建以提供时间序列查询接口。在整个TIG方案中，应该先构建的就是Influxdb。</p>
 <h4 id="Influxdb研究与实践："><a href="#Influxdb研究与实践：" class="headerlink" title="Influxdb研究与实践："></a>Influxdb研究与实践：</h4><p>influxdb介绍：</p>
-<p>使用TSM(Time Structured Merge)存储引擎，允许高摄取速度和数据压缩；<br>使用go编写，无需其他依赖；<br>简单，高性能写查询httpAPI接口；<br>支持其他数据获取协议的插件，比如graphite,collected,OpenTSDB；<br>使用relay构建高可用<a href="https://docs.influxdata.com/influxdb/v1.0/high_availability/relay/" target="_blank" rel="external">https://docs.influxdata.com/influxdb/v1.0/high_availability/relay/</a>；<br>扩展的类sql语言，很容易查询汇总数据；<br>tag的支持，可用让查询变的更加高效和快速；<br>保留策略有效地自动淘汰过期的数据；<br>持续所产生的自动计算的数据会使得频繁的查询更加高效；<br>web管理页面的支持</p>
+<p>使用TSM(Time Structured Merge)存储引擎，允许高摄取速度和数据压缩；<br>使用go编写，无需其他依赖；<br>简单，高性能写查询httpAPI接口；<br>支持其他数据获取协议的插件，比如graphite,collected,OpenTSDB；<br>使用relay构建高可用<a href="https://docs.influxdata.com/influxdb/v1.0/high_availability/relay/" target="_blank" rel="noopener">https://docs.influxdata.com/influxdb/v1.0/high_availability/relay/</a>；<br>扩展的类sql语言，很容易查询汇总数据；<br>tag的支持，可用让查询变的更加高效和快速；<br>保留策略有效地自动淘汰过期的数据；<br>持续所产生的自动计算的数据会使得频繁的查询更加高效；<br>web管理页面的支持</p>
 <p>下载安装：</p>
-<p>github：<a href="https://github.com/influxdata/influxdb" target="_blank" rel="external">https://github.com/influxdata/influxdb</a> 源码编译<br>官网下载：<br>Centos系列：wget<a href="https://dl.influxdata.com/influxdb/releases/influxdb-1.0.0.x86_64.rpm" target="_blank" rel="external">https://dl.influxdata.com/influxdb/releases/influxdb-1.0.0.x86_64.rpm</a> &amp;&amp; sudo yum localinstall influxdb-1.0.0.x86_64.rpm<br>源码包系列：wget<a href="https://dl.influxdata.com/influxdb/releases/influxdb-1.0.0_linux_amd64.tar.gz" target="_blank" rel="external">https://dl.influxdata.com/influxdb/releases/influxdb-1.0.0_linux_amd64.tar.gz</a> &amp;&amp; tar xvfz influxdb-1.0.0_linux_amd64.tar.gz<br>docker系列：docker pull influxdb<br>安装手册：<a href="https://docs.influxdata.com/influxdb/v0.9/introduction/installation/" target="_blank" rel="external">https://docs.influxdata.com/influxdb/v0.9/introduction/installation/</a></p>
+<p>github：<a href="https://github.com/influxdata/influxdb" target="_blank" rel="noopener">https://github.com/influxdata/influxdb</a> 源码编译<br>官网下载：<br>Centos系列：wget<a href="https://dl.influxdata.com/influxdb/releases/influxdb-1.0.0.x86_64.rpm" target="_blank" rel="noopener">https://dl.influxdata.com/influxdb/releases/influxdb-1.0.0.x86_64.rpm</a> &amp;&amp; sudo yum localinstall influxdb-1.0.0.x86_64.rpm<br>源码包系列：wget<a href="https://dl.influxdata.com/influxdb/releases/influxdb-1.0.0_linux_amd64.tar.gz" target="_blank" rel="noopener">https://dl.influxdata.com/influxdb/releases/influxdb-1.0.0_linux_amd64.tar.gz</a> &amp;&amp; tar xvfz influxdb-1.0.0_linux_amd64.tar.gz<br>docker系列：docker pull influxdb<br>安装手册：<a href="https://docs.influxdata.com/influxdb/v0.9/introduction/installation/" target="_blank" rel="noopener">https://docs.influxdata.com/influxdb/v0.9/introduction/installation/</a></p>
 <p>配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">#cat /etc/influxdb/influxdb.conf</div><div class="line">reporting-disabled = false</div><div class="line">[registration]</div><div class="line">[meta]</div><div class="line">dir = &quot;/var/lib/influxdb/meta&quot;</div><div class="line">hostname = &quot;10.0.0.2&quot;    #此hostname必须写本机，否则无法连接到数据操作的API</div><div class="line">bind-address = &quot;:8088&quot;</div><div class="line">retention-autocreate = true</div><div class="line">election-timeout = &quot;1s&quot;</div><div class="line">heartbeat-timeout = &quot;1s&quot;</div><div class="line">leader-lease-timeout = &quot;500ms&quot;</div><div class="line">commit-timeout = &quot;50ms&quot;</div><div class="line">cluster-tracing = false</div><div class="line">[data]</div><div class="line">dir = &quot;/var/lib/influxdb/data&quot;</div><div class="line">max-wal-size = 104857600 # Maximum size the WAL can reach before a flush. Defaults to 100MB.</div><div class="line">wal-flush-interval = &quot;10m&quot; # Maximum time data can sit in WAL before a flush.</div><div class="line">wal-partition-flush-delay = &quot;2s&quot; # The delay time between each WAL partition being flushed.</div><div class="line">wal-dir = &quot;/var/lib/influxdb/wal&quot;</div><div class="line">wal-logging-enabled = true</div><div class="line">[hinted-handoff]</div><div class="line">enabled = true</div><div class="line">dir = &quot;/var/lib/influxdb/hh&quot;</div><div class="line">max-size = 1073741824</div><div class="line">max-age = &quot;168h&quot;</div><div class="line">retry-rate-limit = 0</div><div class="line">retry-interval = &quot;1s&quot;</div><div class="line">retry-max-interval = &quot;1m&quot;</div><div class="line">purge-interval = &quot;1h&quot;</div><div class="line">[admin]</div><div class="line">enabled = true</div><div class="line">bind-address = &quot;:8083&quot;</div><div class="line">https-enabled = false</div><div class="line">https-certificate = &quot;/etc/ssl/influxdb.pem&quot;</div><div class="line">[http]</div><div class="line">enabled = true</div><div class="line">bind-address = &quot;:8086&quot;</div><div class="line">auth-enabled = false</div><div class="line">log-enabled = true</div><div class="line">write-tracing = false</div><div class="line">pprof-enabled = false</div><div class="line">https-enabled = false</div><div class="line">https-certificate = &quot;/etc/ssl/influxdb.pem&quot;</div><div class="line">[opentsdb]</div><div class="line">enabled = false</div><div class="line">[collectd]</div><div class="line">enabled = false</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">#cat /etc/influxdb/influxdb.conf</span><br><span class="line">reporting-disabled = false</span><br><span class="line">[registration]</span><br><span class="line">[meta]</span><br><span class="line">dir = &quot;/var/lib/influxdb/meta&quot;</span><br><span class="line">hostname = &quot;10.0.0.2&quot;    #此hostname必须写本机，否则无法连接到数据操作的API</span><br><span class="line">bind-address = &quot;:8088&quot;</span><br><span class="line">retention-autocreate = true</span><br><span class="line">election-timeout = &quot;1s&quot;</span><br><span class="line">heartbeat-timeout = &quot;1s&quot;</span><br><span class="line">leader-lease-timeout = &quot;500ms&quot;</span><br><span class="line">commit-timeout = &quot;50ms&quot;</span><br><span class="line">cluster-tracing = false</span><br><span class="line">[data]</span><br><span class="line">dir = &quot;/var/lib/influxdb/data&quot;</span><br><span class="line">max-wal-size = 104857600 # Maximum size the WAL can reach before a flush. Defaults to 100MB.</span><br><span class="line">wal-flush-interval = &quot;10m&quot; # Maximum time data can sit in WAL before a flush.</span><br><span class="line">wal-partition-flush-delay = &quot;2s&quot; # The delay time between each WAL partition being flushed.</span><br><span class="line">wal-dir = &quot;/var/lib/influxdb/wal&quot;</span><br><span class="line">wal-logging-enabled = true</span><br><span class="line">[hinted-handoff]</span><br><span class="line">enabled = true</span><br><span class="line">dir = &quot;/var/lib/influxdb/hh&quot;</span><br><span class="line">max-size = 1073741824</span><br><span class="line">max-age = &quot;168h&quot;</span><br><span class="line">retry-rate-limit = 0</span><br><span class="line">retry-interval = &quot;1s&quot;</span><br><span class="line">retry-max-interval = &quot;1m&quot;</span><br><span class="line">purge-interval = &quot;1h&quot;</span><br><span class="line">[admin]</span><br><span class="line">enabled = true</span><br><span class="line">bind-address = &quot;:8083&quot;</span><br><span class="line">https-enabled = false</span><br><span class="line">https-certificate = &quot;/etc/ssl/influxdb.pem&quot;</span><br><span class="line">[http]</span><br><span class="line">enabled = true</span><br><span class="line">bind-address = &quot;:8086&quot;</span><br><span class="line">auth-enabled = false</span><br><span class="line">log-enabled = true</span><br><span class="line">write-tracing = false</span><br><span class="line">pprof-enabled = false</span><br><span class="line">https-enabled = false</span><br><span class="line">https-certificate = &quot;/etc/ssl/influxdb.pem&quot;</span><br><span class="line">[opentsdb]</span><br><span class="line">enabled = false</span><br><span class="line">[collectd]</span><br><span class="line">enabled = false</span><br></pre></td></tr></table></figure>
 <p><code>注意：</code>influxdb服务会启动三个端口：8086为服务的默认数据处理端口，主要用来influxdb数据库的相关操作，可提供相关的API；8083为管理员提供了一个可视化的web界面，用来为用户提供友好的可视化查询与数据管理；8088主要为了元数据的管理。需要注意的是，influxdb默认是需要influxdb用户启动，且数据存放在/var/lib/influxdb/下面，生产环境需要注意这个。</p>
 <p>启动：</p>
 <p>和telegraf启动方式一样，可以使用init.d或者systemd进行管理influxdb<br><code>注意，启动之后需要查看相关的端口是否正在监听，并检查日志确保服务正常启动</code></p>
 <p>使用：</p>
 <p>如果说使用telegraf最核心的部分在配置，那么influxdb最核心的就是SQL语言的使用了。influxdb默认支持三种操作方式：<br><strong>登录influxdb的shell中操作:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">创建数据库：</div><div class="line">create database mydb</div><div class="line">创建用户：</div><div class="line">create user &quot;bigdata&quot; with password &apos;bigdata&apos; with all privileges</div><div class="line">查看数据库：</div><div class="line">show databases;</div><div class="line">数据插入：</div><div class="line">insert bigdata,host=server001,regin=HC load=88</div><div class="line">切换数据库：</div><div class="line"> use mydb</div><div class="line">查看数据库中有哪些measurement(类似数据库中的表):</div><div class="line">show measurements</div><div class="line">查询：</div><div class="line">select * from cpu limit 2</div><div class="line">查询一小时前开始到现在结束的：</div><div class="line">#select load from cpu where time &gt; now() - 1h</div><div class="line">查询从历史纪元开始到1000天之间：</div><div class="line">#select load from cpu where time &lt; now() + 1000d</div><div class="line">查找一个时间区间：</div><div class="line">#select load from cpu where time &gt; &apos;2016-08-18&apos; and time &lt; &apos;2016-09-19&apos;</div><div class="line">查询一个小时间区间的数据，比如在September 18, 2016 21:24:00:后的6分钟：</div><div class="line">#select load from cpu where time &gt; &apos;2016-09-18T21:24:00Z&apos; +6m</div><div class="line">使用正则查询所有measurement的数据：</div><div class="line">#select * from /.*/ limit 1</div><div class="line">#select * from /^docker/ limit 3</div><div class="line">#select * from /.*mem.*/ limit 3</div><div class="line">正则匹配加指定tag：（=~ !~）</div><div class="line">#select * from cpu where &quot;host&quot; !~ /.*HC.*/ limit 4</div><div class="line">#SELECT * FROM &quot;h2o_feet&quot; WHERE (&quot;location&quot; =~ /.*y.*/ OR &quot;location&quot; =~ /.*m.*/) AND &quot;water_level&quot; &gt; 0 LIMIT 4</div><div class="line">排序：group by的用法必须得是在复合函数中进行使用</div><div class="line">#select count(type) from events group by time(10s)</div><div class="line">#select count(type) from events group by time(10s),type</div><div class="line">给查询字段做tag：</div><div class="line">#select count(type) as number_of_types group by time(10m)</div><div class="line">#select count(type) from events group by time(1h) where time &gt; now() - 3h</div><div class="line">使用fill字段：</div><div class="line">#select count(type) from events group by time(1h) fill(0)/fill(-1)/fill(null) where time &gt; now() - 3h</div><div class="line">数据聚合：</div><div class="line">select count(type) from user_events merge admin_events group by time(10m)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">创建数据库：</span><br><span class="line">create database mydb</span><br><span class="line">创建用户：</span><br><span class="line">create user &quot;bigdata&quot; with password &apos;bigdata&apos; with all privileges</span><br><span class="line">查看数据库：</span><br><span class="line">show databases;</span><br><span class="line">数据插入：</span><br><span class="line">insert bigdata,host=server001,regin=HC load=88</span><br><span class="line">切换数据库：</span><br><span class="line"> use mydb</span><br><span class="line">查看数据库中有哪些measurement(类似数据库中的表):</span><br><span class="line">show measurements</span><br><span class="line">查询：</span><br><span class="line">select * from cpu limit 2</span><br><span class="line">查询一小时前开始到现在结束的：</span><br><span class="line">#select load from cpu where time &gt; now() - 1h</span><br><span class="line">查询从历史纪元开始到1000天之间：</span><br><span class="line">#select load from cpu where time &lt; now() + 1000d</span><br><span class="line">查找一个时间区间：</span><br><span class="line">#select load from cpu where time &gt; &apos;2016-08-18&apos; and time &lt; &apos;2016-09-19&apos;</span><br><span class="line">查询一个小时间区间的数据，比如在September 18, 2016 21:24:00:后的6分钟：</span><br><span class="line">#select load from cpu where time &gt; &apos;2016-09-18T21:24:00Z&apos; +6m</span><br><span class="line">使用正则查询所有measurement的数据：</span><br><span class="line">#select * from /.*/ limit 1</span><br><span class="line">#select * from /^docker/ limit 3</span><br><span class="line">#select * from /.*mem.*/ limit 3</span><br><span class="line">正则匹配加指定tag：（=~ !~）</span><br><span class="line">#select * from cpu where &quot;host&quot; !~ /.*HC.*/ limit 4</span><br><span class="line">#SELECT * FROM &quot;h2o_feet&quot; WHERE (&quot;location&quot; =~ /.*y.*/ OR &quot;location&quot; =~ /.*m.*/) AND &quot;water_level&quot; &gt; 0 LIMIT 4</span><br><span class="line">排序：group by的用法必须得是在复合函数中进行使用</span><br><span class="line">#select count(type) from events group by time(10s)</span><br><span class="line">#select count(type) from events group by time(10s),type</span><br><span class="line">给查询字段做tag：</span><br><span class="line">#select count(type) as number_of_types group by time(10m)</span><br><span class="line">#select count(type) from events group by time(1h) where time &gt; now() - 3h</span><br><span class="line">使用fill字段：</span><br><span class="line">#select count(type) from events group by time(1h) fill(0)/fill(-1)/fill(null) where time &gt; now() - 3h</span><br><span class="line">数据聚合：</span><br><span class="line">select count(type) from user_events merge admin_events group by time(10m)</span><br></pre></td></tr></table></figure>
 <p><strong>使用API进行操作数据:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">创建数据库:</div><div class="line">curl -G &quot;http://localhost:8086/query&quot; --data-urlencode &quot;q=create database mydb&quot;</div><div class="line">插入数据：</div><div class="line">curl -XPOST &apos;http://localhost:8086/write?db=mydb&apos; -d &apos;biaoge,name=xxbandy,xingqu=coding age=2&apos;</div><div class="line">curl -i -XPOST &apos;http://localhost:8086/write?db=mydb&apos; --data-binary &apos;cpu_load_short,host=server01,region=us-west value=0.64 1434055562000000000&apos;</div><div class="line">curl -i -XPOST &apos;http://localhost:8086/write?db=mydb&apos; --data-binary &apos;cpu_load_short,host=server02 value=0.67</div><div class="line">cpu_load_short,host=server02,region=us-west value=0.55 1422568543702900257</div><div class="line">cpu_load_short,direction=in,host=server01,region=us-west value=2.0 1422568543702900257&apos;</div><div class="line">将sql语句写入文件，并通过api插入：</div><div class="line">#cat sql.txt</div><div class="line">cpu_load_short,host=server02 value=0.67</div><div class="line">cpu_load_short,host=server02,region=us-west value=0.55 1422568543702900257</div><div class="line">cpu_load_short,direction=in,host=server01,region=us-west value=2.0 1422568543702900257</div><div class="line">#curl -i -XPOST &apos;http://localhost:8086/write?db=mydb&apos; --data-binary @cpu_data.txt</div><div class="line"></div><div class="line">查询数据：（--data-urlencode &quot;epoch=s&quot; 指定时间序列 &quot;chunk_size=20000&quot; 指定查询块大小）</div><div class="line"># curl -G http://localhost:8086/query?pretty=true --data-urlencode &quot;db=ydb&quot; --data-urlencode &quot;q=select * from biaoge where xingqu=&apos;coding&apos;&quot;</div><div class="line">数据分析：</div><div class="line">#curl -G http://localhost:8086/query?pretty=true --data-urlencode &quot;db=mydb&quot; --data-urlencode &quot;q=select mean(load) from cpu&quot;</div><div class="line">#curl -G http://localhost:8086/query?pretty=true --data-urlencode &quot;db=mydb&quot; --data-urlencode &quot;q=select load from cpu&quot;</div><div class="line">可以看到load的值分别是42 78 15.4；用mean(load)求出来的值为45,13</div><div class="line">curl -G http://localhost:8086/query?pretty=true --data-urlencode &quot;db=ydb&quot; --data-urlencode &quot;q=select mean(load) from cpu where host=&apos;server01&apos;&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">创建数据库:</span><br><span class="line">curl -G &quot;http://localhost:8086/query&quot; --data-urlencode &quot;q=create database mydb&quot;</span><br><span class="line">插入数据：</span><br><span class="line">curl -XPOST &apos;http://localhost:8086/write?db=mydb&apos; -d &apos;biaoge,name=xxbandy,xingqu=coding age=2&apos;</span><br><span class="line">curl -i -XPOST &apos;http://localhost:8086/write?db=mydb&apos; --data-binary &apos;cpu_load_short,host=server01,region=us-west value=0.64 1434055562000000000&apos;</span><br><span class="line">curl -i -XPOST &apos;http://localhost:8086/write?db=mydb&apos; --data-binary &apos;cpu_load_short,host=server02 value=0.67</span><br><span class="line">cpu_load_short,host=server02,region=us-west value=0.55 1422568543702900257</span><br><span class="line">cpu_load_short,direction=in,host=server01,region=us-west value=2.0 1422568543702900257&apos;</span><br><span class="line">将sql语句写入文件，并通过api插入：</span><br><span class="line">#cat sql.txt</span><br><span class="line">cpu_load_short,host=server02 value=0.67</span><br><span class="line">cpu_load_short,host=server02,region=us-west value=0.55 1422568543702900257</span><br><span class="line">cpu_load_short,direction=in,host=server01,region=us-west value=2.0 1422568543702900257</span><br><span class="line">#curl -i -XPOST &apos;http://localhost:8086/write?db=mydb&apos; --data-binary @cpu_data.txt</span><br><span class="line"></span><br><span class="line">查询数据：（--data-urlencode &quot;epoch=s&quot; 指定时间序列 &quot;chunk_size=20000&quot; 指定查询块大小）</span><br><span class="line"># curl -G http://localhost:8086/query?pretty=true --data-urlencode &quot;db=ydb&quot; --data-urlencode &quot;q=select * from biaoge where xingqu=&apos;coding&apos;&quot;</span><br><span class="line">数据分析：</span><br><span class="line">#curl -G http://localhost:8086/query?pretty=true --data-urlencode &quot;db=mydb&quot; --data-urlencode &quot;q=select mean(load) from cpu&quot;</span><br><span class="line">#curl -G http://localhost:8086/query?pretty=true --data-urlencode &quot;db=mydb&quot; --data-urlencode &quot;q=select load from cpu&quot;</span><br><span class="line">可以看到load的值分别是42 78 15.4；用mean(load)求出来的值为45,13</span><br><span class="line">curl -G http://localhost:8086/query?pretty=true --data-urlencode &quot;db=ydb&quot; --data-urlencode &quot;q=select mean(load) from cpu where host=&apos;server01&apos;&quot;</span><br></pre></td></tr></table></figure>
 <p><strong>使用influxdb提供的web界面进行操作:</strong></p>
 <p>这里只是简单的介绍了influxdb的使用，后期如果想在grafana中汇聚并完美地展示数据，可能需要熟悉influxdb的各种查询语法。(其实就是sql语句的一些使用技巧，聚合函数的使用，子查询等等)</p>
 
       
     </div>
-    <footer class="article-footer">
-      <ul class="article-meta">
-        <li>
-          <span class="label">Published Date:</span>
-          <a href="/2017/12/07/influxdb/" class="article-date">
-  <time datetime="2017-12-06T19:39:40.000Z" itemprop="datePublished">2017-12-07</time>
-</a>
-
-        </li>
-        
-          <li>
-            <span class="label">Category:</span>
-            
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/服务监控/">服务监控</a>
-  </div>
-
-
-          </li>
-        
-        
-          <li>
-            <span class="label">Tag:</span>
-            
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/influxdb/">influxdb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/metrics/">metrics</a></li></ul>
-
-
-          </li>
-        
-        <hr/>
-      </ul>
-    </footer>
-  </div>
-  
     
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2017/12/12/linux-bash/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          linux-bash学习
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/12/07/graphite/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">graphite学习</div>
-    </a>
-  
-</nav>
+    
+    
 
+    
 
-  
-</article>
+    
 
+    
 
-
-
-      </div>
+    <footer class="post-footer">
       
-    <footer id="footer" class="post-footer footer">
-      <hr/>
-      <div id="footerContent" class="footer-content">
-        <p>闲步山雨后,静待晚林风 Post</p>
+        <div class="post-tags">
+          
+            <a href="/tags/metrics/" rel="tag"># metrics</a>
+          
+            <a href="/tags/influxdb/" rel="tag"># influxdb</a>
+          
+        </div>
+      
 
+      
+      
+      
 
-      </div>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/07/graphite/" rel="next" title="graphite学习">
+                <i class="fa fa-chevron-left"></i> graphite学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/12/linux-bash/" rel="prev" title="linux-bash学习">
+                linux-bash学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
     </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
 
       
 
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ace1981</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+          <nav class="site-state motion-element">
 
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
 
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
 
+          </nav>
 
+          
 
+          <div class="links-of-author motion-element">
+            
+          </div>
 
+          
+          
 
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Influxdb研究与实践："><span class="nav-number">2.</span> <span class="nav-text">Influxdb研究与实践：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
 
     </div>
-  </body>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ace1981</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>

@@ -1,106 +1,2454 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
+
+
+
   
-  <title>Ace&#39;pages</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="Ace&#39;pages">
 <meta property="og:url" content="http://hujao.com/page/6/index.html">
 <meta property="og:site_name" content="Ace&#39;pages">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ace&#39;pages">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hujao.com/page/6/"/>
+
+
+
+
+
+  <title>Ace'pages</title>
   
-    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
+
+
+
+
+
+
+
+
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
   
     
-    <body class="home-body">
-    
   
-      <div id="container" class="container">
-        <div class="home">
-  <div class="content">
-    <div class="profile">
-      <h1 class="nickname">Ace</h1>
-      <div class="description">
-        <p><p>程序员一枚,研究各种技术,生命不息,学习不止.</p>
-</p>
-      </div>
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ace'pages</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <hr/>
-    <ul class="links">
       
-        <li>
-          <a href="/archives">Blog</a>
-        </li>
+        <p class="site-subtitle"></p>
       
-        <li>
-          <a href="https://github.com/ace1981">GitHub</a>
-        </li>
-      
-    </ul>
   </div>
 
- <link rel="stylesheet" type="text/css" href="/css/wordcloud2.css" />
-    <script src="/js/jquery.min.js"></script>
- 
-    <script type="text/javascript">
-        /*!
-         * Create an array of word objects, each representing a word in the cloud
-         */
-        var word_array = [
-            {text: "docker"},
-            {text: "springboot"}, {text: "容器编排"}, {text: "持续集成"}, {text: "日志收集"}, {text: "服务监控"}, {text: "数据安全"}, {text: "机器学习"}, {text: "搜索引擎"}, {text: "数据库"},{text: "web前端"}, {text: "代码管理"},  {text: "分布式"},  {text: "大数据"}, {text: "框架"}, {text: "流计算" }, {text: "消息队列" }, {text: "第三方支付"}, {text: "网络协议"}, {text: "负载均衡" }, {text: "开发工具" }, {text: "性能优化" },  {text: "etl" },{text: "java" },  {text: "linux"}, {text: "shell"}
-            // ...as many words as you want
-        ];
-        $(document).ready(function () {
-            for (var i = 0; i < word_array.length; i++) {
-                var w=Math.round(Math.random()*10);
-                word_array[i].link="/categories/"+word_array[i].text+"/";
-                word_array[i].weight=w;
-            };
-            jQuery("#example").jQCloud(word_array);
-        //$("#reply").val("添加回复：");
-        });
-    </script>
-    <div id="example" style="width: 500px; height: 120px;max-width: 500px;
-    position: relative;
-    margin: 0 auto;margin-top: 30px;
-    margin-bottom: -40px;">
-             
-    </div>
-
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-      </div>
-      
-  <footer id="footer" class="home-footer footer">
-    <div id="copyright" class="copyright">
-      &copy; hujao.com 2018   
+<nav class="site-nav">
+  
 
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/18/docker-base/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/18/docker-base/" itemprop="url">docker基础命令回顾</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-18T11:27:21+08:00">
+                2017-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="容器生命周期管理"><a href="#容器生命周期管理" class="headerlink" title="容器生命周期管理"></a>容器生命周期管理</h3><hr>
+<p><strong>docker run ：</strong>创建一个新的容器并运行一个命令</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-a stdin:</strong> 指定标准输入输出内容类型，可选 STDIN/STDOUT/STDERR 三项；</li>
+<li><strong>-d:</strong> 后台运行容器，并返回容器ID；</li>
+<li><strong>-i:</strong> 以交互模式运行容器，通常与 -t 同时使用；</li>
+<li><strong>-t:</strong> 为容器重新分配一个伪输入终端，通常与 -i 同时使用；</li>
+<li><strong>–name=”nginx-lb”:</strong> 为容器指定一个名称；</li>
+<li><strong>–dns 8.8.8.8:</strong> 指定容器使用的DNS服务器，默认和宿主一致；</li>
+<li><strong>–dns-search example.com:</strong> 指定容器DNS搜索域名，默认和宿主一致；</li>
+<li><strong>-h “mars”:</strong> 指定容器的hostname；</li>
+<li><strong>-e username=”ritchie”:</strong> 设置环境变量；</li>
+<li><strong>–env-file=[]:</strong> 从指定文件读入环境变量；</li>
+<li><strong>–cpuset=”0-2” or –cpuset=”0,1,2”:</strong> 绑定容器到指定CPU运行；</li>
+<li><strong>-m :</strong>设置容器使用内存最大值；</li>
+<li><strong>–net=”bridge”:</strong> 指定容器的网络连接类型，支持 bridge/host/none/container: 四种类型；</li>
+<li><strong>–link=[]:</strong> 添加链接到另一个容器；</li>
+<li><strong>–expose=[]:</strong> 开放一个端口或一组端口；</li>
+</ul>
+<hr>
+<p><strong>docker start</strong> :启动一个或多少已经被停止的容器</p>
+<p><strong>docker stop</strong> :停止一个运行中的容器</p>
+<p><strong>docker restart</strong> :重启容器</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start [OPTIONS] CONTAINER [CONTAINER...]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop [OPTIONS] CONTAINER [CONTAINER...]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart [OPTIONS] CONTAINER [CONTAINER...]</span><br></pre></td></tr></table></figure>
+<p>实例</p>
+<p>启动已被停止的容器myrunoob</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start myrunoob</span><br></pre></td></tr></table></figure>
+<p>停止运行中的容器myrunoob</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop myrunoob</span><br></pre></td></tr></table></figure>
+<p>重启容器myrunoob</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart myrunoob</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>docker kill</strong> :杀掉一个运行中的容器。</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker kill [OPTIONS] CONTAINER [CONTAINER...]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-s :</strong>向容器发送一个信号</li>
+</ul>
+<p>实例</p>
+<p>杀掉运行中的容器mynginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">runoob@runoob:~$ docker kill -s KILL mynginx</span><br><span class="line">mynginx</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>docker rm ：</strong>删除一个或多少容器</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm [OPTIONS] CONTAINER [CONTAINER...]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-f :</strong>通过SIGKILL信号强制删除一个运行中的容器</li>
+<li><strong>-l :</strong>移除容器间的网络连接，而非容器本身</li>
+<li><strong>-v :</strong>-v 删除与容器关联的卷</li>
+</ul>
+<p>实例</p>
+<p>强制删除容器db01、db02</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f db01、db02</span><br></pre></td></tr></table></figure>
+<p>移除容器nginx01对容器db01的连接，连接名db</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -l db</span><br></pre></td></tr></table></figure>
+<p>删除容器nginx01,并删除容器挂载的数据卷</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -v nginx01</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>docker pause</strong> :暂停容器中所有的进程。</p>
+<p><strong>docker unpause</strong> :恢复容器中所有的进程。</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pause [OPTIONS] CONTAINER [CONTAINER...]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker unpause [OPTIONS] CONTAINER [CONTAINER...]</span><br></pre></td></tr></table></figure>
+<p>实例</p>
+<p>暂停数据库容器db01提供服务。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pause db01</span><br></pre></td></tr></table></figure>
+<p>恢复数据库容器db01提供服务。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker unpause db01</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>docker create ：</strong>创建一个新的容器但不启动它</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker create [OPTIONS] IMAGE [COMMAND] [ARG...]</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>docker exec ：</strong>在运行的容器中执行命令</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec [OPTIONS] CONTAINER COMMAND [ARG...]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-d :</strong>分离模式: 在后台运行</li>
+<li><strong>-i :</strong>即使没有附加也保持STDIN 打开</li>
+<li><strong>-t :</strong>分配一个伪终端</li>
+</ul>
+<p>实例</p>
+<p>在容器mynginx中以交互模式执行容器内/root/runoob.sh脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">runoob@runoob:~$ docker exec -it mynginx /bin/sh /root/runoob.sh</span><br><span class="line">http://www.runoob.com/</span><br></pre></td></tr></table></figure>
+<p>在容器mynginx中开启一个交互模式的终端</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">runoob@runoob:~$ docker exec -i -t  mynginx /bin/bash</span><br><span class="line">root@b1a0703e41e7:/#</span><br></pre></td></tr></table></figure>
+<h3 id="容器操作"><a href="#容器操作" class="headerlink" title="容器操作"></a>容器操作</h3><hr>
+<p><strong>docker ps : </strong>列出容器</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps [OPTIONS]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-a :</strong>显示所有的容器，包括未运行的。</li>
+<li><strong>-f :</strong>根据条件过滤显示的内容。</li>
+<li><strong>–format :</strong>指定返回值的模板文件。</li>
+<li><strong>-l :</strong>显示最近创建的容器。</li>
+<li><strong>-n :</strong>列出最近创建的n个容器。</li>
+<li><strong>–no-trunc :</strong>不截断输出。</li>
+<li><strong>-q :</strong>静默模式，只显示容器编号。</li>
+<li><strong>-s :</strong>显示总的文件大小。</li>
+</ul>
+<hr>
+<p><strong>docker inspect :</strong> 获取容器/镜像的元数据。</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect [OPTIONS] NAME|ID [NAME|ID...]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-f :</strong>指定返回值的模板文件。</li>
+<li><strong>-s :</strong>显示总的文件大小。</li>
+<li><strong>–type :</strong>为指定类型返回JSON。</li>
+</ul>
+<hr>
+<p><strong>docker top :</strong>查看容器中运行的进程信息，支持 ps 命令参数。</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker top [OPTIONS] CONTAINER [ps OPTIONS]</span><br></pre></td></tr></table></figure>
+<p>容器运行时不一定有/bin/bash终端来交互执行top命令，而且容器还不一定有top命令，可以使用docker top来实现查看container中正在运行的进程。</p>
+<hr>
+<p><strong>docker attach :</strong>连接到正在运行中的容器。</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker attach [OPTIONS] CONTAINER</span><br></pre></td></tr></table></figure>
+<p>要attach上去的容器必须正在运行，可以同时连接上同一个container来共享屏幕（与screen命令的attach类似）。</p>
+<p>官方文档中说attach后可以通过CTRL-C来detach，但实际上经过我的测试，如果container当前在运行bash，CTRL-C自然是当前行的输入，没有退出；如果container当前正在前台运行进程，如输出nginx的access.log日志，CTRL-C不仅会导致退出容器，而且还stop了。这不是我们想要的，detach的意思按理应该是脱离容器终端，但容器依然运行。好在attach是可以带上–sig-proxy=false来确保CTRL-D或CTRL-C不会关闭容器。</p>
+<hr>
+<p><strong>docker events : </strong>从服务器获取实时事件</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker events [OPTIONS]</span><br></pre></td></tr></table></figure>
+<p>OPTIONS说明：</p>
+<ul>
+<li><strong>-f ：</strong>根据条件过滤事件；</li>
+<li><strong>–since ：</strong>从指定的时间戳后显示所有事件;</li>
+<li><strong>–until ：</strong>流水时间显示到指定的时间为止；</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/18/encryption-algorithm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/18/encryption-algorithm/" itemprop="url">encryption-algorithm</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-18T10:20:26+08:00">
+                2017-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据安全/" itemprop="url" rel="index">
+                    <span itemprop="name">数据安全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>原文引用:<a href="http://www.cnblogs.com/colife/p/5566789.html" target="_blank" rel="noopener">常用加密算法概述</a> <a href="http://www.jiamisoft.com/blog/2685-changyongjiamisuanfa.html" target="_blank" rel="noopener">几种常用加密算法比较</a></p>
+<h3 id="一-对称加密"><a href="#一-对称加密" class="headerlink" title="一 对称加密"></a>一 对称加密</h3><blockquote>
+<p>根据持有的密钥,对信息进行加密解码</p>
+</blockquote>
+<p><strong>DES加密算法</strong></p>
+<p>DES加密算法是一种分组密码，以64位为分组对数据加密，它的密钥长度是56位，加密解密用同一算法。DES加密算法是对密钥进行保密，而公开算法，包括加密和解密算法。这样，只有掌握了和发送方相同密钥的人才能解读由DES加密算法加密的密文数据。因此，破译DES加密算法实际上就是搜索密钥的编码。对于56位长度的密钥来说，如果用穷举法来进行搜索的话，其运算次数为256。</p>
+<p>随着计算机系统能力的不断发展，DES的安全性比它刚出现时会弱得多，然而从非关键性质的实际出发，仍可以认为它是足够的。不过，DES现在仅用于旧系统的鉴定，而更多地选择新的加密标准。</p>
+<p><strong>AES加密算法</strong></p>
+<p>AES加密算法是密码学中的高级加密标准，该加密算法采用对称分组密码体制，密钥长度的最少支持为128、192、256，分组长度128位，算法应易于各种硬件和软件实现。这种加密算法是美国联邦政府采用的区块加密标准，这个标准用来替代原先的DES，已经被多方分析且广为全世界所使用。</p>
+<p>AES加密算法被设计为支持128／192／256位（/32=nb)数据块大小（即分组长度）；支持128／192／256位（/32=nk)密码长度，，在10进制里，对应34×1038、62×1057、1.1×1077个密钥。</p>
+<h3 id="二-非对称加密"><a href="#二-非对称加密" class="headerlink" title="二 非对称加密"></a>二 非对称加密</h3><blockquote>
+<p>各自生成私钥和公钥密钥对,交换公钥,私钥加密,用公钥验证数据源是否可信</p>
+</blockquote>
+<p><strong>RSA加密算法</strong></p>
+<p>RSA加密算法是目前最有影响力的公钥加密算法，并且被普遍认为是目前最优秀的公钥方案之一。RSA是第一个能同时用于加密和数宇签名的算法，它能够抵抗到目前为止已知的所有密码攻击，已被ISO推荐为公钥数据加密标准。RSA加密算法基于一个十分简单的数论事实：将两个大素数相乘十分容易，但那时想要，但那时想要对其乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥。</p>
+<h3 id="三-Hash算法"><a href="#三-Hash算法" class="headerlink" title="三 Hash算法"></a>三 Hash算法</h3><blockquote>
+<p>单向加密算法,用于数据签名,验证文件在数据传输中是否被篡改</p>
+</blockquote>
+<p><strong>MD5加密算法</strong></p>
+<p>MD5为计算机安全领域广泛使用的一种散列函数，用以提供消息的完整性保护。对MD5加密算法简要的叙述可以为：MD5以512位分组来处理输入的信息，且每一分组又被划分为16个32位子分组，经过了一系列的处理后，算法的输出由四个32位分组组成，将这四个32位分组级联后将生成—个128位散列值。</p>
+<p>MD5被广泛用于各种软件的密码认证和钥匙识别上。MD5用的是哈希函数，它的典型应用是对一段信息产生信息摘要，以防止被篡改。MD5的典型应用是对一段Message产生fingerprin指纹，以防止被“篡改”。如果再有—个第三方的认证机构，用MD5还可以防止文件作者的“抵赖”，这就是所谓的数字签名应用。MD5还广泛用于操作系统的登陆认证上，如UNIX、各类BSD系统登录密码、数字签名等诸多方。</p>
+<p><strong>SHA1加密算法</strong></p>
+<p>SHA1是和MD5一样流行的消息摘要算法。SHA加密算法模仿MD4加密算法。SHA1设计为和数字签名算法（ＤＳＡ）一起使用。</p>
+<p>SHA1主要适用于数字签名标准里面定义的数字签名算法。对于长度小于2“64位的消息，SHA1会产生一个160位的消息摘要。当接收到消息的时候，这个消息摘要可以用来验证数据的完整性。在传输的过程中，数据很可能会发生变化，那么这时候就会产生不同的消息摘要。SHA1不可以从消息摘要中复原信息，而两个不同的消息不会产生同样的消息摘要。这样，SHA1就可以验证数据的完整性，所以说SHA1是为了保证文件完整性的技术。</p>
+<p>SHA1加密算法可以采用不超过264位的数据输入，并产生一个160位的摘要。输入被划分为512位的块，并单独处理。160位缓冲器用来保存散列函数的中间和最后结果。缓冲器可以由5个32位寄存器（A、B、C、D和E）来表示。SHA1是一种比MD5的安全性强的算法，理论上，凡是采取“消息摘要”方式的数字验证算法都是有“碰撞”的——也就是两个不同的东西算出的消息摘要相同，互通作弊图就是如此。但是安全性高的算法要找到指定数据的“碰撞”很困难，而利用公式来计算“碰撞”就更困难一目前为止通用安全算法中仅有MD5被破解。</p>
+<p>加密算法是密码技术的核心，以上这些加密算法是常用的加密算法，而这些算法有些已经遭到破译，有些安全度不高，有些强度不明，有些待进—步分析，有些需要深入研究，而神秘的加密算法世界，又会有新的成员加入，期待更安全的算法诞生。</p>
+<h3 id="四-数据编码"><a href="#四-数据编码" class="headerlink" title="四 数据编码"></a>四 数据编码</h3><blockquote>
+<p>数据传输用到的公开算法的编码解码,并非安全加密算法</p>
+</blockquote>
+<h5 id="Base64编码算法"><a href="#Base64编码算法" class="headerlink" title="Base64编码算法"></a>Base64编码算法</h5><p>Base64加密算法是网络上最常见的用于传输8bit字节代码的编码方式之一，Base64编码可用于在HTTP环境下传递较长的标识信息。例如，在JAVAPERSISTENCE系统HIBEMATE中，采用了Base64来将一个较长的唯一标识符编码为一个字符串，用作HTTP表单和HTTPGETURL中的参数。在其他应用程序中，也常常需要把二进制数据编码为适合放在URL（包括隐藏表单域）中的形式。此时，采用Base64编码不仅比较简短，同时也具有不可读性，即所编码的数据不会被人用肉眼所直接看到。64个字符中包括<strong><em>使用的字符包括大小写字母各26个，加上10个数字，和加号“+”，斜杠“/”，一共64个字符，等号“=”用来作为后缀用途。</em></strong></p>
+<h5 id="UrlEncode"><a href="#UrlEncode" class="headerlink" title="UrlEncode"></a>UrlEncode</h5><p>urlencode是一个函数，可将字符串以URL编码，用于编码处理。</p>
+<p>URL编码(URL encoding)，也称作百分号编码(Percent-encoding)， 是特定上下文的统一资源定位符 (URL)的编码机制。</p>
+<p>适用于统一资源标识符(URI)的编码，也用于为”application/x-www-form-urlencoded” MIME准备数据， 因为它用于通过HTTP的请求操作(request)提交HTML表单数据。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/18/openssl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/18/openssl/" itemprop="url">openssl常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-18T10:12:16+08:00">
+                2017-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据安全/" itemprop="url" rel="index">
+                    <span itemprop="name">数据安全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/18/docker-bridge/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/18/docker-bridge/" itemprop="url">docker bridge网络模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-18T09:31:47+08:00">
+                2017-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>引用原文地址:<a href="http://blog.daocloud.io/docker-bridge/" target="_blank" rel="noopener">http://blog.daocloud.io/docker-bridge/</a></p>
+<h4 id="探索-Docker-bridge"><a href="#探索-Docker-bridge" class="headerlink" title="探索 Docker bridge"></a>探索 Docker bridge</h4><p>上一回合，小白折腾了 Docker 架构，铁要趁热我开始学习 Docker 容器网络。此刻的心情，是激动的，也是不安的。激动是因为终于要面对 Docker 的第一座大山 ：<strong>网络</strong>，不安是因为网络问题一直以来都是小白的软肋，那些年我们一起学过的网络知识，如今……</p>
+<p>硬着头皮翻开《<strong>Docker 进阶与实战</strong>》开始 Docker 网络初探，里面讲述了 Docker 容器网络的好几种模式。其中 “<strong>bridge” 模式</strong>成功的吸引了我的注意。bridge 模式俗称桥接模式，关于它的定义小白早就忘了，但不难理解的是 bridge 的作用，<strong>bridge 可以连接不同的东西。</strong></p>
+<p>早期的二层网络中，bridge 可以连接不同的 LAN 网，如下图所示。当主机 1 发出一个数据包时，LAN 1 的其他主机和网桥 br0 都会收到该数据包。网桥再将数据包从入口端复制到其他端口上（本例中就是另外一个端口）。因此，LAN 2 上的主机也会接收到主机 A 发出的数据包，从而实现不同 LAN 网上所有主机的通信。</p>
+<p><img src="/2017/12/18/docker-bridge/e1.png" alt="e1"></p>
+<p>Linux Kernel</p>
+<p><img src="/2017/12/18/docker-bridge/e3.png" alt="e3"></p>
+<p>依葫芦画瓢，Docker bridge 十有八九是用来连接不同容器，或是连接容器与宿主机的。</p>
+<p>带着疑问，我快速浏览了这个章节，结果是大惊从早到晚失色，书中的介绍比我预想的复杂很多，Docker bridge 模式不仅使用了 <strong>veth pair </strong>技术，还使用了<strong>网络命名空间技术</strong>，更令我吃惊的是，Docker bridge 模式下竟然采用了 <strong>NAT </strong>方式。Docker bridge 和 Linux bridge 二者，初看如出一辙，再看又相去甚远，还真是傻傻分不清楚。没想到我的容器网络学习计划，刚起步便遭遇了滑铁卢。</p>
+<p>没有搞清楚 Docker bridge 与 Linux bridge 的区别前，这书简直没法看了。依小白的经验，云里雾里的时候摸清楚基本概念最有效，先从 Linux bridge 模式的基本工作原理入手，再从 Docker bridge 模式下的 “黑科技” （veth pair、网络命名空间技术、NAT）入手 ，或许能找出点头绪。压抑住内心的愤懑，我翻开了《<strong>深入理解 LINUX 网络技术的内幕</strong>》，找寻这些关键字的足迹。</p>
+<h4 id="Linux-bridge-模式"><a href="#Linux-bridge-模式" class="headerlink" title="Linux bridge 模式"></a>Linux bridge 模式</h4><p>Linux bridge 模式下，Linux Kernel 会创建出一个<strong>虚拟网桥</strong> ，用以实现<strong>主机网络**</strong>接口<strong>与</strong>虚拟网络接口**间的通信。从功能上来看，Linux bridge 像一台虚拟交换机，所有桥接设置的虚拟机分别连接到这个交换机的一个接口上，接口之间可以相互访问且互不干扰，这种连接方式对物理主机而言也是如此。</p>
+<p><img src="/2017/12/18/docker-bridge/e4.png" alt="e4"></p>
+<p>在桥接的作用下，虚拟网桥会把主机网络接口接收到的网络流量转发给虚拟网络接口，于是后者能够接收到路由器发出的 DHCP（动态主机设定协议，用于获取局域网 IP）信息及路由更新。这样的工作流程，同样适用于不同虚拟网络接口间的通信。具体的实现方式如下所示：</p>
+<p><strong>虚拟机与宿主机通信</strong>： 用户可以手动为虚拟机配置IP 地址、子网掩码，该 IP 需要和宿主机 IP 处于同一网段，这样虚拟机才能和宿主机进行通信。</p>
+<p><strong>虚拟机与外界通信</strong>： 如果虚拟机需要联网，还需为它手动配置网关，该网关也要和宿主机网关保持一致。</p>
+<p>除此之外，还有一种较为简单的方法，那就是虚拟机通过 DHCP 自动获取 IP，实现与宿主机或宿主机以外的世界通信，小白亲测有效。</p>
+<h4 id="Docker-bridge-模式"><a href="#Docker-bridge-模式" class="headerlink" title="Docker bridge 模式"></a>Docker bridge 模式</h4><p>大致清楚 Linux bridge 模式后，再来看 Docker bridge 模式，小白也有了信心。再次翻开《 Docker 进阶与实战》，仔细阅读后小白了解到在该 bridge 模式下，Docker Daemon 会创建出一个名为 docker0 的<strong>虚拟网桥</strong> ，用来连接<strong>宿主机</strong>与<strong>容器</strong>，或者连接<strong>不同的容器</strong>，书中的介绍与小白之前的假设也不谋而合。</p>
+<p>Docker 利用 veth pair [注释1]技术，在宿主机上创建了两个虚拟网络接口 veth0 和 veth1（veth pair 技术的特性可以保证无论哪一个 veth 接收到网络报文，都会无条件地传输给另一方）。</p>
+<p><img src="/2017/12/18/docker-bridge/e5.png" alt="e5"></p>
+<p><strong>容器与宿主机通信</strong> : 在桥接模式下，Docker Daemon 将 veth0 附加到 docker0 网桥上，保证宿主机的报文有能力发往 veth0。再将 veth1 添加到 Docker 容器所属的网络命名空间[注释2]，保证宿主机的网络报文若发往 veth0 可以立即被 veth1 收到。</p>
+<p><strong>容器与外界通信</strong> : 容器如果需要联网，则需要采用 NAT [注释2] 方式。准确的说，是 NATP (网络地址端口转换) 方式。NATP 包含两种转换方式：SNAT 和 DNAT 。</p>
+<ul>
+<li>目的 NAT (Destination NAT，DNAT): 修改数据包的目的地址。</li>
+</ul>
+<p>当宿主机以外的世界需要访问容器时，数据包的流向如下图所示：</p>
+<p><img src="/2017/12/18/docker-bridge/e6.png" alt="e6"></p>
+<p>由于容器的 IP 与端口对外都是不可见的，所以数据包的目的地址为<strong>宿主机</strong>的 <strong>ip</strong> 和<strong>端口</strong>，为 192.168.1.10:24 。</p>
+<p>数据包经过路由器发给宿主机 eth0，再经 eth0 转发给 docker0 网桥。由于存在 DNAT 规则，会将数据包的目的地址转换为<strong>容器</strong>的 <strong>ip </strong>和<strong>端口</strong>，为 172.17.0.n:24 。</p>
+<p>宿主机上的 docker0 网桥识别到容器 ip 和端口，于是将数据包发送附加到 docker0 网桥上的 veth0 接口，veth0 接口再将数据包发送给容器内部的 veth1 接口，容器接收数据包并作出响应。</p>
+<p><img src="/2017/12/18/docker-bridge/e7.png" alt="e7"></p>
+<ul>
+<li>源 NAT (Source NAT，SNAT): 修改数据包的源地址。</li>
+</ul>
+<p>当容器需要访问宿主机以外的世界时，数据包的流向为下图所示：</p>
+<p><img src="/2017/12/18/docker-bridge/e8.png" alt="e8"></p>
+<p>此时数据包的源地址为<strong>容器</strong>的<strong> ip</strong> 和<strong>端口</strong>，为 172.17.0.n:24，容器内部的 veth1 接口将数据包发往 veth0 接口，到达 docker0 网桥。</p>
+<p>宿主机上的 docker0 网桥发现数据包的目的地址为外界的 IP 和端口，便会将数据包转发给 eth0 ，并从 eth0 发出去。由于存在 SNAT 规则，会将数据包的源地址转换为<strong>宿主机</strong>的 <strong>ip </strong>和<strong>端口</strong>，为 192.168.1.10:24 。</p>
+<p>由于路由器可以识别到宿主机的 ip 地址，所以再将数据包转发给外界，外界接受数据包并作出响应。这时候，在外界看来，这个数据包就是从 192.168.1.10:24 上发出来的，Docker 容器对外是不可见的。</p>
+<p><img src="/2017/12/18/docker-bridge/e10.png" alt="e10"></p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>小白的容器网络学习只是刚刚开了头，竟也能折腾出这么多玩儿意，有 veth pair，有网络命名空间， 还有 NAT 。虽说 docker bridge 模式仅仅是容器网络的冰山一角，后面的学习之路仍然且行且艰辛，但小白也掌握了一些学习经验，那就是面对错综复杂的网络模式，首先需要识其筋骨胜肉，抓住本质含义。小白就是凭着对 bridge 的理解，才展开了一系列大胆的假设，带着问题最终在书中得到求证。Disappointing, but not fatal。</p>
+<p>[注释1] veth pair是用于不同network namespace间进行通信的方式，veth pair 将一个 network namespace 数据发往另一个 network namespace 的 veth。</p>
+<p>[注释2] 网络命名空间是用于隔离网络资源（/proc/net、IP 地址、网卡、路由等）。由于一个物理的网络设备最多存放在一个网络命名空间中，所以通过 veth pair 在不同的网络命名空间中创建通道，才能达到通信的目的。</p>
+<p>[注释3] NAT 为网络地址转换（Network Address Translation）的缩写，是一种在 ip 数据包通过路由器或防火墙时重写来源 ip 地址或目的 ip 地址的技术。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/17/docker-jar/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/17/docker-jar/" itemprop="url">docker构建可执行jar包镜像</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-17T18:01:26+08:00">
+                2017-12-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>scp复制到远程服务器</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp ~/docker/nettyserver.jar root@192.168.77.10:~/netty/</span><br></pre></td></tr></table></figure>
+<ol>
+<li>vim创建Dockerfile</li>
+</ol>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> java:<span class="number">8</span></span><br><span class="line"><span class="keyword">COPY</span> ./nettyserver.jar app.jar</span><br><span class="line">RUN bash -c 'touch /app.jar'</span><br><span class="line">#容器运行时监听的端口</span><br><span class="line">EXPOSE  2066</span><br><span class="line">ENTRYPOINT ["java","-jar","/app.jar"]</span><br></pre></td></tr></table></figure>
+<ol>
+<li>构建镜像</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t nettyserver .</span><br></pre></td></tr></table></figure>
+<ol>
+<li>启动容器</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run --name nettyserver -d --restart always \</span><br><span class="line">-p 2066:2066 \</span><br><span class="line">nettyserver</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/14/crt/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/14/crt/" itemprop="url">crt证书相关知识</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-14T12:25:03+08:00">
+                2017-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据安全/" itemprop="url" rel="index">
+                    <span itemprop="name">数据安全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h5 id="密钥"><a href="#密钥" class="headerlink" title="密钥"></a>密钥</h5><p>公钥 </p>
+<p>私钥 key  publickey privatekey</p>
+<h5 id="证书请求"><a href="#证书请求" class="headerlink" title="证书请求"></a>证书请求</h5><p>ceq</p>
+<h5 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h5><p>crt   cer(微软)</p>
+<h5 id="私钥加密"><a href="#私钥加密" class="headerlink" title="私钥加密"></a>私钥加密</h5><p>加密密码</p>
+<h5 id="证书私钥集合"><a href="#证书私钥集合" class="headerlink" title="证书私钥集合"></a>证书私钥集合</h5><p>jks (java keystore) pfx(IIS) p12(mac OS)</p>
+<h5 id="编码格式"><a href="#编码格式" class="headerlink" title="编码格式"></a>编码格式</h5><p>der二进制   </p>
+<p>pem base64</p>
+<h3 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h3><p>AES,RSA</p>
+<h3 id="证书使用场景"><a href="#证书使用场景" class="headerlink" title="证书使用场景"></a>证书使用场景</h3><p><img src="/2017/12/14/crt/crt.jpg" alt="crt"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/13/docker-registry/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/13/docker-registry/" itemprop="url">docker-registry私有库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-13T16:38:46+08:00">
+                2017-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://segmentfault.com/a/1190000008680930" target="_blank" rel="noopener">jenkins推送镜像到私有库</a></p>
+<p><a href="https://docs.docker.com/registry/" target="_blank" rel="noopener">docker官网私有库文档</a></p>
+<ol>
+<li>修改机器IP映射</li>
+</ol>
+<p>然后修改/ect/hosts文件</p>
+<p>vi /ect/hosts</p>
+<p>直接在后面加上IP 和域地址(主机和客户端都加)</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.1.111 registry.com</span><br></pre></td></tr></table></figure>
+<ol>
+<li>创建证书</li>
+</ol>
+<p>由于私服需要使用https所以，需要创建证书。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openssl req -newkey rsa:4096 -nodes -sha256 -keyout registry.key -x509\</span><br><span class="line">-day 365 -out registy.crt</span><br></pre></td></tr></table></figure>
+<p> 将证书拷贝到docker环境中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /etc/docker/certs.d/registry.com</span><br><span class="line">cp ./registry.crt /etc/docker/certs.d/registry.com/</span><br></pre></td></tr></table></figure>
+<ol>
+<li>启动私服容器实例：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">--restart=always \</span><br><span class="line">-p 443:443 \</span><br><span class="line">-v pwd/certs:/certs \</span><br><span class="line">--name registry \</span><br><span class="line">-v /opt/docker-registry/:/var/lib/registry \</span><br><span class="line">-e REGISTRY_HTTP_ADDR=0.0.0.0:443 \</span><br><span class="line">-e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/registry.crt \</span><br><span class="line">-e REGISTRY_HTTP_TLS_KEY=/certs/registry.private.key \</span><br><span class="line">registry:2</span><br></pre></td></tr></table></figure>
+<p>对于其他远程客户端，可以通过拷贝证书方式来访问</p>
+<p>远端客户端的IP映射同上一样</p>
+<p>将私服的证书拷贝到本地 /etc/docker/certs.d/registry.com目录下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp root@registry.com:/etc/docker/certs.d/registry.com/registry.crt /etc/docker/certs.d/registry.com/</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/12/linux-bash/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/12/linux-bash/" itemprop="url">linux-bash学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-12T12:20:12+08:00">
+                2017-12-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/shell/" itemprop="url" rel="index">
+                    <span itemprop="name">shell</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-Basic-Operations"><a href="#1-Basic-Operations" class="headerlink" title="1. Basic Operations"></a>1. Basic Operations</h2><h4 id="a-export"><a href="#a-export" class="headerlink" title="a. export"></a>a. <code>export</code></h4><p>显示所有的环境变量，如果你想获取某个变量的详细信息，使用 <code>echo $VARIABLE_NAME</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export</span><br></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ export</span><br><span class="line">SHELL=/bin/zsh</span><br><span class="line">AWS_HOME=/Users/adnanadnan/.aws</span><br><span class="line">LANG=en_US.UTF-8</span><br><span class="line">LC_CTYPE=en_US.UTF-8</span><br><span class="line">LESS=-R</span><br><span class="line"></span><br><span class="line">$ echo $SHELL</span><br><span class="line">/usr/bin/zsh</span><br></pre></td></tr></table></figure>
+<h4 id="b-whereis"><a href="#b-whereis" class="headerlink" title="b. whereis"></a>b. <code>whereis</code></h4><p>whereis使用系统自动构建的数据库来搜索可执行文件，源文件和手册页面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis name</span><br></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ whereis php</span><br><span class="line">/usr/bin/php</span><br></pre></td></tr></table></figure>
+<h4 id="c-which"><a href="#c-which" class="headerlink" title="c. which"></a>c. <code>which</code></h4><p>它在环境变量PATH指定的目录中搜索可执行文件。此命令将打印可执行文件的完整路径。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which program_name</span><br></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ which php</span><br><span class="line">/c/xampp/php/php</span><br></pre></td></tr></table></figure>
+<h4 id="d-clear"><a href="#d-clear" class="headerlink" title="d. clear"></a>d. clear</h4><p>清除窗口上的内容。</p>
+<h3 id="1-1-File-Operations"><a href="#1-1-File-Operations" class="headerlink" title="1.1. File Operations"></a>1.1. File Operations</h3><table>
+<thead>
+<tr>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#a.-ls" target="_blank" rel="noopener">ls</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#b.-touch" target="_blank" rel="noopener">touch</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#c.-cat" target="_blank" rel="noopener">cat</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#d.-more" target="_blank" rel="noopener">more</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#e.-head" target="_blank" rel="noopener">head</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#f.-tail" target="_blank" rel="noopener">tail</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#g.-mv" target="_blank" rel="noopener">mv</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#h.-cp" target="_blank" rel="noopener">cp</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#i.-rm" target="_blank" rel="noopener">rm</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#j.-diff" target="_blank" rel="noopener">diff</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#k.-chmod" target="_blank" rel="noopener">chmod</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#l.-gzip" target="_blank" rel="noopener">gzip</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#m.-gunzip" target="_blank" rel="noopener">gunzip</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#n.-gzcat" target="_blank" rel="noopener">gzcat</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#o.-lpr" target="_blank" rel="noopener">lpr</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#p.-lpq" target="_blank" rel="noopener">lpq</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#q.-lprm" target="_blank" rel="noopener">lprm</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="a-ls"><a href="#a-ls" class="headerlink" title="a. ls"></a>a. <code>ls</code></h4><p>列出您的文件。<code>ls</code>有很多选项：<code>-l</code>列出“长格式”的文件，其中包含文件的确切大小，拥有该文件的人员，有权查看该文件，以及何时进行上次修改。<code>-a</code>列出所有文件，包括隐藏文件。有关此命令的更多信息，请检查此<a href="https://ss64.com/bash/ls.html" target="_blank" rel="noopener">链接</a>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls option</span><br></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ ls -al</span><br><span class="line">rwxr-xr-x   33 adnan  staff    1122 Mar 27 18:44 .</span><br><span class="line">drwxrwxrwx  60 adnan  staff    2040 Mar 21 15:06 ..</span><br><span class="line">-rw-r--r--@  1 adnan  staff   14340 Mar 23 15:05 .DS_Store</span><br><span class="line">-rw-r--r--   1 adnan  staff     157 Mar 25 18:08 .bumpversion.cfg</span><br><span class="line">-rw-r--r--   1 adnan  staff    6515 Mar 25 18:08 .config.ini</span><br><span class="line">-rw-r--r--   1 adnan  staff    5805 Mar 27 18:44 .config.override.ini</span><br><span class="line">drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git</span><br><span class="line">-rwxr-xr-x   1 adnan  staff    2702 Mar 25 18:08 .gitignore</span><br></pre></td></tr></table></figure>
+<h4 id="b-touch"><a href="#b-touch" class="headerlink" title="b. touch"></a>b. <code>touch</code></h4><p>创建或更新您的文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch filename</span><br></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch trick.md</span><br></pre></td></tr></table></figure>
+<h4 id="c-cat"><a href="#c-cat" class="headerlink" title="c. cat"></a>c. <code>cat</code></h4><p>它可以在UNIX或Linux下用于以下目的。</p>
+<ul>
+<li>在屏幕上显示文本文件</li>
+<li>复制文本文件</li>
+<li>合并文本文件</li>
+<li>创建新的文本文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat filename</span><br><span class="line">cat file1 file2 </span><br><span class="line">cat file1 file2 &gt; newcombinedfile</span><br></pre></td></tr></table></figure>
+<h4 id="d-more"><a href="#d-more" class="headerlink" title="d. more"></a>d. <code>more</code></h4><p>显示文件的第一部分（用空格移动并键入q以退出）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more filename</span><br></pre></td></tr></table></figure>
+<h4 id="e-head"><a href="#e-head" class="headerlink" title="e. head"></a>e. <code>head</code></h4><p>输出文件的前10行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head filename</span><br></pre></td></tr></table></figure>
+<h4 id="f-tail"><a href="#f-tail" class="headerlink" title="f. tail"></a>f. <code>tail</code></h4><p>输出最后10行文件。用于-f在文件增长时输出附加数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail filename</span><br></pre></td></tr></table></figure>
+<h4 id="g-mv"><a href="#g-mv" class="headerlink" title="g. mv"></a>g. <code>mv</code></h4><p>将文件从一个位置移动到另一个位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv filename1 filename2</span><br></pre></td></tr></table></figure>
+<p><code>filename1</code> 文件的源路径，<code>filename2</code> 是目标路径。</p>
+<h4 id="h-cp"><a href="#h-cp" class="headerlink" title="h. cp"></a>h. <code>cp</code></h4><p>将文件从一个位置复制到另一个位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp filename1 filename2</span><br></pre></td></tr></table></figure>
+<p><code>filename1</code> 文件的源路径，<code>filename2</code> 是目标路径。</p>
+<h4 id="i-rm"><a href="#i-rm" class="headerlink" title="i. rm"></a>i. <code>rm</code></h4><p>删除文件。在目录上使用此命令会给您显示一个错误： <code>rm: directory: is a directory</code>。 为了删除目录，你必须传递<code>-rf</code>去递归删除目录中的所有内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm filename</span><br></pre></td></tr></table></figure>
+<h4 id="j-diff"><a href="#j-diff" class="headerlink" title="j. diff"></a>j. <code>diff</code></h4><p>比较文件，并列出他们的差异。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff filename1 filename2</span><br></pre></td></tr></table></figure>
+<h4 id="k-chmod"><a href="#k-chmod" class="headerlink" title="k. chmod"></a>k. <code>chmod</code></h4><p>让您更改文件的读取，写入和执行权限。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -options filename</span><br></pre></td></tr></table></figure>
+<h4 id="l-gzip"><a href="#l-gzip" class="headerlink" title="l. gzip"></a>l. <code>gzip</code></h4><p>压缩文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gzip filename</span><br></pre></td></tr></table></figure>
+<h4 id="m-gunzip"><a href="#m-gunzip" class="headerlink" title="m. gunzip"></a>m. <code>gunzip</code></h4><p>解压缩gzip压缩的文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gunzip filename</span><br></pre></td></tr></table></figure>
+<h4 id="n-gzcat"><a href="#n-gzcat" class="headerlink" title="n. gzcat"></a>n. <code>gzcat</code></h4><p>让你查看gzip压缩文件，而不需要gunzip它。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gzcat filename</span><br></pre></td></tr></table></figure>
+<h4 id="o-lpr"><a href="#o-lpr" class="headerlink" title="o. lpr"></a>o. <code>lpr</code></h4><p>打印文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lpr filename</span><br></pre></td></tr></table></figure>
+<h4 id="p-lpq"><a href="#p-lpq" class="headerlink" title="p. lpq"></a>p. <code>lpq</code></h4><p>查看打印机队列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lpq</span><br></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ lpq</span><br><span class="line">Rank    Owner   Job     File(s)                         Total Size</span><br><span class="line">active  adnanad 59      demo                            399360 bytes</span><br><span class="line">1st     adnanad 60      (stdin)                         0 bytes</span><br></pre></td></tr></table></figure>
+<h4 id="q-lprm"><a href="#q-lprm" class="headerlink" title="q. lprm"></a>q. <code>lprm</code></h4><p>从打印队列移除某些内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lprm jobnumber</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-Text-Operations"><a href="#1-2-Text-Operations" class="headerlink" title="1.2. Text Operations"></a>1.2. Text Operations</h3><table>
+<thead>
+<tr>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#a.-awk" target="_blank" rel="noopener">awk</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#b.-grep" target="_blank" rel="noopener">grep</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#c.-wc" target="_blank" rel="noopener">wc</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#d.-sed" target="_blank" rel="noopener">sed</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#e.-sort" target="_blank" rel="noopener">sort</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#f.-uniq" target="_blank" rel="noopener">uniq</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#g.-cut" target="_blank" rel="noopener">cut</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#h.-echo" target="_blank" rel="noopener">echo</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#i.-fmt" target="_blank" rel="noopener">fmt</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#j.-tr" target="_blank" rel="noopener">tr</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#k.-nl" target="_blank" rel="noopener">nl</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#l.-egrep" target="_blank" rel="noopener">egrep</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#m.-fgrep" target="_blank" rel="noopener">fgrep</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="a-awk"><a href="#a-awk" class="headerlink" title="a. awk"></a>a. <code>awk</code></h4><p>awk是处理文本文件最有用的命令。它一行一行地在整个文件上运行。默认情况下，它使用空格分隔字段。awk命令最常用的语法是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk &apos;/search_pattern/ &#123; action_to_take_if_pattern_matches; &#125;&apos; file_to_parse</span><br></pre></td></tr></table></figure>
+<p>让我们采取以下文件 <code>/etc/passwd</code>。以下是此文件包含的示例数据：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root:x:0:0:root:/root:/usr/bin/zsh</span><br><span class="line">daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin</span><br><span class="line">bin:x:2:2:bin:/bin:/usr/sbin/nologin</span><br><span class="line">sys:x:3:3:sys:/dev:/usr/sbin/nologin</span><br><span class="line">sync:x:4:65534:sync:/bin:/bin/sync</span><br></pre></td></tr></table></figure>
+<p>所以现在让我们从这个文件只获取用户名。 <code>-F</code> 指定在我们要基于哪个分隔字段。在我们的例子中 <code>:</code> 。<code>{ print $1 }</code> 意味着打印出第一个匹配字段。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F&apos;:&apos; &apos;&#123; print $1 &#125;&apos; /etc/passwd</span><br></pre></td></tr></table></figure>
+<p>运行上述命令后，您将获得以下输出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root</span><br><span class="line">daemon</span><br><span class="line">bin</span><br><span class="line">sys</span><br><span class="line">sync</span><br></pre></td></tr></table></figure>
+<p>有关如何使用<code>awk</code>的更多细节，请查看以下<a href="https://www.cyberciti.biz/faq/bash-scripting-using-awk" target="_blank" rel="noopener">链接</a>。</p>
+<h4 id="b-grep"><a href="#b-grep" class="headerlink" title="b. grep"></a>b. <code>grep</code></h4><p>查找文件内的文本。您可以使用grep搜索与一个或多个正则表达式匹配的文本行，并仅输出匹配的行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep pattern filename</span><br></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ grep admin /etc/passwd</span><br><span class="line">_kadmin_admin:*:218:-2:Kerberos Admin Service:/var/empty:/usr/bin/false</span><br><span class="line">_kadmin_changepw:*:219:-2:Kerberos Change Password Service:/var/empty:/usr/bin/false</span><br><span class="line">_krb_kadmin:*:231:-2:Open Directory Kerberos Admin Service:/var/empty:/usr/bin/false</span><br></pre></td></tr></table></figure>
+<p>您还可以通过使用<code>-i</code>选项强制grep忽略单词大小写。<code>-r</code>可用于搜索指定目录下的所有文件，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep -r admin /etc/</span><br></pre></td></tr></table></figure>
+<p><code>-w</code> 只搜索单词。有关<code>grep</code>详细信息，请查看以下<a href="https://www.cyberciti.biz/faq/grep-in-bash" target="_blank" rel="noopener">链接</a>。</p>
+<h4 id="c-wc"><a href="#c-wc" class="headerlink" title="c. wc"></a>c. <code>wc</code></h4><p>告诉你一个文件中有多少行，多少单词和多少字符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wc filename</span><br></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ wc demo.txt</span><br><span class="line">7459   15915  398400 demo.txt</span><br></pre></td></tr></table></figure>
+<p><code>7459</code> 是行数, <code>15915</code> 是单词数， <code>398400</code> 是字符数.</p>
+<h4 id="d-sed"><a href="#d-sed" class="headerlink" title="d. sed"></a>d. <code>sed</code></h4><p>用于过滤和转换文本的流编辑器。</p>
+<p><em>example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello This is a Test 1 2 3 4</span><br></pre></td></tr></table></figure>
+<p><em>用连字符替换所有空格</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed &apos;s/ /-/g&apos; example.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello-This-is-a-Test-1-2-3-4</span><br></pre></td></tr></table></figure>
+<p><em>使用”d”替换所有的数字</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed &apos;s/[0-9]/d/g&apos; example.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello This is a Test d d d d</span><br></pre></td></tr></table></figure>
+<h4 id="e-sort"><a href="#e-sort" class="headerlink" title="e. sort"></a>e. <code>sort</code></h4><p>排序文本文件的行</p>
+<p><em>example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">g</span><br><span class="line">a</span><br><span class="line">e</span><br><span class="line">d</span><br></pre></td></tr></table></figure>
+<p><em>sort example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort example.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">d</span><br><span class="line">e</span><br><span class="line">f</span><br><span class="line">g</span><br></pre></td></tr></table></figure>
+<p><em>随机化一个排序的example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort example.txt | sort -R</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">b</span><br><span class="line">f</span><br><span class="line">a</span><br><span class="line">c</span><br><span class="line">d</span><br><span class="line">g</span><br><span class="line">e</span><br></pre></td></tr></table></figure>
+<h4 id="f-uniq"><a href="#f-uniq" class="headerlink" title="f. uniq"></a>f. <code>uniq</code></h4><p>报告或省略重复的行</p>
+<p><em>example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a</span><br><span class="line">a</span><br><span class="line">b</span><br><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">d</span><br><span class="line">c</span><br></pre></td></tr></table></figure>
+<p><em>只显示example.txt的唯一行（首先你需要排序，否则看不到重叠）</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort example.txt | uniq</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a</span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">d</span><br></pre></td></tr></table></figure>
+<p><em>显示每行的唯一项，并告诉我找到了多少个实例</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort example.txt | uniq -c</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 a</span><br><span class="line">2 b</span><br><span class="line">2 c</span><br><span class="line">1 d</span><br></pre></td></tr></table></figure>
+<h4 id="g-cut"><a href="#g-cut" class="headerlink" title="g. cut"></a>g. <code>cut</code></h4><p>从每行文件中删除部分。</p>
+<p><em>example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">red riding hood went to the park to play</span><br></pre></td></tr></table></figure>
+<p><em>显示第2,7和9栏的空格作为分隔符</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut -d &quot; &quot; -f2,7,9 example.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">riding park play</span><br></pre></td></tr></table></figure>
+<h4 id="h-echo"><a href="#h-echo" class="headerlink" title="h. echo"></a>h. <code>echo</code></h4><p>显示一行文字</p>
+<p><em>显示 “Hello World”</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo Hello World</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello World</span><br></pre></td></tr></table></figure>
+<p><em>用字母之间的换行显示 “Hello World”</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo -ne &quot;Hello\nWorld\n&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hello</span><br><span class="line">World</span><br></pre></td></tr></table></figure>
+<h4 id="i-fmt"><a href="#i-fmt" class="headerlink" title="i. fmt"></a>i. <code>fmt</code></h4><p>简单的最佳文本格式化程序</p>
+<p><em>example: example.txt (1 line)</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</span><br></pre></td></tr></table></figure>
+<p><em>将example.txt的行输出为20个字符的宽度</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat example.txt | fmt -w 20</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Lorem ipsum</span><br><span class="line">dolor sit amet,</span><br><span class="line">consetetur</span><br><span class="line">sadipscing elitr,</span><br><span class="line">sed diam nonumy</span><br><span class="line">eirmod tempor</span><br><span class="line">invidunt ut labore</span><br><span class="line">et dolore magna</span><br><span class="line">aliquyam erat, sed</span><br><span class="line">diam voluptua. At</span><br><span class="line">vero eos et</span><br><span class="line">accusam et justo</span><br><span class="line">duo dolores et ea</span><br><span class="line">rebum. Stet clita</span><br><span class="line">kasd gubergren,</span><br><span class="line">no sea takimata</span><br><span class="line">sanctus est Lorem</span><br><span class="line">ipsum dolor sit</span><br><span class="line">amet.</span><br></pre></td></tr></table></figure>
+<h4 id="j-tr"><a href="#j-tr" class="headerlink" title="j. tr"></a>j. <code>tr</code></h4><p>翻译或删除字符</p>
+<p><em>example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello World Foo Bar Baz!</span><br></pre></td></tr></table></figure>
+<p><em>把所有小写字母变成为大写</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat example.txt | tr &apos;a-z&apos; &apos;A-Z&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HELLO WORLD FOO BAR BAZ!</span><br></pre></td></tr></table></figure>
+<p><em>把所有的空格变成换行符</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat example.txt | tr &apos; &apos; &apos;\n&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Hello</span><br><span class="line">World</span><br><span class="line">Foo</span><br><span class="line">Bar</span><br><span class="line">Baz!</span><br></pre></td></tr></table></figure>
+<h4 id="k-nl"><a href="#k-nl" class="headerlink" title="k. nl"></a>k. <code>nl</code></h4><p>显示文件的行数</p>
+<p><em>example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Lorem ipsum</span><br><span class="line">dolor sit amet,</span><br><span class="line">consetetur</span><br><span class="line">sadipscing elitr,</span><br><span class="line">sed diam nonumy</span><br><span class="line">eirmod tempor</span><br><span class="line">invidunt ut labore</span><br><span class="line">et dolore magna</span><br><span class="line">aliquyam erat, sed</span><br><span class="line">diam voluptua. At</span><br><span class="line">vero eos et</span><br><span class="line">accusam et justo</span><br><span class="line">duo dolores et ea</span><br><span class="line">rebum. Stet clita</span><br><span class="line">kasd gubergren,</span><br><span class="line">no sea takimata</span><br><span class="line">sanctus est Lorem</span><br><span class="line">ipsum dolor sit</span><br><span class="line">amet.</span><br></pre></td></tr></table></figure>
+<p><em>带行号显示 example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl -s&quot;. &quot; example.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> 1. Lorem ipsum</span><br><span class="line"> 2. dolor sit amet,</span><br><span class="line"> 3. consetetur</span><br><span class="line"> 4. sadipscing elitr,</span><br><span class="line"> 5. sed diam nonumy</span><br><span class="line"> 6. eirmod tempor</span><br><span class="line"> 7. invidunt ut labore</span><br><span class="line"> 8. et dolore magna</span><br><span class="line"> 9. aliquyam erat, sed</span><br><span class="line">10. diam voluptua. At</span><br><span class="line">11. vero eos et</span><br><span class="line">12. accusam et justo</span><br><span class="line">13. duo dolores et ea</span><br><span class="line">14. rebum. Stet clita</span><br><span class="line">15. kasd gubergren,</span><br><span class="line">16. no sea takimata</span><br><span class="line">17. sanctus est Lorem</span><br><span class="line">18. ipsum dolor sit</span><br><span class="line">19. amet.</span><br></pre></td></tr></table></figure>
+<h4 id="l-egrep"><a href="#l-egrep" class="headerlink" title="l. egrep"></a>l. <code>egrep</code></h4><p>打印匹配模式的行 - 扩展表达式（别名为：’grep -E’）</p>
+<p><em>example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Lorem ipsum</span><br><span class="line">dolor sit amet, </span><br><span class="line">consetetur</span><br><span class="line">sadipscing elitr,</span><br><span class="line">sed diam nonumy</span><br><span class="line">eirmod tempor</span><br><span class="line">invidunt ut labore</span><br><span class="line">et dolore magna</span><br><span class="line">aliquyam erat, sed</span><br><span class="line">diam voluptua. At</span><br><span class="line">vero eos et</span><br><span class="line">accusam et justo</span><br><span class="line">duo dolores et ea</span><br><span class="line">rebum. Stet clita</span><br><span class="line">kasd gubergren,</span><br><span class="line">no sea takimata</span><br><span class="line">sanctus est Lorem</span><br><span class="line">ipsum dolor sit</span><br><span class="line">amet.</span><br></pre></td></tr></table></figure>
+<p><em>在其中显示“Lorem”或“dolor”的行</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">egrep &apos;(Lorem|dolor)&apos; example.txt</span><br><span class="line">or</span><br><span class="line">grep -E &apos;(Lorem|dolor)&apos; example.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Lorem ipsum</span><br><span class="line">dolor sit amet,</span><br><span class="line">et dolore magna</span><br><span class="line">duo dolores et ea</span><br><span class="line">sanctus est Lorem</span><br><span class="line">ipsum dolor sit</span><br></pre></td></tr></table></figure>
+<h4 id="m-fgrep"><a href="#m-fgrep" class="headerlink" title="m. fgrep"></a>m. <code>fgrep</code></h4><p>打印匹配模式到的行 - FIXED模式匹配（别名为：’grep -F’）<br><em>example.txt</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Lorem ipsum</span><br><span class="line">dolor sit amet,</span><br><span class="line">consetetur</span><br><span class="line">sadipscing elitr,</span><br><span class="line">sed diam nonumy</span><br><span class="line">eirmod tempor</span><br><span class="line">foo (Lorem|dolor) </span><br><span class="line">invidunt ut labore</span><br><span class="line">et dolore magna</span><br><span class="line">aliquyam erat, sed</span><br><span class="line">diam voluptua. At</span><br><span class="line">vero eos et</span><br><span class="line">accusam et justo</span><br><span class="line">duo dolores et ea</span><br><span class="line">rebum. Stet clita</span><br><span class="line">kasd gubergren,</span><br><span class="line">no sea takimata</span><br><span class="line">sanctus est Lorem</span><br><span class="line">ipsum dolor sit</span><br><span class="line">amet.</span><br></pre></td></tr></table></figure>
+<p><em>在example.txt中找到具体的字符串’（Lorem | doloar）’</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fgrep &apos;(Lorem|dolor)&apos; example.txt</span><br><span class="line">or</span><br><span class="line">grep -F &apos;(Lorem|dolor)&apos; example.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foo (Lorem|dolor)</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-Directory-Operations"><a href="#1-3-Directory-Operations" class="headerlink" title="1.3. Directory Operations"></a>1.3. Directory Operations</h3><table>
+<thead>
+<tr>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#a.-mkdir" target="_blank" rel="noopener">mkdir</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#b.-cd" target="_blank" rel="noopener">cd</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#c.-pwd" target="_blank" rel="noopener">pwd</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="a-mkdir"><a href="#a-mkdir" class="headerlink" title="a. mkdir"></a>a. <code>mkdir</code></h4><p>生成一个新的目录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir dirname</span><br></pre></td></tr></table></figure>
+<h4 id="b-cd"><a href="#b-cd" class="headerlink" title="b. cd"></a>b. <code>cd</code></h4><p>执行这个，从一个目录转移到另外一个目录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd</span><br></pre></td></tr></table></figure>
+<p>将你移动到主目录。此命令接受可选的<code>dirname</code>，将你移动到该目录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd dirname</span><br></pre></td></tr></table></figure>
+<h4 id="c-pwd"><a href="#c-pwd" class="headerlink" title="c. pwd"></a>c. <code>pwd</code></h4><p>告诉你你目前所在的目录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>
+<h3 id="1-4-SSH-System-Info-amp-Network-Operations"><a href="#1-4-SSH-System-Info-amp-Network-Operations" class="headerlink" title="1.4. SSH, System Info &amp; Network Operations"></a>1.4. SSH, System Info &amp; Network Operations</h3><table>
+<thead>
+<tr>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#a.-ssh" target="_blank" rel="noopener">ssh</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#b.-whoami" target="_blank" rel="noopener">whoami</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#c.-passwd" target="_blank" rel="noopener">passwd</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#d.-quota" target="_blank" rel="noopener">quota</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#e.-date" target="_blank" rel="noopener">date</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#f.-cal" target="_blank" rel="noopener">cal</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#g.-uptime" target="_blank" rel="noopener">uptime</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#h.-w" target="_blank" rel="noopener">w</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#i.-finger" target="_blank" rel="noopener">finger</a></th>
+<th><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#j.-uname" target="_blank" rel="noopener">uname</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#k.-man" target="_blank" rel="noopener">man</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#l.-df" target="_blank" rel="noopener">df</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#m.-du" target="_blank" rel="noopener">du</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#n.-last" target="_blank" rel="noopener">last</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#o.-ps" target="_blank" rel="noopener">ps</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#p.-kill" target="_blank" rel="noopener">kill</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#q.-killall" target="_blank" rel="noopener">killall</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#r.-top" target="_blank" rel="noopener">top</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#s.-bg" target="_blank" rel="noopener">bg</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#t.-fg" target="_blank" rel="noopener">fg</a></td>
+</tr>
+<tr>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#u.-ping" target="_blank" rel="noopener">ping</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#v.-whois" target="_blank" rel="noopener">whois</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#w.-dig" target="_blank" rel="noopener">dig</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#x.-wget" target="_blank" rel="noopener">wget</a></td>
+<td><a href="https://www.cnblogs.com/savorboard/p/bash-guide.html#y.-scp" target="_blank" rel="noopener">scp</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="a-ssh"><a href="#a-ssh" class="headerlink" title="a. ssh"></a>a. <code>ssh</code></h4><p>ssh (SSH client) 是一个用来在登录到远程机器并执行的命令的程序。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh user@host</span><br></pre></td></tr></table></figure>
+<p>此命令还接受<code>-p</code>可用于连接到特定端口的选项。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -p port user@host</span><br></pre></td></tr></table></figure>
+<h4 id="b-whoami"><a href="#b-whoami" class="headerlink" title="b. whoami"></a>b. <code>whoami</code></h4><p>返回当前登录用户名。</p>
+<h4 id="c-passwd"><a href="#c-passwd" class="headerlink" title="c. passwd"></a>c. <code>passwd</code></h4><p>允许当前登录的用户更改其密码。</p>
+<h4 id="d-quota"><a href="#d-quota" class="headerlink" title="d. quota"></a>d. <code>quota</code></h4><p>显示您的磁盘配额。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">quota -v</span><br></pre></td></tr></table></figure>
+<h4 id="e-date"><a href="#e-date" class="headerlink" title="e. date"></a>e. <code>date</code></h4><p>显示当前日期和时间。</p>
+<h4 id="f-cal"><a href="#f-cal" class="headerlink" title="f. cal"></a>f. <code>cal</code></h4><p>显示月份的日历。</p>
+<h4 id="g-uptime"><a href="#g-uptime" class="headerlink" title="g. uptime"></a>g. <code>uptime</code></h4><p>显示当前的正常运行时间。</p>
+<h4 id="h-w"><a href="#h-w" class="headerlink" title="h. w"></a>h. <code>w</code></h4><p>显示谁在线</p>
+<h4 id="i-finger"><a href="#i-finger" class="headerlink" title="i. finger"></a>i. <code>finger</code></h4><p>Displays information about user.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">finger username</span><br></pre></td></tr></table></figure>
+<h4 id="j-uname"><a href="#j-uname" class="headerlink" title="j. uname"></a>j. <code>uname</code></h4><p>显示内核信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br></pre></td></tr></table></figure>
+<h4 id="k-man"><a href="#k-man" class="headerlink" title="k. man"></a>k. <code>man</code></h4><p>显示指定命令的手册。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man command</span><br></pre></td></tr></table></figure>
+<h4 id="l-df"><a href="#l-df" class="headerlink" title="l. df"></a>l. <code>df</code></h4><p>显示磁盘使用情况。</p>
+<h4 id="m-du"><a href="#m-du" class="headerlink" title="m. du"></a>m. <code>du</code></h4><p>显示文件名中文件和目录的磁盘使用情况（du -s只给出一个总数）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du filename</span><br></pre></td></tr></table></figure>
+<h4 id="n-last"><a href="#n-last" class="headerlink" title="n. last"></a>n. <code>last</code></h4><p>列出您最后登录的指定用户。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">last yourUsername</span><br></pre></td></tr></table></figure>
+<h4 id="o-ps"><a href="#o-ps" class="headerlink" title="o. ps"></a>o. <code>ps</code></h4><p>列出您的进程。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -u yourusername</span><br></pre></td></tr></table></figure>
+<h4 id="p-kill"><a href="#p-kill" class="headerlink" title="p. kill"></a>p. <code>kill</code></h4><p>使用您所提供的ID杀死（结束）进程。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill PID</span><br></pre></td></tr></table></figure>
+<h4 id="q-killall"><a href="#q-killall" class="headerlink" title="q. killall"></a>q. <code>killall</code></h4><p>用名称杀死所有进程。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">killall processname</span><br></pre></td></tr></table></figure>
+<h4 id="r-top"><a href="#r-top" class="headerlink" title="r. top"></a>r. <code>top</code></h4><p>显示当前活动的进程。</p>
+<h4 id="s-bg"><a href="#s-bg" class="headerlink" title="s. bg"></a>s. <code>bg</code></h4><p>列出停止的或后台工作的Job; 恢复在后台停止的Job。</p>
+<h4 id="t-fg"><a href="#t-fg" class="headerlink" title="t. fg"></a>t. <code>fg</code></h4><p>前台化最近的Job。<br>Brings the most recent job in the foreground.</p>
+<h4 id="u-ping"><a href="#u-ping" class="headerlink" title="u. ping"></a>u. <code>ping</code></h4><p>Pings主机并输出结果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping host</span><br></pre></td></tr></table></figure>
+<h4 id="v-whois"><a href="#v-whois" class="headerlink" title="v. whois"></a>v. <code>whois</code></h4><p>获取域的whois信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whois domain</span><br></pre></td></tr></table></figure>
+<h4 id="w-dig"><a href="#w-dig" class="headerlink" title="w. dig"></a>w. <code>dig</code></h4><p>获取域的DNS信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dig domain</span><br></pre></td></tr></table></figure>
+<h4 id="x-wget"><a href="#x-wget" class="headerlink" title="x. wget"></a>x. <code>wget</code></h4><p>下载文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget file</span><br></pre></td></tr></table></figure>
+<h4 id="y-scp"><a href="#y-scp" class="headerlink" title="y. scp"></a>y. <code>scp</code></h4><p>在本地主机和远程主机之间或两台远程主机之间传输文件。</p>
+<p><em>从本地主机复制到远程主机</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp source_file user@host:directory/target_file</span><br></pre></td></tr></table></figure>
+<p><em>从远程主机复制到本地主机</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp user@host:directory/source_file target_file</span><br><span class="line">scp -r user@host:directory/source_folder farget_folder</span><br></pre></td></tr></table></figure>
+<p>此命令还接受<code>-P</code>选项可用于连接到特定的端口。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -P port user@host:directory/source_file target_file</span><br></pre></td></tr></table></figure>
+<h2 id="2-Basic-Shell-Programming"><a href="#2-Basic-Shell-Programming" class="headerlink" title="2. Basic Shell Programming"></a>2. Basic Shell Programming</h2><p>在bash中你将编写第一行脚本文件，被叫做<code>shebang</code>。任何脚本中的这一行来确定脚本的执行能力，如独立的可执行文件，而不是在终端中预先键入sh，bash，python，php等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br></pre></td></tr></table></figure>
+<h3 id="2-1-Variables"><a href="#2-1-Variables" class="headerlink" title="2.1. Variables"></a>2.1. Variables</h3><p>在bash中创建变量与其他语言类似。没有数据类型。bash中的变量可以包含数字，字符，字符串等。您无需声明变量，只需为其引用分配一个值即可创建它。</p>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str=&quot;hello world&quot;</span><br></pre></td></tr></table></figure>
+<p>上面的一行创建一个变量str并给它赋值“hello world”。通过<code>$</code>放在变量名的开头来检索变量的值。</p>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $str   # hello world</span><br></pre></td></tr></table></figure>
+<p>像其他语言一样，bash也有数组。数组是包含多个值的变量。数组的大小没有最大限制。bash中的数组为零。第一个元素被索引为元素0.在bash中创建数组有几种方法。以下给出了哪些。</p>
+<p>Examples:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">array[0] = val</span><br><span class="line">array[1] = val</span><br><span class="line">array[2] = val</span><br><span class="line">array=([2]=val [0]=val [1]=val)</span><br><span class="line">array(val val val)</span><br></pre></td></tr></table></figure>
+<p>要在特定索引处显示值，请使用以下语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;array[i]&#125;     # where i is the index</span><br></pre></td></tr></table></figure>
+<p>如果没有提供索引，则假定为数组元素0。要了解数组中有多少值，请使用以下语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;#array[@]&#125;</span><br></pre></td></tr></table></figure>
+<p>Bash也支持三元条件。下面是一些例子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$&#123;varname:-word&#125;    # 如果varname存在且不为null，则返回其值; 否则返回word</span><br><span class="line">$&#123;varname:=word&#125;    # 如果varname存在且不为null，则返回其值;否则设置它，然后返回其值</span><br><span class="line">$&#123;varname:+word&#125;    # 如果varname存在并且不为null，返回word; 否则返回null </span><br><span class="line">$&#123;varname:offset:length&#125;    # 执行子字符串扩展。它返回$ varname的子字符串，从offset开始，最多为length的字符</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-String-Substitution"><a href="#2-2-String-Substitution" class="headerlink" title="2.2 String Substitution"></a>2.2 String Substitution</h3><p>检查一些关于如何操作字符串的语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$&#123;variable#pattern&#125;         # if the pattern matches the beginning of the variable&apos;s value, delete the shortest part that matches and return the rest</span><br><span class="line">$&#123;variable##pattern&#125;        # if the pattern matches the beginning of the variable&apos;s value, delete the longest part that matches and return the rest</span><br><span class="line">$&#123;variable%pattern&#125;         # if the pattern matches the end of the variable&apos;s value, delete the shortest part that matches and return the rest</span><br><span class="line">$&#123;variable%%pattern&#125;        # if the pattern matches the end of the variable&apos;s value, delete the longest part that matches and return the rest</span><br><span class="line">$&#123;variable/pattern/string&#125;  # the longest match to pattern in variable is replaced by string. Only the first match is replaced</span><br><span class="line">$&#123;variable//pattern/string&#125; # the longest match to pattern in variable is replaced by string. All matches are replaced</span><br><span class="line">$&#123;#varname&#125;     # returns the length of the value of the variable as a character string</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-Functions"><a href="#2-3-Functions" class="headerlink" title="2.3. Functions"></a>2.3. Functions</h3><p>几乎与任何编程语言一样，您可以使用函数以更逻辑的方式对代码段进行分组，或者实践递归的神圣艺术。声明函数只是编写函数my_func {my_code}的问题。调用一个函数就像调用另一个程序一样，你只需要写上它的名字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">functname() &#123;</span><br><span class="line">    shell commands</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">function hello &#123;</span><br><span class="line">   echo world!</span><br><span class="line">&#125;</span><br><span class="line">hello</span><br><span class="line"></span><br><span class="line">function say &#123;</span><br><span class="line">    echo $1</span><br><span class="line">&#125;</span><br><span class="line">say &quot;hello world!&quot;</span><br></pre></td></tr></table></figure>
+<p>当您运行上述示例时，该hello函数将输出“world！”。上述两个功能<code>hello</code>和<code>say</code>是相同的。主要区别是功能<code>say</code>。此功能打印其接收到的第一个参数。函数内的参数以与给脚本的参数相同的方式进行处理。</p>
+<h3 id="2-4-Conditionals"><a href="#2-4-Conditionals" class="headerlink" title="2.4. Conditionals"></a>2.4. Conditionals</h3><p>bash中的条件语句与其他编程语言相似。条件有许多形式，如最基本的形式是<code>if</code>表达式<code>then</code>语句，其中语句只有在表达式为真时执行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if [expression]; then</span><br><span class="line">    will execute only if expression is true</span><br><span class="line">else</span><br><span class="line">    will execute if expression is false</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<p>有时，如果条件变得混乱，所以你可以使用相同的条件<code>case statements</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">case expression in</span><br><span class="line">    pattern1 )</span><br><span class="line">        statements ;;</span><br><span class="line">    pattern2 )</span><br><span class="line">        statements ;;</span><br><span class="line">    ...</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+<p>Expression Examples:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">statement1 &amp;&amp; statement2  # 两边的条件都为true</span><br><span class="line">statement1 || statement2  # 其中一边为true</span><br><span class="line"></span><br><span class="line">str1=str2       # str1 匹配 str2</span><br><span class="line">str1!=str2      # str1 不匹配 str2</span><br><span class="line">str1&lt;str2       # str1 是否小于 str2</span><br><span class="line">str1&gt;str2       # str1 是否大于 str2</span><br><span class="line">-n str1         # str1 不为空(长度大于 0)</span><br><span class="line">-z str1         # str1 为空(长度为 0)</span><br><span class="line"></span><br><span class="line">-a file         # 文件存在 </span><br><span class="line">-d file         # 文件存在，是一个目录 </span><br><span class="line">-e file         # 文件存在; 相同的-a </span><br><span class="line">-f file         # 文件存在，是一个常规文件（即不是目录或其他特殊类型的文件） </span><br><span class="line">-r file         # 你有读权限 </span><br><span class="line">-r file         # 文件存在，不为空 </span><br><span class="line">-w file         # 你有写权限 </span><br><span class="line">-x file         # 你有文件的执行权限</span><br><span class="line"></span><br><span class="line">file1 -nt file2     # file1 is newer than file2</span><br><span class="line">file1 -ot file2     # file1 is older than file2</span><br><span class="line"></span><br><span class="line">-lt     # 小于 </span><br><span class="line">-le     # 小于或等于 </span><br><span class="line">-eq     # 等于</span><br><span class="line">-ge     # 大于或等于 </span><br><span class="line">-gt     # 大于</span><br><span class="line">-ne     # 不等于</span><br></pre></td></tr></table></figure>
+<h3 id="2-5-Loops"><a href="#2-5-Loops" class="headerlink" title="2.5. Loops"></a>2.5. Loops</h3><p>bash 中有三种不同类型的循环。 <code>for</code>, <code>while</code> 和 <code>until</code>.</p>
+<p><code>for</code> 语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">for x := 1 to 10 do</span><br><span class="line">begin</span><br><span class="line">  statements</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">for name [in list]</span><br><span class="line">do</span><br><span class="line">  statements that can use $name</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">for (( initialisation ; ending condition ; update ))</span><br><span class="line">do</span><br><span class="line">  statements...</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p><code>while</code> 语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while condition; do</span><br><span class="line">  statements</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p><code>until</code> 语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">until condition; do</span><br><span class="line">  statements</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<h2 id="3-Tricks"><a href="#3-Tricks" class="headerlink" title="3. Tricks"></a>3. Tricks</h2><h4 id="设置一个别名"><a href="#设置一个别名" class="headerlink" title="设置一个别名"></a>设置一个别名</h4><p><code>bash_profile</code> 可以通过运行后面的命令打开。 <code>nano ~/.bash_profile</code></p>
+<blockquote>
+<p>alias dockerlogin=’ssh <a href="mailto:www-data@adnan.local" target="_blank" rel="noopener">www-data@adnan.local</a> -p2222’ # add your alias in .bash_profile</p>
+</blockquote>
+<h4 id="快速去特定的目录"><a href="#快速去特定的目录" class="headerlink" title="快速去特定的目录"></a>快速去特定的目录</h4><p>nano ~/.bashrc</p>
+<blockquote>
+<p>export hotellogs=”/workspace/hotel-api/storage/logs”</p>
+</blockquote>
+<p>source ~/.bashrc<br>cd hotellogs</p>
+<h2 id="4-Debugging"><a href="#4-Debugging" class="headerlink" title="4. Debugging"></a>4. Debugging</h2><p>您可以通过传递不同的选项来轻松地调试bash脚本bash。例如-n，不会运行命令并仅检查语法错误。-vecho命令在运行它们之前。-x命令行处理后的echo命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bash -n scriptname</span><br><span class="line">bash -v scriptname</span><br><span class="line">bash -x scriptname</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/07/influxdb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/07/influxdb/" itemprop="url">influxdb学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-07T03:39:40+08:00">
+                2017-12-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/服务监控/" itemprop="url" rel="index">
+                    <span itemprop="name">服务监控</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>InfluxDB is the Time Series Database in the TICK stack</p>
+<p><a href="https://www.influxdata.com/time-series-platform/" target="_blank" rel="noopener">https://www.influxdata.com/time-series-platform/</a></p>
+<p> 摘要: Docker监控方案之数据存储工具Influxdb工具的介绍和安装。Influxdb也是和telegraf属于一家公司，用go开发的用来存储时间序列数据的数据库。可以将存储的数据进行时间序列化，是每个监控系统中最重要的一个环节。Docker监控方案(TIG)采用Influxdb来进行数据存储，当然可选的还有很多，比如Opentsdb，Graphite等。</p>
+<h4 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h4><p>Influxdb也是有influxdata公司(www.influxdata.com )开发的用于数据存储的时间序列数据库.可用于数据的时间排列。在整个TIG(Telegraf+influxdb+grafana)方案中，influxdb可算作一个中间件，主要负责原始数据的存储，并按照时间序列进行索引构建以提供时间序列查询接口。在整个TIG方案中，应该先构建的就是Influxdb。</p>
+<h4 id="Influxdb研究与实践："><a href="#Influxdb研究与实践：" class="headerlink" title="Influxdb研究与实践："></a>Influxdb研究与实践：</h4><p>influxdb介绍：</p>
+<p>使用TSM(Time Structured Merge)存储引擎，允许高摄取速度和数据压缩；<br>使用go编写，无需其他依赖；<br>简单，高性能写查询httpAPI接口；<br>支持其他数据获取协议的插件，比如graphite,collected,OpenTSDB；<br>使用relay构建高可用<a href="https://docs.influxdata.com/influxdb/v1.0/high_availability/relay/" target="_blank" rel="noopener">https://docs.influxdata.com/influxdb/v1.0/high_availability/relay/</a>；<br>扩展的类sql语言，很容易查询汇总数据；<br>tag的支持，可用让查询变的更加高效和快速；<br>保留策略有效地自动淘汰过期的数据；<br>持续所产生的自动计算的数据会使得频繁的查询更加高效；<br>web管理页面的支持</p>
+<p>下载安装：</p>
+<p>github：<a href="https://github.com/influxdata/influxdb" target="_blank" rel="noopener">https://github.com/influxdata/influxdb</a> 源码编译<br>官网下载：<br>Centos系列：wget<a href="https://dl.influxdata.com/influxdb/releases/influxdb-1.0.0.x86_64.rpm" target="_blank" rel="noopener">https://dl.influxdata.com/influxdb/releases/influxdb-1.0.0.x86_64.rpm</a> &amp;&amp; sudo yum localinstall influxdb-1.0.0.x86_64.rpm<br>源码包系列：wget<a href="https://dl.influxdata.com/influxdb/releases/influxdb-1.0.0_linux_amd64.tar.gz" target="_blank" rel="noopener">https://dl.influxdata.com/influxdb/releases/influxdb-1.0.0_linux_amd64.tar.gz</a> &amp;&amp; tar xvfz influxdb-1.0.0_linux_amd64.tar.gz<br>docker系列：docker pull influxdb<br>安装手册：<a href="https://docs.influxdata.com/influxdb/v0.9/introduction/installation/" target="_blank" rel="noopener">https://docs.influxdata.com/influxdb/v0.9/introduction/installation/</a></p>
+<p>配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">#cat /etc/influxdb/influxdb.conf</span><br><span class="line">reporting-disabled = false</span><br><span class="line">[registration]</span><br><span class="line">[meta]</span><br><span class="line">dir = &quot;/var/lib/influxdb/meta&quot;</span><br><span class="line">hostname = &quot;10.0.0.2&quot;    #此hostname必须写本机，否则无法连接到数据操作的API</span><br><span class="line">bind-address = &quot;:8088&quot;</span><br><span class="line">retention-autocreate = true</span><br><span class="line">election-timeout = &quot;1s&quot;</span><br><span class="line">heartbeat-timeout = &quot;1s&quot;</span><br><span class="line">leader-lease-timeout = &quot;500ms&quot;</span><br><span class="line">commit-timeout = &quot;50ms&quot;</span><br><span class="line">cluster-tracing = false</span><br><span class="line">[data]</span><br><span class="line">dir = &quot;/var/lib/influxdb/data&quot;</span><br><span class="line">max-wal-size = 104857600 # Maximum size the WAL can reach before a flush. Defaults to 100MB.</span><br><span class="line">wal-flush-interval = &quot;10m&quot; # Maximum time data can sit in WAL before a flush.</span><br><span class="line">wal-partition-flush-delay = &quot;2s&quot; # The delay time between each WAL partition being flushed.</span><br><span class="line">wal-dir = &quot;/var/lib/influxdb/wal&quot;</span><br><span class="line">wal-logging-enabled = true</span><br><span class="line">[hinted-handoff]</span><br><span class="line">enabled = true</span><br><span class="line">dir = &quot;/var/lib/influxdb/hh&quot;</span><br><span class="line">max-size = 1073741824</span><br><span class="line">max-age = &quot;168h&quot;</span><br><span class="line">retry-rate-limit = 0</span><br><span class="line">retry-interval = &quot;1s&quot;</span><br><span class="line">retry-max-interval = &quot;1m&quot;</span><br><span class="line">purge-interval = &quot;1h&quot;</span><br><span class="line">[admin]</span><br><span class="line">enabled = true</span><br><span class="line">bind-address = &quot;:8083&quot;</span><br><span class="line">https-enabled = false</span><br><span class="line">https-certificate = &quot;/etc/ssl/influxdb.pem&quot;</span><br><span class="line">[http]</span><br><span class="line">enabled = true</span><br><span class="line">bind-address = &quot;:8086&quot;</span><br><span class="line">auth-enabled = false</span><br><span class="line">log-enabled = true</span><br><span class="line">write-tracing = false</span><br><span class="line">pprof-enabled = false</span><br><span class="line">https-enabled = false</span><br><span class="line">https-certificate = &quot;/etc/ssl/influxdb.pem&quot;</span><br><span class="line">[opentsdb]</span><br><span class="line">enabled = false</span><br><span class="line">[collectd]</span><br><span class="line">enabled = false</span><br></pre></td></tr></table></figure>
+<p><code>注意：</code>influxdb服务会启动三个端口：8086为服务的默认数据处理端口，主要用来influxdb数据库的相关操作，可提供相关的API；8083为管理员提供了一个可视化的web界面，用来为用户提供友好的可视化查询与数据管理；8088主要为了元数据的管理。需要注意的是，influxdb默认是需要influxdb用户启动，且数据存放在/var/lib/influxdb/下面，生产环境需要注意这个。</p>
+<p>启动：</p>
+<p>和telegraf启动方式一样，可以使用init.d或者systemd进行管理influxdb<br><code>注意，启动之后需要查看相关的端口是否正在监听，并检查日志确保服务正常启动</code></p>
+<p>使用：</p>
+<p>如果说使用telegraf最核心的部分在配置，那么influxdb最核心的就是SQL语言的使用了。influxdb默认支持三种操作方式：<br><strong>登录influxdb的shell中操作:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">创建数据库：</span><br><span class="line">create database mydb</span><br><span class="line">创建用户：</span><br><span class="line">create user &quot;bigdata&quot; with password &apos;bigdata&apos; with all privileges</span><br><span class="line">查看数据库：</span><br><span class="line">show databases;</span><br><span class="line">数据插入：</span><br><span class="line">insert bigdata,host=server001,regin=HC load=88</span><br><span class="line">切换数据库：</span><br><span class="line"> use mydb</span><br><span class="line">查看数据库中有哪些measurement(类似数据库中的表):</span><br><span class="line">show measurements</span><br><span class="line">查询：</span><br><span class="line">select * from cpu limit 2</span><br><span class="line">查询一小时前开始到现在结束的：</span><br><span class="line">#select load from cpu where time &gt; now() - 1h</span><br><span class="line">查询从历史纪元开始到1000天之间：</span><br><span class="line">#select load from cpu where time &lt; now() + 1000d</span><br><span class="line">查找一个时间区间：</span><br><span class="line">#select load from cpu where time &gt; &apos;2016-08-18&apos; and time &lt; &apos;2016-09-19&apos;</span><br><span class="line">查询一个小时间区间的数据，比如在September 18, 2016 21:24:00:后的6分钟：</span><br><span class="line">#select load from cpu where time &gt; &apos;2016-09-18T21:24:00Z&apos; +6m</span><br><span class="line">使用正则查询所有measurement的数据：</span><br><span class="line">#select * from /.*/ limit 1</span><br><span class="line">#select * from /^docker/ limit 3</span><br><span class="line">#select * from /.*mem.*/ limit 3</span><br><span class="line">正则匹配加指定tag：（=~ !~）</span><br><span class="line">#select * from cpu where &quot;host&quot; !~ /.*HC.*/ limit 4</span><br><span class="line">#SELECT * FROM &quot;h2o_feet&quot; WHERE (&quot;location&quot; =~ /.*y.*/ OR &quot;location&quot; =~ /.*m.*/) AND &quot;water_level&quot; &gt; 0 LIMIT 4</span><br><span class="line">排序：group by的用法必须得是在复合函数中进行使用</span><br><span class="line">#select count(type) from events group by time(10s)</span><br><span class="line">#select count(type) from events group by time(10s),type</span><br><span class="line">给查询字段做tag：</span><br><span class="line">#select count(type) as number_of_types group by time(10m)</span><br><span class="line">#select count(type) from events group by time(1h) where time &gt; now() - 3h</span><br><span class="line">使用fill字段：</span><br><span class="line">#select count(type) from events group by time(1h) fill(0)/fill(-1)/fill(null) where time &gt; now() - 3h</span><br><span class="line">数据聚合：</span><br><span class="line">select count(type) from user_events merge admin_events group by time(10m)</span><br></pre></td></tr></table></figure>
+<p><strong>使用API进行操作数据:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">创建数据库:</span><br><span class="line">curl -G &quot;http://localhost:8086/query&quot; --data-urlencode &quot;q=create database mydb&quot;</span><br><span class="line">插入数据：</span><br><span class="line">curl -XPOST &apos;http://localhost:8086/write?db=mydb&apos; -d &apos;biaoge,name=xxbandy,xingqu=coding age=2&apos;</span><br><span class="line">curl -i -XPOST &apos;http://localhost:8086/write?db=mydb&apos; --data-binary &apos;cpu_load_short,host=server01,region=us-west value=0.64 1434055562000000000&apos;</span><br><span class="line">curl -i -XPOST &apos;http://localhost:8086/write?db=mydb&apos; --data-binary &apos;cpu_load_short,host=server02 value=0.67</span><br><span class="line">cpu_load_short,host=server02,region=us-west value=0.55 1422568543702900257</span><br><span class="line">cpu_load_short,direction=in,host=server01,region=us-west value=2.0 1422568543702900257&apos;</span><br><span class="line">将sql语句写入文件，并通过api插入：</span><br><span class="line">#cat sql.txt</span><br><span class="line">cpu_load_short,host=server02 value=0.67</span><br><span class="line">cpu_load_short,host=server02,region=us-west value=0.55 1422568543702900257</span><br><span class="line">cpu_load_short,direction=in,host=server01,region=us-west value=2.0 1422568543702900257</span><br><span class="line">#curl -i -XPOST &apos;http://localhost:8086/write?db=mydb&apos; --data-binary @cpu_data.txt</span><br><span class="line"></span><br><span class="line">查询数据：（--data-urlencode &quot;epoch=s&quot; 指定时间序列 &quot;chunk_size=20000&quot; 指定查询块大小）</span><br><span class="line"># curl -G http://localhost:8086/query?pretty=true --data-urlencode &quot;db=ydb&quot; --data-urlencode &quot;q=select * from biaoge where xingqu=&apos;coding&apos;&quot;</span><br><span class="line">数据分析：</span><br><span class="line">#curl -G http://localhost:8086/query?pretty=true --data-urlencode &quot;db=mydb&quot; --data-urlencode &quot;q=select mean(load) from cpu&quot;</span><br><span class="line">#curl -G http://localhost:8086/query?pretty=true --data-urlencode &quot;db=mydb&quot; --data-urlencode &quot;q=select load from cpu&quot;</span><br><span class="line">可以看到load的值分别是42 78 15.4；用mean(load)求出来的值为45,13</span><br><span class="line">curl -G http://localhost:8086/query?pretty=true --data-urlencode &quot;db=ydb&quot; --data-urlencode &quot;q=select mean(load) from cpu where host=&apos;server01&apos;&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>使用influxdb提供的web界面进行操作:</strong></p>
+<p>这里只是简单的介绍了influxdb的使用，后期如果想在grafana中汇聚并完美地展示数据，可能需要熟悉influxdb的各种查询语法。(其实就是sql语句的一些使用技巧，聚合函数的使用，子查询等等)</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/07/graphite/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/07/graphite/" itemprop="url">graphite学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-07T03:30:28+08:00">
+                2017-12-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/服务监控/" itemprop="url" rel="index">
+                    <span itemprop="name">服务监控</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>官方文档:<a href="http://graphite.readthedocs.io/en/latest/" target="_blank" rel="noopener">http://graphite.readthedocs.io/en/latest/</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ace1981</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ace1981</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
       </div>
     </footer>
 
-      
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
 
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
 
 
 
@@ -108,6 +2456,124 @@
 
 
 
-    </div>
-  </body>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>

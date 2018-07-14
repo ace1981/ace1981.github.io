@@ -1,11 +1,85 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
+
+
+
   
-  <title>apache反向代理和负载均衡 | Ace&#39;pages</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目标:apache实现多tomcat的反向代理和负载均衡,并实现session共享 1 首先apache要放到磁盘根目录下 2 打开conf/http.conf最下加入如下配置 1234567ProxyRequests Off&amp;lt;Proxy balancer://cluster&amp;gt;	BalancerMember http://127.0.0.1:8180 loadfactor=1 rout">
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="loadbalance," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="目标:apache实现多tomcat的反向代理和负载均衡,并实现session共享 1 首先apache要放到磁盘根目录下 2 打开conf/http.conf最下加入如下配置 1234567ProxyRequests Off&amp;lt;Proxy balancer://cluster&amp;gt;	BalancerMember http://127.0.0.1:8180 loadfactor=1 rout">
 <meta name="keywords" content="loadbalance">
 <meta property="og:type" content="article">
 <meta property="og:title" content="apache反向代理和负载均衡">
@@ -17,176 +91,616 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="apache反向代理和负载均衡">
 <meta name="twitter:description" content="目标:apache实现多tomcat的反向代理和负载均衡,并实现session共享 1 首先apache要放到磁盘根目录下 2 打开conf/http.conf最下加入如下配置 1234567ProxyRequests Off&amp;lt;Proxy balancer://cluster&amp;gt;	BalancerMember http://127.0.0.1:8180 loadfactor=1 rout">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hujao.com/2017/12/29/apache/"/>
+
+
+
+
+
+  <title>apache反向代理和负载均衡 | Ace'pages</title>
   
-    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/typing.css">
+
+
+
+
+
+
+
+
 </head>
 
-  
-    
-      <body>
-    
-  
-      <div id="container" class="container">
-        <article id="post-apache" class="article article-type-post" itemscope itemprop="blogPost">
-  <header id="header" class="header">
-  <nav id="main-nav" class="main-nav">
-    
-      <a class="main-nav-link" href="/">Home</a>
-    
-      <a class="main-nav-link" href="/archives">Archives</a>
-    
-      <a class="main-nav-link" href="/categories">Categories</a>
-    
-      <a class="main-nav-link" href="/tags">Tags</a>
-    
-      <a class="main-nav-link" href="/about">About</a>
-    
-  </nav>
-  <nav id="sub-nav">
-    
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-    
-  </nav>
-</header>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-  <hr/>
-  <div class="article-inner">
+  
+  
     
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
-      <header class="article-header">
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ace'pages</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
         
-  
-    <h1 class="article-title" itemprop="name">
-      apache反向代理和负载均衡
-    </h1>
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
   
 
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/29/apache/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ace1981">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ace'pages">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">apache反向代理和负载均衡</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-29T10:22:51+08:00">
+                2017-12-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/负载均衡/" itemprop="url" rel="index">
+                    <span itemprop="name">负载均衡</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry typo" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
       
         <p>目标:apache实现多tomcat的反向代理和负载均衡,并实现session共享</p>
 <p>1 首先apache要放到磁盘根目录下</p>
 <p>2 打开conf/http.conf最下加入如下配置</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ProxyRequests Off</div><div class="line"><span class="tag">&lt;<span class="name">Proxy</span> <span class="attr">balancer:</span>//<span class="attr">cluster</span>&gt;</span></div><div class="line">	BalancerMember http://127.0.0.1:8180 loadfactor=1 route=jvm1</div><div class="line">	BalancerMember http://127.0.0.1:8280 loadfactor=1 route=jvm2</div><div class="line"><span class="tag">&lt;/<span class="name">Proxy</span>&gt;</span></div><div class="line"></div><div class="line">Include conf/mod_jk.conf</div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ProxyRequests Off</span><br><span class="line"><span class="tag">&lt;<span class="name">Proxy</span> <span class="attr">balancer:</span>//<span class="attr">cluster</span>&gt;</span></span><br><span class="line">	BalancerMember http://127.0.0.1:8180 loadfactor=1 route=jvm1</span><br><span class="line">	BalancerMember http://127.0.0.1:8280 loadfactor=1 route=jvm2</span><br><span class="line"><span class="tag">&lt;/<span class="name">Proxy</span>&gt;</span></span><br><span class="line"></span><br><span class="line">Include conf/mod_jk.conf</span><br></pre></td></tr></table></figure>
 <p>3 创建conf/mod_jk.conf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">LoadModule jk_module modules/mod_jk-1.2.26-httpd-2.2.4.so</div><div class="line">JkWorkersFile conf/workers.properties</div><div class="line">JkMount /* controller</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LoadModule jk_module modules/mod_jk-1.2.26-httpd-2.2.4.so</span><br><span class="line">JkWorkersFile conf/workers.properties</span><br><span class="line">JkMount /* controller</span><br></pre></td></tr></table></figure>
 <p>4 下载mod_jk-1.2.26-httpd-2.2.4.so文件 并复制到/modules目录下,这里的文件名与配置路径一致,并且此文件与apache版本相关,要使用对应的版本才有效</p>
 <p>5 创建conf/workers.properties 配置ajp协议端口, </p>
 <p>Tip:</p>
 <p>worker.controller.sticky_session表示会话粘性 </p>
 <p>worker.controller.sticky_session=false，提交页面，将按照负载均衡的规则切换服务器，实现“完全的负载均衡”，代价是Tomcat不停交换session数据，慢；worker.controller.sticky_session=true，提交页面将仍使用同一服务器（session建立在哪就用哪台），不能保证完完全全的负载均衡，但相对能省频繁切换服务器的代价。可能会变上面的快一些。<br>worker.controller.sticky_session_force=true，始终转发到session创建的服务器上。</p>
 <p><engine name="Catalina" defaulthost="localhost" jvmroute="tomcat2"><br>jvmRoute是tomcat路由标示，由此区分两台tomcat主机。一次会话，就有一个sessionID，这个sessionID后面会跟上jvmRoute设置的值，这样一次会话，就只会让一个tomcat处理</engine></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#server </div><div class="line">worker.list = controller </div><div class="line">#========tomcat1======== </div><div class="line">worker.tomcat1.port=8109</div><div class="line">worker.tomcat1.host=localhost </div><div class="line">worker.tomcat1.type=ajp13 </div><div class="line">worker.tomcat1.lbfactor = 1 </div><div class="line">#========tomcat2======== </div><div class="line">worker.tomcat2.port=8209</div><div class="line">worker.tomcat2.host=localhost </div><div class="line">worker.tomcat2.type=ajp13 </div><div class="line">worker.tomcat2.lbfactor = 1 </div><div class="line"></div><div class="line">#========controller,负载均衡控制器======== </div><div class="line">worker.controller.type=lb </div><div class="line">worker.controller.balanced_workers=tomcat1,tomcat2</div><div class="line">worker.controller.sticky_session=false</div><div class="line">worker.controller.sticky_session_force=1</div><div class="line">#worker.controller.sticky_session=1</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#server </span><br><span class="line">worker.list = controller </span><br><span class="line">#========tomcat1======== </span><br><span class="line">worker.tomcat1.port=8109</span><br><span class="line">worker.tomcat1.host=localhost </span><br><span class="line">worker.tomcat1.type=ajp13 </span><br><span class="line">worker.tomcat1.lbfactor = 1 </span><br><span class="line">#========tomcat2======== </span><br><span class="line">worker.tomcat2.port=8209</span><br><span class="line">worker.tomcat2.host=localhost </span><br><span class="line">worker.tomcat2.type=ajp13 </span><br><span class="line">worker.tomcat2.lbfactor = 1 </span><br><span class="line"></span><br><span class="line">#========controller,负载均衡控制器======== </span><br><span class="line">worker.controller.type=lb </span><br><span class="line">worker.controller.balanced_workers=tomcat1,tomcat2</span><br><span class="line">worker.controller.sticky_session=false</span><br><span class="line">worker.controller.sticky_session_force=1</span><br><span class="line">#worker.controller.sticky_session=1</span><br></pre></td></tr></table></figure>
 <p>6 修改 conf/extra/httpd-vhost.conf</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">NameVirtualHost *:80</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">VirtualHost</span> *<span class="attr">:80</span>&gt;</span></div><div class="line">ServerAdmin xxx@126.com</div><div class="line">ServerName localhost</div><div class="line">ServerAlias localhost</div><div class="line">ProxyPass / balancer://cluster/ stickysession=jsessionid nofailover=On</div><div class="line">ProxyPassReverse / balancer://cluster/</div><div class="line">ErrorLog "logs/thc-error.log"</div><div class="line">CustomLog "logs/thc-access.log" common</div><div class="line"><span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">NameVirtualHost *:80</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">VirtualHost</span> *<span class="attr">:80</span>&gt;</span></span><br><span class="line">ServerAdmin xxx@126.com</span><br><span class="line">ServerName localhost</span><br><span class="line">ServerAlias localhost</span><br><span class="line">ProxyPass / balancer://cluster/ stickysession=jsessionid nofailover=On</span><br><span class="line">ProxyPassReverse / balancer://cluster/</span><br><span class="line">ErrorLog "logs/thc-error.log"</span><br><span class="line">CustomLog "logs/thc-access.log" common</span><br><span class="line"><span class="tag">&lt;/<span class="name">VirtualHost</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>7 配置tomcat 1的server.xml 修改对应端口 去掉cluster注释</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">Server</span> <span class="attr">port</span>=<span class="string">"8105"</span> <span class="attr">shutdown</span>=<span class="string">"SHUTDOWN"</span>&gt;</span></div><div class="line">  ...</div><div class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8180"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span> </span></div><div class="line">               <span class="attr">connectionTimeout</span>=<span class="string">"20000"</span> </div><div class="line">               <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8109"</span> <span class="attr">protocol</span>=<span class="string">"AJP/1.3"</span> <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">Engine</span> <span class="attr">name</span>=<span class="string">"Catalina"</span> <span class="attr">defaultHost</span>=<span class="string">"localhost"</span> <span class="attr">jvmRoute</span>=<span class="string">"jvm1"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">Cluster</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.ha.tcp.SimpleTcpCluster"</span>/&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">Server</span> <span class="attr">port</span>=<span class="string">"8105"</span> <span class="attr">shutdown</span>=<span class="string">"SHUTDOWN"</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8180"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span> </span></span><br><span class="line"><span class="tag">               <span class="attr">connectionTimeout</span>=<span class="string">"20000"</span> </span></span><br><span class="line"><span class="tag">               <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8109"</span> <span class="attr">protocol</span>=<span class="string">"AJP/1.3"</span> <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Engine</span> <span class="attr">name</span>=<span class="string">"Catalina"</span> <span class="attr">defaultHost</span>=<span class="string">"localhost"</span> <span class="attr">jvmRoute</span>=<span class="string">"jvm1"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Cluster</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.ha.tcp.SimpleTcpCluster"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 <p>8 配置tomcat 2的server.xml 修改对应端口 去掉cluster注释</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">Server</span> <span class="attr">port</span>=<span class="string">"8205"</span> <span class="attr">shutdown</span>=<span class="string">"SHUTDOWN"</span>&gt;</span></div><div class="line">  ...</div><div class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8280"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span> </span></div><div class="line">               <span class="attr">connectionTimeout</span>=<span class="string">"20000"</span> </div><div class="line">               <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8209"</span> <span class="attr">protocol</span>=<span class="string">"AJP/1.3"</span> <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">Engine</span> <span class="attr">name</span>=<span class="string">"Catalina"</span> <span class="attr">defaultHost</span>=<span class="string">"localhost"</span> <span class="attr">jvmRoute</span>=<span class="string">"jvm2"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">Cluster</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.ha.tcp.SimpleTcpCluster"</span>/&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">Server</span> <span class="attr">port</span>=<span class="string">"8205"</span> <span class="attr">shutdown</span>=<span class="string">"SHUTDOWN"</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8280"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span> </span></span><br><span class="line"><span class="tag">               <span class="attr">connectionTimeout</span>=<span class="string">"20000"</span> </span></span><br><span class="line"><span class="tag">               <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8209"</span> <span class="attr">protocol</span>=<span class="string">"AJP/1.3"</span> <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Engine</span> <span class="attr">name</span>=<span class="string">"Catalina"</span> <span class="attr">defaultHost</span>=<span class="string">"localhost"</span> <span class="attr">jvmRoute</span>=<span class="string">"jvm2"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Cluster</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.ha.tcp.SimpleTcpCluster"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 <p>9 修改相关web项目的web.xml 加入如下节点</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">distributable</span>/&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">distributable</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 <p>10 配置完成,启动tomcat1,tomcat2和apache的http.exe</p>
 <p>ps:测试是否成功,修改相同路径下的同名html文件,分别显示成不同的内容</p>
 <p>对应的在访问此路径时,能时而显示不同内容就代表配置成功了.</p>
 
       
     </div>
-    <footer class="article-footer">
-      <ul class="article-meta">
-        <li>
-          <span class="label">Published Date:</span>
-          <a href="/2017/12/29/apache/" class="article-date">
-  <time datetime="2017-12-29T02:22:51.000Z" itemprop="datePublished">2017-12-29</time>
-</a>
-
-        </li>
-        
-          <li>
-            <span class="label">Category:</span>
-            
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/负载均衡/">负载均衡</a>
-  </div>
-
-
-          </li>
-        
-        
-          <li>
-            <span class="label">Tag:</span>
-            
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/loadbalance/">loadbalance</a></li></ul>
-
-
-          </li>
-        
-        <hr/>
-      </ul>
-    </footer>
-  </div>
-  
     
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2017/12/29/nginx/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          nginx
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/12/26/activiti/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">学习activiti工作流</div>
-    </a>
-  
-</nav>
+    
+    
 
+    
 
-  
-</article>
+    
 
+    
 
-
-
-      </div>
+    <footer class="post-footer">
       
-    <footer id="footer" class="post-footer footer">
-      <hr/>
-      <div id="footerContent" class="footer-content">
-        <p>闲步山雨后,静待晚林风 Post</p>
+        <div class="post-tags">
+          
+            <a href="/tags/loadbalance/" rel="tag"># loadbalance</a>
+          
+        </div>
+      
 
+      
+      
+      
 
-      </div>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/26/activiti/" rel="next" title="学习activiti工作流">
+                <i class="fa fa-chevron-left"></i> 学习activiti工作流
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/29/nginx/" rel="prev" title="nginx">
+                nginx <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
     </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
 
       
 
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+      
 
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ace1981</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+          <nav class="site-state motion-element">
 
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">128</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
 
-<script src="/js/typing.js"></script>
-<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
 
+          </nav>
 
+          
 
+          <div class="links-of-author motion-element">
+            
+          </div>
 
+          
+          
 
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
 
     </div>
-  </body>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ace1981</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>
