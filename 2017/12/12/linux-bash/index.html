@@ -1,85 +1,11 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="1. Basic Operationsa. export显示所有的环境变量，如果你想获取某个变量的详细信息，使用 echo $VARIABLE_NAME. 1export Example: 123456789$ exportSHELL=/bin/zshAWS_HOME=/Users/adnanadnan/.awsLANG=en_US.UTF-8LC_CTYPE=en_US.UTF-8LESS=-R">
+  <title>linux-bash学习 | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. Basic Operationsa. export显示所有的环境变量，如果你想获取某个变量的详细信息，使用 echo $VARIABLE_NAME. 1export Example: 123456789$ exportSHELL=/bin/zshAWS_HOME=/Users/adnanadnan/.awsLANG=en_US.UTF-8LC_CTYPE=en_US.UTF-8LESS=-R">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux-bash学习">
 <meta property="og:url" content="http://hujao.com/2017/12/12/linux-bash/index.html">
@@ -90,236 +16,58 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux-bash学习">
 <meta name="twitter:description" content="1. Basic Operationsa. export显示所有的环境变量，如果你想获取某个变量的详细信息，使用 echo $VARIABLE_NAME. 1export Example: 123456789$ exportSHELL=/bin/zshAWS_HOME=/Users/adnanadnan/.awsLANG=en_US.UTF-8LC_CTYPE=en_US.UTF-8LESS=-R">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://hujao.com/2017/12/12/linux-bash/"/>
-
-
-
-
-
-  <title>linux-bash学习 | Ace'pages</title>
   
-
-
-
-
-
-
-
-
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
   
     
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+      <body>
     
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Ace'pages</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
   
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
+      <div id="container" class="container">
+        <article id="post-linux-bash" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hujao.com/2017/12/12/linux-bash/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ace1981">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ace'pages">
-    </span>
-
+      <a class="main-nav-link" href="/">Home</a>
     
-      <header class="post-header">
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/categories">Categories</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
 
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">linux-bash学习</h1>
-        
+  
+    <h1 class="article-title" itemprop="name">
+      linux-bash学习
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-12T12:20:12+08:00">
-                2017-12-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/shell/" itemprop="url" rel="index">
-                    <span itemprop="name">shell</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
+    <div class="article-entry typo" itemprop="articleBody">
       
         <h2 id="1-Basic-Operations"><a href="#1-Basic-Operations" class="headerlink" title="1. Basic Operations"></a>1. Basic Operations</h2><h4 id="a-export"><a href="#a-export" class="headerlink" title="a. export"></a>a. <code>export</code></h4><p>显示所有的环境变量，如果你想获取某个变量的详细信息，使用 <code>echo $VARIABLE_NAME</code>.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export</span><br></pre></td></tr></table></figure>
@@ -692,247 +440,81 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bash -n scriptname</span><br><span class="line">bash -v scriptname</span><br><span class="line">bash -x scriptname</span><br></pre></td></tr></table></figure>
       
     </div>
-    
-    
-    
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2017/12/12/linux-bash/" class="article-date">
+  <time datetime="2017-12-12T04:20:12.000Z" itemprop="datePublished">2017-12-12</time>
+</a>
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
             
-              <a href="/2017/12/07/influxdb/" rel="next" title="influxdb学习">
-                <i class="fa fa-chevron-left"></i> influxdb学习
-              </a>
-            
-          </div>
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/shell/">shell</a>
+  </div>
 
-          <span class="post-nav-divider"></span>
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/13/docker-registry/" rel="prev" title="docker-registry私有库">
-                docker-registry私有库 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
+          </li>
+        
+        
+        <hr/>
+      </ul>
     </footer>
   </div>
   
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
     
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">ace1981</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">128</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index/index.html">
-                  <span class="site-state-item-count">29</span>
-                  <span class="site-state-item-name">categories</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">63</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          <div class="links-of-author motion-element">
-            
-          </div>
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Basic-Operations"><span class="nav-number">1.</span> <span class="nav-text">1. Basic Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-export"><span class="nav-number">1.0.1.</span> <span class="nav-text">a. export</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-whereis"><span class="nav-number">1.0.2.</span> <span class="nav-text">b. whereis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-which"><span class="nav-number">1.0.3.</span> <span class="nav-text">c. which</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-clear"><span class="nav-number">1.0.4.</span> <span class="nav-text">d. clear</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-File-Operations"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. File Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-ls"><span class="nav-number">1.1.1.</span> <span class="nav-text">a. ls</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-touch"><span class="nav-number">1.1.2.</span> <span class="nav-text">b. touch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-cat"><span class="nav-number">1.1.3.</span> <span class="nav-text">c. cat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-more"><span class="nav-number">1.1.4.</span> <span class="nav-text">d. more</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-head"><span class="nav-number">1.1.5.</span> <span class="nav-text">e. head</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f-tail"><span class="nav-number">1.1.6.</span> <span class="nav-text">f. tail</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#g-mv"><span class="nav-number">1.1.7.</span> <span class="nav-text">g. mv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#h-cp"><span class="nav-number">1.1.8.</span> <span class="nav-text">h. cp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#i-rm"><span class="nav-number">1.1.9.</span> <span class="nav-text">i. rm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#j-diff"><span class="nav-number">1.1.10.</span> <span class="nav-text">j. diff</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#k-chmod"><span class="nav-number">1.1.11.</span> <span class="nav-text">k. chmod</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#l-gzip"><span class="nav-number">1.1.12.</span> <span class="nav-text">l. gzip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#m-gunzip"><span class="nav-number">1.1.13.</span> <span class="nav-text">m. gunzip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#n-gzcat"><span class="nav-number">1.1.14.</span> <span class="nav-text">n. gzcat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#o-lpr"><span class="nav-number">1.1.15.</span> <span class="nav-text">o. lpr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#p-lpq"><span class="nav-number">1.1.16.</span> <span class="nav-text">p. lpq</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#q-lprm"><span class="nav-number">1.1.17.</span> <span class="nav-text">q. lprm</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-Text-Operations"><span class="nav-number">1.2.</span> <span class="nav-text">1.2. Text Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-awk"><span class="nav-number">1.2.1.</span> <span class="nav-text">a. awk</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-grep"><span class="nav-number">1.2.2.</span> <span class="nav-text">b. grep</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-wc"><span class="nav-number">1.2.3.</span> <span class="nav-text">c. wc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-sed"><span class="nav-number">1.2.4.</span> <span class="nav-text">d. sed</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-sort"><span class="nav-number">1.2.5.</span> <span class="nav-text">e. sort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f-uniq"><span class="nav-number">1.2.6.</span> <span class="nav-text">f. uniq</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#g-cut"><span class="nav-number">1.2.7.</span> <span class="nav-text">g. cut</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#h-echo"><span class="nav-number">1.2.8.</span> <span class="nav-text">h. echo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#i-fmt"><span class="nav-number">1.2.9.</span> <span class="nav-text">i. fmt</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#j-tr"><span class="nav-number">1.2.10.</span> <span class="nav-text">j. tr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#k-nl"><span class="nav-number">1.2.11.</span> <span class="nav-text">k. nl</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#l-egrep"><span class="nav-number">1.2.12.</span> <span class="nav-text">l. egrep</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#m-fgrep"><span class="nav-number">1.2.13.</span> <span class="nav-text">m. fgrep</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-Directory-Operations"><span class="nav-number">1.3.</span> <span class="nav-text">1.3. Directory Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-mkdir"><span class="nav-number">1.3.1.</span> <span class="nav-text">a. mkdir</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-cd"><span class="nav-number">1.3.2.</span> <span class="nav-text">b. cd</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-pwd"><span class="nav-number">1.3.3.</span> <span class="nav-text">c. pwd</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-SSH-System-Info-amp-Network-Operations"><span class="nav-number">1.4.</span> <span class="nav-text">1.4. SSH, System Info &amp; Network Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-ssh"><span class="nav-number">1.4.1.</span> <span class="nav-text">a. ssh</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-whoami"><span class="nav-number">1.4.2.</span> <span class="nav-text">b. whoami</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-passwd"><span class="nav-number">1.4.3.</span> <span class="nav-text">c. passwd</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-quota"><span class="nav-number">1.4.4.</span> <span class="nav-text">d. quota</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-date"><span class="nav-number">1.4.5.</span> <span class="nav-text">e. date</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f-cal"><span class="nav-number">1.4.6.</span> <span class="nav-text">f. cal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#g-uptime"><span class="nav-number">1.4.7.</span> <span class="nav-text">g. uptime</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#h-w"><span class="nav-number">1.4.8.</span> <span class="nav-text">h. w</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#i-finger"><span class="nav-number">1.4.9.</span> <span class="nav-text">i. finger</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#j-uname"><span class="nav-number">1.4.10.</span> <span class="nav-text">j. uname</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#k-man"><span class="nav-number">1.4.11.</span> <span class="nav-text">k. man</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#l-df"><span class="nav-number">1.4.12.</span> <span class="nav-text">l. df</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#m-du"><span class="nav-number">1.4.13.</span> <span class="nav-text">m. du</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#n-last"><span class="nav-number">1.4.14.</span> <span class="nav-text">n. last</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#o-ps"><span class="nav-number">1.4.15.</span> <span class="nav-text">o. ps</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#p-kill"><span class="nav-number">1.4.16.</span> <span class="nav-text">p. kill</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#q-killall"><span class="nav-number">1.4.17.</span> <span class="nav-text">q. killall</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#r-top"><span class="nav-number">1.4.18.</span> <span class="nav-text">r. top</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#s-bg"><span class="nav-number">1.4.19.</span> <span class="nav-text">s. bg</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#t-fg"><span class="nav-number">1.4.20.</span> <span class="nav-text">t. fg</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u-ping"><span class="nav-number">1.4.21.</span> <span class="nav-text">u. ping</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-whois"><span class="nav-number">1.4.22.</span> <span class="nav-text">v. whois</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#w-dig"><span class="nav-number">1.4.23.</span> <span class="nav-text">w. dig</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#x-wget"><span class="nav-number">1.4.24.</span> <span class="nav-text">x. wget</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#y-scp"><span class="nav-number">1.4.25.</span> <span class="nav-text">y. scp</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Basic-Shell-Programming"><span class="nav-number">2.</span> <span class="nav-text">2. Basic Shell Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Variables"><span class="nav-number">2.1.</span> <span class="nav-text">2.1. Variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-String-Substitution"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 String Substitution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-Functions"><span class="nav-number">2.3.</span> <span class="nav-text">2.3. Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-Conditionals"><span class="nav-number">2.4.</span> <span class="nav-text">2.4. Conditionals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-Loops"><span class="nav-number">2.5.</span> <span class="nav-text">2.5. Loops</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Tricks"><span class="nav-number">3.</span> <span class="nav-text">3. Tricks</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置一个别名"><span class="nav-number">3.0.1.</span> <span class="nav-text">设置一个别名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速去特定的目录"><span class="nav-number">3.0.2.</span> <span class="nav-text">快速去特定的目录</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Debugging"><span class="nav-number">4.</span> <span class="nav-text">4. Debugging</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2017/12/13/docker-registry/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          docker-registry私有库
         
       </div>
-    </main>
+    </a>
+  
+  
+    <a href="/2017/12/07/influxdb/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">influxdb学习</div>
+    </a>
+  
+</nav>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">ace1981</span>
 
   
-</div>
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+</article>
 
 
 
 
-        
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
 
 
-
-
-
-
-
-        
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
+      
 
-    
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 
-  </div>
 
-  
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
 
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
 
 
 
@@ -940,129 +522,6 @@
 
 
 
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-</body>
+    </div>
+  </body>
 </html>
