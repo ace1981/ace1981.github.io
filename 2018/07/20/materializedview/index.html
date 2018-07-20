@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>oracle物化视图 | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="普通视图和物化视图的区别（转）本文转自http://www.cnblogs.com/xuezhen-huang/p/4651118.html 物化视图是一种特殊的物理表，“物化”(Materialized)视图是相对普通视图而言的。普通视图是虚拟表，应用的局限性大，任何对视图的查询，Oracle都实际上转换为视图SQL语句的查询。这样对整体查询性能的提高，并没有实质上的好处。 1、物化视图的类型：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="oracle物化视图">
+<meta property="og:url" content="http://hujao.com/2018/07/20/materializedview/index.html">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="普通视图和物化视图的区别（转）本文转自http://www.cnblogs.com/xuezhen-huang/p/4651118.html 物化视图是一种特殊的物理表，“物化”(Materialized)视图是相对普通视图而言的。普通视图是虚拟表，应用的局限性大，任何对视图的查询，Oracle都实际上转换为视图SQL语句的查询。这样对整体查询性能的提高，并没有实质上的好处。 1、物化视图的类型：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-20T03:08:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="oracle物化视图">
+<meta name="twitter:description" content="普通视图和物化视图的区别（转）本文转自http://www.cnblogs.com/xuezhen-huang/p/4651118.html 物化视图是一种特殊的物理表，“物化”(Materialized)视图是相对普通视图而言的。普通视图是虚拟表，应用的局限性大，任何对视图的查询，Oracle都实际上转换为视图SQL语句的查询。这样对整体查询性能的提高，并没有实质上的好处。 1、物化视图的类型：">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-materializedview" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/categories">Categories</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      oracle物化视图
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h2 id="普通视图和物化视图的区别（转）"><a href="#普通视图和物化视图的区别（转）" class="headerlink" title="普通视图和物化视图的区别（转）"></a><a href="https://www.cnblogs.com/nmap/p/6724849.html" target="_blank" rel="noopener">普通视图和物化视图的区别（转）</a></h2><p>本文转自<a href="http://www.cnblogs.com/xuezhen-huang/p/4651118.html" target="_blank" rel="noopener">http://www.cnblogs.com/xuezhen-huang/p/4651118.html</a></p>
+<p>物化视图是一种特殊的物理表，“物化”(Materialized)视图是相对普通视图而言的。<br>普通视图是虚拟表，应用的局限性大，任何对视图的查询，Oracle都实际上转换为视图SQL语句的查询。这样对整体查询性能的提高，并没有实质上的好处。</p>
+<p><strong>1、物化视图的类型：</strong></p>
+<p>ON DEMAND、ON COMMIT 二者的区别在于刷新方法的不同<br>ON DEMAND顾名思义，仅在该物化视图“需要”被刷新了，才进行刷新(REFRESH)，即更新物化视图，以保证和基表数据的一致性；<br>而ON COMMIT是说，一旦基表有了COMMIT，即事务提交，则立刻刷新，立刻更新物化视图，使得数据和基表一致。</p>
+<p><strong>2、ON DEMAND物化视图</strong><br>物化视图的创建本身是很复杂和需要优化参数设置的，特别是针对大型生产数据库系统而言。<br>但Oracle允许以这种最简单的，类似于普通视图的方式来做，所以不可避免的会涉及到默认值问题。<br>也就是说Oracle给物化视图的重要定义参数的默认值处理是我们需要特别注意的。</p>
+<p><strong>物化视图的特点：</strong><br>(1) 物化视图在某种意义上说就是一个物理表(而且不仅仅是一个物理表)，这通过其可以被user_tables查询出来，而得到佐证；<br>(2) 物化视图也是一种段(segment)，所以其有自己的物理存储属性；<br>(3) 物化视图会占用数据库磁盘空间，这点从user_segment的查询结果，可以得到佐证；<br>创建语句：create materialized view mv_name as select * from table_name<br>默认情况下，如果没指定刷新方法和刷新模式，则Oracle默认为FORCE和DEMAND。</p>
+<p><strong>物化视图的数据怎么随着基表而更新？</strong><br>Oracle提供了两种方式，手工刷新和自动刷新，默认为手工刷新。也就是说，通过我们手工的执行某个Oracle提供的系统级存储过程或包，来保证物化视图与基表数据一致性。这是最基本的刷新办法了。</p>
+<p>自动刷新，其实也就是Oracle会建立一个job，通过这个job来调用相同的存储过程或包，加以实现。<br>ON DEMAND物化视图的特性及其和ON COMMIT物化视图的区别，即前者不刷新(手工或自动)就不更新物化视图，而后者不刷新也会更新物化视图，——只要基表发生了COMMIT。<br>创建定时刷新的物化视图：<br>create materialized view mv_name refresh force on demand start with sysdate next sysdate+1 （指定物化视图每天刷新一次） 上述创建的物化视图每天刷新，但是没有指定刷新时间，如果要指定刷新时间（比如每天晚上10：00定时刷新一次）：<br>create materialized view mv_name refresh force on demand start with sysdate next to_date( concat( to_char( sysdate+1,’dd-mm-yyyy’),’ 22:00:00’),’dd-mm-yyyy hh24:mi:ss’)</p>
+<p><strong>3、ON COMMIT物化视图</strong><br>ON COMMIT物化视图的创建，和上面创建ON DEMAND的物化视图区别不大。因为ON DEMAND是默认的，所以ON COMMIT物化视图，需要再增加个参数即可。<br>需要注意的是，无法在定义时仅指定ON COMMIT，还得附带个参数才行。<br>创建ON COMMIT物化视图：create materialized view mv_name refresh force on commit as select * from table_name<br>备注：实际创建过程中，基表需要有主键约束，否则会报错（ORA-12014）</p>
+<p><strong>4、物化视图的刷新</strong><br>刷新（Refresh）：指当基表发生了DML操作后，物化视图何时采用哪种方式和基表进行同步。<br>刷新的模式有两种：ON DEMAND和ON COMMIT。（如上所述）<br>刷新的方法有四种：FAST、COMPLETE、FORCE和NEVER。<br>FAST刷新采用增量刷新，只刷新自上次刷新以后进行的修改。<br>COMPLETE刷新对整个物化视图进行完全的刷新。<br>如果选择FORCE方式，则Oracle在刷新时会去判断是否可以进行快速刷新，如果可以则采用FAST方式，否则采用COMPLETE的方式。<br>NEVER指物化视图不进行任何刷新。<br>对于已经创建好的物化视图，可以修改其刷新方式，比如把物化视图mv_name的刷新方式修改为每天晚上10点刷新一次：<br>alter materialized view mv_name refresh force on demand start with sysdate next to_date(concat(to_char(sysdate+1,’dd-mm-yyyy’),’ 22:00:00’),’dd-mm-yyyy hh24:mi:ss’)</p>
+<p><strong>5、物化视图具有表一样的特征</strong></p>
+<p>所以可以像对表一样，我们可以为它创建索引，创建方法和对表一样。</p>
+<p><strong>6、物化视图的删除：</strong><br>虽然物化视图是和表一起管理的，但是在经常使用的PLSQL工具中，并不能用删除表的方式来删除<br>（在表上右键选择‘drop’并不能删除物化视图），可以使用语句来实现：drop materialized view mv_name</p>
+<p><strong>普通视图和物化视图的区别</strong><br>普通视图和物化视图根本就不是一个东西，说区别都是硬拼到一起的，<br>首先明白基本概念，普通视图是不存储任何数据的，他只有定义，在查询中是转换为对应的定义SQL去查询，<br>而物化视图是将数据转换为一个表，实际存储着数据，这样查询数据，就不用关联一大堆表，如果表很大的话，会在临时表空间内做大量的操作。</p>
+<p><strong>普通视图的三个特征：</strong><br>1、是简化设计，清晰编码的东西，他并不是提高性能的，他的存在只会降低性能<br>（如一个视图7个表关联，另一个视图8个表，程序员不知道，觉得很方便，把两个视图关联再做一个视图，那就惨了），他的存在未了在设计上的方便性</p>
+<p>2、其次，是安全，在授权给其他用户或者查看角度，多个表关联只允许查看，不允许修改，<br>单表也可以同WITH READ ONLY来控制，当然有些项目基于视图做面向对象的开发，即在视图上去做INSTAND OF触发器，就我个人而言是不站同的，虽然开发上方便，但是未必是好事。</p>
+<p>3、从不同的角度看不同的维度，视图可以划分维度和权限，并使多个维度的综合，也就是你要什么就可以从不同的角度看，而表是一个实体的而已，<br>一般维度较少（如：人员表和身份表关联，从人员表可以查看人员的维度统计，从身份看，可以看不同种类的身份有那些人或者多少人），<br>其次另一个如系统视图USER_TABLE、TAB、USER_OBJECTS这些视图，不同的用户下看到的肯定是不一样的，看的是自己的东西。<br>物化视图呢，用于OLAP系统中，当然部分OLTP系统的小部分功能未了提高性能会借鉴一点点，因为表关联的开销很大，所以在开发中很多人就像把这个代价交给定期转存来完成，<br>ORACLE当然也提供了这个功能，就是将视图（或者一个大SQL）的信息转换为物理数据存储，然后提供不同的策略：<br>定时刷还是及时刷、增量刷还是全局刷等等可以根据实际情况进行选择，总之你差的是表，不是视图。</p>
+<p><strong>关于在刷新和索引上的区别</strong><br>他们两个没有联系吧，刷新我不清楚你是否指的是物化视图的刷新，因为刷新的概念很泛，你说到这里我就理解为物化视图的刷新了，<br>上面也已经说了，这是一种策略和方法，其实它是通过对视图关联表上创建相应的LOG，根据日志信息的SQL同步到物化视图中的，<br>一般来说：定时的一般是全局刷，及时的一般是局部刷。</p>
+<p>而索引这个说起来就多了，可以说索引专门是一门课程，大概点来说，索引一般有普通索引、位图索引、唯一性索引（还有全文索引啥的，一般不用），<br>其实仔细研究会发现无论是那一种索引都是B+树为基础，并起存放方式和表一样，是以段为单位，只是内部有树关系而已。</p>
+<p>1、普通索引是根据B+树找到第一个（索引时有序的），然后以当前为基准，向后顺序找到不符合条件的健值为止。<br>2、位图是在叶子节点上根据位图种类对叶子节点的值进行01编码存放（如该字段有1、2、3三种值，就会在叶子节点上有三个位图，<br>每个位图根据健值和ROWID顺序存放是否为1、是否为2、是否为3，所以在RBO下统计很快，CBO下一般会认为是普通索引）。</p>
+<p>3、也是按照B+树找，只是找到就不再做任何操作，因为是唯一的。<br>因为B+查找是一个类似表的查询，而且获取到ROWID后还是要回表查询的，所以这个过程的开销要和全表扫描计算那个结果更加快，ORACLE才会选择是走索引还是走全表扫描，<br>当然对于CBO和RBO选择的方式不一样，具体又是很多，CBO要依赖于表的统计信息，RBO是依赖于尝试。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/07/20/materializedview/" class="article-date">
+  <time datetime="2018-07-20T03:07:31.000Z" itemprop="datePublished">2018-07-20</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2018/07/18/POI/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">POI</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
