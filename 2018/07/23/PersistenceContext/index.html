@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>PersistenceContext | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="TRANSACTION vs. EXTENDED Persistence ContextA container managed Persistence Context is always associated with a specific scope among the following available scopes: TRANSACTION or EXTENDED. The more c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PersistenceContext">
+<meta property="og:url" content="http://hujao.com/2018/07/23/PersistenceContext/index.html">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="TRANSACTION vs. EXTENDED Persistence ContextA container managed Persistence Context is always associated with a specific scope among the following available scopes: TRANSACTION or EXTENDED. The more c">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-23T06:50:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PersistenceContext">
+<meta name="twitter:description" content="TRANSACTION vs. EXTENDED Persistence ContextA container managed Persistence Context is always associated with a specific scope among the following available scopes: TRANSACTION or EXTENDED. The more c">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-PersistenceContext" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/categories">Categories</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PersistenceContext
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h2 id="TRANSACTION-vs-EXTENDED-Persistence-Context"><a href="#TRANSACTION-vs-EXTENDED-Persistence-Context" class="headerlink" title="TRANSACTION vs. EXTENDED Persistence Context"></a>TRANSACTION vs. EXTENDED Persistence Context</h2><p>A container managed Persistence Context is always associated with a specific scope among the following available scopes: <strong>TRANSACTION</strong> or <strong>EXTENDED</strong>.</p>
+<p>The more common scenario is the <strong>TRANSACTION</strong> scope, which Persistence Context definition is like the following:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@PersistenceContext(type = PersistenceContextType.TRANSACTION)</span><br><span class="line">private EntityManager entityManager;</span><br></pre></td></tr></table></figure>
+<p>Since the default Persistence Context scope is <strong>TRANSACTION</strong>, the following declaration - missing the explicit scope type definition - is equivalent to the above one:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@PersistenceContext</span><br><span class="line">private EntityManager entityManager;</span><br></pre></td></tr></table></figure>
+<p>On the other hand, an <strong>EXTENDED</strong> Persistence Context must have the explicit type definition and is declared like the following:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@PersistenceContext(type = PersistenceContextType.EXTENDED)</span><br><span class="line">private EntityManager entityManager;</span><br></pre></td></tr></table></figure>
+<p>The main difference between a transaction scoped Persistence Context and an extended Persistence Context is that the life time of a transaction Persistence Context is exactly the same as the current single transaction to which the context is associated. As soon as the current transaction ends (commit or rollback), the entities which are currently managed by the Entity Manager will immediately become detached.</p>
+<p>The aforementioned rule does not apply to an extended Persistence Context, which duration may spawn across multiple transactions until explicitly closed by the application (or the associated EJB is removed/destroyed).</p>
+<p>Since the extended Persistence Context has a duration that spawns multiple transactions, and consequently keeps state across multiple EJB method calls (transactional or non-transactional), it only makes sense to be used with <a href="http://www.byteslounge.com/tutorials/java-ee-stateful-session-bean-ejb-example" target="_blank" rel="noopener">Stateful EJB</a>‘s, which may be used to implement conversation style interaction with clients.</p>
+<p>In this article we will cover the <strong>EXTENDED</strong> Persistence Context and compare it to the <strong>TRANSACTION</strong> Persistence Context, considering the following subjects:</p>
+<ul>
+<li>Loading of entities</li>
+<li>Lazy loading of entity relationships</li>
+<li>Persisting entities outside of an active transaction</li>
+<li>Concurrency</li>
+<li>Entities directly bound to UI forms</li>
+</ul>
+<p>As a side note to this article, an Application Managed Persistence Context scope is always <strong>EXTENDED</strong> (see <a href="http://www.byteslounge.com/tutorials/container-vs-application-managed-entitymanager" target="_blank" rel="noopener">Container vs Application Managed EntityManager</a>).</p>
+<h2 id="Loading-entities"><a href="#Loading-entities" class="headerlink" title="Loading entities"></a>Loading entities</h2><p>This section will focus on entity loading without the presence an active transaction. Consider the following example:</p>
+<p>TRANSACTION scoped Persistence Context without an active transaction</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">@Stateless</span><br><span class="line">@TransactionAttribute(TransactionAttributeType.NEVER)</span><br><span class="line">public class TestEJB &#123;</span><br><span class="line"></span><br><span class="line">  @PersistenceContext</span><br><span class="line">  private EntityManager entityManager;</span><br><span class="line"></span><br><span class="line">  public Employee loadEmployee(Long id) &#123;</span><br><span class="line"></span><br><span class="line">    Employee employee = entityManager.find(Employee.class, id);</span><br><span class="line"></span><br><span class="line">    // false</span><br><span class="line">    boolean contains = entityManager.contains(employee);</span><br><span class="line"></span><br><span class="line">    // will issue a second query</span><br><span class="line">    Employee other = entityManager.find(Employee.class, id);</span><br><span class="line"></span><br><span class="line">    // false</span><br><span class="line">    boolean equal = (employee == other);</span><br><span class="line"></span><br><span class="line">    return employee;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In this concrete case, our Persistence Context is TRANSACTION scoped and note that we are running outside of an active transaction (TransactionAttributeType.NEVER is defined at class level, so it is applied to all methods that do not override it). All <strong>find</strong> operations executed against a transaction scoped Entity Manager, and outside of a transaction, will return detached entities.</p>
+<p>More specifically, a very short lived Persistence Context will be created which duration will be the single method call. As soon as the <strong>find</strong> method returns, the Persistence Context is destroyed and the entities are immediately detached. Subsequent queries for the same entity will always issue another query against the database, and the entity manager will never contain any managed entity. Remember that there is no active transaction in this method.</p>
+<p>Now let’s see what happens if we use an <strong>EXTENDED</strong> Persistence Context instead:</p>
+<p>EXTENDED scoped Persistence Context without an active transaction</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">@Stateful</span><br><span class="line">@TransactionAttribute(TransactionAttributeType.NEVER)</span><br><span class="line">public class TestEJB &#123;</span><br><span class="line"></span><br><span class="line">  @PersistenceContext(type = PersistenceContextType.EXTENDED)</span><br><span class="line">  private EntityManager entityManager;</span><br><span class="line"></span><br><span class="line">  public void methodOne() &#123;</span><br><span class="line"></span><br><span class="line">    Employee employee = entityManager.find(Employee.class, 4);</span><br><span class="line"></span><br><span class="line">    // true</span><br><span class="line">    boolean contains = entityManager.contains(employee);</span><br><span class="line"></span><br><span class="line">    // does not issue a second query</span><br><span class="line">    Employee other = entityManager.find(Employee.class, 4);</span><br><span class="line"></span><br><span class="line">    // true</span><br><span class="line">    boolean equal = (employee == other);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  public void methodTwo() &#123;</span><br><span class="line"></span><br><span class="line">    // does not issue a second query</span><br><span class="line">    // if called after methodOne</span><br><span class="line">    // since the entity is already managed</span><br><span class="line">    Employee employee = entityManager.find(Employee.class, 4);</span><br><span class="line"></span><br><span class="line">    // true</span><br><span class="line">    boolean contains = entityManager.contains(employee);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Note that we are now using a Stateful EJB, so the same EJB will be used across subsequent calls from the same client. The Persistence Context is now defined as extended and the couple of methods are also <strong>not</strong> transactional.</p>
+<p>Let’s see what happens if we call <strong>methodOne()</strong> and then <strong>methodTwo()</strong>:Since we are using an extended Persistence Context, the entities returned by <strong>find()</strong> will be managed by the Entity Manager even if we are outside of an active transaction. Since the Persistence Context is extended, it will be active until the life time of the EJB, so if we happen to call methodTwo() after calling methodOne(), the entity we are fetching from the database in this example will already be managed by the Entity Manager in methodTwo(), so a query will <strong>not</strong> be issued against the database.</p>
+<p>An entity returned by find() will remain managed, and subsequent calls to find() for the same entity in any method will always return the same already managed instance (except if we manually detach the entity, clear the Persistence Context, or execute any other operation that detaches the entity, but that will not be discussed in this article).</p>
+<h2 id="Lazy-loading-of-relationships"><a href="#Lazy-loading-of-relationships" class="headerlink" title="Lazy loading of relationships"></a>Lazy loading of relationships</h2><p>Lazy loading of relationships is also different in what matters to Persistence Context scope. We start by the transactional scope:</p>
+<p>TRANSACTION scoped Persistence Context and relationship lazy loading</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@Stateless</span><br><span class="line">@TransactionAttribute(TransactionAttributeType.NEVER)</span><br><span class="line">public class TestEJB &#123;</span><br><span class="line"></span><br><span class="line">  @PersistenceContext</span><br><span class="line">  private EntityManager entityManager;</span><br><span class="line"></span><br><span class="line">  public void methodOne() &#123;</span><br><span class="line"></span><br><span class="line">    Department department = entityManager.find(Department.class, 5);</span><br><span class="line"></span><br><span class="line">    // force relationship loading</span><br><span class="line">    department.getEmployees().size();</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Same scenario as before: Stateless EJB and method being called without an active transaction. What happens here? An exception will be thrown because one may not lazy load relationships without an active transaction, using a transaction scoped Persistence Context.</p>
+<p>Now let’s see how an extended Persistence Context behaves in this scenario:</p>
+<p>EXTENDED scoped Persistence Context and relationship lazy loading</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">@Stateful</span><br><span class="line">@TransactionAttribute(TransactionAttributeType.NEVER)</span><br><span class="line">public class TestEJB &#123;</span><br><span class="line"></span><br><span class="line">  @PersistenceContext(type = PersistenceContextType.EXTENDED)</span><br><span class="line">  private EntityManager entityManager;</span><br><span class="line"></span><br><span class="line">  public void methodOne() &#123;</span><br><span class="line"></span><br><span class="line">    Department department = entityManager.find(Department.class, 5);</span><br><span class="line"></span><br><span class="line">    // Suppose that Employee with ID=4 is returned</span><br><span class="line">    // in the employee list at index 0</span><br><span class="line">    department.getEmployees().size();</span><br><span class="line"></span><br><span class="line">    // does not issue a query</span><br><span class="line">    // since the entity was already returned </span><br><span class="line">    // in the employees list above</span><br><span class="line">    Employee employee = entityManager.find(Employee.class, 4);</span><br><span class="line"></span><br><span class="line">    // true</span><br><span class="line">    boolean same = (department.getEmployees().get(0) == employee);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The relationship will be loaded and the returned entities will also become managed entities, even if we are <strong>outside</strong> of an active transaction as shown in this example. Supposing that Employee with ID=4 exists in the relationship, subsequent find() calls for that employee will return the already managed instance.</p>
+<h2 id="Persisting-data"><a href="#Persisting-data" class="headerlink" title="Persisting data"></a>Persisting data</h2><p>Now we will see how operations that change data behave with EXTENDED Persistence Context when executed outside of an active transaction (this time we will skip the TRANSACTION scoped Persistence Context because we already know that an exception will be thrown if we try to change data and there is no current active transaction).</p>
+<p>Consider the following EJB:</p>
+<p>EXTENDED scoped Persistence Context changing data</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@Stateful</span><br><span class="line">@TransactionAttribute(TransactionAttributeType.NEVER)</span><br><span class="line">public class TestEJB &#123;</span><br><span class="line"></span><br><span class="line">  @PersistenceContext(type = PersistenceContextType.EXTENDED)</span><br><span class="line">  private EntityManager entityManager;</span><br><span class="line"></span><br><span class="line">  public void changeName() &#123;</span><br><span class="line">    // changes will not be committed</span><br><span class="line">    // because there is no active transaction</span><br><span class="line">    Employee employee = entityManager.find(Employee.class, 4);</span><br><span class="line">    employee.setName(&quot;Mark&quot;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @TransactionAttribute(TransactionAttributeType.REQUIRED)</span><br><span class="line">  public void commit() &#123;</span><br><span class="line">    // changes will be committed here because</span><br><span class="line">    // there is an active transaction and</span><br><span class="line">    // pending changes exist in managed entities</span><br><span class="line">    // (Employee with ID=4 name was changed)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>If changeName() method is called, the employee with ID=4 will be loaded from the database, and then the employee instance <strong>name</strong> property will be changed to “Mark”. Since this method is <strong>not</strong> executed within an active transaction, the changes will not be persisted to the database at the end of method execution. The pending changes will be queued and will only be flushed to the database when we happen to have an active transaction.</p>
+<p>If we then call method commit(), which happens to run inside an active transaction (note the <strong>@TransactionAttribute</strong>annotation) the pending changes will be stored in the database.</p>
+<p>This is actually a widely used pattern with the EXTENDED Persistence Context: A conversation is established between the client and the EJB, where the client will make intermediate changes to data by calling methods that run outside of an active transaction. The last step is to call an empty method that is actually associated with an active transaction and the pending changes are finally saved in the database (this commit method is usually triggered by a confirmation button in a user interface form).</p>
+<p>Let’s see another scenario:</p>
+<p>EXTENDED scoped Persistence Context changing and retrieving data</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">@Stateful</span><br><span class="line">@TransactionAttribute(TransactionAttributeType.NEVER)</span><br><span class="line">public class TestEJB &#123;</span><br><span class="line"></span><br><span class="line">  @PersistenceContext(type = PersistenceContextType.EXTENDED)</span><br><span class="line">  private EntityManager entityManager;</span><br><span class="line"></span><br><span class="line">  public void methodOne() &#123;</span><br><span class="line"></span><br><span class="line">    // changes will not be flushed</span><br><span class="line">    // because there is no active transaction</span><br><span class="line">    Employee employee = entityManager.find(Employee.class, 4);</span><br><span class="line">    employee.setName(&quot;Mark&quot;);</span><br><span class="line"></span><br><span class="line">    // Even if the Entity Manager knows that </span><br><span class="line">    // there are pending changes that may interfere </span><br><span class="line">    // with this query result, the changes will not </span><br><span class="line">    // be flushed and the employee with ID=4 will </span><br><span class="line">    // not be returned in this query</span><br><span class="line">    List&lt;Employee&gt; list = entityManager.createQuery(&quot;select e from Employee e where e.name = &apos;Mark&apos;&quot;)</span><br><span class="line">        .getResultList();</span><br><span class="line"></span><br><span class="line">    // false</span><br><span class="line">    boolean contains = list.contains(employee);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @TransactionAttribute(TransactionAttributeType.REQUIRED)</span><br><span class="line">  public void methodTwo() &#123;</span><br><span class="line"></span><br><span class="line">    // Now there is an active transaction, and the </span><br><span class="line">    // Entity Manager knows that there are pending </span><br><span class="line">    // changes that may affect this query, so it will </span><br><span class="line">    // flush the data before executing the query, </span><br><span class="line">    // and the employee with ID=4 will be returned</span><br><span class="line">    List&lt;Employee&gt; list = entityManager.createQuery(&quot;select e from Employee e where e.name = &apos;Mark&apos;&quot;)</span><br><span class="line">        .getResultList();</span><br><span class="line"></span><br><span class="line">    // no query is executed because the</span><br><span class="line">    // employee is already managed</span><br><span class="line">    Employee employee = entityManager.find(Employee.class, 4);</span><br><span class="line"></span><br><span class="line">    // true</span><br><span class="line">    boolean contains = list.contains(employee);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>We are basically doing something similar with the previous example, but now we are also issuing queries that - under normal circumstances - should trigger a flush of pending changes before query execution. This is because we are querying for data that may be influenced by those pending changes (more specifically, we are executing queries that involve the employee <strong>name</strong>property, that has been changed to “Mark”).</p>
+<p>What happens here is that if we call methodOne(), the resulting list will <strong>not</strong> contain the employee with ID=4, even if its name has just been changed to “Mark” (it would match the query criteria). There is no active transaction in this method, so the changes will not be flushed to the database, and the employee will not be contained in the query result list.</p>
+<p>If we execute methodTwo() afterwards, and now we have an active transaction, the pending changes made earlier in methodOne() will be flushed before the query executes. This is because the Entity Manager knows that the changes may have impact in the query result, so the data will be flushed and the employee will be contained in the query result list.</p>
+<h2 id="Persistence-Context-disposal"><a href="#Persistence-Context-disposal" class="headerlink" title="Persistence Context disposal"></a>Persistence Context disposal</h2><p>The container managed EXTENDED Persistence Context is closed when the associated EJB is destroyed or explicitly removed by the client. A client may remove a Stateful EJB may calling a method which is annotated with <strong>@Remove</strong>:</p>
+<p>Stateful EJB remove method</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@Remove</span><br><span class="line">public void remove() &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>If our Persistence Context is application managed and consequently always EXTENDED, as mentioned in <a href="http://www.byteslounge.com/tutorials/container-vs-application-managed-entitymanager" target="_blank" rel="noopener">Container vs Application Managed EntityManager</a>, the application may close the Persistence Context by calling the close() method on the Entity Manager.</p>
+<h2 id="Concurrency"><a href="#Concurrency" class="headerlink" title="Concurrency"></a>Concurrency</h2><p>The Entity Manager is known for not being thread-safe. We are not going to deeply cover EJB concurrency management in this article, but we will mention that it is possible to configure a Stateful EJB to allow simultaneous method executions on the same EJB instance.</p>
+<p>If we define the lock type of a Stateful EJB as <strong>LockType.READ</strong> at class level, it means that the container will allow simultaneous method executions from a given client against its associated EJB instance:</p>
+<p>Stateful EJB allowing concurrent access to the same Entity Manager</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@Stateful</span><br><span class="line">@Lock(LockType.READ)</span><br><span class="line">public class TestEJB &#123;</span><br><span class="line"></span><br><span class="line">  @PersistenceContext(type = PersistenceContextType.EXTENDED)</span><br><span class="line">  private EntityManager entityManager;</span><br><span class="line"></span><br><span class="line">  public void methodOne(Employee employee) &#123;</span><br><span class="line">    entityManager.persist(employee);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  public void methodTwo(Employee employee) &#123;</span><br><span class="line">    entityManager.persist(employee);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>By default, the lock type of an EJB is <strong>LockType.WRITE</strong> so the container will guarantee that EJB methods execution is exclusive for a given instance, but this is a scenario one must consider if lock type is changed to <strong>READ</strong> for a given Stateful EJB (or any of its methods individually). The Entity Manager must not be accessed at the same time by two or more concurrent threads.</p>
+<p>Remember that this is only a problem if the Persistence Context scope is EXTENDED (it will be the same for the entire EJB life time). If the scope is TRANSACTION, each single method will have it’s own Persistence Context so the problem does not occur.</p>
+<h2 id="Binding-Entities-to-UI-forms"><a href="#Binding-Entities-to-UI-forms" class="headerlink" title="Binding Entities to UI forms"></a>Binding Entities to UI forms</h2><p>If we are dealing with <strong>Local</strong> EJBs, we already know that method parameters will be passed by reference. This means that, if we are dealing with a Stateful EJB with EXTENDED Persistence Context, it may be dangerous to directly bind managed JPA entities to UI forms.</p>
+<p>If the user happens to change some entity in the UI form, and the entity was not manually detached, we are actually changing the managed entity that is currently being managed by the Persistence Context. As soon as we enter a transactional method, the changes will be flushed and committed to the database. While this could actually be the desired result, one must be aware of this behavior.</p>
+<p>Additionally, and still in this same scenario, if one happens to be using <strong>Bean</strong> managed transactions in the Stateful EJB, and intentionally kept the transaction open during user interaction with the form, the changed entities may be persisted at any given time, even without any explicit user action that should have saved the data (the data would not be committed until explicitly instructed by the application, but this must be also taken into consideration in order to avoid unexpected results).</p>
+<p>This very specific case is not exclusive to the EXTENDED Persistence Context. It also happens with the TRANSACTION Persistence Context, if we keep an opened transaction in our <strong>Local</strong> Stateful EJB and the user is freely changing managed entities which are bound to a user interface form</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/07/23/PersistenceContext/" class="article-date">
+  <time datetime="2018-07-23T06:49:16.000Z" itemprop="datePublished">2018-07-23</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2018/07/23/todo/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">个人技术债务表</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
