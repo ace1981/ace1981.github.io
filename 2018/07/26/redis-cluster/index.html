@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>redis-cluster | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="docker redis4.0 集群（cluster）搭建前言 　redis集群对于很多人来说非常熟悉，在前些日子，我也有一位大兄弟也发布过一篇关于在阿里云（centOS7）上搭建redis 集群的文章，虽然集群搭建的文章在网上很多，我比较喜欢这篇文章的地方是他在搭建过程中，指出一些我们会遇到而别人没有指出的问题。** 　  在这里，我同样带给大家一遍关于阿里云（centOS7）redis集群搭建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="redis-cluster">
+<meta property="og:url" content="http://hujao.com/2018/07/26/redis-cluster/index.html">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="docker redis4.0 集群（cluster）搭建前言 　redis集群对于很多人来说非常熟悉，在前些日子，我也有一位大兄弟也发布过一篇关于在阿里云（centOS7）上搭建redis 集群的文章，虽然集群搭建的文章在网上很多，我比较喜欢这篇文章的地方是他在搭建过程中，指出一些我们会遇到而别人没有指出的问题。** 　  在这里，我同样带给大家一遍关于阿里云（centOS7）redis集群搭建">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://images2017.cnblogs.com/blog/1241072/201712/1241072-20171228144948834-709143762.png">
+<meta property="og:image" content="https://images2017.cnblogs.com/blog/1241072/201712/1241072-20171228150941694-2017089448.png">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://images2017.cnblogs.com/blog/1241072/201712/1241072-20171228155138944-1401746028.png">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="https://images2017.cnblogs.com/blog/1241072/201712/1241072-20171228160138553-1669329945.png">
+<meta property="og:updated_time" content="2018-07-27T04:45:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="redis-cluster">
+<meta name="twitter:description" content="docker redis4.0 集群（cluster）搭建前言 　redis集群对于很多人来说非常熟悉，在前些日子，我也有一位大兄弟也发布过一篇关于在阿里云（centOS7）上搭建redis 集群的文章，虽然集群搭建的文章在网上很多，我比较喜欢这篇文章的地方是他在搭建过程中，指出一些我们会遇到而别人没有指出的问题。** 　  在这里，我同样带给大家一遍关于阿里云（centOS7）redis集群搭建">
+<meta name="twitter:image" content="https://images2017.cnblogs.com/blog/1241072/201712/1241072-20171228144948834-709143762.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-redis-cluster" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/categories">Categories</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      redis-cluster
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h1 id="docker-redis4-0-集群（cluster）搭建"><a href="#docker-redis4-0-集群（cluster）搭建" class="headerlink" title="docker redis4.0 集群（cluster）搭建"></a><a href="https://www.cnblogs.com/lianggp/p/8136222.html" target="_blank" rel="noopener">docker redis4.0 集群（cluster）搭建</a></h1><p><strong>前言</strong></p>
+<p>　redis集群对于很多人来说非常熟悉，在前些日子，我也有一位大兄弟也发布过一篇关于在阿里云（centOS7）上搭建<a href="http://www.cnblogs.com/zhengzeze/p/7325750.html" target="_blank" rel="noopener">redis 集群的文章</a>，虽然集群搭建的文章在网上很多，我比较喜欢这篇文章的地方是他在搭建过程中，指出一些我们会遇到而别人没有指出的问题。<em>**</em></p>
+<p>　  在这里，我同样带给大家一遍关于阿里云（centOS7）redis集群搭建的文章，但是这次搭建有所不同的是，它是在docker上搭建的redis集群。</p>
+<p><strong>准备工具</strong></p>
+<p>　  一、安装docker（来自<a href="https://docs.docker.com/engine/installation/linux/docker-ce/centos/" target="_blank" rel="noopener">官网</a>）</p>
+<p>　　　1、安装所需的软件包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install -y yum-utils \</span><br><span class="line">  device-mapper-persistent-data \</span><br><span class="line">  lvm2</span><br></pre></td></tr></table></figure>
+<p>　　　2、使用以下命令来设置稳定的存储库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum-config-manager \</span><br><span class="line">    --add-repo \</span><br><span class="line">    https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+<p>　　　3、安装docker ce(docker社区版)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install docker-ce</span><br></pre></td></tr></table></figure>
+<p>　　　4、启动docker</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl start docker</span><br></pre></td></tr></table></figure>
+<p>　  二、在docker库获取redis镜像（截至2017-12-28，最新版为4.0.6）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull redis</span><br></pre></td></tr></table></figure>
+<p>　  三、在docker库获取ruby镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull ruby</span><br></pre></td></tr></table></figure>
+<p>至此，docker上redis cluster所有工具准备完毕，我们在命令行上输入docker images，就可以查看到已经安装的镜像（注：mysql和nginx是无关本教程的）</p>
+<p><img src="https://images2017.cnblogs.com/blog/1241072/201712/1241072-20171228144948834-709143762.png" alt="img"></p>
+<p><strong>搭建</strong></p>
+<p>　一、创建redis容器</p>
+<p>　　1、创建redis配置文件（redis-cluster.tmpl）</p>
+<p>　　我在路径/home下创建一个文件夹redis-cluster,在路径/home/redis-cluster下创建一个文件redis-cluster.tmpl，并把以下内容复制过去。（注：路径可自定义，我用的是/home/redis-cluster）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">port $&#123;PORT&#125;</span><br><span class="line">protected-mode no</span><br><span class="line">cluster-enabled yes</span><br><span class="line">cluster-config-file nodes.conf</span><br><span class="line">cluster-node-timeout 5000</span><br><span class="line">cluster-announce-ip 39.10X.XX.XX //自己服务器IP</span><br><span class="line">cluster-announce-port $&#123;PORT&#125;</span><br><span class="line">cluster-announce-bus-port 1$&#123;PORT&#125;</span><br><span class="line">appendonly yes</span><br></pre></td></tr></table></figure>
+<p>　　通过命令，可查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /home/redis-cluster/redis-cluster.tmpl</span><br></pre></td></tr></table></figure>
+<p><img src="https://images2017.cnblogs.com/blog/1241072/201712/1241072-20171228150941694-2017089448.png" alt="img"></p>
+<p>　　2、创建自定义network</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker network create redis-net</span><br></pre></td></tr></table></figure>
+<p>　　3、在/home/redis-cluster下生成conf和data目标，并生成配置信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ for port in `seq 7000 7005`; do \</span><br><span class="line">  mkdir -p ./$&#123;port&#125;/conf \</span><br><span class="line">  &amp;&amp; PORT=$&#123;port&#125; envsubst &lt; ./redis-cluster.tmpl &gt; ./$&#123;port&#125;/conf/redis.conf \</span><br><span class="line">  &amp;&amp; mkdir -p ./$&#123;port&#125;/data; \</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p>　共生成6个文件夹，从7000到7005，每个文件夹下包含data和conf文件夹，同时conf里面有redis.conf配置文件</p>
+<p>　　4、创建6个redis容器</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ for port in `seq 7000 7005`; do \</span><br><span class="line">  docker run -d -ti -p $&#123;port&#125;:$&#123;port&#125; -p 1$&#123;port&#125;:1$&#123;port&#125; \</span><br><span class="line">  -v /home/redis-cluster/$&#123;port&#125;/conf/redis.conf:/usr/local/etc/redis/redis.conf \</span><br><span class="line">  -v /home/redis-cluster/$&#123;port&#125;/data:/data \</span><br><span class="line">  --restart always --name redis-$&#123;port&#125; --net redis-net \</span><br><span class="line">  --sysctl net.core.somaxconn=1024 redis redis-server /usr/local/etc/redis/redis.conf; \</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>　至此，通过命令docker ps可查看刚刚生成的6个容器信息</p>
+<p><img src="https://images2017.cnblogs.com/blog/1241072/201712/1241072-20171228155138944-1401746028.png" alt="img"></p>
+<p>　二、集群</p>
+<p>　　通过启动ruby来实现集群</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ echo yes | docker run -i --rm --net redis-net ruby sh -c &apos;\</span><br><span class="line">  gem install redis \</span><br><span class="line">  &amp;&amp; wget http://download.redis.io/redis-stable/src/redis-trib.rb \</span><br><span class="line">  &amp;&amp; ruby redis-trib.rb create --replicas 1 \</span><br><span class="line">  &apos;&quot;$(for port in `seq 7000 7005`; do \</span><br><span class="line">    echo -n &quot;$(docker inspect --format &apos;&#123;&#123; (index .NetworkSettings.Networks &quot;redis-net&quot;).IPAddress &#125;&#125;&apos; &quot;redis-$&#123;port&#125;&quot;)&quot;:$&#123;port&#125; &apos; &apos; ; \</span><br><span class="line">  done)&quot;</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>输入命令后，可以得到下面的信息说明集群成功了</p>
+<p><img src="https://images2017.cnblogs.com/blog/1241072/201712/1241072-20171228160138553-1669329945.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/07/26/redis-cluster/" class="article-date">
+  <time datetime="2018-07-26T06:00:29.000Z" itemprop="datePublished">2018-07-26</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2018/07/27/docker-network/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          docker network 容器网卡命令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/24/oracle-sql/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">oracle常用sql</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
