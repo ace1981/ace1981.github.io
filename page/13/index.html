@@ -86,7 +86,7 @@ var RENDERER = {
   },
   setParameters : function(){
     this.$window = $(window);
-    this.$container = $('#maincanvas');
+    this.$container = $('#container');
     this.$canvas = $('<canvas />');
     this.context = this.$canvas.appendTo(this.$container).get(0).getContext('2d');
     this.particles = [];
@@ -272,7 +272,6 @@ $(function(){
     </div>
 
 </div>
-<div id="maincanvas" style="position: absolute;margin-bottom: 0px;"/>
 
       </div>
       
