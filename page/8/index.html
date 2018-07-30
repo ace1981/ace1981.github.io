@@ -97,7 +97,7 @@ var RENDERER = {
     this.particles.length = 0;
     this.watchIds.length = 0;
     this.width = this.$container.width();
-    this.height = this.$container.height();
+    this.height =200;// this.$container.height();
     this.$canvas.attr({width : this.width, height : this.height});
     this.distance = Math.sqrt(Math.pow(this.width / 2, 2) + Math.pow(this.height / 2, 2));
     this.createParticles();
@@ -125,7 +125,7 @@ var RENDERER = {
   },
   jdugeToStopResize : function(){
     var width = this.$window.width(),
-      height = this.$window.height(),
+      //height = this.$window.height(),
       stopped = (width == this.tmpWidth && height == this.tmpHeight);
       
     this.tmpWidth = width;
