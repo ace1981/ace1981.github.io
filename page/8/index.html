@@ -28,7 +28,7 @@
   
       <div id="container" class="container">
         <div  class="home">
-  <div id="maincontainer" class="content">
+  <div  class="content">
     <div class="profile">
       <h1 class="nickname">Ace</h1>
       <div class="description">
@@ -86,7 +86,7 @@ var RENDERER = {
   },
   setParameters : function(){
     this.$window = $(window);
-    this.$container = $('#maincontainer');
+    this.$container = $('#container');
     this.$canvas = $('<canvas />');
     this.context = this.$canvas.appendTo(this.$container).get(0).getContext('2d');
     this.particles = [];
