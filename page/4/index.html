@@ -98,7 +98,7 @@ var RENDERER = {
     this.watchIds.length = 0;
     this.width = this.$container.width();
     this.height = this.$container.height();
-    this.$canvas.attr({width : this.width, height : this.height});
+    this.$canvas.attr({width : this.width, height : this.height,margin-top:0 px});
     this.distance = Math.sqrt(Math.pow(this.width / 2, 2) + Math.pow(this.height / 2, 2));
     this.createParticles();
   },
@@ -272,7 +272,7 @@ $(function(){
     </div>
 
 </div>
-<div id="maincanvas"/>
+<div id="maincanvas" style="margin-bottom: -500px;"/>
 
       </div>
       
