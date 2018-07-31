@@ -3,16 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>jstatd | Ace&#39;pages</title>
+  <title>jstatd命令 允许远程JVM监控 | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="jstatd">
+  <meta name="description" content="jstatd 命令全称: Virtual Machine jstat Daemonjstatd是一个基于RMI（Remove Method Invocation）的服务程序，它用于监控基于HotSpot的JVM中资源的创建及销毁，并且提供了一个远程接口允许远程的监控工具连接到本地的JVM执行命令。 jstatd使用 在jdk的bin目录创建策略文件    jstatd.all.policy  12">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jstatd命令 允许远程JVM监控">
 <meta property="og:url" content="http://hujao.com/2018/07/30/jstatd/index.html">
 <meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="jstatd 命令全称: Virtual Machine jstat Daemonjstatd是一个基于RMI（Remove Method Invocation）的服务程序，它用于监控基于HotSpot的JVM中资源的创建及销毁，并且提供了一个远程接口允许远程的监控工具连接到本地的JVM执行命令。 jstatd使用 在jdk的bin目录创建策略文件    jstatd.all.policy  12">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-30T08:55:29.000Z">
+<meta property="og:updated_time" content="2018-07-31T11:55:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jstatd">
+<meta name="twitter:title" content="jstatd命令 允许远程JVM监控">
+<meta name="twitter:description" content="jstatd 命令全称: Virtual Machine jstat Daemonjstatd是一个基于RMI（Remove Method Invocation）的服务程序，它用于监控基于HotSpot的JVM中资源的创建及销毁，并且提供了一个远程接口允许远程的监控工具连接到本地的JVM执行命令。 jstatd使用 在jdk的bin目录创建策略文件    jstatd.all.policy  12">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
@@ -58,7 +61,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      jstatd
+      jstatd命令 允许远程JVM监控
     </h1>
   
 
@@ -66,7 +69,20 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        
+        <h5 id="jstatd-命令全称-Virtual-Machine-jstat-Daemon"><a href="#jstatd-命令全称-Virtual-Machine-jstat-Daemon" class="headerlink" title="jstatd 命令全称: Virtual Machine jstat Daemon"></a>jstatd 命令全称: Virtual Machine jstat Daemon</h5><p>jstatd是一个基于RMI（Remove Method Invocation）的服务程序，它用于监控基于HotSpot的JVM中资源的创建及销毁，并且提供了一个远程接口允许远程的监控工具连接到本地的JVM执行命令。</p>
+<h5 id="jstatd使用"><a href="#jstatd使用" class="headerlink" title="jstatd使用"></a>jstatd使用</h5><ol>
+<li>在jdk的bin目录创建策略文件    jstatd.all.policy</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grant codebase &quot;file:$&#123;java.home&#125;/../lib/tools.jar&quot; &#123;</span><br><span class="line">                    permission java.security.AllPermission;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>通过下面命令启动jstatd就可以使用安全策略.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jstatd -J-Djava.security.policy=jstatd.all.policy</span><br></pre></td></tr></table></figure>
+<ol>
+<li>打开监控机的Java VisualVM</li>
+<li>添加远程,输入地址,添加statd监控,端口默认1099 </li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
