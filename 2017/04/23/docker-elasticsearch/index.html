@@ -5,18 +5,18 @@
   
   <title>docker搭建elasticsearch | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="新版本一行启动1docker run -d -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; --name &quot;es6.3.2&quot; --restart=always docker.elastic.co/elasticsearch/elasticsearch:6.3.2">
+  <meta name="description" content="新版本一行启动123docker pull docker.elastic.co/elasticsearch/elasticsearch:6.3.2docker run -d -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; --name &quot;es6.3.2&quot; --restart=always docker.elastic.co/ela">
 <meta name="keywords" content="docker,elasticsearch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker搭建elasticsearch">
 <meta property="og:url" content="http://hujao.com/2017/04/23/docker-elasticsearch/index.html">
 <meta property="og:site_name" content="Ace&#39;pages">
-<meta property="og:description" content="新版本一行启动1docker run -d -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; --name &quot;es6.3.2&quot; --restart=always docker.elastic.co/elasticsearch/elasticsearch:6.3.2">
+<meta property="og:description" content="新版本一行启动123docker pull docker.elastic.co/elasticsearch/elasticsearch:6.3.2docker run -d -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; --name &quot;es6.3.2&quot; --restart=always docker.elastic.co/ela">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-01T18:01:44.000Z">
+<meta property="og:updated_time" content="2018-08-02T10:28:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker搭建elasticsearch">
-<meta name="twitter:description" content="新版本一行启动1docker run -d -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; --name &quot;es6.3.2&quot; --restart=always docker.elastic.co/elasticsearch/elasticsearch:6.3.2">
+<meta name="twitter:description" content="新版本一行启动123docker pull docker.elastic.co/elasticsearch/elasticsearch:6.3.2docker run -d -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; --name &quot;es6.3.2&quot; --restart=always docker.elastic.co/ela">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
@@ -70,8 +70,16 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <p>新版本一行启动<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" --name "es6.3.2" --restart=always docker.elastic.co/elasticsearch/elasticsearch:6.3.2</span><br></pre></td></tr></table></figure></p>
-
+        <p>新版本一行启动<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull docker.elastic.co/elasticsearch/elasticsearch:6.3.2</span><br><span class="line"></span><br><span class="line">docker run -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" --name "es6.3.2" --restart=always docker.elastic.co/elasticsearch/elasticsearch:6.3.2</span><br></pre></td></tr></table></figure></p>
+<h1 id="1、docker镜像"><a href="#1、docker镜像" class="headerlink" title="1、docker镜像"></a>1、docker镜像</h1><h2 id="1-1、镜像获取"><a href="#1-1、镜像获取" class="headerlink" title="1.1、镜像获取"></a>1.1、镜像获取</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull docker.elastic.co/elasticsearch/elasticsearch:6.3.2</span><br></pre></td></tr></table></figure>
+<p>PS：本文基于基于elasticsearch:6.3.2</p>
+<h2 id="1-2、自制带有ik、pinyin分词的docker镜像"><a href="#1-2、自制带有ik、pinyin分词的docker镜像" class="headerlink" title="1.2、自制带有ik、pinyin分词的docker镜像"></a>1.2、自制带有ik、pinyin分词的docker镜像</h2><p>​        进入容器，按照文档(<a href="https://blog.csdn.net/jinyidong/article/details/79690186" target="_blank" rel="noopener">ElaticSearch之中文、拼音分词插件安装</a>)安装analysis-ik、pinyin插件，然后通过docker  commit创建自己的镜像，推至私有仓库，重复使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it [容器Id] /bin/sh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.3.2/elasticsearch-analysis-ik-6.3.2.zip </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-pinyin/releases/download/v6.3.2/elasticsearch-analysis-pinyin-6.3.2.zip  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker commit [容器Id] harbor.suiyi.com.cn/component/elasticsearch-ik-pinyin:6.3.2</span><br></pre></td></tr></table></figure>
+<p>​        该版本的镜像已推至docker  hub，可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull jinyidong/es-ik-pinyin:6.3.2</span><br></pre></td></tr></table></figure>
+<h1 id="2、文件挂载"><a href="#2、文件挂载" class="headerlink" title="2、文件挂载"></a>2、文件挂载</h1><p>​        elasticsearch docker挂载要求相关目录及文件必须属于user(elasticsearch:1000)、group(elasticsearch:1000)，建议放在home目录下，方便扩展。</p>
+<p>​         解决方案：宿主机执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -w vm.max_map_count=262144</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">

@@ -5,18 +5,18 @@
   
   <title>docker构建kibana | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="直接通过docker命令 123docker run -d --name mykibana  \-e ELASTICSEARCH_URL=http://localhost:9200 \--restart=always -p 5601:5601 docker.elastic.co/kibana/kibana:6.3.2">
+  <meta name="description" content="直接通过docker命令 1234docker pull docker.elastic.co/kibana/kibana:6.3.2docker run -d --name mykibana  \-e ELASTICSEARCH_URL=http://localhost:9200 \--restart=always -p 5601:5601 docker.elastic.co/kibana/kib">
 <meta name="keywords" content="docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker构建kibana">
 <meta property="og:url" content="http://hujao.com/2017/05/15/docker-kibana/index.html">
 <meta property="og:site_name" content="Ace&#39;pages">
-<meta property="og:description" content="直接通过docker命令 123docker run -d --name mykibana  \-e ELASTICSEARCH_URL=http://localhost:9200 \--restart=always -p 5601:5601 docker.elastic.co/kibana/kibana:6.3.2">
+<meta property="og:description" content="直接通过docker命令 1234docker pull docker.elastic.co/kibana/kibana:6.3.2docker run -d --name mykibana  \-e ELASTICSEARCH_URL=http://localhost:9200 \--restart=always -p 5601:5601 docker.elastic.co/kibana/kib">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-01T18:00:45.000Z">
+<meta property="og:updated_time" content="2018-08-02T10:29:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker构建kibana">
-<meta name="twitter:description" content="直接通过docker命令 123docker run -d --name mykibana  \-e ELASTICSEARCH_URL=http://localhost:9200 \--restart=always -p 5601:5601 docker.elastic.co/kibana/kibana:6.3.2">
+<meta name="twitter:description" content="直接通过docker命令 1234docker pull docker.elastic.co/kibana/kibana:6.3.2docker run -d --name mykibana  \-e ELASTICSEARCH_URL=http://localhost:9200 \--restart=always -p 5601:5601 docker.elastic.co/kibana/kib">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
@@ -71,7 +71,7 @@
     <div class="article-entry typo" itemprop="articleBody">
       
         <p>直接通过docker命令</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name mykibana  \</span><br><span class="line">-e ELASTICSEARCH_URL=http://localhost:9200 \</span><br><span class="line">--restart=always -p 5601:5601 docker.elastic.co/kibana/kibana:6.3.2</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker pull docker.elastic.co/kibana/kibana:6.3.2</span><br><span class="line">docker run -d --name mykibana  \</span><br><span class="line">-e ELASTICSEARCH_URL=http://localhost:9200 \</span><br><span class="line">--restart=always -p 5601:5601 docker.elastic.co/kibana/kibana:6.3.2</span><br></pre></td></tr></table></figure>
 
       
     </div>
