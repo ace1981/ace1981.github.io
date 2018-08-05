@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>elasticsearch-搜索API | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="检索1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556#查询全部GET blog/article/_search?q=*&amp;amp;#查询分页 返回指定字段POST blog/article/_search&amp;#123;  &quot;query&quot;: &amp;#1">
+<meta name="keywords" content="elasticsearch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="elasticsearch-搜索API">
+<meta property="og:url" content="http://hujao.com/2018/08/06/elasticsearch-searchapi/index.html">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="检索1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556#查询全部GET blog/article/_search?q=*&amp;amp;#查询分页 返回指定字段POST blog/article/_search&amp;#123;  &quot;query&quot;: &amp;#1">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-05T20:33:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="elasticsearch-搜索API">
+<meta name="twitter:description" content="检索1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556#查询全部GET blog/article/_search?q=*&amp;amp;#查询分页 返回指定字段POST blog/article/_search&amp;#123;  &quot;query&quot;: &amp;#1">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-elasticsearch-searchapi" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/categories">Categories</a>
+    
+      <a class="main-nav-link" href="/tags">Tags</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      elasticsearch-搜索API
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h5 id="检索"><a href="#检索" class="headerlink" title="检索"></a>检索</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查询全部</span></span><br><span class="line">GET blog/article/_search?q=*&amp;</span><br><span class="line"><span class="meta">#</span><span class="bash">查询分页 返回指定字段</span></span><br><span class="line">POST blog/article/_search</span><br><span class="line">&#123;</span><br><span class="line">  "query": &#123; "match_all": &#123;&#125; &#125;,</span><br><span class="line">  "_source" : ["title","content"],</span><br><span class="line">  "sort": [</span><br><span class="line">    &#123; "title": "asc" &#125;</span><br><span class="line">  ],</span><br><span class="line">  "from" : 1, </span><br><span class="line">  "size" : 2</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash">查询分页 匹配短语</span></span><br><span class="line">POST blog/article/_search</span><br><span class="line">&#123;</span><br><span class="line">  "query": &#123; "match_phrase": &#123;</span><br><span class="line">    "content": "新建"</span><br><span class="line">  &#125; &#125;,</span><br><span class="line">  "sort": [</span><br><span class="line">    &#123; "title": "asc" &#125;</span><br><span class="line">  ],</span><br><span class="line">  "from" : 1, </span><br><span class="line">  "size" : 2</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash">查询分页 组合条件</span></span><br><span class="line">POST blog/article/_search</span><br><span class="line">&#123;</span><br><span class="line">  "query": &#123;</span><br><span class="line">    "bool": &#123;</span><br><span class="line">      "must": [</span><br><span class="line">        &#123;</span><br><span class="line">          "match_phrase": &#123;</span><br><span class="line">            "content": "新建"</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          "match_phrase": &#123;</span><br><span class="line">            "content": "2"</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  "sort": [</span><br><span class="line">    &#123;</span><br><span class="line">      "title": "asc"</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  "from": 0,</span><br><span class="line">  "size": 2</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash">与<span class="string">"must"</span>类似的:</span></span><br><span class="line"><span class="meta">#</span><span class="bash">should:or关系</span></span><br><span class="line"><span class="meta">#</span><span class="bash">must_not:即不含<span class="string">"mill"</span>,也不含<span class="string">"lane"</span>的文档</span></span><br><span class="line"><span class="meta">#</span><span class="bash">bool query可以同时包含must,should,must_not组成复杂的查询</span></span><br></pre></td></tr></table></figure>
+<h5 id="文档score"><a href="#文档score" class="headerlink" title="文档score"></a>文档score</h5><p>根据搜索条件估算一个文档匹配程度的相对的数值.得分越高,文档越有价值;</p>
+<p>反之,价值越低.</p>
+<p>有些情况不需要score(比如”filter“),es会检测自动优化查询,不计算得分.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">filter 过滤,不计算得分,从结果可以查出所有的score都为1</span></span><br><span class="line"><span class="meta">#</span><span class="bash">range 范围查询,适用于numeric或date类型</span></span><br><span class="line">POST blog/_search</span><br><span class="line">&#123;</span><br><span class="line">  "query": &#123;</span><br><span class="line">    "bool": &#123;</span><br><span class="line">      "must": &#123; "match_all": &#123;&#125; &#125;,</span><br><span class="line">      "filter": &#123;</span><br><span class="line">        "range": &#123;</span><br><span class="line">          "clickcount": &#123;</span><br><span class="line">            "gte": 20000,</span><br><span class="line">            "lte": 30000</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="执行聚合-分组统计"><a href="#执行聚合-分组统计" class="headerlink" title="执行聚合 分组统计"></a>执行聚合 分组统计</h5><p>es提供了分组和统计的能力,这就是聚合.可以认为就是sql中的group by和aggregate 功能.es在聚合时同时返回搜索的文档和聚合两部分.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">按state分组聚合,不返回搜索的文档</span></span><br><span class="line">POST blog/_search</span><br><span class="line">&#123;</span><br><span class="line">  "size": 0,//不返回搜索的文档</span><br><span class="line">  "aggs": &#123;//聚合</span><br><span class="line">    "group_by_state": &#123;</span><br><span class="line">      "terms": &#123;</span><br><span class="line">        "field": "state.keyword" //按state分组,降序排序</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">按state分组,统计每个state的平均工资,并降序排序</span></span><br><span class="line">POST blog/_search</span><br><span class="line">&#123;</span><br><span class="line">  "size": 0,</span><br><span class="line">  "aggs": &#123;</span><br><span class="line">    "group_by_state": &#123;</span><br><span class="line">      "terms": &#123;</span><br><span class="line">        "field": "state.keyword",</span><br><span class="line">        "order": &#123;</span><br><span class="line">          "average_balance": "desc"</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      "aggs": &#123;</span><br><span class="line">        "average_balance": &#123;</span><br><span class="line">          "avg": &#123;</span><br><span class="line">            "field": "balance"</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;   </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">按年龄段分组,然后按性别分组,统计每个年龄段中不同性别的平均工资</span></span><br><span class="line">POST bank/_search</span><br><span class="line">&#123;</span><br><span class="line"> "size": 0,</span><br><span class="line"> "aggs": &#123;</span><br><span class="line">   "group_by_age": &#123;</span><br><span class="line">     "range": &#123;</span><br><span class="line">       "field": "age",</span><br><span class="line">       "ranges": [</span><br><span class="line">         &#123;</span><br><span class="line">           "from": 20,</span><br><span class="line">           "to": 30</span><br><span class="line">         &#125;,</span><br><span class="line">         &#123;</span><br><span class="line">           "from": 30,</span><br><span class="line">           "to": 40</span><br><span class="line">         &#125;,</span><br><span class="line">         &#123;</span><br><span class="line">           "from": 40,</span><br><span class="line">           "to": 50</span><br><span class="line">         &#125;</span><br><span class="line">       ]</span><br><span class="line">     &#125;,</span><br><span class="line">     "aggs": &#123;</span><br><span class="line">       "group_by_gender": &#123;</span><br><span class="line">         "terms": &#123;</span><br><span class="line">           "field": "gender.keyword"</span><br><span class="line">         &#125;,</span><br><span class="line">         "aggs": &#123;</span><br><span class="line">           "average_balance": &#123;</span><br><span class="line">             "avg": &#123;</span><br><span class="line">               "field": "balance"</span><br><span class="line">             &#125;</span><br><span class="line">           &#125;</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/08/06/elasticsearch-searchapi/" class="article-date">
+  <time datetime="2018-08-05T19:39:55.000Z" itemprop="datePublished">2018-08-06</time>
+</a>
+
+        </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2018/08/06/elasticsearch-indexapi/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          elasticsearch-索引API
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/05/elasticsearch-doc/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">elasticsearch-文档API</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
