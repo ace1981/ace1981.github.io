@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关于JPA的PersistenceContext类型 | Ace&#39;pages</title>
+  <title>EntityManager相关 | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="TRANSACTION vs. EXTENDED Persistence ContextA container managed Persistence Context is always associated with a specific scope among the following available scopes: TRANSACTION or EXTENDED. The more c">
+  <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142@PersistenceContextprivate EntityManager entityManager;@Modifying@Transactionalpublic StockDetails save(StockDetails o) &amp;#123">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于JPA的PersistenceContext类型">
+<meta property="og:title" content="EntityManager相关">
 <meta property="og:url" content="http://hujao.com/2018/07/23/PersistenceContext/index.html">
 <meta property="og:site_name" content="Ace&#39;pages">
-<meta property="og:description" content="TRANSACTION vs. EXTENDED Persistence ContextA container managed Persistence Context is always associated with a specific scope among the following available scopes: TRANSACTION or EXTENDED. The more c">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142@PersistenceContextprivate EntityManager entityManager;@Modifying@Transactionalpublic StockDetails save(StockDetails o) &amp;#123">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-27T17:41:50.000Z">
+<meta property="og:updated_time" content="2018-08-06T16:48:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于JPA的PersistenceContext类型">
-<meta name="twitter:description" content="TRANSACTION vs. EXTENDED Persistence ContextA container managed Persistence Context is always associated with a specific scope among the following available scopes: TRANSACTION or EXTENDED. The more c">
+<meta name="twitter:title" content="EntityManager相关">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142@PersistenceContextprivate EntityManager entityManager;@Modifying@Transactionalpublic StockDetails save(StockDetails o) &amp;#123">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
@@ -61,7 +61,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      关于JPA的PersistenceContext类型
+      EntityManager相关
     </h1>
   
 
@@ -69,7 +69,8 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <h2 id="TRANSACTION-vs-EXTENDED-Persistence-Context"><a href="#TRANSACTION-vs-EXTENDED-Persistence-Context" class="headerlink" title="TRANSACTION vs. EXTENDED Persistence Context"></a>TRANSACTION vs. EXTENDED Persistence Context</h2><p>A container managed Persistence Context is always associated with a specific scope among the following available scopes: <strong>TRANSACTION</strong> or <strong>EXTENDED</strong>.</p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">@PersistenceContext</span><br><span class="line">private EntityManager entityManager;</span><br><span class="line">@Modifying</span><br><span class="line">@Transactional</span><br><span class="line">public StockDetails save(StockDetails o) &#123;</span><br><span class="line">    StringBuffer sb = new StringBuffer();</span><br><span class="line">    sb.append(&quot;insert into b_stock_details (transaction_id, pid, price, cost_price, offer_name, game_type, &quot;);</span><br><span class="line">    sb.append(&quot; game_name, game_id, money, game_about, purchase_date, create_time, customer_id, &quot;);</span><br><span class="line">    sb.append(&quot; customer_name, customer_login_name,member_id, member_name, have_customer_id,status, ifrom,  &quot;);</span><br><span class="line">    sb.append(&quot;trading_status,game_face_name, receipt_data_one, receipt_data_two) &quot;);</span><br><span class="line">    sb.append(&quot; SELECT ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?  FROM DUAL WHERE NOT EXISTS &quot;);</span><br><span class="line">    sb.append(&quot;(SELECT transaction_id FROM b_stock_details where transaction_id= ?)&quot;);</span><br><span class="line">    Query query = entityManager.createNativeQuery(sb.toString());</span><br><span class="line">    query.setParameter(1,o.getTransactionId());</span><br><span class="line">    query.setParameter(2,o.getPid());</span><br><span class="line">    query.setParameter(3,o.getPrice());</span><br><span class="line">    query.setParameter(4,o.getCostPrice());</span><br><span class="line">    query.setParameter(5,o.getOfferName());</span><br><span class="line">    query.setParameter(6,o.getGameType());</span><br><span class="line">    query.setParameter(7,o.getGameName());</span><br><span class="line">    query.setParameter(8,o.getGameId());</span><br><span class="line">    query.setParameter(9,o.getMoney());</span><br><span class="line">    query.setParameter(10,o.getGameAbout());</span><br><span class="line">    query.setParameter(11,o.getPurchaseDate());</span><br><span class="line">    query.setParameter(12,o.getCreateTime());</span><br><span class="line">    query.setParameter(13,o.getCustomerId());</span><br><span class="line">    query.setParameter(14,o.getCustomerName());</span><br><span class="line">    query.setParameter(15,o.getCustomerLoginName());</span><br><span class="line">    query.setParameter(16,o.getMemberId());</span><br><span class="line">    query.setParameter(17,o.getMemberName());</span><br><span class="line">    query.setParameter(18,o.getHaveCustomerId());</span><br><span class="line">    query.setParameter(19,o.getStatus());</span><br><span class="line">    query.setParameter(20,o.getIfrom());</span><br><span class="line">    query.setParameter(21,o.getTradingStatus());</span><br><span class="line">    query.setParameter(22,o.getGameFaceName());</span><br><span class="line">    query.setParameter(23,o.getReceiptDataOne());</span><br><span class="line">    query.setParameter(24,o.getReceiptDataTwo());</span><br><span class="line">    query.setParameter(25,o.getTransactionId());</span><br><span class="line">    int result = query.executeUpdate();</span><br><span class="line">    log.debug(&quot;插入接口：&#123;&#125;&quot;,result&gt;0?&quot;成功&quot;:&quot;数据已经重复存在&quot;);</span><br><span class="line">    return o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="TRANSACTION-vs-EXTENDED-Persistence-Context"><a href="#TRANSACTION-vs-EXTENDED-Persistence-Context" class="headerlink" title="TRANSACTION vs. EXTENDED Persistence Context"></a>TRANSACTION vs. EXTENDED Persistence Context</h2><p>A container managed Persistence Context is always associated with a specific scope among the following available scopes: <strong>TRANSACTION</strong> or <strong>EXTENDED</strong>.</p>
 <p>The more common scenario is the <strong>TRANSACTION</strong> scope, which Persistence Context definition is like the following:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@PersistenceContext(type = PersistenceContextType.TRANSACTION)</span><br><span class="line">private EntityManager entityManager;</span><br></pre></td></tr></table></figure>
 <p>Since the default Persistence Context scope is <strong>TRANSACTION</strong>, the following declaration - missing the explicit scope type definition - is equivalent to the above one:</p>
