@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>elasticsearch-字段类型 | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Array数组类型 an array of strings: [ &amp;quot;one&amp;quot;, &amp;quot;two&amp;quot; ] an array of integers: [ 1, 2 ] an array of arrays: [ 1, [ 2, 3 ]] which is the equivalent of [ 1, 2, 3 ] an array of objects: [ { &amp;q">
+<meta name="keywords" content="elasticsearch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="elasticsearch-字段类型">
+<meta property="og:url" content="http://hujao.com/2018/08/22/elasticsearch-fieldtype2/index.html">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="Array数组类型 an array of strings: [ &amp;quot;one&amp;quot;, &amp;quot;two&amp;quot; ] an array of integers: [ 1, 2 ] an array of arrays: [ 1, [ 2, 3 ]] which is the equivalent of [ 1, 2, 3 ] an array of objects: [ { &amp;q">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-22T14:39:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="elasticsearch-字段类型">
+<meta name="twitter:description" content="Array数组类型 an array of strings: [ &amp;quot;one&amp;quot;, &amp;quot;two&amp;quot; ] an array of integers: [ 1, 2 ] an array of arrays: [ 1, [ 2, 3 ]] which is the equivalent of [ 1, 2, 3 ] an array of objects: [ { &amp;q">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-elasticsearch-fieldtype2" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/tags/docker">Docker</a>
+    
+      <a class="main-nav-link" href="/tags/springboot">SpringBoot</a>
+    
+      <a class="main-nav-link" href="/tags/elasticsearch">ElasticSearch</a>
+    
+      <a class="main-nav-link" href="/tags/test">Test</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      elasticsearch-字段类型
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h5 id="Array数组类型"><a href="#Array数组类型" class="headerlink" title="Array数组类型"></a>Array数组类型</h5><ul>
+<li>an array of strings: [ <code>&quot;one&quot;</code>, <code>&quot;two&quot;</code> ]</li>
+<li>an array of integers: [ <code>1</code>, <code>2</code> ]</li>
+<li>an array of arrays: [ <code>1</code>, [ <code>2</code>, <code>3</code> ]] which is the equivalent of [ <code>1</code>, <code>2</code>, <code>3</code> ]</li>
+<li>an array of objects: [ <code>{ &quot;name&quot;: &quot;Mary&quot;, &quot;age&quot;: 12 }</code>, <code>{ &quot;name&quot;: &quot;John&quot;, &quot;age&quot;: 10 }</code>]</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index/_doc/1</span><br><span class="line">&#123;</span><br><span class="line">  &quot;message&quot;: &quot;some arrays in this document...&quot;,</span><br><span class="line">  &quot;tags&quot;:  [ &quot;elasticsearch&quot;, &quot;wow&quot; ], </span><br><span class="line">  &quot;lists&quot;: [ </span><br><span class="line">    &#123;</span><br><span class="line">      &quot;name&quot;: &quot;prog_list&quot;,</span><br><span class="line">      &quot;description&quot;: &quot;programming list&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;name&quot;: &quot;cool_list&quot;,</span><br><span class="line">      &quot;description&quot;: &quot;cool stuff list&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/_doc/2 </span><br><span class="line">&#123;</span><br><span class="line">  &quot;message&quot;: &quot;no arrays in this document...&quot;,</span><br><span class="line">  &quot;tags&quot;:  &quot;elasticsearch&quot;,</span><br><span class="line">  &quot;lists&quot;: &#123;</span><br><span class="line">    &quot;name&quot;: &quot;prog_list&quot;,</span><br><span class="line">    &quot;description&quot;: &quot;programming list&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">GET my_index/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;match&quot;: &#123;</span><br><span class="line">      &quot;tags&quot;: &quot;elasticsearch&quot; </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The query looks for <code>elasticsearch</code> in the <code>tags</code> field, and matches both documents.</p>
+<h5 id="Binary二进制类型"><a href="#Binary二进制类型" class="headerlink" title="Binary二进制类型"></a>Binary二进制类型</h5><p>The <code>binary</code> type accepts a binary value as a <a href="https://en.wikipedia.org/wiki/Base64" target="_blank" rel="noopener">Base64</a> encoded string. The field is not stored by default and is not searchable:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;_doc&quot;: &#123;</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;name&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;blob&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;binary&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/_doc/1</span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;Some binary blob&quot;,</span><br><span class="line">  &quot;blob&quot;: &quot;U29tZSBiaW5hcnkgYmxvYg==&quot; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The Base64 encoded binary value must not have embedded newlines \n .</p>
+<p>Parameters for <code>binary</code> fields</p>
+<p>The following parameters are accepted by <code>binary</code> fields:</p>
+<ul>
+<li>doc_values  Should the field be stored on disk in a column-stride fashion, so that it can later be used for sorting, aggregations, or scripting? Accepts <code>true</code> or <code>false</code> (default).  </li>
+<li>store  Whether the field value should be stored and retrievable separately from the  _source field. Accepts <code>true</code> or <code>false</code> (default).</li>
+</ul>
+<h5 id="Range范围类型"><a href="#Range范围类型" class="headerlink" title="Range范围类型"></a>Range范围类型</h5><h5 id="Boolean布尔类型"><a href="#Boolean布尔类型" class="headerlink" title="Boolean布尔类型"></a>Boolean布尔类型</h5><h5 id="Date日期类型"><a href="#Date日期类型" class="headerlink" title="Date日期类型"></a>Date日期类型</h5><h5 id="Geo-point-坐标点"><a href="#Geo-point-坐标点" class="headerlink" title="Geo-point 坐标点"></a>Geo-point 坐标点</h5><h5 id="Geo-Shape-地形"><a href="#Geo-Shape-地形" class="headerlink" title="Geo-Shape 地形"></a>Geo-Shape 地形</h5><h5 id="IP地址类型"><a href="#IP地址类型" class="headerlink" title="IP地址类型"></a>IP地址类型</h5><h5 id="Keyword关键字类型"><a href="#Keyword关键字类型" class="headerlink" title="Keyword关键字类型"></a>Keyword关键字类型</h5><h5 id="Nested内部属性类型"><a href="#Nested内部属性类型" class="headerlink" title="Nested内部属性类型"></a>Nested内部属性类型</h5><h5 id="Numeric数字类型"><a href="#Numeric数字类型" class="headerlink" title="Numeric数字类型"></a>Numeric数字类型</h5><h5 id="Object对象类型"><a href="#Object对象类型" class="headerlink" title="Object对象类型"></a>Object对象类型</h5><h5 id="Text文本类型"><a href="#Text文本类型" class="headerlink" title="Text文本类型"></a>Text文本类型</h5><h5 id="Token-Count类型"><a href="#Token-Count类型" class="headerlink" title="Token Count类型"></a>Token Count类型</h5><h5 id="Percolator"><a href="#Percolator" class="headerlink" title="Percolator"></a>Percolator</h5><h5 id="Join类型"><a href="#Join类型" class="headerlink" title="Join类型"></a>Join类型</h5><p>#### </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/08/22/elasticsearch-fieldtype2/" class="article-date">
+  <time datetime="2018-08-22T01:44:34.000Z" itemprop="datePublished">2018-08-22</time>
+</a>
+
+        </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2018/08/22/elasticsearch-fieldtype/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">elasticsearch-字段类型概述</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

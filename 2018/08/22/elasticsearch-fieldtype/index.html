@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>elasticsearch-字段类型 | Ace&#39;pages</title>
+  <title>elasticsearch-字段类型概述 | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="字段类型 简单类型 text, keyword, date, long, double, boolean , ip. 支持嵌套对象的JSON object , nested. 特殊类型 geo_point, geo_shape, completion.  字段限制index.mapping.total_fields.limit 最多字段数默认 1000. index.mapping.depth.l">
 <meta name="keywords" content="elasticsearch">
 <meta property="og:type" content="article">
-<meta property="og:title" content="elasticsearch-字段类型">
+<meta property="og:title" content="elasticsearch-字段类型概述">
 <meta property="og:url" content="http://hujao.com/2018/08/22/elasticsearch-fieldtype/index.html">
 <meta property="og:site_name" content="Ace&#39;pages">
 <meta property="og:description" content="字段类型 简单类型 text, keyword, date, long, double, boolean , ip. 支持嵌套对象的JSON object , nested. 特殊类型 geo_point, geo_shape, completion.  字段限制index.mapping.total_fields.limit 最多字段数默认 1000. index.mapping.depth.l">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-21T16:48:09.000Z">
+<meta property="og:updated_time" content="2018-08-22T01:44:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="elasticsearch-字段类型">
+<meta name="twitter:title" content="elasticsearch-字段类型概述">
 <meta name="twitter:description" content="字段类型 简单类型 text, keyword, date, long, double, boolean , ip. 支持嵌套对象的JSON object , nested. 特殊类型 geo_point, geo_shape, completion.  字段限制index.mapping.total_fields.limit 最多字段数默认 1000. index.mapping.depth.l">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
@@ -64,7 +64,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      elasticsearch-字段类型
+      elasticsearch-字段类型概述
     </h1>
   
 
@@ -123,26 +123,26 @@
 </li>
 </ul>
 <h5 id="特殊类型"><a href="#特殊类型" class="headerlink" title="特殊类型"></a>特殊类型</h5><ul>
-<li><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.3/ip.html" target="_blank" rel="noopener">IP datatype</a></p>
+<li><p>IP类型</p>
 <p><code>ip</code> for IPv4 and IPv6 addresses</p>
 </li>
-<li><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.3/search-suggesters-completion.html" target="_blank" rel="noopener">Completion datatype</a></p>
+<li><p>完成类型</p>
 <p><code>completion</code> to provide auto-complete suggestions</p>
 </li>
-<li><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.3/token-count.html" target="_blank" rel="noopener">Token count datatype</a></p>
+<li><p>token count</p>
 <p><code>token_count</code> to count the number of tokens in a string</p>
 </li>
-<li><p><a href="https://www.elastic.co/guide/en/elasticsearch/plugins/6.3/mapper-murmur3.html" target="_blank" rel="noopener"><code>mapper-murmur3</code></a></p>
+<li><p>mapper-murmur3 </p>
 <p><code>murmur3</code> to compute hashes of values at index-time and store them in the index</p>
 </li>
-<li><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.3/percolator.html" target="_blank" rel="noopener">Percolator type</a></p>
+<li><p>Percolator类型</p>
 <p>Accepts queries from the query-dsl</p>
 </li>
-<li><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.3/parent-join.html" target="_blank" rel="noopener"><code>join</code> datatype</a></p>
+<li><p>join 类型</p>
 <p>Defines parent/child relation for documents within the same index</p>
 </li>
 </ul>
-<h3 id="Multi-fieldsedit"><a href="#Multi-fieldsedit" class="headerlink" title="Multi-fieldsedit"></a>Multi-fields<a href="https://github.com/elastic/elasticsearch/edit/6.3/docs/reference/mapping/types.asciidoc" target="_blank" rel="noopener">edit</a></h3><p>It is often useful to index the same field in different ways for different purposes. For instance, a <code>string</code> field could be mapped as a <code>text</code> field for full-text search, and as a <code>keyword</code> field for sorting or aggregations. Alternatively, you could index a text field with the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.3/analysis-standard-analyzer.html" target="_blank" rel="noopener"><code>standard</code> analyzer</a>, the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.3/analysis-lang-analyzer.html#english-analyzer" target="_blank" rel="noopener"><code>english</code></a>analyzer, and the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.3/analysis-lang-analyzer.html#french-analyzer" target="_blank" rel="noopener"><code>french</code> analyzer</a>.</p>
+<h5 id="多性质字段"><a href="#多性质字段" class="headerlink" title="多性质字段"></a>多性质字段</h5><p>It is often useful to index the same field in different ways for different purposes. For instance, a <code>string</code> field could be mapped as a <code>text</code> field for full-text search, and as a <code>keyword</code> field for sorting or aggregations. Alternatively, you could index a text field with the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.3/analysis-standard-analyzer.html" target="_blank" rel="noopener"><code>standard</code> analyzer</a>, the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.3/analysis-lang-analyzer.html#english-analyzer" target="_blank" rel="noopener"><code>english</code></a>analyzer, and the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.3/analysis-lang-analyzer.html#french-analyzer" target="_blank" rel="noopener"><code>french</code> analyzer</a>.</p>
 <p>This is the purpose of <em>multi-fields</em>. Most datatypes support multi-fields via the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.3/multi-fields.html" target="_blank" rel="noopener"><code>fields</code></a> parameter.</p>
 
       
@@ -174,7 +174,14 @@
     
 <nav id="article-nav" class="article-nav">
   
-    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+    <a href="/2018/08/22/elasticsearch-fieldtype2/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          elasticsearch-字段类型
+        
+      </div>
+    </a>
   
   
     <a href="/2018/08/10/elasticsearch-config/" id="article-nav-older" class="article-nav-link-wrap older">
