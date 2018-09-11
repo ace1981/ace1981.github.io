@@ -5,19 +5,19 @@
   
   <title>jvm内存模型 | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.新生代的回收算法: 复制回收算法 eden-&amp;gt;s0+老年代 2.JVM参数 -Xms: 60M堆初始大小 -Xmx:60M 堆最大值 -Xmn:30M 新生代大小 -XX:SurvivorRatio=8  eden:s0:s1   eden=30M*8/10=24M 3.根搜索算法 GC Root:   虚拟机栈局部变量表 引用的对象 方法区中类静态变量引用的对象 常量引用对象 本地方">
+  <meta name="description" content="垃圾收集算法  标记-清除算法 复制算法 标记-整理算法 分代收集算法  垃圾收集器  Serial收集器 ParNew收集器 Parallel Scavenge收集器 Serial Old收集器 Parallel Old收集器 CMS收集器 G1收集器  1.新生代的回收算法: 复制回收算法 eden-&amp;gt;s0+老年代 2.JVM参数 -Xms:512M堆初始大小 -Xmx:1024M 堆">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jvm内存模型">
 <meta property="og:url" content="http://hujao.com/2017/03/30/jvm/index.html">
 <meta property="og:site_name" content="Ace&#39;pages">
-<meta property="og:description" content="1.新生代的回收算法: 复制回收算法 eden-&amp;gt;s0+老年代 2.JVM参数 -Xms: 60M堆初始大小 -Xmx:60M 堆最大值 -Xmn:30M 新生代大小 -XX:SurvivorRatio=8  eden:s0:s1   eden=30M*8/10=24M 3.根搜索算法 GC Root:   虚拟机栈局部变量表 引用的对象 方法区中类静态变量引用的对象 常量引用对象 本地方">
+<meta property="og:description" content="垃圾收集算法  标记-清除算法 复制算法 标记-整理算法 分代收集算法  垃圾收集器  Serial收集器 ParNew收集器 Parallel Scavenge收集器 Serial Old收集器 Parallel Old收集器 CMS收集器 G1收集器  1.新生代的回收算法: 复制回收算法 eden-&amp;gt;s0+老年代 2.JVM参数 -Xms:512M堆初始大小 -Xmx:1024M 堆">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://hujao.com/2017/03/30/jvm/jvm.png">
-<meta property="og:updated_time" content="2017-12-21T05:44:37.000Z">
+<meta property="og:updated_time" content="2018-09-10T04:31:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jvm内存模型">
-<meta name="twitter:description" content="1.新生代的回收算法: 复制回收算法 eden-&amp;gt;s0+老年代 2.JVM参数 -Xms: 60M堆初始大小 -Xmx:60M 堆最大值 -Xmn:30M 新生代大小 -XX:SurvivorRatio=8  eden:s0:s1   eden=30M*8/10=24M 3.根搜索算法 GC Root:   虚拟机栈局部变量表 引用的对象 方法区中类静态变量引用的对象 常量引用对象 本地方">
+<meta name="twitter:description" content="垃圾收集算法  标记-清除算法 复制算法 标记-整理算法 分代收集算法  垃圾收集器  Serial收集器 ParNew收集器 Parallel Scavenge收集器 Serial Old收集器 Parallel Old收集器 CMS收集器 G1收集器  1.新生代的回收算法: 复制回收算法 eden-&amp;gt;s0+老年代 2.JVM参数 -Xms:512M堆初始大小 -Xmx:1024M 堆">
 <meta name="twitter:image" content="http://hujao.com/2017/03/30/jvm/jvm.png">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
@@ -75,11 +75,29 @@
     <div class="article-entry typo" itemprop="articleBody">
       
         <p><img src="/2017/03/30/jvm/jvm.png" alt=""></p>
+<p>垃圾收集算法</p>
+<ul>
+<li>标记-清除算法</li>
+<li>复制算法</li>
+<li>标记-整理算法</li>
+<li>分代收集算法</li>
+</ul>
+<p>垃圾收集器</p>
+<ul>
+<li>Serial收集器</li>
+<li>ParNew收集器</li>
+<li>Parallel Scavenge收集器</li>
+<li>Serial Old收集器</li>
+<li>Parallel Old收集器</li>
+<li>CMS收集器</li>
+<li>G1收集器</li>
+</ul>
 <p>1.新生代的回收算法:</p>
 <p>复制回收算法 eden-&gt;s0+老年代</p>
 <p>2.JVM参数</p>
-<p>-Xms: 60M堆初始大小</p>
-<p>-Xmx:60M 堆最大值</p>
+<p>-Xms:512M堆初始大小</p>
+<p>-Xmx:1024M 堆最大值</p>
+<p> -XX:PermSize：表示非堆区初始内存分配大小，其缩写为permanent size（持久化内存）<br>-XX:MaxPermSize：表示对非堆区分配的内存的最大上限。</p>
 <p>-Xmn:30M 新生代大小</p>
 <p>-XX:SurvivorRatio=8  eden:s0:s1   eden=30M*8/10=24M</p>
 <p>3.根搜索算法</p>
