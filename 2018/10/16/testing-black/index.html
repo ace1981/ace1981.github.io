@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>软件测试-覆盖率测试相关 | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="https://www.cnblogs.com/dulijuan/p/4471405.html https://www.cnblogs.com/Carolinee/p/5404675.html 一、覆盖率概念 ​     覆盖率是用来度量测试完整性的一个手段，是测试技术有效性的一个度量。分为：白盒覆盖、灰盒覆盖和黑盒覆盖；测试用例设计不能一味追求覆盖率，因为测试成本随覆盖率的增加而增加。 覆盖率=">
+<meta name="keywords" content="testing">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件测试-覆盖率测试相关">
+<meta property="og:url" content="http://hujao.com/2018/10/16/testing-black/index.html">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="https://www.cnblogs.com/dulijuan/p/4471405.html https://www.cnblogs.com/Carolinee/p/5404675.html 一、覆盖率概念 ​     覆盖率是用来度量测试完整性的一个手段，是测试技术有效性的一个度量。分为：白盒覆盖、灰盒覆盖和黑盒覆盖；测试用例设计不能一味追求覆盖率，因为测试成本随覆盖率的增加而增加。 覆盖率=">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160418152243320-1842426831.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160418153824913-1187779750.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160418160530851-405294423.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160418170649491-641773324.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160418171443866-987440908.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160418172305429-681987430.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160418173719976-1087966941.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420133844882-222236921.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160419140620960-604059137.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160419141431632-1287924082.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160419162848054-670976779.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201606/914576-20160612100508886-2081914326.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420102831241-37813567.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420115320148-1626767761.png">
+<meta property="og:updated_time" content="2018-10-16T11:09:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件测试-覆盖率测试相关">
+<meta name="twitter:description" content="https://www.cnblogs.com/dulijuan/p/4471405.html https://www.cnblogs.com/Carolinee/p/5404675.html 一、覆盖率概念 ​     覆盖率是用来度量测试完整性的一个手段，是测试技术有效性的一个度量。分为：白盒覆盖、灰盒覆盖和黑盒覆盖；测试用例设计不能一味追求覆盖率，因为测试成本随覆盖率的增加而增加。 覆盖率=">
+<meta name="twitter:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160418152243320-1842426831.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-testing-black" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/tags/docker">Docker</a>
+    
+      <a class="main-nav-link" href="/tags/springboot">SpringBoot</a>
+    
+      <a class="main-nav-link" href="/tags/elasticsearch">ElasticSearch</a>
+    
+      <a class="main-nav-link" href="/tags/test">Test</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      软件测试-覆盖率测试相关
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p><a href="https://www.cnblogs.com/dulijuan/p/4471405.html" target="_blank" rel="noopener">https://www.cnblogs.com/dulijuan/p/4471405.html</a></p>
+<p><a href="https://www.cnblogs.com/Carolinee/p/5404675.html" target="_blank" rel="noopener">https://www.cnblogs.com/Carolinee/p/5404675.html</a></p>
+<p><strong>一、覆盖率概念</strong></p>
+<p>​     覆盖率是用来度量测试完整性的一个手段，是测试技术有效性的一个度量。分为：白盒覆盖、灰盒覆盖和黑盒覆盖；测试用例设计不能一味追求覆盖率，因为测试成本随覆盖率的增加而增加。</p>
+<p><strong>覆盖率=（至少被执行一次的item数）/item的总数</strong></p>
+<p><strong>二、白盒覆盖率***</strong></p>
+<p>​    白盒测试时基于程序结构的逻辑驱动测试，白盒覆盖中最常见的是逻辑覆盖（也叫代码覆盖或结构化覆盖），逻辑覆盖包括：语句覆盖、判定覆盖、条件覆盖、判定条件覆盖、条件组合覆盖、路径覆盖。</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160418152243320-1842426831.png" alt="img"></p>
+<p>1.语句覆盖(Statement Coverage)</p>
+<p>​       指在测试时运行被测程序后，程序中被执行到的可执行语句的比率：</p>
+<p><strong>语句覆盖率=（至少被执行一次的语句数量）/（可执行的语句总数）</strong></p>
+<p>例：</p>
+<p>case1：（2，0，3）   语句覆盖率=？<br>case2：（2，1，3）   语句覆盖率=？</p>
+<p>分析：案例中可执行的语句总数有2条：X=X/A和X=X+1;<br>​        case1走ace路线，2条语句都被执行了，所以语句覆盖率为2/2，即100%；<br>​        case1走abe路线，只执行了1条语句，所以语句覆盖率为1/2，即50%；</p>
+<p>总结：case1中语句覆盖率达到了100%，看似很完美，但是并不能百分百的发现bug，若上例中两个被测程序段逻辑有问题，条件语句写成:</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160418153824913-1187779750.png" alt="img"></p>
+<p>会发现语句覆盖率依然为100%，但是发现不了逻辑运算中出现的错误；即使语句覆盖率达到百分百也有缺陷发现不了，所以覆盖率只是我们度量的手段。</p>
+<p>2.判定覆盖率（Decision Coverage）</p>
+<p>判定覆盖，也叫分支覆盖(Branch Coverage),是指在测试时运行被测试程序后，程序中所有判断语句的取真和取假分支被执行到的比率：</p>
+<p><strong>判定覆盖率=（判定结果被评价的次数）/（判定结果的总数）</strong></p>
+<p>例：</p>
+<p>case1：（2，0，3）   判定覆盖率=？<br>case2：（1，0，1）   判定覆盖率=？</p>
+<p>分析：案例中判断语句的取真和取假分支共有4个：T1\F1\T2\F2</p>
+<p> case1走T1-T2路线，2个判断分支被执行，所以判定覆盖率为2/4，即50%；<br> case1走F1-F2路线，2个判断分支被执行，所以判定覆盖率为2/4，即50%；</p>
+<p>总结：case1和case2加起来刚好可以达到判定覆盖率100%，但是同样地，依然会有缺陷发现不了，例如将源程序改为：</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160418160530851-405294423.png" alt="img"></p>
+<p>3.条件覆盖（Condition Coverage）</p>
+<p>​    指在测试时运行被测程序后，所有判断语句中每个条件的可能取值（真值和假值）出现过的比率：</p>
+<p><strong>条件覆盖率=（条件操作数值至少被评价一次的数量）/（条件操作数值的总数）</strong></p>
+<p>分析：案例中有两条判断语句，每个语句有两个条件，即4个条件，每个条件有两个取值，所以条件操作数值的总数为8个，测试用例如下：</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160418170649491-641773324.png" alt="img"></p>
+<p>总结： 每个case的覆盖率为4/8，50%，三个用例加起来刚好实现条件覆盖率100%。但是下面两条用例也可以实现100%覆盖，但是却没有覆盖所有分支，所以说条件覆盖也会有缺陷发现不了。</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160418171443866-987440908.png" alt="img"></p>
+<p>4.判定-条件覆盖（Decision Condition Coverage）</p>
+<p>​      是指设计足够的测试用例，使得判断中每个条件的所有可能取值至少执行一次，同时每个判断本身的所有可能判断结果至少执行一次，也即要求各个判断的所有可能的条件取值组合至少执行一次，也叫分支条件覆盖；实际上就是判定覆盖率和条件覆盖率的组合。</p>
+<p> <strong>判定条件覆盖率=（条件操作数值或判定结果至少被评价一次的数量）/（条件操作数值总数+判定结果总数）</strong></p>
+<p>分析：从表面上看，判定条件覆盖测试了所有的条件的取值，但是事实并非如此。因为往往某些条件掩盖了另一些条件，对于条件表达式（A&gt;1）and（B=0）来说，若（A&gt;1）的测试结果为真，则还要测试（B=0），才能决定表达式的值；而若条件表达式（A&gt;1）的测试结过果为假时，可以立刻确定表达式的结果为假。这是，往往不再测试条件表达式（B=0）的取值了，这样的话条件B就没有检查，对于（A=2）or（X&gt;1）来说也是同样的道理。因此，词用判定-条件覆盖，逻辑表达式中的错误不一定能够查出来。</p>
+<p>总结： 为了能够防止某些条件掩盖另一些条件，必须将逻辑表达式分解为单个条件，转换成如下图所示的单一条件的嵌套条件结构，这样可以针对每一条件和判定设计测试用例，防止测试中队某些条件的侧漏。</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160418172305429-681987430.png" alt="img"></p>
+<p>5.条件组合覆盖（Multiple Condition Coverage）</p>
+<p>​    基本思想是，设计足够的测试用例，使得每个判定中条件的各种可能组合都至少出现一次。</p>
+<p><strong>条件组合覆盖率=（条件组合至少被评价一次的数量）/（条件组合总数）</strong></p>
+<p>分析：每个判定中条件的各种可能组合如下，条件组合总数为8中。</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160418173719976-1087966941.png" alt="img"></p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420133844882-222236921.png" alt="img"></p>
+<p>总结：上面测试用例达到了100%的条件组合覆盖，但是它所走的路径只有3条，没有达到100%的路径覆盖，所以条件组合覆盖也不是十全十美的。</p>
+<p>6.路径覆盖 （Path Coverage）</p>
+<p>​      指在测试时运行被测程序后，程序中所有可能的路径被执行过的比率：</p>
+<p><strong>路径覆盖率=（至少被执行一次的路径数）/（总的路径数）</strong></p>
+<p>分析：案例中总的路径为4条，分别为ace，abd，abc，acd,下面4条例子实现了100%的路径覆盖。</p>
+<p>case1:(2,0,3) 覆盖路径ace<br>case2:(1,0,1) 覆盖路径abd<br>case3:(1,0,3) 覆盖路径abc<br>case4:(3,0,1) 覆盖路径acd</p>
+<p>总结：对于这组测试用例，路径覆盖达到了100%，但是很明显没有达到100%条件覆盖（B!=0未取到） ，所以说路径覆盖也不是零缺陷的，进一步说明了覆盖率只是我们度量的手段。</p>
+<p>7.其他覆盖</p>
+<p>a.指令块覆盖（Instruction Blocks Coverage,IB Coverage）</p>
+<p>​    是语句覆盖的一个变体，其唯一的区别是计算方式的不同，在这里指令块表示函数内部的一个序列语句，在这一个序列语句中不存在控制语句（会引起分支）</p>
+<p><strong>指令块覆盖=（至少被执行一次的指令块数量）/（系统中指令块总数）</strong></p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160419140620960-604059137.png" alt="img"></p>
+<p>例：一次测试中，在第一个控制点走了3条指令的分支，在第二个控制点走了空指令分支，那么其指令块覆盖式2/4，即50%；其语句覆盖式（5+3）/15，即53.33%；</p>
+<p>b.判定路径覆盖（Decision-to-Decision paths Coverage,DDP Coverage）</p>
+<p>​      是判定覆盖的一个变体，这里的判定指的是一个序列语句，其起始位置是函数入口或一个判定（如If,while,switch等）的开始，结束位置是下一个判定的开始。具体如下图：</p>
+<p> <img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160419141431632-1287924082.png" alt="img"></p>
+<p>​    通过计算哪些判定路径已经走过，哪些没走过，我们就可以得到DDP覆盖率了，公式如下：</p>
+<p><strong>DDP 覆盖=（至少被执行到一次的判定路径数量）/（系统中判定路径总数）</strong></p>
+<p><strong>三、灰盒覆盖率</strong></p>
+<p>1.接口覆盖(Interface Coverage)</p>
+<p>​      接口覆盖，又称入口点覆盖，要求通过设计一定的用例使得系统的每个接口被测试到。</p>
+<p><strong>接口覆盖=（至少被执行一次的接口数量）/（系统中接口的总数）</strong></p>
+<p>2.函数覆盖(True Coverage)</p>
+<p>​      函数覆盖是针对系统或一个子系统的测试的，它表示在该测试中，有哪些函数被测试到了，其被测试到的频率有多大，这些函数在系统所有函数中占的比例有多大，函数覆盖是一个比较容易自动化的技术，同时也易于理解。其公式如下：</p>
+<p><strong>函数覆盖=（至少被执行一次的函数数量）/（系统中函数的总数）</strong></p>
+<p><strong>四、黑盒覆盖率</strong></p>
+<p>​     在实际测试中，与黑盒相关的覆盖率比较少，主要是功能覆盖率（Functional  Coverage），功能覆盖中最常见的是需求覆盖（Requirement Coverage）,其含义是通过设计一定的测试用例，要求每个需求点都被测试到。</p>
+<p><strong>需求覆盖=（被验证到的需求数量）/（总的需求数量）</strong></p>
+<p><strong>五、面向对象的覆盖率</strong></p>
+<p>1.继承上下文覆盖</p>
+<p>2.基于状态的上下文覆盖</p>
+<p>3.基于线程的上下文覆盖</p>
+<p><strong>六、案例</strong></p>
+<p>​      为以下所示的程序段设计一组测试用例，要求分别满足语句覆盖、判定覆盖、条件覆盖、判定条件覆盖、条件组合覆盖和路径覆盖，并画出相应的程序流程图。</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160419162848054-670976779.png" alt="img"></p>
+<p>思路：  首先根据程序代码画出<strong>程序流程图 </strong>，然后根据程序流程图分别<strong>列出各种覆盖率的条件</strong>，然后<strong>设计测试用例</strong>，设计完一个用例标记下覆盖了多少条件，依次往下，直到覆盖了所有的条件。</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201606/914576-20160612100508886-2081914326.png" alt="img"></p>
+<p>用例： </p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420102831241-37813567.png" alt="img"></p>
+<p><strong>七、重点 </strong></p>
+<p>1.需要掌握：一个测试用例的各种覆盖率为多少?<br>​                 覆盖率100%的情况下需要设计多少用例?</p>
+<p>2.各种测试覆盖率之间的关系</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420115320148-1626767761.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/10/16/testing-black/" class="article-date">
+  <time datetime="2018-10-16T11:03:20.000Z" itemprop="datePublished">2018-10-16</time>
+</a>
+
+        </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/testing/">testing</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2018/08/23/elasticsearch-cluster/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">elasticsearch-cluster</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
