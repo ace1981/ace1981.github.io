@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>junit单元测试实战 | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、对加法函数进行测试  1.实例化被测单元（方法）：类名 实例名=new 类名（[参数]） 2.调用被测单元，对比预期值和输出值（实际值）； 在没有junit测试工具的情况下，我们要进行如下的测试代码编写过程：  二、利用Junit进行单元测试 ​    Junit是一款专门用于java语言的代码的单元测试工具；是一套基于java的测试框架，目前有两个版本：Junit3，Junit4.Junit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="junit单元测试实战">
+<meta property="og:url" content="http://hujao.com/2018/10/26/junit/index.html">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="一、对加法函数进行测试  1.实例化被测单元（方法）：类名 实例名=new 类名（[参数]） 2.调用被测单元，对比预期值和输出值（实际值）； 在没有junit测试工具的情况下，我们要进行如下的测试代码编写过程：  二、利用Junit进行单元测试 ​    Junit是一款专门用于java语言的代码的单元测试工具；是一套基于java的测试框架，目前有两个版本：Junit3，Junit4.Junit">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420211703445-1508934133.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420212159538-1958943551.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420212622429-78709453.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420213419695-1362976754.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420214525523-697613392.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420214502851-1192467951.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420215653913-1851255043.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420215706523-610786794.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420220103445-60408703.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420220116632-1618700015.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420220654038-29272324.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420221543960-96571722.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420221610288-686344974.png">
+<meta property="og:updated_time" content="2018-10-27T00:17:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="junit单元测试实战">
+<meta name="twitter:description" content="一、对加法函数进行测试  1.实例化被测单元（方法）：类名 实例名=new 类名（[参数]） 2.调用被测单元，对比预期值和输出值（实际值）； 在没有junit测试工具的情况下，我们要进行如下的测试代码编写过程：  二、利用Junit进行单元测试 ​    Junit是一款专门用于java语言的代码的单元测试工具；是一套基于java的测试框架，目前有两个版本：Junit3，Junit4.Junit">
+<meta name="twitter:image" content="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420211703445-1508934133.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-junit" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/tags/docker">Docker</a>
+    
+      <a class="main-nav-link" href="/tags/springboot">SpringBoot</a>
+    
+      <a class="main-nav-link" href="/tags/elasticsearch">ElasticSearch</a>
+    
+      <a class="main-nav-link" href="/tags/test">Test</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      junit单元测试实战
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p>一、对加法函数进行测试</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420211703445-1508934133.png" alt="img"></p>
+<p>1.实例化被测单元（方法）：类名 实例名=new 类名（[参数]）</p>
+<p>2.调用被测单元，对比预期值和输出值（实际值）；</p>
+<p>在没有junit测试工具的情况下，我们要进行如下的测试代码编写过程：</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420212159538-1958943551.png" alt="img"></p>
+<p>二、利用Junit进行单元测试</p>
+<p>​    Junit是一款专门用于java语言的代码的单元测试工具；是一套基于java的测试框架，目前有两个版本：Junit3，Junit4.Junit中最常用的两个测试方法是：</p>
+<p>assertEquals(expect,actual);用于非数组型的数据的比较；<br>assertArrayEquals(expect,actual);用于数组型的数据的比较；</p>
+<p>PS:这两个函数的选择是由被测单元的输出数据类型决定的。</p>
+<p>1.Junit 3特征</p>
+<p>a.测试类都是要继承TestCase类：<br>​    import junit.framework.TestCase<br>​    public class TestCalc extends TestCase<br>b.测试类中的方法的作用是由方法名决定的且测试用例的方法必须以小写的test开头；</p>
+<p>如：</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420212622429-78709453.png" alt="img">2.Junit 4</p>
+<p>​     Junit 3有很大优化，没有Junit3那样的约束条件，使用起来很方便，对于Calc测试如下：</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420213419695-1362976754.png" alt="img"></p>
+<p>3.对于Java中单元测试来说，被测的方法的类型一般是或者可以转化为以下四种类型：</p>
+<p>a.被测方法有返回值，且返回值是可预期的。(按照功能，特定的输入一定对应特定的输出)；assertEquals(预期值，输入值);</p>
+<p>//上述对于加法函数的测试即属于该类；</p>
+<p>b.被测方法有返回值，但是返回值不是固定的，是随机的，但是返回值从数学角度来看，返回值必然是有其特征的;</p>
+<p>例：</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420214525523-697613392.png" alt="img"></p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420214502851-1192467951.png" alt="img">c.被测方法没有返回值，此时都可以将之转化为输出类型（System.out.println()）;</p>
+<p>例：Dog这样的类是没有返回类型的，通常我们可以将之转化为有输出语句的类型；</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420215653913-1851255043.png" alt="img"></p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420215706523-610786794.png" alt="img"><br>d.被测方法本身会抛出异常，此时的测试重点已经是对异常信息的检测。</p>
+<p>例：</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420220103445-60408703.png" alt="img"></p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420220116632-1618700015.png" alt="img"></p>
+<p>4.Parameter参数化</p>
+<p>​      一般来说，在自动化测试领域，针对同一单元的测试，往往存在多个测试用例，在代码层面来看，多个测试用例的实现，其特征是：逻辑相同，数据不同。此时就需要用到参数化的操作，一定程度上实现代码和数据的分离，junit自身提供了参数化的方式。</p>
+<p>例：</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420220654038-29272324.png" alt="img"></p>
+<p>通过参数化进行测试：</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420221543960-96571722.png" alt="img"></p>
+<p>5.feeder工具</p>
+<p>添加feeder插件，新建data文件夹，右击新建文件，命名为isnumber.csv.（以上面isNumber为例）</p>
+<p><img src="https://images2015.cnblogs.com/blog/914576/201604/914576-20160420221610288-686344974.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/10/26/junit/" class="article-date">
+  <time datetime="2018-10-26T08:34:00.000Z" itemprop="datePublished">2018-10-26</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2018/10/19/rabbitMq/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">rabbitMq</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
