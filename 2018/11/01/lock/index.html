@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>java锁 | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="https://blog.csdn.net/noble510520/article/details/78834224 https://blog.csdn.net/wolegequdidiao/article/details/45116141 https://blog.csdn.net/songylwq/article/details/5585734 Java 轻量级锁原理详解(Lightweigh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java锁">
+<meta property="og:url" content="http://hujao.com/2018/11/01/lock/index.html">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="https://blog.csdn.net/noble510520/article/details/78834224 https://blog.csdn.net/wolegequdidiao/article/details/45116141 https://blog.csdn.net/songylwq/article/details/5585734 Java 轻量级锁原理详解(Lightweigh">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://hujao.com/2018/11/01/lock/lock.jpeg">
+<meta property="og:updated_time" content="2018-11-01T03:11:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java锁">
+<meta name="twitter:description" content="https://blog.csdn.net/noble510520/article/details/78834224 https://blog.csdn.net/wolegequdidiao/article/details/45116141 https://blog.csdn.net/songylwq/article/details/5585734 Java 轻量级锁原理详解(Lightweigh">
+<meta name="twitter:image" content="http://hujao.com/2018/11/01/lock/lock.jpeg">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-lock" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/tags/docker">Docker</a>
+    
+      <a class="main-nav-link" href="/tags/springboot">SpringBoot</a>
+    
+      <a class="main-nav-link" href="/tags/elasticsearch">ElasticSearch</a>
+    
+      <a class="main-nav-link" href="/tags/test">Test</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java锁
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p><a href="https://blog.csdn.net/noble510520/article/details/78834224" target="_blank" rel="noopener">https://blog.csdn.net/noble510520/article/details/78834224</a></p>
+<p><a href="https://blog.csdn.net/wolegequdidiao/article/details/45116141" target="_blank" rel="noopener">https://blog.csdn.net/wolegequdidiao/article/details/45116141</a></p>
+<p><a href="https://blog.csdn.net/songylwq/article/details/5585734" target="_blank" rel="noopener">https://blog.csdn.net/songylwq/article/details/5585734</a> Java 轻量级锁原理详解(Lightweight Locking)</p>
+<p><a href="https://www.jianshu.com/p/afa5296a4832" target="_blank" rel="noopener">https://www.jianshu.com/p/afa5296a4832</a> 锁升级场景:蜀国四兄弟争骑单车</p>
+<p><a href="https://blog.csdn.net/Truong/article/details/74942155" target="_blank" rel="noopener">https://blog.csdn.net/Truong/article/details/74942155</a> 偏向锁升级为轻量级锁</p>
+<p><img src="/2018/11/01/lock/lock.jpeg" alt="lock"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/11/01/lock/" class="article-date">
+  <time datetime="2018-11-01T02:40:14.000Z" itemprop="datePublished">2018-11-01</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2018/10/31/geoserver/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">geoserver相关</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
