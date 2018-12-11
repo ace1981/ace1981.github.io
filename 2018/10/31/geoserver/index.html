@@ -5,18 +5,18 @@
   
   <title>geoserver相关 | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="https://www.cnblogs.com/bigbigtree/p/6204090.html https://blog.csdn.net/chinagissoft/article/details/52180331 https://blog.csdn.net/zhanglh046/article/details/78536084 https://blog.csdn.net/shiyaru131">
+  <meta name="description" content="参考: https://www.cnblogs.com/bigbigtree/p/6204090.html https://blog.csdn.net/chinagissoft/article/details/52180331 https://blog.csdn.net/zhanglh046/article/details/78536084 https://blog.csdn.net/shiyar">
 <meta name="keywords" content="gis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="geoserver相关">
 <meta property="og:url" content="http://hujao.com/2018/10/31/geoserver/index.html">
 <meta property="og:site_name" content="Ace&#39;pages">
-<meta property="og:description" content="https://www.cnblogs.com/bigbigtree/p/6204090.html https://blog.csdn.net/chinagissoft/article/details/52180331 https://blog.csdn.net/zhanglh046/article/details/78536084 https://blog.csdn.net/shiyaru131">
+<meta property="og:description" content="参考: https://www.cnblogs.com/bigbigtree/p/6204090.html https://blog.csdn.net/chinagissoft/article/details/52180331 https://blog.csdn.net/zhanglh046/article/details/78536084 https://blog.csdn.net/shiyar">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-31T08:28:32.000Z">
+<meta property="og:updated_time" content="2018-11-15T05:47:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="geoserver相关">
-<meta name="twitter:description" content="https://www.cnblogs.com/bigbigtree/p/6204090.html https://blog.csdn.net/chinagissoft/article/details/52180331 https://blog.csdn.net/zhanglh046/article/details/78536084 https://blog.csdn.net/shiyaru131">
+<meta name="twitter:description" content="参考: https://www.cnblogs.com/bigbigtree/p/6204090.html https://blog.csdn.net/chinagissoft/article/details/52180331 https://blog.csdn.net/zhanglh046/article/details/78536084 https://blog.csdn.net/shiyar">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
@@ -72,10 +72,56 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <p><a href="https://www.cnblogs.com/bigbigtree/p/6204090.html" target="_blank" rel="noopener">https://www.cnblogs.com/bigbigtree/p/6204090.html</a></p>
+        <p>参考:</p>
+<p><a href="https://www.cnblogs.com/bigbigtree/p/6204090.html" target="_blank" rel="noopener">https://www.cnblogs.com/bigbigtree/p/6204090.html</a></p>
 <p><a href="https://blog.csdn.net/chinagissoft/article/details/52180331" target="_blank" rel="noopener">https://blog.csdn.net/chinagissoft/article/details/52180331</a></p>
 <p><a href="https://blog.csdn.net/zhanglh046/article/details/78536084" target="_blank" rel="noopener">https://blog.csdn.net/zhanglh046/article/details/78536084</a></p>
 <p><a href="https://blog.csdn.net/shiyaru1314/article/details/47446107" target="_blank" rel="noopener">https://blog.csdn.net/shiyaru1314/article/details/47446107</a></p>
+<p>投影:<a href="https://www.cnblogs.com/sailheart/archive/2011/03/11/1981536.html" target="_blank" rel="noopener">https://www.cnblogs.com/sailheart/archive/2011/03/11/1981536.html</a></p>
+<p><a href="https://blog.csdn.net/qq_34281308/article/details/79541752" target="_blank" rel="noopener">https://blog.csdn.net/qq_34281308/article/details/79541752</a></p>
+<p><strong><em>OpenLayers</em></strong>是一个用于开发WebGIS客户端的JavaScript包。OpenLayers 支持的地图来源包括Google Maps、Yahoo、 Map、微软Virtual Earth 等，用户还可以用简单的图片地图作为背景图，与其他的图层在OpenLayers 中进行叠加，在这一方面OpenLayers提供了非常多的选择。除此之外，OpenLayers实现访问地理空间数据的方法都符合行业标准。OpenLayers 支持Open GIS 协会制定的WMS（Web Mapping Service）和WFS（Web Feature Service）等网络服务规范，可以通过远程服务的方式，将以OGC 服务形式发布的地图数据加载到基于浏览器的OpenLayers 客户端中进行显示。OpenLayers采用面向对象方式开发，并使用来自Prototype.js和Rico中的一些组件。</p>
+<p><strong>GeoServer</strong> 是 OpenGIS Web 服务器规范的 J2EE 实现，利用 GeoServer 可以方便的发布地图数据，允许用户对特征数据进行更新、删除、插入操作，通过 GeoServer 可以比较容易的在用户之间迅速共享空间地理信息。GeoServer是社区开源项目，可以直接通过社区网站下载，详细请查看本文档末的资源表。</p>
+<p><strong>WMS</strong>指map service,<strong>WFS</strong>指feature service，<strong>WMTS</strong>指tiles service</p>
+<p><strong>WMS服务</strong>：Web Map Service，网络地图服务，它是利用具有地理空间位置信息的数据制作地图，其中将地图定义为地理数据的可视化表现，能够根据用户的请求，返回相应的地图，包括PNG、GIF、JPEG等栅格形式，或者SVG或者WEB CGM等矢量形式。WMS支持HTTP协议，所支持的操作是由URL决定的。</p>
+<p><strong>Keyhole Markup Language (KML)</strong>是一种基于XML的文件格式，用来在Google Earth或ArcGIS Explorer等应用程序中表达地理信息(geographicfeature)。 KML可以用来在maps和globes上绘制points, lines, 和polygons，并与他人共享。使用KML还可以在用户点击一个feature时，在结果中指定文字，图片，影片，或其他GIS服务的链接信息。</p>
+<p>1.<strong>Web 地图服务（WMS）</strong><br>能够根据用户的请求返回相应的地图（包括PNG，GIF，JPEG等栅格形式或者是SVG和WEB CGM等矢量形式）。WMS支持网络协议HTTP，所支持的操作是由URL定义的。</p>
+<p>有三个重要操作GetCapabilities，GetMap，GetFeatureinfo。</p>
+<p>GetCapabilities返回服务级元数据。</p>
+<p>GetMap返回一个地图影像。</p>
+<p>GetFeatureinfo返回显示在地图上的某些特殊要素的信息。</p>
+<p>还有一些其它操作如DescribeLayer，GetLegendGraphic，GetStyles，SetSytles。</p>
+<p>事实上用传统的观点来解释，GetMap获得的就是在桌面程序中画在控件上的里的结果，是数据的表现。</p>
+<p>GetFeatureInfo更容易理解，它和几乎所有的桌面程序上都用的Info按钮功能相同，都是用来获得屏幕坐标某处的信息，GetFeatureInfo中的参数是屏幕坐标、当前视图范围等，在一定程度上也方便了客户端的编写。</p>
+<p>GetFeatureInfo可以同时返回多个图层中的要素信息，这一点和ArcGIS Desktop等也都是相同的。WMS还包括一些GetLegend之类的返回图例信息的请求，也是完全按照桌面既有的标准定义的。</p>
+<p>2.<strong>Web 要素服务（WFS）</strong></p>
+<p>支持对地理要素的插入，更新，删除，检索和发现服务。该服务根据HTTP客户请求返回GML数据。</p>
+<p>其基础接口是：GetCapabilities，DescribeFeatureType，GetFeature</p>
+<p>GetCapabilities同上。</p>
+<p>DescribeFeatureType返回要素结构，以便客户端进行查询和其他操作。</p>
+<p>GetFeature可根据查询要求返回一个符合GML规范的数据文档。GetFeature是最重要的接口。</p>
+<p>其它接口如Transaction 它不仅能提供要素读取，同时支持要素在线编辑和事务处理。</p>
+<p>WFS对应于常见桌面程序中的条件查询功能，WFS通过OGC Filter构造查询条件，支持基于空间几何关系的查询，基于属性域的查询，当然还包括基于空间关系和属性域的共同查询。</p>
+<p>在Web上，WFS的请求不是以SQL实现的，而是通过Filter XML来实现，可扩展性更强。WFS所返回的是查询的结果集，从某种程度上说，区别于WMS的“数据的表现”，WFS的结果集是由完整的Schema定义和约束的结果集，以GML为载体。这个结果集，类似于桌面程序查询结果的数据表。</p>
+<p>3.<strong>Web地理覆盖服务（WCS）</strong></p>
+<p>提供的是包含了地理位置信息或属性的空间栅格图层，而不是静态地图的访问。</p>
+<p>根据HTTP客户端要求发送相应数据，包括影像，多光谱影像和其它科学数据.</p>
+<p>有二个重要操作GetCapabilities，GetCoverage</p>
+<p>GetCapabilities返回一个描述服务和XML文档，从中可获取覆盖的数据集合。</p>
+<p>GetCoverage是在GetCapabilities确定查询方案和需要获取的数据之后执行，返回覆盖数据。</p>
+<p>还有可选操作DescribeCoverageType。</p>
+<p>WCS对应基于栅格数据的功能，与WMS基于矢量数据的特点相对应。</p>
+<p>4.<strong>Web地理覆盖服务（WMTS）</strong></p>
+<p>WMTS，切片地图Web服务（OpenGIS Web Map Tile Service）当前版本是1.0.0。WMTS标准定义了一些操作，这些操作允许用户访问切片地图。WMTS可能是OGC首个支持RESTful访问的服务标准。</p>
+<p>WMTS提供了一种采用预定义图块方法发布数字地图服务的标准化解决方案。WMTS弥补了WMS不能提供分块地图的不足。WMS针对提供可定制地图的服务，是一个动态数据或用户定制地图（需结合SLD标准）的理想解决办法。WMTS牺牲了提供定制地图的灵活性，代之以通过提供静态数据（基础地图）来增强伸缩性，这些静态数据的范围框和比例尺被限定在各个图块内。这些固定的图块集使得对WMTS服务的实现可以使用一个仅简单返回已有文件的Web服务器即可，同时使得可以利用一些标准的诸如分布式缓存的网络机制实现伸缩性</p>
+<p> 5.<strong>Web 地图服务（WPS）</strong></p>
+<p>另：Web Processing Server（WPS）是新近推出的标准，它的功能其实我们已经耳熟能详了。Processing即ArcView中的GeoProcessing，诸如Union，Intersect等方法。WPS要做的就是暴露基于URL接口来实现客户端通过WebService对此类方法的调用、并返回数据。</p>
+<p>备注：</p>
+<p>这些规范基本在各大主流GIS平台和开源GIS软件中得到支持。</p>
+<p>Intergraph早就推出了WFS服务器和互操作开发包。</p>
+<p>ESRI在ArcIms 中开发了支持WMS，WFS等规范的相关部件。</p>
+<p>MapInfo8.5也已经增加了能访问WMS和WFS服务，也有读取GML数据的借口功能。</p>
+<p>GeoServer，MapServer地图服务器扮演向网络中的客户端提供地图服务的角色。这类地图服务器可以接收统一规范的WMS和WFS请求（request），返回多种格式的数据。这个过程有WMS/WFS规范的严格规定，所以，对客户端来说其地图服务器的实现究竟是什么并不会造成太大影响。这样的规范，为公共的、联合的地图服务创造了可能。</p>
+<p>OpenLayers/MapBuilder，uDig，QGIS这些客户端软件分为浏览器和桌面客户端程序两种。以OpenLayers为代表的B/S系统客户端现在已经非常强大，它可以封装WMS请求，在浏览器上实现地图的切片载入功能。另外拖动、缩放都功能也非常完善，可以实现跨浏览器操作。最近的OpenLayers版本还支持了矢量编辑功能，可以通过WFS-t提交。而传统的桌面客户端程序功能则更加强大，支持多种包括WMS和WFS在内的数据源，另外编辑功能、操作性也要比浏览器中的强大。</p>
 
       
     </div>
