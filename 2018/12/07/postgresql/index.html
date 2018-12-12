@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>postgresql | Ace&#39;pages</title>
+  <title>postgresql和postgis安装(mac系统) | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装 1234567891011121314151617181920212223~ &amp;gt;brew install postgresqlUpdating Homebrew...==&amp;gt; Downloading https://homebrew.bintray.com/bottles/postgresql-10.4.sierra.bottle.tar.gzcurl: (7) Failed to">
+  <meta name="description" content="安装需要用到postgis扩展 直接装postgis会默认安装对应版本的postgresql,而不要直接安装brew install postgresql,版本不一致无法创建扩展 1~ &amp;gt;brew install postgis 初始数据库12345678910111213141516171819202122/usr/local/Cellar/postgresql/11.1/bin &amp;gt;">
+<meta name="keywords" content="postgresql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="postgresql">
+<meta property="og:title" content="postgresql和postgis安装(mac系统)">
 <meta property="og:url" content="http://hujao.com/2018/12/07/postgresql/index.html">
 <meta property="og:site_name" content="Ace&#39;pages">
-<meta property="og:description" content="安装 1234567891011121314151617181920212223~ &amp;gt;brew install postgresqlUpdating Homebrew...==&amp;gt; Downloading https://homebrew.bintray.com/bottles/postgresql-10.4.sierra.bottle.tar.gzcurl: (7) Failed to">
+<meta property="og:description" content="安装需要用到postgis扩展 直接装postgis会默认安装对应版本的postgresql,而不要直接安装brew install postgresql,版本不一致无法创建扩展 1~ &amp;gt;brew install postgis 初始数据库12345678910111213141516171819202122/usr/local/Cellar/postgresql/11.1/bin &amp;gt;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-07T03:25:31.000Z">
+<meta property="og:updated_time" content="2018-12-11T03:17:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="postgresql">
-<meta name="twitter:description" content="安装 1234567891011121314151617181920212223~ &amp;gt;brew install postgresqlUpdating Homebrew...==&amp;gt; Downloading https://homebrew.bintray.com/bottles/postgresql-10.4.sierra.bottle.tar.gzcurl: (7) Failed to">
+<meta name="twitter:title" content="postgresql和postgis安装(mac系统)">
+<meta name="twitter:description" content="安装需要用到postgis扩展 直接装postgis会默认安装对应版本的postgresql,而不要直接安装brew install postgresql,版本不一致无法创建扩展 1~ &amp;gt;brew install postgis 初始数据库12345678910111213141516171819202122/usr/local/Cellar/postgresql/11.1/bin &amp;gt;">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
@@ -63,7 +64,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      postgresql
+      postgresql和postgis安装(mac系统)
     </h1>
   
 
@@ -71,10 +72,18 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <p>安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">~ &gt;brew install postgresql</span><br><span class="line">Updating Homebrew...</span><br><span class="line">==&gt; Downloading https://homebrew.bintray.com/bottles/postgresql-10.4.sierra.bottle.tar.gz</span><br><span class="line">curl: (7) Failed to connect to akamai.bintray.com port 443: Operation timed out</span><br><span class="line">Error: Failed to download resource &quot;postgresql&quot;</span><br><span class="line">Download failed: https://homebrew.bintray.com/bottles/postgresql-10.4.sierra.bottle.tar.gz</span><br><span class="line">Warning: Bottle installation failed: building from source.</span><br><span class="line">==&gt; Downloading https://ftp.postgresql.org/pub/source/v10.4/postgresql-10.4.tar.bz2</span><br><span class="line">######################################################################## 100.0%</span><br><span class="line">==&gt; ./configure --prefix=/usr/local/Cellar/postgresql/10.4 --datadir=/usr/local/share/postgresql --libdir=/usr/local/lib --sysconfdir=/usr/local/etc --docdir=/u</span><br><span class="line">==&gt; make</span><br><span class="line">==&gt; make install-world datadir=/usr/local/Cellar/postgresql/10.4/share/postgresql libdir=/usr/local/Cellar/postgresql/10.4/lib pkglibdir=/usr/local/Cellar/postg</span><br><span class="line">==&gt; /usr/local/Cellar/postgresql/10.4/bin/initdb /usr/local/var/postgres</span><br><span class="line">==&gt; Caveats</span><br><span class="line">To migrate existing data from a previous major version of PostgreSQL run:</span><br><span class="line">  brew postgresql-upgrade-database</span><br><span class="line"></span><br><span class="line">To have launchd start postgresql now and restart at login:</span><br><span class="line">  brew services start postgresql</span><br><span class="line">Or, if you don&apos;t want/need a background service you can just run:</span><br><span class="line">  pg_ctl -D /usr/local/var/postgres start</span><br><span class="line">==&gt; Summary</span><br><span class="line">🍺  /usr/local/Cellar/postgresql/10.4: 3,389 files, 39.3MB, built in 4 minutes 14 seconds</span><br></pre></td></tr></table></figure>
-<p>启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew services start postgresql</span><br><span class="line">==&gt; Successfully started `postgresql` (label: homebrew.mxcl.postgresql)</span><br></pre></td></tr></table></figure>
+        <h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p>需要用到postgis扩展 直接装postgis会默认安装对应版本的postgresql,而不要直接安装brew install postgresql,版本不一致无法创建扩展</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~ &gt;brew install postgis</span><br></pre></td></tr></table></figure>
+<h5 id="初始数据库"><a href="#初始数据库" class="headerlink" title="初始数据库"></a>初始数据库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/Cellar/postgresql/11.1/bin &gt;initdb -D /usr/local/pgsql/data</span><br><span class="line">The files belonging to this database system will be owned by user &quot;*****&quot;.</span><br><span class="line">This user must also own the server process.</span><br><span class="line">The database cluster will be initialized with locale &quot;zh_CN.UTF-8&quot;.</span><br><span class="line">The default database encoding has accordingly been set to &quot;UTF8&quot;.</span><br><span class="line">initdb: could not find suitable text search configuration for locale &quot;zh_CN.UTF-8&quot;</span><br><span class="line">The default text search configuration will be set to &quot;simple&quot;.</span><br><span class="line">Data page checksums are disabled.</span><br><span class="line">creating directory /usr/local/pgsql/data ... ok</span><br><span class="line">creating subdirectories ... ok</span><br><span class="line">selecting default max_connections ... 100</span><br><span class="line">selecting default shared_buffers ... 128MB</span><br><span class="line">selecting dynamic shared memory implementation ... posix</span><br><span class="line">creating configuration files ... ok</span><br><span class="line">running bootstrap script ... ok</span><br><span class="line">performing post-bootstrap initialization ... ok</span><br><span class="line">syncing data to disk ... ok</span><br><span class="line">WARNING: enabling &quot;trust&quot; authentication for local connections</span><br><span class="line">You can change this by editing pg_hba.conf or using the option -A, or</span><br><span class="line">--auth-local and --auth-host, the next time you run initdb.</span><br><span class="line">Success. You can now start the database server using:</span><br><span class="line">    pg_ctl -D /usr/local/pgsql/data -l logfile start</span><br></pre></td></tr></table></figure>
+<h5 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pg_ctl -V</span><br></pre></td></tr></table></figure>
+<h5 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">~ &gt;pg_ctl -D /usr/local/pgsql/data start</span><br><span class="line">waiting for server to start....2018-12-11 10:46:22.806 CST [28699] LOG:  listening on IPv6 address &quot;::1&quot;, port 5432</span><br><span class="line">2018-12-11 10:46:22.807 CST [28699] LOG:  listening on IPv4 address &quot;127.0.0.1&quot;, port 5432</span><br><span class="line">2018-12-11 10:46:22.808 CST [28699] LOG:  listening on Unix socket &quot;/tmp/.s.PGSQL.5432&quot;</span><br><span class="line">2018-12-11 10:46:22.828 CST [28700] LOG:  database system was shut down at 2018-12-11 10:35:03 CST</span><br><span class="line">2018-12-11 10:46:22.838 CST [28699] LOG:  database system is ready to accept connections</span><br><span class="line"> done</span><br><span class="line">server started</span><br></pre></td></tr></table></figure>
+<h5 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~ &gt;createdb gis</span><br></pre></td></tr></table></figure>
+<h5 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create user 用户名 with password &apos;密码&apos;;(创建数据库用户，这里有一点要注意的，就是分号要记得打上，还有就是与这个命令相同的 &quot;create role&quot; ，这两个命令几乎是完全相同的，唯一的区别是&quot;create user&quot; 命令创建的用户默认带有login属性，而&quot;create role&quot; 命令创建的用户默认不带login属性)</span><br></pre></td></tr></table></figure>
+<h5 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">psql gis</span><br></pre></td></tr></table></figure>
+<h5 id="添加postgis扩展"><a href="#添加postgis扩展" class="headerlink" title="添加postgis扩展"></a>添加postgis扩展</h5><p>此处需要要mac系统管理员权限,用管理员帐号登录添加即可,</p>
+<p>navicat连接数据库,新建查询执行下面语句,添加完成会多出一张表spatial_ref_sys</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE EXTENSION postgis</span><br></pre></td></tr></table></figure>
+<p>这样就可以在geoserver中正常的添加postgis数据源了</p>
 
       
     </div>
@@ -88,6 +97,14 @@
 
         </li>
         
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/postgresql/">postgresql</a></li></ul>
+
+
+          </li>
         
         <hr/>
       </ul>
