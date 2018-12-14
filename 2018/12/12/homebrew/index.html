@@ -5,14 +5,17 @@
   
   <title>homebrew | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="Mac上使用brew安装nvm来支持多版本的Nodejsbrew方式如果机器没有安装过node，那么首先brew install nvm安装nvm。 其次需要在shell的配置文件(~/.bashrc, ~/.profile, or ~/.zshrc)中添加如下内容： 123# For NVMexport NVM_DIR=~/.nvmsource $(brew --prefix nvm)/nvm.">
+<meta property="og:type" content="article">
 <meta property="og:title" content="homebrew">
 <meta property="og:url" content="http://hujao.com/2018/12/12/homebrew/index.html">
 <meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="Mac上使用brew安装nvm来支持多版本的Nodejsbrew方式如果机器没有安装过node，那么首先brew install nvm安装nvm。 其次需要在shell的配置文件(~/.bashrc, ~/.profile, or ~/.zshrc)中添加如下内容： 123# For NVMexport NVM_DIR=~/.nvmsource $(brew --prefix nvm)/nvm.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-12T05:35:09.000Z">
+<meta property="og:updated_time" content="2018-12-14T03:35:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="homebrew">
+<meta name="twitter:description" content="Mac上使用brew安装nvm来支持多版本的Nodejsbrew方式如果机器没有安装过node，那么首先brew install nvm安装nvm。 其次需要在shell的配置文件(~/.bashrc, ~/.profile, or ~/.zshrc)中添加如下内容： 123# For NVMexport NVM_DIR=~/.nvmsource $(brew --prefix nvm)/nvm.">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
@@ -68,7 +71,13 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        
+        <h1 id="Mac上使用brew安装nvm来支持多版本的Nodejs"><a href="#Mac上使用brew安装nvm来支持多版本的Nodejs" class="headerlink" title="Mac上使用brew安装nvm来支持多版本的Nodejs"></a>Mac上使用brew安装nvm来支持多版本的Nodejs</h1><h3 id="brew方式"><a href="#brew方式" class="headerlink" title="brew方式"></a>brew方式</h3><p>如果机器没有安装过node，那么首先<code>brew install nvm</code>安装nvm。</p>
+<p>其次需要在shell的配置文件(~/.bashrc, ~/.profile, or ~/.zshrc)中添加如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># For NVM</span><br><span class="line">export NVM_DIR=~/.nvm</span><br><span class="line">source $(brew --prefix nvm)/nvm.sh</span><br></pre></td></tr></table></figure>
+<p>注意配置的顺序，以防开启新终端，node出现找不到的情况。</p>
+<p>重启终端，命令行下即可使用nvm，使用<code>nvm install &lt;version&gt;</code>进行对应的node版本安装，写这篇文章时，我使用的是<code>nvm install 0.10</code>，安装的版本是v0.10.32。使用<code>nvm use &lt;version&gt;</code>使用， 再通过<code>nvm alias default &lt;version&gt;</code>确保有默认版本。最后使用<code>nvm ls</code>查看。</p>
+<h3 id="brew方式补充"><a href="#brew方式补充" class="headerlink" title="brew方式补充"></a>brew方式补充</h3><p>如果之前通过’brew install node’方式安装过node，那么需要先删除系统中存在的node：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">brew remove --force node</span><br><span class="line">sudo rm -r /usr/local/lib/node_modules</span><br><span class="line"></span><br><span class="line">brew prune</span><br><span class="line">sudo rm -r /usr/local/include/node</span><br><span class="line"></span><br><span class="line"># 检查brew是否正常</span><br><span class="line">brew doctor</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -90,7 +99,14 @@
     
 <nav id="article-nav" class="article-nav">
   
-    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+    <a href="/2018/12/14/node/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          node
+        
+      </div>
+    </a>
   
   
     <a href="/2018/12/07/postgresql/" id="article-nav-older" class="article-nav-link-wrap older">
