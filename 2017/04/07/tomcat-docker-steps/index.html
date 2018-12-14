@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>docker构建tomcat镜像 | Ace&#39;pages</title>
@@ -25,14 +25,14 @@
   
   <link rel="stylesheet" href="/css/typing.css">
 </head>
-
+</html>
   
     
       <body>
     
   
       <div id="container" class="container">
-        <article id="post-tomcat-docker-steps" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-tomcat-docker-steps" class="article article-type-post" itemscope="" itemprop="blogPost">
   <header id="header" class="header">
   <nav id="main-nav" class="main-nav">
     
@@ -56,7 +56,7 @@
   </nav>
 </header>
 
-  <hr/>
+  <hr>
   <div class="article-inner">
     
     
@@ -82,7 +82,7 @@
 <h5 id="4-下载tomcat8"><a href="#4-下载tomcat8" class="headerlink" title="4.下载tomcat8"></a>4.下载tomcat8</h5><p>下载地址<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a>的download里选择tomcat 8</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ace@server-docker:~/tomcat8$ wget http://mirror.bit.edu.cn/apache/tomcat/tomcat-8/v8.0.43/bin/apache-tomcat-8.0.43.tar.gz</span><br></pre></td></tr></table></figure>
 <h5 id="5-添加tomcat-user-xml"><a href="#5-添加tomcat-user-xml" class="headerlink" title="5.添加tomcat-user.xml"></a>5.添加tomcat-user.xml</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ace@server-docker:~/tomcat8$ vim tomcat-users.xml</span><br></pre></td></tr></table></figure>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version='1.0' encoding='utf-8'?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">tomcat-users</span> <span class="attr">xmlns</span>=<span class="string">"http://tomcat.apache.org/xml"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://tomcat.apache.org/xml tomcat-users.xsd"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">version</span>=<span class="string">"1.0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"admin-gui"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"admin-script"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-gui"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-script"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-jmx"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-status"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">"tomcat"</span> <span class="attr">password</span>=<span class="string">"1"</span> <span class="attr">roles</span>=<span class="string">"manager-gui,manager-script,manager-jmx,manager-status,admin-script,admin-gui"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tomcat-users</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version='1.0' encoding='utf-8'?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tomcat-users</span> <span class="attr">xmlns</span>=<span class="string">"http://tomcat.apache.org/xml"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://tomcat.apache.org/xml tomcat-users.xsd"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">version</span>=<span class="string">"1.0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"admin-gui"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"admin-script"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-gui"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-script"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-jmx"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">"manager-status"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">user</span> <span class="attr">username</span>=<span class="string">"tomcat"</span> <span class="attr">password</span>=<span class="string">"1"</span> <span class="attr">roles</span>=<span class="string">"manager-gui,manager-script,manager-jmx,manager-status,admin-script,admin-gui"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tomcat-users</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h5 id="6-添加Dockerfile"><a href="#6-添加Dockerfile" class="headerlink" title="6.添加Dockerfile"></a>6.添加Dockerfile</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ace@server-docker:~/tomcat8$ vim Dockerfile</span><br></pre></td></tr></table></figure>
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> ubuntu:<span class="number">14.04</span></span><br><span class="line"><span class="keyword">MAINTAINER</span> Ace</span><br><span class="line"></span><br><span class="line"><span class="comment">#把java与tomcat添加到容器中</span></span><br><span class="line"><span class="keyword">ADD</span><span class="bash"> jdk-8u121-linux-x64.tar.gz /usr/<span class="built_in">local</span>/</span></span><br><span class="line"><span class="bash">ADD apache-tomcat-8.0.43.tar.gz /usr/<span class="built_in">local</span>/</span></span><br><span class="line"><span class="bash"><span class="comment">#如果需要替换原有的配置文件或者脚本 </span></span></span><br><span class="line"><span class="bash"><span class="comment">#ADD web.xml /usr/local/tomcat/webapps/manager/WEB-INF/</span></span></span><br><span class="line"><span class="bash">ADD tomcat-users.xml /usr/<span class="built_in">local</span>/apache-tomcat-8.0.43/conf/</span></span><br><span class="line"><span class="bash"><span class="comment">#ADD server.xml /usr/local/tomcat/conf/</span></span></span><br><span class="line"><span class="bash"><span class="comment">#ADD catalina.sh /usr/local/tomcat/bin/</span></span></span><br><span class="line"><span class="bash"><span class="comment">#ADD 需要打到image中的war包名.war /usr/local/tomcat/webapps/</span></span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment">#配置java与tomcat环境变量</span></span></span><br><span class="line"><span class="bash">ENV JAVA_HOME /usr/<span class="built_in">local</span>/jdk1.8.0_121</span></span><br><span class="line"><span class="bash">ENV CLASSPATH <span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar</span></span><br><span class="line"><span class="bash">ENV CATALINA_HOME /usr/<span class="built_in">local</span>/apache-tomcat-8.0.43</span></span><br><span class="line"><span class="bash">ENV CATALINA_BASE /usr/<span class="built_in">local</span>/apache-tomcat-8.0.43</span></span><br><span class="line"><span class="bash">ENV PATH <span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$CATALINA_HOME</span>/lib:<span class="variable">$CATALINA_HOME</span>/bin</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment">#容器运行时监听的端口</span></span></span><br><span class="line"><span class="bash">EXPOSE  8080</span></span><br><span class="line"><span class="bash">CMD [<span class="string">"/usr/local/apache-tomcat-8.0.43/bin/catalina.sh"</span>,<span class="string">"run"</span>]</span></span><br></pre></td></tr></table></figure>
 <h5 id="7-创建镜像"><a href="#7-创建镜像" class="headerlink" title="7 创建镜像"></a>7 创建镜像</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ace@server-docker:~/tomcat8$ docker build -t ace/tomcat .</span><br></pre></td></tr></table></figure>
@@ -121,7 +121,7 @@
 
           </li>
         
-        <hr/>
+        <hr>
       </ul>
     </footer>
   </div>
@@ -156,7 +156,7 @@
       </div>
       
     <footer id="footer" class="post-footer footer">
-      <hr/>
+      <hr>
       <div id="footerContent" class="footer-content">
         <p>闲步山雨后,静待晚林风 Post</p>
 
