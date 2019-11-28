@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>cesium | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="创建viewer - [Cesium.Viewer] 12var viewer = new Cesium.Viewer(&apos;cesiumContainer&apos;, &amp;#123;&amp;#125;); 创建带高德底图的viewer - [Cesium.UrlTemplateImageryProvider] 12345var viewer = new Cesium.Viewer(&apos;cesiumContainer&apos;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cesium">
+<meta property="og:url" content="http://hujao.com/2019/11/27/cesium/index.html">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="创建viewer - [Cesium.Viewer] 12var viewer = new Cesium.Viewer(&apos;cesiumContainer&apos;, &amp;#123;&amp;#125;); 创建带高德底图的viewer - [Cesium.UrlTemplateImageryProvider] 12345var viewer = new Cesium.Viewer(&apos;cesiumContainer&apos;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-28T04:06:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cesium">
+<meta name="twitter:description" content="创建viewer - [Cesium.Viewer] 12var viewer = new Cesium.Viewer(&apos;cesiumContainer&apos;, &amp;#123;&amp;#125;); 创建带高德底图的viewer - [Cesium.UrlTemplateImageryProvider] 12345var viewer = new Cesium.Viewer(&apos;cesiumContainer&apos;">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+</html>
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-cesium" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/tags/docker">Docker</a>
+    
+      <a class="main-nav-link" href="/tags/springboot">SpringBoot</a>
+    
+      <a class="main-nav-link" href="/tags/elasticsearch">ElasticSearch</a>
+    
+      <a class="main-nav-link" href="/tags/test">Test</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      cesium
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p>创建viewer - [Cesium.Viewer]</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> viewer = <span class="keyword">new</span> Cesium.Viewer(<span class="string">'cesiumContainer'</span>, &#123;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>创建带高德底图的viewer - [Cesium.UrlTemplateImageryProvider]</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> viewer = <span class="keyword">new</span> Cesium.Viewer(<span class="string">'cesiumContainer'</span>, &#123;</span><br><span class="line">	imageryProvider:<span class="keyword">new</span> Cesium.UrlTemplateImageryProvider(&#123;</span><br><span class="line">     url:<span class="string">'https://webst02.is.autonavi.com/appmaptile?style=7&amp;x=&#123;x&#125;&amp;y=&#123;y&#125;&amp;z=&#123;z&#125;'</span></span><br><span class="line">	&#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>加载三维模型数据 加载tileset.json及关联的.b3dm文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scene = viewer.scene;</span><br><span class="line"><span class="keyword">var</span> tileset = scene.primitives.add(</span><br><span class="line">    <span class="keyword">new</span> Cesium.Cesium3DTileset(&#123;</span><br><span class="line">        url: <span class="string">'/Source/Assets/tileset-wh/tileset.json'</span></span><br><span class="line">    &#125;)</span><br><span class="line">);</span><br><span class="line">tileset.style = <span class="keyword">new</span> Cesium.Cesium3DTileStyle(&#123;</span><br><span class="line">   color : &#123;</span><br><span class="line">        conditions : [</span><br><span class="line">            [<span class="string">'$&#123;height&#125; &gt;= 100'</span>, <span class="string">'color("purple", 0.5)'</span>],</span><br><span class="line">            [<span class="string">'$&#123;height&#125; &gt;= 50'</span>, <span class="string">'color("red")'</span>],</span><br><span class="line">            [<span class="string">'true'</span>, <span class="string">'color("blue")'</span>]</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    show : <span class="string">'$&#123;height&#125; &gt; 0'</span>,</span><br><span class="line">    meta : &#123;</span><br><span class="line">        description : <span class="string">'"Building id $&#123;id&#125; has height $&#123;Height&#125;."'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">tileset.readyPromise.then(<span class="function"><span class="keyword">function</span>(<span class="params">tileset</span>) </span>&#123;</span><br><span class="line">    viewer.scene.primitives.add(tileset);</span><br><span class="line">    viewer.zoomTo(tileset, <span class="keyword">new</span> Cesium.HeadingPitchRange(<span class="number">0.5</span>, <span class="number">-0.2</span>, tileset.boundingSphere.radius * <span class="number">4.0</span>));</span><br><span class="line">&#125;).otherwise(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>获取鼠标点击事件位置信息</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 具体事件的实现</span></span><br><span class="line"><span class="keyword">var</span> ellipsoid = viewer.scene.globe.ellipsoid;</span><br><span class="line"><span class="keyword">var</span> handler = <span class="keyword">new</span> Cesium.ScreenSpaceEventHandler(viewer.canvas);</span><br><span class="line">handler.setInputAction(<span class="function"><span class="keyword">function</span> (<span class="params">movement</span>) </span>&#123;</span><br><span class="line"><span class="comment">// 捕获椭球体，将笛卡尔二维平面坐标转为椭球体的笛卡尔三维坐标，返回球体表面的点</span></span><br><span class="line"><span class="keyword">var</span> cartesian = viewer.camera.pickEllipsoid(movement.position, ellipsoid);</span><br><span class="line">  	<span class="keyword">if</span> (cartesian) &#123;</span><br><span class="line">      	<span class="comment">// 将笛卡尔三维坐标转为地图坐标（弧度）</span></span><br><span class="line">      	<span class="keyword">var</span> cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian);</span><br><span class="line">		<span class="comment">// 将地图坐标（弧度）转为十进制的度数</span></span><br><span class="line">		<span class="keyword">var</span> lat_String = Cesium.Math.toDegrees(cartographic.latitude);</span><br><span class="line">	  	<span class="keyword">var</span> log_String = Cesium.Math.toDegrees(cartographic.longitude);</span><br><span class="line">	  	<span class="comment">// 获取相机的海拔高度作为视角高度/km</span></span><br><span class="line">		<span class="keyword">var</span> alti_String = (viewer.camera.positionCartographic.height / <span class="number">1000</span>).toFixed(<span class="number">2</span>);</span><br><span class="line">		<span class="built_in">console</span>.log(log_String+<span class="string">','</span>+lat_String);  <span class="built_in">console</span>.log(alti_String);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;,Cesium.ScreenSpaceEventType.LEFT_CLICK);</span><br></pre></td></tr></table></figure>
+<p>坐标转换</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cartographic=Cesium.Cartographic.fromDegrees(<span class="number">114.34268199351325</span>,<span class="number">30.558182284556562</span>,<span class="number">7.37</span>);</span><br><span class="line">ellipsoid.cartographicToCartesian(cartographic)</span><br></pre></td></tr></table></figure>
+<p>添加椭圆柱</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">viewer.entities.add(&#123;</span><br><span class="line">    position : Cesium.Cartesian3.fromDegrees(<span class="number">114.33672172194193</span>,<span class="number">30.55149520620937</span>),</span><br><span class="line">    ellipse : &#123;</span><br><span class="line">        semiMinorAxis : <span class="number">100.0</span>,</span><br><span class="line">        semiMajorAxis : <span class="number">200.0</span>,</span><br><span class="line">        height :<span class="number">0.0</span>,</span><br><span class="line">        extrudedHeight : <span class="number">20.0</span>,</span><br><span class="line">        rotation : Cesium.Math.toRadians(<span class="number">90.0</span>),</span><br><span class="line">        outline : <span class="literal">true</span>,</span><br><span class="line">        outlineColor : Cesium.Color.NONE,</span><br><span class="line">        outlineWidth : <span class="number">4</span>,</span><br><span class="line">        material : Cesium.Color.fromRandom(&#123;<span class="attr">alpha</span> : <span class="number">0.2</span>&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>添加标注</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> citizensBankPark = viewer.entities.add(&#123;</span><br><span class="line">    name : <span class="string">'安保地址'</span>,</span><br><span class="line">    position : ellipsoid.cartographicToCartesian(cartographic),</span><br><span class="line">    point : &#123;</span><br><span class="line">        pixelSize : <span class="number">5</span>,</span><br><span class="line">        color : Cesium.Color.RED,</span><br><span class="line">        outlineColor : Cesium.Color.WHITE,</span><br><span class="line">        outlineWidth : <span class="number">2</span></span><br><span class="line">         </span><br><span class="line">    &#125;,</span><br><span class="line">    label : &#123;</span><br><span class="line">        text : <span class="string">'总指挥部'</span>,</span><br><span class="line">        font : <span class="string">'14pt monospace'</span>,</span><br><span class="line">        style: Cesium.LabelStyle.FILL_AND_OUTLINE,</span><br><span class="line">         </span><br><span class="line">        outlineWidth : <span class="number">2</span>,</span><br><span class="line">        verticalOrigin : Cesium.VerticalOrigin.BOTTOM,</span><br><span class="line">        pixelOffset : <span class="keyword">new</span> Cesium.Cartesian2(<span class="number">0</span>, <span class="number">-9</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2019/11/27/cesium/" class="article-date">
+  <time datetime="2019-11-27T01:29:54.000Z" itemprop="datePublished">2019-11-27</time>
+</a>
+
+        </li>
+        
+        
+        <hr>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2019/11/27/gis/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          gis
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/12/promise/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">promise</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
