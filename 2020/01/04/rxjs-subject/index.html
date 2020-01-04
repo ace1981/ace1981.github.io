@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>rxjs之Subject | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Subject 主题,消息广播,可订阅,类似EventEmitter 1234567891011var subject = new Rx.Subject();subject.subscribe(&amp;#123;  next: (v) =&amp;gt; console.log(&apos;observerA: &apos; + v)&amp;#125;);subject.subscribe(&amp;#123;  next: (v) =&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rxjs之Subject">
+<meta property="og:url" content="http://hujao.com/2020/01/04/rxjs-subject/index.html">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="Subject 主题,消息广播,可订阅,类似EventEmitter 1234567891011var subject = new Rx.Subject();subject.subscribe(&amp;#123;  next: (v) =&amp;gt; console.log(&apos;observerA: &apos; + v)&amp;#125;);subject.subscribe(&amp;#123;  next: (v) =&amp;gt;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-04T02:24:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="rxjs之Subject">
+<meta name="twitter:description" content="Subject 主题,消息广播,可订阅,类似EventEmitter 1234567891011var subject = new Rx.Subject();subject.subscribe(&amp;#123;  next: (v) =&amp;gt; console.log(&apos;observerA: &apos; + v)&amp;#125;);subject.subscribe(&amp;#123;  next: (v) =&amp;gt;">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+</html>
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-rxjs-subject" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/tags/docker">Docker</a>
+    
+      <a class="main-nav-link" href="/tags/springboot">SpringBoot</a>
+    
+      <a class="main-nav-link" href="/tags/elasticsearch">ElasticSearch</a>
+    
+      <a class="main-nav-link" href="/tags/test">Test</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      rxjs之Subject
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p><strong>Subject</strong></p>
+<p>主题,消息广播,可订阅,类似EventEmitter</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> subject = <span class="keyword">new</span> Rx.Subject();</span><br><span class="line"></span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerA: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerB: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">subject.next(<span class="number">1</span>);</span><br><span class="line">subject.next(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>对于一个Subject，可以订阅（<code>subscribe</code>）它 </p>
+<p>Subject的内部实现中，并不会在被订阅（<code>subscribe</code>）后创建新的执行环境。它仅 </p>
+<p>Subject也是Observer（观察者）  由next(v)，error(e)，和 complete()这些方法组成的对象。调用next(theValue)方法后，Subject会向所有已经在其上注册的Observer多路推送theValue。</p>
+<p><strong>传递订阅</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> subject = <span class="keyword">new</span> Rx.Subject();</span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerA: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerB: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">var</span> observable = Rx.Observable.from([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line">observable.subscribe(subject);</span><br></pre></td></tr></table></figure>
+<p><strong>ConnectableObservable</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> source = Rx.Observable.from([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line"><span class="keyword">var</span> subject = <span class="keyword">new</span> Rx.Subject();</span><br><span class="line"><span class="keyword">var</span> multicasted = source.multicast(subject);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过`subject.subscribe(&#123;...&#125;)`订阅Subject的Observer：</span></span><br><span class="line">multicasted.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerA: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line">multicasted.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerB: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 让Subject从数据源订阅开始生效：</span></span><br><span class="line">multicasted.connect();</span><br></pre></td></tr></table></figure>
+<p><code>multicast</code>方法返回一个类似于Observable的可观察对象，但是在其被订阅后，它会表现Subject的特性。 <code>multicast</code> 返回的对象同时是<code>ConnectableObservable</code>类型的，拥有<code>connect()</code> 方法。</p>
+<p><code>connect()</code>方法非常的重要，它决定Observable何时开始执行。由于调用<code>connect()</code>后，Observable开始执行，因此，<code>connect()</code>会返回一个<code>Subscription</code>供调用者来终止执行。</p>
+<h3 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a>引用计数</h3><p>通过手动调用<code>connect()</code>返回的Subscription控制执行十分繁杂。通常，我们希望在有第一个Observer订阅Subject后<em>自动</em><code>connnect</code>，当所有Observer都取消订阅后终止这个Subject。</p>
+<p>我们来分析一下下面例子中subscription的过程：</p>
+<ol>
+<li>第一个Observer 订阅了多路推送的 Observable</li>
+<li><strong>多路Observable被连接</strong></li>
+<li>向第一个Observer发送 值为<code>0</code>的<code>next</code>通知</li>
+<li>第二个Observer订阅了多路推送的 Observable</li>
+<li>向第一个Observer发送 值为<code>1</code>的<code>next</code>通知</li>
+<li>向第二个Observer发送 值为<code>1</code>的<code>next</code>通知</li>
+<li>第一个Observer取消了对多路推送的Observable的订阅</li>
+<li>向第二个Observer发送 值为<code>2</code>的<code>next</code>通知</li>
+<li>第二个Observer取消了对多路推送的Observable的订阅</li>
+<li><strong>取消对多路推送的Observable的连接</strong></li>
+</ol>
+<p>通过显式地调用<code>connect()</code>，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">var source = Rx.Observable.interval(500);</span><br><span class="line">var subject = new Rx.Subject();</span><br><span class="line">var multicasted = source.multicast(subject);</span><br><span class="line">var subscription1, subscription2, subscriptionConnect;</span><br><span class="line"></span><br><span class="line">subscription1 = multicasted.subscribe(&#123;</span><br><span class="line">  next: (v) =&gt; console.log(&apos;observerA: &apos; + v)</span><br><span class="line">&#125;);</span><br><span class="line">subscriptionConnect = multicasted.connect();</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">  subscription2 = multicasted.subscribe(&#123;</span><br><span class="line">    next: (v) =&gt; console.log(&apos;observerB: &apos; + v)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;, 600);</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">  subscription1.unsubscribe();</span><br><span class="line">&#125;, 1200);</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">  subscription2.unsubscribe();</span><br><span class="line">  subscriptionConnect.unsubscribe(); </span><br><span class="line">&#125;, 2000);</span><br></pre></td></tr></table></figure>
+<p>如果你不想显式地调用<code>connect()</code>方法，可以在ConnectableObservable类型的Observable上调用<code>refCount()</code>方法。方法会进行引用计数：记录Observable被订阅的行为。当订阅数从 <code>0</code> 到 <code>1</code>时<code>refCount()</code> 会调用<code>connect()</code> 方法。到订阅数从<code>1</code> 到 <code>0</code>，他会终止整个执行过程。</p>
+<p><em>refCount 使得多路推送的Observable在被订阅后自动执行，在所有观察者取消订阅后，停止执行。</em></p>
+<p>下面是示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">var source = Rx.Observable.interval(500);</span><br><span class="line">var subject = new Rx.Subject();</span><br><span class="line">var refCounted = source.multicast(subject).refCount();</span><br><span class="line">var subscription1, subscription2, subscriptionConnect;</span><br><span class="line"></span><br><span class="line">console.log(&apos;observerA subscribed&apos;);</span><br><span class="line">subscription1 = refCounted.subscribe(&#123;</span><br><span class="line">  next: (v) =&gt; console.log(&apos;observerA: &apos; + v)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">  console.log(&apos;observerB subscribed&apos;);</span><br><span class="line">  subscription2 = refCounted.subscribe(&#123;</span><br><span class="line">    next: (v) =&gt; console.log(&apos;observerB: &apos; + v)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;, 600);</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">  console.log(&apos;observerA unsubscribed&apos;);</span><br><span class="line">  subscription1.unsubscribe();</span><br><span class="line">&#125;, 1200);</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">  console.log(&apos;observerB unsubscribed&apos;);</span><br><span class="line">  subscription2.unsubscribe();</span><br><span class="line">&#125;, 2000);</span><br></pre></td></tr></table></figure>
+<p>执行输出结果如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">observerA subscribed</span><br><span class="line">observerA: 0</span><br><span class="line">observerB subscribed</span><br><span class="line">observerA: 1</span><br><span class="line">observerB: 1</span><br><span class="line">observerA unsubscribed</span><br><span class="line">observerB: 2</span><br><span class="line">observerB unsubscribed</span><br></pre></td></tr></table></figure>
+<p>只有ConnectableObservables拥有<code>refCount()</code>方法，调用后会返回一个<code>Observable</code>而不是新的ConnectableObservable。</p>
+<h2 id="BehaviorSubject"><a href="#BehaviorSubject" class="headerlink" title="BehaviorSubject"></a>BehaviorSubject</h2><p><code>BehaviorSubject</code>是Subject的一个衍生类，具有“最新的值”的概念。它总是保存最近向数据消费者发送的值，当一个Observer订阅后，它会即刻从<code>BehaviorSubject</code>收到“最新的值”。</p>
+<p><em>BehaviorSubjects非常适于表示“随时间推移的值”。举一个形象的例子，Subject表示一个人的生日，而Behavior则表示一个人的岁数。（生日只是一天，一个人的岁数会保持到下一次生日之前。）</em></p>
+<p>下面例子中，展示了如何用 <code>0</code>初始化BehaviorSubject，当Observer订阅它时，<code>0</code>是第一个被推送的值。紧接着，在第二个Observer订阅BehaviorSubject之前，它推送了<code>2</code>，虽然订阅在推送<code>2</code>之后，但是第二个Observer仍然能接受到<code>2</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var subject = new Rx.BehaviorSubject(0 /* 初始值 */);</span><br><span class="line"></span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: (v) =&gt; console.log(&apos;observerA: &apos; + v)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">subject.next(1);</span><br><span class="line">subject.next(2);</span><br><span class="line"></span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: (v) =&gt; console.log(&apos;observerB: &apos; + v)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">subject.next(3);</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">observerA: 0</span><br><span class="line">observerA: 1</span><br><span class="line">observerA: 2</span><br><span class="line">observerB: 2</span><br><span class="line">observerA: 3</span><br><span class="line">observerB: 3</span><br></pre></td></tr></table></figure>
+<h2 id="ReplaySubject"><a href="#ReplaySubject" class="headerlink" title="ReplaySubject"></a>ReplaySubject</h2><p><code>ReplaySubject</code> 如同于<code>BehaviorSubject</code>是 <code>Subject</code> 的子类。通过 <code>ReplaySubject</code>可以向新的订阅者推送旧数值，就像一个录像机<code>ReplaySubject</code>可以记录Observable的一部分状态（过去时间内推送的值）。</p>
+<p><em>.一个ReplaySubject可以记录Observable执行过程中推送的多个值，并向新的订阅者回放它们。</em></p>
+<p>你可以指定回放值的数量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var subject = new Rx.ReplaySubject(3 /* 回放数量 */);</span><br><span class="line"></span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: (v) =&gt; console.log(&apos;observerA: &apos; + v)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">subject.next(1);</span><br><span class="line">subject.next(2);</span><br><span class="line">subject.next(3);</span><br><span class="line">subject.next(4);</span><br><span class="line"></span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: (v) =&gt; console.log(&apos;observerB: &apos; + v)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">subject.next(5);</span><br></pre></td></tr></table></figure>
+<p>输出如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">observerA: <span class="number">1</span></span><br><span class="line">observerA: <span class="number">2</span></span><br><span class="line">observerA: <span class="number">3</span></span><br><span class="line">observerA: <span class="number">4</span></span><br><span class="line">observerB: <span class="number">2</span></span><br><span class="line">observerB: <span class="number">3</span></span><br><span class="line">observerB: <span class="number">4</span></span><br><span class="line">observerA: <span class="number">5</span></span><br><span class="line">observerB: <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<p>除了回放数量，你也可以以毫秒为单位去指定“窗口时间”，决定ReplaySubject记录多久以前Observable推送的数值。下面的例子中，我们把回放数量设置为<code>100</code>，把窗口时间设置为<code>500</code>毫秒：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> subject = <span class="keyword">new</span> Rx.ReplaySubject(<span class="number">100</span>, <span class="number">500</span> <span class="comment">/* windowTime */</span>);</span><br><span class="line"></span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerA: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">1</span>;</span><br><span class="line">setInterval(<span class="function"><span class="params">()</span> =&gt;</span> subject.next(i++), <span class="number">200</span>);</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  subject.subscribe(&#123;</span><br><span class="line">    next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerB: '</span> + v)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<p>第二个Observer接受到<code>3</code>（600ms）, <code>4</code>（800ms） 和 <code>5</code>（1000ms），这些值均在订阅之前的<code>500</code>毫秒内推送（窗口长度 1000ms - 600ms = 400ms &lt; 500ms）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">observerA: <span class="number">1</span></span><br><span class="line">observerA: <span class="number">2</span></span><br><span class="line">observerA: <span class="number">3</span></span><br><span class="line">observerA: <span class="number">4</span></span><br><span class="line">observerA: <span class="number">5</span></span><br><span class="line">observerB: <span class="number">3</span></span><br><span class="line">observerB: <span class="number">4</span></span><br><span class="line">observerB: <span class="number">5</span></span><br><span class="line">observerA: <span class="number">6</span></span><br><span class="line">observerB: <span class="number">6</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="AsyncSubject"><a href="#AsyncSubject" class="headerlink" title="AsyncSubject"></a>AsyncSubject</h2><p>AsyncSubject是Subject的另外一个衍生类，Observable仅会在执行完成后，推送执行环境中的最后一个值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> subject = <span class="keyword">new</span> Rx.AsyncSubject();</span><br><span class="line"></span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerA: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">subject.next(<span class="number">1</span>);</span><br><span class="line">subject.next(<span class="number">2</span>);</span><br><span class="line">subject.next(<span class="number">3</span>);</span><br><span class="line">subject.next(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">subject.subscribe(&#123;</span><br><span class="line">  next: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'observerB: '</span> + v)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">subject.next(<span class="number">5</span>);</span><br><span class="line">subject.complete();</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">observerA: <span class="number">5</span></span><br><span class="line">observerB: <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<p>AsyncSubject 与 <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-last" target="_blank" rel="noopener"><code>last()</code></a> 操作符相似，等待完成通知后推送执行过程的最后一个值。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2020/01/04/rxjs-subject/" class="article-date">
+  <time datetime="2020-01-04T02:00:01.000Z" itemprop="datePublished">2020-01-04</time>
+</a>
+
+        </li>
+        
+        
+        <hr>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2020/01/04/rxjs-observer-and-subscription/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          rxjs之observer和subscription
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/01/04/rxjs-observable/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">rxjs之Observable</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
