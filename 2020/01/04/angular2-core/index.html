@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Ace&#39;pages">
 <meta property="og:description" content="开始1234npm install -g @angular/cling new my-dream-appcd my-dream-appng serve 组件12345@Component(&amp;#123;  selector: &apos;talk-cmp&apos;,  directives: [FormattedRating, WatchButton, RateButton],  templateUrl: &apos;talk">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-12T07:41:49.000Z">
+<meta property="og:updated_time" content="2020-01-12T07:42:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="angular2基础">
 <meta name="twitter:description" content="开始1234npm install -g @angular/cling new my-dream-appcd my-dream-appng serve 组件12345@Component(&amp;#123;  selector: &apos;talk-cmp&apos;,  directives: [FormattedRating, WatchButton, RateButton],  templateUrl: &apos;talk">
@@ -76,7 +76,7 @@
 <h5 id="Input和Output属性"><a href="#Input和Output属性" class="headerlink" title="Input和Output属性"></a>Input和Output属性</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TalkCmp</span> </span>&#123;</span><br><span class="line">  @Input() talk: Talk;</span><br><span class="line">  @Output() rate: EventEmitter;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="ngFor"><a href="#ngFor" class="headerlink" title="*ngFor"></a>*ngFor</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngFor</span>=<span class="string">"let product of products"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h5 id="ngIf"><a href="#ngIf" class="headerlink" title="*ngIf"></a>*ngIf</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> *<span class="attr">ngIf</span>=<span class="string">"product.description"</span>&gt;</span></span><br><span class="line">    Description: &#123;&#123; product.description &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h5 id="插值表达式"><a href="#插值表达式" class="headerlink" title="插值表达式"></a>插值表达式</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">title</span>]=<span class="string">"product.name + ' details'"</span>&gt;</span></span><br><span class="line">      &#123;&#123; product.name &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="插值表达式-双大括号"><a href="#插值表达式-双大括号" class="headerlink" title="插值表达式 双大括号"></a>插值表达式 双大括号</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">title</span>]=<span class="string">"product.name + ' details'"</span>&gt;</span></span><br><span class="line">      &#123;&#123; product.name &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h5 id="属性绑定"><a href="#属性绑定" class="headerlink" title="属性绑定 []"></a>属性绑定 <code>[]</code></h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">title</span>]=<span class="string">"product.name + ' details'"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h5 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定 ()"></a>事件绑定 <code>()</code></h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">"share()"</span>&gt;</span></span><br><span class="line">    Share</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h5 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">ProductAlertsComponent</span> </span>&#123;</span><br><span class="line">  @Input() product;</span><br><span class="line">  @Output() notify = <span class="keyword">new</span> EventEmitter();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -104,11 +104,11 @@
     
 <nav id="article-nav" class="article-nav">
   
-    <a href="/2020/01/12/emmet/" id="article-nav-newer" class="article-nav-link-wrap newer">
+    <a href="/2020/01/10/angular2-high/" id="article-nav-newer" class="article-nav-link-wrap newer">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          emmet插件
+          angular2-high
         
       </div>
     </a>
