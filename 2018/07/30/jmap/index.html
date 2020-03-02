@@ -5,15 +5,24 @@
   
   <title>jmap | Ace&#39;pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="test">
+  <meta name="description" content="概述命令jmap是一个多功能的命令。它可以生成 java 程序的 dump 文件， 也可以查看堆内对象示例的统计信息、查看 ClassLoader 的信息以及 finalizer 队列。 jmap 用法 参数： option： 选项参数。 pid： 需要打印配置信息的进程ID。 executable： 产生核心dump的Java可执行文件。 core： 需要打印配置信息的核心文件。 server-">
+<meta name="keywords" content="test">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jmap">
 <meta property="og:url" content="http://hujao.com/2018/07/30/jmap/index.html">
 <meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="概述命令jmap是一个多功能的命令。它可以生成 java 程序的 dump 文件， 也可以查看堆内对象示例的统计信息、查看 ClassLoader 的信息以及 finalizer 队列。 jmap 用法 参数： option： 选项参数。 pid： 需要打印配置信息的进程ID。 executable： 产生核心dump的Java可执行文件。 core： 需要打印配置信息的核心文件。 server-">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-16T16:13:23.000Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2843224-95a0b1283600829f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/646/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2843224-19ca0bf04e7ee830.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/661/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2843224-ae30cd960ae03498.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/498/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2843224-7452d2c405751011.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1141/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2843224-f03febf59147c919.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/379/format/webp">
+<meta property="og:updated_time" content="2020-03-02T11:21:32.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jmap">
+<meta name="twitter:description" content="概述命令jmap是一个多功能的命令。它可以生成 java 程序的 dump 文件， 也可以查看堆内对象示例的统计信息、查看 ClassLoader 的信息以及 finalizer 队列。 jmap 用法 参数： option： 选项参数。 pid： 需要打印配置信息的进程ID。 executable： 产生核心dump的Java可执行文件。 core： 需要打印配置信息的核心文件。 server-">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2843224-95a0b1283600829f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/646/format/webp">
   
     <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
   
@@ -69,7 +78,49 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>命令jmap是一个多功能的命令。它可以生成 java 程序的 dump 文件， 也可以查看堆内对象示例的统计信息、查看 ClassLoader 的信息以及 finalizer 队列。</p>
+<h2 id="jmap-用法"><a href="#jmap-用法" class="headerlink" title="jmap 用法"></a>jmap 用法</h2><p><img src="https:////upload-images.jianshu.io/upload_images/2843224-95a0b1283600829f.png?imageMogr2/auto-orient/strip|imageView2/2/w/646/format/webp" alt="img"></p>
+<h4 id="参数："><a href="#参数：" class="headerlink" title="参数："></a>参数：</h4><ul>
+<li><strong>option：</strong> 选项参数。</li>
+<li><strong>pid：</strong> 需要打印配置信息的进程ID。</li>
+<li><strong>executable：</strong> 产生核心dump的Java可执行文件。</li>
+<li><strong>core：</strong> 需要打印配置信息的核心文件。</li>
+<li><strong>server-id</strong> 可选的唯一id，如果相同的远程主机上运行了多台调试服务器，用此选项参数标识服务器。</li>
+<li><strong>remote server IP or hostname</strong> 远程调试服务器的IP地址或主机名。</li>
+</ul>
+<h4 id="option"><a href="#option" class="headerlink" title="option"></a>option</h4><ul>
+<li><strong>no option：</strong> 查看进程的内存映像信息,类似 Solaris pmap 命令。</li>
+<li><strong>heap：</strong> 显示Java堆详细信息</li>
+<li><strong>histo[:live]：</strong> 显示堆中对象的统计信息</li>
+<li><strong>clstats：</strong>打印类加载器信息</li>
+<li><strong>finalizerinfo：</strong> 显示在F-Queue队列等待Finalizer线程执行finalizer方法的对象</li>
+<li><strong>dump:：</strong>生成堆转储快照</li>
+<li><strong>F：</strong> 当-dump没有响应时，使用-dump或者-histo参数. 在这个模式下,live子参数无效.</li>
+<li><strong>help：</strong>打印帮助信息</li>
+<li><strong>J：</strong>指定传递给运行jmap的JVM的参数</li>
+</ul>
+<h2 id="示例一：no-option"><a href="#示例一：no-option" class="headerlink" title="示例一：no option"></a>示例一：no option</h2><p>命令：jmap pid<br> 描述：查看进程的内存映像信息,类似 Solaris pmap 命令。</p>
+<p>使用不带选项参数的jmap打印共享对象映射，将会打印目标虚拟机中加载的每个共享对象的起始地址、映射大小以及共享对象文件的路径全称。这与Solaris的pmap工具比较相似。</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/2843224-19ca0bf04e7ee830.png?imageMogr2/auto-orient/strip|imageView2/2/w/661/format/webp" alt="img"></p>
+<h2 id="示例二：heap"><a href="#示例二：heap" class="headerlink" title="示例二：heap"></a>示例二：heap</h2><p>命令：jmap -heap pid<br> 描述：显示Java堆详细信息</p>
+<p>打印一个堆的摘要信息，包括使用的GC算法、堆配置信息和各内存区域内存使用信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\jjs&gt;jmap -heap 5932</span><br><span class="line">using parallel threads in the new generation.  ##新生代采用的是并行线程处理方式</span><br><span class="line"></span><br><span class="line">using thread-local object allocation.   </span><br><span class="line"></span><br><span class="line">Concurrent Mark-Sweep GC   ##同步并行垃圾回收</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Heap Configuration:  ##堆配置情况，也就是JVM参数配置的结果[平常说的tomcat配置JVM参数，就是在配置这些]</span><br><span class="line"></span><br><span class="line">   MinHeapFreeRatio = 40 ##最小堆使用比例</span><br><span class="line"></span><br><span class="line">   MaxHeapFreeRatio = 70 ##最大堆可用比例</span><br><span class="line"></span><br><span class="line">   MaxHeapSize      = 2147483648 (2048.0MB) ##最大堆空间大小</span><br><span class="line"></span><br><span class="line">   NewSize          = 268435456 (256.0MB) ##新生代分配大小</span><br><span class="line"></span><br><span class="line">   MaxNewSize       = 268435456 (256.0MB) ##最大可新生代分配大小</span><br><span class="line"></span><br><span class="line">   OldSize          = 5439488 (5.1875MB) ##老年代大小</span><br><span class="line"></span><br><span class="line">   NewRatio         = 2  ##新生代比例</span><br><span class="line"></span><br><span class="line">   SurvivorRatio    = 8 ##新生代与suvivor的比例</span><br><span class="line"></span><br><span class="line">   PermSize         = 134217728 (128.0MB) ##perm区 永久代大小</span><br><span class="line"></span><br><span class="line">   MaxPermSize      = 134217728 (128.0MB) ##最大可分配perm区 也就是永久代大小</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Heap Usage: ##堆使用情况【堆内存实际的使用情况】</span><br><span class="line"></span><br><span class="line">New Generation (Eden + 1 Survivor Space):  ##新生代（伊甸区Eden区 + 幸存区survior(1+2)空间）</span><br><span class="line"></span><br><span class="line">   capacity = 241631232 (230.4375MB)  ##伊甸区容量</span><br><span class="line"></span><br><span class="line">   used     = 77776272 (74.17323303222656MB) ##已经使用大小</span><br><span class="line"></span><br><span class="line">   free     = 163854960 (156.26426696777344MB) ##剩余容量</span><br><span class="line"></span><br><span class="line">   32.188004570534986% used ##使用比例</span><br><span class="line"></span><br><span class="line">Eden Space:  ##伊甸区</span><br><span class="line"></span><br><span class="line">   capacity = 214827008 (204.875MB) ##伊甸区容量</span><br><span class="line"></span><br><span class="line">   used     = 74442288 (70.99369812011719MB) ##伊甸区使用</span><br><span class="line"></span><br><span class="line">   free     = 140384720 (133.8813018798828MB) ##伊甸区当前剩余容量</span><br><span class="line"></span><br><span class="line">   34.65220164496263% used ##伊甸区使用情况</span><br><span class="line"></span><br><span class="line">From Space: ##survior1区</span><br><span class="line"></span><br><span class="line">   capacity = 26804224 (25.5625MB) ##survior1区容量</span><br><span class="line"></span><br><span class="line">   used     = 3333984 (3.179534912109375MB) ##surviror1区已使用情况</span><br><span class="line"></span><br><span class="line">   free     = 23470240 (22.382965087890625MB) ##surviror1区剩余容量</span><br><span class="line"></span><br><span class="line">   12.43827838477995% used ##survior1区使用比例</span><br><span class="line"></span><br><span class="line">To Space: ##survior2 区</span><br><span class="line"></span><br><span class="line">   capacity = 26804224 (25.5625MB) ##survior2区容量</span><br><span class="line"></span><br><span class="line">   used     = 0 (0.0MB) ##survior2区已使用情况</span><br><span class="line"></span><br><span class="line">   free     = 26804224 (25.5625MB) ##survior2区剩余容量</span><br><span class="line"></span><br><span class="line">   0.0% used ## survior2区使用比例</span><br><span class="line"></span><br><span class="line">PS Old  Generation: ##老年代使用情况</span><br><span class="line"></span><br><span class="line">   capacity = 1879048192 (1792.0MB) ##老年代容量</span><br><span class="line"></span><br><span class="line">   used     = 30847928 (29.41887664794922MB) ##老年代已使用容量</span><br><span class="line"></span><br><span class="line">   free     = 1848200264 (1762.5811233520508MB) ##老年代剩余容量</span><br><span class="line"></span><br><span class="line">   1.6416783843721663% used ##老年代使用比例</span><br><span class="line"></span><br><span class="line">Perm Generation: ##永久代使用情况</span><br><span class="line"></span><br><span class="line">   capacity = 134217728 (128.0MB) ##perm区容量</span><br><span class="line"></span><br><span class="line">   used     = 47303016 (45.111671447753906MB) ##perm区已使用容量</span><br><span class="line"></span><br><span class="line">   free     = 86914712 (82.8883285522461MB) ##perm区剩余容量</span><br><span class="line"></span><br><span class="line">   35.24349331855774% used ##perm区使用比例</span><br></pre></td></tr></table></figure>
+<h2 id="示例三：histo-live"><a href="#示例三：histo-live" class="headerlink" title="示例三：histo[:live]"></a>示例三：histo[:live]</h2><p>命令：jmap -histo:live pid<br> 描述：显示堆中对象的统计信息</p>
+<p>其中包括每个Java类、对象数量、内存大小(单位：字节)、完全限定的类名。打印的虚拟机内部的类名称将会带有一个’*’前缀。如果指定了live子选项，则只计算活动的对象。</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/2843224-ae30cd960ae03498.png?imageMogr2/auto-orient/strip|imageView2/2/w/498/format/webp" alt="img"></p>
+<h2 id="示例四：clstats"><a href="#示例四：clstats" class="headerlink" title="示例四：clstats"></a>示例四：clstats</h2><p>命令：jmap -clstats pid<br> 描述：打印类加载器信息</p>
+<p>-clstats是-permstat的替代方案，在JDK8之前，-permstat用来打印类加载器的数据<br> 打印Java堆内存的永久保存区域的类加载器的智能统计信息。对于每个类加载器而言，它的名称、活跃度、地址、父类加载器、它所加载的类的数量和大小都会被打印。此外，包含的字符串数量和大小也会被打印。</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/2843224-7452d2c405751011.png?imageMogr2/auto-orient/strip|imageView2/2/w/1141/format/webp" alt="img"></p>
+<h2 id="示例五：finalizerinfo"><a href="#示例五：finalizerinfo" class="headerlink" title="示例五：finalizerinfo"></a>示例五：finalizerinfo</h2><p>命令：jmap -finalizerinfo pid<br> 描述：打印等待终结的对象信息</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/2843224-f03febf59147c919.png?imageMogr2/auto-orient/strip|imageView2/2/w/379/format/webp" alt="img"></p>
+<p>Number of objects pending for finalization: 0 说明当前F-QUEUE队列中并没有等待Fializer线程执行final</p>
+<h2 id="示例六：dump"><a href="#示例六：dump" class="headerlink" title="示例六：dump:"></a>示例六：dump:<dump-options></dump-options></h2><p>命令：jmap -dump:format=b,file=heapdump.phrof pid<br> 描述：生成堆转储快照dump文件。</p>
+<p>以hprof二进制格式转储Java堆到指定filename的文件中。live子选项是可选的。如果指定了live子选项，堆中只有活动的对象会被转储。想要浏览heap dump，你可以使用jhat(Java堆分析工具)读取生成的文件。</p>
+<blockquote>
+<p>这个命令执行，JVM会将整个heap的信息dump写入到一个文件，heap如果比较大的话，就会导致这个过程比较耗时，并且执行的过程中为了保证dump的信息是可靠的，所以会暂停应用， 线上系统慎用。</p>
+</blockquote>
+<p>作者：jijs<br>链接：<a href="https://www.jianshu.com/p/a4ad53179df3" target="_blank" rel="noopener">https://www.jianshu.com/p/a4ad53179df3</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
       
     </div>
     <footer class="article-footer">
