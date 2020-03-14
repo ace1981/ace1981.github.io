@@ -79,7 +79,7 @@
 <ol>
 <li>Dockerfile</li>
 </ol>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> redis</span><br><span class="line"><span class="keyword">COPY</span> redis.conf /usr/local/etc/redis/redis.conf</span><br><span class="line">CMD ["redis-server","/usr/local/etc/redis/redis.conf"]</span><br></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> redis</span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> redis.conf /usr/<span class="built_in">local</span>/etc/redis/redis.conf</span></span><br><span class="line"><span class="bash">CMD [<span class="string">"redis-server"</span>,<span class="string">"/usr/local/etc/redis/redis.conf"</span>]</span></span><br></pre></td></tr></table></figure>
 <ol>
 <li>编译启动</li>
 </ol>

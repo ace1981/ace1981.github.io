@@ -79,7 +79,7 @@
 <ol>
 <li>vim创建Dockerfile</li>
 </ol>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> java:<span class="number">8</span></span><br><span class="line"><span class="keyword">COPY</span> ./nettyserver.jar app.jar</span><br><span class="line">RUN bash -c 'touch /app.jar'</span><br><span class="line">#容器运行时监听的端口</span><br><span class="line">EXPOSE  2066</span><br><span class="line">ENTRYPOINT ["java","-jar","/app.jar"]</span><br></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> java:<span class="number">8</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> ./nettyserver.jar app.jar</span></span><br><span class="line"><span class="bash">RUN bash -c <span class="string">'touch /app.jar'</span></span></span><br><span class="line"><span class="bash"><span class="comment">#容器运行时监听的端口</span></span></span><br><span class="line"><span class="bash">EXPOSE  2066</span></span><br><span class="line"><span class="bash">ENTRYPOINT [<span class="string">"java"</span>,<span class="string">"-jar"</span>,<span class="string">"/app.jar"</span>]</span></span><br></pre></td></tr></table></figure>
 <ol>
 <li>构建镜像</li>
 </ol>
