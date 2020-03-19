@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>angular2-动态组件 | Ace&#39;pages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="https://blog.csdn.net/yamete_mu/article/details/80887812 #####使用场景 应用在运行期间加载一些新的组件。 #####用法 锚点指令：  需要用锚点指令告诉angular 在哪里插入新组件。 首先建立一个锚点指令，xx.directive.ts文件。并在构造方法里注入ViewContainerRef，来获取容器视图的访问权，这个容器就是那">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular2-动态组件">
+<meta property="og:url" content="http://hujao.com/2020/03/19/angular2-dynamiccomponent/index.html">
+<meta property="og:site_name" content="Ace&#39;pages">
+<meta property="og:description" content="https://blog.csdn.net/yamete_mu/article/details/80887812 #####使用场景 应用在运行期间加载一些新的组件。 #####用法 锚点指令：  需要用锚点指令告诉angular 在哪里插入新组件。 首先建立一个锚点指令，xx.directive.ts文件。并在构造方法里注入ViewContainerRef，来获取容器视图的访问权，这个容器就是那">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-19T08:03:35.613Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angular2-动态组件">
+<meta name="twitter:description" content="https://blog.csdn.net/yamete_mu/article/details/80887812 #####使用场景 应用在运行期间加载一些新的组件。 #####用法 锚点指令：  需要用锚点指令告诉angular 在哪里插入新组件。 首先建立一个锚点指令，xx.directive.ts文件。并在构造方法里注入ViewContainerRef，来获取容器视图的访问权，这个容器就是那">
+  
+    <link rel="alternate" href="/atom.xml" title="Ace&#39;pages" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+</html>
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-angular2-dynamiccomponent" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/tags/docker">Docker</a>
+    
+      <a class="main-nav-link" href="/tags/springboot">SpringBoot</a>
+    
+      <a class="main-nav-link" href="/tags/elasticsearch">ElasticSearch</a>
+    
+      <a class="main-nav-link" href="/tags/test">Test</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      angular2-动态组件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p><a href="https://blog.csdn.net/yamete_mu/article/details/80887812" target="_blank" rel="noopener">https://blog.csdn.net/yamete_mu/article/details/80887812</a></p>
+<p>#####使用场景<br> 应用在运行期间加载一些新的组件。</p>
+<p>#####用法<br> 锚点指令：</p>
+<ol>
+<li>需要用锚点指令告诉angular 在哪里插入新组件。<br> 首先建立一个锚点指令，xx.directive.ts文件。并在构造方法里注入ViewContainerRef，来获取容器视图的访问权，这个容器就是那些动态加入的组件的宿主。指令文件的装饰器中包含一个指令名称，需要将其包含在需要显示的<ng-template ad-host=""> </ng-template>中。</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ng-template</span> <span class="attr">ad-host</span>&gt;</span> <span class="tag">&lt;/<span class="name">ng-template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><ng-template> 元素是动态加载组件的最佳选择，因为它不会渲染任何额外的输出。</ng-template></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Directive, ViewContainerRef &#125; from &apos;@angular/core&apos;;</span><br><span class="line"></span><br><span class="line">@Directive(&#123;</span><br><span class="line">  selector: &apos;[ad-host]&apos;,</span><br><span class="line">&#125;)</span><br><span class="line">export class AdDirective &#123;</span><br><span class="line">  constructor(public viewContainerRef: ViewContainerRef) &#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ViewContainerRef来自于@angular/core.</p>
+<ol>
+<li>传入组件数组<br> 传入组件数组，来动态加载传入的组件类，以及绑定到该组件上的任意数据。<br> 组件数组是一个对象接口，包含了组件类型以及该组件的数据:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Type &#125; from &apos;@angular/core&apos;;</span><br><span class="line"></span><br><span class="line">export class AdItem &#123;</span><br><span class="line">  constructor(public component: Type&lt;any&gt;, public data: any) &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要引用ComponentFactoryResolver 。它会为每个组件解析出一个ComponentFactory，ComponentFactory又会为每个组件创建一个实例。</p>
+<p>再使用viewContainerRef 的createComponent()方法，来返回一个component的引用。使用这个引用就可以与该组件进行交互，比如设置它的属性或调用它的方法。</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">loadComponent() &#123;</span><br><span class="line">    <span class="keyword">this</span>.currentAdIndex = (<span class="keyword">this</span>.currentAdIndex + <span class="number">1</span>) % <span class="keyword">this</span>.ads.length;</span><br><span class="line">    let adItem = <span class="keyword">this</span>.ads[<span class="keyword">this</span>.currentAdIndex];</span><br><span class="line">    <span class="comment">//解析出该组件的componentFactory ，adItem.component是一个组件类型</span></span><br><span class="line">    let componentFactory = <span class="keyword">this</span>.componentFactoryResolver.resolveComponentFactory(adItem.component);</span><br><span class="line">    <span class="comment">//adHost是锚点组件的引用</span></span><br><span class="line">    let viewContainerRef = <span class="keyword">this</span>.adHost.viewContainerRef;</span><br><span class="line">    viewContainerRef.clear();</span><br><span class="line">    <span class="comment">//创建该动态组件的引用</span></span><br><span class="line">    let componentRef = viewContainerRef.createComponent(componentFactory);</span><br><span class="line">    <span class="comment">//对该组件的属性赋值</span></span><br><span class="line">    (&lt;AdComponent&gt;componentRef.instance).<span class="keyword">data</span> = adItem.<span class="keyword">data</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在@NgModule（）里面声明entryComponents<br>声明动态组件在entryComponents里：<br> entryComponents:[动态组件1，动态组件2]</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2020/03/19/angular2-dynamiccomponent/" class="article-date">
+  <time datetime="2020-03-19T07:57:54.000Z" itemprop="datePublished">2020-03-19</time>
+</a>
+
+        </li>
+        
+        
+        <hr>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2020/03/19/angular2-changedetector/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">angular2-变化检测策略</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr>
+      <div id="footerContent" class="footer-content">
+        <p>闲步山雨后,静待晚林风 Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
