@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Ace&#39;pages">
 <meta property="og:description" content="1.  Web.xml配置123456789101112131415161718192021222324&amp;lt;servlet&amp;gt;    &amp;lt;servlet-name&amp;gt;DruidStatView&amp;lt;/servlet-name&amp;gt;    &amp;lt;servlet-class&amp;gt;com.alibaba.druid.support.http.StatViewServlet">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-31T03:46:35.000Z">
+<meta property="og:updated_time" content="2020-03-24T05:53:13.328Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="配置druid监控页面">
 <meta name="twitter:description" content="1.  Web.xml配置123456789101112131415161718192021222324&amp;lt;servlet&amp;gt;    &amp;lt;servlet-name&amp;gt;DruidStatView&amp;lt;/servlet-name&amp;gt;    &amp;lt;servlet-class&amp;gt;com.alibaba.druid.support.http.StatViewServlet">
@@ -78,6 +78,7 @@
 <p>账号：druid（在web.xml里配置）</p>
 <p>密码：druid（在web.xml里配置）</p>
 <p>成功后页面：</p>
+<h5 id="4-配置强制回收"><a href="#4-配置强制回收" class="headerlink" title="4.配置强制回收"></a>4.配置强制回收</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 超过时间限制是否回收 --&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"removeAbandoned"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span>  </span><br><span class="line"><span class="comment">&lt;!-- 超时时间；单位为秒。180秒=3分钟 --&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"removeAbandonedTimeout"</span> <span class="attr">value</span>=<span class="string">"180"</span> /&gt;</span>  </span><br><span class="line"><span class="comment">&lt;!-- 关闭abanded连接时输出错误日志 --&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"logAbandoned"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
